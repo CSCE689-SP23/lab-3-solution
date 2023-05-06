@@ -1,0 +1,7 @@
+top.u_stb.sqnod683 -> top.u_stb.sqnod683 -> zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1
+top.u_stb.sqnod631 -> top.u_stb.sqnod631 -> zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0
+top.u_stb.sva_clock_inst -> top.u_stb.sva_clock_inst -> zebu_reqsig_clock_zcompositeclock
+top.u_stb.u_check.sva_clock_inst -> top.u_stb.u_check.sva_clock_inst -> zebu_reqsig_clock_zcompositeclock
+top.u_dut.u_fifo.u_fifo_usage_spy.sqnod25 -> top.u_dut.u_fifo.u_fifo_usage_spy.sqnod25 -> zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0
+top.u_dut.u_fifo.u_fifo_usage_spy.sva_clock_inst -> top.u_dut.u_fifo.u_fifo_usage_spy.sva_clock_inst -> zebu_reqsig_clock_zcompositeclock
+top.u_dut.u_check.sva_clock_inst -> top.u_dut.u_check.sva_clock_inst -> zebu_reqsig_clock_zcompositeclock

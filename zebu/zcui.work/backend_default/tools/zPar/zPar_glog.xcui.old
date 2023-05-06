@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="glog">
+    <author>zPar</author>
+    <date>Wed Apr 19 01:05:26 2023</date>
+    <views>
+        <view name="Warnings/Errors">
+            <h1>Place and route system</h1>
+                <h2>Warning</h2>
+                <p>[KPR0982W] file &#39;../timing.data&#39; not found, timing tasks of previous compilation will not be used</p>
+                <p>[KPR1518W] This command will be deprecated in the next major release after ZEBU20.03.</p>
+                <p>[KPR1518W] This command will be deprecated in the next major release after ZEBU20.03.</p>
+                <p>[KPR1571W] Environment variable &#34;ZEBU_NO_LOCAL_RTB_ROUTING&#34; will be deprecated in the next major release after ZEBU20.03.</p>
+                <p>[KPR1572W] Environment variable &#34;ZEBU_NO_LOCAL_RTB_ROUTING&#34; will be deprecated in the next major release after ZEBU20.03.</p>
+                <p>[KTM0674W] Port U0_M0_F0.z_dclk_delay created by zPar  but not seen by zTime</p>
+                <p>[KTM0674W] Port .zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1 created by zPar  but not seen by zTime</p>
+                <p>[KTM0674W] Port .zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0 created by zPar  but not seen by zTime</p>
+                <p>[KTM0674W] Port .zcg_filterClock created by zPar  but not seen by zTime</p>
+                <p>[KTM0674W] Port .zcg_compositeClock created by zPar  but not seen by zTime</p>
+                <p>[KTM0674W] Port .zcg_skewClock created by zPar  but not seen by zTime</p>
+                <p>[KPR0630W] This design is empty, no wire to route.</p>
+        </view>
+        <view name="Performance" order="-1000">
+            <h1>Place and Route System</h1>
+                <h2>Resource utilization and IO cut after routing</h2>
+                <p> Design matrix after routing (U0_M0)</p>
+                <p>+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+</p>
+                <p>|       |    F00|    F01|    F02|    F03|    F04|    F05|    F06|    F07|    F08|</p>
+                <p>+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+</p>
+                <p>|    F00|      -|      .|      .|      .|      .|      .|      .|      .|      1|</p>
+                <p>|    F01|      .|      -|      .|      .|      .|      .|      .|      .|      .|</p>
+                <p>|    F02|      .|      .|      -|      .|      .|      .|      .|      .|      .|</p>
+                <p>|    F03|      .|      .|      .|      -|      .|      .|      .|      .|      .|</p>
+                <p>|    F04|      .|      .|      .|      .|      -|      .|      .|      .|      .|</p>
+                <p>|    F05|      .|      .|      .|      .|      .|      -|      .|      .|      .|</p>
+                <p>|    F06|      .|      .|      .|      .|      .|      .|      -|      .|      .|</p>
+                <p>|    F07|      .|      .|      .|      .|      .|      .|      .|      -|      .|</p>
+                <p>|    F08|      1|      .|      .|      .|      .|      .|      .|      .|      -|</p>
+                <p>|     IF|      .|      .|      .|      .|      .|      .|      .|      .|      1|</p>
+                <p>|    Sum|      1|      .|      .|      .|      .|      .|      .|      .|      2|</p>
+                <p>|    Sum|      1|      .|      .|      .|      .|      .|      .|      .|      2|</p>
+                <p>+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+</p>
+                <p></p>
+                <p> Maximum xDR per component:</p>
+                <p> +------------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+</p>
+                <p> |            |  IF |   0 |   1 |   2 |   3 |   4 |   5 |   6 |   7 |   8 |</p>
+                <p> +------------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+</p>
+                <p> |U0_M0       |   1 |   1 |   - |   - |   - |   - |   - |   - |   - |   1 |</p>
+                <p> |LVDS        |   1 |   1 |   - |   - |   - |   - |   - |   - |   - |   1 |</p>
+                <p> |MGT         |   0 |   0 |   - |   - |   - |   - |   - |   - |   - |   0 |</p>
+                <p> +------------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+</p>
+                <p> </p>
+                <p></p>
+        </view>
+        <view name="Optimization">
+            <h1>Route System</h1>
+            <p>+--------------+------+</p>
+            <p>|       Process|  Mode|</p>
+            <p>+--------------+------+</p>
+            <p>|Routing effort|medium|</p>
+            <p>+--------------+------+</p>
+            <p></p>
+        </view>
+    </views>
+</ZeBuUiDoc>

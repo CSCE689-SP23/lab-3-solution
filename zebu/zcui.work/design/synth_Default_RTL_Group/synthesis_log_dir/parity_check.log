@@ -1,0 +1,31 @@
+#   step REPORT : Synthesizing module : parity_check
+#   step REPORT : [39.349] Optimizing module : parity_check
+#   step REPORT : Got SVA task gate ZSVA_IMM_TASK0: ZSVA_MOD_PLI_1
+### warning in ZFAST [6.1832] : PO net zsva_clock undriven
+#   step REPORT : [6.1690] There are 3 levels of combinational cells
+#   step REPORT : [6.1689] There are 1 distinct nets driving control pins
+#   step REPORT : [6.1695] 3-input LUTs: 1
+#   step REPORT : [6.1695] 5-input LUTs: 1
+#   step REPORT : [6.1695] 6-input LUTs: 1
+#   step REPORT : [6.1696] Total LUT area: 3
+#   step REPORT : [6.1697] State    : 3
+#   step REPORT : [6.1697]   (FF)   : 3
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'parity_check' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   3 |                   3 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  12 |                   2 |                   0 |                   0 |                   0 || parity_check
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'parity_check' to 'edif/parity_check/parity_check.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/parity_check/parity_check.edf.gz'
+#   step SERIALIZE : #bytes in: 1370, #bytes out: 864, compression ratio: 1.585648
+#   step REPORT : [87.28] Resource usage for parity_check: 0.034s 0.0M

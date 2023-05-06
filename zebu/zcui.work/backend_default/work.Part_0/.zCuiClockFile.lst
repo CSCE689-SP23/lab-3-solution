@@ -1,0 +1,8 @@
+version 1.0
+U0_M0_F0 primary top.z_dclk_delay2 45 forced yes
+U0_M0_F0 primary top.zsva_zcg_compositeClock_3024096155570765266 5 forced yes
+U0_M0_F0 (null) U0_M0_F0.U0_M0_F0_core.zebu_ckgltch_top 182 auto no
+U0_M0_F0 (null) U0_M0_F0.U0_M0_F0_core.zebu_ckgltch_top_0 178 auto no
+U0_M0_F0 (null) U0_M0_F0.U0_M0_F0_core.u_dut.u_fifo.zebu_ckgltch_fifo_0000_1 56 auto no
+
+version 2.0

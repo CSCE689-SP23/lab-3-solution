@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zFs">
+<targets>
+ <memoryTarget>
+  <label>ram_zMem</label>
+  <directory>zmem</directory>
+  <script>ram.zmem</script>
+ </memoryTarget>
+ <checksum>a7661a2cdcc4062d4dcca4a5c5d9bdc28a3911ae55438bb2e26ea8cf57e968280e5facda0bc6039e1ac4000e67bb2ce9afacf25ff52bb29bb522ccbb842db594</checksum>
+</targets>
+</ZeBuUiDoc>

@@ -1,0 +1,12 @@
+Info: UTF file:        src/project.utf
+Info: Empty file path:      /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/Empty.tcl
+Info: Mappings file path:   /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/Mappings.tcl
+Info: libzucf.so path:      /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/libzucf.so
+Info: Output target folder: zcui.work/utf_generatefiles
+Info: Full Log Name:        zcui.work/utf_generatefiles/utf_fulllog.log
+Info: Summary Log Name:     zcui.work/utf_generatefiles/utf_summary.log
+Info: Using CCI Intrpreter
+Info: Translation flow: zebu
+
+Info: Tcl files parsed successfully
+

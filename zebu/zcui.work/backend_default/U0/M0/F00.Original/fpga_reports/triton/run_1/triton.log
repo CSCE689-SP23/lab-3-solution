@@ -1,0 +1,191 @@
+---------------------------------------------------------------
+Triton version 2018-SP42H, built on Dec  3 2018, 14:42:12
+Copyright 2013-2014 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------
+Host: csce-quinn-s1.engr.tamu.edu
+Input script: ./fpga_reports/triton/run_1/triton.tcl
+set internal config variable num_threads to 4
+set internal config variable target_util to 10
+set internal config variable prepack_mode to 2
+set internal config variable pack_mode to util2
+set internal config variable partition_safe_util_choice to 1
+set internal config variable partition_max_allowed to 13700
+set internal config variable pack_lut6_limit to 2
+set internal config variable pack_target_util to 80
+Set device: xc7v2000tflg1925-1
+Reading EDIF file ./fpga_reports/triton/design_triton.edf...
+Started Design Setup...
+  PART from edif:            xc7v2000tflg1925-1
+  PART from setpart command: xc7v2000tflg1925-1
+  Applied PART from setpart command (xc7v2000tflg1925-1)
+Design Info:  Family VIRTEX7  Device XC7V2000T  Package FLG1925  Speedgrade -1
+Design Size: 9629 instances (3748 LUTs)
+Finished Design Setup. CPU time: 3 secs (0.1 mins)    Wall time: 3 secs (0.1 mins)
+Setup 4-SLR's:
+Applying LOC properties on instances...
+  applied 7 (total 7) LOC properties on instances
+Reading constraint file ioclock.xdc...
+WARNING: XDC reader: cannot find instance design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0_REPLICATED_0_1
+WARNING: XDC reader: cannot find instance design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0_REPLICATED_0
+Reading constraint file ./fpga_reports/triton/design_triton.xdc...
+Warning: can't find timing model for /hdi_primitives/CAPTUREE2/netlist
+Loading sdc file ./fpga_reports/triton/design_triton.xdc
+./fpga_reports/triton/design_triton.xdc, 122: incorrect argument "-quiet" for "set_false_path"
+./fpga_reports/triton/design_triton.xdc, 123: incorrect argument "-quiet" for "set_false_path"
+Warning, SDC reader cannot handle filter REF_PIN_NAME
+Warning, SDC reader cannot handle logic == in filter
+Warning, SDC false path cannot find complete condition, skip it: -to get_pins -filter:REF_PIN_NAME==D;-of_objects:get_cells@-hierarchical:yes;-filter:NAME=~*zview_*;; 
+Warning, SDC reader cannot handle filter REF_PIN_NAME
+Warning, SDC reader cannot handle logic == in filter
+Warning, SDC false path cannot find complete condition, skip it: -from get_pins -filter:REF_PIN_NAME==C;-of_objects:get_cells@-hierarchical:yes;-filter:NAME=~*ztig_*;; 
+
+Placement Started ...
+
+Resource Utilization Report:
+  Resource LUT       : Usage    4375  Fixed       0  Supply 1221600  Util =  0.36%
+  Resource FF        : Usage    4159  Fixed       0  Supply 2443200  Util =  0.17%
+  Resource DSP       : Usage       0  Fixed       0  Supply    2160  Util =  0.00%
+  Resource RAMB18    : Usage       0  Fixed       0  Supply    2584  Util =  0.00%
+  Resource RAMB36    : Usage       4  Fixed       0  Supply    1292  Util =  0.31%
+
+Multi-SLR net crossing (SLL demand):
+  SLR 2 - 3 :      2 (  0%)     11.0
+  SLR 1 - 2 :     18 (  0%)     39.3
+  SLR 0 - 1 :      8 (  0%)     17.0
+  Total     :     28       
+
+Finished SLR Partitioning.
+
+Finishes marking multi-SLR nets and creating SLL's:
+  Total      Nets :  81671
+  Multi-SLR  Nets :     19
+  Total SLL's     :     28
+
+Global Placement ...
+pack_info: Used Clustering Score: CONNECTIVITY LOCALITY TIECTR_DRIVER
+pack_info: Used Clustering Bonus:
+pack_info: Used Clustering Limit:
+..................................pack_info: Used Clustering Score: CONNECTIVITY LOCALITY TIECTR_DRIVER
+pack_info: Used Clustering Bonus: LUT_FF_NET
+pack_info: Used Clustering Limit:
+..................................
+Design checksum: 23e90156
+
+
+Placement and Timing Optimization...
+******************************************
+Optimizing design....
+Optimize Stage 1
+==========================================
+ OPT  Step  WNS(ns)      TNS(ns)    FEP
+==========================================
+ OPT     0    0.591        0.000      0
+ OPT     1    0.591        0.000      0
+Design checksum: 50f02abf
+ OPT     2    0.591        0.000      0
+Optimize Stage 2
+==========================================
+ OPT  Step  WNS(ns)      TNS(ns)    FEP
+==========================================
+ OPT     0    0.591        0.000      0
+ OPT     1    0.591        0.000      0
+
+---------- Global Clock Distribution -------------
+  Y11     0     0  
+  Y10     0     0  
+  Y 9     0     0  
+  Y 8     0     0  
+  Y 7     1     0  
+  Y 6     0     0  
+  Y 5     0     0  
+  Y 4     0     0  
+  Y 3     0     0  
+  Y 2     0     0  
+  Y 1     0     0  
+  Y 0     0     0  
+--------------------------------------------------
+
+Placement Total Wirelength = 81990
+Design checksum: 9ab22be0
+
+Slice Utilization:   0.9% (  2634 out of 305400)
+            SLR 3:   0.0% (     2 out of  76350)
+            SLR 2:   3.4% (  2628 out of  76350)
+            SLR 1:   0.0% (     1 out of  76350)
+            SLR 0:   0.0% (     3 out of  76350)
+
+Design Placement Statistics by SLR:
++-----+--------+--------+------------+---------+-----------+---------+-------+-------+--------------+--------------+
+|     |        | Slices |            |         | Total LUT |         |       |       |              |   Fully Used |
+| SLR | Slices |    (%) | Total LUTs | LUTRAMs |       (%) |     FFs | BRAMs |  DSPs | LUT-FF Pairs | LUT-FF Pairs |
++-----+--------+--------+------------+---------+-----------+---------+-------+-------+--------------+--------------+
+|   3 |      2 |  0.00% |          2 |       1 |     0.00% |       3 |     0 |     0 |          N/A |          N/A |
+|   2 |   2628 |  3.44% |       4370 |    2275 |     0.72% |    4155 |     8 |     0 |          N/A |          N/A |
+|   1 |      1 |  0.00% |          0 |       1 |     0.00% |       1 |     0 |     0 |          N/A |          N/A |
+|   0 |      3 |  0.00% |          3 |       2 |     0.00% |       0 |     0 |     0 |          N/A |          N/A |
++-----+--------+--------+------------+---------+-----------+---------+-------+-------+--------------+--------------+
+
+**********************************************************
+                      Timing Summary
+**********************************************************
+Design:fx_top
+  Case: Setup
+  Total path end: 8916
+  Violated path end: 0
+  Total negative slack:      0.000ns
+  Worst negative slack:      0.000ns
+
+Placement Completed
+[MEM_RPT] Placement                     : Peak = 1818MB, Current = 1818MB
+
+Total Placement Runtime: CPU time: 39 secs (0.6 mins)    Wall time: 33 secs (0.5 mins)
+
+TCL-1 "place all" finished in 39 CPU seconds (33 Wall seconds)
+**********************************************************
+                   Timing Path Report
+**********************************************************
+Design:fx_top
+Case: Setup, No.  1
+==========================================================================================
+Launching Clock Path: (Ideal clock)
+Clock: CLK_fib_clk, cycle time 9.000ns, @rise edge
+No.  Delay   Arrival   Cell       Fanout  Tag  Placement        Pin
+--------------------------------------------------------------------------------------------------------------
+  1  0.000     0.000   BUFGCTRL        0    9  (  -   - - -)    design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+  2  0.000     0.000   FDSE          672    9  SLICE_X115Y387   design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_14/C
+
+Receiving Clock Path: (Ideal clock)
+Clock: CLK_fib_clk, cycle time 9.000ns, @rise edge
+Clock uncertainty: 200ps
+No.  Delay   Arrival   Cell       Fanout  Tag  Placement        Pin
+------------------------------------------------------------------------------------------
+  1  0.000     0.000   BUFGCTRL        0    9  (  -   - - -)    design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+  2  0.000     0.000   RAMB36E1      672    9  RAMB36_X4Y73     design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0_grf_rf_mem_gbm_gbmg_gbmga_ngecc_bmg_blk_mem_generator_valid_cstr_ramloop_0__ram_r_v5_noinit_ram_SDP_SINGLE_PRIM36_TDP/CLKARDCLK
+
+Data path:
+No.  Delay Arrival Require   Slack Cell       Fanout Placement                      Die Pin
+--------------------------------------------------------------------------------------------------------------
+  1  0.276   0.276   0.867   0.591 FDSE            0 SLICE_X115Y387                  2  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_14/Q
+  2  1.036   1.312   1.903   0.591                 5 --                                 design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/Mcompar_read_addr_ok_lut_4__SW0/I1
+  3  0.060   1.372   1.963   0.591 LUT2            0 SLICE_X115Y381                  2  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/Mcompar_read_addr_ok_lut_4__SW0/O
+  4  0.832   2.204   2.795   0.591                 1 --                                 design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/Mcompar_read_addr_ok_lut_4_/I0
+  5  0.060   2.264   2.855   0.591 LUT2            0 SLICE_X110Y379                  2  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/Mcompar_read_addr_ok_lut_4_/O
+  6  0.000   2.264   2.855   0.591                 1 --                                 design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/Mcompar_read_addr_ok_cy_4__CARRY4/S[0]
+  7  0.324   2.588   3.179   0.591 CARRY4          0 SLICE_X110Y379                  2  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/Mcompar_read_addr_ok_cy_4__CARRY4/CO[3]
+  8  0.000   2.588   3.179   0.591                 1 --                                 design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/Mcompar_read_addr_ok_cy_8__CARRY4/CI
+  9  0.132   2.720   3.311   0.591 CARRY4          0 SLICE_X110Y380                  2  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/Mcompar_read_addr_ok_cy_8__CARRY4/CO[2]
+ 10  1.129   3.849   4.440   0.591                 3 --                                 design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/fifo_fib_s_wren1/I3
+ 11  0.096   3.945   4.536   0.591 LUT6            0 SLICE_X118Y383                  2  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib_slave_0/fifo_fib_s_wren1/O
+ 12  2.387   6.332   6.923   0.591                 3 --                                 design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0_grf_rf_gl0_wr_ram_wr_en_i1/I0
+ 13  0.060   6.392   6.983   0.591 LUT2            0 SLICE_X239Y371                  2  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0_grf_rf_gl0_wr_ram_wr_en_i1/O
+ 14  1.337   7.729   8.320   0.591 RAMB36E1        5 RAMB36_X4Y73                    2  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0_grf_rf_mem_gbm_gbmg_gbmga_ngecc_bmg_blk_mem_generator_valid_cstr_ramloop_0__ram_r_v5_noinit_ram_SDP_SINGLE_PRIM36_TDP/WEA[2]
+
+Writing output files...
+  Writing placement constraint file ./placement.tcl in gzip format ...
+  Totally    8869 instances
+  Annotated  8869 LOC constraints (100.0%)
+  Annotated  8411 BEL constraints (94.8%)
+  opening file ./unplaced
+
+Total Runtime: CPU time: 53 secs (0.9 mins)    Wall time: 47 secs (0.8 mins)
+

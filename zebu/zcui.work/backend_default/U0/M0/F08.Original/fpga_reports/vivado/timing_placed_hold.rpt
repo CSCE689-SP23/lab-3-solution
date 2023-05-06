@@ -1,0 +1,436 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1_EP06_159265 (lin64) Build 0 Fri Oct 11 16:37:07 PDT 2019
+| Date         : Wed Apr 19 01:08:33 2023
+| Host         : csce-quinn-s1.engr.tamu.edu running 64-bit Red Hat Enterprise Linux Server release 7.9 (Maipo)
+| Command      : report_timing -delay_type min -nworst 10 -unique_pins -file ./fpga_reports/vivado/timing_placed_hold.rpt
+| Design       : fx_top
+| Device       : 7v2000t-flg1925
+| Speed File   : -1  PRODUCTION 1.10 2014-09-11
+--------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -0.178ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+                            (rising edge-triggered cell FDPE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[6]/virtex7_oserdese2_master/RST
+                            (rising edge-triggered cell OSERDESE2 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.597ns  (logic 0.100ns (16.763%)  route 0.497ns (83.237%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.168ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.026ns
+    Source Clock Delay      (SCD):    0.685ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.685     0.685    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/clk_dv
+    SLICE_X431Y281       FDPE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X431Y281       FDPE (Prop_fdpe_C_Q)         0.100     0.785 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/Q
+                         net (fo=24, estimated)       0.497     1.282    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[6]/sr
+    OLOGIC_X1Y290        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[6]/virtex7_oserdese2_master/RST
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      1.026     1.026    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[6]/clkdiv
+    OLOGIC_X1Y290        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[6]/virtex7_oserdese2_master/CLKDIV
+                         clock pessimism             -0.173     0.853    
+    OLOGIC_X1Y290        OSERDESE2 (Hold_oserdese2_CLKDIV_RST)
+                                                      0.607     1.460    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[6]/virtex7_oserdese2_master
+  -------------------------------------------------------------------
+                         required time                         -1.460    
+                         arrival time                           1.282    
+  -------------------------------------------------------------------
+                         slack                                 -0.178    
+
+Slack (VIOLATED) :        -0.167ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+                            (rising edge-triggered cell FDPE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[5]/virtex7_oserdese2_master/RST
+                            (rising edge-triggered cell OSERDESE2 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.595ns  (logic 0.100ns (16.811%)  route 0.495ns (83.189%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.155ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.013ns
+    Source Clock Delay      (SCD):    0.685ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.685     0.685    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/clk_dv
+    SLICE_X431Y281       FDPE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X431Y281       FDPE (Prop_fdpe_C_Q)         0.100     0.785 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/Q
+                         net (fo=24, estimated)       0.495     1.280    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[5]/sr
+    OLOGIC_X1Y276        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[5]/virtex7_oserdese2_master/RST
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      1.013     1.013    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[5]/clkdiv
+    OLOGIC_X1Y276        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[5]/virtex7_oserdese2_master/CLKDIV
+                         clock pessimism             -0.173     0.840    
+    OLOGIC_X1Y276        OSERDESE2 (Hold_oserdese2_CLKDIV_RST)
+                                                      0.607     1.447    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[5]/virtex7_oserdese2_master
+  -------------------------------------------------------------------
+                         required time                         -1.447    
+                         arrival time                           1.280    
+  -------------------------------------------------------------------
+                         slack                                 -0.167    
+
+Slack (VIOLATED) :        -0.151ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+                            (rising edge-triggered cell FDPE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[4]/virtex7_oserdese2_master/RST
+                            (rising edge-triggered cell OSERDESE2 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.624ns  (logic 0.100ns (16.016%)  route 0.524ns (83.984%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.168ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.026ns
+    Source Clock Delay      (SCD):    0.685ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.685     0.685    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/clk_dv
+    SLICE_X431Y281       FDPE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X431Y281       FDPE (Prop_fdpe_C_Q)         0.100     0.785 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/Q
+                         net (fo=24, estimated)       0.524     1.309    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[4]/sr
+    OLOGIC_X1Y288        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[4]/virtex7_oserdese2_master/RST
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      1.026     1.026    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[4]/clkdiv
+    OLOGIC_X1Y288        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[4]/virtex7_oserdese2_master/CLKDIV
+                         clock pessimism             -0.173     0.853    
+    OLOGIC_X1Y288        OSERDESE2 (Hold_oserdese2_CLKDIV_RST)
+                                                      0.607     1.460    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[4]/virtex7_oserdese2_master
+  -------------------------------------------------------------------
+                         required time                         -1.460    
+                         arrival time                           1.309    
+  -------------------------------------------------------------------
+                         slack                                 -0.151    
+
+Slack (VIOLATED) :        -0.137ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+                            (rising edge-triggered cell FDPE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[3]/virtex7_oserdese2_master/RST
+                            (rising edge-triggered cell OSERDESE2 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.640ns  (logic 0.100ns (15.616%)  route 0.540ns (84.384%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.170ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.028ns
+    Source Clock Delay      (SCD):    0.685ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.685     0.685    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/clk_dv
+    SLICE_X431Y281       FDPE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X431Y281       FDPE (Prop_fdpe_C_Q)         0.100     0.785 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/Q
+                         net (fo=24, estimated)       0.540     1.325    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[3]/sr
+    OLOGIC_X1Y294        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[3]/virtex7_oserdese2_master/RST
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      1.028     1.028    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[3]/clkdiv
+    OLOGIC_X1Y294        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[3]/virtex7_oserdese2_master/CLKDIV
+                         clock pessimism             -0.173     0.855    
+    OLOGIC_X1Y294        OSERDESE2 (Hold_oserdese2_CLKDIV_RST)
+                                                      0.607     1.462    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[3]/virtex7_oserdese2_master
+  -------------------------------------------------------------------
+                         required time                         -1.462    
+                         arrival time                           1.325    
+  -------------------------------------------------------------------
+                         slack                                 -0.137    
+
+Slack (VIOLATED) :        -0.134ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+                            (rising edge-triggered cell FDPE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[0]/virtex7_oserdese2_master/RST
+                            (rising edge-triggered cell OSERDESE2 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.643ns  (logic 0.100ns (15.554%)  route 0.543ns (84.446%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.170ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.028ns
+    Source Clock Delay      (SCD):    0.685ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.685     0.685    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/clk_dv
+    SLICE_X431Y281       FDPE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X431Y281       FDPE (Prop_fdpe_C_Q)         0.100     0.785 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/Q
+                         net (fo=24, estimated)       0.543     1.328    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[0]/sr
+    OLOGIC_X1Y296        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[0]/virtex7_oserdese2_master/RST
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      1.028     1.028    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[0]/clkdiv
+    OLOGIC_X1Y296        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[0]/virtex7_oserdese2_master/CLKDIV
+                         clock pessimism             -0.173     0.855    
+    OLOGIC_X1Y296        OSERDESE2 (Hold_oserdese2_CLKDIV_RST)
+                                                      0.607     1.462    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[0]/virtex7_oserdese2_master
+  -------------------------------------------------------------------
+                         required time                         -1.462    
+                         arrival time                           1.328    
+  -------------------------------------------------------------------
+                         slack                                 -0.134    
+
+Slack (VIOLATED) :        -0.129ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+                            (rising edge-triggered cell FDPE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[1]/virtex7_oserdese2_master/RST
+                            (rising edge-triggered cell OSERDESE2 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.646ns  (logic 0.100ns (15.473%)  route 0.546ns (84.527%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.168ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.026ns
+    Source Clock Delay      (SCD):    0.685ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.685     0.685    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/clk_dv
+    SLICE_X431Y281       FDPE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X431Y281       FDPE (Prop_fdpe_C_Q)         0.100     0.785 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/Q
+                         net (fo=24, estimated)       0.546     1.331    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[1]/sr
+    OLOGIC_X1Y292        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[1]/virtex7_oserdese2_master/RST
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      1.026     1.026    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[1]/clkdiv
+    OLOGIC_X1Y292        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[1]/virtex7_oserdese2_master/CLKDIV
+                         clock pessimism             -0.173     0.853    
+    OLOGIC_X1Y292        OSERDESE2 (Hold_oserdese2_CLKDIV_RST)
+                                                      0.607     1.460    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[1]/virtex7_oserdese2_master
+  -------------------------------------------------------------------
+                         required time                         -1.460    
+                         arrival time                           1.331    
+  -------------------------------------------------------------------
+                         slack                                 -0.129    
+
+Slack (VIOLATED) :        -0.125ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+                            (rising edge-triggered cell FDPE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[2]/virtex7_oserdese2_master/RST
+                            (rising edge-triggered cell OSERDESE2 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.652ns  (logic 0.100ns (15.343%)  route 0.552ns (84.657%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.170ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.028ns
+    Source Clock Delay      (SCD):    0.685ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.685     0.685    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/clk_dv
+    SLICE_X431Y281       FDPE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X431Y281       FDPE (Prop_fdpe_C_Q)         0.100     0.785 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/Q
+                         net (fo=24, estimated)       0.552     1.337    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[2]/sr
+    OLOGIC_X1Y298        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[2]/virtex7_oserdese2_master/RST
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      1.028     1.028    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[2]/clkdiv
+    OLOGIC_X1Y298        OSERDESE2                                    r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[2]/virtex7_oserdese2_master/CLKDIV
+                         clock pessimism             -0.173     0.855    
+    OLOGIC_X1Y298        OSERDESE2 (Hold_oserdese2_CLKDIV_RST)
+                                                      0.607     1.462    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[2]/virtex7_oserdese2_master
+  -------------------------------------------------------------------
+                         required time                         -1.462    
+                         arrival time                           1.337    
+  -------------------------------------------------------------------
+                         slack                                 -0.125    
+
+Slack (VIOLATED) :        -0.058ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_22/C
+                            (rising edge-triggered cell FDSE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP/DIADI[20]
+                            (rising edge-triggered cell RAMB36E1 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.267ns  (logic 0.100ns (37.523%)  route 0.167ns (62.477%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.029ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.848ns
+    Source Clock Delay      (SCD):    0.646ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.646     0.646    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/clk
+    SLICE_X399Y269       FDSE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_22/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X399Y269       FDSE (Prop_fdse_C_Q)         0.100     0.746 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_22/Q
+                         net (fo=3, estimated)        0.167     0.913    design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/din[22]
+    RAMB36_X7Y54         RAMB36E1                                     r  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP/DIADI[20]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.848     0.848    design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/wr_clk
+    RAMB36_X7Y54         RAMB36E1                                     r  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP/CLKARDCLK
+                         clock pessimism             -0.173     0.675    
+    RAMB36_X7Y54         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[20])
+                                                      0.296     0.971    design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP
+  -------------------------------------------------------------------
+                         required time                         -0.971    
+                         arrival time                           0.913    
+  -------------------------------------------------------------------
+                         slack                                 -0.058    
+
+Slack (VIOLATED) :        -0.046ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_29/C
+                            (rising edge-triggered cell FDSE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP/DIADI[26]
+                            (rising edge-triggered cell RAMB36E1 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.276ns  (logic 0.100ns (36.262%)  route 0.176ns (63.738%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.026ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.848ns
+    Source Clock Delay      (SCD):    0.649ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.649     0.649    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/clk
+    SLICE_X402Y268       FDSE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_29/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X402Y268       FDSE (Prop_fdse_C_Q)         0.100     0.749 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_29/Q
+                         net (fo=1, estimated)        0.176     0.925    design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/din[29]
+    RAMB36_X7Y54         RAMB36E1                                     r  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP/DIADI[26]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.848     0.848    design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/wr_clk
+    RAMB36_X7Y54         RAMB36E1                                     r  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP/CLKARDCLK
+                         clock pessimism             -0.173     0.675    
+    RAMB36_X7Y54         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[26])
+                                                      0.296     0.971    design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP
+  -------------------------------------------------------------------
+                         required time                         -0.971    
+                         arrival time                           0.925    
+  -------------------------------------------------------------------
+                         slack                                 -0.046    
+
+Slack (VIOLATED) :        -0.007ns  (arrival time - required time)
+  Source:                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_23/C
+                            (rising edge-triggered cell FDSE clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP/DIADI[21]
+                            (rising edge-triggered cell RAMB36E1 clocked by CLK_fib_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             CLK_fib_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (CLK_fib_clk rise@0.000ns - CLK_fib_clk rise@0.000ns)
+  Data Path Delay:        0.317ns  (logic 0.100ns (31.537%)  route 0.217ns (68.462%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.029ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.848ns
+    Source Clock Delay      (SCD):    0.646ns
+    Clock Pessimism Removal (CPR):    0.173ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.646     0.646    design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/clk
+    SLICE_X399Y269       FDSE                                         r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_23/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X399Y269       FDSE (Prop_fdse_C_Q)         0.100     0.746 r  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_sfib_0/fib_slad_23/Q
+                         net (fo=3, estimated)        0.217     0.963    design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/din[23]
+    RAMB36_X7Y54         RAMB36E1                                     r  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP/DIADI[21]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock CLK_fib_clk rise edge)
+                                                      0.000     0.000 r  
+    BUFGCTRL_X0Y32       BUFGCTRL                     0.000     0.000 r  design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+                         net (fo=445, estimated)      0.848     0.848    design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/wr_clk
+    RAMB36_X7Y54         RAMB36E1                                     r  design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP/CLKARDCLK
+                         clock pessimism             -0.173     0.675    
+    RAMB36_X7Y54         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_DIADI[21])
+                                                      0.296     0.971    design/zkprctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0/grf_rf/mem/gbm_gbmg_gbmga_ngecc_bmg/blk_mem_generator/valid_cstr/ramloop[0]_ram_r/v5_noinit_ram/SDP_SINGLE_PRIM36_TDP
+  -------------------------------------------------------------------
+                         required time                         -0.971    
+                         arrival time                           0.963    
+  -------------------------------------------------------------------
+                         slack                                 -0.007    
+
+
+
+

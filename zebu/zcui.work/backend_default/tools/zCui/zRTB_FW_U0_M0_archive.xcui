@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zRTB_FW">
+    <targets>
+        <target type="file" value="./*.c" fnmatch="true">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+        <target type="file" value="./*.cc" fnmatch="true">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+        <target type="file" value="./*.h" fnmatch="true">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+        <target type="file" value="./*.hh" fnmatch="true">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+        <target type="file" value="./*.mk" fnmatch="true">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+        <target type="file" value="./*.so" fnmatch="true">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+        <target type="file" value="./*.v" fnmatch="true">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+        <target type="file" value="./*.zsym" fnmatch="true">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+        <target type="file" value="./pli.tab">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+        <target type="file" value="./tools/zPrd/zebu_injector_U0_M0_injector.xref">
+            <menu>RunTime/zRTB_FW/U0_M0</menu>
+        </target>
+    </targets>
+</ZeBuUiDoc>

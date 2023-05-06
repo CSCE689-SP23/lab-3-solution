@@ -1,0 +1,100 @@
+/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/bin/utftran: line 159: [: =: unary operator expected
+	grid_cmd -local t -njobs 1 -queue DEFAULT_QUEUE
+	grid_cmd -local t -njobs 0 -queue Zebu
+	grid_cmd -local t -njobs 20 -queue ZebuIse
+	grid_cmd -local t -njobs 7 -queue ZebuSynthesis
+	fpga -inter_die_tdm f -inter_die_tdm_params {strategy=Pdm_Direct}
+	timing_analysis -advanced_async_set_reset_analysis f -delay_min_zfilter_skew 40000 -pre_fpga CONSTANTS_BASE_DELAY_MODEL -use_hdl_names f
+	zpar -effort Medium
+	eco -enable f -reserve_force 32 -reserve_fwc 1152 -reserve_monitor 0 -reserve_qiwc 2048
+	coverage -auto_bin_max 64
+	memories -zrm_latency_encoding ONEHOT
+	nfs_settings -access_level 5 -delay 1000 -max_retries 120
+	fpga -parff t
+	timing_analysis -post_fpga BACK_ANNOTATED
+	ztopbuild -advanced_command enable advanced_incremental_mode
+	set_perf_flow -patch 2020.03-2
+	set_perf_flow -patch_list {2020.03 2020.03-1 2020.03-2 2020.03-LCA 2020.03-SP1-1-LCA}
+	set_perf_flow mode flow1
+	architecture_file -filename /mnt/quinn_zebu/ZEBU_SYSTEM_DIR/config/zse_configuration.tcl
+	vcs_exec_command script {/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/vcs_cmd.sh}
+	set_hwtop -module top
+	design_size -mode AUTO
+	debug -enable_hwtop_ports_access all -set_dyn_probes_on_dut_ios t -set_dyn_probes_on_memory_ios t
+	debug -waveform_reconstruction_params {csa=t,simzilla=t,simzilla_distributed_build=f,swave=disabled}
+	debug -offline_debug t -verdi_db true -waveform_reconstruction t
+	debug -all t
+	memories -drop_write_only f
+	zforce -hier_sep . -mode dynamic -object_not_found fatal -rtlname {top.u_stb.proba_wr}
+	zforce -hier_sep . -mode dynamic -object_not_found fatal -rtlname {top.u_stb.proba_rd}
+	zforce -hier_sep . -mode dynamic -object_not_found fatal -rtlname {top.u_stb.rstn}
+	probe_signals -rtlname {top.u_stb.cnt_error_in}
+	probe_signals -rtlname {top.u_stb.cnt_error_out}
+==============
+UTF Translator
+==============
+ZCUI Lib TCL: /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/lib_zCui.tcl
+ZCUI Post-process TCL: /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/post_zCui.tcl
+ZCUI_lib.tcl: Processing UTF command 'clocks'
+ZCUI_lib.tcl: Processing UTF command 'synthesis'
+================================================
+ZCUI_post.ucf: Checking ZCUI mandatory commands
+================================================
+========================================================
+post_zCui.tcl: Dumping ZCUI commands. Total commands: 46.
+========================================================
+ZCUI {UNIFIED_COMPILE} {1.0}
+ZCUI_set AutoCoreDefinition f
+ZCUI_set TopReuseExistingMapping f
+ZCUI_set CorePartitioningMode Dop
+ZCUI_set DopCoreAdaptativeFR t
+ZCUI_set CoreReuseExistingMapping f
+ZCUI_set GlobalSkewOffset t
+ZCUI_set FilterGlitches On
+ZCUI_set ClockCounterFlag t
+ZCUI_set ZparIncrementalMode f
+ZCUI_set ZparRoutingEffortMode Medium
+ZCUI_set UseFpgaLocalDiskCompilation f
+ZCUI_set UseFpgaMultiLaunch f
+ZCUI_set UseParffMultiStage f
+ZCUI_set ISEFirstPARPolicy Original
+ZCUI_set ISEFilePolicy Compress
+ZCUI_set ISEDebugPolicy Disabled
+ZCUI_set GlobalBramRWFlag f
+ZCUI_set TopDebugFlag t
+ZCUI_set DiskAccesOptimizerMethod {1}
+ZCUI_set MaximumNumberOfExistPRetry {30}
+ZCUI_set ExistPRetryDelay {1000}
+ZCUI_set MemoryIOAccessibilityFlag t
+ZCUI_set UseOfflineDebugFlag f
+ZCUI_set UseCSAFlag f
+ZCUI_set UseZebuIpRoot f
+ZCUI_set AutoCoreTimingOptimizationMode {No}
+ZCUI_set ZTopBuildCommandFilename {zcui.work/utf_generatefiles/zTopBuild_config.tcl}
+ZCUI_set ZTopBuildNetlistFinalizationFileName {zcui.work/utf_generatefiles/zTopBuild_netlist_config.tcl}
+ZCUI_set ZParCommandFilename {zcui.work/utf_generatefiles/zPar_config.tcl}
+ZCUI_set ZTimeInputCommandFilename {zcui.work/utf_generatefiles/zTime_config.tcl}
+ZCUI_set PBuildCommandFileName {zcui.work/utf_generatefiles/pBuild_config.tcl}
+ZCUI_set OptionsDbConfigFileName {zcui.work/utf_generatefiles/optionsdb_config.tcl}
+ZCUI_set SkewOffsetSynchronous t
+ZCUI_set SkewOffsetDelay 1
+ZCUI_set FilterGlitchDetectClockDelay f
+ZCUI_set DirectRouteClock f
+ZCUI_set MemoryRamlutToBramThreshold {11}
+ZCUI_set MemoryMaximumNumberOfRamlutBlocks {32000}
+ZCUI_set MemoryMaximumNumberOfBramBlocks {300}
+ZCUI_set ClockCounterFlag f
+ZCUI_set MemoryUserFile {zcui.work/utf_generatefiles/zMem_config.tcl}
+ZCUI_set ProfiledCompilation t
+ZCUI_set ZMemLatencyFlag f
+ZCUI_set ClockPathLocalization FPGALevel
+ZCUI_set EnableVFS f
+lib_zfast.tcl: Processing UTF command 'synthesis'
+lib_zfast.tcl: Processing UTF command 'dpi_synthesis'
+lib_zfast.tcl: Processing UTF command 'assertion_synthesis'
+ZCUI_ztopbuild.ucf: Processing UTF command 'assertion_synthesis'
+========================================================
+post_zTopClustering.tcl: Dumping zTopClustering commands. Total commands: 0.
+========================================================
+Ignore output extra files: 0
+Info: Tcl files parsed successfully

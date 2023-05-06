@@ -1,0 +1,25 @@
+$NbPortSpec_h2s = 0;
+
+$NbPortSpec_s2h = 0;
+
+$masterClk.Frequency = 50000 ;  # in kHz
+$driverClk.Frequency = 10000 ;  # in kHz
+$xClk.Frequency = 450000 ;  # in kHz
+$systemClk.Frequency = 100000 ;  # in kHz
+
+$FWVersion = "ZSE_XC7V_8C_IF-2014.12-3786508" ;
+
+
+$U0_M0_IF_ID = "e4964c30";
+
+$ClockNumber = 2;
+
+$ClockAccuracy = 24;
+
+$ClockName_0 = "top.u_stb.clk1";
+$ClockName_1 = "top.u_stb.clk0";
+
+$SynchronizersCfg_IF = 0x1 ;
+$zClockSkewOffsetUsed = 0x1 ;
+$zClockFilterOffsetUsed = 0x1 ;
+$zClockFetchOffsetUsed = 0x0 ;

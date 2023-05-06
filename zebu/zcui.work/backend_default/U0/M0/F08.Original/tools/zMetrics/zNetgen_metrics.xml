@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics>
+<Attribute id="beginTime">
+  <Value>Wed Apr 19 01:05:40 2023</Value>
+</Attribute>
+<Attribute id="TotalMemoryInKB">
+  <Value>1839600</Value>
+</Attribute>
+<Attribute id="elapsedTime">
+  <Value>9</Value>
+</Attribute>
+<Attribute id="endTime">
+  <Value>Wed Apr 19 01:05:49 2023</Value>
+</Attribute>
+<Attribute id="sysTime">
+  <Value>0.770</Value>
+</Attribute>
+<Attribute id="userCompileTime">
+  <Value>8.445</Value>
+</Attribute>
+</Metrics>

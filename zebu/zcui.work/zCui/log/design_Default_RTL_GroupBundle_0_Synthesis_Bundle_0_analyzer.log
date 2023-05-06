@@ -1,0 +1,42 @@
+zFAST results analysis:
+  Source unit: Design
+  RTL group: Default_RTL_Group
+Module: clkg
+  Xcui file design/synth_Default_RTL_Group/xcui/clkg.xcui is read
+  Checksum value 2e59fe94582826bbd8a6520f40c57a188800bd0a2304eb68a97faff896eaf007b6e508ef26a789f6c03a7bf6b8f2ea6000d04aa46e6d477a30a5db416e73ba1b
+Module: dut
+  Xcui file design/synth_Default_RTL_Group/xcui/dut.xcui is read
+  Checksum value 2f4107df48f6cd8ddcb844600c8042d285b368f1f5a3f1e5af3325f861f642eb49ba291d5ccf3ef05d1647b3c0ec63eebfa7437c27b8648450dae24419689bef
+Module: fifo_0000
+  Xcui file design/synth_Default_RTL_Group/xcui/fifo_0000.xcui is read
+  Checksum value fde1425c5c9cd07dee4fe83fb1073d60b35ca85f7808de4ac85da880b35101680945512b44240e981a1b58ded83838cae385b1aaf0c2aaf0bd445298029b7155
+Module: fifo_usage_spy
+  Xcui file design/synth_Default_RTL_Group/xcui/fifo_usage_spy.xcui is read
+  Checksum value 5c7464ceaeb805415ceb6e36b04146fbdc23d919e60b0a7755195e751c60306d16f59b3d4adbb8ebee818e5a5649683f89a20806a4cb4af508b54d22626aa2e0
+Module: parity
+  Xcui file design/synth_Default_RTL_Group/xcui/parity.xcui is read
+  Checksum value 3d78445ad023fa23ded07bcfea53b92b215702e603cbc3fec295d98b3ebe5499332e934c72e225426c8debc038afc7f74254024d7f0440a650c867ad8a3f1607
+Module: parity_check
+  Xcui file design/synth_Default_RTL_Group/xcui/parity_check.xcui is read
+  Checksum value 35cbdec23d2d4a9c1fbacefb2ddd9968bb86a62172462b50c1c85b0bd023e6c9775f05266d17ae923fd49c2c58bb0650278b5bdeb57bb879537c2cb430e5304b
+Module: proba
+  Xcui file design/synth_Default_RTL_Group/xcui/proba.xcui is read
+  Checksum value 1e2d33830bb742ec4981e4a36d229c7608507caa7f0a61bffc5e67025c5e40c303ac9fccb321e6ce36f41b5d2c4f5e64ea5013c1ab95476ce2053a28d6a51000
+Module: proba_0000
+  Xcui file design/synth_Default_RTL_Group/xcui/proba_0000.xcui is read
+  Checksum value 36471bf2a01fc6763f4d32ac85b0307ecccaf5a7037c790b50c3e8107167d45b92850b8645765732c4353637991977fcea6487284f7db796d2b0536ba2cf724c
+Module: ram
+  Xcui file design/synth_Default_RTL_Group/xcui/ram.xcui is read
+  Memory ram_zMem zmem ram.zmem
+  Checksum value a7661a2cdcc4062d4dcca4a5c5d9bdc28a3911ae55438bb2e26ea8cf57e968280e5facda0bc6039e1ac4000e67bb2ce9afacf25ff52bb29bb522ccbb842db594
+Module: rom
+  Xcui file design/synth_Default_RTL_Group/xcui/rom.xcui is read
+  Memory rom_zMem zmem rom.zmem
+  Checksum value 262a1880914468ad8928787067426c61fa81422791753db27e93c047fafae50b6a5469405b196b86bb0c60584a9a917c5bb9df7be072ae74b96c8f193f9d34d9
+Module: stb
+  Xcui file design/synth_Default_RTL_Group/xcui/stb.xcui is read
+  Checksum value 36cb3a64813338c862c4cc73aa8a6b47d5fba995e4845d4198ac24bd3513f367573334166b99145f7c2a7c6e842f1345453c5fb7a1dbf5de5d30040e6b3aecb6
+Module: top
+  Xcui file design/synth_Default_RTL_Group/xcui/top.xcui is read
+  Checksum value 8ef2714cec5fcc1b1f054a56a7f02f3fe3c363b03870652a6bf3db92aa7d49cde6036ee007b27fa2e1ff380deb64f2f2b7f2f949164e71573709b8c81e3882ea
+zFAST output analyzed

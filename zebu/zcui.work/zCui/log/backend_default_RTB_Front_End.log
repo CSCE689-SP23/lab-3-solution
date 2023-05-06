@@ -1,0 +1,74 @@
+
+                                    ZeBu (R)
+                                    zRTB_FE
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zRTB_FE -dve ../vcs_splitter/vcs.dve 
+
+# start time is Wed Apr 19 01:04:59 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:24
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.27 0.08 0.06 4/483 36367
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185375 MB
+#            Total Free including cache: 190093 MB
+#            Swap cache: 0 MB Cached space: 4718 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 312 MB VmPeak: 312 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255937
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step DVE LOADER : reading dve file '../vcs_splitter/vcs.dve'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step INFO : RTLDB version is Build Q-2020.03-SP1-4 Oct 17 2022 (4399324)
+#   step SERIALIZE : writing netlist 'dut_interface' into znl file 'tools/zRTB_FE/dut_io_zpar.edf.gz'
+#   step SERIALIZE : #bytes in: 347, #bytes out: 304, compression ratio: 1.141447
+#   step XTOR MAPPING DRIVER : saving transactor defmapping in file 'tools/zRTB_FE/xtor_defmapping.tcl'
+#   step SERIALIZE : writing netlist 'dut_interface' into znl file 'tools/zRTB_FE/debug_dut_netlist.edf.gz'
+#   step SERIALIZE : #bytes in: 347, #bytes out: 304, compression ratio: 1.141447
+#   step SCO : Total number of LUT added: 0.
+#   step zRTBFE SAVE TIMING : Improvements of paths through RTB are disabled
+#   step SERIALIZE : writing netlist 'zFW_IF' into znl file 'tools/zRTB_FE/debug_timing.edf.gz'
+#   step SERIALIZE : #bytes in: 400, #bytes out: 346, compression ratio: 1.156069
+#   step zRTBFE SAVE TIMING : Processing triggers
+#   step zRTBFE SAVE TIMING : Starting search of async paths through RTB
+#   step ASYNC_PATH : Processing module 'rtb_for_ztime'
+#   step ASYNC_PATH : Module 'rtb_for_ztime' : Factorized sync endpoints : 0 data, 0 clock - time 140520 sec
+#   step ASYNC_PATH : Module 'rtb_for_ztime' : Async paths found : 0 data, 0 clock - max depth traversed 0 data, 0 clock - elapsed 0.000146835 sec
+#   step zRTBFE SAVE TIMING : Search of async paths through RTB is done
+#   step SERIALIZE : writing netlist 'timing_paths' into znl file 'tools/zRTB_FE/global_rtb_time.edf.gz'
+#   step SERIALIZE : #bytes in: 123, #bytes out: 113, compression ratio: 1.088496
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m0.221s, sys 0m0.53s
+#   exec summary : Total memory: 407780 kB - RSS memory: 123912 kB - Data memory: 125732 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:59 2023
+command exit code is '0'

@@ -1,0 +1,7 @@
+Xcui file backend_default/tools/zPar/zpar.xcui is read
+Fpga design: U0_M0_F0
+Fpga design: Route U0_M0_F08
+Fpga IF: U0_M0_IF
+  Number Of Dependencies zPar -> zTime : 1
+  Number Of Dependencies zPar -> zTime_fpga : 4
+Design FPGA P&R dispatched

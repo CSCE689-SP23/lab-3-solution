@@ -1,0 +1,17 @@
+Module fifo_usage_spy{
+}
+Module zebu_reqsig_clock_zcompositeclock{
+}
+Module zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0{
+}
+
+EdfPortBounds dut{
+8 0 datain
+8 0 dataout
+}
+EdfPortBounds stb{
+8 0 data_rd
+8 0 data_wr
+}
+NonAliasNets fifo_usage_spy{
+}

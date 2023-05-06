@@ -1,0 +1,42 @@
+1681884339 01:05:39 AM Start_target=Original
+1681884339 01:05:39 AM   |- start zNetgen
+1681884349 01:05:49 AM     |=> zNetgen: 0 mins
+1681884349 01:05:49 AM   |- end zNetgen
+1681884353 01:05:53 AM   |- start XDC sorter
+1681884359 01:05:59 AM Start Vivado
+1681884404 01:06:44 AM     |- add_files/link_design: 1 mins
+1681884404 01:06:44 AM     |=> initialisation_linked: 1 mins
+1681884405 01:06:45 AM   |- start phase: netlist_analys_preproc
+1681884406 01:06:46 AM     |=> netlist_analys_preproc: 1 mins
+1681884407 01:06:47 AM   |- start phase: read_constraints
+1681884430 01:07:10 AM     |=> read_constraints: 1 mins
+1681884430 01:07:10 AM   |- start phase: opt_design
+1681884439 01:07:19 AM       |=>  opt_design: 1 mins
+1681884440 01:07:20 AM     |=> opt_design: 1 mins
+1681884440 01:07:20 AM   |- start phase: post_opt_netlist_analys_preproc
+1681884440 01:07:20 AM     |- post_opt_processing: 1 mins
+1681884441 01:07:21 AM   |- start phase: triton
+1681884467 01:07:47 AM        |- triton run1: 1 mins
+1681884470 01:07:50 AM   |- start phase: post_triton
+1681884501 01:08:21 AM        |- read triton placement: 1 mins
+1681884502 01:08:22 AM   |- start phase: place_design
+1681884514 01:08:34 AM   |- start phase: post_place_phys
+1681884520 01:08:40 AM     |=> place_design: 2 mins
+1681884520 01:08:40 AM   |- start phase: route_design
+1681884686 01:11:26 AM   |- start phase: post_route_physopt
+1681884687 01:11:27 AM     |=> route_design: 3 mins
+1681884688 01:11:28 AM   |- start phase: report_timing
+1681884698 01:11:38 AM     |=> report_timing: 1 mins
+1681884699 01:11:39 AM   |- start phase: write_bitstream
+1681884796 01:13:16 AM     |=> write_bitstream: 2 mins
+1681884797 01:13:17 AM   |- start phase: zTime_analyse_Route
+1681884798 01:13:18 AM     |=> extra_timing: 1 mins
+1681884798 01:13:18 AM   |- start phase: location_building
+1681884798 01:13:18 AM     |=> location_building: 1 mins
+1681884799 01:13:19 AM     => vivado_ok: 7 mins
+1681884799 01:13:19 AM vivado: 7 mins
+1681884801 01:13:21 AM   |- zrdb: 0 mins
+1681884801 01:13:21 AM   |- zdb: 0 mins
+Fpga_Total: 8 min  (Winner:Original)
+
+FPGA_TOTAL_EXCL_GRID_DELAY: 8 mins

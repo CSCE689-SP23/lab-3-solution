@@ -1,0 +1,592 @@
+/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/bin/vcs: line 6316: tclsh: command not found
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_pp' will be deprecated in a future release.  Please use 
+  '-debug_acc+pp+dmptf -debug_region+cell+encrypt' instead.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_pp' will be deprecated in a future release.  Please use 
+  '-debug_acc+pp+dmptf -debug_region+cell+encrypt' instead.
+
+                         Chronologic VCS (TM)
+     Version Q-2020.03-SP2-12_Full64 -- Wed Apr 19 01:04:28 2023
+               Copyright (c) 1991-2020 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Note-[BC_USE] Backward Compatibility features in use.
+  Using BC configuration 
+  /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vcs/synopsys_bc.setup     
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+UNIZFE: Turning ON UNIZFE mode
+Parsing design file '../source/design/parity_check.sv'
+Parsing design file '../source/design/fifo.sv'
+Parsing design file '../source/design/clkg.sv'
+Parsing design file '../source/design/dut.sv'
+Parsing design file '../source/design/parity.sv'
+Parsing design file '../source/stb/ram.sv'
+Parsing design file '../source/stb/rom.sv'
+Parsing design file '../source/stb/stb.sv'
+Parsing design file '../source/stb/top.sv'
+Parsing design file '../source/stb/proba.sv'
+Parsing design file '../source/stb/bind_spy.sv'
+Parsing design file '../source/stb/fifo_usage_spy.sv'
+Parsing design file '../source/stb/wave.sv'
+Parsing library directory file '/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/verilog/zceiClockPort.v'
+Top Level Modules:
+       top
+       wave
+No TimeScale specified
+
+Warning-[TFIPC] Too few instance port connections
+../source/stb/stb.sv, 38
+stb, "zceiClockPort u_clk0( .cclock (clk0));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+../source/stb/stb.sv, 47
+stb, "zceiClockPort u_clk1( .cclock (clk1));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+[UFE_FLOW]: RhinoDB Rtl Population based on design traversal started
+[UFE_FLOW]: Trying to load NameDB library without path: libNameDB.so
+[UFE_FLOW]: RhinoDB encryption support is disabled
+[UFE_FLOW PROBES]: Status after DIRECTED matching: Processed 5 probes: 5 matched, resulting 5 signals collected for protection.
+
+Warning-[SVAC-IAAB] Immediate assert action block
+../source/design/parity_check.sv, 26
+parity_check, "assert((!error))$display("SVA: Passing assertion");  else $error("SVA: Parity error detected.");"
+  Action blocks in immediate and deferred assertions are not supported.
+  The action block is ignored.
+
+
+Warning-[ZEBU_SVA-NOAB] Assertion with an action block
+../source/design/parity_check.sv, 26
+parity_check, "assert((!error));  else $error("SVA: Parity error detected.");"
+  Only severity is supported in user defined fail action block, ignoring any 
+  other statements in the action block
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        Function Name|          Path|# Inp|# Out|                    Source File|Source L|Call |                         Filtered Reason|DPI Type|       Status|
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|fifo_usage_spy_notify|fifo_usage_spy|    4|    0|../source/stb/fifo_usage_spy.sv|      29|    1|        DPI synthesis enabled for module|  import|  synthesized|
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Processing DPI imported functions in module fifo_usage_spy.
+Processing DPI imported functions in module stb.
+#   step INFO : RTLDB version is Build Q-2020.03-SP1-4 Oct 17 2022 (4399324)
+Info: Invoking Simon...
+Info: Simon VCS Start
+                                SIMON
+     Version Q-2020.03-SP2-12_Full64 -- Wed Apr 19 01:04:29 2023
+               Copyright (c) 1991-2020 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Note-[SM_PARALLEL_RUN] Parallel run
+  Forked '12' child processes with process ids '35870 35871 35872 35873 35874 
+  35875 35876 35877 35878 35879 35880 35881'
+  to perform synthesis of total '12' modules in parallel.
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: parity_check Parameterized Name: parity_check
+
+
+Note-[SM_IIF] Instance Info
+  Instance Count : module 'parity_check' has 1 instances
+  
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: dut Parameterized Name: dut
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: top Parameterized Name: top
+
+
+Note-[SM_IIF] Instance Info
+  Instance Count : module 'dut' has 3 instances
+  
+
+
+Note-[SM_IIF] Instance Info
+  Instance Count : module 'top' has 2 instances
+  
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: stb Parameterized Name: stb
+
+
+Note-[SM_IIF] Instance Info
+  Instance Count : module 'stb' has 7 instances
+  
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: parity Parameterized Name: parity
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: rom Parameterized Name: rom
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: fifo_0000 Parameterized Name: fifo_0000
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: proba Parameterized Name: proba
+
+
+Note-[SM_IIF] Instance Info
+  Instance Count : module 'fifo_0000' has 2 instances
+  
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: proba_0000 Parameterized Name: proba_0000
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: ram Parameterized Name: ram
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: fifo_usage_spy Parameterized Name: fifo_usage_spy
+
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: clkg Parameterized Name: clkg
+
+
+Note-[SM_IIF] Instance Info
+  Instance Count : module 'fifo_usage_spy' has 1 instances
+  
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '0' with process id '35870'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.01 sec
+  SIMON Child Wall-Clock Time : 0.01 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '3' with process id '35873'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.01 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '1' with process id '35871'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '7' with process id '35877'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.01 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '5' with process id '35875'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '6' with process id '35876'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '8' with process id '35878'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '9' with process id '35879'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '10' with process id '35880'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '4' with process id '35874'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.01 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '11' with process id '35881'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.01 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '2' with process id '35872'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.03 sec
+  SIMON Child Wall-Clock Time : 0.04 sec
+  SIMON Child Current Memory  : 588 MB
+  SIMON Child Peak Memory     : 588 MB
+  SIMON Distribution          : 0.02,0.01,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_PF] Processing finished
+  Processing of all modules finished
+
+
+Note-[SM_PARALLEL_RUN] Parallel run
+  Forked '12' child processes with process ids '35886 35887 35888 35889 35890 
+  35891 35892 35893 35894 35895 35896 35897'
+  to perform post-processing optimizations of total '12' modules in parallel.
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: clkg
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: parity_check
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: fifo_usage_spy
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: fifo_0000
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: parity
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: dut
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: proba
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: rom
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: proba_0000
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: stb
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: ram
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: top
+
+
+Note-[SM_MEM_INFO] Module has inferred memories
+../source/stb/rom.sv, 8
+  Inferred memory statistics for module 'rom' (Instances: 1)
+  ------------------------------------------------------------------------------
+  |Name |Size |TotalPorts |ReadPorts |WritePorts |Reset |Initial |
+  ------------------------------------------------------------------------------
+  | mem | 2304(256x9) |TP:1 |RP:1(A:1,S:0) |WP:0(A:0,S:0) |R:None |I:No |
+  ------------------------------------------------------------------------------
+
+
+Note-[SM_MEM_INFO] Module has inferred memories
+../source/stb/ram.sv, 8
+  Inferred memory statistics for module 'ram' (Instances: 1)
+  ------------------------------------------------------------------------------
+  |Name |Size |TotalPorts |ReadPorts |WritePorts |Reset |Initial |
+  ------------------------------------------------------------------------------
+  | mem | 2304(256x9) |TP:1 |RP:0(A:0,S:0) |WP:1(A:0,S:1) |R:None |I:No |
+  ------------------------------------------------------------------------------
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '1' with process id '35887'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '0' with process id '35886'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '5' with process id '35891'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '4' with process id '35890'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '2' with process id '35888'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '3' with process id '35889'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '6' with process id '35892'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '7' with process id '35893'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '8' with process id '35894'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '11' with process id '35897'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '10' with process id '35896'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.04 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '9' with process id '35895'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.04 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_POF] Processing finished
+  Post-processing optimizations of all modules finished
+
+
+Warning-[SM_BB_LIST] Blackbox module list
+  List of modules in design which are blackboxed by tool/user (4): 
+  M_RTL_ZDPI_TASK110 M_RTL_ZDPI_TASK20 M_RTL_ZDPI_TASK21 M_RTL_ZSVA_IMM_TASK30
+
+
+Warning-[SM_INFRA_BB_LIST] Infra blackbox module list
+  List of tool's instrumented blackbox modules (4): 
+  __ZEBU_mem_a256_d9_ra __ZEBU_mem_a256_d9_ws eVe_initial 
+  zebu_reqsig_clock_zcompositeclock
+
+=======================================================
+VCS pre-synth CPU Time        : 0.39 sec
+VCS pre-synth Wall-Clock Time : 1.00 sec
+VCS pre-synth Current Memory  : 585 MB
+SIMON Master CPU Time         : 0.13 sec
+SIMON Total  CPU Time         : 0.54 sec
+SIMON Master Wall-Clock Time  : 1.66 sec
+SIMON Master Current Memory   : 591 MB
+SIMON Master Peak Memory      : 591 MB
+SIMON CGroup Memory           : 670 MB
+SIMON Distribution            : 0.02,0.01,0.00,0.00 sec
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete 
+Info: Exiting after Simon Analysis 
+
+#   exec summary : wall clock 0m3s, user 0m0.300s, sys 0m0.240s
+#   exec summary : Total memory: 606068kB - RSS memory: 152364 kB - Data memory: 158236 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:31 2023
+
+CPU time: 1.068 seconds to compile
+command exit code is '0'

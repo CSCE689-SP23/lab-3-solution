@@ -1,0 +1,43 @@
+Module ram{
+}
+Module ram_ZMEM_mem{
+}
+
+EdfPortBounds ram{
+7 0 a
+8 0 d
+}
+EdfPortBounds fifo_0000{
+7 0 d_i
+7 0 q_o
+7 0 qa_o
+}
+EdfPortBounds parity{
+7 0 a
+}
+EdfPortBounds proba{
+9 0 level
+}
+EdfPortBounds dut{
+8 0 datain
+8 0 dataout
+}
+EdfPortBounds stb{
+8 0 data_rd
+8 0 data_wr
+}
+EdfPortBounds fifo_usage_spy{
+3 0 remain
+}
+EdfPortBounds proba_0000{
+9 0 level
+}
+EdfPortBounds parity_check{
+8 0 a
+}
+EdfPortBounds rom{
+7 0 a
+8 0 q
+}
+NonAliasNets ram{
+}

@@ -1,0 +1,3 @@
+fifo_0000
+u_fifo_usage_spy -> u_fifo_usage_spy -> fifo_usage_spy
+u0_clkg -> u0_clkg -> clkg

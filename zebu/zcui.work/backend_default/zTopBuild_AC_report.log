@@ -1,0 +1,176 @@
+
+
+
+
+
+
+
+#
+
+
+Table of content:
+-----------------
+
+
+ 1.zTopBuild automatic clustering report
+    1.1.Design pre-analysis
+        1.1.1.Design stats
+    1.2.Design analysis
+    1.3.Design mapping optimization
+    1.4.Post-optimization
+    1.5.Commands processing
+        1.5.1.Command transmission to zCore
+    1.6.Design post split analysis
+ 2.Time and memory usage
+
+
+======================================================================================================
+
+
+
+
+
+ 1.zTopBuild automatic clustering report
+ =======================================
+
+
+    1.1.Design pre-analysis
+    -----------------------
+
+
+    1.1.1.Design stats
+
+
+Primitive count from the top module top
+          +--------------------------+--------------------+---------+---------+
+          |Primitive                 |              Number|Equiv LUT|Equiv REG|
+          +--------------------------+--------------------+---------+---------+
+          |fd                        |                 309|         |      309|
+          |fdc                       |                  38|         |       38|
+          |fdce                      |                  19|         |       19|
+          |fde                       |                 132|         |      132|
+          |fdp                       |                   7|         |        7|
+          +--------------------------+--------------------+---------+---------+
+          |Summary Flip-Flops        |                 505|         |      505|
+          =--------------------------+--------------------+---------+---------=
+          |gnd                       |                   7|         |         |
+          |lut2                      |                  60|       60|         |
+          |lut3                      |                  56|       56|         |
+          |lut4                      |                   8|        8|         |
+          |lut5                      |                  13|       13|         |
+          |lut6                      |                  29|       29|         |
+          |vcc                       |                   5|         |         |
+          +--------------------------+--------------------+---------+---------+
+          |Summary General           |  178 (=   166 LUTs)|      166|         |
+          =--------------------------+--------------------+---------+---------=
+          |ld_1                      |                   1|         |        1|
+          +--------------------------+--------------------+---------+---------+
+          |Summary Latches           |                   1|         |        1|
+          =--------------------------+--------------------+---------+---------=
+          |and2                      |                  33|       33|         |
+          |inv                       |                  48|         |         |
+          |xor2                      |                   4|        4|         |
+          |xorcy                     |                   2|         |         |
+          +--------------------------+--------------------+---------+---------+
+          |Summary Logic Primitives  |   87 (=    37 LUTs)|       37|         |
+          =--------------------------+--------------------+---------+---------=
+          |ram256x1s                 |   18 (=    72 LUTs)|       72|         |
+          +--------------------------+--------------------+---------+---------+
+          |Summary Memory Elements   |   18 (=    72 LUTs)|       72|         |
+          =--------------------------+--------------------+---------+---------=
+          |muxcy_l                   |                   2|         |         |
+          +--------------------------+--------------------+---------+---------+
+          |Summary Multiplexers      |                   2|         |         |
+          =--------------------------+--------------------+---------+---------=
+          |USER_COSTzebu_bb_wb_reg   |                  43|         |       43|
+          |ZSVA_MOD_PLI_1            |                   2|         |         |
+          |carry4                    |                  40|         |         |
+          +--------------------------+--------------------+---------+---------+
+          |Summary                   |                  85|         |       43|
+          =--------------------------+--------------------+---------+---------=
+          |KEEP_ZVIEW                |                  46|         |       46|
+          |ZXLSYS                    |                   4|         |         |
+          |zfwc_hs_1                 |                  36|         |         |
+          |zview                     |                  95|         |         |
+          +--------------------------+--------------------+---------+---------+
+          |Summary ZEBU Special Cells|                 181|         |       46|
+          +--------------------------+--------------------+---------+---------+
+
+
+
+Design content summary, Luts, BRams, URAM, Flip-Flops, Latches, Multiplexers, Multipliers, other logic:
+          +----------------------------------+---+
+          |Logic LUTs                        |166|
+          |RAMLUTs                           | 72|
+          |Logic LUTs + RAMLUTs              |238|
+          |Logic LUTs + RAMLUTs + other logic|275|
+          |BRAMs                             |  0|
+          |URAMs                             |  0|
+          |Flip-Flops                        |505|
+          |Latches                           |  1|
+          |Flip-Flops + Latches + other logic|596|
+          |Multiplexers                      |  2|
+          |MULT18/DSP                        |  0|
+          |Other logic                       |383|
+          |Lut equiv other logic             | 37|
+          |Reg equiv Other logic             | 90|
+          +----------------------------------+---+
+
+
+
+    1.2.Design analysis
+    -------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    1.3.Design mapping optimization
+    -------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    1.4.Post-optimization
+    ---------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    1.5.Commands processing
+    -----------------------
+
+
+    1.5.1.Command transmission to zCore
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    1.6.Design post split analysis
+    ------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 2.Time and memory usage
+ =======================
+
+Reset time counter
+   1     elapsed:0.9 s    user:0.3 s    system:0.3 s      %cpu:65.40       load:0.29       fm:185414 m     vm:1586 m     vm:+768 m      um:332 m       um:+5 m ZTOPPARTITIONING
+   2     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185414 m     vm:1586 m       vm:+0 m      um:332 m       um:+0 m AC_netlist_stat
+   3     elapsed:0.1 s      user:0 s    system:0.1 s      %cpu:71.43       load:0.29       fm:185414 m     vm:1586 m       vm:+0 m      um:332 m       um:+0 m AC_global_cost_estimate

@@ -1,0 +1,89 @@
+
+                                    ZeBu (R)
+                                    zRTB_FW
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zRTB_FW -edf IF_zFW.edf.gz -dve ../../../vcs_splitter/vcs.dve -if U0/M0/IF.src 
+
+# start time is Wed Apr 19 01:05:30 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:29
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.43 0.14 0.08 2/476 36670
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185612 MB
+#            Total Free including cache: 190332 MB
+#            Swap cache: 0 MB Cached space: 4720 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 313 MB VmPeak: 313 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255668
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step DVE LOADER : reading dve file '../../../vcs_splitter/vcs.dve'
+#   step Loading RTL DB : Starting
+#   step INFO : RTLDB version is Build Q-2020.03-SP1-4 Oct 17 2022 (4399324)
+#   step Loading RTL DB : Done in     elapsed:0.2 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:185592 m      vm:392 m       vm:+5 m      um:112 m       um:+3 m
+#   step CLOCK DB LOADER : loading clock database '../../tools/zTopBuild/clock.zrt'
+#   step CGEN_RETRO : Mapping zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1(_I_vcs_cdx_s_rw_topu_stb_clk1)
+#   step CGEN_RETRO : Mapping zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0(_I_vcs_cdx_s_rw_topu_stb_clk0)
+#   step CGEN_RETRO : Mapping zcg_filterClock(z_dclk_delay2)
+#   step CGEN_RETRO : Mapping zcg_compositeClock(z_fwc_ip_clk)
+#   step CGEN_RETRO : Mapping zcg_skewClock(z_dclk_delay)
+#   step XTOR MAPPING LOADER : loading transactor defmapping '../../tools/zRTB_FE/xtor_defmapping.tcl'
+#   step ZFW LOADER : reading ZFW file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/configs/zse_xc7v_8c_2000_v1_rtb.tcl'
+#   step UNIQUIFY : Netlist with Top 'top'
+#   step UNIQUIFY : 0 modules created
+#   step MAP CCLOCK : DUT port _I_vcs_cdx_s_rw_topu_stb_clk1 is mapped on CCLOCK 0 (ref _I_vcs_cdx_s_rw_topu_stb_clk1)
+#   step MAP CCLOCK : DUT port _I_vcs_cdx_s_rw_topu_stb_clk0 is mapped on CCLOCK 1 (ref _I_vcs_cdx_s_rw_topu_stb_clk0)
+### warning in INJECTOR [KFW0246W] : no injector macro added since there is no DUT input port drivers
+#   step INFO : RTLDB version is Build Q-2020.03-SP1-4 Oct 17 2022 (4399324)
+#   step SCO : Replacing Latch by MUX and FD
+#   step SCO : Total number of LUT added: 0.
+#   step XREF DB : Adding triggers
+#   step TRISTATE_REMAP : 0 lonely zebu_PULL macros were found.
+#   step SERIALIZE : writing netlist 'zFW_IF' into znl file 'IF.src/fpga.edf.gz'
+#   step SERIALIZE : #bytes in: 1838978, #bytes out: 460634, compression ratio: 3.992276
+#   step XDC GENERATOR : Writing XDC file 'IF.src/design_zpar.zdc.incr_tmp' with 68 constraints
+#   step XDC GENERATOR : constraints have changed - regenerate XDC file 'IF.src/design_zpar.zdc'
+### warning in KFW [KFW0386W] : not able to open tim_nodes.bin. Default value 'STANDARD' used for SDF request type.
+
+#   step ZTIME FPGA : SDF requests done using standard flow
+### warning in KFW [KFW0377F] : not able to open tim_nodes.bin
+### warning in KFW [KFW0377F] : not able to open tim_nodes.bin
+### warning in ZTIME [KFW0379F] : getting timing graph alias failed.
+#   step SERIALIZE : writing netlist 'empty_timing_paths' into znl file '../../tools/zTime/global_rtb_time_U0_M0_IF.edf.gz'
+#   step SERIALIZE : #bytes in: 45, #bytes out: 60, compression ratio: 0.750000
+
+#   exec summary :    5 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m9.316s, sys 0m0.829s
+#   exec summary : Total memory: 2017168 kB - RSS memory: 1709344 kB - Data memory: 1733676 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:05:40 2023
+command exit code is '0'

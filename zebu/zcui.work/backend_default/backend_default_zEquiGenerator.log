@@ -1,0 +1,180 @@
+
+                                    ZeBu (R)
+                                 zEquiGenerator
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zEquiGenerator -l backend_default_zEquiGenerator.log -i tools/zDB/zTopBuild_equi.edf.gz 
+
+# start time is Wed Apr 19 01:04:57 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:46:34
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.27 0.08 0.06 4/484 36290
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185493 MB
+#            Total Free including cache: 190211 MB
+#            Swap cache: 0 MB Cached space: 4718 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 159 MB VmPeak: 159 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256022
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ZRDB : 
+# begin time is Wed Apr 19 01:04:57 2023
+
+# zEquiGenerator -l backend_default_zEquiGenerator.log -i tools/zDB/zTopBuild_equi.edf.gz
+
+#   step ZRDB : Using 40 threads (maximum is 40).
+#   step RDB : Run the Equi Builder...
+#   exec summary : Total memory: 163428 kB - RSS memory: 83356 kB - Data memory: 88612 kB
+#   step RDB : Netlist loading...
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step RDB : Netlist loaded
+#   step RDB : Netlist loaded in 0.1 s
+#   exec summary : Total memory: 191076 kB - RSS memory: 104900 kB - Data memory: 116260 kB
+#   step DATABASE : Referencing nodes (top instances)
+#   step DATABASE : 1 nodes referenced in 0 seconds. Total of 0 referenced nodes.
+#   exec summary : Total memory: 193124 kB - RSS memory: 106136 kB - Data memory: 118308 kB
+#   step WB : Initializing whiteboard
+#   step WB : Starting
+#   step Building WB : Starting
+#   step Building WB : Done in     elapsed:0.1 s    user:0.2 s    system:0.1 s     %cpu:387.10       load:0.27       fm:185347 m      vm:342 m     vm:+154 m      um:143 m      um:+40 m
+#   step WB : Done in     elapsed:0.2 s    user:0.4 s    system:0.2 s     %cpu:363.64       load:0.27       fm:185338 m      vm:854 m     vm:+666 m      um:147 m      um:+44 m
+#   exec summary : Total memory: 875260 kB - RSS memory: 151496 kB - Data memory: 800444 kB
+#   step HW : Starting
+#   step HW : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185338 m      vm:854 m       vm:+0 m      um:147 m       um:+0 m
+#   step RDB : Whiteboard build in 0.0 s - 1188 instances, 1580 wires
+#   exec summary : Total memory: 875260 kB - RSS memory: 151496 kB - Data memory: 800444 kB
+#   exec summary : Total memory: 875260 kB - RSS memory: 151504 kB - Data memory: 800444 kB
+#   step RDB : Get System modules...
+#   step RDB : System modules identified in 0.0 s
+#   exec summary : Total memory: 875260 kB - RSS memory: 151516 kB - Data memory: 800444 kB
+#   step RDB : Explore hierarchicaly the modules from the top module 'top' to down
+
+#   step RDB : Modules explored in 0.0 s
+#   exec summary : Total memory: 876284 kB - RSS memory: 151588 kB - Data memory: 801468 kB
+#   step stat : ----------------------------------------------------------------------
+#   step stat : All gates Mapped in 0.0 s
+#   step stat : ----------------------------------------------------------------------
+#   step RDB : Equi Builder finished
+#   step RDB : Equi built in 0.2 s
+#   step DATABASE : Saving database to path './nofpga/zrdb'
+#   step DB LOAD : Loading names
+#   step DB LOAD : Names loaded in 0 seconds
+#   step DATABASE : Time stamp of the generated database is Wed Apr 19 01:04:57 2023
+#   step DICTIONARY : Indexing database names
+#   step DICTIONARY : Adjusted to 32768 names per chunk
+#   step DICTIONARY : Saving 1211 dictionary entries
+#   step FILE : Opening file './nofpga/zrdb/dictionary/names.zrdb' in write mode
+#   step FILE : Opening file './nofpga/zrdb/dictionary/0/0.zrdb' in write mode
+#   step DICTIONARY : Chunk 0 contains 1211 dictionary entries
+#   step DICTIONARY : Saved 1211 dictionary entries in 0 seconds
+#   step FILE : Opening file './nofpga/zrdb/coords.zrdb' in write mode
+#   step DB SAVE : Saving coordinates to file './nofpga/zrdb/coords.zrdb'
+#   step COORDS : Serializing coordinates table : start
+#   step COORDS : Serializing coordinates table : finished in 0 seconds
+#   step DB SAVE : Saving memories to file './nofpga/zrdb/mems.zrdb'
+#   step MEMS : Saving memories to file './nofpga/zrdb/mems.zrdb'
+#   step MEMS : Serializing memories table : start
+#   step FILE : Opening file './nofpga/zrdb/mems.zrdb' in write mode
+#   step MEMS : Updating indexes
+#   step MEMS : Serializing memories table : finished in 0 seconds
+#   step MEMS : Memories saved
+#   step DB SAVE : Saving stamp in file './nofpga/zrdb/stamp.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/stamp.zrdb' in write mode
+#   step DB SAVE : Stamp saved
+#   step FILE : Opening file './nofpga/zrdb/zrdb.xref' in write mode
+#   step ZTREEDB : Serializing tree in file ./nofpga/zrdb/tree.zrdb.
+#   step FILE : Opening file './nofpga/zrdb/tree.zrdb' in write mode
+#   step TREE : Serializing database
+#   step TREE : Serializing Chips ...
+#   step TREE : Serializing tree : start
+#   step TREE : Serializing tree : done in 0 seconds
+#   step TREE : Serializing database : done in 0 seconds
+#   step DATABASE : Closing tree
+#   step DATABASE : Whole database saved in 0 seconds
+#   step EQUI DB : Saving equi database to path './nofpga/zrdb'
+#   step EQUI DB : Finishing load
+#   step EQUI DB : Nothing to load
+#   step EQUI DB : Saving to path './nofpga/zrdb'
+#   step EQUI DB : Opening file 1/8 : './nofpga/zrdb/0_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/0_equis.zrdb' in write mode
+#   step EQUI DB : Opening file 2/8 : './nofpga/zrdb/1_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/1_equis.zrdb' in write mode
+#   step EQUI DB : Opening file 3/8 : './nofpga/zrdb/2_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/2_equis.zrdb' in write mode
+#   step EQUI DB : Opening file 4/8 : './nofpga/zrdb/3_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/3_equis.zrdb' in write mode
+#   step EQUI DB : Opening file 5/8 : './nofpga/zrdb/4_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/4_equis.zrdb' in write mode
+#   step EQUI DB : Opening file 6/8 : './nofpga/zrdb/5_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/5_equis.zrdb' in write mode
+#   step EQUI DB : Opening file 7/8 : './nofpga/zrdb/6_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/6_equis.zrdb' in write mode
+#   step EQUI DB : Opening file 8/8 : './nofpga/zrdb/7_equis.zrdb'
+#   step FILE : Opening file './nofpga/zrdb/7_equis.zrdb' in write mode
+#   step DB : Writing index for './nofpga/zrdb/7_equis.zrdb' (11 entries)
+#   step DB : Writing index for './nofpga/zrdb/7_equis.zrdb' (11 entries)
+#   step DB : Wrote index for './nofpga/zrdb/0_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/6_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/5_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/5_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/5_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/1_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/4_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/7_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/3_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/3_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/3_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/3_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/3_equis.zrdb' in 0 seconds
+#   step DB : Wrote index for './nofpga/zrdb/3_equis.zrdb' in 0 seconds
+#   step DB : Database './nofpga/zrdb/5_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/0_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/6_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/4_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/1_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/2_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/7_equis.zrdb' closed
+#   step DB : Database './nofpga/zrdb/3_equis.zrdb' closed
+#   step EQUI DB : Serialized 651 entries in 0 seconds
+#   step DB : Closing database
+#   step ZTREEDB : Closing auxillary signal databases
+#   step ZTREEDB : Closed auxillary signal databases : 0 seconds
+#   step ZTREEDB : Freeing allocated memory
+#   step ZTREEDB : Freed allocated memory : 0 seconds
+#   step DB : Closed database : 0 seconds
+#   exec summary : Total memory: 876284 kB - RSS memory: 152256 kB - Data memory: 801468 kB
+#   step browsing : Total approximate work time is 0.22 s
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m0s, user 0m0.262s, sys 0m0.118s
+#   exec summary : Total memory: 872184 kB - RSS memory: 112788 kB - Data memory: 785068 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:57 2023

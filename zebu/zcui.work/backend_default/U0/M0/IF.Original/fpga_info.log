@@ -1,0 +1,40 @@
+1681884353 01:05:53 AM Start_target=Original
+1681884353 01:05:53 AM   |- start zNetgen
+1681884363 01:06:03 AM     |=> zNetgen: 0 mins
+1681884363 01:06:03 AM   |- end zNetgen
+1681884367 01:06:07 AM   |- start XDC sorter
+1681884372 01:06:12 AM Start Vivado
+1681884422 01:07:02 AM     |- add_files/link_design: 1 mins
+1681884422 01:07:02 AM     |=> initialisation_linked: 1 mins
+1681884423 01:07:03 AM   |- start phase: netlist_analys_preproc
+1681884424 01:07:04 AM     |=> netlist_analys_preproc: 1 mins
+1681884425 01:07:05 AM   |- start phase: read_constraints
+1681884451 01:07:31 AM     |=> read_constraints: 1 mins
+1681884451 01:07:31 AM   |- start phase: opt_design
+1681884464 01:07:44 AM       |=>  opt_design: 1 mins
+1681884465 01:07:45 AM     |=> opt_design: 1 mins
+1681884465 01:07:45 AM   |- start phase: post_opt_netlist_analys_preproc
+1681884465 01:07:45 AM     |- post_opt_processing: 1 mins
+1681884465 01:07:45 AM   |- start phase: triton
+1681884483 01:08:03 AM        |- triton run1: 1 mins
+1681884503 01:08:23 AM   |- start phase: place_design
+1681884559 01:09:19 AM   |- start phase: post_place_phys
+1681884568 01:09:28 AM     |=> place_design: 2 mins
+1681884569 01:09:29 AM   |- start phase: route_design
+1681884745 01:12:25 AM   |- start phase: post_route_physopt
+1681884747 01:12:27 AM     |=> route_design: 3 mins
+1681884748 01:12:28 AM   |- start phase: report_timing
+1681884758 01:12:38 AM     |=> report_timing: 1 mins
+1681884759 01:12:39 AM   |- start phase: write_bitstream
+1681884857 01:14:17 AM     |=> write_bitstream: 2 mins
+1681884858 01:14:18 AM   |- start phase: zTime_analyse_Route
+1681884863 01:14:23 AM     |=> extra_timing: 1 mins
+1681884863 01:14:23 AM   |- start phase: location_building
+1681884864 01:14:24 AM     |=> location_building: 1 mins
+1681884866 01:14:26 AM     => vivado_ok: 8 mins
+1681884866 01:14:26 AM vivado: 8 mins
+1681884868 01:14:28 AM   |- zrdb: 0 mins
+1681884868 01:14:28 AM   |- zdb: 0 mins
+Fpga_Total: 9 min  (Winner:Original)
+
+FPGA_TOTAL_EXCL_GRID_DELAY: 9 mins

@@ -1,0 +1,11 @@
+Checking default backend unit
+    No errors
+Xcui file utf_generatefiles/new_utftran.xcui is read
+Xcui file utf_generatefiles/utftran.xcui is read
+Task graph built
+ zTopBuild succesfully added
+ zTopBuildAnalyzer succesfully added
+ Pre Par script builder succesfully added
+ zPar succesfully added
+ zParAnalyzer succesfully added
+ zTime succesfully added

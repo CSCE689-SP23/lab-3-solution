@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zNetgen">
+
+<targets>
+
+<target type="zTime_fpga">
+</target>
+
+</targets>
+
+</ZeBuUiDoc>

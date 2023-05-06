@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="glog">
+ <author>zCui</author>
+ <date></date>
+ <views>
+  <view name="Compile profile" order="0">
+ <p></p>
+ <p></p>
+ <p>BETA version: results may not be fully accurate</p>
+<h1>Compilation Summary</h1>
+<p>Last session wall clock times:</p>
+<p>    FE     : 29s</p>
+<p>    BE     : 17min 27s</p>
+<p>    Total  : 17min 56s</p>
+<p></p>
+<p>All sessions cumulative compile times:</p>
+<p>    without delay  : 16min 55s</p>
+<p>    with delay*    : 17min 26s</p>
+<p></p>
+<p>*including slot and grid delays, difference with total wall clock time could be NFS wait or internal flow handling delays
+</p>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,compilation_summary_from_critical_path,DPHHHDDS)Compilation Summary (from Compile time with delay (slot and grid)) Table^TABLE-</p>
+<p>Columns:</p>
+<p> - Phase                  : compilation phase</p>
+<p> - (%)                    : percentage of contribution to the overall compile time</p>
+<p> - Slot delay             : time waiting for a slot on the grid</p>
+<p> - Grid delay             : time between the task is spawed and the task is launched</p>
+<p> - Elapsed time           : contribution to the overall compile time</p>
+<p> - Host                   : host where the task was launched (only for tasks external to zCui)</p>
+<p> - Total # of jobs fired  : number of jobs with same phase fired</p>
+<p> - Max memory consumption : job in the phase with max memory taken</p>
+<h1>Compile time with delay (slot and grid)</h1>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,critical_path,DPHHHHHD)Compile time with delay (slot and grid) Table^TABLE-</p>
+<p>Columns:</p>
+<p> - Task                   : task label</p>
+<p> - (%)                    : percentage of contribution to the overall compile time</p>
+<p> - Slot delay             : time waiting for a slot on the grid</p>
+<p> - Grid delay             : time between the task is spawed and the task is launched</p>
+<p> - Elapsed time           : contribution to the overall compile time</p>
+<p> - Spawn time             : time spawning on the grid, taking the spawn time of the first task as reference</p>
+<p> - Finish time            : time finishing, taking the spawn time of the first task as reference</p>
+<p> - Host                   : host where the task was launched (only for tasks external to zCui)</p>
+<p>Compile time with delay (slot and grid)</p>
+<p>^PIECHART(tools/zCui/globalProfilerTable.xml,exec_time_piechart)Compile time with delay (slot and grid)^PIECHART-</p>
+<h1>Compile time without delay</h1>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,ideal_critical_path,DPHD)Compile time without delay Table^TABLE-</p>
+<p>Columns:</p>
+<p> - Task                   : task label</p>
+<p> - (%)                    : percentage of contribution to the overall compile time</p>
+<p> - Elapsed time           : contribution to the overall compile time</p>
+<p> - Host                   : host where the task was launched (only for tasks external to zCui)</p>
+<p>Compile time without delay</p>
+<p>^PIECHART(tools/zCui/globalProfilerTable.xml,exec_time_piechart_ideal)Compile time without delay^PIECHART-</p>
+<h1>Main Compilation Stages</h1>
+<h2>Front End Stages Timing</h2>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,festages,DHH)Front End Stages^TABLE-</p>
+<p>Columns :</p>
+<p> - elapsed time   : the time for the task being spawed and released</p>
+<p> - execution time : the time for the task being executed</p>
+<h2>Top 10 Synthesis Bundles</h2>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,top_ten_synth,DDD)Top 10 Synthesis Bundles^TABLE-</p>
+<h2>Back-end Stages</h2>
+<p>Back End Stages Timing for backend_default</p>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,back_end_stages,DHH)Back-end Stages^TABLE-</p>
+<p>Columns :</p>
+<p> - elapsed time   : the time for the task being spawed and released</p>
+<p> - execution time : the time for the task being executed</p>
+<h2>Top 5 zCore</h2>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,top_five_zcore,DDD)Top 5 zCore^TABLE-</p>
+<h2>Top 10 FPGAs</h2>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,top_ten_fpga,DDD)Top 10 FPGAs^TABLE-</p>
+<h1>FPGA Winner Details</h1>
+<p>Duration per compilation step for each FPGA</p>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,fpga_compilation,DDD)Durations^TABLE-</p>
+<p>Annex :</p>
+<p>WRITE_BIT* : WRITE_BITSTREAM</p>
+<h1>Hosts</h1>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,machine_names,DDDDDDDD)Hosts^TABLE-</p>
+<h1>Memory usage</h1>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,memory_usage,DSDD)Memory^TABLE-</p>
+<h1>Job Queue Memory Analysis</h1>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,memory_report,DSS)Job queue memory analysis^TABLE-</p>
+<h1>Grid Delay</h1>
+<p>There are no tasks with grid delay > 30s</p>
+<h1>Grid Delay Per Job Queue</h1>
+<p>^TABLE(tools/zCui/globalProfilerTable.xml,max_avg_grid_delay_per_job_queue,DHH)Grid Delay Per Job Queue with max and average^TABLE-</p>
+  </view>
+ </views>
+</ZeBuUiDoc>

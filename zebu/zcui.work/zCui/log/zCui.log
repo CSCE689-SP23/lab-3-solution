@@ -1,0 +1,340 @@
+________________________________________________________________________________
+
+                                    ZeBu (R)
+                          ZeBu Compiler User Interface
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# Build Date : Oct 18 2022 - 00:41:38
+
+#   Project filename: /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/gen_ufe_project.zpf
+
+#   19/04/23  01:04:15 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:15 - backend_default_Project_Analyzer added
+#   19/04/23  01:04:15 - backend_default_SingleBackend_Compilation_Checker added
+#   19/04/23  01:04:15 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:15 - backend_default_Project_Analyzer spawned 
+#   19/04/23  01:04:15 - backend_default_Project_Analyzer normal task termination
+#   19/04/23  01:04:15 - backend_default_BackendEntry added
+#   19/04/23  01:04:15 - vcs_splitter_VCS_Task_Builder added
+#   19/04/23  01:04:15 - Post_Vcs_Task_Builder added
+#   19/04/23  01:04:15 - VCS_Task_Analyzer added
+#   19/04/23  01:04:15 - backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer added
+#   19/04/23  01:04:15 - Target_Config added
+#   19/04/23  01:04:15 - Target_Config_Analyzer added
+#   19/04/23  01:04:15 - design_Fs_Macro_Script_Builder added
+#   19/04/23  01:04:15 - design_Fs_Macro added
+#   19/04/23  01:04:15 - Vcs_Version_Checker added
+#   19/04/23  01:04:15 - FE_Version_Checker added
+#   19/04/23  01:04:15 - BE_Version_Checker added
+#   19/04/23  01:04:15 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:17 - BE_Version_Checker spawned (queue ZebuLocal, 1 used) 
+#   19/04/23  01:04:17 - BE_Version_Checker info : Pid: 35025
+#   19/04/23  01:04:17 - FE_Version_Checker spawned (queue ZebuLocal, 2 used) 
+#   19/04/23  01:04:17 - FE_Version_Checker info : Pid: 35026
+#   19/04/23  01:04:17 - Vcs_Version_Checker spawned (queue ZebuLocal, 3 used) 
+#   19/04/23  01:04:17 - Vcs_Version_Checker info : Pid: 35027
+#   19/04/23  01:04:19 - Vcs_Version_Checker normal task termination
+#   19/04/23  01:04:19 - FE_Version_Checker normal task termination
+#   19/04/23  01:04:19 - BE_Version_Checker normal task termination
+#   19/04/23  01:04:19 - Target_Config spawned (queue Zebu, 1 used) 
+#   19/04/23  01:04:19 - Target_Config info : Pid: 35165
+#   19/04/23  01:04:21 - Target_Config normal task termination
+#   19/04/23  01:04:21 - Target_Config_Analyzer spawned 
+#   19/04/23  01:04:21 - Target_Config_Analyzer normal task termination
+#   19/04/23  01:04:21 - backend_default_zTopBuild added
+#   19/04/23  01:04:21 - backend_default_zTopBuildResultAnalyzer added
+#   19/04/23  01:04:21 - backend_default_PreParScriptBuilder added
+#   19/04/23  01:04:21 - backend_default_PostZCoreCompilationJoin added
+#   19/04/23  01:04:21 - backend_default_zPar added
+#   19/04/23  01:04:21 - backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer added
+#   19/04/23  01:04:21 - backend_default_Design_FPGA_Dispatch added
+#   19/04/23  01:04:21 - backend_default_PostFpgaCompilationJoin added
+#   19/04/23  01:04:21 - backend_default_FpgaResultAnalyzer added
+#   19/04/23  01:04:21 - backend_default_zTime added
+#   19/04/23  01:04:21 - backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer added
+#   19/04/23  01:04:21 - backend_default_zDB_Global_Controller added
+#   19/04/23  01:04:21 - backend_default_Build_ZDBPostProc_Script added
+#   19/04/23  01:04:21 - backend_default_preparezTimeFpga added
+#   19/04/23  01:04:21 - backend_default_zTimeFpga added
+#   19/04/23  01:04:21 - backend_default_zAuditReport added
+#   19/04/23  01:04:21 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:23 - design_Fs_Macro_Script_Builder spawned 
+#   19/04/23  01:04:23 - design_Fs_Macro_Script_Builder normal task termination
+#   19/04/23  01:04:25 - design_Fs_Macro spawned (queue Zebu, 1 used) 
+#   19/04/23  01:04:25 - design_Fs_Macro info : Pid: 35194
+#   19/04/23  01:04:27 - design_Fs_Macro normal task termination
+#   19/04/23  01:04:27 - vcs_splitter_VCS_Task_Builder spawned (queue Zebu, 1 used) 
+#   19/04/23  01:04:27 - vcs_splitter_VCS_Task_Builder info : Pid: 35227
+#   19/04/23  01:04:33 - vcs_splitter_VCS_Task_Builder normal task termination
+#   19/04/23  01:04:33 - VCS_Task_Analyzer spawned 
+#   19/04/23  01:04:34 - RhinoFsdb_Builder added
+#   19/04/23  01:04:34 - design_Default_RTL_GroupBundle_0_Synthesis added
+#   19/04/23  01:04:34 - design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer added
+#   19/04/23  01:04:34 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:34 - VCS_Task_Analyzer normal task termination
+#   19/04/23  01:04:34 - Post_Vcs_Task_Builder spawned 
+#   19/04/23  01:04:34 - Post_Vcs_Task_Builder normal task termination
+#   19/04/23  01:04:34 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:34 - Verdi_Compilation added
+#   19/04/23  01:04:34 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:36 - backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer spawned (queue ZebuLocal, 1 used) 
+#   19/04/23  01:04:36 - backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer info : Pid: 35955
+#   19/04/23  01:04:36 - RhinoFsdb_Builder spawned (queue Zebu, 1 used) 
+#   19/04/23  01:04:36 - RhinoFsdb_Builder info : Pid: 35956
+#   19/04/23  01:04:36 - Verdi_Compilation spawned (queue Zebu, 2 used) 
+#   19/04/23  01:04:36 - Verdi_Compilation info : Pid: 35957
+#   19/04/23  01:04:36 - design_Default_RTL_GroupBundle_0_Synthesis spawned (queue ZebuSynthesis, 1 used out of 7) 
+#   19/04/23  01:04:36 - design_Default_RTL_GroupBundle_0_Synthesis info : Pid: 35958
+#   19/04/23  01:04:38 - backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer normal task termination
+#   19/04/23  01:04:38 - Verdi_Compilation normal task termination
+#   19/04/23  01:04:38 - RhinoFsdb_Builder normal task termination
+#   19/04/23  01:04:40 - design_Default_RTL_GroupBundle_0_Synthesis normal task termination
+#   19/04/23  01:04:40 - design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer spawned 
+#   19/04/23  01:04:40 - design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer normal task termination
+#   19/04/23  01:04:40 - design_Default_RTL_Group_Memory_ram_zMem added
+#   19/04/23  01:04:40 - design_Default_RTL_Group_Memory_rom_zMem added
+#   19/04/23  01:04:40 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:42 - design_Default_RTL_Group_Memory_ram_zMem normal task termination: skipped
+#   19/04/23  01:04:42 - design_Default_RTL_Group_Memory_rom_zMem normal task termination: skipped
+#   19/04/23  01:04:44 - backend_default_BackendEntry spawned 
+#   19/04/23  01:04:44 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:44 - backend_default_zDveTool added
+#   19/04/23  01:04:44 - backend_default_zEquiGenerator added
+#   19/04/23  01:04:44 - backend_default_zRtlToEqui added
+#   19/04/23  01:04:44 - backend_default_zSimuFsdbHeader added
+#   19/04/23  01:04:44 - backend_default_zSimzilla added
+#   19/04/23  01:04:44 - backend_default_zGraphGenerator added
+#   19/04/23  01:04:44 - backend_default_RTL_DB_Indexer added
+#   19/04/23  01:04:44 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:45 - backend_default_RTL_DB_Link added
+#   19/04/23  01:04:45 - backend_default_RTL_DB_RunTime added
+#   19/04/23  01:04:45 - backend_default_Vcs_Link added
+#   19/04/23  01:04:45 - backend_default_OptionsDbProc added
+#   19/04/23  01:04:45 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:45 - backend_default_BackendEntry normal task termination
+#   19/04/23  01:04:45 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:45 - backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry added
+#   19/04/23  01:04:45 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:45 - performance diagnostic profiler report generated in zCui/backup/backend_default_23_4_19_01_04_14/backend_default_globalLog.html
+#   19/04/23  01:04:47 - backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry spawned (queue ZebuLocal, 1 used) 
+#   19/04/23  01:04:47 - backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry info : Pid: 36080
+#   19/04/23  01:04:47 - backend_default_OptionsDbProc spawned (queue ZebuLocal, 2 used) 
+#   19/04/23  01:04:47 - backend_default_OptionsDbProc info : Pid: 36081
+#   19/04/23  01:04:47 - backend_default_RTL_DB_Indexer spawned (queue Zebu, 1 used) 
+#   19/04/23  01:04:47 - backend_default_RTL_DB_Indexer info : Pid: 36082
+#   19/04/23  01:04:47 - backend_default_Vcs_Link spawned (queue Zebu, 2 used) 
+#   19/04/23  01:04:47 - backend_default_Vcs_Link info : Pid: 36083
+#   19/04/23  01:04:47 - backend_default_zDveTool spawned (queue Zebu, 3 used) 
+#   19/04/23  01:04:47 - backend_default_zDveTool info : Pid: 36084
+#   19/04/23  01:04:49 - backend_default_Vcs_Link normal task termination
+#   19/04/23  01:04:49 - backend_default_zDveTool normal task termination
+#   19/04/23  01:04:49 - backend_default_OptionsDbProc normal task termination
+#   19/04/23  01:04:49 - backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry normal task termination
+#   19/04/23  01:04:49 - backend_default_RTL_DB_Indexer normal task termination
+#   19/04/23  01:04:49 - backend_default_RTL_DB_Link spawned (queue Zebu, 1 used) 
+#   19/04/23  01:04:49 - backend_default_RTL_DB_Link info : Pid: 36166
+#   19/04/23  01:04:51 - backend_default_RTL_DB_Link normal task termination
+#   19/04/23  01:04:51 - backend_default_RTL_DB_RunTime spawned (queue Zebu, 1 used) 
+#   19/04/23  01:04:51 - backend_default_RTL_DB_RunTime info : Pid: 36183
+#   19/04/23  01:04:51 - backend_default_zTopBuild spawned (queue Zebu, 2 used) 
+#   19/04/23  01:04:51 - backend_default_zTopBuild info : Pid: 36184
+#   19/04/23  01:04:53 - backend_default_RTL_DB_RunTime normal task termination
+#   19/04/23  01:04:57 - backend_default_zTopBuild normal task termination
+#   19/04/23  01:04:57 - backend_default_zTopBuildResultAnalyzer spawned 
+#   19/04/23  01:04:57 - backend_default_zBuildClusteringSaver added
+#   19/04/23  01:04:57 - backend_default_zCoreBuild_Part_0 added
+#   19/04/23  01:04:57 - backend_default_zCoreBuildAnalyzer_Part_0 added
+#   19/04/23  01:04:57 - backend_default_RTB_Front_End added
+#   19/04/23  01:04:57 - backend_default_RTB_Front_End_Result_Analyzer added
+#   19/04/23  01:04:57 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:04:57 - backend_default_zTopBuildResultAnalyzer normal task termination
+#   19/04/23  01:04:57 - backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer spawned (queue ZebuLocal, 1 used) 
+#   19/04/23  01:04:57 - backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer info : Pid: 36271
+#   19/04/23  01:04:57 - backend_default_zEquiGenerator spawned (queue Zebu, 1 used) 
+#   19/04/23  01:04:57 - backend_default_zEquiGenerator info : Pid: 36272
+#   19/04/23  01:04:57 - backend_default_zRtlToEqui spawned (queue Zebu, 2 used) 
+#   19/04/23  01:04:57 - backend_default_zRtlToEqui info : Pid: 36273
+#   19/04/23  01:04:57 - backend_default_zSimuFsdbHeader spawned (queue Zebu, 3 used) 
+#   19/04/23  01:04:57 - backend_default_zSimuFsdbHeader info : Pid: 36274
+#   19/04/23  01:04:57 - performance diagnostic profiler report generated in zCui/backup/backend_default_23_4_19_01_04_14/backend_default_globalLog.html
+#   19/04/23  01:04:59 - backend_default_zRtlToEqui normal task termination
+#   19/04/23  01:04:59 - backend_default_zEquiGenerator normal task termination
+#   19/04/23  01:04:59 - backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer normal task termination
+#   19/04/23  01:04:59 - backend_default_zSimuFsdbHeader normal task termination
+#   19/04/23  01:04:59 - backend_default_RTB_Front_End spawned (queue Zebu, 1 used) 
+#   19/04/23  01:04:59 - backend_default_RTB_Front_End info : Pid: 36350
+#   19/04/23  01:04:59 - backend_default_zCoreBuild_Part_0 spawned (queue Zebu, 2 used) 
+#   19/04/23  01:04:59 - backend_default_zCoreBuild_Part_0 info : Pid: 36351
+#   19/04/23  01:04:59 - backend_default_zGraphGenerator spawned (queue Zebu, 3 used) 
+#   19/04/23  01:04:59 - backend_default_zGraphGenerator info : Pid: 36352
+#   19/04/23  01:04:59 - backend_default_zSimzilla spawned (queue Zebu, 4 used) 
+#   19/04/23  01:04:59 - backend_default_zSimzilla info : Pid: 36353
+#   19/04/23  01:05:01 - backend_default_zSimzilla normal task termination
+#   19/04/23  01:05:01 - backend_default_zGraphGenerator normal task termination
+#   19/04/23  01:05:01 - backend_default_RTB_Front_End normal task termination
+#   19/04/23  01:05:01 - backend_default_RTB_Front_End_Result_Analyzer spawned 
+#   19/04/23  01:05:01 - backend_default_RTB_Front_End_Result_Analyzer normal task termination
+#   19/04/23  01:05:01 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:01 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:13 - backend_default_zCoreBuild_Part_0 normal task termination
+#   19/04/23  01:05:13 - backend_default_zBuildClusteringSaver spawned 
+#   19/04/23  01:05:13 - backend_default_zBuildClusteringSaver normal task termination
+#   19/04/23  01:05:13 - backend_default_zCoreBuildAnalyzer_Part_0 spawned 
+#   19/04/23  01:05:13 - backend_default_zCoreBuildAnalyzer_Part_0 normal task termination
+#   19/04/23  01:05:13 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:13 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:13 - performance diagnostic profiler report generated in zCui/backup/backend_default_23_4_19_01_04_14/backend_default_globalLog.html
+#   19/04/23  01:05:15 - backend_default_PostZCoreCompilationJoin spawned 
+#   19/04/23  01:05:16 - backend_default_PostZCoreCompilationJoin normal task termination
+#   19/04/23  01:05:18 - backend_default_PreParScriptBuilder spawned 
+#   19/04/23  01:05:18 - backend_default_PreParScriptBuilder normal task termination
+#   19/04/23  01:05:18 - backend_default_zPar spawned (queue Zebu, 1 used) 
+#   19/04/23  01:05:18 - backend_default_zPar info : Pid: 36573
+#   19/04/23  01:05:18 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:18 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:28 - backend_default_zPar normal task termination
+#   19/04/23  01:05:28 - backend_default_Design_FPGA_Dispatch spawned 
+#   19/04/23  01:05:28 - backend_default_U0_M0_F00_PaR_Controller added
+#   19/04/23  01:05:28 - backend_default_U0_M0_F00_FpgaPostProc added
+#   19/04/23  01:05:28 - backend_default_U0_M0_F00_zFpgaTiming added
+#   19/04/23  01:05:28 - backend_default_PostZFpgaTimingJoin added
+#   19/04/23  01:05:28 - backend_default_U0_M0_F08_PaR_Controller added
+#   19/04/23  01:05:28 - backend_default_U0_M0_F08_FpgaPostProc added
+#   19/04/23  01:05:28 - backend_default_U0_M0_F08_zFpgaTiming added
+#   19/04/23  01:05:28 - backend_default_zFW_U0_M0_IF added
+#   19/04/23  01:05:28 - backend_default_U0_M0_IF_PaR_Controller added
+#   19/04/23  01:05:28 - backend_default_RTB_FPGA_Dispatch_U0_M0_IF added
+#   19/04/23  01:05:28 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:28 - backend_default_Design_FPGA_Dispatch normal task termination
+#   19/04/23  01:05:28 - backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer spawned (queue ZebuLocal, 1 used) 
+#   19/04/23  01:05:28 - backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer info : Pid: 36618
+#   19/04/23  01:05:28 - performance diagnostic profiler report generated in zCui/backup/backend_default_23_4_19_01_04_14/backend_default_globalLog.html
+#   19/04/23  01:05:30 - backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer normal task termination
+#   19/04/23  01:05:30 - backend_default_U0_M0_F00_PaR_Controller spawned 
+#   19/04/23  01:05:30 - backend_default_U0_M0_F08_PaR_Controller spawned 
+#   19/04/23  01:05:30 - backend_default_U0_M0_F08_Cleaning spawned (queue Zebu, 1 used) 
+#   19/04/23  01:05:30 - backend_default_U0_M0_F08_Cleaning info : Pid: 36632
+#   19/04/23  01:05:30 - backend_default_U0_M0_F00_Cleaning spawned (queue Zebu, 2 used) 
+#   19/04/23  01:05:30 - backend_default_U0_M0_F00_Cleaning info : Pid: 36633
+#   19/04/23  01:05:30 - backend_default_zFW_U0_M0_IF spawned (queue Zebu, 3 used) 
+#   19/04/23  01:05:30 - backend_default_zFW_U0_M0_IF info : Pid: 36634
+#   19/04/23  01:05:30 - backend_default_U0_M0_F00_Cleaning added
+#   19/04/23  01:05:30 - backend_default_U0_M0_F08_Cleaning added
+#   19/04/23  01:05:30 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:32 - backend_default_U0_M0_F08_Cleaning normal task termination
+#   19/04/23  01:05:32 - backend_default_U0_M0_F00_Cleaning normal task termination
+#   19/04/23  01:05:32 - backend_default_U0_M0_F00_Original added
+#   19/04/23  01:05:32 - backend_default_U0_M0_F08_Original added
+#   19/04/23  01:05:32 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:34 - backend_default_U0_M0_F00_Original spawned (queue ZebuIse, 1 used out of 20) 
+#   19/04/23  01:05:34 - backend_default_U0_M0_F00_Original info : Pid: 36686
+#   19/04/23  01:05:34 - backend_default_U0_M0_F08_Original spawned (queue ZebuIse, 2 used out of 20) 
+#   19/04/23  01:05:34 - backend_default_U0_M0_F08_Original info : Pid: 36687
+#   19/04/23  01:05:42 - backend_default_zFW_U0_M0_IF normal task termination
+#   19/04/23  01:05:42 - backend_default_RTB_FPGA_Dispatch_U0_M0_IF spawned 
+#   19/04/23  01:05:42 - backend_default_RTB_FPGA_Dispatch_U0_M0_IF normal task termination
+#   19/04/23  01:05:42 - backend_default_U0_M0_IF_zFpgaTiming added
+#   19/04/23  01:05:42 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:44 - backend_default_zDB_Global_Controller spawned 
+#   19/04/23  01:05:44 - backend_default_U0_M0_IF_PaR_Controller spawned 
+#   19/04/23  01:05:44 - backend_default_U0_M0_IF_Cleaning spawned (queue Zebu, 1 used) 
+#   19/04/23  01:05:44 - backend_default_U0_M0_IF_Cleaning info : Pid: 37240
+#   19/04/23  01:05:44 - backend_default_zTime spawned (queue Zebu, 2 used) 
+#   19/04/23  01:05:44 - backend_default_zTime info : Pid: 37241
+#   19/04/23  01:05:44 - backend_default_U0_M0_IF_Cleaning added
+#   19/04/23  01:05:44 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:46 - backend_default_zTime normal task termination
+#   19/04/23  01:05:46 - backend_default_U0_M0_IF_Cleaning normal task termination
+#   19/04/23  01:05:46 - backend_default_U0_M0_IF_Original added
+#   19/04/23  01:05:46 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:05:46 - performance diagnostic profiler report generated in zCui/backup/backend_default_23_4_19_01_04_14/backend_default_globalLog.html
+#   19/04/23  01:05:48 - backend_default_U0_M0_IF_Original spawned (queue ZebuIse, 3 used out of 20) 
+#   19/04/23  01:05:48 - backend_default_U0_M0_IF_Original info : Pid: 37334
+#   19/04/23  01:15:44 - backend_default_U0_M0_F08_Original normal task termination
+#   19/04/23  01:15:46 - backend_default_U0_M0_F08_Finish added
+#   19/04/23  01:15:46 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:15:48 - backend_default_U0_M0_F08_Finish spawned (queue Zebu, 1 used) 
+#   19/04/23  01:15:48 - backend_default_U0_M0_F08_Finish info : Pid: 12640
+#   19/04/23  01:16:20 - backend_default_U0_M0_F08_Finish normal task termination
+#   19/04/23  01:16:22 - backend_default_U0_M0_F08_PaR_Controller normal task termination
+#   19/04/23  01:16:22 - backend_default_U0_M0_F08_FpgaPostProc normal task termination: skipped
+#   19/04/23  01:16:22 - backend_default_U0_M0_F08_zFpgaTiming spawned (queue Zebu, 1 used) 
+#   19/04/23  01:16:22 - backend_default_U0_M0_F08_zFpgaTiming info : Pid: 13011
+#   19/04/23  01:16:24 - backend_default_U0_M0_F08_zFpgaTiming normal task termination
+#   19/04/23  01:16:50 - backend_default_U0_M0_IF_Original normal task termination
+#   19/04/23  01:16:52 - backend_default_U0_M0_IF_Finish added
+#   19/04/23  01:16:52 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:16:54 - backend_default_U0_M0_IF_Finish spawned (queue Zebu, 1 used) 
+#   19/04/23  01:16:54 - backend_default_U0_M0_IF_Finish info : Pid: 13418
+#   19/04/23  01:17:26 - backend_default_U0_M0_IF_Finish normal task termination
+#   19/04/23  01:17:28 - backend_default_U0_M0_IF_PaR_Controller normal task termination
+#   19/04/23  01:17:28 - backend_default_U0_M0_IF_zFpgaTiming spawned (queue Zebu, 1 used) 
+#   19/04/23  01:17:28 - backend_default_U0_M0_IF_zFpgaTiming info : Pid: 13613
+#   19/04/23  01:17:32 - backend_default_U0_M0_IF_zFpgaTiming normal task termination
+#   19/04/23  01:21:23 - backend_default_U0_M0_F00_Original normal task termination
+#   19/04/23  01:21:25 - backend_default_U0_M0_F00_Finish added
+#   19/04/23  01:21:25 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:21:27 - backend_default_U0_M0_F00_Finish spawned (queue Zebu, 1 used) 
+#   19/04/23  01:21:27 - backend_default_U0_M0_F00_Finish info : Pid: 15298
+#   19/04/23  01:21:59 - backend_default_U0_M0_F00_Finish normal task termination
+#   19/04/23  01:22:01 - backend_default_U0_M0_F00_PaR_Controller normal task termination
+#   19/04/23  01:22:01 - backend_default_PostFpgaCompilationJoin spawned 
+#   19/04/23  01:22:02 - backend_default_PostFpgaCompilationJoin normal task termination
+#   19/04/23  01:22:02 - backend_default_U0_M0_F00_FpgaPostProc normal task termination: skipped
+#   19/04/23  01:22:02 - backend_default_U0_M0_F00_zFpgaTiming spawned (queue Zebu, 1 used) 
+#   19/04/23  01:22:02 - backend_default_U0_M0_F00_zFpgaTiming info : Pid: 15466
+#   19/04/23  01:22:04 - backend_default_preparezTimeFpga spawned 
+#   19/04/23  01:22:04 - backend_default_preparezTimeFpga normal task termination
+#   19/04/23  01:22:04 - backend_default_FpgaResultAnalyzer spawned (queue Zebu, 2 used) 
+#   19/04/23  01:22:04 - backend_default_FpgaResultAnalyzer info : Pid: 15518
+#   19/04/23  01:22:04 - backend_default_zDB_Global added
+#   19/04/23  01:22:04 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:22:06 - backend_default_U0_M0_F00_zFpgaTiming normal task termination
+#   19/04/23  01:22:06 - backend_default_PostZFpgaTimingJoin spawned 
+#   19/04/23  01:22:07 - backend_default_PostZFpgaTimingJoin normal task termination
+#   19/04/23  01:22:07 - backend_default_zDB_Global spawned (queue Zebu, 2 used) 
+#   19/04/23  01:22:07 - backend_default_zDB_Global info : Pid: 16928
+#   19/04/23  01:22:07 - backend_default_zTimeFpga spawned (queue Zebu, 3 used) 
+#   19/04/23  01:22:07 - backend_default_zTimeFpga info : Pid: 16929
+#   19/04/23  01:22:09 - backend_default_zTimeFpga normal task termination
+#   19/04/23  01:22:09 - backend_default_FpgaResultAnalyzer normal task termination
+#   19/04/23  01:22:09 - backend_default_zDB_Global normal task termination
+#   19/04/23  01:22:09 - backend_default_zAuditReport spawned (queue ZebuLocal, 1 used) 
+#   19/04/23  01:22:09 - backend_default_zAuditReport info : Pid: 17052
+#   19/04/23  01:22:09 - performance diagnostic profiler report generated in zCui/backup/backend_default_23_4_19_01_04_14/backend_default_globalLog.html
+#   19/04/23  01:22:11 - backend_default_zAuditReport normal task termination: Return status 7
+#   19/04/23  01:22:11 - backend_default_zDB_Global_Controller normal task termination
+#   19/04/23  01:22:11 - backend_default_Build_ZDBPostProc_Script spawned 
+#   19/04/23  01:22:11 - backend_default_Build_ZDBPostProc_Script normal task termination
+#   19/04/23  01:22:11 - backend_default_SingleBackend_Compilation_Checker spawned 
+#   19/04/23  01:22:11 - Profiling_Results_Analyzer spawned (queue ZebuLocal, 1 used) 
+#   19/04/23  01:22:11 - Profiling_Results_Analyzer info : Pid: 17068
+#   19/04/23  01:22:11 - Profiling_Results_Analyzer added
+#   19/04/23  01:22:11 - Re-Compute Task Graph Node Rows
+#   19/04/23  01:22:13 - Profiling_Results_Analyzer normal task termination
+#   19/04/23  01:22:17 - backend_default_SingleBackend_Compilation_Checker normal task termination
+#   19/04/23  01:22:17 - Compilation Ended successfully
+#   19/04/23  01:22:17 - performance diagnostic profiler report generated in zCui/backup/backend_default_23_4_19_01_04_14/backend_default_globalLog.html
+#   Network File System Parameters : Optimizer Method = 5 ; Number Of Retries = 120 ; Retry Delay = 1000
+#   Network File System Stats : Number of Optimizer Attempts = 0 ; Number Of Optimizer Failures = 0
+#   Network File System Stats : Number of Retry Cycles = 0 ; Number Of Failures = 0 ; Average Number of Retries = 0 ; Maximum Number Of Retries = 0
+#   Edif Check : Nb Of Checks 12; Nb Of Passed Checks 12; Nb Of Failed Checks 0; Nb Of Check Calls 0
+
+#   19/04/23  01:22:26 - performance diagnostic profiler report generated in zcui.work/zCui/backup/backend_default_23_4_19_01_04_14/backend_default_globalLog.html

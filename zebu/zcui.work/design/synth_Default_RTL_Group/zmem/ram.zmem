@@ -1,0 +1,15 @@
+memory set_global_debug_mode true
+mem new ram_ZMEM_mem auto
+#
+# Inferred from ../source/stb/ram.sv, line 15
+# Variable is mem
+#
+mem depth 256
+mem width 9
+mem add_port w0 w
+mem set_port_access w0 sync
+mem_port w0 clk w0clk 
+mem_port w0 addr w0addr 
+mem_port w0 di w0di 
+mem_port w0 we w0we 
+mem generate

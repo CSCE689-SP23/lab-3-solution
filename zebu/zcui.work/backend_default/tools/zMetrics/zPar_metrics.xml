@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics>
+<Attribute id="beginTime">
+  <Value>Wed Apr 19 01:05:18 2023</Value>
+</Attribute>
+<Attribute id="NumberMGTInTopDataPath">
+  <Value>0</Value>
+</Attribute>
+<Attribute id="NumberMGTInTopFilterPath">
+  <Value>0</Value>
+</Attribute>
+<Attribute id="StepElapsedTime_6_SocketGneration">
+  <Value>6.590000</Value>
+</Attribute>
+<Attribute id="StepElapsedTime_7_Sdfrequest_timing">
+  <Value>0.030000</Value>
+</Attribute>
+<Attribute id="TimingArcsCount">
+  <Value>5</Value>
+</Attribute>
+<Attribute id="TimingNodesCount">
+  <Value>10</Value>
+</Attribute>
+<Attribute id="xclkFrequency">
+  <Value>450000</Value>
+</Attribute>
+<Attribute id="TotalMemoryInKB">
+  <Value>1874684</Value>
+</Attribute>
+<Attribute id="elapsedTime">
+  <Value>8</Value>
+</Attribute>
+<Attribute id="endTime">
+  <Value>Wed Apr 19 01:05:26 2023</Value>
+</Attribute>
+<Attribute id="sysTime">
+  <Value>0.729</Value>
+</Attribute>
+<Attribute id="userCompileTime">
+  <Value>6.557</Value>
+</Attribute>
+</Metrics>

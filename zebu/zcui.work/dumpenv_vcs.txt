@@ -1,0 +1,13 @@
+LD_LIBRARY_PATH=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/lib:/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib::/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbWriter/LINUX64/:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbReader/LINUX64/:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/cmlp/etc/python36_cmlp1/lib/python3.6/site-packages/cll:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/cmlp/etc/python36_cmlp1/lib/:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw/lib/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/NPI/lib/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbReader/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbWriter/linux64:/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/confpro/linux_a_64:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/confpro/linux_a_64/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/thirdparty/gtk
+TCL_LIBRARY=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl/tcl8.6
+VCS_MODE_FLAG=64
+VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+TCLLIBPATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl
+ZEBU_VCS_CONFIG_FILE=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/vcs_splitter/vcs_splitter_config_file
+PROXIMA_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+TCL_LIBRARY_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl
+VCS_ARCH=linux64
+SYNOPSYS_SIM_SETUP=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/vcs_splitter/verdi_synopsys_sim.setup
+SYNOPSYS_SIM=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12

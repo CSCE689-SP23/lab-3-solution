@@ -1,0 +1,2531 @@
+make[1]: Entering directory `/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original'
+
+################################################################################
+##                                  PRINT ENV                                 ##
+################################################################################
+FPGA_LOCAL_DISK_COMP_DIR=
+FPGA_LOCAL_DISK_COMP=NO
+VCS_ARCH_OVERRIDE=linux
+VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+VIVADO_ENABLE_MULTI_MACHINE_MPF=0
+VIVADO_ENABLE_SINGLE_MACHINE_MPF=0
+XILINX_LOCAL_USER_DATA=no
+ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+ZEBU_COMPILATION_OBJECTIVE=
+ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+ZEBU_FPGA_MODULE_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0
+ZEBU_FPGA_ORIGINAL_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original
+ZEBU_FPGA_SRC_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.src
+ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+ZEBU_SDF_ANALYSIS=1
+ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+
+
+####################################################################
+###################### VERIFICATION MACHINE  #######################
+####################################################################
+Host name is csce-quinn-s1.engr.tamu.edu
+Fpga compilation directory : /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original
+
+Make process id 37382
+------[ CPU info (40 cores) ]-----------------------------
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 63
+model name	: Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+stepping	: 2
+microcode	: 0x49
+cpu MHz		: 2639.300
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 20
+core id		: 0
+cpu cores	: 10
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 15
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm epb invpcid_single ssbd rsb_ctxsw ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm xsaveopt cqm_llc cqm_occup_llc dtherm ida arat pln pts md_clear spec_ctrl intel_stibp flush_l1d
+bogomips	: 4600.33
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+------[ top (51 lines) ]---------------------------------
+top - 01:05:49 up 10:09,  1 user,  load average: 0.68, 0.21, 0.11
+Tasks: 447 total,   3 running, 444 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  5.0 us,  1.0 sy,  0.0 ni, 94.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 19781961+total, 18727660+free,  5581428 used,  4961584 buff/cache
+KiB Swap:  4194300 total,  4194300 free,        0 used. 19151704+avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+37142 davidke+  20   0 1804748   1.4g  38100 R  94.4  0.7   0:08.24 zNetgen
+37141 davidke+  20   0 1839588   1.4g  38344 R  88.9  0.7   0:09.15 zNetgen
+37442 davidke+  20   0  164644   2568   1656 R  16.7  0.0   0:00.05 top
+ 1193 root      20   0  483136 248328  87304 S  11.1  0.1   7:21.97 esensor
+    1 root      20   0  193836   6984   4220 S   0.0  0.0   0:15.83 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kthreadd
+    4 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:+
+    6 root      20   0       0      0      0 S   0.0  0.0   0:00.03 ksoftirqd/0
+    7 root      rt   0       0      0      0 S   0.0  0.0   0:00.14 migration/0
+    8 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh
+    9 root      20   0       0      0      0 S   0.0  0.0   0:11.52 rcu_sched
+   10 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 lru-add-dr+
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 watchdog/0
+   12 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 watchdog/1
+   13 root      rt   0       0      0      0 S   0.0  0.0   0:00.14 migration/1
+   14 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/1
+   16 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/1:+
+   18 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 watchdog/2
+   19 root      rt   0       0      0      0 S   0.0  0.0   0:00.14 migration/2
+   20 root      20   0       0      0      0 S   0.0  0.0   0:00.01 ksoftirqd/2
+   21 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/2:0
+   22 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:+
+   24 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 watchdog/3
+   25 root      rt   0       0      0      0 S   0.0  0.0   0:00.14 migration/3
+   26 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/3
+   28 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/3:+
+   29 root      rt   0       0      0      0 S   0.0  0.0   0:00.06 watchdog/4
+   30 root      rt   0       0      0      0 S   0.0  0.0   0:00.14 migration/4
+   31 root      20   0       0      0      0 S   0.0  0.0   0:00.14 ksoftirqd/4
+   33 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/4:+
+   34 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 watchdog/5
+   35 root      rt   0       0      0      0 S   0.0  0.0   0:00.14 migration/5
+   36 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/5
+   37 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/5:0
+   38 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/5:+
+   39 root      rt   0       0      0      0 S   0.0  0.0   0:00.06 watchdog/6
+   40 root      rt   0       0      0      0 S   0.0  0.0   0:00.14 migration/6
+   41 root      20   0       0      0      0 S   0.0  0.0   0:00.12 ksoftirqd/6
+   43 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/6:+
+   44 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 watchdog/7
+   45 root      rt   0       0      0      0 S   0.0  0.0   0:00.14 migration/7
+   46 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/7
+   48 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/7:+
+   49 root      rt   0       0      0      0 S   0.0  0.0   0:00.06 watchdog/8
+----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+[SW-FPGA] - INFO : run in Original target, cleaning fpga_info.log log file
+
+
+################################################################################
+##                                 STEP ZNETGEN                               ##
+################################################################################
+znetgen start time: 1681884353
+if ! [ -e znetgen_skipped.info ]; then START_TIME=$(date +%s) ; time  zNetgen design.tcl  && touch design_zlcr.zdc ; END_TIME=$(date +%s) ; ZFILENAME=xdlRename.log; if ( [ -f $ZFILENAME ] ) && ! gzip -t $ZFILENAME &> /dev/null; then gzip -f $ZFILENAME; mv ${ZFILENAME}.gz $ZFILENAME; fi; mv xdlRename.log ./fpga_reports/zNetgen/xdlRename.log.gz ; echo "`date +%s` `date +%X`     |=> zNetgen: $(( ($END_TIME - $START_TIME ) /60 )) mins" >> fpga_info.log ; fi
+
+                                    ZeBu (R)
+                                    zNetgen
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zNetgen design.tcl 
+
+# start time is Wed Apr 19 01:05:53 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:44
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.79 0.24 0.12 4/504 37692
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 183827 MB
+#            Total Free including cache: 188550 MB
+#            Swap cache: 0 MB Cached space: 4723 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 426 MB VmPeak: 426 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255454
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+### warning in zNetgen [CCT0300W] : can't set stack to unlimited, zNetgen may randomly crash.
+#   step INIT : Advanced commands have been loaded
+zNetgen_common_pkg has been loaded
+##############################################
+# 1 LOAD EDIFS
+##############################################
+#   step ZNF PARSER : reading netlist from ZNF file 'fpga.edf.gz'
+##############################################
+# 2 MERGE
+##############################################
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step merge : merging file 'fpga.edf.gz'
+#   step merge : setting top module 'ztop' from library 'lib_driver_boxes'.
+#   step set_top : setting module 'ztop' as top of netlist 'zmerge from ztop'
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step NtgTclReportNetlistMetric : The netlist resource usage has been written into fpga_data.info with mode:zNetgen_read_edifs.
+### warning in mudb_editor [CCC0919W] : MuDb directory does not exist.
+#   step FETCH_MODE : Performing fetch mode clock instrumentation for Critical Path Optimization
+#   step SOCKET SANITY CHECK : INSTANCE=ClockRegion000RD_18B, MOD=RecvClockRegionD1__1, PV=O
+#   step SOCKET SANITY CHECK : INSTANCE=ClockRegion000RD_18B, MOD=RecvClockRegionD1__1, PV=I
+##############################################
+# 3 NETLIST PROCESSING
+##############################################
+# ZNETGEN REPORT INFO: ZOPT mode=off
+   ##############################################
+   # 3.0 ZEBU_DONT_TOUCH
+   ##############################################
+#   step DONT TOUCH : Protect all instances with 'ZEBU_VIVADO_STOP_TIMING' attribute.
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step DONT TOUCH : 0 instance has been protected.
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+   ##############################################
+   # 3.1 ZVIEW
+   ##############################################
+   ##############################################
+   # 3.2 XDL RENAME
+   ##############################################
+   ##############################################
+   # 3.2 XDL RENAME
+   ##############################################
+#   step XDL RENAME : Log file named xdlRename.log
+#   step XDL RENAME : Log file named xdlRename.log
+   ##############################################
+   # 3.6 ZXLSYS
+   ##############################################
+#   step instr_ztig_reg : 0 instances of the writeback blackbox registers replaced.
+#   step instr_zxlsys : zxlsys manipulation 
+      ##############################################
+      # 3.6 ZXLSYS FOR IF
+      ##############################################
+#   step instr_zxlsys : zxlsys manipulation RTB
+   ##############################################
+   # 3.9 INSERT ADDITIONAL BUFG
+   ##############################################
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.bufg_sys_sclk[1]' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_1.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_2.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_3.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.bufg_sys_sclk[0]' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clko.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Found 6 BUFGs in the design (max 12)
+   ##############################################
+   # 3.10 SPLIT FANOUT
+   ##############################################
+   ##############################################
+   # 3.11 SYNCHRO
+   ##############################################
+#   step synchro : design synchronization statistics
+#   step CLOCK NETWORK : writing report for design 'ztop'
+#   info :    #-------- Summary 
+
+#   info :      - 7468 synchronous items
+#   info :      - 5 primary clocks 
+#   info :      - 36 derived clocks 
+#   info :      - 0 multi-driven clock 
+#   info :      - 15 stuck clocks 
+#   info :      - 0 undriven clock
+#   info :      - Total : 56 clocks
+
+#   info :      - 0 zxlsys instance
+
+
+#   info :    #-------- PRIMARY clocks
+
+#   info :       2627 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_mclk_in.o (BUFG)
+#   info :       1493 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_pclk_in.o (BUFG)
+#   info :         44 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.sys_idel_clk (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sys_sclk[0] (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sys_sclk[1] (BUFG)
+#   info :  
+
+#   info :    #-------- DERIVED clocks
+
+#   info :       2567 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_srb_clk.u_xst_wrapper_0.O (BUFG)
+#   info :        455 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk.u_xst_wrapper_0.O (BUFG)
+#   info :        164 items : ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.socket_lvds_sys_slave_0.u_xst_wrapper_0.socket_lvds_gp_in_0.u_xst_wrapper_0.clk_dv
+#   info :          9 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk_hs.u_xst_wrapper_0.O (BUFG)
+#   info :          7 items : ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.socket_lvds_sys_slave_0.u_xst_wrapper_0.socket_lvds_gp_in_0.u_xst_wrapper_0.clk_hs
+#   info :          2 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_registers_dut_0.reg_sock_ce
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_1.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_2.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_3.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.FK.xdlName_ddchiahfeebihhfbiij[0].cko_no_pad
+#   info :          1 items : ztop.FK.xdlName_ddchiahfeebihhfbiij[1].cko_no_pad
+#   info :          1 items : ztop.FK.xdlName_hjejfaabdchcachbfea.cko_no_pad
+#   info :          1 items : ztop.FK.xdlName_iehfcggeifdegadjfde.cko_no_pad
+#   info :          1 items : ztop.FK.xdlName_jbedibhechfagfgbbda.cko_no_pad
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.mxfcmxif_sys_xclk2_zpt_xbuf
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.mxfcmxif_sys_xclk_zpt_xbuf
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clko.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_fb
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.pll_fb
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.pll_fb
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.pll_fb
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout0
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout1
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk_hs.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout2
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clko.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout3
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_srb_clk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.clka1d2
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_1.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.clka1d4
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_2.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.clka1d8
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_3.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.pll_clkout0
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.pll_clkout1
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.pll_clkout0
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.pll_clkout1
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info : 
+
+#   info :    #-------- STUCK clocks
+
+#   info :         64 items : ztop.RTB.fp_ctrl_stuck_0 (STUCK)
+#   info :          2 items : ztop.zebu_fake_zview.gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_ddchiahfeebihhfbiij[0].gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_ddchiahfeebihhfbiij[1].gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_hjejfaabdchcachbfea.gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_iehfcggeifdegadjfde.gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_jbedibhechfagfgbbda.gnd (STUCK)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_mclk_in.x_idelay_0.u_xst_wrapper_0.N0 (STUCK)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_pclk_in.x_idelay_0.u_xst_wrapper_0.N0 (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_clk_100_zMem_multiport_TO_clk_100_.gnd (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_clk_200_zMem_multiport_TO_clk_200_.gnd (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_clk_25_zMem_multiport_TO_clk_25_.gnd (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_clk_50_zMem_multiport_TO_clk_50_.gnd (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_zMem_multiport_TO_.gnd (STUCK)
+#   info :          1 items : ztop.top.zebu_fake_ztig.gnd (STUCK)
+#   info : 
+
+
+#   info : # clock buffer list:
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_mclk_in.bufg_0     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_mclk
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_pclk_in.bufg_0     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_pclk
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.bufg_0     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_idel_clk
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.bufg_sys_sclk[1]     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_sclk[1]
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.bufg_sys_sclk[0]     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_sclk[0]
+
+#   info : # 5 clock buffer(s) found
+
+   ##############################################
+   # 8.1 FPGA STATS
+   ##############################################
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                7278 |                7060 |                   2 |                   0 |               65536 |                   0 |                  16 |                   0 |                 121 |                   0 |                   0 |                   0 |                   0 || ztop
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   ##############################################
+   # 3.12 MANIPULATION OF MUXCY/XORCY
+   ##############################################
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step instr_muxcy_xorcy : 0 muxcy chains broken because of size greater then 73
+#   step query_undriven_nets : Found 78 undriven nets in the netlist.
+#   step query_undriven_nets : Found 0 undriven pins in the netlist.
+#   step query_undriven_nets : See './fpga_reports/zNetgen/undriven_nets_and_pins.rpt.gz' report for additional information regarding undriven elements in the netlist.
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step fix_undriven_nets : 78 nets were connected to a constant, 0 were deleted.
+##############################################
+# 7 CONSISTENCY CHECK
+##############################################
+#   step Consistency Check : Performing consistency check on the netlist
+#   step NtgTclReportNetlistMetric : The netlist resource usage has been written into fpga_data.info with mode:zNetgen_before_DAP.
+#   step CLUSTER_SPLIT : cluster_split is triggered on invalid FPGA(possibly IF). Exit.
+#   step post_process_fpga : post process fpga aborted because rtb flag is enabled
+   ##############################################
+   # 3.11 LOCK_SOCKET
+   ##############################################
+#   step XDC GENERATOR : Writing XDC file 'design_zlcr.zdc.incr_tmp' with 0 constraints
+#   step XDC GENERATOR : constraints have changed - regenerate XDC file 'design_zlcr.zdc'
+##############################################
+# 5 GENERATION
+##############################################
+##############################################
+# 6 CHECK AND FIX NETLIST
+##############################################
+#   step CHECK_AND_FIX_NETLIST : Performing check and fix for netlist 'zmerge'.
+#   step RESOLVE_NAME_CONFLICTS : 0 ports have been renamed.
+#   step clean_netlist : cleaning netlist 'zmerge'
+#   step XDC GENERATOR : Writing XDC file 'design_fw.zdc' with 63 constraints
+#   step XDC GENERATOR : Writing XDC file 'design_bufg.zdc' with 1 constraints
+#   step SERIALIZE : writing netlist 'zmerge' into znl file './fpga_reports/zNetgen/design_db.znf'
+#   step SERIALIZE : #bytes in: 1855822, #bytes out: 465253, compression ratio: 3.988845
+##############################################
+# 7 VIVADO WA
+##############################################
+#   step aggregate_topgnd : # info : Found 0 design IO ports on GND. 0 new GND driver created
+# Checkin RAMB16
+   ##############################################
+   # 7 CLEAN PROPERTIES
+   ##############################################
+##############################################
+# 8 STATS AND INFOS
+##############################################
+   ##############################################
+   # .0 BLACKBOXES
+   ##############################################
+#   step show_black_box : Searching blackbox in module 'ztop' :
+#   step show_black_box : Number of blackbox found : 0.
+      ##############################################
+      # 8.1  STATS
+      ##############################################
+#   step FPGA STATS : xilinx primitives
+#   step FPGA STATS :         4961 fde
+#   step FPGA STATS :         2680 lut6
+#   step FPGA STATS :         2563 muxcy
+#   step FPGA STATS :         2417 xorcy
+#   step FPGA STATS :         1747 lut1
+#   step FPGA STATS :         1572 lut4
+#   step FPGA STATS :         1004 lut5
+#   step FPGA STATS :          917 fd
+#   step FPGA STATS :          844 lut2
+#   step FPGA STATS :          611 lut3
+#   step FPGA STATS :          372 fdce
+#   step FPGA STATS :          371 fdc
+#   step FPGA STATS :          268 muxf7
+#   step FPGA STATS :          260 gnd
+#   step FPGA STATS :          250 fdre
+#   step FPGA STATS :          181 vcc
+#   step FPGA STATS :          127 fdr
+#   step FPGA STATS :           96 fdp
+#   step FPGA STATS :           80 fds
+#   step FPGA STATS :           49 fdse
+#   step FPGA STATS :           48 ram64m
+#   step FPGA STATS :           48 ram16x1d
+#   step FPGA STATS :           33 fdpe
+#   step FPGA STATS :           32 or2
+#   step FPGA STATS :           24 srlc32e
+#   step FPGA STATS :           20 fdrs
+#   step FPGA STATS :           16 ibufds
+#   step FPGA STATS :           15 obufds
+#   step FPGA STATS :           11 bufgctrl
+#   step FPGA STATS :            8 iodelay
+#   step FPGA STATS :            7 oserdese2
+#   step FPGA STATS :            7 iserdese2
+#   step FPGA STATS :            7 idelaye2
+#   step FPGA STATS :            5 bufg
+#   step FPGA STATS :            4 mmcme2_base
+#   step FPGA STATS :            4 and3
+#   step FPGA STATS :            2 ramb36_exp
+#   step FPGA STATS :            2 ld
+#   step FPGA STATS :            1 sysmon
+#   step FPGA STATS :            1 startupe2
+#   step FPGA STATS :            1 oddr
+#   step FPGA STATS :            1 obuf
+#   step FPGA STATS :            1 muxf8
+#   step FPGA STATS :            1 idelayctrl
+#   step FPGA STATS :            1 capturee2
+#   step FPGA STATS :            1 bufr
+#   step FPGA STATS :            1 bufio
+#   step FPGA STATS :            1 and2
+#   step FPGA STATS : hierachic instances
+#   step FPGA STATS : 
+#   step FPGA STATS : This fpga has an interface of 1 wires (1 recv_out, recv_out_fast, recv_out_direct and 0 send_in, send_in_fast, send_in_direct)
+#   step FPGA STATS : 
+#   step FPGA STATS : +---------------------------+-----------+-----------+--------+--------+--------+--------+---------+-----+-----+-----+-----+-----+-----+-----+-----+------+------+
+#   step FPGA STATS : |                         1 |         2 |         3 |      4 |      5 |      6 |      7 |       8 |   9 |  10 |  11 |  12 |  13 |  14 |  15 |  16 |   17 |   18 |
+#   step FPGA STATS : +---------------------------+-----------+-----------+--------+--------+--------+--------+---------+-----+-----+-----+-----+-----+-----+-----+-----+------+------+
+#   step FPGA STATS : |      FP_00_09_00_08(LVDS) |  U0/M0/IF | U0/M0/F08 |      0 |      0 |      0 |      1 |    1/24 |   0 |   0 |   0 |   1 |   1 |   1 |   1 |   1 |    0 |    0 |
+#   step FPGA STATS : +---------------------------+-----------+-----------+--------+--------+--------+--------+---------+-----+-----+-----+-----+-----+-----+-----+-----+------+------+
+#   step FPGA STATS : 1  => socket name
+#   step FPGA STATS : 2  => fpga from
+#   step FPGA STATS : 3  => fpga to
+#   step FPGA STATS : 4  => design wire out with xdr
+#   step FPGA STATS : 5  => design wire out with sdr
+#   step FPGA STATS : 6  => design wire in with xdr
+#   step FPGA STATS : 7  => design wire in with sdr
+#   step FPGA STATS : 8  => physical wire used/physical wire total
+#   step FPGA STATS : 9  => physical wire used out with xdr
+#   step FPGA STATS : 10  => physical wire used out with sdr
+#   step FPGA STATS : 11  => physical wire used in with xdr
+#   step FPGA STATS : 12  => physical wire used in with sdr
+#   step FPGA STATS : 13  => min xdr out
+#   step FPGA STATS : 14 => max xdr out
+#   step FPGA STATS : 15 => min xdr in
+#   step FPGA STATS : 16 => max xdr in
+#   step FPGA STATS : 17 => Available slot out
+#   step FPGA STATS : 18 => Available slot in
+#   step FPGA STATS : 
+#   step FPGA STATS : Number of Flip Flop Or Latches controls set (ce, s, r, pre, clr, ge) : 453 
+#   step FPGA STATS : 
+#   step FPGA STATS : Number of Synchronous Elements controls set (ce, s, r, pre, ge, clr, we, clk) : 514 
+#   step FPGA STATS : 
+#   step FPGA STATS : Number of Synchronous Elements controls set with Ise approximation used (ce, s, r, pre, clr. clk) : 166 
+#   step FPGA STATS : 
+      ##############################################
+      # 8.1 SUBSYSTEM STATS
+      ##############################################
+#   step NtgTclTDMRegMarking : Warning: cannot find design/*/U_M_F, exit.
+#   step NtgTclTDMRegMarking : Setting inter-die TDM properties ZDEL(0 new, 0 existed) and DUT(0 new, 0 existed) on registers.
+#   step NtgTclTDMRegMarking : inserted 0 inter-die TDM properties in total.
+
+#   step FalsePathFeedThroughInserter : inserted 0 false path feedthrough(s).
+#   step NtgTclFilterRegMarking : Setting 0 filter register for replication among 0 total filter registers.
+#   step NtgTclFilterRegMarking : Setting 0 LUT1 for replication in Aux --> LUT1(INV) --> LD path.
+#   step NtgTclReportNetlistMetric : The netlist resource usage has been written into fpga_data.info with mode:zNetgen_after_DAP.
+#   step NtgTclTDMRegMarking : Sanity check PASS, no duplicated attribute found on primitives.
+#   step EDIF GENERATOR : writing netlist 'clean_properties' into EDIF file 'design.edf.gz'
+### warning in mudb_editor [CCC0919W] : MuDb directory does not exist.
+
+#   exec summary :    3 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m7.675s, sys 0m1.48s
+#   exec summary : Total memory: 1890000 kB - RSS memory: 1530744 kB - Data memory: 1521452 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:06:02 2023
+#   step GENERATE_DESIGN_INFO :  design_info.mk file generated
+
+real	0m9.453s
+user	0m7.703s
+sys	0m1.148s
+
+
+
+
+time xdc_sorter -i design_zpar.zdc design_zlcr.zdc design_bufg.zdc -o design.xdc
+time  /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/ise/xdc_sorter -i design_zpar.zdc design_zlcr.zdc design_bufg.zdc -o design.xdc
+ ---------------------------------- 
+|   xdc_sorter v3.3 (09/24/2021)   |
+|                                  |
+|            SEV - 2021            |
+ ---------------------------------- 
+
+Reading XDC files... 
+-> Reading design_zpar.zdc... OK
+-> Reading design_zlcr.zdc... OK
+-> Reading design_bufg.zdc... OK
+
+Generating sorted XDC file... OK
+
+[INFO] Sorting accomplished succesfully :
+=> design.xdc (51 constraints)
+0.42user 1.06system 0:01.38elapsed 107%CPU (0avgtext+0avgdata 1648maxresident)k
+8inputs+400outputs (0major+256299minor)pagefaults 0swaps
+cat: md5sum.txt: No such file or directory
+cat: md5sum.txt: No such file or directory
+/bin/sh: /READ//cache_read_write.sh: No such file or directory
+
+
+
+##########################################################################
+##                              STEP VIVADO                             ##
+##########################################################################
+# Vivado DCP Temp Dir: tmp_dcp
+vivado start time: 1681884372
+WARNING: Default location for XILINX_VIVADO_HLS not found: 
+
+****** Vivado v2019.1_EP06_159265 (64-bit)
+  **** SW Build (by stepheny) on Fri Oct 11 16:37:07 PDT 2019
+  **** IP Build 2548770 on Wed May 29 13:01:34 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-1239] XILINX_LOCAL_USER_DATA is set to 'no'.
+Sourcing tcl script '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/scripts/Vivado_init.tcl'
+source /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vivado_v7/compil_vivado_v7.tcl -notrace
+[SW_FPGA] - INFO : Loading zebu_fpga_compile_env.tcl
+[SW_FPGA] - INFO : Loading vivado_common_pkg.tcl
+[SW_FPGA] - INFO : Loading vivado_proc_pkg.tcl
+[SW_FPGA] - INFO : Loading vivado_reports_pkg.tcl
+[SW_FPGA] - INFO : Loading vivado_v7_pkg.tcl
+[SW_FPGA] - INFO : Loading triton_common_pkg.tcl
+
+[SW_FPGA] - INFO : Generating XDC WA for Vivado V7 Link_design
+
+[SW_FPGA] - INFO : Vivado Parameters used 
+VIVADO_ENABLE_SINGLE_MACHINE_MPF=0
+VIVADO_ENABLE_MULTI_MACHINE_MPF=0
+
+[SW_FPGA] - INFO : top fpga name is: design
+[SW_FPGA] - INFO : bitgen options sets [-w -g DriveDONE:Yes -g persist:x16 -g StartUpClk:CCLK -g OverTempPowerDown:Enable -g DONE_cycle:1 -g GTS_cycle:2] 
+0 Beta devices matching pattern found, 0 enabled.
+[SW_FPGA] - INFO : Default Vivado params loaded
+[SW_FPGA] - INFO : Disable place.autoLaguna
+[SW_FPGA] - INFO : place.opportunisticLagunaRegUse  false
+[SW_FPGA] - INFO : physynth.enableLagunaSites  false
+[SW_FPGA] - INFO : physynth.slrCrossingOptTnsInExplore false
+[SW_FPGA] - INFO : VIVADO_FORCE_REPLICATION=ON
+[SW_FPGA] - INFO : Default Vivado message config loaded
+[SW_FPGA] - INFO : FPGA (FX)=IF is being compiled
+[SW_FPGA] - INFO : Advanced Vivado Debug parameters [Enabled]
+[SW_FPGA] - INFO : Vivado params selectable: Delete Empty Hierarchy with Dont touch => [enabled]
+[SW_FPGA] - hw_type is v7
+[SW_FPGA] - INFO : Vivado params selectable: Multithreading value = 4
+[SW_FPGA] - INFO : Vivado params selectable: Global Hold Iter => [enabled]
+[SW_FPGA] - INFO : Vivado params selectable: route SLL Assignment  => [enabled]
+[SW_FPGA] - INFO : Vivado params selectable: place_design BUFG insertion in 2017.3  => [enabled]
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_set_options_variable 1 mins
+[SW_FPGA] - INFO : Extra BUFG Insertion by Vivado [disabled]
+
+[SW_FPGA] - INFO : Sources files loading ...
+
+Command: link_design -top design -part xc7v2000tflg1925-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7v2000tflg1925-1
+Parsing EDIF File [./design.edf]
+Finished Parsing EDIF File [./design.edf]
+INFO: [Netlist 29-17] Analyzing 12019 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Zebu Edif Generator   Tue 18 10 2022 - 00:57: v2.0
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/no_dont_touch.xdc]
+Finished Parsing XDC File [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/no_dont_touch.xdc]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2431.414 ; gain = 0.000 ; free physical = 182297 ; free virtual = 191125
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 7400 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 678 instances
+  AND2 => LUT2: 1 instances
+  AND3 => LUT3: 4 instances
+  FD => FDRE: 917 instances
+  FDC => FDCE: 371 instances
+  FDE => FDRE: 4961 instances
+  FDP => FDPE: 96 instances
+  FDR => FDRE: 127 instances
+  FDRS => FDRS (FDRE, LUT2, VCC): 20 instances
+  FDS => FDSE: 80 instances
+  IODELAY => IDELAYE2: 2 instances
+  IODELAY => ODELAYE2: 6 instances
+  LD => LDCE: 2 instances
+  MMCME2_BASE => MMCME2_ADV: 4 instances
+  OR2 => LUT2: 32 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 48 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 48 instances
+  RAMB36_EXP => RAMB36E1: 2 instances
+  SYSMON => XADC: 1 instances
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:40 . Memory (MB): peak = 2431.414 ; gain = 906.258 ; free physical = 182296 ; free virtual = 191124
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads, tcl.collectionResultDisplayLimit, tcl.statsThreshold
+Parsing XDC File [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/dont_touch.xdc]
+Finished Parsing XDC File [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/dont_touch.xdc]
+[SW_FPGA] - INFO : Sources files loaded and linked
+[SW_FPGA] - INFO : Vivado message settings set
+[SW_FPGA] - INFO : Settings based on environment variables beginning with VIVADO_KNOB_ :
+
+
+
+
+  
+
+#################################################################################
+##                 VIVADO : STEP NETLIST_ANALYSIS_PREPROCESSING                ##
+#################################################################################
+##  phase:linked_analysis  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 178 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.24|0.76|0.31 / 40  MemAvail: 182 GB
+
+[SW_FPGA] - INFO : start netlist_analys_preproc phase
+netlist_analys_preproc start time: 1681884423
+netlist_analys_preproc start date: Wed Apr 19 01:07:03 CDT 2023
+
+
+
+[SW_FPGA] - REPORTS : running zVreports_fpgaIO
+  |- Total interface : 0 IO + 0 MGT IO
+      |- 0  	 Socket input
+      |- 0  	 Socket output
+      |- 0  	 MGT_Socket input
+      |- 0 	 MGT_Socket output
+           |- MGT version: GT_GP
+
+[SW_FPGA] - REPORTS : running zVreports_fpgaIO_distribution target=V7
++----------------------------------++-----------------------------+
+| bank 22 | R=0     | S=0          || bank 42 | R=0     | S=0     |
+| bank 21 | R=0     | S=0          || bank 41 | R=0     | S=0     |
+| bank 20 | R=0     | S=0          || bank 40 | R=0     | S=0     |
++----------------------------------++-----------------------------+
+| bank 19 | R=0     | S=0          || bank 39 | R=0     | S=0     |
+| bank 18 | R=0     | S=0          || bank 38 | R=0     | S=0     |
+| bank 17 | R=0     | S=0          || bank 37 | R=0     | S=0     |
++----------------------------------++-----------------------------+
+| bank 16 | R=0     | S=0          || bank 36 | R=0     | S=0     |
+| bank 15 | R=0     | S=0          || bank 35 | R=0     | S=0     |
+| bank 14 | R=0     | S=0          || bank 34 | R=0     | S=0     |
++----------------------------------++-----------------------------+
+| bank 13 | R=0     | S=0          || bank 33 | R=0     | S=0     |
+| bank 12 | R=0     | S=0          || bank 32 | R=0     | S=0     |
+| bank 11 | R=0     | S=0          || bank 31 | R=0     | S=0     |
++----------------------------------++-----------------------------+
+
+[SW_FPGA] - REPORTS : running zVreports_zview
+  |- 2 zview cells
+  |- 14 FF cells as zview
+       |- 0 FF cells as zview in sockets
+  |- Total = 16 cells used
+
+[SW_FPGA] - REPORTS : running pVivado_check_zpv_data
+  |- 0 fwc
+  |- 0 qiwc
+
+[SW_FPGA] - REPORTS : running zVreports_BUFG_pins @ phase: linked
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/bufg_sys_sclk[0]
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/bufg_sys_sclk[1]
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/bufg_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 2627    | 2627    | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/bufg_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 1493    | 1493    | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 449     | 440     | 0       | 2       | 0       | 7       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk_hs/u_xst_wrapper_0/virtex7_bufgctrl_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 9       | 2       | 0       | 0       | 7       | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clko/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 2756    | 2441    | 0       | 1       | 313     | 0       | 0       | 0       | 0       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/bufg_0
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      |  TOTAL  | clock C | clock G | clk RAMB| clk IO  | clk DIV |   set   | preset  |  reset  | enable  |  data   |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+      | 44      | 41      | 0       | 0       | 0       | 0       | 0       | 0       | 1       | 0       | 0       |
+      +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/x_bufgctrl_1/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/x_bufgctrl_2/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/x_bufgctrl_3/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk2_0/x_bufgctrl_ce_sys_xclk/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk2_0/x_bufgctrl_ce_sys_xclk_dv4/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/x_bufgctrl_ce_sys_xclk/u_xst_wrapper_0/virtex7_bufgctrl_0
+
+RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/x_bufgctrl_ce_sys_xclk_dv4/u_xst_wrapper_0/virtex7_bufgctrl_0
+[SW_FPGA] - REPORTS : running zVreports_get_CST_fanout > 1000
+WARNING: [Vivado 12-1023] No nets matched for command 'get_nets -of_objects [get_pins -of_objects [get_cells * -hier -filter { REF_NAME == VCC }] -filter { DIRECTION == OUT }] -filter { FLAT_PIN_COUNT > 1000 }'.
+   |- GND cells impacted: 1
+      |- 1107 	: RTB/zins_fp_ctrl/wrapper/synchronous_readback/synchronous_readback_registers/GND_1
+   |- VCC cells impacted: 0
+
+
+[SW_FPGA] - REPORTS : running zVreports_Primitive_hierarchy
+
+
+[SW_FPGA] - REPORTS : running zVreports_Primitive_hierarchy_zNetgen
+    |- file_name = csv/subsystems_ordered_by_norm_ztop_ZN.csv
+    |- module_name=if_macro_xclk2_DEVICE_7_PCLK_ODELAY_0_0_8...(1)*  |  REG%=59  |  REG=4252  |  LUT%=57  |  LUT%=3978  |  IO=0  |  instance=0
+
+[SW_FPGA] - INFO : Check Multidriver Nets
+    |- No multi driven nets found
+
+[SW_FPGA] - INFO : Check unconneced LUT inputs pins
+    |- No Unconnected lut pins found
+
+
+
+
+
+
+  
+
+#################################################################################
+##                             VIVADO : STEP READ_CONSTRAINTS                  ##
+#################################################################################
+##  phase:constraints  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 177 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.24|0.76|0.31 / 40  MemAvail: 182 GB
+
+[SW_FPGA] - INFO : start read_constraints phase
+read_constraints start time: 1681884425
+read_constraints start date: Wed Apr 19 01:07:05 CDT 2023
+
+[SW_FPGA] - PROC : zVivado_MDTMX_DisableSocketPblock done
+Parsing XDC File [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc]
+CRITICAL WARNING: [Common 17-161] Invalid option value '%XCLK2_PERIOD%' specified for 'period'. [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:19]
+CRITICAL WARNING: [Common 17-1548] Command failed: missing operand at _@_
+in expression "_@_%XCLK2_PERIOD%*4"
+ [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:20]
+INFO: [Timing 38-2] Deriving generated clocks [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:45]
+WARNING: [Vivado 12-627] No clocks matched 'CLK_sys_xclk2'. [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:52]
+WARNING: [Vivado 12-627] No clocks matched 'CLK_sys_xclk2_dv4'. [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:52]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:52]
+CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks -include_generated_clocks {CLK_sys_xclk2 CLK_sys_xclk2_dv4}]'. [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:52]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+CRITICAL WARNING: [Constraints 18-4644] set_clock_groups: All clock groups specified are empty. Please specify atleast one clock group which is not empty. [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:52]
+WARNING: [Vivado 12-627] No clocks matched 'zebu_clock*'. [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:119]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:119]
+CRITICAL WARNING: [Vivado 12-4739] set_max_time_borrow:No valid object(s) found for '-objects [get_clocks zebu_clock*]'. [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc:119]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/design.xdc]
+
+[SW_FPGA] - INFO : Generating zpar false path constraints
+[SW-FPGA] - PROC : called zVreports_zrm
+
+
+
+  
+
+#################################################################################
+##                             VIVADO : STEP OPT_DESIGN                        ##
+#################################################################################
+##  phase:opt  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 176 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.29|0.91|0.37 / 40  MemAvail: 180 GB
+
+[SW_FPGA] - INFO : start opt_design phase
+opt_design start time: 1681884451
+opt_design start date: Wed Apr 19 01:07:31 CDT 2023
+
+[SW_FPGA] - INFO : Vivado opt_design_options [-verbose -retarget -propconst -sweep ]
+Command: opt_design -verbose -retarget -propconst -sweep
+Attempting to get a license for feature 'Implementation' and/or device 'xc7v2000t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7v2000t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Project 1-461] DRC finished with 0 Errors, 63 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 3252.965 ; gain = 82.551 ; free physical = 179862 ; free virtual = 188690
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+Phase 1 Retarget | Checksum: f5f48e39
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3323.965 ; gain = 0.004 ; free physical = 179322 ; free virtual = 188150
+
+Phase 2 Constant propagation
+Phase 2 Constant propagation | Checksum: 15b9c0911
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 3323.965 ; gain = 0.004 ; free physical = 179218 ; free virtual = 188047
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 11fc3a9bf
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3323.965 ; gain = 0.004 ; free physical = 179320 ; free virtual = 188149
+
+Phase 4 Post Processing Netlist
+Phase 4 Post Processing Netlist | Checksum: 11fc3a9bf
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3323.965 ; gain = 0.004 ; free physical = 179319 ; free virtual = 188149
+Opt_design Change Summary
+=========================
+
+
+---------------------------------------------------------------------------------------------------------------------
+|  Phase                    |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+---------------------------------------------------------------------------------------------------------------------
+|  Retarget                 |             823  |            2480  |                                             16  |
+|  Constant propagation     |             384  |            2358  |                                              3  |
+|  Sweep                    |               0  |            1088  |                                             31  |
+|  Post Processing Netlist  |               0  |               0  |                                              9  |
+---------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 13db64ce4
+
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 3323.965 ; gain = 0.004 ; free physical = 179320 ; free virtual = 188149
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179320 ; free virtual = 188149
+Ending Netlist Obfuscation Task | Checksum: 13db64ce4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179319 ; free virtual = 188149
+INFO: [Common 17-83] Releasing license: Implementation
+6557 Infos, 67 Warnings, 6 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads, tcl.statsThreshold
+
+
+
+
+
+  
+
+#################################################################################
+##             VIVADO : STEP POST_OPT_NETLIST_ANALYS_PROCESSING                ##
+#################################################################################
+[SW_FPGA] - INFO : start post_opt_netlist_analys_preproc phase
+post_opt_netlist_analys_preproc start time: 1681884465
+post_opt_netlist_analys_preproc start date: Wed Apr 19 01:07:45 CDT 2023
+
+
+[SW-FPGA] - INFO : No MUXCY/XORCY in the netlist
+
+
+  
+
+#################################################################################
+##                             VIVADO : STEP TRITON                            ##
+#################################################################################
+##  phase:triton  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 175 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.32|0.97|0.40 / 40  MemAvail: 179 GB
+
+[SW_FPGA] - INFO : start triton phase
+triton start time: 1681884465
+triton start date: Wed Apr 19 01:07:45 CDT 2023
+
+[SW_FPGA] - INFO : Deleting intermediate triton file
+[SW_FPGA] - INFO : ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+[SW_FPGA] - INFO : Found: 6 BUFG : max for triton run is set to [15]
+[SW_FPGA] - INFO : TRITON flow generating false_path_zpar.xdc file for triton constraints
+[SW_FPGA] - INFO : TRITON flow generating fx_macro_slr.xdc file for triton constraints
+[SW_FPGA] - INFO : removing un-supported DONT_TOUCH property from design_triton.xdc
+[SW_FPGA] - INFO : Applying triton WA on -quiet option
+[SW_FPGA] - INFO : design_triton.xdc well generated
+[SW_FPGA] - INFO : design_triton.edf well generated
+
+Starting IO/Clock Placer Task
+
+Phase 1 Add Constraints new method
+
+Phase 1.1 Build CellView Core
+
+Time (s): cpu = 00:00:00.77 ; elapsed = 00:00:00.83 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179836 ; free virtual = 188666
+
+Phase 1.2 Add User PBlocks
+
+Time (s): cpu = 00:00:00.88 ; elapsed = 00:00:00.94 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179836 ; free virtual = 188666
+
+Phase 1.3 Apply User PBlocks
+
+Time (s): cpu = 00:00:00.89 ; elapsed = 00:00:00.95 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179836 ; free virtual = 188666
+
+Phase 1.4 Add terminal Constraints
+
+Time (s): cpu = 00:00:00.89 ; elapsed = 00:00:00.95 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179836 ; free virtual = 188666
+
+Time (s): cpu = 00:00:00.89 ; elapsed = 00:00:00.95 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179836 ; free virtual = 188666
+
+Phase 2 IO and Clk Clean Up
+
+Phase 2.1 FixIDCReqs
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179843 ; free virtual = 188672
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179839 ; free virtual = 188669
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3323.965 ; gain = 0.000 ; free physical = 179857 ; free virtual = 188686
+
+[SW_FPGA] - INFO : ioclock.xdc well generated
+
+[SW_FPGA] - INFO : design_triton.xdc modified for triton
+[SW_FPGA] - INFO : Triton param [target_util 10]
+LUT6 rate for adaptive triton lut6 config is 1409
+[SW_FPGA] - INFO : File triton.tcl file generated
+
+[SW_FPGA] - INFO : Runing triton with triton.tcl file
+[SW_FPGA] - CRITICAL WARNINGS : Triton existed with segmentation fault
+
+[TRITON-ERROR] Continue with vivado placer.
+
+[SW_FPGA] - INFO : Launching Adaptive trition run
+
+[SW_FPGA] - CATCH :   COMMAND: zVreports_tritonLog_wo_wrapper run1   ERROR_MSG: couldn't open "./fpga_reports/run1/triton.log": no such file or directory
+
+ ####################################################################################
+  ##                             VIVADO : STEP INCR_DFLOW                      ##
+  #################################################################################
+
+
+  
+
+#################################################################################
+##                             VIVADO : STEP PLACE_DESIGN                      ##
+#################################################################################
+##  phase:place  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 174 GB  -  LoadAverage (5s|5min|15min / NBcpu): 1.77|1.00|0.43 / 40  MemAvail: 178 GB
+
+[SW_FPGA] - INFO : start place_design phase
+place_design start time: 1681884503
+place_design start date: Wed Apr 19 01:08:23 CDT 2023
+
+[SW_FPGA] - INFO : setting vivado place_design param regarding Triton flow
+[SW_FPGA] - INFO : Vivado place_design_options []
+
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7v2000t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7v2000t'
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 4 threads
+WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1839 rule limit reached: 20 violations have been found.
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors, 84 Warnings
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 4 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3323.969 ; gain = 0.000 ; free physical = 178967 ; free virtual = 187796
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 103402d11
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3323.969 ; gain = 0.000 ; free physical = 178967 ; free virtual = 187796
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3323.969 ; gain = 0.000 ; free physical = 178952 ; free virtual = 187781
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+WARNING: [Place 30-879] Found overlapping PBlocks. The use of overlapping PBlocks is not recommended as it may lead to legalization errors or unplaced instances.
+PBlocks: SLR1 & pblock_clockgen
+overlap for the following site types:
+    SLICE
+    BSCAN
+    BUFHCE
+    BUFIO
+    BUFMRCE
+    BUFR
+    CAPTURE
+    CFG_IO_ACCESS
+    DCI
+    DNA_PORT
+    DSP48
+    EFUSE_USR
+    FRAME_ECC
+    GTXE2_CHANNEL
+    GTXE2_COMMON
+    IBUFDS_GTE2
+    ICAP
+    IDELAY
+    IDELAYCTRL
+    ILOGIC
+    IN_FIFO
+    IOB
+    IPAD
+    MMCME2_ADV
+    ODELAY
+    OLOGIC
+    OPAD
+    OUT_FIFO
+    PCIE
+    PHASER_IN_PHY
+    PHASER_OUT_PHY
+    PHASER_REF
+    PHY_CONTROL
+    PLLE2_ADV
+    PMV
+    PMVBRAM
+    PMVIOB
+    RAMB18
+    RAMB36
+    STARTUP
+    USR_ACCESS
+    XADC
+Site Ranges for PBlock: SLR1
+CLOCKREGION_X0Y3:CLOCKREGION_X1Y5
+Site Ranges for PBlock: pblock_clockgen
+CLOCKREGION_X0Y3:CLOCKREGION_X1Y5
+
+
+PBlocks: SLR0 & pblock_fx_macro_slr
+overlap for the following site types:
+    SLICE
+    BSCAN
+    BUFHCE
+    BUFIO
+    BUFMRCE
+    BUFR
+    CAPTURE
+    CFG_IO_ACCESS
+    DCI
+    DNA_PORT
+    DSP48
+    EFUSE_USR
+    FRAME_ECC
+    GTXE2_CHANNEL
+    GTXE2_COMMON
+    IBUFDS_GTE2
+    ICAP
+    IDELAY
+    IDELAYCTRL
+    ILOGIC
+    IN_FIFO
+    IOB
+    IPAD
+    MMCME2_ADV
+    ODELAY
+    OLOGIC
+    OPAD
+    OUT_FIFO
+    PCIE
+    PHASER_IN_PHY
+    PHASER_OUT_PHY
+    PHASER_REF
+    PHY_CONTROL
+    PLLE2_ADV
+    PMV
+    PMVBRAM
+    PMVIOB
+    RAMB18
+    RAMB36
+    STARTUP
+    USR_ACCESS
+    XADC
+Site Ranges for PBlock: SLR0
+CLOCKREGION_X0Y0:CLOCKREGION_X1Y2
+Site Ranges for PBlock: pblock_fx_macro_slr
+CLOCKREGION_X0Y0:CLOCKREGION_X1Y2
+
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 16014af03
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3350.777 ; gain = 26.809 ; free physical = 178845 ; free virtual = 187675
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1881ea23f
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 3398.613 ; gain = 74.645 ; free physical = 178837 ; free virtual = 187667
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1881ea23f
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 3398.613 ; gain = 74.645 ; free physical = 178833 ; free virtual = 187663
+Phase 1 Placer Initialization | Checksum: 1881ea23f
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 3398.613 ; gain = 74.645 ; free physical = 178821 ; free virtual = 187651
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1822700fd
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 3417.270 ; gain = 93.301 ; free physical = 178746 ; free virtual = 187576
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3534.816 ; gain = 0.000 ; free physical = 178305 ; free virtual = 187140
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Very High Fanout              |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                  |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                 |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                         |            0  |              0  |                     0  |           0  |           2  |  00:00:00  |
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 1a009636e
+
+Time (s): cpu = 00:00:48 ; elapsed = 00:00:30 . Memory (MB): peak = 3534.816 ; gain = 210.848 ; free physical = 178307 ; free virtual = 187142
+Phase 2.2 Global Placement Core | Checksum: 18521d8f3
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:31 . Memory (MB): peak = 3534.816 ; gain = 210.848 ; free physical = 178286 ; free virtual = 187122
+Phase 2 Global Placement | Checksum: 18521d8f3
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:31 . Memory (MB): peak = 3534.816 ; gain = 210.848 ; free physical = 178311 ; free virtual = 187146
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1ddb6203e
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:32 . Memory (MB): peak = 3534.816 ; gain = 210.848 ; free physical = 178310 ; free virtual = 187146
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 18fbb6b50
+
+Time (s): cpu = 00:00:53 ; elapsed = 00:00:33 . Memory (MB): peak = 3548.066 ; gain = 224.098 ; free physical = 178249 ; free virtual = 187085
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1ebbece3e
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:33 . Memory (MB): peak = 3548.066 ; gain = 224.098 ; free physical = 178244 ; free virtual = 187079
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 20acdb8b0
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:34 . Memory (MB): peak = 3548.066 ; gain = 224.098 ; free physical = 178244 ; free virtual = 187080
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 23b4e0f24
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:40 . Memory (MB): peak = 3657.645 ; gain = 333.676 ; free physical = 177985 ; free virtual = 186820
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 1610dcb54
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:41 . Memory (MB): peak = 3657.645 ; gain = 333.676 ; free physical = 177979 ; free virtual = 186815
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: ed607fc9
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 3657.645 ; gain = 333.676 ; free physical = 177966 ; free virtual = 186801
+Phase 3 Detail Placement | Checksum: ed607fc9
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:41 . Memory (MB): peak = 3657.645 ; gain = 333.676 ; free physical = 177965 ; free virtual = 186801
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 19e980ed9
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 19e980ed9
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:44 . Memory (MB): peak = 3658.648 ; gain = 334.680 ; free physical = 177935 ; free virtual = 186771
+INFO: [Place 30-746] Post Placement Timing Summary WNS=2.908. For the most accurate timing information please run report_timing.
+
+Phase 4.1.1.2 Replication
+INFO: [Place 46-19] Post Replication Timing Summary WNS=2.908. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Replication | Checksum: b516c45d
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:44 . Memory (MB): peak = 3658.648 ; gain = 334.680 ; free physical = 177928 ; free virtual = 186764
+Phase 4.1.1 Post Placement Optimization | Checksum: b516c45d
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:44 . Memory (MB): peak = 3658.648 ; gain = 334.680 ; free physical = 177933 ; free virtual = 186769
+Phase 4.1 Post Commit Optimization | Checksum: b516c45d
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:44 . Memory (MB): peak = 3658.648 ; gain = 334.680 ; free physical = 177932 ; free virtual = 186768
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: b516c45d
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:44 . Memory (MB): peak = 3658.648 ; gain = 334.680 ; free physical = 177966 ; free virtual = 186802
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: b516c45d
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:44 . Memory (MB): peak = 3658.648 ; gain = 334.680 ; free physical = 177966 ; free virtual = 186802
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3658.648 ; gain = 0.000 ; free physical = 177966 ; free virtual = 186802
+Phase 4.4 Final Placement Cleanup | Checksum: 737b4c56
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:44 . Memory (MB): peak = 3658.648 ; gain = 334.680 ; free physical = 177965 ; free virtual = 186801
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 737b4c56
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:44 . Memory (MB): peak = 3658.648 ; gain = 334.680 ; free physical = 177964 ; free virtual = 186800
+Ending Placer Task | Checksum: 69a495c5
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:44 . Memory (MB): peak = 3658.648 ; gain = 334.680 ; free physical = 177964 ; free virtual = 186800
+INFO: [Common 17-83] Releasing license: Implementation
+6579 Infos, 69 Warnings, 6 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:14 ; elapsed = 00:00:49 . Memory (MB): peak = 3658.648 ; gain = 334.684 ; free physical = 178120 ; free virtual = 186956
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads, tcl.statsThreshold
+
+# ===========================================
+# place_design Summary
+# ===========================================
+
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_place_design 1 mins
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1_EP06_159265 (lin64) Build 0 Fri Oct 11 16:37:07 PDT 2019
+| Date         : Wed Apr 19 01:09:15 2023
+| Host         : csce-quinn-s1.engr.tamu.edu running 64-bit Red Hat Enterprise Linux Server release 7.9 (Maipo)
+| Command      : report_utilization -file ./fpga_reports/vivado/report_placed_ulization.rpt
+| Design       : ztop
+| Device       : 7v2000tflg1925-1
+| Design State : Fully Placed
+----------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Slice Logic
+1.1 Summary of Registers by Type
+2. Slice Logic Distribution
+3. Memory
+4. DSP
+5. IO and GT Specific
+6. Clocking
+7. Specific Feature
+8. Primitives
+9. Black Boxes
+10. Instantiated Netlists
+11. SLR Connectivity and Clocking Utilization
+12. SLR Connectivity Matrix
+13. SLR Slice Logic and Dedicated Block Utilization
+14. SLR IO Utilization
+
+1. Slice Logic
+--------------
+
++----------------------------+------+-------+-----------+-------+
+|          Site Type         | Used | Fixed | Available | Util% |
++----------------------------+------+-------+-----------+-------+
+| Slice LUTs                 | 5544 |     0 |   1221600 |  0.45 |
+|   LUT as Logic             | 5332 |     0 |   1221600 |  0.44 |
+|   LUT as Memory            |  212 |     0 |    344800 |  0.06 |
+|     LUT as Distributed RAM |  188 |     0 |           |       |
+|     LUT as Shift Register  |   24 |     0 |           |       |
+| Slice Registers            | 5801 |     1 |   2443200 |  0.24 |
+|   Register as Flip Flop    | 5800 |     0 |   2443200 |  0.24 |
+|   Register as Latch        |    1 |     1 |   2443200 | <0.01 |
+| F7 Muxes                   |  258 |     0 |    610800 |  0.04 |
+| F8 Muxes                   |    1 |     0 |    305400 | <0.01 |
++----------------------------+------+-------+-----------+-------+
+
+
+1.1 Summary of Registers by Type
+--------------------------------
+
++-------+--------------+-------------+--------------+
+| Total | Clock Enable | Synchronous | Asynchronous |
++-------+--------------+-------------+--------------+
+| 20    |            _ |           - |            - |
+| 0     |            _ |           - |          Set |
+| 0     |            _ |           - |        Reset |
+| 0     |            _ |         Set |            - |
+| 0     |            _ |       Reset |            - |
+| 0     |          Yes |           - |            - |
+| 121   |          Yes |           - |          Set |
+| 685   |          Yes |           - |        Reset |
+| 127   |          Yes |         Set |            - |
+| 4854  |          Yes |       Reset |            - |
++-------+--------------+-------------+--------------+
+
+
+2. Slice Logic Distribution
+---------------------------
+
++--------------------------------------------+------+-------+-----------+-------+
+|                  Site Type                 | Used | Fixed | Available | Util% |
++--------------------------------------------+------+-------+-----------+-------+
+| Slice                                      | 2688 |     0 |    305400 |  0.88 |
+|   SLICEL                                   | 2002 |     0 |           |       |
+|   SLICEM                                   |  686 |     0 |           |       |
+| LUT as Logic                               | 5332 |     0 |   1221600 |  0.44 |
+|   using O5 output only                     |    0 |       |           |       |
+|   using O6 output only                     | 5194 |       |           |       |
+|   using O5 and O6                          |  138 |       |           |       |
+| LUT as Memory                              |  212 |     0 |    344800 |  0.06 |
+|   LUT as Distributed RAM                   |  188 |     0 |           |       |
+|     using O5 output only                   |    0 |       |           |       |
+|     using O6 output only                   |  140 |       |           |       |
+|     using O5 and O6                        |   48 |       |           |       |
+|   LUT as Shift Register                    |   24 |     0 |           |       |
+|     using O5 output only                   |    0 |       |           |       |
+|     using O6 output only                   |   24 |       |           |       |
+|     using O5 and O6                        |    0 |       |           |       |
+| Slice Registers                            | 5801 |     0 |   2443200 |  0.24 |
+|   Register driven from within the Slice    | 2676 |       |           |       |
+|   Register driven from outside the Slice   | 3125 |       |           |       |
+|     LUT in front of the register is unused | 1985 |       |           |       |
+|     LUT in front of the register is used   | 1140 |       |           |       |
+| Unique Control Sets                        |  378 |       |    305400 |  0.12 |
++--------------------------------------------+------+-------+-----------+-------+
+* Note: Available Control Sets calculated as Slice Registers / 8, Review the Control Sets Report for more information regarding control sets.
+
+
+3. Memory
+---------
+
++-------------------+------+-------+-----------+-------+
+|     Site Type     | Used | Fixed | Available | Util% |
++-------------------+------+-------+-----------+-------+
+| Block RAM Tile    |    2 |     0 |      1292 |  0.15 |
+|   RAMB36/FIFO*    |    2 |     0 |      1292 |  0.15 |
+|     RAMB36E1 only |    2 |       |           |       |
+|   RAMB18          |    0 |     0 |      2584 |  0.00 |
++-------------------+------+-------+-----------+-------+
+* Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
+
+
+4. DSP
+------
+
++-----------+------+-------+-----------+-------+
+| Site Type | Used | Fixed | Available | Util% |
++-----------+------+-------+-----------+-------+
+| DSPs      |    0 |     0 |      2160 |  0.00 |
++-----------+------+-------+-----------+-------+
+
+
+5. IO and GT Specific
+---------------------
+
++-----------------------------+------+-------+-----------+-------+
+|          Site Type          | Used | Fixed | Available | Util% |
++-----------------------------+------+-------+-----------+-------+
+| Bonded IOB                  |   63 |    63 |      1200 |  5.25 |
+|   IOB Master Pads           |   31 |       |           |       |
+|   IOB Slave Pads            |   32 |       |           |       |
+|   IOB Flip Flops            |    6 |     6 |           |       |
+| Bonded IPADs                |    0 |     0 |        50 |  0.00 |
+| Bonded OPADs                |    0 |     0 |        32 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |        24 |  0.00 |
+| PHASER_REF                  |    0 |     0 |        24 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |        96 |  0.00 |
+| IN_FIFO                     |    0 |     0 |        96 |  0.00 |
+| IDELAYCTRL                  |    3 |     0 |        24 | 12.50 |
+| IBUFDS                      |   16 |    16 |      1152 |  1.39 |
+| GTXE2_COMMON                |    0 |     0 |         4 |  0.00 |
+| GTXE2_CHANNEL               |    0 |     0 |        16 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        96 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        96 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    9 |     9 |      1200 |  0.75 |
+|   IDELAYE2 only             |    9 |     9 |           |       |
+| ODELAYE2/ODELAYE2_FINEDELAY |    6 |     6 |      1200 |  0.50 |
+|   ODELAYE2 only             |    6 |     6 |           |       |
+| IBUFDS_GTE2                 |    0 |     0 |         8 |  0.00 |
+| ILOGIC                      |    7 |     7 |      1200 |  0.58 |
+|   ISERDES                   |    7 |     7 |           |       |
+| OLOGIC                      |   14 |    14 |      1200 |  1.17 |
+|   OUTFF_Register            |    6 |     6 |           |       |
+|   OUTFF_ODDR_Register       |    1 |     1 |           |       |
+|   OSERDES                   |    7 |     7 |           |       |
++-----------------------------+------+-------+-----------+-------+
+
+
+6. Clocking
+-----------
+
++--------------+------+-------+-----------+-------+
+|   Site Type  | Used | Fixed | Available | Util% |
++--------------+------+-------+-----------+-------+
+| BUFGCTRL     |    6 |     2 |       128 |  4.69 |
+| BUFIO        |    1 |     1 |        96 |  1.04 |
+|   BUFIO only |    1 |     1 |           |       |
+| MMCME2_ADV   |    3 |     2 |        24 | 12.50 |
+| PLLE2_ADV    |    0 |     0 |        24 |  0.00 |
+| BUFMRCE      |    0 |     0 |        48 |  0.00 |
+| BUFHCE       |    0 |     0 |       288 |  0.00 |
+| BUFR         |    1 |     0 |        96 |  1.04 |
++--------------+------+-------+-----------+-------+
+
+
+7. Specific Feature
+-------------------
+
++-------------+------+-------+-----------+--------+
+|  Site Type  | Used | Fixed | Available |  Util% |
++-------------+------+-------+-----------+--------+
+| BSCANE2     |    0 |     0 |        16 |   0.00 |
+| CAPTUREE2   |    4 |     0 |         4 | 100.00 |
+| DNA_PORT    |    0 |     0 |         1 |   0.00 |
+| EFUSE_USR   |    0 |     0 |         1 |   0.00 |
+| FRAME_ECCE2 |    0 |     0 |         4 |   0.00 |
+| ICAPE2      |    0 |     0 |         8 |   0.00 |
+| PCIE_2_1    |    0 |     0 |         4 |   0.00 |
+| STARTUPE2   |    4 |     0 |         4 | 100.00 |
+| XADC        |    1 |     0 |         1 | 100.00 |
++-------------+------+-------+-----------+--------+
+
+
+8. Primitives
+-------------
+
++------------+------+---------------------+
+|  Ref Name  | Used | Functional Category |
++------------+------+---------------------+
+| FDRE       | 4874 |        Flop & Latch |
+| LUT4       | 1532 |                 LUT |
+| LUT6       | 1409 |                 LUT |
+| LUT2       |  992 |                 LUT |
+| LUT5       |  774 |                 LUT |
+| FDCE       |  684 |        Flop & Latch |
+| LUT3       |  562 |                 LUT |
+| CARRY4     |  497 |          CarryLogic |
+| MUXF7      |  258 |               MuxFx |
+| LUT1       |  201 |                 LUT |
+| RAMD64E    |  140 |  Distributed Memory |
+| FDSE       |  127 |        Flop & Latch |
+| FDPE       |  121 |        Flop & Latch |
+| RAMD32     |   96 |  Distributed Memory |
+| SRLC32E    |   24 |  Distributed Memory |
+| IBUFDS     |   16 |                  IO |
+| OBUFDS     |   15 |                  IO |
+| IDELAYE2   |    9 |                  IO |
+| OSERDESE2  |    7 |                  IO |
+| ISERDESE2  |    7 |                  IO |
+| ODELAYE2   |    6 |                  IO |
+| STARTUPE2  |    4 |              Others |
+| CAPTUREE2  |    4 |              Others |
+| MMCME2_ADV |    3 |               Clock |
+| IDELAYCTRL |    3 |                  IO |
+| BUFGCTRL   |    3 |               Clock |
+| BUFG       |    3 |               Clock |
+| RAMB36E1   |    2 |        Block Memory |
+| XADC       |    1 |              Others |
+| ODDR       |    1 |                  IO |
+| OBUF       |    1 |                  IO |
+| MUXF8      |    1 |               MuxFx |
+| LDCE       |    1 |        Flop & Latch |
+| BUFR       |    1 |               Clock |
+| BUFIO      |    1 |               Clock |
++------------+------+---------------------+
+
+
+9. Black Boxes
+--------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+10. Instantiated Netlists
+-------------------------
+
++----------+------+
+| Ref Name | Used |
++----------+------+
+
+
+11. SLR Connectivity and Clocking Utilization
+---------------------------------------------
+
++----------+-----------------+---------+-----------------+--------------+-------+-------+
+|          | Total SLLs Used | (%)SLLs | BUFGs/BUFGCTRLs | BUFH/BUFHCEs | BUFRs | MMCMs |
++----------+-----------------+---------+-----------------+--------------+-------+-------+
+| SLR3     |                 |         |               0 |            0 |     0 |     0 |
+| ||||||-> |               1 |   <0.01 |                 |              |       |       |
+| SLR2     |                 |         |               1 |            0 |     0 |     0 |
+| ||||||-> |               2 |    0.01 |                 |              |       |       |
+| SLR1     |                 |         |               2 |            0 |     0 |     2 |
+| ||||||-> |              56 |    0.42 |                 |              |       |       |
+| SLR0     |                 |         |               3 |            0 |     1 |     1 |
++----------+-----------------+---------+-----------------+--------------+-------+-------+
+
+
+12. SLR Connectivity Matrix
+---------------------------
+
++-----------+------+------+------+------+
+| FROM \ TO | SLR3 | SLR2 | SLR1 | SLR0 |
++-----------+------+------+------+------+
+| SLR3      |    0 |    0 |    0 |    0 |
+| SLR2      |    1 |    0 |    2 |    0 |
+| SLR1      |    1 |    2 |    0 |   45 |
+| SLR0      |    1 |    1 |   56 |    0 |
++-----------+------+------+------+------+
+
+
+13. SLR Slice Logic and Dedicated Block Utilization
+---------------------------------------------------
+
++-----------+--------+-----------+------------+-------------+---------------+-----------+-------+------+
+| SLR Index | Slices | (%)Slices | Total LUTs | Memory LUTs | (%)Total LUTs | Registers | BRAMs | DSPs |
++-----------+--------+-----------+------------+-------------+---------------+-----------+-------+------+
+| SLR3      |      0 |      0.00 |          0 |           0 |          0.00 |         0 |     0 |    0 |
+| SLR2      |      0 |      0.00 |          0 |           0 |          0.00 |         0 |     0 |    0 |
+| SLR1      |    979 |      1.28 |       2587 |         188 |          0.85 |      2151 |     0 |    0 |
+| SLR0      |   1709 |      2.24 |       2957 |          24 |          0.97 |      3650 |     2 |    0 |
++-----------+--------+-----------+------------+-------------+---------------+-----------+-------+------+
+| Total     |   2688 |           |       5544 |         212 |               |      5801 |     2 |    0 |
++-----------+--------+-----------+------------+-------------+---------------+-----------+-------+------+
+
+
+14. SLR IO Utilization
+----------------------
+
++-----------+-----------+---------+------------+----------+------------+----------+-----+
+| SLR Index | Used IOBs | (%)IOBs | Used IPADs | (%)IPADs | Used OPADs | (%)OPADs | GTs |
++-----------+-----------+---------+------------+----------+------------+----------+-----+
+| SLR3      |         0 |    0.00 |          0 |     0.00 |          0 |     0.00 |   0 |
+| SLR2      |         6 |    2.00 |          0 |     0.00 |          0 |     0.00 |   0 |
+| SLR1      |        24 |    8.00 |          0 |     0.00 |          0 |     0.00 |   0 |
+| SLR0      |        33 |   11.00 |          0 |     0.00 |          0 |     0.00 |   0 |
++-----------+-----------+---------+------------+----------+------------+----------+-----+
+| Total     |        63 |         |          0 |          |          0 |          |   0 |
++-----------+-----------+---------+------------+----------+------------+----------+-----+
+
+
+
+[SW-FPGA] - INFO: zVivado_get_UtilizationReports
+     |- Control Set            : 378
+     |- SLL crossing SLR3-SLR2 : 1 - 0.01%
+     |- SLL crossing SLR2-SLR1 : 2 - 0.01%
+     |- SLL crossing SLR1-SLR0 : 56 - 0.42%
+
+[SW-FPGA] - INFO: GP/DP placements check: SLL results
+   |- relevant files are not found
+ 
+[SW-FPGA] - INFO: Generating report_design_analysis command for congestion
+
+[SW-FPGA] - INFO: zVivado_get_Congestion_FromTile reports
+      |- North : congestionLevel= 3
+      |- South : congestionLevel= 3
+      |- east  : congestionlevel= 3
+      |- west  : congestionlevel= 3
+      |- vertical  : congestionlevel = 101
+      |- horizontal: congestionlevel = 101
+
+[SW-FPGA] - INFO: Generating Intermediate Timing Status
+
+[SW_FPGA] - INFO : *****************************************
+[SW_FPGA] - INFO : *****   REPORT_TIMING ANALYSIS HOLD *****
+[SW_FPGA] - INFO : *****************************************
+[SW_FPGA] - INFO :     - Timing slack: -0.358
+[SW_FPGA] - INFO :     - Path Type   : Hold
+[SW_FPGA] - INFO :     - Clock       : CLK_fib_clk -> CLK_fib_clk
+[SW_FPGA] - INFO :     - Source      : RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/reset_r/C
+[SW_FPGA] - INFO :     - Destination : RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[4]/virtex7_oserdese2_master/RST
+[SW_FPGA] - INFO : *****************************************
+
+[SW_FPGA] - INFO : *******************************************
+[SW_FPGA] - INFO : *****   REPORT_TIMING ANALYSIS SETUP  *****
+[SW_FPGA] - INFO : *******************************************
+[SW_FPGA] - INFO :     - Timing slack: 2.908
+[SW_FPGA] - INFO :     - Path Type   : Setup
+[SW_FPGA] - INFO :     - Clock       : CLK_sys_idel_clk -> CLK_sys_idel_clk
+[SW_FPGA] - INFO :     - Source      : RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/max_period_error/C
+[SW_FPGA] - INFO :     - Destination : RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/cnt_period_ok_2/CE
+[SW_FPGA] - INFO : *******************************************
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_timing_SH 1 mins
+
+
+  
+
+       #################################################################################
+       ##                    VIVADO : STEP POST_PLACE_PHYS_OPT_DESIGN                 ##
+       #################################################################################
+##  phase:phys_opt_place  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 173 GB  -  LoadAverage (5s|5min|15min / NBcpu): 3.24|1.52|0.64 / 40  MemAvail: 177 GB
+
+[SW_FPGA] - INFO : start post_place_phys phase
+post_place_phys start time: 1681884559
+post_place_phys start date: Wed Apr 19 01:09:19 CDT 2023
+
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_get_slack 1 mins
+[SW_FPGA] - WNS after placement is 2.908
+[SW_FPGA] - TNS after placement is 0.000
+[SW_FPGA] - WHS after placement is -0.358
+[SW_FPGA] - THS after placement is -1.967
+[SW_FPGA] - INFO : THS -1.967 is better than -10000 , phys_opt_design will not be running for Hold-Fix
+[SW_FPGA] - INFO : WNS 2.908 is better than -0.5 , phys_opt_design for setup is bypassed
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_post_place_phys_opt_design 1 mins
+
+
+
+[SW-FPGA] - REPORTS : CLB Utilization by die
+   - CNT% USE  : number of primitives in the SLICE / USED (slice)
+   - CNT% TOT  : number of primitives in the SLICE / TOTAL (slr slice)
++-----------+--------+----------+----------+----------+--------+--------+--------+--------+--------+--------+--------+--------+
+| SLR index | SLICEs | % SLICEs | CNT/USED | CNT%/TOT | LUTs   | LUTs % |  REGs  | REGs % |  FWCs  | FWCs % | QIWCs  | QIWCs %|
++-----------+--------+----------+----------+----------+--------+--------+--------+--------+--------+--------+--------+--------+
+| SLR3      | 0      | 0.0      | 0        | 0.0      | 0      | 0.0    | 0      | 0.0    | 0      | 0      | 0      | 0      |
+| SLR2      | 0      | 0.0      | 0        | 0.0      | 0      | 0.0    | 1      | 0.0    | 0      | 0      | 0      | 0      |
+| SLR1      | 979    | 1.28     | 32.85    | 0.42     | 2488   | 0.2    | 2158   | 0.08   | 0      | 0      | 0      | 0      |
+| SLR0      | 1709   | 2.23     | 26.11    | 0.58     | 2962   | 0.24   | 3668   | 0.15   | 0      | 0      | 0      | 0      |
++-----------+--------+----------+----------+----------+--------+--------+--------+--------+--------+--------+--------+--------+
+
+[SW-FPGA] : INFO : Post Placement zTime Analysis [disabled]. To enable, please use utf command or set ZEBU_FORCE_REPORT_TIMING=1
+
+[SW-FPGA] : INFO : Post Optimization on Fitler paths [disabled]. To enable, please use utf command or set ZEBU_POST_OPT_FILTER=1
+
+
+[SW-FPGA] : INFO : Post Optimization on Data paths [disabled]. To enable, please use utf command or set ZEBU_POST_OPT_DATA=1
+
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_Get_PreRoute_WNS 1 mins
+
+
+  
+
+#################################################################################
+##                             VIVADO : STEP ROUTE_DESIGN                      ##
+#################################################################################
+##  phase:route  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 173 GB  -  LoadAverage (5s|5min|15min / NBcpu): 3.51|1.64|0.69 / 40  MemAvail: 177 GB
+
+[SW_FPGA] - INFO : start route_design phase
+route_design start time: 1681884569
+route_design start date: Wed Apr 19 01:09:29 CDT 2023
+
+[SW_FPGA] - INFO : Vivado route_design_options []
+
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7v2000t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7v2000t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 4 CPUs
+Checksum: PlaceDB: 9a58b19 ConstDB: 0 ShapeSum: 5fff0aac RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 56c030bc
+
+Time (s): cpu = 00:03:44 ; elapsed = 00:02:22 . Memory (MB): peak = 4479.492 ; gain = 820.840 ; free physical = 176858 ; free virtual = 185712
+Post Restoration Checksum: NetGraph: 19692eb4 NumContArr: 3d570208 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 56c030bc
+
+Time (s): cpu = 00:03:44 ; elapsed = 00:02:22 . Memory (MB): peak = 4479.492 ; gain = 820.840 ; free physical = 176831 ; free virtual = 185685
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 56c030bc
+
+Time (s): cpu = 00:03:44 ; elapsed = 00:02:22 . Memory (MB): peak = 4497.992 ; gain = 839.340 ; free physical = 176768 ; free virtual = 185622
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 56c030bc
+
+Time (s): cpu = 00:03:44 ; elapsed = 00:02:22 . Memory (MB): peak = 4497.992 ; gain = 839.340 ; free physical = 176768 ; free virtual = 185622
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 1bbae844e
+
+Time (s): cpu = 00:04:02 ; elapsed = 00:02:39 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 175201 ; free virtual = 184055
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.911  | TNS=0.000  | WHS=-0.488 | THS=-229.984|
+
+Phase 2 Router Initialization | Checksum: 206fb4764
+
+Time (s): cpu = 00:04:04 ; elapsed = 00:02:40 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 175184 ; free virtual = 184038
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 2.64233e-06 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 9887
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 9887
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 25214a274
+
+Time (s): cpu = 00:04:13 ; elapsed = 00:02:45 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174960 ; free virtual = 183814
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 606
+ Number of Nodes with overlaps = 14
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.450  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1176a91ba
+
+Time (s): cpu = 00:04:19 ; elapsed = 00:02:48 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174732 ; free virtual = 183586
+Phase 4 Rip-up And Reroute | Checksum: 1176a91ba
+
+Time (s): cpu = 00:04:19 ; elapsed = 00:02:48 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174726 ; free virtual = 183580
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 1176a91ba
+
+Time (s): cpu = 00:04:19 ; elapsed = 00:02:48 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174717 ; free virtual = 183571
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1176a91ba
+
+Time (s): cpu = 00:04:19 ; elapsed = 00:02:48 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174711 ; free virtual = 183565
+Phase 5 Delay and Skew Optimization | Checksum: 1176a91ba
+
+Time (s): cpu = 00:04:19 ; elapsed = 00:02:48 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174705 ; free virtual = 183559
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 14827f0a4
+
+Time (s): cpu = 00:04:20 ; elapsed = 00:02:48 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174606 ; free virtual = 183460
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.563  | TNS=0.000  | WHS=0.038  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 12966e071
+
+Time (s): cpu = 00:04:20 ; elapsed = 00:02:48 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174585 ; free virtual = 183439
+Phase 6 Post Hold Fix | Checksum: 12966e071
+
+Time (s): cpu = 00:04:20 ; elapsed = 00:02:48 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174578 ; free virtual = 183433
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.0968994 %
+  Global Horizontal Routing Utilization  = 0.131291 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1a7f3ce09
+
+Time (s): cpu = 00:04:21 ; elapsed = 00:02:49 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174540 ; free virtual = 183394
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1a7f3ce09
+
+Time (s): cpu = 00:04:21 ; elapsed = 00:02:49 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174540 ; free virtual = 183394
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 228b3833c
+
+Time (s): cpu = 00:04:22 ; elapsed = 00:02:50 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174454 ; free virtual = 183308
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=2.563  | TNS=0.000  | WHS=0.038  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 228b3833c
+
+Time (s): cpu = 00:04:22 ; elapsed = 00:02:50 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174444 ; free virtual = 183298
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:04:22 ; elapsed = 00:02:50 . Memory (MB): peak = 4751.148 ; gain = 1092.496 ; free physical = 174540 ; free virtual = 183394
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+6592 Infos, 69 Warnings, 6 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:04:28 ; elapsed = 00:02:55 . Memory (MB): peak = 4751.148 ; gain = 1092.500 ; free physical = 174541 ; free virtual = 183395
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads, tcl.statsThreshold
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_route_design 3 mins
+
+[SW_FPGA] - INFO : Checking router status
+   |- Routed wirelength Vertical  : NA
+   |- Routed wirelength Horizontal: NA
+   |- Global routing Vertical     : 0.0968994
+   |- Global routing Horizontal   : 0.131291
+   |- 9910 routable nets / 19010 Total nets
+   |- 0 nets in errors
+[SW_FPGA] - INFO : Router successful. No unroutes/partial routes found
+
+[SW-FPGA] - PROC : called zVreports_CLB_congestioned_routed. rc=1
+
+
+  
+
+#################################################################################
+##                    VIVADO : STEP POST_ROUTE_PHYS_OPT_DESIGN                 ##
+#################################################################################
+##  phase:phys_opt_route  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 170 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.89|2.33|1.14 / 40  MemAvail: 174 GB
+
+[SW_FPGA] - INFO : start post_route_physopt phase
+post_route_physopt start time: 1681884745
+post_route_physopt start date: Wed Apr 19 01:12:25 CDT 2023
+
+[SW_FPGA] - INFO : Slack 2.565 is better than/equal to  0 , so no need to run phys_opt_design  for fixing setup
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_analyse_timing_post_route 1 mins
+
+
+  
+
+#################################################################################
+##                        VIVADO : STEP ROUTE_DESIGN_HOLD                      ##
+#################################################################################
+##  phase:hold_WA_route  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 170 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.98|2.36|1.15 / 40  MemAvail: 174 GB
+
+[SW_FPGA] - INFO : Hold time is met: No need to run router again
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_analyse_timing_post_route_Hold 1 mins
+
+
+
+  
+
+#################################################################################
+##                            VIVADO : STEP TIMING                             ##
+#################################################################################
+##  phase:timing  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 170 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.98|2.36|1.15 / 40  MemAvail: 174 GB
+
+[SW_FPGA] - INFO : start report_timing phase
+report_timing start time: 1681884748
+report_timing start date: Wed Apr 19 01:12:28 CDT 2023
+
+
+[SW_FPGA] - INFO : ***********************************
+[SW_FPGA] - INFO : *****  REPORT_TIMING ANALYSIS *****
+[SW_FPGA] - INFO : ***********************************
+[SW_FPGA] - INFO : timing_report skipped. No error detected
+[SW_FPGA] - INFO : ***********************************
+
+
+
+  
+
+#################################################################################
+##                            VIVADO : STEP DRC_BITSTREAM_CHECK                ##
+#################################################################################
+##  phase:bitstream  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 169 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.76|2.33|1.16 / 40  MemAvail: 173 GB
+
+[SW_FPGA] - INFO : start write_bitstream phase
+write_bitstream start time: 1681884759
+write_bitstream start date: Wed Apr 19 01:12:39 CDT 2023
+
+[SW_FPGA] - INFO : bitgen extracting option [x16 ] 
+[SW_FPGA] - INFO : bitgen extracting option [Enable ] 
+[SW_FPGA] - INFO : bitgen extracting option [CCLK ] 
+
+Command: write_bitstream -force design.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7v2000t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7v2000t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:interface:pcie_pipe_debug:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/interfaces/pcie3_pipe_debug_v1_0/pcie_pipe_debug.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/interfaces/pcie_pipe_debug_v1_0/pcie_pipe_debug.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:interface:pcie_pipe_debug_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/interfaces/pcie3_pipe_debug_v1_0/pcie_pipe_debug_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/interfaces/pcie_pipe_debug_v1_0/pcie_pipe_debug_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:drp_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/drp_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/drp_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:shared_logic_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/shared_logic_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/shared_logic_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:lbus_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/lbus_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/lbus_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:an_lt_ctrl_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/an_lt_ctrl_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/an_lt_ctrl_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:rs_fec_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/rs_fec_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/rs_fec_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:an_lt_ctrl_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/an_lt_ctrl_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/an_lt_ctrl_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:gt_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/gt_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/gt_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:ctrl_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/ctrl_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/ctrl_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:statistics_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/statistics_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/statistics_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:ieee_1588_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/ieee_1588_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/ieee_1588_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:otn_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/otn_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/otn_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:lbus_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/lbus_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/lbus_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:flowctrl_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/flowctrl_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/flowctrl_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:shared_logic_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/shared_logic_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/shared_logic_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:gt_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/gt_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/gt_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:flowctrl_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/flowctrl_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/flowctrl_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:drp_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/drp_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/drp_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:ieee_1588_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/ieee_1588_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/ieee_1588_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:otn_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/otn_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/otn_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:rs_fec_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/rs_fec_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/rs_fec_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:statistics_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/statistics_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/statistics_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:ctrl_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/ctrl_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_4/interfaces/ctrl_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_pcie4:pcie4_gt_if:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_gt_if.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/pcie4c_uscale_plus_v1_0/interfaces/pcie4_gt_if.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_pcie4:pcie4_gt_if_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_gt_if_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/pcie4c_uscale_plus_v1_0/interfaces/pcie4_gt_if_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_ctrl_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_ctrl_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_ctrl_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_fab_to_ip_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_fab_to_ip_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_fab_to_ip_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_ip_to_pins:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_ip_to_pins.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_ip_to_pins.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_bidir:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_bidir.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_data_bidir.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_fab_to_ip:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_fab_to_ip.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_fab_to_ip.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_tx:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_tx.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_data_tx.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_ip_to_pins_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_ip_to_pins_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_ip_to_pins_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_tx_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_tx_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_data_tx_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_rx:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_rx.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_data_rx.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_rx_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_rx_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_data_rx_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_ctrl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_ctrl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_ctrl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_bidir_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_bidir_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_5/interfaces/hssio_data_bidir_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_ctrl_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_ctrl_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_ctrl_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_fab_to_ip_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_fab_to_ip_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_fab_to_ip_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_ip_to_pins:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_ip_to_pins.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_ip_to_pins.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_bidir:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_bidir.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_data_bidir.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_fab_to_ip:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_fab_to_ip.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_fab_to_ip.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_tx:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_tx.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_data_tx.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_ip_to_pins_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_ip_to_pins_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_ip_to_pins_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_tx_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_tx_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_data_tx_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_rx:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_rx.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_data_rx.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_rx_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_rx_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_data_rx_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_ctrl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_ctrl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_ctrl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_high_speed_selectio_wiz:hssio_data_bidir_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_3/interfaces/hssio_data_bidir_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/high_speed_selectio_wiz_v3_2/interfaces/hssio_data_bidir_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_xdma:dsc_bypass:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/dsc_bypass.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/dsc_bypass.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_pcie4:pcie4_cfg_control:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/pcie4c_uscale_plus_v1_0/interfaces/pcie4_cfg_control.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_cfg_control.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_pcie4_uscaleplus:ext_gtcom:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_usp_ext_gtcom.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_usp_ext_gtcom.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_xdma:xdma_debug_ports_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/xdma_debug_ports_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/xdma_debug_ports_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_xdma:int_shared_logic_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie3_us_int_shared_logic_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie3_us_int_shared_logic_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_xdma:pcie_debug:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie_debug.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie_debug.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_xdma:int_shared_logic:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie3_us_int_shared_logic.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie3_us_int_shared_logic.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_pcie4:pcie4_cfg_control_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/pcie4c_uscale_plus_v1_0/interfaces/pcie4_cfg_control_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_cfg_control_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_pcie4_uscaleplus:ext_gtcom_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_usp_ext_gtcom_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_usp_ext_gtcom_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_xdma:pcie3_7x_transceiver_debug_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie3_7x_transceiver_debug_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie3_7x_transceiver_debug_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_pcie4_uscaleplus:int_gtcom_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_usp_int_gtcom_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_usp_int_gtcom_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_xdma:dsc_bypass_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/dsc_bypass_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/dsc_bypass_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_pcie4:pcie4_pcie_id:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/pcie4c_uscale_plus_v1_0/interfaces/pcie4_pcie_id.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_pcie_id.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_xdma:pcie4_us_plus_transceiver_debug_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_us_plus_transceiver_debug_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_us_plus_transceiver_debug_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_xdma:pcie_debug_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie_debug_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie_debug_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_pcie4:pcie4_gt_if:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_gt_if.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_gt_if.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_xdma:pcie3_us_transceiver_debug:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie3_us_transceiver_debug.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie3_us_transceiver_debug.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_xdma:pcie3_7x_transceiver_debug:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie3_7x_transceiver_debug.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie3_7x_transceiver_debug.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_pcie4_uscaleplus:int_gtcom:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_usp_int_gtcom.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_usp_int_gtcom.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_pcie3_ultrascale:pcie3_us_gt_if_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie3_us_gt_if_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie3_us_gt_if_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_pcie4:pcie4_gt_if_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_gt_if_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_gt_if_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_xdma:pcie3_us_transceiver_debug_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie3_us_transceiver_debug_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie3_us_transceiver_debug_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_xdma:xdma_status_ports:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/xdma_status_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/xdma_status_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_xdma:xdma_status_ports_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/xdma_status_ports_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/xdma_status_ports_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_pcie3_ultrascale:pcie3_us_gt_if:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie3_us_gt_if.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie3_us_gt_if.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_pcie4:pcie4_pcie_id_rtl:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/pcie4c_uscale_plus_v1_0/interfaces/pcie4_pcie_id_rtl.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_pcie_id_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_xdma:pcie4_us_plus_transceiver_debug:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/pcie4_us_plus_transceiver_debug.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/pcie4_us_plus_transceiver_debug.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_xdma:xdma_debug_ports:1.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/xdma_v4_1/interfaces/xdma_debug_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/qdma_v3_0/interfaces/xdma_debug_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:drp_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/drp_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/drp_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:shared_logic_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/shared_logic_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/shared_logic_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:lbus_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/lbus_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/lbus_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:an_lt_ctrl_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/an_lt_ctrl_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/an_lt_ctrl_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:rs_fec_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/rs_fec_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/rs_fec_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:an_lt_ctrl_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/an_lt_ctrl_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/an_lt_ctrl_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:gt_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/gt_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/gt_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:ctrl_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/ctrl_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/ctrl_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:statistics_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/statistics_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/statistics_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:ieee_1588_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/ieee_1588_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/ieee_1588_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:otn_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/otn_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/otn_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:lbus_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/lbus_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/lbus_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:flowctrl_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/flowctrl_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/flowctrl_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:shared_logic_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/shared_logic_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/shared_logic_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:gt_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/gt_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/gt_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'xilinx.com:display_cmac_usplus:flowctrl_ports_int:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/flowctrl_ports_int.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/flowctrl_ports_int.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:drp_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/drp_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/drp_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:ieee_1588_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/ieee_1588_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/ieee_1588_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:otn_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/otn_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/otn_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:rs_fec_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/rs_fec_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/rs_fec_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:statistics_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/statistics_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/statistics_ports.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'xilinx.com:display_cmac_usplus:ctrl_ports:2.0' found within IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+File in use: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_6/interfaces/ctrl_ports.xml
+File ignored: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip/xilinx/cmac_usplus_v2_5/interfaces/ctrl_ports.xml
+INFO: [Common 17-14] Message 'IP_Flow 19-1694' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'spirit:vendor' : Mandatory element missing or unexpected element found
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'spirit:vendor' : Mandatory element missing or unexpected element found
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'spirit:vendor' : Mandatory element missing or unexpected element found
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'spirit:vendor' : Mandatory element missing or unexpected element found
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'spirit:vendor' : Mandatory element missing or unexpected element found
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'spirit:vendor' : Mandatory element missing or unexpected element found
+WARNING: [IP_Flow 19-395] Problem validating against XML schema: see 'spirit:vendor' : Mandatory element missing or unexpected element found
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/data/ip'.
+INFO: [DRC 23-27] Running DRC with 4 threads
+WARNING: [DRC CHECK-1] Report disabled checks: The following rules are disabled: MDRV-1
+WARNING: [DRC CHECK-3] Report rule limit reached: REQP-1839 rule limit reached: 20 violations have been found.
+WARNING: [DRC FLBO-1] Pblock overlap: pblock_fx_macro_slr overlaps with pblock_ifmacro : 33.98% .
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 27 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 4 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./design.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+6604 Infos, 179 Warnings, 6 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:01:37 ; elapsed = 00:01:38 . Memory (MB): peak = 5966.711 ; gain = 1215.562 ; free physical = 179378 ; free virtual = 188285
+
+[SW_FPGA] - INFO : Generating post bitstream checkpoint: disabled
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_write_bitstream 2 mins
+
+
+
+  
+
+#################################################################################
+##                            VIVADO : STEP ZTIME_ANALYSE_ROUTE                ##
+#################################################################################
+##  phase:extra_timing  -  Host: csce-quinn-s1.engr.tamu.edu  -  MemFree: 175 GB  -  LoadAverage (5s|5min|15min / NBcpu): 2.34|2.30|1.26 / 40  MemAvail: 179 GB
+
+[SW_FPGA] - INFO : start zTime_analyse_Route phase
+zTime_analyse_Route start time: 1681884858
+zTime_analyse_Route start date: Wed Apr 19 01:14:18 CDT 2023
+
+[SW-FPGA] : INFO : Generate SDF or post FPGA timing report for system timing
+[SW_FPGA] - Write_sdf is enabled
+[SW_FPGA] - Write_sdf is attempted at /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original 
+[SW_FPGA] - genSdfMap is not enabled
+[SW-FPGA] : INFO : writing SDF. Post FPGA zTime analysis is skipped because ZEBU_SDF_ANALYSIS =1
+
+
+
+  
+
+#################################################################################
+##                            VIVADO : STEP LOCATION_BUILDING                  ##
+#################################################################################
+[SW_FPGA] - INFO : start location_building phase
+location_building start time: 1681884863
+location_building start date: Wed Apr 19 01:14:23 CDT 2023
+
+[SW_FPGA] - INFO : Start of Cells Location Builing
+[SW_FPGA] - INFO : End of  Cells Location Builing
+[SW_FPGA] - INFO : elapsed time of the procedure zVivado_build_design_location 1 mins
+
+
+/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original
+
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 19 01:14:24 2023...
+
+real	8m13.449s
+user	9m14.779s
+sys	1m7.430s
+################################################################################
+##                                  STEP ZRDB                                 ##
+################################################################################
+zrdb start time: 1681884867
+zrdb start date: Wed Apr 19 01:14:27 CDT 2023
+
+                                    ZeBu (R)
+                                      zRDB
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zRDB -krb -edf ./fpga_reports/zNetgen/design_db.znf -virtex 7 -o zrdb/ZebuDB.zdb -xdl design.loc -db ../ZebuDB.rtb.zdb -fpga IF -unit U0 -module M0 
+
+# start time is Wed Apr 19 01:14:27 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:11
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 2.53 2.34 1.29 6/514 11778
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 182043 MB
+#            Total Free including cache: 186797 MB
+#            Swap cache: 0 MB Cached space: 4754 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 353 MB VmPeak: 353 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255332
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ZRDB : libZebuRDB version 2021.2.0 RW
+#   step HYDRA : Failed to open MuDb properties (Cannot read property file './MuDb/properties'.). Assuming Hydra was not used and platform is not ZS4U.
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step DATABASE : checking and preparing netlist.
+#   step DATABASE : uniquified algo will be used.
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 4 modules created
+#   step DATABASE : Referencing nodes (top instances)
+#   step DATABASE : 1 nodes referenced in 0 seconds. Total of 0 referenced nodes.
+#   step DATABASE : reading data base '../ZebuDB.rtb.zdb'
+#   step ZVP : Reading vivado placement log file 'design.loc'
+#   step ZVP : 'design.loc':1 - reading a FD/LD section
+#   step ZVP : 'design.loc':5823 - reading a FD/LD section
+#   step ZVP : 'design.loc':5826 - reading a BRAM section
+#   step ZVP : 'design.loc':5830 - reading a URAM section
+#   step ZVP : 'design.loc':5832 - reading a RAMLUT section
+#   step ZVP : 166 ramluts found, 236 unsupported or unknown ramluts
+#   step ZVP : 'design.loc':6153 - reading an SRL section
+#   step ZVP : 'design.loc':6179 - reading a DSP48 section
+#   step ZVP : File 'design.loc' : read complete in 0 seconds
+#   step ZVP : Reading vivado simplifications log file 'vivado_opt.log'
+#   step ZVP : Fetching constants
+#   step ZVP : Fetching removed
+#   step ZVP : File 'vivado_opt.log' : read complete in 0 seconds
+#   step VVD : Collected 5821 register locations, 2304 constant or removed registers, 24 SRL locations, 2 BRAM locations, 0 URAM locations, and 83 RAMLUT locations.
+#   step Top Name : Guessed top name : top
+#   step DATABASE : adding signals to data base '../ZebuDB.rtb.zdb'
+#   step KRB : Building top list
+#   step FWC : Allowed netlist top path : 'ztop/RTB' -> 'ZebuTop'
+#   step FWC : Starting FWC coordinate retrieval
+#   step FWC : Exploring netlist step 1/3 : fetch all FWC coordinates
+#   step FWC : Saving to file './zrdb/fwc_local_table.zrdb'
+#   step FILE : Opening file './zrdb/fwc_local_table.zrdb' in write mode
+#   step DICTIONARY : Serializing dictionary
+#   step DICTIONARY : Serialized dictionary in 0 seconds, 0 different names
+#   step FWC : Serializing 0 ValueSets
+#   step FWC : All ValueSets serialized in 0 seconds
+#   step FWC : Saved in 0 seconds'
+#   step FWC : All done in '0 seconds'
+### warning in DATABASE [RDB0289W] : Found 1761 mismatches between Xilinx file and Edif netlist
+#   step KRB : Writing SAC to './zrdb/tree.zrdb'.
+#   step KRB : Wrote SAC in 0 seconds.
+#   step CompositeBuilder : Saving composite DB to './zrdb/composites.zrdb'
+#   step FILE : Opening file './zrdb/composites.zrdb' in write mode
+
+#   exec summary :    1 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m1s, user 0m0.811s, sys 0m0.125s
+#   exec summary : Total memory: 732412 kB - RSS memory: 383908 kB - Data memory: 568380 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:14:28 2023
+
+real	0m1.011s
+user	0m0.824s
+sys	0m0.165s
+################################################################################
+##                                   STEP ZDB                                 ##
+################################################################################
+zdb start time: 1681884868
+zdb start date: Wed Apr 19 01:14:28 CDT 2023
+
+                                    ZeBu (R)
+                                      zDB
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zDB -edf ./fpga_reports/zNetgen/design_db.znf -virtex 7 -o zrdb/ZebuDB.zdb -xdl design.loc -db ../ZebuDB.rtb.zdb -fpga IF -board U0/M0 
+
+# start time is Wed Apr 19 01:14:28 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:07
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 2.53 2.34 1.29 5/514 11854
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 182210 MB
+#            Total Free including cache: 186963 MB
+#            Swap cache: 0 MB Cached space: 4753 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 111 MB VmPeak: 111 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255327
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ZRDB : libZebuRDB version 2021.2.0 RW
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step DATABASE : checking and preparing netlist.
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step DATABASE : reading data base '../ZebuDB.rtb.zdb'
+#   step ZVP : Reading vivado placement log file 'design.loc'
+#   step ZVP : 'design.loc':1 - reading a FD/LD section
+#   step ZVP : 'design.loc':5823 - reading a FD/LD section
+#   step ZVP : 'design.loc':5826 - reading a BRAM section
+#   step ZVP : 'design.loc':5830 - reading a URAM section
+#   step ZVP : 'design.loc':5832 - reading a RAMLUT section
+#   step ZVP : 166 ramluts found, 236 unsupported or unknown ramluts
+#   step ZVP : 'design.loc':6153 - reading an SRL section
+#   step ZVP : 'design.loc':6179 - reading a DSP48 section
+#   step ZVP : File 'design.loc' : read complete in 0 seconds
+#   step ZVP : Reading vivado simplifications log file 'vivado_opt.log'
+#   step ZVP : Fetching constants
+#   step ZVP : Fetching removed
+#   step ZVP : File 'vivado_opt.log' : read complete in 0 seconds
+#   step VVD : Collected 5821 register locations, 2304 constant or removed registers, 24 SRL locations, 2 BRAM locations, 0 URAM locations, and 83 RAMLUT locations.
+#   step DATABASE : adding signals to data base '../ZebuDB.rtb.zdb'
+#   step TOP : forcing top name : 'top'
+#   step DATABASE : writing data base 'zrdb/ZebuDB.zdb'
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m0.480s, sys 0m0.52s
+#   exec summary : Total memory: 330544 kB - RSS memory: 105044 kB - Data memory: 207616 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:14:28 2023
+
+real	0m0.588s
+user	0m0.487s
+sys	0m0.059s
+
+
+
+make[1]: Leaving directory `/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original'
+
+FPGA compilation finished with status 0

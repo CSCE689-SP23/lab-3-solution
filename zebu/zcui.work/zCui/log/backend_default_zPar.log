@@ -1,0 +1,447 @@
+#   step ARCHIVE : Creating archive file ./tools/zCui/zPar_archive.xcui
+
+                                    ZeBu (R)
+                                      zPar
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zPar zPar_zCui.tcl 
+
+# start time is Wed Apr 19 01:05:18 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:04:12
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.32 0.11 0.07 1/474 36577
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185586 MB
+#            Total Free including cache: 190305 MB
+#            Swap cache: 0 MB Cached space: 4719 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 401 MB VmPeak: 401 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255814
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step MGT_QSFP_CABLE_DELAY : Set qsfp_cable delay as 35000.000000 ps.
+#   step MGT_DIRECT_QSFP_CABLE_DELAY : Set direct_qsfp_cable delay as 35000.000000 ps.
+#   step MGT : Using GT_GP mode
+Commands for zPar from zCoreBuild, core: Part_0.
+### warning in System [KPR0982W] : file '../timing.data' not found, timing tasks of previous compilation will not be used
+### warning in TCL RETIREMENT [KPR1518W] : This command will be deprecated in the next major release after ZEBU20.03.
+### warning in TCL RETIREMENT [KPR1518W] : This command will be deprecated in the next major release after ZEBU20.03.
+Other commands for zPar.
+
+
+################################################################
+# zPar STEP : Load the target configurations
+################################################################
+Loading zPar_target_conf.tcl for design top
+# Configuration used is:
+#   created by       : davidkebo
+#   based on release : /opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   platform type    : zse
+
+
+
+
+################################################################
+# zPar STEP : Load the design configurations
+################################################################
+Loading configuration for design top
+Design configuration for zPar from zCoreBuild, core: Part_0.
+Loading configuration for design top
+# no bufg propag for zceiClockPort clocks
+# FK related routing directives
+################################################################
+# zPar STEP : Loading 1 UCF constraints       
+################################################################
+
+
+
+
+################################################################
+# zPar STEP : Load DVE parameters
+################################################################
+
+
+################################################################
+# zPar STEP : Loading extra commands file /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zPar_config.tcl      
+################################################################
+################################################################
+# zPar STEP : Merge the data base
+################################################################
+#   step Merge Cores : Starting
+#   step MERGING CORES : Start cores merging
+#   step ZNF PARSER : reading netlist from ZNF file 'edif/top.edf.gz'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step ZNF PARSER : reading netlist from ZNF file 'work.Part_0/edif/top.edf.gz'
+#   step ZNF PARSER : reading netlist from ZNF file 'work.Part_0/edif/U0_M0.edf.gz'
+#   step SERIALIZE : writing netlist 'gmerge' into znl file 'tools/zPar/debug_netlists/global_merge.edf.gz'
+#   step SERIALIZE : #bytes in: 2008, #bytes out: 1095, compression ratio: 1.833790
+### warning in ENV RETIREMENT [KPR1571W] : Environment variable "ZEBU_NO_LOCAL_RTB_ROUTING" will be deprecated in the next major release after ZEBU20.03.
+#   step SERIALIZE : writing netlist 'gmerge' into znl file 'tools/zPar/debug_netlists/final_unflat_global_merge.edf.gz'
+#   step SERIALIZE : #bytes in: 1742, #bytes out: 898, compression ratio: 1.939866
+### warning in ENV RETIREMENT [KPR1572W] : Environment variable "ZEBU_NO_LOCAL_RTB_ROUTING" will be deprecated in the next major release after ZEBU20.03.
+#   step Clock routing : wire 'Part_0@U0_M0@zcg_zceiClock[0]' will be routed from local IF, on each module
+#   step Clock routing : wire 'Part_0@U0_M0@zcg_zceiClock[1]' will be routed from local IF, on each module
+#   step SERIALIZE : writing netlist 'gmerge' into znl file 'edif/mergetop.edf.gz'
+#   step SERIALIZE : #bytes in: 1253, #bytes out: 710, compression ratio: 1.764789
+#   step SERIALIZE : writing netlist 'gmerge' into znl file 'globalMerge.edf.gz'
+#   step SERIALIZE : #bytes in: 1742, #bytes out: 898, compression ratio: 1.939866
+#   step MERGING CORES : End cores merging
+#   step Merge Cores : Done in    elapsed:0.20 s   user:0.14 s    system:0.2 s      %cpu:77.48       load:0.32       fm:185552 m      vm:493 m      vm:+28 m      um:166 m      um:+33 m
+
+
+################################################################
+# zPar STEP : Check the data base
+################################################################
+
+
+################################################################
+# zPar STEP : Initialize the data base
+################################################################
+#   step ZNF PARSER : reading netlist from ZNF file 'ztb_tg_remapped.edf.gz'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/edifs/zse_xc7v_8c_2000_v1.edf.gz'
+#   step INIT : Targeting product type: zse
+#   step INIT : Setting socket mode: v5v6v7
+#   step CLOCK : Wire Part_0@U0_M0@ztwbufg_zcg_compositeClock is a clock
+#   step CLOCK : Wire Part_0@U0_M0@ztwbufg_zcg_zceiClock[0] is a clock
+#   step CLOCK : Wire Part_0@U0_M0@ztwbufg_zcg_zceiClock[1] is a clock
+#   step CLOCK : Wire Part_0@U0_M0@z_dclk_delay_bufg is a clock
+#   step CLOCK : Wire Part_0@U0_M0@z_dclk_delay2_bufg is a clock
+
+
+################################################################
+# zPar STEP : Place the design
+################################################################
+#   step Place : Starting
+#   step ZTIME : Create timing graph for optimization
+#   step ZTIME : build clock IF->FPGA vertices
+#   step ZTIME : build IF<->FPGA vertices
+#   step ZTIME : build FPGA<->FPGA vertices
+#   step ZTIME : U0_M0_F0 In: 5, Out:0, Inout:0, Others:0
+#   step ZTIME : create 10 nodes
+#   step ZTIME : create 5 arcs
+#   step SOURCE : Source file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/ztime/common_eval_params.tcl' ...
+#   step SOURCE : Source file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/ztime/v7_eval_params.tcl' ...
+#   step SOURCE : Source gzipped file 'tools/zTime/zTopBuild_timing.zti' ...
+#   step HYDRA : Hydra mode is disabled.
+#   step SOURCE : Source gzipped file 'tools/zTime/clock_dependencies.zti' ...
+#   step ZNF PARSER : reading netlist from ZNF file 'tools/zTime/zTime_hierarchy.edf.gz'
+#   step IMPORT : Clock domain deduplication is enabled
+#   step IMPORT : Starting
+#   step IMPORT : import use ZEBU_EDIF_TRANSFER
+#   step IMPORT : Import asynchronous paths from 'work.Part_0/tools/zTime/global_time.edf.gz'
+#   step ZNF PARSER : reading netlist from ZNF file 'work.Part_0/tools/zTime/global_time.edf.gz'
+#   step BINDATA : Reading clock domain file "work.Part_0/tools/zTime/zTime_clock_domain.cds".
+#   step BINDATA : Clock domains read: 2 sets with average 1.000000 and max 1 clock domains per set
+#   step BINDATA : Clock domains read: 0 deduplicated, result is average 1.000000 and max 1 clock domains per set
+#   step IMPORT : Import asynchronous paths from FPGA 'U0_M0_F0'
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port U0_M0_F0.z_dclk_delay created by zPar  but not seen by zTime
+#   step IMPORT : Number of timing arcs created: 2, of them 0 are ZCLK
+#   step Memories timing paths distribution : 
+# +
+#   step IMPORT : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.32       fm:185516 m      vm:524 m       vm:+0 m      um:204 m       um:+1 m
+#   step IMPORT : Clock domain deduplication is enabled
+#   step IMPORT : Starting
+#   step IMPORT : import use ZEBU_EDIF_TRANSFER
+#   step IMPORT : Import asynchronous paths from 'tools/zRTB_FE/global_rtb_time.edf.gz'
+#   step ZNF PARSER : reading netlist from ZNF file 'tools/zRTB_FE/global_rtb_time.edf.gz'
+#   step IMPORT : Import asynchronous paths from RTB
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1 created by zPar  but not seen by zTime
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0 created by zPar  but not seen by zTime
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_filterClock created by zPar  but not seen by zTime
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_compositeClock created by zPar  but not seen by zTime
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_skewClock created by zPar  but not seen by zTime
+#   step IMPORT : Number of timing arcs created: 0, of them 0 are ZCLK
+#   step Memories timing paths distribution : 
+# +
+#   step IMPORT : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.32       fm:185516 m      vm:524 m       vm:+0 m      um:204 m       um:+0 m
+#   step SOURCE : Source gzipped file 'work.Part_0/tools/zTime/zCoreBuild_timing.zti' ...
+#   step ZTIME : Timing graph for optimization created
+#   step ROUTE :  Apply user zTime false paths constraints
+#   step SOURCE : Source file '../utf_generatefiles/zTime_config.tcl' ...
+#   step SOURCE : Source file '../utf_generatefiles/new_zTime_config.tcl' ...
+
+#   step ZTIME : Disable slack ratio distribution
+#   step ZNF PARSER : reading netlist from ZNF file 'edif/mergetop.edf.gz'
+#   step ARCHIVE : Creating archive file ./tools/zCui/zParBE_archive.xcui
+#   step PLACE : Placement result for module U0_M0 placed on zebu:
+#   step PLACE :   +----+------------------------------+------------------------------+
+#   step PLACE :   |  0 | F00_ZSE_XC7V_8C_2000_V1      | U0_M0_F0                     |
+#   step PLACE :   |  1 | F01_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  2 | F02_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  3 | F03_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  4 | F04_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  5 | F05_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  6 | F06_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  7 | F07_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  8 | F08_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   +----+------------------------------+------------------------------+
+#   step Granularity : Granularity is disabled because the hardware type zse doesn't support granularity
+#   step KR_ROUTE : FPGA logical name U0_M0_F0 placed at  FPGA ID 0
+#   step Place : Done in    elapsed:0.15 s   user:0.10 s    system:0.1 s      %cpu:72.13       load:0.32       fm:185512 m      vm:528 m      vm:+24 m      um:208 m      um:+24 m
+
+
+################################################################
+# zPar STEP : Route the design
+################################################################
+#   step Route : Starting
+#   step System : routingEffort medium
+
+#   step STATS : Writing file zPar_stats/zPar_config.csv
+#   step STATS : Writing file zPar_stats/zPar_before.csv
+#   step STATS : Writing file zPar_stats/zPar_in_before.csv
+#   step STATS : Writing file zPar_stats/zPar_out_before.csv
+#   step STATS : Writing file zPar_stats/zPar_ratios_before.csv
+#   step STATS : Writing file zPar_stats/design.txt
+#   step STATS : Writing file zPar_stats/target.txt
+#   step ROUTE : Route design clocks
+#   step Clcok Route : Found driver port in IF/zcg_compositeClock for port U0_M0_F0/zcg_compositeClock
+#   step Clcok Route : Found driver port in IF/zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1 for port U0_M0_F0/zcg_zceiClock[0]
+#   step Clcok Route : Found driver port in IF/zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0 for port U0_M0_F0/zcg_zceiClock[1]
+#   step Clcok Route : Found driver port in IF/zcg_skewClock for port U0_M0_F0/z_dclk_delay
+#   step Clcok Route : Found driver port in IF/zcg_filterClock for port U0_M0_F0/z_dclk_delay2
+#   step ROUTE : 5 physical clock nets (on 63) used to route 5 design clocks
+### warning in CHECK [KPR0630W] : This design is empty, no wire to route.
+#   step MultiDie DB : ---------------- Begin creation of multi die DB info for module zse_xc7v_8c_2000_v1
+#   step MultiDie DB : ---------------- multi die DB for module zse_xc7v_8c_2000_v1, size : 10
+#   step MultiDie DB : ---------------- End creation of multi die DB info for module zse_xc7v_8c_2000_v1
+
+#   step STATS : Writing file zPar_stats/zPar_after.csv
+#   step STATS : Writing file zPar_stats/zPar_ratios_after.csv
+
+#   step ROUTE : =================================================================================
+#   step ROUTE : Design matrix after routing (U0_M0)
+#+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+#|       |    F00|    F01|    F02|    F03|    F04|    F05|    F06|    F07|    F08|
+#+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+#|    F00|      -|      .|      .|      .|      .|      .|      .|      .|      1|
+#|    F01|      .|      -|      .|      .|      .|      .|      .|      .|      .|
+#|    F02|      .|      .|      -|      .|      .|      .|      .|      .|      .|
+#|    F03|      .|      .|      .|      -|      .|      .|      .|      .|      .|
+#|    F04|      .|      .|      .|      .|      -|      .|      .|      .|      .|
+#|    F05|      .|      .|      .|      .|      .|      -|      .|      .|      .|
+#|    F06|      .|      .|      .|      .|      .|      .|      -|      .|      .|
+#|    F07|      .|      .|      .|      .|      .|      .|      .|      -|      .|
+#|    F08|      1|      .|      .|      .|      .|      .|      .|      .|      -|
+#|     IF|      .|      .|      .|      .|      .|      .|      .|      .|      1|
+#|    Sum|      1|      .|      .|      .|      .|      .|      .|      .|      2|
+#|    Sum|      1|      .|      .|      .|      .|      .|      .|      .|      2|
+#+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+#   step Route : Done in    elapsed:0.29 s   user:0.20 s    system:0.2 s      %cpu:75.41       load:0.32       fm:185477 m      vm:562 m      vm:+34 m      um:243 m      um:+35 m
+
+
+################################################################
+# zPar STEP : Generate the results
+################################################################
+#   step INCR : Dumping config database './tools/zPar/zPar_db/configDB'
+#   step INCR : Dumping design database './tools/zPar/zPar_db/designDB'
+#   step INCR : Dumping place database './tools/zPar/zPar_db/placeDB'
+
+
+#   step GENERATION : RACC (Run-time Asynchronous Communication Check) : off
+#   step GENERATION : Generating merge script 'zPar_merge.tcl'
+#   step GENERATE : Create ./tools/zTime/zPar2PDMTiming.tcl script
+#   step zrm handling : zrm firmware-library version is '2014.12-2698295'
+#   step NETLIST CREATION : Create FPGA wrappers for module U0_M0
+# System     - zpar_fpga_current_stats_file: set to work.Part_0/zPar_fpga_stats
+# System     - zpar_fpga_previous_stats_file: set to work.Part_0/zPar_fpga_stats_hist_0
+# System     - incremental : set to true
+# System     - incrementalPlace: set to true
+# System     - set_timing_task_file: set to ../timing.data
+# System     - pinAssignmentEffort: set to zap
+# System     - sdfRequestType: set to PRIO
+# System     - xclkFrequency: set to 450000
+# System     - driverFrequencyZtopBuild: set to 0
+# System     - remapTristateArgs: set to -tristate_type pullup -conflict_type WAND -keeper_clock z_dclk_delay2 -keeper_edge falling
+# System     - routingEffort: set to medium
+# System     - generate_sdf_request: created
+# System     - pdmCompileFlow: set to false
+# System     - scTdmCompileFlow: set to false
+# System     - timingCstFile: set to ../utf_generatefiles/zTime_config.tcl
+...
+#   step Sanity Checker : All sockets have been verified: no Xdr mismatch has been detected at this level. See tools/zPar/sanityChecker.txt for wire or LVDS mismatches
+
+
+#   step DISPLAY : Maximum xDR per component:
+#   step DISPLAY : +------------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+#   step DISPLAY : |            |  IF |   0 |   1 |   2 |   3 |   4 |   5 |   6 |   7 |   8 |
+#   step DISPLAY : +------------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+#   step DISPLAY : |U0_M0       |   1 |   1 |   - |   - |   - |   - |   - |   - |   - |   1 |
+#   step DISPLAY : |LVDS        |   1 |   1 |   - |   - |   - |   - |   - |   - |   - |   1 |
+#   step DISPLAY : |MGT         |   0 |   0 |   - |   - |   - |   - |   - |   - |   - |   0 |
+#   step DISPLAY : +------------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+#   step DISPLAY : 
+
+#   step SERIALIZE : writing netlist 'design' into znl file 'U0/M0/F00.src/wrapper.edf.gz'
+#   step SERIALIZE : #bytes in: 254335, #bytes out: 71743, compression ratio: 3.545084
+#   step XDC GENERATOR : Writing XDC file 'U0/M0/F00.src/design_zpar.zdc.incr_tmp' with 10 constraints
+#   step XDC GENERATOR : constraints have changed - regenerate XDC file 'U0/M0/F00.src/design_zpar.zdc'
+#   step GENERATE : Create symbolic link './tools/zPar/design_fpga/U0_M0_F0' on file '../../../U0/M0/F00'.
+#   step write Fpga Wrapper : Done in    elapsed:0.19 s   user:0.12 s    system:0.1 s      %cpu:68.60       load:0.38       fm:184224 m     vm:1830 m       vm:+2 m     um:1496 m       um:+4 m
+#   step SERIALIZE : writing netlist 'design' into znl file 'U0/M0/F08.src/wrapper.edf.gz'
+#   step SERIALIZE : #bytes in: 275432, #bytes out: 76691, compression ratio: 3.591451
+#   step XDC GENERATOR : Writing XDC file 'U0/M0/F08.src/design_zpar.zdc.incr_tmp' with 6 constraints
+#   step XDC GENERATOR : constraints have changed - regenerate XDC file 'U0/M0/F08.src/design_zpar.zdc'
+#   step GENERATE : Skip generating routing fpga: U0/M0/F08
+#   step write Fpga Wrapper : Done in    elapsed:0.18 s   user:0.12 s      system:0 s      %cpu:67.80       load:0.38       fm:184224 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step SERIALIZE : writing netlist 'design' into znl file 'U0/M0/IF_zFW.edf.gz'
+#   step SERIALIZE : #bytes in: 4292, #bytes out: 2067, compression ratio: 2.076439
+#   step GENERATE : Skip generating routing fpga: U0/M0/F09
+#   step write Fpga Wrapper : Done in     elapsed:0.3 s      user:0 s    system:0.1 s      %cpu:32.26       load:0.43       fm:184224 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step STATS : Writing file 'zPar_stats/zPar_socket_info.csv'
+#   step STATS : Writing file 'zPar_stats/zPar_config_opt.csv'
+#   step Sanity Checker : Check socket connectivity from U0/M0/F00 to U0/M0/F08
+#   step Sanity Checker : Check socket connectivity from U0/M0/F08 to U0/M0/F00
+#   step Sanity Checker : Check socket connectivity from U0/M0/F08 to U0/M0/IF
+#   step Sanity Checker : Check socket connectivity from U0/M0/IF to U0/M0/F08
+#   step GENERATE : All wrappers passed connectivity verfications.
+#   step XREF : Dump relocate xref file ./tools/zPar/loc.xref
+#   step GENERATION : Generating './tools/zPar/zpar.mk' makefile
+### warning in GENERATE [KPR0984W] : Could not open file of timing tasks '../timing.data' : This file not found or corrupted.
+#   step GENERATE : fpga task ordering : for fpga U0/M0/F00, greater duration found 0
+#   step GENERATE : fpga task ordering : for fpga U0/M0/F08, greater duration found 0
+#   step GENERATE : fpga task ordering : for fpga U0/M0/IF, greater duration found 0
+#   step link : Check the existance of each symbolic link
+#   step link : Dump symbolic link and their target path to ./tools/zPar/symbolic_link_table.csv
+#   step Generate : Done in       elapsed:6 s      user:5 s   system:0.56 s      %cpu:95.96       load:0.43       fm:184223 m     vm:1830 m    vm:+1268 m     um:1496 m    um:+1253 m
+
+
+################################################################
+# zPar STEP : Path length analysis
+################################################################
+#   step Timing : Starting
+#   step timingGraphBuilder::dumpTclTimingFile : Starting
+#   step ZTIME : Dump timing graph in file 'tools/zTime/zPar_timing.zti'
+#   step ZTIME : Dump clock
+#   step DEBUG_DUMP_ZTI : generate zti file for rtb local wire zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1
+#   step DEBUG_DUMP_ZTI : generate zti file for rtb local wire zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0
+#   step ZTIME : Dump nets from route
+#   step ZTIME : Dump loop arcs
+#   step ZTIME : Found 0 combinatorial loop(s) in design
+#   step timingGraphBuilder::dumpTclTimingFile : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpZfpgaTimingRequest : Starting
+#   step build_topPortToNodeId : Starting
+#   step ZPAR FW SDF : Total 0 FwPort Adding to SDF database
+#   step build_topPortToNodeId : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step getIntraFpgaTimingPathforZFpgaTiming : Starting
+#   step ZTIME FPGA : 0 socket->DUT timing path(s) and 0 DUT->socket timing path(s)
+#   step ZTIME FPGA : SDF requests done using priorities
+#   step getIntraFpgaTimingPathforZFpgaTiming : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step buildSdfRequestsFromTimingGraph : Starting
+#   step buildSdfRequestsFromTimingGraph : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpZfpgaTimingRequest : [before] isReturn:0, path size:0, capacity:0
+#   step buildRoutingHopSdfRequests : Starting
+#   step buildRoutingHopSdfRequests : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step buildSdfRequestsFromTimingGraph : Starting
+#   step buildSdfRequestsFromTimingGraph : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step buildFilterSdfRequests : Starting
+#   step buildFilterSdfRequests : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step addGlobalSdfCommands : Starting
+#   step addGlobalSdfCommands : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpSdfRequestBuilder : Starting
+#   step ZTIME FPGA : dumping 0 requests in U0/M0/zFpga_timing_paths.tcl
+#   step ZTIME FPGA : dumping 3 requests in U0/M0/F00.src/zFpga_timing_paths.tcl
+#   step ZTIME FPGA : dumping 0 requests in U0/M0/F08.src/zFpga_timing_paths.tcl
+#   step dumpSdfRequestBuilder : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step handleAttributes : Starting
+#   step handleAttributes : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpSoftTimingConstraint : Starting
+#   step dumpSoftTimingConstraint : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpNodeIdAndNameOfIF : Starting
+#   step dumpNodeIdAndNameOfIF : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpZfpgaTimingRequest : Done in     elapsed:0.2 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step PATH ANALYSIS : Create tools/zPar/design.paf
+#   step Timing : Done in     elapsed:0.3 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+
+
+################################################################
+# zPar STEP : Finish
+################################################################
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | Usage                                 | Description                                        |Default | Status   |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | It's set in UTF file.                 | Product Type: ZS3, ZS4, ZS5, HAPS, Orion++, EP1    | N/A    | zse      |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | It's set in UTF file.                 | Hardware Family: V5, V6, V7 and V8                 | N/A    | V7       |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System enable_zs3_if_less_flow        | Turn on if less flow in ZS3                        |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System uc_pbuild_converged_flow       | Turn on continuum flow.                            |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System cf_zpar_route                  | Turn on continuum ZparFM Route flow.               |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System fm_zmem_reverse_mode           | Turn on Fetch Mode reverse mode.                   |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System set_placement_kind <val>       | Set the placer type of zPar and only available     | N/A    | N/A      |
+#   step  : |                                       | in ZS1,ZS2, and ZS3. Placement happens during      |        |          |
+#   step  : |                                       | partitioning in ZS4 and beyond.                    |        |          |
+#   step  : |                                       | The available types are Prob, Direct.              |        |          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System routingEffort <val>            | Set the routing effort of zPar.                    | medium |medium    |
+#   step  : |                                       | The available value are min_distance, no_effort,   |        |          |
+#   step  : |                                       | low, medium.                                       |        |          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System routerType  <val>              | Set the router type of zPar.                       | ZCR    | ZCR      |
+#   step  : |                                       | The available value are                            |        |          |
+#   step  : |                                       | wirelength_timing_coopt(ZCR)                       |        |          |
+#   step  : |                                       | partition_quality_checker(PQC)                     |        |          |
+#   step  : |                                       | shortest_path_router(SPR)                          |        |          |
+#   step  : |                                       | enhanced_zcr(EZCR)                                 |        |          |
+#   step  : |                                       | legacy                                             |        |          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System pinAssignmentEffort <val>      | Set the pinassignment effort of zpar.              |zap     | zap      |
+#   step  : |                                       | The available value are no_effort, low, medium,    |        |          |
+#   step  : |                                       | high, zap.                                         |        |          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System incremental                    | Incremental Mode                                   |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System socketMode <val>               | Set socket mode                                    | depend | v5v6v7   |
+#   step  : |                                       | The available value depends on product type        |   on   |          |
+#   step  : |                                       | Possible value: v5v6v7, component, native, leo     | product|          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System socketGenerationSAG            | Turn on signal alignment generate flow.            |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step REPORT : +-------------------------------------------------------------------------------+
+#   step REPORT :   No inter-fpga filter path found
+#   step REPORT :   No routing data path found
+#   step REPORT :   No memory found
+#   step REPORT :   Fast Waveform Captures detected, if use at run-time the driverClk frequency might be limited.
+#   step REPORT :   Driver clock frequency is limited by clock paths (driverClk.Period = zClockSkewTime + DELAY_MIN_SKEW_DRVCLK) : 40ns
+#   step REPORT :   zPar timing estimated delay cost is : 40 ns
+#   step REPORT : +-------------------------------------------------------------------------------+
+
+#   step FinishBody. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+
+#   exec summary :   13 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m8s, user 0m6.557s, sys 0m0.729s
+#   exec summary : Total memory: 1874684 kB - RSS memory: 1532664 kB - Data memory: 1528744 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:05:26 2023
+#   step zPar : Saving report before exiting.
+command exit code is '0'

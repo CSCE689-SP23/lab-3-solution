@@ -1,0 +1,46 @@
+Module stb{
+}
+Module proba{
+}
+Module rom{
+}
+Module proba_0000{
+}
+Module ram{
+}
+Module parity_check{
+}
+Module zebu_reqsig_clock_zcompositeclock{
+}
+Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0{
+}
+Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1{
+}
+
+EdfPortBounds ram{
+7 0 a
+8 0 d
+}
+EdfPortBounds proba_0000{
+9 0 level
+}
+EdfPortBounds parity_check{
+8 0 a
+}
+EdfPortBounds proba{
+9 0 level
+}
+EdfPortBounds rom{
+7 0 a
+8 0 q
+}
+EdfPortBounds dut{
+8 0 datain
+8 0 dataout
+}
+EdfPortBounds stb{
+8 0 data_rd
+8 0 data_wr
+}
+NonAliasNets stb{
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html&nbsp;charset=ISO-8859-1" />
+<style>
+body { background-color: #fff; color: #333; }
+body, p, ol, ul, td, tr, th  {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+ul, li, button, p {
+  list-style-type:none;
+  text-align: left;
+  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+table  tr{
+   background-color: #f0f0f0;
+}
+table  th{
+   background-color: #48d1cc;
+}
+table td {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: top;
+}
+table td.middle {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: top;
+  word-spacing: 10px;
+}
+table  tr.odd{
+  background-color: #add8e6;
+}
+table  tr {
+  background-color: #f0f0f0;
+}
+table  tr:hover {
+   background-color: #bffefe;
+}
+.collapsible {
+  background-color: #add8e6;
+  cursor: pointer;
+  border: none;
+  -moz-user-select: text;
+}
+.active, .collapsible:hover {
+  background-color: #48d1cc;
+}
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+<title align="center">zTime Report: critical output memory paths</title>
+</head>
+<body>
+<div id="title" class="title">
+  <p><h1>zTime Report: critical output memory paths</h1></p>
+<p><h2>Date: Wed Apr 19 01:22:07 2023
+</h2></p></div>
+<div id="content" class="content">
+</div>
+<table ><tbody>
+<tr>
+<th width=60px title="Required time - Delay">Slack</th>
+<th width=130px title="Maximal arrival time possible on the path">Required Time</th>
+<th width=60px title="Timing path length">Delay</th>
+<th width=80px title="Total number of FPGAs on the path">Fpga</th>
+<th width=100px title="First FPGA port name">From</th>
+<th width=100px title="Last FPGA port name">To</th>
+</tr>
+<tr>
+<td><a href="ztime_memory_out_paths_fpga.html#p0">0 ns</a></td>
+<td>160 ns<br/> ( 2 driver clock )</td>
+<td>160 ns</td>
+<td>2 ( 2 )</td>
+<td>top.u_stb.u_rom.mem-r0do</td>
+<td>U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_fifo.mem[0][7].D</td>
+</tr>
+</table><script>
+    function replaceButtonText(textA, textB, id){
+      if (document.getElementById)  {
+        var button=document.getElementById(id);
+        if (button){
+          if (button.innerHTML==textA){
+            button.innerHTML=textB;
+          }
+          else { 
+            button.innerHTML=textA;
+          }
+        }
+      }
+   }
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+        var parentDiv = this.closest("div");
+        parentDiv.style.maxHeight = (parentDiv.scrollHeight + content.scrollHeight) + "px";
+      });
+    }
+  </script>
+ </body>
+</html>

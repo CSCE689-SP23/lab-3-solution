@@ -1,0 +1,74 @@
+
+                                    ZeBu (R)
+                                   zDveTools
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zDveTools zDveTools.tcl 
+
+# start time is Wed Apr 19 01:04:47 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:00
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.14 0.05 0.06 6/490 36108
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185598 MB
+#            Total Free including cache: 190314 MB
+#            Swap cache: 0 MB Cached space: 4716 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 196 MB VmPeak: 196 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256242
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ENV.VAR : LM_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : SNPSLMD_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+#   step ENV.VAR : VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+#   step ENV.VAR : ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+#   step ENV.VAR : ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+#   step ENV.VAR : ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+#   step ENV.VAR : ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   step ENV.VAR : ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+#   step ENV.VAR : ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+#   step ENV.VAR : ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+#   step ENV.VAR : ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+#   step ENV.VAR : ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+dve_diff {curr=../vcs_splitter/vcs.dve} {dut=top}
+#   step DIFF-DVE   : No comparison to do with new DVE file '../vcs_splitter/vcs.dve' ...
+#   step DVE LOADER : reading dve file '../vcs_splitter/vcs.dve'
+#   step ZPAR-DRV   : Save zPar DVE parameters in 'zPar_dve.tcl'
+#   step ZTOPBUILD-DRV : zTopBuild DVE status change saved in file 'zTopBuild_dve.inf'
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m0.50s, sys 0m0.50s
+#   exec summary : Total memory: 371588 kB - RSS memory: 92556 kB - Data memory: 104320 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:47 2023

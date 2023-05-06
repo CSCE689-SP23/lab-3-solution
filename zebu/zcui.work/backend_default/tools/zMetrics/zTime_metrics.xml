@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics>
+<Attribute id="Critical routing data path delay(ns)">
+  <Value>80</Value>
+</Attribute>
+<Attribute id="NumberMGTInTopDataPath">
+  <Value>0</Value>
+</Attribute>
+<Attribute id="NumberMGTInTopFilterPath">
+  <Value>0</Value>
+</Attribute>
+<Attribute id="longestInterFpgaFilterPathDelay">
+  <Value>5</Value>
+</Attribute>
+<Attribute id="longestMemoryPeriod">
+  <Value>120</Value>
+</Attribute>
+<Attribute id="xclockFrequencyInMHz">
+  <Value>450</Value>
+</Attribute>
+<Attribute id="zTime freq">
+  <Value>8333 Khz</Value>
+</Attribute>
+<Attribute id="driverClockFrequencyKHz">
+  <Value>8333</Value>
+</Attribute>
+<Attribute id="driverClockPeriodNs">
+  <Value>120</Value>
+</Attribute>
+<Attribute id="zClockSkewTimeNs">
+  <Value>80</Value>
+</Attribute>
+<Attribute id="clockFilterTimeNs">
+  <Value>40</Value>
+</Attribute>
+<Attribute id="beginTime">
+  <Value>Wed Apr 19 01:05:44 2023</Value>
+</Attribute>
+<Attribute id="TotalMemoryInKB">
+  <Value>542188</Value>
+</Attribute>
+<Attribute id="elapsedTime">
+  <Value>1</Value>
+</Attribute>
+<Attribute id="endTime">
+  <Value>Wed Apr 19 01:05:45 2023</Value>
+</Attribute>
+<Attribute id="sysTime">
+  <Value>0.125</Value>
+</Attribute>
+<Attribute id="userCompileTime">
+  <Value>0.75</Value>
+</Attribute>
+</Metrics>

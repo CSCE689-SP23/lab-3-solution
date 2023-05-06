@@ -1,0 +1,7 @@
+set_max_skew 3812
+set_max_filter 27632
+set_max_data 28696
+set_max_data_filtered 9659
+set_filter_delay CkNode15 27125
+set_filter_delay CkNode19 27632
+set_filter_delay CkNode7 5774

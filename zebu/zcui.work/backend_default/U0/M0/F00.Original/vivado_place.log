@@ -1,0 +1,40 @@
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+Phase 4.1 Post Commit Optimization | Checksum: 262d77f00
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 4548.262 ; gain = 35.020 ; free physical = 178328 ; free virtual = 187181
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 262d77f00
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 4548.262 ; gain = 35.020 ; free physical = 178372 ; free virtual = 187225
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 updateTiming final
+Phase 4.3.1 updateTiming final | Checksum: 262d77f00
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 4548.262 ; gain = 35.020 ; free physical = 178376 ; free virtual = 187229
+Phase 4.3 Placer Reporting | Checksum: 262d77f00
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 4548.262 ; gain = 35.020 ; free physical = 178378 ; free virtual = 187231
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4548.262 ; gain = 0.000 ; free physical = 178379 ; free virtual = 187232
+Phase 4.4 Final Placement Cleanup | Checksum: 203fd5edf
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 4548.262 ; gain = 35.020 ; free physical = 178381 ; free virtual = 187234
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 203fd5edf
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 4548.262 ; gain = 35.020 ; free physical = 178383 ; free virtual = 187236
+Ending Placer Task | Checksum: 11c8e9178
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:13 . Memory (MB): peak = 4548.262 ; gain = 35.020 ; free physical = 178386 ; free virtual = 187240
+INFO: [Common 17-83] Releasing license: Implementation
+156782 Infos, 1191 Warnings, 8 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Common 17-600] The following parameters have non-default value.
+general.maxThreads, tcl.statsThreshold
+

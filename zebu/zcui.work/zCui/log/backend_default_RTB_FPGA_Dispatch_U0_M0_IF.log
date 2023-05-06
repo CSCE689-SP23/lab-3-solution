@@ -1,0 +1,5 @@
+Xcui file backend_default/U0/M0/zRTB_FW.xcui is read
+Fpga RTB: U0_M0_IF
+  Number Of Dependencies zRTB_FW -> zTime : 1
+  Number Of Dependencies zRTB_FW -> zTime_fpga : 1
+RTB FPGA P&R dispatched

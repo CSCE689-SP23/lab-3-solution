@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zParBE_archive">
+    <targets>
+        <target type="file" value=".//opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/edifs/zse_xc7v_8c_2000_v1.edf.gz">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./edif/top.edf.gz">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./tools/zPar/[^.]*" fnmatch="true">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="directory" value="./tools/zPar/debug_netlists">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="directory" value="./tools/zPar/zPar_db">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./tools/zRTB_FE/dut_io_zpar.edf.gz">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./tools/zRTB_FE/global_rtb_time.edf.gz">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./tools/zRTB_FE/zRTB_FE_mrtb.zti">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./work.Part_0/edif/U[0-9]_M[0-9].edf.gz" fnmatch="true">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./work.Part_0/edif/top.edf.gz" fnmatch="true">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./work.Part_0/zPar*" fnmatch="true">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./zPar*" fnmatch="true">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="directory" value="./zPar_stats" fnmatch="true">
+            <menu>Debug/zPar</menu>
+        </target>
+        <target type="file" value="./ztb_tg_remapped.edf.gz">
+            <menu>Debug/zPar</menu>
+        </target>
+    </targets>
+</ZeBuUiDoc>

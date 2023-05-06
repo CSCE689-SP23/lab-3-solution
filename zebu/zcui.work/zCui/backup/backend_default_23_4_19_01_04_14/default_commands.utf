@@ -1,0 +1,89 @@
+
+# default partitioning flow
+#design_size -mode AUTO
+#clustering -system_auto_core_generation t
+
+nfs_settings -max_retries 120 -delay 1000 -access_level 5
+fpga -parff true
+#synthesis -advanced_command {Compile:PLY:LUTCost=(10 10 10 12 15)}
+#synthesis -wls_option {-checkSumForAllScm}
+timing_analysis -post_fpga BACK_ANNOTATED
+ztopbuild -advanced_command {enable advanced_incremental_mode}
+
+proc ztb_adv_command { cmd } {
+	ztopbuild -advanced_command "lappend perfFlowCommand {$cmd}"
+}
+
+# fixing memory indeterminism issues:
+# memory_preferences -manage_dual_port_bram_access t
+
+
+###############################################################################
+#
+#                   Master switch for partitioning flow
+#
+# reference on flows in:
+# https://sp-vg/sites/zebu_be/Shared%20Documents/Partitioning/Benchmarking/PerformanceAndStabilityBenchmarking.docx?Web=1
+###############################################################################
+
+proc global_setenv { var value } {
+     zCui_quote "ZCUI_add -taskEnvVar global $var $value"
+}
+
+set backwardCompatibility "2020.03-2"
+set UTF_PERF_FLOW_LIST {flow1 flow2 base none}
+set UTF_PERF_FLOW_PATCH_LIST {2020.03 2020.03-1 2020.03-2 2020.03-LCA 2020.03-SP1-1-LCA}
+
+
+
+# Future syntax: set_perf_flow <flow1|flow2|base|none> [-patch < patch_value> ] [-patch_list { <list>  } ]
+#                set_perf_flow flow1 -patch <patch_value>
+#                set_perf_flow flow2 -patch <patch_value2>
+#
+# Future default:
+set_perf_flow -patch $backwardCompatibility
+set_perf_flow -patch_list $UTF_PERF_FLOW_PATCH_LIST
+set_perf_flow flow1
+
+
+
+##########################################################################
+#
+#                                COMPILE OBJECTIVE
+#
+##########################################################################
+
+
+proc performance_objective_internal_zebu { v } {
+    # commands for zTopBuild must instead be added to: sw_cc/zTopBuild/scripts/zTopBuild_from_zcui.tcl
+    # commands for zPar must instead be added to: sw_cc/kpar/zPar_from_zCui.tcl
+    switch -exact -- [string tolower $v] {
+        fast_turn_around {
+        }
+        bringup {
+        }
+        performance {
+            timing_analysis -fpga_advanced_command {data_path_analysis mcp}
+        }
+        capacity {
+        }
+    }
+}
+
+
+##########################################################################
+#
+#                                HYDRA FLOW
+#
+##########################################################################
+
+
+proc set_hydra_flow {} {
+
+    compile -hydra true
+    debug -offline_debug_params {INCL_XTORS=true}
+    debug -waveform_reconstruction_params {CSA=false, SIMZILLA=true}
+    ztopbuild -advanced_command {set_hydra -check_consistency yes}
+    ztopbuild -advanced_command {set_fast_waveform_capture -process_ids no}
+
+}

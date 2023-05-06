@@ -1,0 +1,22 @@
+Module proba_0000{
+}
+
+EdfPortBounds dut{
+8 0 datain
+8 0 dataout
+}
+EdfPortBounds stb{
+8 0 data_rd
+8 0 data_wr
+}
+NonAliasNets proba_0000{
+sht[9]    f   35
+sht[8]    f   36
+sht[7]    f   37
+sht[6]    f   38
+sht[5]    f   39
+sht[4]    f   40
+sht[3]    f   41
+sht[1]    f   43
+sht[0]    f   44
+}

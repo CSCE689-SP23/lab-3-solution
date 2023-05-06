@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="glog">
+    <author>zTime_fpga</author>
+    <date>Wed Apr 19 01:22:08 2023</date>
+    <views>
+        <view name="Warnings/Errors">
+            <h1>TimingDB</h1>
+                <h2>Warning</h2>
+                <p>[KTM0674W] Port U0_M0_F0.z_dclk_delay created by zPar  but not seen by zTime</p>
+                <p>[KTM0665W] Driver  assigned as source clock domain of PORT .zcg_compositeClock.</p>
+                <p>[KTM0671W] Driver  assigned as target clock domain of PORT U0_M0_F0.zcg_compositeClock.</p>
+                <p>[KTM0665W] Driver  assigned as source clock domain of PORT .zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1.</p>
+                <p>[KTM0671W] Driver  assigned as target clock domain of PORT U0_M0_F0.zcg_zceiClock[0].</p>
+                <p>[KTM0665W] Driver  assigned as source clock domain of PORT .zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0.</p>
+                <p>[KTM0671W] Driver  assigned as target clock domain of PORT U0_M0_F0.zcg_zceiClock[1].</p>
+        </view>
+        <view name="Memory" order="-100">
+            <h1>Delays</h1>
+            <p> Memory report</p>
+            <p> +-------------+---------+--------+----------+---------------------------+------------------------+---------+</p>
+            <p> | Physical Memory| Delay   |  Type  | Sys Freq |  Property                 |Logical Memory Name(s)|Memory RTL Name|</p>
+            <p> +-------------+---------+--------+----------+---------------------------+------------------------+---------+</p>
+            <p> | ram_ZMEM_mem|  120 ns | ramlut | 8.33 MHz | P: 1 W: 9                 | top.u_stb.u_ram.mem    | ram.mem  |</p>
+            <p> | rom_ZMEM_mem|  120 ns | ramlut | 8.33 MHz | P: 1 W: 9                 | top.u_stb.u_rom.mem    | rom.mem  |</p>
+            <p> +-------------+---------+--------+----------+---------------------------+------------------------+---------+</p>
+            <p> A total of 2 memory displayed</p>
+            <p></p>
+        </view>
+        <view name="Memory" order="-1000">
+            <h1>Delays summary</h1>
+            <p> Report all different memory delay(s)</p>
+            <p> +-----------+----------+</p>
+            <p> | Delay     |  Memory  |</p>
+            <p> +-----------+----------+</p>
+            <p> |    120 ns |        2 |</p>
+            <p> +-----------+----------+</p>
+            <p> A total of 1 different delay(s) displayed</p>
+            <p></p>
+            <p> Histogram with all memory delay(s)</p>
+            <p> +---------------------+--------------------------------------------------+</p>
+            <p> | Delay               | Memory                                           |</p>
+            <p> +---------------------+--------------------------------------------------+</p>
+            <p> | [  120 ns         ] |----------------------------------------&#62;        2|</p>
+            <p> +---------------------+--------------------------------------------------+</p>
+            <p> A total of 1 different delay(s) encountered</p>
+            <p></p>
+        </view>
+        <view name="Performance" order="-1100">
+            <h1>Routing paths</h1>
+            <p> Report a maximum of 100 first routing data path(s) </p>
+            <p> </p>
+            <p> +-------+------------------+-------+------+-------------------------------------------+-------------------------------------------+--------------------------------------------------+--------------------------------------------------------+</p>
+            <p> | Slack |    Required Time | Delay | Fpga | Clock Domain Source                       | Clock Domain Target                       |Port Name Source                                  |Port Name Target                                        |</p>
+            <p> +-------+------------------+-------+------+-------------------------------------------+-------------------------------------------+--------------------------------------------------+--------------------------------------------------------+</p>
+            <p> |   0 ns|160 ns ( 2 dvrCk )| 160 ns|     2|top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge)|top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge)|top.u_stb.u_rom.mem-r0do                          |U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_check.error.D   |</p>
+            <p> |   0 ns|160 ns ( 2 dvrCk )| 160 ns|     2|top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge)|top.u_dut.u_fifo.u0_clkg.clkout (posedge)  |top.u_stb.u_rom.mem-r0do                          |U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_fifo.mem[0][7].D|</p>
+            <p> |  75 ns| 80 ns ( 1 dvrCk )|   5 ns|     2|DRIVERCLOCK (system)                       |DRIVERCLOCK (system)                       |zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0|U0_M0_F0.zcg_zceiClock[1]                               |</p>
+            <p> +-------+------------------+-------+------+-------------------------------------------+-------------------------------------------+--------------------------------------------------+--------------------------------------------------------+</p>
+            <p> A total of 3 inter-fpga path(s) displayed</p>
+            <p></p>
+            <p> Report a maximum of 50 first different delay(s) </p>
+            <p> +-----------+-----------+-----------+-----------+-----------+</p>
+            <p> | Delay     | Paths     | Max Fpga  | Max Hop   | Max Async |</p>
+            <p> +-----------+-----------+-----------+-----------+-----------+</p>
+            <p> |    160 ns |         3 |         2 |         0 |         0 |</p>
+            <p> +-----------+-----------+-----------+-----------+-----------+</p>
+            <p> A total of 1 different delay(s) displayed</p>
+            <p></p>
+            <p> Histogram with a maximum of 50 first different delay(s) </p>
+            <p> +---------------------+--------------------------------------------------+</p>
+            <p> | Delay               | Paths                                            |</p>
+            <p> +---------------------+--------------------------------------------------+</p>
+            <p> | [  160 ns         ] |----------------------------------------&#62;        3|</p>
+            <p> +---------------------+--------------------------------------------------+</p>
+            <p> A total of 1 different delay(s) encountered</p>
+            <p></p>
+        </view>
+        <view name="Optimization">
+            <h1>Timing analysis</h1>
+            <p>Multicycle paths analysis enabled</p>
+            <p></p>
+            <p>0 false path(s) displayed</p>
+        </view>
+        <view name="Performance" order="-10000">
+            <h1>Timing Analysis</h1>
+                <h2>Theoretical frequency: 10000 Khz</h2>
+                <p>   (using default settings)</p>
+                <p></p>
+                <p>   Driver clock frequency is limited by clock paths (driverClk.Period = zClockSkewTime + DELAY_MIN_SKEW_DRVCLK) : 100ns</p>
+                <p>   see Clock tab</p>
+                <p>   see zTime.html</p>
+                <p>   source : ^LINK(zTime.html)zTime.log^LINK-</p>
+                <p></p>
+                <p>   Longest inter-fpga filter path delay is : 33 ns</p>
+                <p>   Critical routing data path delay : 80 ns</p>
+                <p>   . Constant part    : 20 ns</p>
+                <p>   . Multiplexed part : 0 ns</p>
+                <p>   . Memory latency part : 60 ns</p>
+                <p>   Xclock frequency is : 450 MHz</p>
+                <p>   Longest memory latency is : 120 ns</p>
+                <p>   Fast Waveform Captures detected, if use at run-time the driverClk frequency might be limited.</p>
+        </view>
+    </views>
+</ZeBuUiDoc>

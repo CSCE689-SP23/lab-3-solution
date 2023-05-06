@@ -1,0 +1,628 @@
+
+                                    ZeBu (R)
+                                  zFpgaTiming
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/zFpgaTiming /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/zfpgatiming/zFpgaTiming.tcl 
+
+# start time is Wed Apr 19 01:22:02 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:15
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.12 0.86 1.02 1/468 15470
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185626 MB
+#            Total Free including cache: 190359 MB
+#            Swap cache: 0 MB Cached space: 4733 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 316 MB VmPeak: 316 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255257
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ZFPGATIMING : Aynchronous set reset domain analysis disabled
+#   step SOCKET DETECTION : automatic socket detection activated with type mux_input
+#   step ZFPGATIMING : Configure analysis for clock handling 'FGS'.
+#   step read SDF file : Starting
+#   info : reading file 'timing.sdf'.
+#   step SDF Parser : Delay of between ports RST and RDY on instance design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0 is excessive (3213600ps) and will be reduced to 50ns.
+#   step SDF Parser : Delay of between ports RST and RDY on instance design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0_REPLICATED_0 is excessive (3213600ps) and will be reduced to 50ns.
+#   step SDF Parser : Delay of between ports RST and RDY on instance design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0_REPLICATED_0_1 is excessive (3213600ps) and will be reduced to 50ns.
+#   step read SDF file : Done in    elapsed:0.36 s   user:0.36 s      system:0 s      %cpu:98.63       load:0.12       fm:185596 m      vm:408 m      vm:+31 m      um:129 m      um:+30 m
+#   step XDL rename : Starting
+#   info : 0 XDL name to replace.
+#   step XDL rename : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.12       fm:185596 m      vm:408 m       vm:+0 m      um:129 m       um:+0 m
+#   step Transformations Identification : Starting
+#   step Transformations Identification : Done in     elapsed:0.1 s    user:0.1 s      system:0 s     %cpu:190.48       load:0.12       fm:185596 m      vm:408 m       vm:+0 m      um:129 m       um:+0 m
+#   step Find properties based on SDF names : Starting
+#   step FILTER CLOCK : design/U0_M0_F0/zbufg_zcgen_w_zcg_filterClock/O
+#   step FW CLOCK : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+#   step FW CLOCK : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk_hs/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+#   step FW CLOCK : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+#   step FW CLOCK : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/O
+#   step FW CLOCK : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/x_bufgctrl_2/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+#   step ZXLSYS : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/bufgctrl_en_and00001/O
+#   step ZXLSYS : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/O
+#   step Find properties based on SDF names : Done in     elapsed:0.6 s      user:1 s    system:0.4 s    %cpu:3146.44       load:0.12       fm:185528 m      vm:562 m     vm:+154 m      um:197 m      um:+68 m
+#   step Modify instance connections : Starting
+#   step Modify instance connections : Done in       elapsed:0 s    user:0.1 s      system:0 s       %cpu:0.00       load:0.12       fm:185528 m      vm:562 m       vm:+0 m      um:197 m       um:+0 m
+#   info : Initialize requested paths.
+#   step False Timing Arcs : Starting
+#   step False Timing Arcs : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.12       fm:185528 m      vm:562 m       vm:+0 m      um:197 m       um:+0 m
+#   step User Manipulations : Starting
+#   step User Manipulations : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.12       fm:185528 m      vm:562 m       vm:+0 m      um:197 m       um:+0 m
+#   step False Paths Marking : Starting
+#   info : ----------------------------------
+#   info :     False Paths Information
+#   info : ----------------------------------
+#   info :  
+#   info : Rules description :
+#   info : Rule 0 => THROUGH *zbufg_zcgen_w_zcg_skewClock* -clock -data 
+#   info : Rule 1 => THROUGH *zebu_sample_event_filter_mux*I1 -clock -data 
+#   info : Rule 2 => TO */zview*/D -clock -data 
+#   info : Rule 3 => TO */qiwc_ip_cluster/cluster_qiwc_ip_pipelined_mux*/*/D -clock -data 
+#   info :  
+#   info : Ports matching a rule :
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_dut/u_check/zsva_trigger_sva_parity_error/zview_sva_end_0_has_edge/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[0\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[1\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[2\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[3\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[4\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[5\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[6\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[7\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[8\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u0_proba/zview_level\[9\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[0\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[1\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[2\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[3\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[4\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[5\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[6\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[7\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[8\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u1_proba/zview_level\[9\]0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zsva_trigger_sva_parity_error/zview_sva_end_0_has_edge/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/U0_M0_F0_core/zview_empty_U0_M0_F0_core0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_0/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_1/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_10/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_11/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_12/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_13/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_14/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_15/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_16/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_17/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_18/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_19/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_2/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_20/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_21/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_22/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_23/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_24/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_3/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_4/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_5/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_6/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_7/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_8/D' matches 'TO' pattern of rule '2'.
+#   info : 'design/U0_M0_F0/zview_zebu_move_w_i_9/D' matches 'TO' pattern of rule '2'.
+#   info :  
+#   step False Paths Marking : Done in     elapsed:0.1 s   user:0.21 s    system:0.1 s    %cpu:3259.26       load:0.12       fm:185528 m      vm:562 m       vm:+0 m      um:197 m       um:+0 m
+#   step Clock Relationship : Starting
+#   step Clock Relationship DB populator : Starting
+#   step Clock Relationship Populator : Loading clock relationship graph from file 'clock_dependencies.db'
+#   step Clock Relationship Populator : Hydra mode is disabled.
+#   step Clock Relationship Populator : MuDB path is /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default.
+#   step Loading EDIF : Starting
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step EDIF LOADER : reading EDIF file 'design.edf'
+#   step INSTPORTATTR : EDIF parser: Replaced 24 instance port attributes back
+#   step Loading EDIF : Done in       elapsed:1 s      user:1 s    system:0.8 s      %cpu:99.94       load:0.12       fm:185306 m      vm:772 m     vm:+210 m      um:409 m     um:+212 m
+#   step Loading SDC file : Starting
+#   step Loading SDC file : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.12       fm:185305 m      vm:772 m       vm:+0 m      um:409 m       um:+0 m
+#   step Clock Relationship Populator : Couldn't find 5782 entries in SDF Graph.
+#   step Diagnose and fix populator : Starting
+#   step Diagnose and fix populator : Done in       elapsed:0 s      user:0 s    system:0.2 s     %cpu:888.89       load:0.12       fm:185304 m      vm:772 m       vm:+0 m      um:409 m       um:+0 m
+#   step Clock Relationship DB populator : Done in       elapsed:1 s      user:1 s   system:0.12 s     %cpu:105.49       load:0.12       fm:185305 m      vm:772 m     vm:+210 m      um:409 m     um:+212 m
+#   step Clock Relationship : Done in       elapsed:1 s      user:1 s   system:0.12 s     %cpu:105.46       load:0.12       fm:185305 m      vm:772 m     vm:+210 m      um:409 m     um:+212 m
+#   step Sanity Check : Starting
+#   step Sanity Check : Done in       elapsed:0 s    user:0.1 s      system:0 s       %cpu:0.00       load:0.12       fm:185305 m      vm:772 m       vm:+0 m      um:409 m       um:+0 m
+#   step ANALYSIS : Multi-cycle path analysis disabled
+#   step Skew Paths Analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  SKEW PATHS: 3/3 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 3812ps
+#   info : |      0 |           0 |    182 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1/zdelay_regFilterPos/Q (FDRE)
+#   info : |   3812 |        3812 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/cnt_error_out\[25\]/C (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 3141ps
+#   info : |      0 |           0 |    178 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk0/zdelay_regFilterPos/Q (FDRE)
+#   info : |   3141 |        3141 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zfast_xxqa29z4b4tb1/C (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 1945ps
+#   info : |      0 |           0 |     56 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/zebu_filter_clkout/zdelay_regFilterPos/Q (FDRE)
+#   info : |   1945 |        1945 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/mem\[2\]\[7\]/C (FDRE)
+#   step Skew Paths Analysis : Done in       elapsed:0 s    user:0.1 s      system:0 s    %cpu:1000.00       load:0.12       fm:185305 m      vm:772 m       vm:+0 m      um:410 m       um:+1 m
+#   step Filter Paths Analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FILTER PATHS: 4/4 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 27632ps
+#   info : |      0 |           0 |      1 | design/ckpad_AC41/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |           0 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |         804 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   3707 |        4511 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/D (FDRE)
+#   info : |  10000 |       14511 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/Q (FDRE)
+#   info : |    273 |       14784 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/D (FDRE)
+#   info : |  10000 |       24784 |      4 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/Q (FDRE)
+#   info : |   2238 |       27022 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/sqnod_clkout/I0 (LUT2)
+#   info : |     53 |       27075 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/sqnod_clkout/O (LUT2)
+#   info : |    557 |       27632 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/zebu_filter_clkout/zdelay_regFilterPos/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 27125ps
+#   info : |      0 |           0 |      1 | design/ckpad_AB40/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |           0 |      1 | design/ckpad_AB40/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |         804 |      1 | design/ckpad_AB40/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   3710 |        4514 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/delayReg1/D (FDRE)
+#   info : |  10000 |       14514 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/delayReg1/Q (FDRE)
+#   info : |    263 |       14777 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/ztig_delayReg2/D (FDRE)
+#   info : |  10000 |       24777 |      3 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/ztig_delayReg2/Q (FDRE)
+#   info : |   2348 |       27125 |      0 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1/zdelay_regFilterPos/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 26946ps
+#   info : |      0 |           0 |      1 | design/ckpad_AC41/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |           0 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |         804 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   3707 |        4511 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/D (FDRE)
+#   info : |  10000 |       14511 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/Q (FDRE)
+#   info : |    273 |       14784 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/D (FDRE)
+#   info : |  10000 |       24784 |      4 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/Q (FDRE)
+#   info : |   2162 |       26946 |      0 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk0/zdelay_regFilterPos/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 5774ps
+#   info : |      0 |           0 |      1 | design/ckpad_AE42/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |           0 |      1 | design/ckpad_AE42/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |         804 |      1 | design/ckpad_AE42/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   2308 |        3112 |      1 | design/U0_M0_F0/zbufg_zcgen_w_zcg_filterClock/I (BUFG)
+#   info : |    120 |        3232 |     45 | design/U0_M0_F0/zbufg_zcgen_w_zcg_filterClock/O (BUFG)
+#   info : |   1700 |        4932 |      1 | design/U0_M0_F0/U0_M0_F0_core/zforce_rstn/VAL_sync/C (FDRE)
+#   info : |    197 |        5129 |      3 | design/U0_M0_F0/U0_M0_F0_core/zforce_rstn/VAL_sync/Q (FDRE)
+#   info : |    533 |        5662 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/inv4_RnM/I0 (LUT1)
+#   info : |     53 |        5715 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/inv4_RnM/O (LUT1)
+#   info : |     59 |        5774 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zebu_filter_data_zebu_zbi_pseudo_wire_inv4_output/zdelay_regFilter/D (LDCE)
+#   step Filter Paths Analysis : Done in     elapsed:0.3 s    user:0.3 s      system:0 s     %cpu:107.14       load:0.12       fm:185302 m      vm:772 m       vm:+0 m      um:412 m       um:+2 m
+#   step Internal Data Paths Analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  INTERNAL DATA PATHS (NOT FILTERED): 10/6609 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 28696ps
+#   info : |      0 |           0 |      1 | design/ckpad_AC41/wrapper/ibufds_0/I (IBUFDS)
+#   info : |   1064 |        1064 |      1 | design/ckpad_AC41/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |        1064 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |        1868 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   3707 |        5575 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/D (FDRE)
+#   info : |  10000 |       15575 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/Q (FDRE)
+#   info : |    273 |       15848 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/D (FDRE)
+#   info : |  10000 |       25848 |      4 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/Q (FDRE)
+#   info : |   2238 |       28086 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/sqnod_clkout/I0 (LUT2)
+#   info : |     53 |       28139 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/sqnod_clkout/O (LUT2)
+#   info : |    557 |       28696 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/zebu_filter_clkout/zdelay_regFilterPos/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 28696ps
+#   info : |      0 |           0 |      1 | design/ckpad_AC41/wrapper/ibufds_0/IB (IBUFDS)
+#   info : |   1064 |        1064 |      1 | design/ckpad_AC41/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |        1064 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |        1868 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   3707 |        5575 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/D (FDRE)
+#   info : |  10000 |       15575 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/Q (FDRE)
+#   info : |    273 |       15848 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/D (FDRE)
+#   info : |  10000 |       25848 |      4 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/Q (FDRE)
+#   info : |   2238 |       28086 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/sqnod_clkout/I0 (LUT2)
+#   info : |     53 |       28139 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/sqnod_clkout/O (LUT2)
+#   info : |    557 |       28696 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/zebu_filter_clkout/zdelay_regFilterPos/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 28183ps
+#   info : |      0 |           0 |      1 | design/ckpad_AB40/wrapper/ibufds_0/I (IBUFDS)
+#   info : |   1058 |        1058 |      1 | design/ckpad_AB40/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |        1058 |      1 | design/ckpad_AB40/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |        1862 |      1 | design/ckpad_AB40/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   3710 |        5572 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/delayReg1/D (FDRE)
+#   info : |  10000 |       15572 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/delayReg1/Q (FDRE)
+#   info : |    263 |       15835 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/ztig_delayReg2/D (FDRE)
+#   info : |  10000 |       25835 |      3 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/ztig_delayReg2/Q (FDRE)
+#   info : |   2348 |       28183 |      0 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1/zdelay_regFilterPos/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 28183ps
+#   info : |      0 |           0 |      1 | design/ckpad_AB40/wrapper/ibufds_0/IB (IBUFDS)
+#   info : |   1058 |        1058 |      1 | design/ckpad_AB40/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |        1058 |      1 | design/ckpad_AB40/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |        1862 |      1 | design/ckpad_AB40/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   3710 |        5572 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/delayReg1/D (FDRE)
+#   info : |  10000 |       15572 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/delayReg1/Q (FDRE)
+#   info : |    263 |       15835 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/ztig_delayReg2/D (FDRE)
+#   info : |  10000 |       25835 |      3 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/ztig_delayReg2/Q (FDRE)
+#   info : |   2348 |       28183 |      0 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1/zdelay_regFilterPos/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 23613ps
+#   info : |      0 |           0 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/virtex7_pll_fib/CLKOUT3 (MMCME2_ADV)
+#   info : |   1714 |        1714 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/I0 (BUFGCTRL)
+#   info : |    120 |        1834 |   1408 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O (BUFGCTRL)
+#   info : |   1472 |        3306 |      1 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_addr_4/C (FDRE)
+#   info : |    197 |        3503 |     22 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_addr_4/Q (FDRE)
+#   info : |   1299 |        4802 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000126/I2 (LUT3)
+#   info : |     53 |        4855 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000126/O (LUT3)
+#   info : |    662 |        5517 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000163_SW0/I1 (LUT2)
+#   info : |     63 |        5580 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000163_SW0/O (LUT2)
+#   info : |    705 |        6285 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000163/I1 (LUT2)
+#   info : |     53 |        6338 |      3 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000163/O (LUT2)
+#   info : |   7457 |       13795 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]522/I1 (LUT5)
+#   info : |     53 |       13848 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]522/O (LUT5)
+#   info : |   6705 |       20553 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]52_f7/I0 (LUT3)
+#   info : |     64 |       20617 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]52_f7/O (LUT3)
+#   info : |    707 |       21324 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I0 (LUT3)
+#   info : |     68 |       21392 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT3)
+#   info : |   1507 |       22899 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I1 (LUT3)
+#   info : |     53 |       22952 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT3)
+#   info : |    661 |       23613 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 21899ps
+#   info : |      0 |           0 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/I1 (BUFGCTRL)
+#   info : |    120 |         120 |   1408 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O (BUFGCTRL)
+#   info : |   1472 |        1592 |      1 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_addr_4/C (FDRE)
+#   info : |    197 |        1789 |     22 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_addr_4/Q (FDRE)
+#   info : |   1299 |        3088 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000126/I2 (LUT3)
+#   info : |     53 |        3141 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000126/O (LUT3)
+#   info : |    662 |        3803 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000163_SW0/I1 (LUT2)
+#   info : |     63 |        3866 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000163_SW0/O (LUT2)
+#   info : |    705 |        4571 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000163/I1 (LUT2)
+#   info : |     53 |        4624 |      3 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd_and0000163/O (LUT2)
+#   info : |   7457 |       12081 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]522/I1 (LUT5)
+#   info : |     53 |       12134 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]522/O (LUT5)
+#   info : |   6705 |       18839 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]52_f7/I0 (LUT3)
+#   info : |     64 |       18903 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]52_f7/O (LUT3)
+#   info : |    707 |       19610 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I0 (LUT3)
+#   info : |     68 |       19678 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT3)
+#   info : |   1507 |       21185 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I1 (LUT3)
+#   info : |     53 |       21238 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT3)
+#   info : |    661 |       21899 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 21534ps
+#   info : |      0 |           0 |      1 | design/zkprctrl/sys_idel_clk_in_zpt_ibuf/I (IBUFDS)
+#   info : |   1038 |        1038 |      1 | design/zkprctrl/sys_idel_clk_in_zpt_ibuf/O (IBUFDS)
+#   info : |   2299 |        3337 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/I (BUFG)
+#   info : |    120 |        3457 |     98 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/O (BUFG)
+#   info : |   1735 |        5192 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/C (FDPE)
+#   info : |    183 |        5375 |      8 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/Q (FDPE)
+#   info : |   2769 |        8144 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/_or00001/I0 (LUT3)
+#   info : |     68 |        8212 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/_or00001/O (LUT3)
+#   info : |   4969 |       13181 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/series7_pll_xclk/RST (MMCME2_ADV)
+#   info : |   3000 |       16181 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/series7_pll_xclk/LOCKED (MMCME2_ADV)
+#   info : |   5252 |       21433 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/bufgctrl_en_and00001/I0 (LUT3)
+#   info : |     64 |       21497 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/bufgctrl_en_and00001/O (LUT3)
+#   info : |     37 |       21534 |      0 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/bufgctrl_en/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 21534ps
+#   info : |      0 |           0 |      1 | design/zkprctrl/sys_idel_clk_in_zpt_ibuf/IB (IBUFDS)
+#   info : |   1038 |        1038 |      1 | design/zkprctrl/sys_idel_clk_in_zpt_ibuf/O (IBUFDS)
+#   info : |   2299 |        3337 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/I (BUFG)
+#   info : |    120 |        3457 |     98 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/O (BUFG)
+#   info : |   1735 |        5192 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/C (FDPE)
+#   info : |    183 |        5375 |      8 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/Q (FDPE)
+#   info : |   2769 |        8144 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/_or00001/I0 (LUT3)
+#   info : |     68 |        8212 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/_or00001/O (LUT3)
+#   info : |   4969 |       13181 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/series7_pll_xclk/RST (MMCME2_ADV)
+#   info : |   3000 |       16181 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/series7_pll_xclk/LOCKED (MMCME2_ADV)
+#   info : |   5252 |       21433 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/bufgctrl_en_and00001/I0 (LUT3)
+#   info : |     64 |       21497 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/bufgctrl_en_and00001/O (LUT3)
+#   info : |     37 |       21534 |      0 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/bufgctrl_en/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 17714ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/Mcompar_addr_ok_cy\[0\]_CARRY4/CYINIT (CARRY4)
+#   info : |    346 |         346 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/Mcompar_addr_ok_cy\[0\]_CARRY4/CO[3] (CARRY4)
+#   info : |      0 |         346 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/Mcompar_addr_ok_cy\[4\]_CARRY4/CI (CARRY4)
+#   info : |    108 |         454 |      3 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/Mcompar_addr_ok_cy\[4\]_CARRY4/CO[1] (CARRY4)
+#   info : |   7442 |        7896 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]522/I0 (LUT5)
+#   info : |     53 |        7949 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]522/O (LUT5)
+#   info : |   6705 |       14654 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]52_f7/I0 (LUT3)
+#   info : |     64 |       14718 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]52_f7/O (LUT3)
+#   info : |    707 |       15425 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I0 (LUT3)
+#   info : |     68 |       15493 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT3)
+#   info : |   1507 |       17000 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I1 (LUT3)
+#   info : |     53 |       17053 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT3)
+#   info : |    661 |       17714 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 17692ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/Mcompar_addr_ok_cy\[0\]_CARRY4/DI[0] (CARRY4)
+#   info : |    324 |         324 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/Mcompar_addr_ok_cy\[0\]_CARRY4/CO[3] (CARRY4)
+#   info : |      0 |         324 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/Mcompar_addr_ok_cy\[4\]_CARRY4/CI (CARRY4)
+#   info : |    108 |         432 |      3 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/Mcompar_addr_ok_cy\[4\]_CARRY4/CO[1] (CARRY4)
+#   info : |   7442 |        7874 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]522/I0 (LUT5)
+#   info : |     53 |        7927 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]522/O (LUT5)
+#   info : |   6705 |       14632 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]52_f7/I0 (LUT3)
+#   info : |     64 |       14696 |      1 | design/ddr3_ctrl_empty_32x64_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]52_f7/O (LUT3)
+#   info : |    707 |       15403 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I0 (LUT3)
+#   info : |     68 |       15471 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT3)
+#   info : |   1507 |       16978 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I1 (LUT3)
+#   info : |     53 |       17031 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT3)
+#   info : |    661 |       17692 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  INTERNAL DATA PATHS (FILTERED): 10/11 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 9659ps
+#   info : |      0 |           0 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zebu_filter_data_zebu_zbi_pseudo_wire_inv4_output/zdelay_regFilter/CLR (LDCE)
+#   info : |    492 |         492 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zebu_filter_data_zebu_zbi_pseudo_wire_inv4_output/zdelay_regFilter/Q (LDCE)
+#   info : |    423 |         915 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zebu_filter_data_zebu_zbi_pseudo_wire_inv4_output/zdelay_zdelay_regFilter/D (LDCE)
+#   info : |    155 |        1070 |     64 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zebu_filter_data_zebu_zbi_pseudo_wire_inv4_output/zdelay_zdelay_regFilter/Q (LDCE)
+#   info : |   1807 |        2877 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/ra\[0\]/CLR (FDCE)
+#   info : |    478 |        3355 |     21 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/ra\[0\]/Q (FDCE)
+#   info : |   1774 |        5129 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_hjgempe67fmz3/I5 (LUT6)
+#   info : |     53 |        5182 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_hjgempe67fmz3/O (LUT6)
+#   info : |    692 |        5874 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_r17dey1qdusj1_RnM/I1 (LUT3)
+#   info : |     69 |        5943 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_r17dey1qdusj1_RnM/O (LUT3)
+#   info : |    572 |        6515 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/inv248_RnM/I0 (LUT1)
+#   info : |     53 |        6568 |      5 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/inv248_RnM/O (LUT1)
+#   info : |   1341 |        7909 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/sqnod_par/I0 (LUT4)
+#   info : |     53 |        7962 |      3 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/sqnod_par/O (LUT4)
+#   info : |    560 |        8522 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_a5ie8rrqq16s3/I0 (LUT5)
+#   info : |     53 |        8575 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_a5ie8rrqq16s3/O (LUT5)
+#   info : |    132 |        8707 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_pin24uc5oc8u2/I5 (LUT6)
+#   info : |     53 |        8760 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_pin24uc5oc8u2/O (LUT6)
+#   info : |     60 |        8820 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zdelay_zfast_pin24uc5oc8u2/D (LDCE)
+#   info : |    151 |        8971 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zdelay_zfast_pin24uc5oc8u2/Q (LDCE)
+#   info : |    688 |        9659 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/error_RnM/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 9466ps
+#   info : |      0 |           0 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zebu_filter_data_zebu_zbi_pseudo_wire_inv4_output/zdelay_regFilter/GE (LDCE)
+#   info : |    299 |         299 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zebu_filter_data_zebu_zbi_pseudo_wire_inv4_output/zdelay_regFilter/Q (LDCE)
+#   info : |    423 |         722 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zebu_filter_data_zebu_zbi_pseudo_wire_inv4_output/zdelay_zdelay_regFilter/D (LDCE)
+#   info : |    155 |         877 |     64 | design/U0_M0_F0/U0_M0_F0_core/u_stb/zebu_filter_data_zebu_zbi_pseudo_wire_inv4_output/zdelay_zdelay_regFilter/Q (LDCE)
+#   info : |   1807 |        2684 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/ra\[0\]/CLR (FDCE)
+#   info : |    478 |        3162 |     21 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/ra\[0\]/Q (FDCE)
+#   info : |   1774 |        4936 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_hjgempe67fmz3/I5 (LUT6)
+#   info : |     53 |        4989 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_hjgempe67fmz3/O (LUT6)
+#   info : |    692 |        5681 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_r17dey1qdusj1_RnM/I1 (LUT3)
+#   info : |     69 |        5750 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_r17dey1qdusj1_RnM/O (LUT3)
+#   info : |    572 |        6322 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/inv248_RnM/I0 (LUT1)
+#   info : |     53 |        6375 |      5 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/inv248_RnM/O (LUT1)
+#   info : |   1341 |        7716 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/sqnod_par/I0 (LUT4)
+#   info : |     53 |        7769 |      3 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/sqnod_par/O (LUT4)
+#   info : |    560 |        8329 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_a5ie8rrqq16s3/I0 (LUT5)
+#   info : |     53 |        8382 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_a5ie8rrqq16s3/O (LUT5)
+#   info : |    132 |        8514 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_pin24uc5oc8u2/I5 (LUT6)
+#   info : |     53 |        8567 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_pin24uc5oc8u2/O (LUT6)
+#   info : |     60 |        8627 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zdelay_zfast_pin24uc5oc8u2/D (LDCE)
+#   info : |    151 |        8778 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zdelay_zfast_pin24uc5oc8u2/Q (LDCE)
+#   info : |    688 |        9466 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/error_RnM/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 8216ps
+#   info : |      0 |           0 |    178 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk0/zdelay_regFilterPos/Q (FDRE)
+#   info : |   1278 |        1278 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u_fifo_usage_spy/sqnod_sqnet37/C (FDRE)
+#   info : |    209 |        1487 |      3 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u_fifo_usage_spy/sqnod_sqnet37/Q (FDRE)
+#   info : |    835 |        2322 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u_fifo_usage_spy/sqnod_sqnet39/I0 (LUT2)
+#   info : |     53 |        2375 |     38 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u_fifo_usage_spy/sqnod_sqnet39/O (LUT2)
+#   info : |   5320 |        7695 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[0\]/fwc_ip_hs_interface_event_0/dut_en_fwc_ip_on_r_OR_1_o1/I2 (LUT3)
+#   info : |     53 |        7748 |      2 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[0\]/fwc_ip_hs_interface_event_0/dut_en_fwc_ip_on_r_OR_1_o1/O (LUT3)
+#   info : |    468 |        8216 |      0 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[0\]/fwc_ip_hs_interface_event_0/zfwc_dut_event_detect_1/R (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 7501ps
+#   info : |      0 |           0 |    182 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1/zdelay_regFilterPos/Q (FDRE)
+#   info : |   1000 |        1000 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/ra\[0\]/C (FDCE)
+#   info : |    197 |        1197 |     21 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/ra\[0\]/Q (FDCE)
+#   info : |   1774 |        2971 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_hjgempe67fmz3/I5 (LUT6)
+#   info : |     53 |        3024 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_hjgempe67fmz3/O (LUT6)
+#   info : |    692 |        3716 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_r17dey1qdusj1_RnM/I1 (LUT3)
+#   info : |     69 |        3785 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_r17dey1qdusj1_RnM/O (LUT3)
+#   info : |    572 |        4357 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/inv248_RnM/I0 (LUT1)
+#   info : |     53 |        4410 |      5 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/inv248_RnM/O (LUT1)
+#   info : |   1341 |        5751 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/sqnod_par/I0 (LUT4)
+#   info : |     53 |        5804 |      3 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/sqnod_par/O (LUT4)
+#   info : |    560 |        6364 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_a5ie8rrqq16s3/I0 (LUT5)
+#   info : |     53 |        6417 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_a5ie8rrqq16s3/O (LUT5)
+#   info : |    132 |        6549 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_pin24uc5oc8u2/I5 (LUT6)
+#   info : |     53 |        6602 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_pin24uc5oc8u2/O (LUT6)
+#   info : |     60 |        6662 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zdelay_zfast_pin24uc5oc8u2/D (LDCE)
+#   info : |    151 |        6813 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zdelay_zfast_pin24uc5oc8u2/Q (LDCE)
+#   info : |    688 |        7501 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/error_RnM/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 7278ps
+#   info : |      0 |           0 |     56 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/zebu_filter_clkout/zdelay_regFilterPos/Q (FDRE)
+#   info : |   1767 |        1767 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/mem\[2\]\[6\]/C (FDRE)
+#   info : |    197 |        1964 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/mem\[2\]\[6\]/Q (FDRE)
+#   info : |    673 |        2637 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_9zdajm24of7u2/I2 (LUT6)
+#   info : |     53 |        2690 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_9zdajm24of7u2/O (LUT6)
+#   info : |    649 |        3339 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_8gy3kkmjcvan2_RnM/I1 (LUT3)
+#   info : |     63 |        3402 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/zfast_8gy3kkmjcvan2_RnM/O (LUT3)
+#   info : |    568 |        3970 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/inv249_RnM/I0 (LUT1)
+#   info : |     53 |        4023 |      5 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/inv249_RnM/O (LUT1)
+#   info : |   1150 |        5173 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/zfast_39tmnm65gc0h1/I0 (LUT5)
+#   info : |     53 |        5226 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/zfast_39tmnm65gc0h1/O (LUT5)
+#   info : |    302 |        5528 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/sqnod_par/I3 (LUT4)
+#   info : |     53 |        5581 |      3 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_parity/sqnod_par/O (LUT4)
+#   info : |    560 |        6141 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_a5ie8rrqq16s3/I0 (LUT5)
+#   info : |     53 |        6194 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_a5ie8rrqq16s3/O (LUT5)
+#   info : |    132 |        6326 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_pin24uc5oc8u2/I5 (LUT6)
+#   info : |     53 |        6379 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zfast_pin24uc5oc8u2/O (LUT6)
+#   info : |     60 |        6439 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zdelay_zfast_pin24uc5oc8u2/D (LDCE)
+#   info : |    151 |        6590 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/zdelay_zfast_pin24uc5oc8u2/Q (LDCE)
+#   info : |    688 |        7278 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_stb/u_check/error_RnM/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 0ps
+#   info : |      0 |           0 |      0 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk0/zdelay_regFilterPos/CE (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 0ps
+#   info : |      0 |           0 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/zebu_filter_clkout/zdelay_regFilterPos/R (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 0ps
+#   info : |      0 |           0 |      0 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1/zdelay_regFilterPos/CE (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 0ps
+#   info : |      0 |           0 |      0 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk0/zdelay_regFilterPos/R (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 0ps
+#   info : |      0 |           0 |      0 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1/zdelay_regFilterPos/R (FDRE)
+#   step Internal Data Paths Analysis : Done in     elapsed:0.2 s   user:0.22 s    system:0.3 s    %cpu:1063.83       load:0.12       fm:185301 m      vm:772 m       vm:+0 m      um:414 m       um:+2 m
+#   step From FPGA inputs to data analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM SOCKET TO DATA PATHS: 5/5 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 27632ps
+#   info : |      0 |           0 |      1 | design/ckpad_AC41/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |           0 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |         804 |      1 | design/ckpad_AC41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   3707 |        4511 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/D (FDRE)
+#   info : |  10000 |       14511 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/delayReg1/Q (FDRE)
+#   info : |    273 |       14784 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/D (FDRE)
+#   info : |  10000 |       24784 |      4 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[1\]/ztig_delayReg2/Q (FDRE)
+#   info : |   2238 |       27022 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/sqnod_clkout/I0 (LUT2)
+#   info : |     53 |       27075 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/sqnod_clkout/O (LUT2)
+#   info : |    557 |       27632 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u0_clkg/zebu_filter_clkout/zdelay_regFilterPos/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 27125ps
+#   info : |      0 |           0 |      1 | design/ckpad_AB40/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |           0 |      1 | design/ckpad_AB40/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |         804 |      1 | design/ckpad_AB40/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   3710 |        4514 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/delayReg1/D (FDRE)
+#   info : |  10000 |       14514 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/delayReg1/Q (FDRE)
+#   info : |    263 |       14777 |      1 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/ztig_delayReg2/D (FDRE)
+#   info : |  10000 |       24777 |      3 | design/U0_M0_F0/zCompBufg_zcgen_w_zcg_zceiClock\[0\]/ztig_delayReg2/Q (FDRE)
+#   info : |   2348 |       27125 |      0 | design/U0_M0_F0/U0_M0_F0_core/zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1/zdelay_regFilterPos/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 12619ps
+#   info : |      0 |           0 |      1 | design/ckpad_AC39/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |           0 |      1 | design/ckpad_AC39/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |         804 |      1 | design/ckpad_AC39/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   1932 |        2736 |      1 | design/U0_M0_F0/zbufg_zcgen_w_zcg_compositeClock/I (BUFG)
+#   info : |    120 |        2856 |    298 | design/U0_M0_F0/zbufg_zcgen_w_zcg_compositeClock/O (BUFG)
+#   info : |   1715 |        4571 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_interface_event_0/zfwc_dut_previous_dut_io_1/C (FDRE)
+#   info : |    209 |        4780 |      3 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_interface_event_0/zfwc_dut_previous_dut_io_1/Q (FDRE)
+#   info : |   5229 |       10009 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/fwc_ip_data_comparing\[1\]1/I1 (LUT2)
+#   info : |     53 |       10062 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/fwc_ip_data_comparing\[1\]1/O (LUT2)
+#   info : |      8 |       10070 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_0/S[1] (CARRY4)
+#   info : |    302 |       10372 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_0/CO[3] (CARRY4)
+#   info : |      0 |       10372 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_1/CI (CARRY4)
+#   info : |     60 |       10432 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_1/CO[3] (CARRY4)
+#   info : |      0 |       10432 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_2/CI (CARRY4)
+#   info : |     60 |       10492 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_2/CO[3] (CARRY4)
+#   info : |      0 |       10492 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_3/CI (CARRY4)
+#   info : |     60 |       10552 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_3/CO[3] (CARRY4)
+#   info : |      0 |       10552 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_4/CI (CARRY4)
+#   info : |     60 |       10612 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_4/CO[3] (CARRY4)
+#   info : |      0 |       10612 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_5/CI (CARRY4)
+#   info : |     60 |       10672 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_5/CO[3] (CARRY4)
+#   info : |      0 |       10672 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_6/CI (CARRY4)
+#   info : |     60 |       10732 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_6/CO[3] (CARRY4)
+#   info : |      0 |       10732 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_7/CI (CARRY4)
+#   info : |     60 |       10792 |      2 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/carry4_7/CO[3] (CARRY4)
+#   info : |   1286 |       12078 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/Mmux_GND_7_o_GND_7_o_MUX_479_o11/I5 (LUT6)
+#   info : |     53 |       12131 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/Mmux_GND_7_o_GND_7_o_MUX_479_o11/O (LUT6)
+#   info : |    488 |       12619 |      0 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/fwc_ip_hs_eventizer_0/fwc_ip_to_data_wr_int/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 6881ps
+#   info : |      0 |           0 |      1 | design/ckpad_AD41/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |           0 |      1 | design/ckpad_AD41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |         804 |      1 | design/ckpad_AD41/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   2308 |        3112 |      1 | design/U0_M0_F0/zbufg_zebu_zdly_z_dclk_delay_12524327392187371745/I (BUFG)
+#   info : |    120 |        3232 |    370 | design/U0_M0_F0/zbufg_zebu_zdly_z_dclk_delay_12524327392187371745/O (BUFG)
+#   info : |   1683 |        4915 |      1 | design/U0_M0_F0/zebu_move_zdelay_r0_dout_FD7_out/G (LDCE)
+#   info : |    277 |        5192 |      7 | design/U0_M0_F0/zebu_move_zdelay_r0_dout_FD7_out/Q (LDCE)
+#   info : |   1689 |        6881 |      0 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/mem\[5\]\[7\]/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 6340ps
+#   info : |      0 |           0 |      1 | design/ckpad_AE42/wrapper/ibufds_0/O (IBUFDS)
+#   info : |      0 |           0 |      1 | design/ckpad_AE42/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |         804 |      1 | design/ckpad_AE42/wrapper/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   2308 |        3112 |      1 | design/U0_M0_F0/zbufg_zcgen_w_zcg_filterClock/I (BUFG)
+#   info : |    120 |        3232 |     45 | design/U0_M0_F0/zbufg_zcgen_w_zcg_filterClock/O (BUFG)
+#   info : |   1700 |        4932 |      1 | design/U0_M0_F0/U0_M0_F0_core/zforce_rstn/VAL_sync/C (FDRE)
+#   info : |    197 |        5129 |      3 | design/U0_M0_F0/U0_M0_F0_core/zforce_rstn/VAL_sync/Q (FDRE)
+#   info : |   1211 |        6340 |      1 | design/U0_M0_F0/U0_M0_F0_core/u_dut/u_fifo/u_fifo_usage_spy/zfast_39leio2bop9a2/I0 (LUT2)
+#   step From FPGA inputs to data analysis : Done in     elapsed:0.1 s    user:0.1 s      system:0 s     %cpu:363.64       load:0.12       fm:185300 m      vm:772 m       vm:+0 m      um:414 m       um:+0 m
+#   step From FPGA inputs to socket analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM SOCKET TO SOCKET PATHS: 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step From FPGA inputs to socket analysis : Done in       elapsed:0 s    user:0.1 s    system:0.1 s    %cpu:1142.86       load:0.12       fm:185300 m      vm:772 m       vm:+0 m      um:414 m       um:+0 m
+#   step From data to FPGA outputs analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM DATA TO SOCKET PATHS (NOT FILTERED): 1/1 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 17347ps
+#   info : |      0 |           0 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/virtex7_pll_idel/CLKOUT2 (MMCME2_ADV)
+#   info : |   1733 |        1733 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/x_bufgctrl_2/u_xst_wrapper_0/virtex7_bufgctrl_0/I0 (BUFGCTRL)
+#   info : |    120 |        1853 |   1412 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/x_bufgctrl_2/u_xst_wrapper_0/virtex7_bufgctrl_0/O (BUFGCTRL)
+#   info : |   2039 |        3892 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/wc_fifo_16x32_header_0/u\.xst_wrapper/nb_data_in_fifo_3/C (FDRE)
+#   info : |    209 |        4101 |     40 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/wc_fifo_16x32_header_0/u\.xst_wrapper/nb_data_in_fifo_3/Q (FDRE)
+#   info : |   1134 |        5235 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/wc_fifo_16x32_header_0/u\.xst_wrapper/hfull1/I0 (LUT2)
+#   info : |     53 |        5288 |      2 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/wc_fifo_16x32_header_0/u\.xst_wrapper/hfull1/O (LUT2)
+#   info : |    441 |        5729 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/Mmux_n004811/I0 (LUT2)
+#   info : |     53 |        5782 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/fwc_ip_hs\[3\]/Mmux_n004811/O (LUT2)
+#   info : |   3746 |        9528 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/out5/I1 (LUT2)
+#   info : |     53 |        9581 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/out5/O (LUT2)
+#   info : |    191 |        9772 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/out7/I0 (LUT3)
+#   info : |     56 |        9828 |      1 | wc_ip_top/wrapper/fwc_ip_hs_cluster_32\[0\]/out7/O (LUT3)
+#   info : |   7519 |       17347 |      2 | design/socket_00_00_00_08/ClockRegion000SD_40B/ser0/sock_dout/I (OBUFDS)
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM DATA TO SOCKET PATHS (FILTERED): 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step From data to FPGA outputs analysis : Done in       elapsed:0 s    user:0.1 s      system:0 s    %cpu:1333.33       load:0.12       fm:185300 m      vm:772 m       vm:+0 m      um:414 m       um:+0 m
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m3s, user 0m4.629s, sys 0m0.301s
+#   exec summary : Total memory: 790628 kB - RSS memory: 424780 kB - Data memory: 509328 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:22:05 2023
+command exit code is '0'

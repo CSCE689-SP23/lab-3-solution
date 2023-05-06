@@ -1,0 +1,4 @@
+Zview=dump
+Zview=dump
+ 
+Compile:DropWriteOnlyMemories=false

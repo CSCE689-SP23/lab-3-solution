@@ -1,0 +1,221 @@
+.. Command: /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/tracean3.py --top-delay=5 --syn-details=5 --pr-summary-by-time=5 --hhmm --local-time=detect --show-memory --fix-graph --cpu-time /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work
+.. Reading /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/backup/backend_default_23_4_19_01_04_14/prof/tracerun.cui ...
+.. Detected --work=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/.
+.. Detected --submit-host=csce-quinn-s1.engr.tamu.edu
+.. Detected local time offset of -5.0 hours
+.. The first task started at Wed, 19 Apr 2023 06:04:17 UTC
+
+*** Incremental = No ***
+
+Grade  Bogomips  Cache   Count  CPU model (sample machine)
+-----  --------  ------  -----  --------------------------
+ 1.00      4600   25600      1  Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz (csce-quinn-s1.engr.tamu.edu)
+
+
+======================================================================
+*** Back-end name: default backend ***
+
+Critical path, based on actual execution timing
+===============================================
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   0.21%       0:00    0.9    0:00  Checks + config
+   0:00   0.06%       0:00    1.0    0:00  Build Fs Macro Library
+   0:00   0.37%       0:00    1.0    0:00  Launch VCS
+   0:00   0.30%       0:00    1.0    0:00  FE + synthesis
+   0:00   0.20%       0:00    0.3    0:00  RTL DB index + link
+   0:00   0.37%       0:00    1.0    0:00  Build System
+   0:00   1.21%       0:00    1.0    0:00  Build zCore
+   0:00   0.81%       0:00    1.0    0:00  Place and Route System
+   0:16  92.05%       0:16    1.0    0:14  P&R
+   0:00   0.30%       0:00    1.0    0:00  Create Timing DB (SDF Mode)
+   0:00   0.10%       0:00    1.0    0:00  Create Timing DB (post FPGA)
+   0:00   0.04%       0:00    1.0    0:00  zAudit Report [1 FAILED]
+-------  ------  ----------------  -------  -----
+   0:17  96.02%       0:16    1.0  * Total *
+
+Columns:
+- Elapsed: the difference between Finish and Submit times [hh:mm].
+- %total: the percentage of Elapsed time in overall compilation. Note that
+  it may add up to less than 100% if there were any gaps between Finish and
+  Submit times of successive stages.
+- SElapsed: sum of Elapsed times for all tasks constituting the stage. It
+  may be greater than Elapsed if some or all of these tasks were executed
+  in parallel [hh:mm].
+- SE/E: equal to SElapsed/Elapsed. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- CPUtime: the CPUtime of each task in the stage
+Critical path, assuming timing without scheduling or grid delays
+================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   0.15%       0:00    1.3    0:00  Checks + config
+   0:00   0.07%       0:00    1.0    0:00  Build Fs Macro Library
+   0:00   0.39%       0:00    1.0    0:00  Launch VCS
+   0:00   0.31%       0:00    1.0    0:00  FE + synthesis
+   0:00   0.07%       0:00    1.0    0:00  RTL DB index + link
+   0:00   0.39%       0:00    1.0    0:00  Build System
+   0:00   1.27%       0:00    1.0    0:00  Build zCore
+   0:00   0.85%       0:00    1.0    0:00  Place and Route System
+   0:16  96.02%       0:16    1.0    0:14  P&R
+   0:00   0.32%       0:00    1.0    0:00  Create Timing DB (SDF Mode)
+   0:00   0.10%       0:00    1.0    0:00  Create Timing DB (post FPGA)
+   0:00   0.04%       0:00    1.0    0:00  zAudit Report [1 FAILED]
+-------  ------  ----------------  -------  -----
+   0:16 100.00%       0:16    1.0  * Total *
+
+
+Critical path, assuming timing without delays, no PARFF and >= 100% CPU usage
+=============================================================================
+
+Note: this section lists the same stages as the previous one.
+
+Elapsed  %total   SElapsed   SE/E  CPUtime  Stage
+-------  ------  ----------------  -------  -----
+   0:00   0.16%       0:00    1.3    0:00  Checks + config
+   0:00   0.06%       0:00    1.0    0:00  Build Fs Macro Library
+   0:00   0.27%       0:00    1.0    0:00  Launch VCS
+   0:00   0.20%       0:00    1.0    0:00  FE + synthesis
+   0:00   0.04%       0:00    1.0    0:00  RTL DB index + link
+   0:00   0.28%       0:00    1.0    0:00  Build System
+   0:00   0.80%       0:00    1.0    0:00  Build zCore
+   0:00   0.80%       0:00    1.0    0:00  Place and Route System
+   0:14  96.96%       0:14    1.0    0:14  P&R
+   0:00   0.35%       0:00    1.0    0:00  Create Timing DB (SDF Mode)
+   0:00   0.03%       0:00    1.0    0:00  Create Timing DB (post FPGA)
+   0:00   0.04%       0:00    1.0    0:00  zAudit Report [1 FAILED]
+-------  ------  ----------------  -------  -----
+   0:15 100.00%       0:15    1.0  * Total *
+
+
+Major compilation stages, ordered by submit time
+================================================
+
+Submit Elapsd %total   SExec  SE/E Tasks    %CPU Grade  Stage
+------ ------------- ------------- -------------------  -----
+ 01:04   0:00   0.21    0:00   0.9     4   94.55  1.00  Checks + config
+ 01:04   0:00   0.06    0:00   1.0     1   79.71  1.00  Build Fs Macro Library
+ 01:04   0:00   0.37    0:00   1.0     1   63.66  1.00  Launch VCS
+ 01:04   0:00   0.01    0:00   1.0     1   73.33  1.00  Compilation Profiler (after VCSAnalyzer)
+ 01:04   0:00   0.02    0:00   1.0     1   37.50  1.00  Build Rhino Fsdb
+ 01:04   0:00   0.03    0:00   1.0     1   36.11  1.00  Launch Verdi
+ 01:04   0:00   0.30    0:00   1.0     1   58.81  1.00  FE + synthesis
+ 01:04   0:00   0.01    0:00   1.0     1   71.43  1.00  Compilation Profiler (after BackendEntry)
+ 01:04   0:00   0.02    0:00   1.0     1   76.47  1.00  Make optionsdb dump
+ 01:04   0:00   0.02    0:00   1.0     1   60.00  1.00  Analyze DVE
+ 01:04   0:00   0.02    0:00   1.0     1   70.00  1.00  Make VCS file links
+ 01:04   0:00   0.20    0:00   0.3     2   54.67  1.00  RTL DB index + link
+ 01:04   0:00   0.03    0:00   1.0     1   58.62  1.00  Make RTL DB for Run Time
+ 01:04   0:00   0.37    0:00   1.0     1   64.99  1.00  Build System
+ 01:04   0:00   0.01    0:00   1.0     1   73.33  1.00  Compilation Profiler (after ZTopBuildAnalyzer)
+ 01:04   0:00   0.02    0:00   1.0     1   42.31  1.00  zSimuFsdbHeader
+ 01:04   0:00   0.03    0:00   1.0     1  132.26  1.00  Build Equipotentials
+ 01:04   0:00   0.05    0:00   1.0     1   61.54  1.00  Convert Netlist
+ 01:04   0:00   0.03    0:00   1.0     1  106.45  1.00  Build Accessibility Graphs
+ 01:04   0:00   0.04    0:00   1.0     1   68.18  1.00  RTB Front-End
+ 01:04   0:00   0.05    0:00   1.0     1  112.24  1.00  Simulate Graphs
+ 01:04   0:00   1.21    0:00   1.0     1   57.10  1.00  Build zCore
+ 01:05   0:00   0.81    0:00   1.0     1   85.62  1.00  Place and Route System
+ 01:05   0:00   0.01    0:00   1.0     1   68.75  1.00  Compilation Profiler (after ZParAnalyzer)
+ 01:05   0:00   0.98    0:00   1.0     1   97.90  1.00  Create RTB Configuration
+ 01:05   0:00   0.98    0:00   1.0     1   97.90  1.00  Create RTB Configuration
+ 01:05   0:10  60.44    0:10   1.0     3   82.80  1.00  P&R
+ 01:05   0:16  92.05    0:16   1.0     3   91.97  1.00  P&R
+ 01:05   0:00   0.09    0:00   1.0     1   25.25  1.00  Create Timing DB
+ 01:05   0:11  65.29    0:11   1.0     3   92.11  1.00  IF P&R
+ 01:16   0:00   0.12    0:00   1.0     1   93.08  1.00  Create Timing DB (SDF Mode)
+ 01:17   0:00   0.24    0:00   1.0     1  203.08  1.00  Create Timing DB (SDF Mode)
+ 01:22   0:00   0.30    0:00   1.0     1  154.29  1.00  Create Timing DB (SDF Mode)
+ 01:22   0:00   0.24    0:00   1.0     1  144.92  1.00  FPGA PaRs Analyzer
+ 01:22   0:00   0.10    0:00   1.0     1   25.49  1.00  Create Timing DB (post FPGA)
+ 01:22   0:00   0.10    0:00   1.0     1   82.41  1.00  Global DB
+ 01:22   0:00   0.04    0:00   1.0     1   93.02  1.00  zAudit Report [1 FAILED]
+
+Columns:
+- Submit: the submit time of the first task in the stage [hh:mm].
+- Elapsd: the duration of the stage, based on actual timing [hh:mm].
+- %total: the percentage of Elapsd time in overall compilation.
+- SExec: sum of execution times (excluding scheduling and grid delays) for
+  all tasks constituting the stage. It may be greater than Elapsd if some
+  or all of these tasks were executed in parallel [hh:mm].
+- SE/E: equal to SExec/Elapsd. A value greater than 1.0 indicates that
+  tasks were executed in parallel.
+- %CPU: average CPU utilization: total CPU time divided by SExec.
+- Grade: average host grade.
+
+
+Memory usage:  Max Resident Set Size [MB]
+Known Unknown  Min      Avg      Max      Stage
+----- -------  -------- -------- -------- -----
+    4       0      14.8     88.3    247.4 Checks + config
+    1       0      47.2     47.2     47.2 Build Fs Macro Library
+    1       0     151.5    151.5    151.5 Launch VCS
+    1       0      18.0     18.0     18.0 Compilation Profiler (after VCSAnalyzer)
+    1       0      83.0     83.0     83.0 Build Rhino Fsdb
+    1       0      43.2     43.2     43.2 Launch Verdi
+    1       0     109.0    109.0    109.0 FE + synthesis
+    1       0      18.0     18.0     18.0 Compilation Profiler (after BackendEntry)
+    1       0      44.1     44.1     44.1 Make optionsdb dump
+    1       0      91.2     91.2     91.2 Analyze DVE
+    1       0      44.1     44.1     44.1 Make VCS file links
+    2       0      44.1     60.1     76.1 RTL DB index + link
+    1       0      44.1     44.1     44.1 Make RTL DB for Run Time
+    1       0     336.9    336.9    336.9 Build System
+    1       0      18.0     18.0     18.0 Compilation Profiler (after ZTopBuildAnalyzer)
+    1       0     105.3    105.3    105.3 zSimuFsdbHeader
+    1       0     148.7    148.7    148.7 Build Equipotentials
+    1       0     153.0    153.0    153.0 Convert Netlist
+    1       0     198.0    198.0    198.0 Build Accessibility Graphs
+    1       0     122.1    122.1    122.1 RTB Front-End
+    1       0     504.1    504.1    504.1 Simulate Graphs
+    1       0     479.0    479.0    479.0 Build zCore
+    1       0    1500.3   1500.3   1500.3 Place and Route System
+    1       0      18.0     18.0     18.0 Compilation Profiler (after ZParAnalyzer)
+    1       0    1670.3   1670.3   1670.3 Create RTB Configuration
+    1       0    1670.3   1670.3   1670.3 Create RTB Configuration
+    3       0       2.0   1511.1   4529.3 P&R
+    3       0       2.0   1782.8   5344.2 P&R
+    1       0     149.7    149.7    149.7 Create Timing DB
+    3       0       2.0   1545.3   4631.7 IF P&R
+    1       0     190.2    190.2    190.2 Create Timing DB (SDF Mode)
+    1       0     259.2    259.2    259.2 Create Timing DB (SDF Mode)
+    1       0     415.8    415.8    415.8 Create Timing DB (SDF Mode)
+    1       0       7.5      7.5      7.5 FPGA PaRs Analyzer
+    1       0     149.0    149.0    149.0 Create Timing DB (post FPGA)
+    1       0     351.5    351.5    351.5 Global DB
+    1       0      56.4     56.4     56.4 zAudit Report [1 FAILED]
+
+
+** There were no tasks with grid delays >= 30 s
+
+=== P&R Summary (by time)
+
+                                           -- Actual timing --                    W/o grid delay
+FPGA name  Win  Tasks R's L's %CPU, Grade  MiF Elapsed  %max    PARFF scheduled   Elapsed %max
+---------  ---- ------------- -----------  -------------------  ----------------  --------------
+U0_M0_F00  Orig    1          94.88  1.00    1    0:15 100.00%                      0:15 100.00%
+U0_M0_IF   Orig    1          96.30  1.00    1    0:11  69.78%                      0:11  69.78%
+U0_M0_F08  Orig    1          86.89  1.00    1    0:10  64.19%                      0:10  64.19%
+
+Columns:
+- Win: label of the winning P&R strategy.
+- Tasks: number of tasks launched.
+- R's: number of task re-runs.
+- L's: number of PARFF tasks launched.
+- %CPU: average CPU utilization.
+- Grade: average host grade.
+- MiF: max number of tasks being executed at the same time (Max in Flight).
+- Elapsed: elapsed wall time [hh:mm].
+- %max: percentage of max Elapsed time of all FPGAs.
+- PARFF: the time from the start of P&R and the start of the first PARFF task.
+
+=== Details on task group 'Synthesis'
+
+Sched. Startd Ended   S.dlay Duratn %CPU   Grade RSS [MB]  Task
+------ ------ ------  ------ ------ ------ ----- --------  ----
+ 01:04  01:04  01:04    0:00   0:00  58.81  1.00    109.0  design_Default_RTL_GroupBundle_0_Synthesis
+

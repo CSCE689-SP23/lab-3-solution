@@ -1,0 +1,7 @@
+# Emulation Verification Engineering (c) - XDC generator
+# ------------------------------------------------------
+
+#xdc_addconst loc
+create_pblock pblock_bk10
+resize_pblock pblock_bk10 -add SLICE_X0Y450:SLICE_X251Y499
+add_cells_to_pblock pblock_bk10 design/socket_00_08_00_09/ClockRegion000SD_20A/ser0

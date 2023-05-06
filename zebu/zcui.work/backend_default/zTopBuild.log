@@ -1,0 +1,1080 @@
+
+                                    ZeBu (R)
+                                   zTopBuild
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zTopBuild zTopBuild.tcl 
+
+# start time is Wed Apr 19 01:04:51 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:04:07
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.14 0.05 0.06 4/478 36202
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185594 MB
+#            Total Free including cache: 190310 MB
+#            Swap cache: 0 MB Cached space: 4716 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 420 MB VmPeak: 420 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256153
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ENV.VAR : LM_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : SNPSLMD_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+#   step ENV.VAR : VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+#   step ENV.VAR : ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+#   step ENV.VAR : ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+#   step ENV.VAR : ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+#   step ENV.VAR : ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   step ENV.VAR : ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+#   step ENV.VAR : ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+#   step ENV.VAR : ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+#   step ENV.VAR : ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+#   step ENV.VAR : ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+### warning in zTopBuild [ZTB0249W] : can't set stack to unlimited, zTopBuild may randomly crash.
+data_localization -core_strategy {NO} -fpga_strategy {NO}
+vectorize -enable {yes}
+wire_resolution_defaults -conflict {wand} -tristate {pullup} -undriven {0}
+set_config -relocate=yes
+winding_path {optimize_laces} -mode=manual -depth=1 -max_cut=1
+winding_path_zcore {optimize_laces} -mode=manual -depth=1 -max_cut=1
+zoffline_debug -enable {no}
+set_dump_var -filename {dumpvars.db}
+loop {report} -limit {10000} -async -explore_clock_tree
+cluster {set} -lut_weighting_default { 1 0  2 1 3 1 4 1 5 1 6 1 }
+config_upf -use_rtlname {yes} -hier_sep {/} -firmware_lib {zse_hw_zTop.edf.gz}
+dump_memory -merged -report_details {stability}
+cluster {accept_overflow} -lut=5 -reg=5 -dsp=0 -bram=5 -qiwc_bit=5 -uram {5} -fwc_ip=5
+cluster {set} -max_fill_fwc_ip {80}
+cluster {set} -max_fill_sabre_pi_bit {100}
+cluster {set} -max_fill_sabre_ff_bit {30}
+set_force_assign -value_1_on_vector {warning}
+#   step set_force_assign : Please note that netlist editing commands like 'set_force_assign' in the advanced script will be executed before any command in the edit-netlist script.
+read_edif {../design/fs_macros.edf}
+read_edif {../design/synth_Default_RTL_Group/edif/clkg/clkg.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/dut/dut.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/fifo_0000/fifo_0000.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/fifo_usage_spy/fifo_usage_spy.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/parity/parity.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/parity_check/parity_check.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/proba/proba.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/proba_0000/proba_0000.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/ram/ram.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/rom/rom.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/stb/stb.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/edif/top/top.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/zmem/Memory_ram_zMem/ram_ZMEM_mem.edf.gz}
+read_edif {../design/synth_Default_RTL_Group/zmem/Memory_rom_zMem/rom_ZMEM_mem.edf.gz}
+set_top {top}
+edit_netlist {/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zTopBuild_netlist_config.tcl}
+read_dve {../vcs_splitter/vcs.dve}
+System quiet 
+System quiet 
+Component new XC5V330 
+Component set XC5V330.type PROGRAMMABLE 
+Component set XC5V330.usetype DESIGN 
+Component set XC5V330.part 5vlx330-1-ff1760 
+Component set XC5V330.die 1 
+Component new XC5V110 
+Component set XC5V110.type PROGRAMMABLE 
+Component set XC5V110.usetype DESIGN 
+Component set XC5V110.part 5vlx110-1-ff1760 
+Component set XC5V110.die 1 
+Component new XC5V330_IF 
+Component set XC5V330_IF.type PROGRAMMABLE 
+Component set XC5V330_IF.usetype IF 
+Component set XC5V330_IF.part 5vlx330-1-ff1760 
+Component set XC5V330_IF.die 1 
+Component new XC5V110_IF 
+Component set XC5V110_IF.type PROGRAMMABLE 
+Component set XC5V110_IF.usetype IF 
+Component set XC5V110_IF.part 5vlx110-1-ff1760 
+Component set XC5V110_IF.die 1 
+Component new XC6V760 
+Component set XC6V760.type PROGRAMMABLE 
+Component set XC6V760.usetype DESIGN 
+Component set XC6V760.part 6vlx760-1-ff1760 
+Component set XC6V760.die 1 
+Component new XC6V760_IF 
+Component set XC6V760_IF.type PROGRAMMABLE 
+Component set XC6V760_IF.usetype IF 
+Component set XC6V760_IF.part 6vlx760-1-ff1760 
+Component set XC6V760_IF.die 1 
+Component new XC6V550 
+Component set XC6V550.type PROGRAMMABLE 
+Component set XC6V550.usetype DESIGN 
+Component set XC6V550.part 6vlx550t-1-ff1760 
+Component set XC6V550.die 1 
+Component new XC6V550_IF 
+Component set XC6V550_IF.type PROGRAMMABLE 
+Component set XC6V550_IF.usetype IF 
+Component set XC6V550_IF.part 6vlx550t-1-ff1760 
+Component set XC6V550_IF.die 1 
+Component new XC7V2000 
+Component set XC7V2000.type PROGRAMMABLE 
+Component set XC7V2000.usetype DESIGN 
+Component set XC7V2000.part 7vlx2000tff1925 
+Component set XC7V2000.die 1 
+Component new XC7V2000_DIE 
+Component set XC7V2000_DIE.type PROGRAMMABLE 
+Component set XC7V2000_DIE.usetype DESIGN 
+Component set XC7V2000_DIE.part 7vlx2000tff1925:die 
+Component set XC7V2000_DIE.die 4 
+Component new XC7V2000_IF 
+Component set XC7V2000_IF.type PROGRAMMABLE 
+Component set XC7V2000_IF.usetype IF 
+Component set XC7V2000_IF.part 7vlx2000tff1925 
+Component set XC7V2000_IF.die 1 
+Component new XCVU440 
+Component set XCVU440.type PROGRAMMABLE 
+Component set XCVU440.usetype DESIGN 
+Component set XCVU440.part xcvu440flva2892 
+Component set XCVU440.die 1 
+Component new XCVU440_DIE 
+Component set XCVU440_DIE.type PROGRAMMABLE 
+Component set XCVU440_DIE.usetype DESIGN 
+Component set XCVU440_DIE.part xcvu440flva2892:die 
+Component set XCVU440_DIE.die 3 
+Component new XCVU440_IF 
+Component set XCVU440_IF.type PROGRAMMABLE 
+Component set XCVU440_IF.usetype IF 
+Component set XCVU440_IF.part xcvu440flva2892 
+Component new M21605 
+Component set M21605.type PROGRAMMABLE 
+Component set M21605.usetype HUBCOMP 
+Component set M21605.part MACOM21605 
+Component new M23170 
+Component set M23170.type PROGRAMMABLE 
+Component set M23170.usetype HUBCOMP 
+Component set M23170.part MACOM23170 
+Component new VU19P 
+Component set VU19P.type PROGRAMMABLE 
+Component set VU19P.usetype DESIGN 
+Component set VU19P.part xcvu19p-fsva3824-1-e 
+Component set VU19P.die 1 
+Component new VU3P 
+Component set VU3P.type PROGRAMMABLE 
+Component set VU3P.usetype DESIGN 
+Component set VU3P.part xcvu3p-ffvc1517-1-e 
+Component set VU3P.die 1 
+Component new S10_280 
+Component set S10_280.type PROGRAMMABLE 
+Component set S10_280.usetype DESIGN 
+Component set S10_280.part 1sg280lh2f55i2vg 
+Component new S10_10M_DIE 
+Component set S10_10M_DIE.type PROGRAMMABLE 
+Component set S10_10M_DIE.usetype DESIGN 
+Component set S10_10M_DIE.part 1sg10m_u1 
+Component set S10_10M_DIE.die 1 
+Component new S10_10MS1_DIE_U1 
+Component set S10_10MS1_DIE_U1.type PROGRAMMABLE 
+Component set S10_10MS1_DIE_U1.usetype DESIGN 
+Component set S10_10MS1_DIE_U1.part 1SG10MHN3F74C2LGS1_U1 
+Component set S10_10MS1_DIE_U1.die 1 
+Component new S10_10MS1_DIE_U2 
+Component set S10_10MS1_DIE_U2.type PROGRAMMABLE 
+Component set S10_10MS1_DIE_U2.usetype DESIGN 
+Component set S10_10MS1_DIE_U2.part 1SG10MHN3F74C2LGS1_U2 
+Component set S10_10MS1_DIE_U2.die 1 
+Component new S10_10MS2_DIE_U1 
+Component set S10_10MS2_DIE_U1.type PROGRAMMABLE 
+Component set S10_10MS2_DIE_U1.usetype DESIGN 
+Component set S10_10MS2_DIE_U1.part 1SG10MHN3F74C2LGS2_U1 
+Component set S10_10MS2_DIE_U1.die 1 
+Component new S10_10MS2_DIE_U2 
+Component set S10_10MS2_DIE_U2.type PROGRAMMABLE 
+Component set S10_10MS2_DIE_U2.usetype DESIGN 
+Component set S10_10MS2_DIE_U2.part 1SG10MHN3F74C2LGS2_U2 
+Component set S10_10MS2_DIE_U2.die 1 
+Component new S10_10MPROD_DIE_U1 
+Component set S10_10MPROD_DIE_U1.type PROGRAMMABLE 
+Component set S10_10MPROD_DIE_U1.usetype DESIGN 
+Component set S10_10MPROD_DIE_U1.part 1SG10MHN3F74C2LG_U1 
+Component set S10_10MPROD_DIE_U1.die 1 
+Component new S10_10MPROD_DIE_U2 
+Component set S10_10MPROD_DIE_U2.type PROGRAMMABLE 
+Component set S10_10MPROD_DIE_U2.usetype DESIGN 
+Component set S10_10MPROD_DIE_U2.part 1SG10MHN3F74C2LG_U2 
+Component set S10_10MPROD_DIE_U2.die 1 
+Component new S10_10M_DIE_U1 
+Component set S10_10M_DIE_U1.type PROGRAMMABLE 
+Component set S10_10M_DIE_U1.usetype DESIGN 
+Component set S10_10M_DIE_U1.part ND7M_PART1_U1 
+Component set S10_10M_DIE_U1.die 1 
+Component new S10_10M_DIE_U2 
+Component set S10_10M_DIE_U2.type PROGRAMMABLE 
+Component set S10_10M_DIE_U2.usetype DESIGN 
+Component set S10_10M_DIE_U2.part ND7M_PART1_U2 
+Component set S10_10M_DIE_U2.die 1 
+Component new S10_10MF_DIE_U1 
+Component set S10_10MF_DIE_U1.type PROGRAMMABLE 
+Component set S10_10MF_DIE_U1.usetype DESIGN 
+Component set S10_10MF_DIE_U1.part ND7MF_PART_LEFT 
+Component set S10_10MF_DIE_U1.die 1 
+Component new S10_10MF_DIE_U2 
+Component set S10_10MF_DIE_U2.type PROGRAMMABLE 
+Component set S10_10MF_DIE_U2.usetype DESIGN 
+Component set S10_10MF_DIE_U2.part ND7MF_PART_RIGHT 
+Component set S10_10MF_DIE_U2.die 1 
+Component new ZSE_ICE_CONNECTOR 
+Component set ZSE_ICE_CONNECTOR.type MACRO 
+Component set ZSE_ICE_CONNECTOR.part SMC_Q_50 
+Component set ZSE_ICE_CONNECTOR.class DIRECT_ICE 
+Component new ZSE_ZALTA_CONNECTOR 
+Component set ZSE_ZALTA_CONNECTOR.type MACRO 
+Component set ZSE_ZALTA_CONNECTOR.part SMC_Q_50 
+Component set ZSE_ZALTA_CONNECTOR.class DIRECT_ICE 
+System quiet 
+Target new zebu 
+Target set zebu.netlist /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/edifs/zse_sbp_5s_v3.edf.gz 
+Target set zebu.top zse_sbp_5s 
+Target set zebu.product zse 
+Target set zebu.zparfwlib zse_hw_zPar.edf.gz 
+Target set zebu.zrmfwlib zse_hw_zrm.edf.gz 
+Target set zebu.zfwfwlib zse_hw_zFW.edf.gz 
+Target set zebu.mbname zse_sbp_5s 
+Target set zebu.id 5S 
+Target set zebu.frequency 450 
+Target set zebu.trace on 
+System quiet 
+Module new zse_xc7v_8c_2000_v1 
+Module set zse_xc7v_8c_2000_v1.netlist /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/edifs/zse_xc7v_8c_2000_v1.edf.gz 
+Module set zse_xc7v_8c_2000_v1.rtbconfig /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/configs/zse_xc7v_8c_2000_v1_rtb.tcl 
+Module set zse_xc7v_8c_2000_v1.top zse_xc7v_8c_v1 
+Module set zse_xc7v_8c_2000_v1.type zse_module 
+Module set zse_xc7v_8c_2000_v1.fwlibname zse_xc7v_8c_v1 
+Module set zse_xc7v_8c_2000_v1.id XC7V_8C 
+Module set zse_xc7v_8c_2000_v1.bufg 6 20 
+Component new F00_ZSE_XC7V_8C_2000_V1 
+Component set F00_ZSE_XC7V_8C_2000_V1.type XC7V2000 
+Component set F00_ZSE_XC7V_8C_2000_V1.bitgen_options -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable 
+Module set zse_xc7v_8c_2000_v1.component 0 F00_ZSE_XC7V_8C_2000_V1 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 0 32x64 dram 0 0 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 1 32x64 dram 1 0 
+Component new F01_ZSE_XC7V_8C_2000_V1 
+Component set F01_ZSE_XC7V_8C_2000_V1.type XC7V2000 
+Component set F01_ZSE_XC7V_8C_2000_V1.bitgen_options -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable 
+Module set zse_xc7v_8c_2000_v1.component 1 F01_ZSE_XC7V_8C_2000_V1 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 2 32x64 dram 0 1 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 3 32x64 dram 1 1 
+Component new F02_ZSE_XC7V_8C_2000_V1 
+Component set F02_ZSE_XC7V_8C_2000_V1.type XC7V2000 
+Component set F02_ZSE_XC7V_8C_2000_V1.bitgen_options -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable 
+Module set zse_xc7v_8c_2000_v1.component 2 F02_ZSE_XC7V_8C_2000_V1 
+Component new F03_ZSE_XC7V_8C_2000_V1 
+Component set F03_ZSE_XC7V_8C_2000_V1.type XC7V2000 
+Component set F03_ZSE_XC7V_8C_2000_V1.bitgen_options -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable 
+Module set zse_xc7v_8c_2000_v1.component 3 F03_ZSE_XC7V_8C_2000_V1 
+Component new F04_ZSE_XC7V_8C_2000_V1 
+Component set F04_ZSE_XC7V_8C_2000_V1.type XC7V2000 
+Component set F04_ZSE_XC7V_8C_2000_V1.bitgen_options -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable 
+Module set zse_xc7v_8c_2000_v1.component 4 F04_ZSE_XC7V_8C_2000_V1 
+Component new F05_ZSE_XC7V_8C_2000_V1 
+Component set F05_ZSE_XC7V_8C_2000_V1.type XC7V2000 
+Component set F05_ZSE_XC7V_8C_2000_V1.bitgen_options -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable 
+Module set zse_xc7v_8c_2000_v1.component 5 F05_ZSE_XC7V_8C_2000_V1 
+Component new F06_ZSE_XC7V_8C_2000_V1 
+Component set F06_ZSE_XC7V_8C_2000_V1.type XC7V2000 
+Component set F06_ZSE_XC7V_8C_2000_V1.bitgen_options -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable 
+Module set zse_xc7v_8c_2000_v1.component 6 F06_ZSE_XC7V_8C_2000_V1 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 4 32x64 dram 0 6 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 5 32x64 dram 1 6 
+Component new F07_ZSE_XC7V_8C_2000_V1 
+Component set F07_ZSE_XC7V_8C_2000_V1.type XC7V2000 
+Component set F07_ZSE_XC7V_8C_2000_V1.bitgen_options -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable 
+Module set zse_xc7v_8c_2000_v1.component 7 F07_ZSE_XC7V_8C_2000_V1 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 6 32x64 dram 0 7 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 7 32x64 dram 1 7 
+Component new F08_ZSE_XC7V_8C_2000_V1 
+Component set F08_ZSE_XC7V_8C_2000_V1.type XC7V2000 
+Component set F08_ZSE_XC7V_8C_2000_V1.bitgen_options -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable 
+Module set zse_xc7v_8c_2000_v1.component 8 F08_ZSE_XC7V_8C_2000_V1 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 8 128x512 dram 0 8 
+Module set zse_xc7v_8c_2000_v1.embedded_zrm 9 128x512 dram 1 8 
+Component new IF_ZSE_XC7V_8C_2000_V1 
+Component set IF_ZSE_XC7V_8C_2000_V1.type XC7V2000_IF 
+Component set IF_ZSE_XC7V_8C_2000_V1.bitgen_options do not edit this line (set by zRTB_FW via zse_xc7v_8c_2000_v1_rtb.tcl) 
+Module set zse_xc7v_8c_2000_v1.component 9 IF_ZSE_XC7V_8C_2000_V1 
+Target set zebu.module 0 U0.M0 zse_xc7v_8c_2000_v1  58A2 
+Target set zebu.module 1 U0.M1 zse_xc7v_8c_2000_v1  3872 
+Target set zebu.module 2 U0.M2 zse_xc7v_8c_2000_v1  9E32 
+Target set zebu.module 3 U0.M3 zse_xc7v_8c_2000_v1  39B2 
+Target set zebu.module 4 U0.M4 zse_xc7v_8c_2000_v1  3932 
+cluster {set} -max_fill_lut6 {20}
+cluster {set} -max_fill_type {safe} -dsp {40} -bram {50} -ramlut {40} -reg {15} -lut {40} -fwc_ip {0} -fwc_bit {10} -qiwc_bit {30}
+cluster {set} -max_fill_type {standard} -dsp {50} -bram {50} -ramlut {40} -reg {22} -lut {50} -fwc_ip {0} -fwc_bit {18} -qiwc_bit {40}
+cluster {set} -max_fill_type {aggressive} -dsp {90} -bram {90} -ramlut {55} -reg {30} -lut {55} -fwc_ip {0} -fwc_bit {25} -qiwc_bit {50}
+cluster {set} -mode=customized
+cluster {auto}
+cluster {set} -max_fill_default {standard}
+cluster {set} -max_fill_dsp {50}
+cluster {set} -max_fill_bram {50}
+cluster {set} -max_fill_ramlut {40}
+cluster {set} -max_fill_reg {22}
+cluster {set} -max_fill_lut {50}
+cluster {set} -max_fill_fwc_bit {18}
+cluster {set} -max_fill_qiwc_bit {40}
+zcorebuild_command {*} { cluster enable -accept_changes_on_user_max_fill_constraints }
+clock_handling {algorithm=filter_glitches_synchronous} -detect_clock_glitches=no -retiming=no
+#   step FETCH MODE : Fetch mode would be disabled.
+clock_localization -core_strategy=AUTO -fpga_strategy=AUTO
+disable {manipulate_bram_for_sw_rw}
+set_synthesis_uc_mode {uc_no_zfe}
+zoffline_debug -enable {yes} -probe_outputs {yes}
+rtlDB -path {RTLDB}
+Target get zebu.frequency2 
+probe_signals -rtlname { {top.u_stb.cnt_error_in} }
+probe_signals -rtlname { {top.u_stb.cnt_error_out} }
+zsva -never_fatal
+zsva -trace_success {no} -trace_busy {no} -trace_start {no} -trace_end {no} -trace_failure {yes}
+disable {ztime_uses_rtl_names}
+### warning in zTopBuild [ZTB1036W] : The command 'disable ztime_uses_rtl_names' is deprecated and will be removed in the next ZeBu software release.
+enable {advanced_incremental_mode}
+set_perf_flow {flow1} -tag {begin_2020.03-2}
+enable {replicate_zprd_disable}
+zcorebuild_command {*} {enable replicate_zprd_disable}
+partitioning {auto} -xdraware_opt_placement
+enable {ac_annotate_prob_routes}
+zcorebuild_command {*} {partitioning auto  -xdraware} -tag {perf_flow_command}
+clock_localization -core_strategy=AUTO -fpga_strategy=AUTO -extend_clock_cone=yes -check_paths_to_preserve {yes}
+data_localization -inter_unit_paths -level {unit} -core_strategy {AUTO} -fpga_strategy {AUTO} -tristates
+clock_config -share_clock_bus {true}
+enable {prepartition_zrm_memory}
+set_perf_flow {flow1} -tag {end_2020.03-2}
+design_size -auto
+set_logic_opt -drop_optimizable_waveform_capture {yes}
+set_logic_opt -drop_write_only {no}
+zforce -mode {dynamic} -object_not_found {fatal} -rtlname {{top.u_stb.proba_wr}}
+zforce -mode {dynamic} -object_not_found {fatal} -rtlname {{top.u_stb.proba_rd}}
+zforce -mode {dynamic} -object_not_found {fatal} -rtlname {{top.u_stb.rstn}}
+#   step zTopBuild : # of threads: 40
+#   step zTopBuild : hydra mode: disabled
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/edifs/zse_sbp_5s_v3.edf.gz'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/edifs/zse_xc7v_8c_2000_v1.edf.gz'
+#   step Target : Targeting product type: zse
+#   step DumpVars : Loading DumpVars database from file 'dumpvars.db'.
+#   step DVE LOADER : reading dve file '../vcs_splitter/vcs.dve'
+#   step AC : FWCs: using gen2 model
+#   step FWC : Configuring for Virtex 7, fast waveform capture gen2
+#   step QIWC : IP_LIMIT_CONFIG (FR = 100%, VFAMILY = 7, VMEMBER = 2000)
+#   step QIWC : Configuring for Virtex 7
+#   step QIWC_FF_PI : QIWC_FF_PI_IP_LIMIT_CONFIG (Full frame FR = 100%  PI FR=100%, VFAMILY = 8, VMEMBER = 0max ff bit 1310720 max pi bit 262144)
+#   step AC_TGT : Architecture type is set as zse
+#   step AC : FWCS LIMIT: 992 fwc_ip(s)/fpga, 384 bit(s) per fwc_ip
+#   step AC : Maximum allowed number of fast waveform capture bits per FPGA: 68567
+#   step AC : Fill rate of the fast waveform capture bits on one FPGA: 18
+#   step AC : Maximum allowed number of fast waveform IPs per FPGA: 793
+#   step AC : Fill rate of the fast waveform IP on one FPGA: 80
+#   step AC : Found 45 FPGA(s) available for auto clustering.
+#   step STAT : MODE=virtex7
+#   step AC : Chosen part reference for resource evaluation is VIRTEX7 7vlx2000tff1925 .
+#   step AC : System size : 45 FPGA
+#   step AC : 
+# +----------------+------+------+------+------+------+-----+-----+----+
+# |                |   REG|   LUT|RAMLUT|  LUT6| MUXCY| BRAM|  DSP|QIWC|
+# +----------------+------+------+------+------+------+-----+-----+----+
+# |VIRTEX7 (FPGA)  |2,443K|1,222K|  345K|1,222K|1,222K|1,290|2,160|524K|
+# |VIRTEX7 (System)|  110M|   55M|   16M|   55M|   55M|  58K|  97K| 24M|
+# +----------------+------+------+------+------+------+-----+-----+----+
+#   step AC : 
+# +
+#   step AC : AC Analysis configuration
+#   step AC : AC Optimization configuration
+#   step AC : Configuring clustering mode with zdelay estimates.
+#   step ZCEI CLOCK SPLIT : design is not HAPS80, disable taurus_split_zceiClockPort
+#   step TRIGGER LOCALIZATION : design is not HAPS80, turn off trigger localization
+#   step Loading source files. : Starting
+#   step EDIF : Max. files that can be opened by this process 4077
+#   step EDIF : Processed 15 files in parallel, 0 left to do.
+#   step zTopBuild : 15 edif files loaded.
+#   step zTopBuild : Set top 'top'
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185473 m      vm:696 m       vm:+0 m      um:261 m       um:+0 m
+#   step zTopBuild : Set top 'top'
+#   step Loading source files. : Done in     elapsed:0.7 s   user:0.11 s    system:0.5 s     %cpu:256.00       load:0.29       fm:185473 m      vm:696 m     vm:+170 m      um:261 m      um:+68 m
+#   step DEBUG : Warnning:fetch_mode is false, disabling soft constraint.
+#   step zTopBuild : Merge zmem modules before clock handling: ClockHandling Flow is not Fetch Mode
+#   step dump_memory : 1066 flat leaf instances / 1048 leaf instances in folded model = 1.02
+### warning in dump_memory [LST0478W] : The leaf instance uniquification ratio is less then 4.00
+#   step dump_memory : 1591 flat wires / 1591 wires in folded model.
+#   step dump_memory : 115 hierarchical instances (excluding fs_macros) / 52 hierarchical modules (excluding fs_macros) = 2.21
+### warning in dump_memory [LST0479W] : The hierarchical instance per module uniquification ratio is less then 4.00
+### warning in CLOCK_GEN [ZTB1122W] : Clock accuracy of 0 is not supported. It will be set to 24.
+#   step CLOCK DB DRIVER : saving clock database 'tools/zTopBuild/clock.zrt'
+#   step CLOCK DB DRIVER : clock database has changed, save file 'tools/zTopBuild/clock.zrt'
+#   step zTopBuild : Found 0 bits for GenXtor edge detectors.
+set_force_assign -value_1_on_vector {warning}
+#   step Execute netlist edition script. : Starting
+#   step Execute netlist edition script. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:794 m       vm:+0 m      um:272 m       um:+0 m
+#   step LOGIC_OPT : 2 write-only memories have been marked as protected from Logic Optimization.
+#   step zTopBuild : prepartition_zrm_memory is deprecated. Change to "zrm_partitioning -algo min_port -group_zrm_with_controllers off" instead.
+#   step PROBE : Processing Dve Static Probes
+#   step Connection to ICE. : Starting
+#   step Connection to ICE. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:794 m       vm:+0 m      um:272 m       um:+0 m
+#   step Runtime access : Starting
+#   step Runtime Access : 0 marked wire(s) across 0 module(s) captured for readback.
+#   step Runtime Access : 0 readers added for System Verilog Assertions (SVA).
+#   step RhinoDB enabled, lib path : /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/libNameDB.so
+#   step Loading RTL DB : Starting
+#   step ALWAYS : 
+
+                                    ZeBu (R)
+                                      zRtl
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+#   step INFO : RTLDB version is Build Q-2020.03-SP1-4 Oct 17 2022 (4399324)
+#   step Loading RTL DB : Done in       elapsed:0 s    user:0.1 s      system:0 s     %cpu:160.00       load:0.29       fm:185463 m      vm:799 m       vm:+5 m      um:273 m       um:+1 m
+#   step Runtime Access : 64 zviews, 0 sram_trace access, 0 read_port and 0 write_port were inserted, and 0 DVE XMRs were scheduled.
+#   step Runtime access : Done in     elapsed:0.3 s    user:0.1 s      system:0 s      %cpu:27.21       load:0.29       fm:185463 m      vm:799 m       vm:+5 m      um:274 m       um:+2 m
+#   step addEncryptionNotionOnWires : Starting
+#   step addEncryptionNotionOnWires : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step addZviewToEncryptModule : Starting
+#   step addZviewToEncryptModule : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Pre-split dynamic force insertion. : Starting
+#   step Pre-split dynamic force insertion. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Module relative zGate command : Starting
+#   step Module relative zGate command : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Pre-split simxl_read and simxl_write. : Starting
+#   step Pre-split simxl_read and simxl_write. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Annotation DB : Opening file 'tools/zDB/zTopBuild_equi.inf' for writing
+#   step Pre-split zforce and zinject. : Starting
+#   step FORCE INJECT : 0 injection were performed as instructed by 1 user commands.
+#   step FORCE INJECT : 21 force were applied as instructed by 4 user commands.
+#   step FORCE INJECT : 21 force/inject were applied as instructed by 5 user commands.
+#   step FORCE INJECT : See ./zTopBuild_report.log, 16.2. section for more details.
+#   step Pre-split zforce and zinject. : Done in     elapsed:0.1 s    user:0.1 s      system:0 s     %cpu:153.85       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Pre-split transparent_latch cmd. : Starting
+#   step Pre-split transparent_latch cmd. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Processing user tristate commands. : Starting
+#   step Processing user tristate commands. : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Processing user wire resolution commands. : Starting
+#   step Processing user wire resolution commands. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step TRISTATE_UTILS : 0 tristate buses with top-level drivers manipulated.
+#   step Preprocess Lonely Bufifs : Starting
+#   step Preprocess Lonely Bufifs : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Global Process Multidrivers : Starting
+#   step STRENGTH : process global multi drivers.
+#   step STRENGTH : Mos switch z transmission is activated.
+#   step Global Process Multidrivers : Done in     elapsed:0.1 s    user:0.3 s    system:0.1 s    %cpu:1000.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Force undriven ports. : Starting
+### warning in AUTO_FIX [ZTB0707W] : Cleaned up 1 undriven primitive ports - please check the report.
+#   step Force undriven ports. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:274 m       um:+0 m
+#   step Pre-split native zforce. : Starting
+#   step NATIVE ZFORCE : 0 bit were instrumented for native zforce.
+#   step Pre-split native zforce. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:275 m       um:+1 m
+#   step BUF REPLACE : 30 buffers were replaced by feed through(s).
+#   step Post-buffer simplification undriven fixing. : Starting
+#   step Post-buffer simplification undriven fixing. : Done in       elapsed:0 s    user:0.1 s      system:0 s     %cpu:363.64       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:275 m       um:+0 m
+#   step Input netlist checks. : Starting
+#   step Input netlist checks. : Done in     elapsed:0.2 s    user:0.1 s    system:0.1 s     %cpu:112.68       load:0.29       fm:185463 m      vm:799 m       vm:+0 m      um:275 m       um:+0 m
+#   step [ZMEM_XTOR] Fixing clock connection: replace pclk_free with pclk and pclk_rdy with zceiClock readyForCclock. : 
+#   step RhinoDB charging... : 
+#   step RhinoDB : load succesful!
+#   step Fast waveform capture : Starting
+#   step RhinoDB : WaveAssign/Pass1 finished without errors.
+#   step FastWaveformCapture : Initializing HWCacheInPlace with upfront computation = true and parallel zvu translator
+#   step RhinoDB OPT : enabled
+#   step FastWaveformCapture : 0 upgrade to QiWC and 0 upgrades to FWC.
+#   step FastWaveformCapture : 34 wires were defined for Fast Waveform Capture, it will result in 34 marking
+#   step Fast waveform capture : Done in     elapsed:0.5 s    user:0.2 s    system:0.1 s      %cpu:55.30       load:0.29       fm:185434 m      vm:813 m       vm:+0 m      um:307 m       um:+1 m
+#   step Monitor : Starting
+#   step Monitor : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185434 m      vm:813 m       vm:+0 m      um:307 m       um:+0 m
+#   step dyn_probe_top : 2 dynamic probes added on top ports
+#   step Generate zTopBuild equi file. : Starting
+#   step SERIALIZE : writing netlist 'zTopBuild_netlist' into znl file 'tools/zDB/zTopBuild_equi.edf.gz'
+#   step SERIALIZE : #bytes in: 65018, #bytes out: 23713, compression ratio: 2.741872
+#   step Generate zTopBuild equi file. : Done in     elapsed:0.2 s    user:0.2 s    system:0.1 s     %cpu:114.29       load:0.29       fm:185432 m      vm:813 m       vm:+0 m      um:309 m       um:+2 m
+#   step GEN_XTOR : Generating for indexes in runtime data base '0' features
+#   step GEN_XTOR : Generating for indexes in runtime data base '0' features...done
+#   step Sampling Clock Optimization : Starting
+#   step SCO : Total number of LUT added: 0.
+#   step Sampling Clock Optimization : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185432 m      vm:813 m       vm:+0 m      um:309 m       um:+0 m
+#   step ZEMI3 XTOR Edge detector BB sanity check : Starting
+#   step ZEMI3 XTOR Edge detector BB sanity check : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185432 m      vm:813 m       vm:+0 m      um:309 m       um:+0 m
+#   step Techmapping. : Starting
+#   step Techmapping. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185432 m      vm:813 m       vm:+0 m      um:309 m       um:+0 m
+### warning in SVA [EDI0079W] : Enable port 'sva_en' of System Verilog Assertion instance 'sva_parity_error' (ZSVA_MOD_PLI_1) is already connected. Disconnected it.
+#   step SVA : 1 bits will be captured with fast waveform for SVA processing.
+#   step SVA : 2 System Verilog Assertions (SVA) were found in design.
+#   step ZMEM_CLK_DETECT : Instrumentation of memory ports : Beginning
+#   step ZMEM_CLK_DETECT : Steps are saved in file : zTopBuild_zmem_clk_detect.log
+#   step ZMEM_CLK_DETECT : Instrumentation of memory ports : Done
+#   step BUF REPLACE : 30 feed through(s) modules were flattened.
+#   step zTopBuild : 0 single driver WOR/WAND optimized.
+#   step DumpvarDBHandler : Opening file 'tools/zTopBuild/fwc_bb_constants.txt.gz' for writing
+#   step Pre-clock logic optimization : Starting
+#   step LO : 
+#   step Pre-clock logic optimization : Done in       elapsed:0 s    user:0.5 s    system:0.2 s     %cpu:848.48       load:0.29       fm:185432 m      vm:813 m       vm:+0 m      um:310 m       um:+0 m
+#   step Factorize buf/inv : 12 items
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185432 m      vm:813 m       vm:+0 m      um:310 m       um:+0 m
+#   step Post-clock logic optimization : Starting
+#   step LO : 
+#   step Post-clock logic optimization : Done in       elapsed:0 s    user:0.5 s    system:0.3 s    %cpu:1066.67       load:0.29       fm:185432 m      vm:813 m       vm:+0 m      um:310 m       um:+0 m
+#   step Auto-fixing of undriven wires after logic optimization. : Starting
+#   step Auto-fixing of undriven wires after logic optimization. : Done in     elapsed:0.1 s    user:0.1 s      system:0 s     %cpu:210.53       load:0.29       fm:185432 m      vm:813 m       vm:+0 m      um:310 m       um:+0 m
+#   step DumpvarDBHandler : Closing file 'tools/zTopBuild/fwc_bb_constants.txt.gz'
+#   step FastWaveformCapture : '0' dumpvars IPs removed as a result of factorization to capture '0' bits stuck to GND, '0' bits stuck to VCC, '0' bits on same equipotential.
+#   step FastWaveformCapture : '0' dumpvars IPs relocated close to their driver.
+#   step FastWaveformCapture : '36' dumpvars IPs remain after optimization steps (logic optimization and factorization).
+#   step Monitor : '0' monitor(s) deleted and relocated close to their driver.
+#   step Property DB : writing property DB into file 'tools/zTopBuild/zTopBuild_propertyDB.gz'
+#   step CHECK RESOURCES SIZE ON DESIGN : *******************************************
+#   step Pre-split combinational loops. : Starting
+#   step LOOPS : 0 strongly connected component(s) found in the design. See ./zTopBuild_report.log, 30.Combinational loops manipulations. section for details.
+#   step Pre-split combinational loops. : Done in     elapsed:0.1 s    user:0.2 s    system:0.5 s     %cpu:848.48       load:0.29       fm:185422 m      vm:813 m       vm:+0 m      um:321 m      um:+11 m
+#   step PRE-CLUSTERING STAT : *******************************************
+#   step STAT_INSTANTIATION_DISPLAY : Dumping multi instantiation stats csv file in : ./tools/zTopBuild/csv/MultiInstantiation_stats.csv
+#   step DESIGN_SIZE : 
+# +-----------+---+---+---------+------+----+-----+----+---+
+# |           |REG|LUT|LUT W/O W|RAMLUT|LUT6|MUXCY|BRAM|DSP|
+# +-----------+---+---+---------+------+----+-----+----+---+
+# |Design size|595|275|      275|    72|  29|    2|   0|  0|
+# +-----------+---+---+---------+------+----+-----+----+---+
+#   step PreClusteringStats :       65	Module(s)
+#   step PreClusteringStats :       11	Blackbox module(s)
+#   step PreClusteringStats :        0	External memory module(s)
+#   step PreClusteringStats :        1	Fast Waveform Capture IP module(s)
+#   step PreClusteringStats :        3	DPI module(s)
+#   step PreClusteringStats :        0	Qiwc IP module(s)
+#   step PreClusteringStats :        0	Asynchronous ZMEM module(s)
+#   step PreClusteringStats :        2	Synchronous ZMEM module(s)
+#   step PreClusteringStats :        2	Disconnected module port(s)    [in=2 out=0 inout=0]
+#   step PreClusteringStats :      248	Disconnected instance port(s)  [in=71 out=177 inout=0]
+#   step PreClusteringStats :        0	Disconnected wire(s)
+#   step PreClusteringStats :        4	Loadless wire(s)
+#   step PreClusteringStats :        2	Sourceless wire(s)
+#   step PreClusteringStats :      457	Uninitialized Register(s)
+#   step PreClusteringStats :        8	Initialized Register(s)
+#   step PRE-CLUSTERING STAT : *******************************************
+#   step Pre-split clock processing : Starting
+#   step Non system clocks marking : Starting
+#   step Non system clocks marking : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185422 m      vm:813 m       vm:+0 m      um:321 m       um:+0 m
+#   step SERIALIZE : writing netlist 'Hierarchical_netlist' into znl file './tools/zTime/zTime_hierarchy.edf.gz'
+#   step SERIALIZE : #bytes in: 2664, #bytes out: 1019, compression ratio: 2.614328
+#   step FILTER GLITCHES SYNCHRONOUS : Starting
+#   step FILTER GLITCHES SYNCHRONOUS : Identifying instances to modify
+#   step FILTER GLITCHES SYNCHRONOUS : Check drivers are correct
+#   step CLK::MCP : Value of _mcpIgnoreClear is 0
+#   step Clock Edge Analysis : Starting
+#   step Clock Cone Size : new diag Final Used Instances  
+#   step Clock Cone Size : new diag Final Pruned Instances
+#   step Clock Cone Size :                                 Final Used Instances  
+#   step Clock Cone Size :               Flipflop on PCLK:                    1    
+#   step Clock Cone Size :          Flipflop on PCLK_FREE:                    0    
+#   step Clock Cone Size : Flipflop on Other System Clock:                    0    
+#   step Clock Cone Size :       Flipflop on Design Clock:                    0    
+#   step Clock Cone Size :     Flipflop on Floating Clock:                    0    
+#   step Clock Cone Size :        Flipflop on Stuck Clock:                    0    
+#   step Clock Cone Size :                  All Flipflops:                    1    
+#   step Clock Cone Size :                          Latch:                    0    
+#   step Clock Cone Size :                            Lut:                    2    
+#   step Clock Cone Size :                         Memory:                    0    
+#   step Clock Cone Size :                       Constant:                    0    
+#   step Clock Cone Size :                        UNKNOWN:                   23    
+#   step Clock Cone Size :                          Total:                   26    
+#   step Clock Cone Size :                                 Final Pruned Instances
+#   step Clock Cone Size :               Flipflop on PCLK:                    0    
+#   step Clock Cone Size :          Flipflop on PCLK_FREE:                    0    
+#   step Clock Cone Size : Flipflop on Other System Clock:                    0    
+#   step Clock Cone Size :       Flipflop on Design Clock:                    2    
+#   step Clock Cone Size :     Flipflop on Floating Clock:                    0    
+#   step Clock Cone Size :        Flipflop on Stuck Clock:                    0    
+#   step Clock Cone Size :                  All Flipflops:                    2    
+#   step Clock Cone Size :                          Latch:                    1    
+#   step Clock Cone Size :                            Lut:                    1    
+#   step Clock Cone Size :                         Memory:                    0    
+#   step Clock Cone Size :                       Constant:                    0    
+#   step Clock Cone Size :                        UNKNOWN:                    0    
+#   step Clock Cone Size :                          Total:                    4    
+#   step Clock Edge Analysis : Done in       elapsed:0 s      user:0 s    system:0.2 s     %cpu:571.43       load:0.29       fm:185422 m      vm:813 m       vm:+0 m      um:321 m       um:+0 m
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185422 m      vm:813 m       vm:+0 m      um:321 m       um:+0 m
+#   step FILTER GLITCHES SYNCHRONOUS : Modifying netlist
+#   step FD WITH ZEBU_FM_FAKE_FB_FOR_CD_MCP : 		 Attribute "ZEBU_FM_FAKE_FB_FOR_CD_MCP" has been applied on 0 instances.
+#   step FILTER GLITCHES SYNCHRONOUS : 0 Flip-Flop has been modified
+#   step FILTER GLITCHES SYNCHRONOUS : 0 Latch has been modified
+#   step FILTER GLITCHES SYNCHRONOUS : 0 SRL has been modified
+#   step FILTER GLITCHES SYNCHRONOUS : Done in     elapsed:0.6 s    user:0.5 s    system:0.4 s     %cpu:136.36       load:0.29       fm:185418 m      vm:818 m       vm:+5 m      um:326 m       um:+5 m
+#   step SCC_REDUCTION : Post-FGS Loop Breaking
+#   step SCC_REDUCTION : Number of SCCs detected : zero, returning!
+#   step Pre-split clock processing : Done in    elapsed:0.10 s   user:0.18 s    system:0.5 s     %cpu:219.57       load:0.29       fm:185418 m      vm:818 m       vm:+5 m      um:326 m       um:+5 m
+#   step SDC MCP : adding pclk stopper : 
+#   step SDC MCP : done adding pclk stopper : 
+#   step PROBE_CHECKS : SVA cost estimates LUT=4, REG=8, Physical FwcIp(s)=0
+#   step PROBE_CHECKS : DPI cost estimates LUT=924, REG=330, Physical FwcIp(s)=3
+#   step PROBE_CHECKS : User cost estimates LUT=41, REG=39, Physical FwcIp(s)=1
+#   step PROBE_CHECKS : QIWC cost estimates LUT=0, REG=0, Physical FwcIp(s)=0
+#   step PROBE_CHECKS : QIWC FF cost estimates LUT=0, REG=0, BIT(s)=0
+#   step PROBE_CHECKS : QIWC PI cost estimates LUT=0, REG=0, BIT(s)=0
+#   step PROBE_CHECKS : Total overhead cost estimates LUT=969, REG=377, Physical FwcIp(s)=4
+#   step PROBE_CHECKS : Design Size LUT=0, REG=0
+#   step PROBE_CHECKS : Total FPGA(s)=45
+#   step PROBE_CHECKS : Max resources per FPGA LUT=1221600, REG=2443200, Physical FwcIp(s)=992
+#   step PROBE_CHECKS : Max resources per FPGA after applying fill rate constraints LUT=610800, REG=537504, Physical FwcIp(s)=793
+#   step ZTB : Number of boards with ZCEI 0
+#   step DESIGN_SIZE : All REG cost without zDelay 1021,  Total REG elligible for zdelay 506, additional cost due to zDelay:217, All reg count 1238 (zdelay_ratio 1.428571)
+#   step Minimum ZRM boards : 0
+#   step Minimum ZRM half boards : 0
+#   step DESIGN SIZE ESTIMATION : Will use estimation margin of 15% for the target resources
+#   step AC_TGT : Architecture type is set as zse
+#   step AC_TGT : Architecture type is set as zse
+#   step DESIGN SIZE ESTIMATION : Design size estimation found no board from user input.  1 boards are reserved.
+#   step DESIGN SIZE ESTIMATION : Number of allocated boards (use_fpga) are 0. Number of remaining boards are 1. Remaining unallocated user cores require 0 boards.
+#   step AC_TGT : Architecture type is set as zse
+#   step AC_TGT : Architecture type is set as zse
+#   step DESIGN SIZE ESTIMATION : Computed a design size of 1 module(s) for given user fill rates
+#   step DESIGN SIZE ESTIMATION :  Design size estimation (only used resources are reported here) 
+# +-------------------------------+------+------+------+------+----------+-----------+
+# |Resource usage                 |LUT   |LUT6  |REG   |RAMLUT|FWC_IP_NUM|FWC_IP_BITS|
+# +-------------------------------+------+------+------+------+----------+-----------+
+# |Estimated size of the design   |1,239 |29    |1,238 |72    |3         |136        |
+# |Board size with user fill-rates|5,497K|2,199K|4,838K|1,241K|7,137     |617K       |
+# +-------------------------------+------+------+------+------+----------+-----------+
+# | For 1 boards                  |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |
+# |                  For 2 boards |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |
+# |                  For 3 boards |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |
+# |                  For 4 boards |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |
+# |                  For 5 boards |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |
+# +-------------------------------+------+------+------+------+----------+-----------+
+#   step DESIGN SIZE ESTIMATION : target will be truncated before partitioning (1)
+#   step DESIGN SIZE ESTIMATION : Incremental design size was requested but will not be executed as the zTopBuild_AC_incremental_defmapfpga.tcl file is missing.
+#   step zTopBuild : Design size: Incremental status=KO
+#   step DESIGN SIZE ESTIMATION : estimated number of modules required: 1 full-modules
+#   step HW Target : First mezzanine found is U0_M0 , relocating it to U0_M0 in the compilation
+#   step SERIALIZE : writing netlist 'config' into znl file 'ztb_tg_remapped.edf.gz'
+#   step SERIALIZE : #bytes in: 19744, #bytes out: 6053, compression ratio: 3.261854
+#   step AC_TGT : Architecture type is set as zse
+#   step DESIGN_SIZE : All REG cost without zDelay 1021,  Total REG elligible for zdelay 506, additional cost due to zDelay:217, All reg count 1238 (zdelay_ratio 1.428571)
+#   step Minimum ZRM boards : 0
+#   step Minimum ZRM half boards : 0
+#   step Partitioning data extraction : The reporting on area costs and IO properties on hierarchies is enabled. Data dumped in tools/zTopBuild/csv/hierarchies_with_abs_costs.csv
+#   step Partitioning data extraction : It can be disabled with the command: cluster disable -dump_abs_hierarchy_properties
+#   step Computing properties of hierarchies : Starting
+#   step Computing properties of hierarchies : Done in       elapsed:0 s    user:0.1 s      system:0 s       %cpu:0.00       load:0.29       fm:185418 m      vm:818 m       vm:+0 m      um:326 m       um:+0 m
+#   step Dumping the properties of hierarchies into the CSV file : Starting
+#   step Hierarchy Data Dumper : Dumping the hierarchies properties inside: tools/zTopBuild/csv/hierarchies_with_abs_costs.csv
+#   step Dumping the properties of hierarchies into the CSV file : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185418 m      vm:818 m       vm:+0 m      um:327 m       um:+0 m
+#   step Dumping the properties of hierarchies into the Verdi DB : Starting
+#   step Dumping the properties of hierarchies into the Verdi DB : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185418 m      vm:818 m       vm:+0 m      um:327 m       um:+0 m
+#   step Partitioning data extraction : The reporting on statistics on the area cost of primitives is disabled.
+#   step Partitioning data extraction : It can be enabled with the command: cluster enable -dump_abs_primitive_stats
+#   step Partitioning flow : Starting
+#   step PARTITIONING : CMD PARAM : auto nozbnf  -ztp  -xdraware_opt_placement -max_iter 0 -max_blocks 0 -zdelay_ratio 0.7 -max_time 0R
+#   step PARTITIONING : launch zTopClustering reuse_mode_on false
+#   step PRE-CLUSTERING STAT : Activating muxcy cost estimate
+#   step AC : Configuring stat DB for sync elements reg cost counting.
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : |                          | REG     | LUT     | RAMLUT  | RAM     | DSP     |
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : | Maximum FPGA size        |   537504|   610800|   137920|      645|     1080|
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : | zDelay estimation factor | 0.70    |         |         |         |         |
+#   step PARTITIONING : | Max fwc ip               |      80%|         |         |         |         |
+#   step PARTITIONING : | Max fwc ip               |      793|         |         |         |         |
+#   step PARTITIONING : | Max fwc bits             |      18%|         |         |         |         |
+#   step PARTITIONING : | Max fwc bits             |    65138|         |         |         |         |
+#   step PARTITIONING : nbReadPortBitsPerFPGA: 8192
+#   step ZTB : Number of boards with ZCEI 0
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : | Maximun zCore size       |  4837536|  5497200|  1241280|     5805|     9720|
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : | Maximun global size      |  4837536|  5497200|  1241280|     5805|     9720|
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : Set lut weighting LUT1 = 0.0
+#   step ZTOPPARTITIONING : Starting
+defcore_resource -min {LUT} {134784}
+defcore_resource -min {REG} {57024}
+defcore_resource -min {RAM} {228}
+defcore_resource -min {DSP} {153}
+defcore_resource -min {RAMLUT} {33696}
+defcore_resource -min {ZRM_SLOTS} {0}
+defcore_resource -min {ZRM_PORTS} {0}
+defcore_resource -max {ZRM_SLOTS} {32768}
+defcore_resource -max {ZRM_PORTS} {16}
+set_max_blocks {20000}
+set_max_time {180}
+set_overflow_error {yes}
+set_primitive_resource {fd*} {REG} {1.43}
+set_primitive_resource {ld*} {REG} {1.43}
+set_module_resource {zfwc_qiwc*} {REG} {0.1}
+set_module_resource {zfwc_qiwc*} {LUT} {0.3}
+set_module_resource {zfwc_qiwc*} {LUT6} {0.3}
+set_nb_bits_per_fwc_ip {384}
+defcore_resource -min {LUT} {610800}
+defcore_resource -min {REG} {537504}
+defcore_resource -min {RAM} {645}
+defcore_resource -min {DSP} {1080}
+defcore_resource -min {RAMLUT} {137920}
+defcore_resource -min {LUT6} {244320}
+defcore_resource -min {FWC_IP_NUM} {793}
+defcore_resource -min {FWC_IP_BITS} {65138}
+defcore_resource -min {QIWC_IP_BITS} {209715}
+defcore_resource -min {READ_PORT_IPS} {256}
+defcore_resource -min {READ_PORT_BITS} {8192}
+defcore_resource -min {WRITE_PORT_IPS} {256}
+defcore_resource -min {WRITE_PORT_BITS} {8192}
+defcore_resource -min {ZC_TRACE_BIT} {65536}
+defcore_resource -min {ZCEI_MESSAGE_INPUT} {486}
+defcore_resource -min {ZCEI_MESSAGE_OUTPUT} {486}
+defcore_resource -min {FW_RESOURCES} {47721858}
+defcore_resource -min {ZPRD_BB} {0}
+defcore_resource -min {ZRM_SLOTS} {0}
+defcore_resource -min {ZRM_PORTS} {0}
+defcore_resource -min {ZFORCE} {8000}
+defcore_resource -min {ZVIEW} {0}
+defcore_resource -max {LUT} {5497200}
+defcore_resource -max {REG} {4837536}
+defcore_resource -max {RAM} {5805}
+defcore_resource -max {DSP} {9720}
+defcore_resource -max {RAMLUT} {1241280}
+defcore_resource -max {LUT6} {2198880}
+defcore_resource -max {FWC_IP_NUM} {7137}
+defcore_resource -max {FWC_IP_BITS} {586242}
+defcore_resource -max {QIWC_IP_BITS} {1887435}
+defcore_resource -max {READ_PORT_IPS} {2304}
+defcore_resource -max {READ_PORT_BITS} {73728}
+defcore_resource -max {WRITE_PORT_IPS} {2304}
+defcore_resource -max {WRITE_PORT_BITS} {73728}
+defcore_resource -max {ZC_TRACE_BIT} {589824}
+defcore_resource -max {ZCEI_MESSAGE_INPUT} {0}
+defcore_resource -max {ZCEI_MESSAGE_OUTPUT} {0}
+defcore_resource -max {FW_RESOURCES} {429496722}
+defcore_resource -max {ZPRD_BB} {0}
+defcore_resource -max {ZRM_SLOTS} {147456}
+defcore_resource -max {ZRM_PORTS} {80}
+defcore_resource -max {ZFORCE} {72000}
+defcore_resource -max {ZVIEW} {900000}
+defcore_resource -global {LUT} {5497200}
+defcore_resource -global {REG} {4837536}
+defcore_resource -global {RAM} {5805}
+defcore_resource -global {DSP} {9720}
+defcore_resource -global {RAMLUT} {1241280}
+defcore_resource -global {LUT6} {2198880}
+defcore_resource -global {FWC_IP_NUM} {7137}
+defcore_resource -global {FWC_IP_BITS} {586242}
+defcore_resource -global {QIWC_IP_BITS} {1887435}
+defcore_resource -global {READ_PORT_IPS} {2304}
+defcore_resource -global {READ_PORT_BITS} {73728}
+defcore_resource -global {WRITE_PORT_IPS} {2304}
+defcore_resource -global {WRITE_PORT_BITS} {73728}
+defcore_resource -global {ZC_TRACE_BIT} {589824}
+defcore_resource -global {ZCEI_MESSAGE_INPUT} {486}
+defcore_resource -global {ZCEI_MESSAGE_OUTPUT} {486}
+defcore_resource -global {FW_RESOURCES} {2147483610}
+defcore_resource -global {ZPRD_BB} {8000}
+defcore_resource -global {ZRM_SLOTS} {147456}
+defcore_resource -global {ZRM_PORTS} {80}
+defcore_resource -global {ZFORCE} {72000}
+defcore_resource -global {ZVIEW} {900000}
+set_max_blocks {20000}
+set_max_parts {1}
+set_lut_weighting {1} {0.0}
+save_defmapping {zTopBuild_AC_defcoremap.tcl}
+save_defmapping -defcore {zTopBuild_AP_defcore.tcl}
+save_defmapping -defcore {zTopBuild_AP_incremental_defcore.tcl}
+save_defmapping {zTopBuild_AC_incremental_defcoremap.tcl} -incremental -block {zTopBuild_AC_incremental_interco.txt}
+set_indivisible_module {ram_ZMEM_mem_base}
+set_indivisible_module {rom_ZMEM_mem_base}
+set_indivisible_module {ram_ZMEM_mem}
+set_indivisible_module {rom_ZMEM_mem}
+set_max_zcei_parts {0}
+set_max_rtlclk_parts {1}
+set_arch -product {zse} -fpga {V7}
+defZRMBank -loc {U0_M0} -depth {134217728} -width {512} -ports {8} -full_loc {U0_M0_F8}
+#   step ZRMPart : fullLoc: U0_M0_F8 loc: U0_M0 partId: 0
+defZRMBank -loc {U0_M0} -depth {134217728} -width {512} -ports {8} -full_loc {U0_M0_F8}
+#   step ZRMPart : fullLoc: U0_M0_F8 loc: U0_M0 partId: 0
+defZRMBank -loc {U0_M0} -depth {33554432} -width {64} -ports {8} -full_loc {U0_M0_F7}
+#   step ZRMPart : fullLoc: U0_M0_F7 loc: U0_M0 partId: 0
+defZRMBank -loc {U0_M0} -depth {33554432} -width {64} -ports {8} -full_loc {U0_M0_F7}
+#   step ZRMPart : fullLoc: U0_M0_F7 loc: U0_M0 partId: 0
+defZRMBank -loc {U0_M0} -depth {33554432} -width {64} -ports {8} -full_loc {U0_M0_F6}
+#   step ZRMPart : fullLoc: U0_M0_F6 loc: U0_M0 partId: 0
+defZRMBank -loc {U0_M0} -depth {33554432} -width {64} -ports {8} -full_loc {U0_M0_F6}
+#   step ZRMPart : fullLoc: U0_M0_F6 loc: U0_M0 partId: 0
+defZRMBank -loc {U0_M0} -depth {33554432} -width {64} -ports {8} -full_loc {U0_M0_F1}
+#   step ZRMPart : fullLoc: U0_M0_F1 loc: U0_M0 partId: 0
+defZRMBank -loc {U0_M0} -depth {33554432} -width {64} -ports {8} -full_loc {U0_M0_F1}
+#   step ZRMPart : fullLoc: U0_M0_F1 loc: U0_M0 partId: 0
+defZRMBank -loc {U0_M0} -depth {33554432} -width {64} -ports {8} -full_loc {U0_M0_F0}
+#   step ZRMPart : fullLoc: U0_M0_F0 loc: U0_M0 partId: 0
+defZRMBank -loc {U0_M0} -depth {33554432} -width {64} -ports {8} -full_loc {U0_M0_F0}
+#   step ZRMPart : fullLoc: U0_M0_F0 loc: U0_M0 partId: 0
+zrm_partitioning -algo {min_port} -perf_mode {on} -tgt_freq {10.000000} -mcp {2} -group_zrm_with_controllers {off}
+#   step FlowManager::readTCLVars : FPGA per partition = 9
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_reqsig_clock_zcompositeclock
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module ZSVA_MOD_PLI_1
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_wb_reg
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zfwc_hs_1
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module ZXLSYS
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_clk
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_di
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_addr
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_we
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_do
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_reqsig_clock_driverclock
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_clockGen
+#   step zTopPartitioning : Computing design cost
+#   step zTopPartitioning : Design size : 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|LUT                |LUT6               |RAM                |REG                |DSP                |RAMLUT             |FWC_IP_NUM         |FWC_IP_BITS        |QIWC_IP_BITS       |READ_PORT_IPS      |READ_PORT_BITS     |WRITE_PORT_IPS     |WRITE_PORT_BITS    |ZC_TRACE_BIT       |ZCEI_MESSAGE_INPUT |ZCEI_MESSAGE_OUTPUT|FW_RESOURCES       |ZPRD_BB            |ZFORCE             |ZVIEW              |ZRM_SLOTS          |ZRM_PORTS          |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|1239.00            |29.00              |0.00               |1210.86            |0.00               |72.00              |3.00               |136.00             |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#   step PartitionMap :               Part_0 ---> U0_M0
+#   step ZTOPPARTITIONING : Number of FW module with PLACE_U0_M0_* 0
+#   step ZTOPPARTITIONING : User constraints after adding firmware placement constraints
+#   step MODELGEN : Starting
+#   step MODELGEN : Block Selection..
+#   step MODELGEN : Number of blocks 12
+#   step MODELGEN : Creating partitioning graph from Block selection using WB
+#   step HGraphCSR : Dumping out interco file zTopBuild_AC_interco.txt
+#   step MODELGEN : Done in     elapsed:0.4 s      user:0 s    system:0.1 s      %cpu:23.53       load:0.29       fm:185414 m     vm:1586 m     vm:+768 m      um:332 m       um:+5 m
+#   step doSubPartitionOnBigGroups : Do sub-partitioning on overflow big groups.
+#   step zTopPartitioning : Legalization for overflow during partitioning enabled 1
+#   step ZTOPPARTITIONING : XDR aware post partitioning placement optimization enabled
+#   step Partitioner : Starting
+#   step PARTITIONING : Single partitions can fit the entire design.
+#   step PARTITIONING : No partitioning required
+#   step PARTITIONING : Design size and Partition Size constraints 
+#   step PARTITIONING : 
+# +-----------+-------+-------+----+-------+----+-------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+------+------+---------+---------+
+# |           |    LUT|   LUT6| RAM|    REG| DSP| RAMLUT|FWC_IP_NUM|FWC_IP_BITS|QIWC_IP_BITS|READ_PORT_IPS|READ_PORT_BITS|WRITE_PORT_IPS|WRITE_PORT_BITS|ZC_TRACE_BIT|ZCEI_MESSAGE_INPUT|ZCEI_MESSAGE_OUTPUT|FW_RESOURCES|ZPRD_BB|ZFORCE| ZVIEW|ZRM_SLOTS|ZRM_PORTS|
+# +-----------+-------+-------+----+-------+----+-------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+------+------+---------+---------+
+# |Design Size|   1239|     29|   0|   1211|   0|     72|         3|        136|           0|            0|             0|             0|              0|           0|                 0|                  0|           0|      0|     0|     0|        0|        0|
+# +-----------+-------+-------+----+-------+----+-------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+------+------+---------+---------+
+# |Part_0(max)|5497200|2198880|5805|4837536|9720|1241280|      7137|     586242|     1887435|         2304|         73728|          2304|          73728|      589824|                 0|                  0|   429496722|      0| 72000|900000|   147456|       80|
+# +-----------+-------+-------+----+-------+----+-------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+------+------+---------+---------+
+#   step PARTITIONING : HyperGraph Information: 
+#   step PARTITIONING :  vertices=12, hedges=29, constraints=22
+#   step PARTITIONING : Options: 
+#   step PARTITIONING :  otype=SOED, ctype=H1, rtype=KPM, dbglvl=0, nruns=20, seed=-1, sof(idx_t)=8, sof(wgt_t)=8
+#   step PARTITIONING :  utilfrac=1, cmaxnet=50, rmaxnet=50, npmin=1, npmax= 1
+#   step PARTITIONING : Summary for the   1-way partition
+#   step PARTITIONING : ------------------------------------------------
+#   step PARTITIONING :                     Hyperedge Cut:          0.00
+#   step PARTITIONING :                              SOED:          0.00
+#   step PARTITIONING :                             MAXED:             0
+#   step PARTITIONING :                          XDR Cost:          0.00
+#   step PARTITIONING : Partition Sizes & IOs
+
+#   step PARTITIONING : 
+# +------------------------------+------------+----------+------------+----------+----------+-----------+--+
+# |Part Name\ Res(Used/Available)|         LUT|      LUT6|         REG|    RAMLUT|FWC_IP_NUM|FWC_IP_BITS|IO|
+# +------------------------------+------------+----------+------------+----------+----------+-----------+--+
+# |                        Part_0|1239/5497200|29/2198880|1211/4837536|72/1241280|    3/7137| 136/586242| 0|
+# +------------------------------+------------+----------+------------+----------+----------+-----------+--+
+# |                           SUM|1239/5497200|29/2198880|1211/4837536|72/1241280|    3/7137| 136/586242| 0|
+# +------------------------------+------------+----------+------------+----------+----------+-----------+--+
+#   step PARTITIONING : Inter Partition Cuts (undirected)
+
+#   step zTopPartitioning : 
+# +---------+------+---------+
+# |From \ To|Part_0|Interface|
+# +---------+------+---------+
+# |   Part_0|     0|        0|
+# |Interface|     0|        0|
+# +---------+------+---------+
+# |  SUM CUT|     0|        0|
+# +---------+------+---------+
+#   step Partitioner : Done in     elapsed:0.2 s    user:0.1 s    system:0.1 s     %cpu:115.94       load:0.29       fm:185414 m     vm:1586 m       vm:+0 m      um:332 m       um:+0 m
+#   step PARTITIONING : Factorizing defcoremap
+#   step ZTOPPARTITIONING : Done in     elapsed:0.9 s    user:0.3 s    system:0.3 s      %cpu:65.40       load:0.29       fm:185414 m     vm:1586 m     vm:+768 m      um:332 m       um:+5 m
+#   step PARTITIONING : Placement (defmapDB) is rebuilt based on the dumped results in 'zTopBuild_AC_defcoremap.tcl'
+#   step zTopBuild : Incremental status Partitioning : KO
+#   step DESIGN_STAT : Using LUT weighting: LUT1(0) 
+#   step DESIGN_STAT : Using Sync elements REG COST
+#   step AC :                            Input design size (raw)     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+#   step AC : Netlist's manipulation & P&R costs (estimates) (*)     REG=      0    LUT=      0 RAMLUT=      0   LUT6=      0  MUXCY=      0 BRAM=   0  DSP_MULT=   0   QIWC=      0
+#   step AC :     Logic to map : raw + instr. & P&R costs (est.)     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+#   step AC :                 sync elements routing cost include :  reg cost of non-reg sync elements
+#   step AC :                         Sync elements routing cost     REG=      0    LUT=      0 RAMLUT=      0   LUT6=      0  MUXCY=      0 BRAM=   0  DSP_MULT=   0   QIWC=      0
+#   step Summary Stats : 
+# +--------------------------+--------------------+---------+---------+
+# |Primitive                 |              Number|Equiv LUT|Equiv REG|
+# +--------------------------+--------------------+---------+---------+
+# |fd                        |                 309|         |      309|
+# |fdc                       |                  38|         |       38|
+# |fdce                      |                  19|         |       19|
+# |fde                       |                 132|         |      132|
+# |fdp                       |                   7|         |        7|
+# +--------------------------+--------------------+---------+---------+
+# |Summary Flip-Flops        |                 505|         |      505|
+# =--------------------------+--------------------+---------+---------=
+# |gnd                       |                   7|         |         |
+# |lut2                      |                  60|       60|         |
+# |lut3                      |                  56|       56|         |
+# |lut4                      |                   8|        8|         |
+# |lut5                      |                  13|       13|         |
+# |lut6                      |                  29|       29|         |
+# |vcc                       |                   5|         |         |
+# +--------------------------+--------------------+---------+---------+
+# |Summary General           |  178 (=   166 LUTs)|      166|         |
+# =--------------------------+--------------------+---------+---------=
+# |ld_1                      |                   1|         |        1|
+# +--------------------------+--------------------+---------+---------+
+# |Summary Latches           |                   1|         |        1|
+# =--------------------------+--------------------+---------+---------=
+# |and2                      |                  33|       33|         |
+# |inv                       |                  48|         |         |
+# |xor2                      |                   4|        4|         |
+# |xorcy                     |                   2|         |         |
+# +--------------------------+--------------------+---------+---------+
+# |Summary Logic Primitives  |   87 (=    37 LUTs)|       37|         |
+# =--------------------------+--------------------+---------+---------=
+# |ram256x1s                 |   18 (=    72 LUTs)|       72|         |
+# +--------------------------+--------------------+---------+---------+
+# |Summary Memory Elements   |   18 (=    72 LUTs)|       72|         |
+# =--------------------------+--------------------+---------+---------=
+# |muxcy_l                   |                   2|         |         |
+# +--------------------------+--------------------+---------+---------+
+# |Summary Multiplexers      |                   2|         |         |
+# =--------------------------+--------------------+---------+---------=
+# |USER_COSTzebu_bb_wb_reg   |                  43|         |       43|
+# |ZSVA_MOD_PLI_1            |                   2|         |         |
+# |carry4                    |                  40|         |         |
+# +--------------------------+--------------------+---------+---------+
+# |Summary                   |                  85|         |       43|
+# =--------------------------+--------------------+---------+---------=
+# |KEEP_ZVIEW                |                  46|         |       46|
+# |ZXLSYS                    |                   4|         |         |
+# |zfwc_hs_1                 |                  36|         |         |
+# |zview                     |                  95|         |         |
+# +--------------------------+--------------------+---------+---------+
+#   step AC : Using overflow computation model 'reserve_overflow', (to disable it use: 'cluster disable -reserve_overflow'
+#   step make_stat_flow : bufovf.str() :cluster accept_overflow -lut=5 -ramlut=10 -lut6=8 -muxcy=3 -reg=5 -dsp=0 -bram=5 -fwc_ip=5 -fwc_bit=0 -qiwc_bit=5
+#   step Partitioning flow : Done in    elapsed:0.18 s    user:0.4 s    system:0.4 s      %cpu:46.11       load:0.29       fm:185414 m     vm:1586 m     vm:+768 m      um:333 m       um:+6 m
+#   step Data localization : Starting
+#   step LOCALIZE DATA : DATA_LOCALIZATION: BOARD LEVEL
+#   step LOCALIZE DATA : Localization of tri-state/multi-drivers resolution module(s) (SRM) is enabled.
+#   step LOCALIZE DATA : 0 SRM (tri-state/multidriver resolution module) wire(s) found.
+#   step LOCALIZE DATA : Nothing to localize, stop here.
+#   step Data localization : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185414 m     vm:1586 m       vm:+0 m      um:333 m       um:+0 m
+#   step ADVANCED LOCALIZE CLOCK : Stops at ports with 'ZEBU_RLC_NO_RETRO' attribute.
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185414 m     vm:1586 m       vm:+0 m      um:333 m       um:+0 m
+#   step ADVANCED LOCALIZE CLOCK : Extend clock cone
+#   step ADVANCED LOCALIZE CLOCK : ----------------------------------------------------------------------------------
+#   step ADVANCED LOCALIZE CLOCK : PART NAME | Estimated REG | Available REG | Estimated LUT | Available LUT | FPGA |
+#   step ADVANCED LOCALIZE CLOCK : ----------------------------------------------------------------------------------
+#   step ADVANCED LOCALIZE CLOCK :    Part_0 |           506 |        781824 |           275 |        732960 |    1 |
+#   step ADVANCED LOCALIZE CLOCK : Interface |             0 |        781824 |             0 |        732960 |    1 |
+#   step ADVANCED LOCALIZE CLOCK : ----------------------------------------------------------------------------------
+#   step ADVANCED LOCALIZE CLOCK : Max IO cut is 5000.
+#   step Advanced localize clock process : Starting
+#   step ADVANCED LOCALIZE CLOCK : Only one partition, no clock localization will be performed
+#   step Advanced localize clock process : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185412 m     vm:1586 m       vm:+0 m      um:335 m       um:+0 m
+#   step ADVANCED LOCALIZE CLOCK : Found no valid strategy, do nothing.
+#   step FETCH MODE : Replicating filter barriers to data load.
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185412 m     vm:1586 m       vm:+0 m      um:335 m       um:+0 m
+#   step Netlist splitting. : Starting
+#   step Netlist splitting. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185412 m     vm:1586 m       vm:+0 m      um:335 m       um:+0 m
+#   step CONSTANT PROPAGATION : 0 port (top and cores) has been simplified by a constant
+#   step OPTIMIZE INTER-ZCORE LACES : Starting
+#   step OPTIMIZE INTER-ZCORE LACES : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185412 m     vm:1586 m       vm:+0 m      um:335 m       um:+0 m
+#   step Post-split Netlist Cleanup. : Starting
+#   step LO : 
+#   step Post-split Netlist Cleanup. : Done in     elapsed:0.1 s    user:0.5 s    system:0.3 s    %cpu:1185.19       load:0.29       fm:185412 m     vm:1586 m       vm:+0 m      um:335 m       um:+0 m
+#   step POST_SPLIT_CLEANUP : 0 interface ports deleted
+#   step Annotation DB : Closing file 'tools/zDB/zTopBuild_equi.inf'
+#   step Zcore ports marking. : Starting
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185412 m     vm:1586 m       vm:+0 m      um:335 m       um:+0 m
+#   step Zcore ports marking. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185412 m     vm:1586 m       vm:+0 m      um:335 m       um:+0 m
+#   step Zcore probe generation. : Starting
+#   step Zcore probe generation. : Done in       elapsed:0 s    user:0.1 s      system:0 s    %cpu:4000.00       load:0.29       fm:185412 m     vm:1586 m       vm:+0 m      um:335 m       um:+0 m
+### warning in ZREPORT [KBD0213W] : cannot open report file for writing make sure './.zTopBuild_AC_report.log.dir/SEC_AC_OPT_SOLUTION_CORE_SIZE' has writing rights.
+### warning in ZREPORT [KBD0213W] : cannot open report file for writing make sure './.zTopBuild_AC_report.log.dir/SEC_AC_OPT_SOLUTION_CORE_XO' has writing rights.
+#   step FA : discarding single module placement optimizer : modules U0.M0 is locked due to 'use_fpga' constraints
+### warning in ZREPORT [KBD0214W] : cannot open report file for appending make sure './.zTopBuild_AC_report.log.dir/SEC_AC_PROF' has writing rights.
+#   step FA : ------------------------------------------------------------
+#   step FA : Stats on unused FPGA :
+#   step FA : Total         :   0 unused FPGA /   9 total
+#   step FA : ------------------------------------------------------------
+#   step FA : ------------------------------------------------------------
+#   step FA : ZCORE Part_0 :    9 FPGA allocated
+#   step FA :  U0.M0 :  9 FPGA
+#   step FA :  U0.M0 :  F00 F01 F02 F03 F04 F05 F06 F07 F08
+#   step FA : ------------------------------------------------------------
+#   step Post-split design statistics : 
+# +------+---+---+------+----+-----+----+---+-------------------+--+
+# |ZCORE |REG|LUT|RAMLUT|LUT6|MUXCY|BRAM|DSP|LUT (w/o weighting)|IO|
+# +------+---+---+------+----+-----+----+---+-------------------+--+
+# |Part_0|595|275|    72|  29|    2|   0|  0|                275| 0|
+# +------+---+---+------+----+-----+----+---+-------------------+--+
+#   step zTopBuild : Incremental status zTopBuild : KO
+#   step zTopBuild : Taurus flow routing to local ClockGen (taurus_split_zceiClockPort) is disabled.
+#   step ZTOPBUILD : Annotating prob routes
+#   step Netlist cleanups : Starting
+#   step Netlist cleanups : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.29       fm:185412 m     vm:1586 m       vm:+0 m      um:336 m       um:+0 m
+#   step SERIALIZE : writing netlist 'zTopBuild_netlist' into znl file 'edif/top.edf.gz'
+#   step SERIALIZE : #bytes in: 390, #bytes out: 328, compression ratio: 1.189024
+#   step zTopBuild : Default high impedance value for tristate buses is PULLUP, 
+#   step zTopBuild : Default conflict resolution on tristate buses is WAND, 
+#   step SERIALIZE : writing netlist 'zTopBuild_netlist' into znl file 'tools/zTopBuild/global_ztb_top.edf.gz'
+#   step SERIALIZE : #bytes in: 65005, #bytes out: 23388, compression ratio: 2.779417
+#   step SERIALIZE : writing netlist 'dut_interface' into znl file 'tools/zRTB_FE/dut_io.edf.gz'
+#   step SERIALIZE : #bytes in: 347, #bytes out: 299, compression ratio: 1.160535
+#   step zTopBuild : Taurus flow 2-Hop solution is enabled.
+#   step zTopBuild : Skipped Power defmappings for UPF converge Flow
+#   step zTopBuild : Saving report before exiting.
+
+#   exec summary :   25 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m4s, user 0m1.799s, sys 0m0.675s
+#   exec summary : Total memory: 1624036 kB - RSS memory: 344672 kB - Data memory: 1238120 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:55 2023

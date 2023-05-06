@@ -1,0 +1,7 @@
+ OK input internal dependency (structural) <- Initial Check/Analyze Project
+ OK input internal dependency (structural) <- VCS/Analyze VCS Results
+ OK input internal dependency (structural) <- Final Check/Compilation Profiler (after VCSAnalyzer)
+ KO input internal dependency <- VCS/Build Rhino Fsdb
+ KO input internal dependency (always redo) <- Design/RTL Synthesis : Default_RTL_Group/Analyze Synthesis Results/Bundle_0
+ OK input internal dependency (structural) <- Design/RTL Synthesis : Default_RTL_Group/Build Memories and Divmods/Memory ram_zMem
+ OK input internal dependency (structural) <- Design/RTL Synthesis : Default_RTL_Group/Build Memories and Divmods/Memory rom_zMem

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zCui_AC_save">
+<hardwareconfigfile>/mnt/quinn_zebu/ZEBU_SYSTEM_DIR/config/zse_configuration.tcl</hardwareconfigfile>
+<targets>
+<target type="ztopBuildUDscript">
+<scriptLine># using previous AC results in zTopBuild :</scriptLine>
+<scriptLine>source zTopBuild_AC_input_defcoremap.tcl</scriptLine>
+<scriptLine>source zTopBuild_AC_input_defmapfpga.tcl</scriptLine>
+<scriptLine># invoke defmapping files for each zcore</scriptLine>
+<scriptLine>zcorebuild_script Part_0 work.Part_0//zCoreBuild_AC_input_defmapping.tcl</scriptLine>
+<scriptLine>zcorebuild_script Part_0 work.Part_0//zCoreBuild_AC_input_defmapping.tcl</scriptLine>
+<scriptLine>cluster set -max_fill_bram 50</scriptLine>
+<scriptLine>cluster set -max_fill_dsp 50</scriptLine>
+<scriptLine>cluster set -max_fill_lut 50</scriptLine>
+<scriptLine>cluster set -max_fill_reg 22</scriptLine>
+<scriptLine>cluster set -max_fill_ramlut 40</scriptLine>
+<scriptLine>cluster set -max_fill_fwc_bit 18</scriptLine>
+<scriptLine>cluster set -max_fill_qiwc_bit 40</scriptLine>
+</target>
+<target type="filesaved" desc="zTopDefmap" name="zTopBuild_AC_input_defcoremap.tcl" label="zTopBuild">
+<scriptLine>cluster_generated -part_name Part_0 -lut 1239 -bram 1210 -reg 72 -dsp 3 -ramlut 136 -cut 0</scriptLine>
+<scriptLine>defcoremapping {top} Part_0</scriptLine>
+</target>
+<target type="filesaved" desc="none" name="zTopBuild_AC_input_defmapfpga.tcl" label="zTopBuild">
+<scriptLine></scriptLine>
+<scriptLine>#</scriptLine>
+<scriptLine>use_fpga  -zcore=Part_0  -fpga=UNIT0.MOD0.F0</scriptLine>
+<scriptLine>use_fpga  -zcore=Part_0  -fpga=UNIT0.MOD0.F1</scriptLine>
+<scriptLine>use_fpga  -zcore=Part_0  -fpga=UNIT0.MOD0.F2</scriptLine>
+<scriptLine>use_fpga  -zcore=Part_0  -fpga=UNIT0.MOD0.F3</scriptLine>
+<scriptLine>use_fpga  -zcore=Part_0  -fpga=UNIT0.MOD0.F4</scriptLine>
+<scriptLine>use_fpga  -zcore=Part_0  -fpga=UNIT0.MOD0.F5</scriptLine>
+<scriptLine>use_fpga  -zcore=Part_0  -fpga=UNIT0.MOD0.F6</scriptLine>
+<scriptLine>use_fpga  -zcore=Part_0  -fpga=UNIT0.MOD0.F7</scriptLine>
+<scriptLine>use_fpga  -zcore=Part_0  -fpga=UNIT0.MOD0.F8</scriptLine>
+<scriptLine></scriptLine>
+</target>
+<target type="filesaved" desc="none" name="work.Part_0//zCoreBuild_AC_input_defmapping.tcl" label="Part_0">
+<scriptLine>disable defmapping_error_check</scriptLine>
+<scriptLine>cluster_generated -part_name U0_M0_F00 -lut 5337 -bram 5950 -reg 72 -dsp 3 -ramlut 136 -cut 0</scriptLine>
+<scriptLine>defmapping {top} U0_M0_F00</scriptLine>
+</target>
+<target type="filesaved" desc="zCoreDefmap" name="work.Part_0//zCoreBuild_AC_input_defmapping.tcl" label="Part_0">
+<scriptLine>disable defmapping_error_check</scriptLine>
+<scriptLine>cluster_generated -part_name U0_M0_F00 -lut 5337 -bram 5950 -reg 72 -dsp 3 -ramlut 136 -cut 0</scriptLine>
+<scriptLine>defmapping {top} U0_M0_F00</scriptLine>
+</target>
+<target type="filesaved" desc="zCoreDefmapincr" name="work.Part_0//zCoreBuild_AC_input_incremental_defmapping.tcl" label="Part_0">
+<scriptLine>disable defmapping_error_check</scriptLine>
+<scriptLine>cluster_generated -part_name U0_M0_F00 -lut 5337 -bram 5950 -reg 72 -dsp 3 -ramlut 136 -cut 0</scriptLine>
+<scriptLine>defmapping {top.u_dut} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.u_stb} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.val} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zNegEdgeFilterClk_zpc_ft} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zafth__I_vcs_cdx_s_rw_topu_stb_clk0} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zafth__I_vcs_cdx_s_rw_topu_stb_clk1} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zebu_clockGen} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk0} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zebu_filter__I_vcs_cdx_s_rw_topu_stb_clk1} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zforce_rstn} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zfwc_ip__I_vcs_cdx_s_rw_topu_stb_clk0} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zfwc_ip__I_vcs_cdx_s_rw_topu_stb_clk0_0} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zfwc_ip__I_vcs_cdx_s_rw_topu_stb_clk1} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zfwc_ip__I_vcs_cdx_s_rw_topu_stb_clk1_0} U0_M0_F00</scriptLine>
+<scriptLine>defmapping {top.zsfg_filter_zpc_ft} U0_M0_F00</scriptLine>
+</target>
+<target type="fileinfo" desc="zCoreInterco" name="work.Part_0//zCoreBuild_AC_interco.txt" label="Part_0"></target>
+</targets>
+</ZeBuUiDoc>

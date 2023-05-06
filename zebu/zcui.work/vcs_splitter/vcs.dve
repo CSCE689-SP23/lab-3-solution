@@ -1,0 +1,4 @@
+zceiClockPort u_clk1(
+		.cclock				(_I_vcs_cdx_s_rw_topu_stb_clk1));
+zceiClockPort u_clk0(
+		.cclock				(_I_vcs_cdx_s_rw_topu_stb_clk0));

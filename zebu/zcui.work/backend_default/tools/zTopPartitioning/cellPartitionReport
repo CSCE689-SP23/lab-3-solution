@@ -1,0 +1,8 @@
+# The partition of the cell is marked by '*'.
+# The cell resource size which is larger than partition size * $ZEBU_CELL_REPORT_SIZE_THRES will be marked by '**'.
+### 1. Collect cells that have ratio of (internal-cuts/total cuts) < 0.5, the ratio is 0.5 by default, and can be set by env(ZEBU_CELL_REPORT_INCUT_THRES).
+### 2. Collect cells whose size are bigger than partition size * 0.2(0.2 by default), and can be set by env(ZEBU_CELL_REPORT_SIZE_THRES).
+# Only print 0 cell instances based on above constraints. 
++---------------------+------+--------------+---+----+---+------+----------+-----------+
+|Partition \ Partition|Part_0|Cell instances|LUT|LUT6|REG|RAMLUT|FWC_IP_NUM|FWC_IP_BITS|
++---------------------+------+--------------+---+----+---+------+----------+-----------+

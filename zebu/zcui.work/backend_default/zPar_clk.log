@@ -1,0 +1,5 @@
+PURE  : On U0_M0_F0, clock Part_0@U0_M0@ztwbufg_zcg_compositeClock on 0x14230330 DCLK_F00_ZSE_XC7V_8C_2000_V1_AB39__AC39  fpgaId 0  targetFpgaId 0  targetCkId 0
+PURE  : On U0_M0_F0, clock Part_0@U0_M0@ztwbufg_zcg_zceiClock[0] on 0x14230360 DCLK_F00_ZSE_XC7V_8C_2000_V1_AB40__AA40  fpgaId 0  targetFpgaId 0  targetCkId 1
+PURE  : On U0_M0_F0, clock Part_0@U0_M0@ztwbufg_zcg_zceiClock[1] on 0x14230390 DCLK_F00_ZSE_XC7V_8C_2000_V1_AC41__AB41  fpgaId 0  targetFpgaId 0  targetCkId 2
+PURE  : On U0_M0_F0, clock Part_0@U0_M0@z_dclk_delay_bufg on 0x142303c0 DCLK_F00_ZSE_XC7V_8C_2000_V1_AE41__AD41  fpgaId 0  targetFpgaId 0  targetCkId 3
+PURE  : On U0_M0_F0, clock Part_0@U0_M0@z_dclk_delay2_bufg on 0x142303f0 DCLK_F00_ZSE_XC7V_8C_2000_V1_AF42__AE42  fpgaId 0  targetFpgaId 0  targetCkId 4

@@ -1,0 +1,51 @@
+     |  [info] - #      : 
+                             /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/bin/zGenerateRhinoFsdb
+
+                   Copyright (c) 2019 - 2023 Synopsys, Inc.
+     This software and the associated documentation are proprietary to Synopsys
+, Inc. This software may only be used in accordance with the terms and conditions
+  of a written license agreement with Synopsys, Inc. All other use, reproduction,
+              or distribution of this software is strictly prohibited.
+
+# CommandLine  : /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/bin/zGenerateRhinoFsdb -z zcui.work -l zGenerateRhinoFsdb.log 
+
+# Start Time   : Wed Apr 19 01:04:36 2023
+
+# Memory Stats :  (VM Peak:125M, Size:125M, RSS:74M, Data:66M)
+
+
+
+     |  [info] - #      : Reading the Serializing VCS Version
+
+     |  [info] - #      : Deserializing names dictionary
+
+     |  [info] - #      : Deserializing libraries
+
+     |  [info] - #      : Deserializing RTL
+
+     |  [info] - #      : Deserializing Gate
+
+     |  [info] - #      : Deserializing design object
+
+     |  [info] - #      : Populating Dfs Table
+
+     |  [info] - #      : [INFO] Loaded design from /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/design/synth_Default_RTL_Group/RTLDB
+
+     |  [info] - #      : [INFO] Running Wave Assignment and dumping of novas.fsdb.
+
+     |  [info] - #      : Wed Apr 19 01:04:36 2023 : [INFO] Starting Enumeration of Wave IDs 
+
+     |  [info] - #      : Running WaveAssign traversal.
+
+     |  [info] - #      : WaveAssign traversal finished without errors.
+
+     |  [info] - #      : Running WaveAssign range merging.
+
+     |  [info] - #      : WaveAssign range merging finished without errors.
+
+     |  [info] - #      : Dumping Fsdb header.
+
+     |  [info] - #      : Wed Apr 19 01:04:36 2023 : [INFO] Enumeration of Wave IDs Ended
+
+     |  [info] - #      : [INFO] Enumerated 13 Wave IDs
+

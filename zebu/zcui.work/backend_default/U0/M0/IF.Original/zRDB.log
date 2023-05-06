@@ -1,0 +1,118 @@
+
+                                    ZeBu (R)
+                                      zRDB
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zRDB -krb -edf ./fpga_reports/zNetgen/design_db.znf -virtex 7 -o zrdb/ZebuDB.zdb -xdl design.loc -db ../ZebuDB.rtb.zdb -fpga IF -unit U0 -module M0 
+
+# start time is Wed Apr 19 01:14:27 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:11
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 2.53 2.34 1.29 6/514 11778
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 182043 MB
+#            Total Free including cache: 186797 MB
+#            Swap cache: 0 MB Cached space: 4754 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 353 MB VmPeak: 353 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255332
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ENV.VAR : LM_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : SNPSLMD_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+#   step ENV.VAR : VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+#   step ENV.VAR : ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+#   step ENV.VAR : ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+#   step ENV.VAR : ZEBU_COMPILATION_OBJECTIVE=
+#   step ENV.VAR : ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+#   step ENV.VAR : ZEBU_FPGA_MODULE_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0
+#   step ENV.VAR : ZEBU_FPGA_ORIGINAL_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original
+#   step ENV.VAR : ZEBU_FPGA_SRC_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.src
+#   step ENV.VAR : ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   step ENV.VAR : ZEBU_SDF_ANALYSIS=1
+#   step ENV.VAR : ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+#   step ENV.VAR : ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+#   step ENV.VAR : ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+#   step ENV.VAR : ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+#   step ENV.VAR : ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+#   step ZRDB : libZebuRDB version 2021.2.0 RW
+#   step HYDRA : Failed to open MuDb properties (Cannot read property file './MuDb/properties'.). Assuming Hydra was not used and platform is not ZS4U.
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step DATABASE : checking and preparing netlist.
+#   step DATABASE : uniquified algo will be used.
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 4 modules created
+#   step DATABASE : Referencing nodes (top instances)
+#   step DATABASE : 1 nodes referenced in 0 seconds. Total of 0 referenced nodes.
+#   step DATABASE : reading data base '../ZebuDB.rtb.zdb'
+#   step ZVP : Reading vivado placement log file 'design.loc'
+#   step ZVP : 'design.loc':1 - reading a FD/LD section
+#   step ZVP : 'design.loc':5823 - reading a FD/LD section
+#   step ZVP : 'design.loc':5826 - reading a BRAM section
+#   step ZVP : 'design.loc':5830 - reading a URAM section
+#   step ZVP : 'design.loc':5832 - reading a RAMLUT section
+#   step ZVP : 166 ramluts found, 236 unsupported or unknown ramluts
+#   step ZVP : 'design.loc':6153 - reading an SRL section
+#   step ZVP : 'design.loc':6179 - reading a DSP48 section
+#   step ZVP : File 'design.loc' : read complete in 0 seconds
+#   step ZVP : Reading vivado simplifications log file 'vivado_opt.log'
+#   step ZVP : Fetching constants
+#   step ZVP : Fetching removed
+#   step ZVP : File 'vivado_opt.log' : read complete in 0 seconds
+#   step VVD : Collected 5821 register locations, 2304 constant or removed registers, 24 SRL locations, 2 BRAM locations, 0 URAM locations, and 83 RAMLUT locations.
+#   step Top Name : Guessed top name : top
+#   step DATABASE : adding signals to data base '../ZebuDB.rtb.zdb'
+#   step KRB : Building top list
+#   step FWC : Allowed netlist top path : 'ztop/RTB' -> 'ZebuTop'
+#   step FWC : Starting FWC coordinate retrieval
+#   step FWC : Exploring netlist step 1/3 : fetch all FWC coordinates
+#   step FWC : Saving to file './zrdb/fwc_local_table.zrdb'
+#   step FILE : Opening file './zrdb/fwc_local_table.zrdb' in write mode
+#   step DICTIONARY : Serializing dictionary
+#   step DICTIONARY : Serialized dictionary in 0 seconds, 0 different names
+#   step FWC : Serializing 0 ValueSets
+#   step FWC : All ValueSets serialized in 0 seconds
+#   step FWC : Saved in 0 seconds'
+#   step FWC : All done in '0 seconds'
+### warning in DATABASE [RDB0289W] : Found 1761 mismatches between Xilinx file and Edif netlist
+#   step KRB : Writing SAC to './zrdb/tree.zrdb'.
+#   step KRB : Wrote SAC in 0 seconds.
+#   step CompositeBuilder : Saving composite DB to './zrdb/composites.zrdb'
+#   step FILE : Opening file './zrdb/composites.zrdb' in write mode
+
+#   exec summary :    1 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m1s, user 0m0.811s, sys 0m0.125s
+#   exec summary : Total memory: 732412 kB - RSS memory: 383908 kB - Data memory: 568380 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:14:28 2023

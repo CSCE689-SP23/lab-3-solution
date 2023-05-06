@@ -1,0 +1,72 @@
+design/synth_Default_RTL_Group/edif/clkg/clkg.edf.gz
+	design/synth_Default_RTL_Group/script/clkg.tcl:1681884270 1183148826
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/clkg.scm:1681884269 1906332338
+design/synth_Default_RTL_Group/edif/dut/dut.edf.gz
+	design/synth_Default_RTL_Group/script/dut.tcl:1681884270 1787079408
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/dut.scm:1681884269 4201923263
+design/synth_Default_RTL_Group/edif/fifo_0000/fifo_0000.edf.gz
+	design/synth_Default_RTL_Group/script/fifo_0000.tcl:1681884270 837698039
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/fifo_0000.scm:1681884269 557142792
+design/synth_Default_RTL_Group/edif/fifo_usage_spy/fifo_usage_spy.edf.gz
+	design/synth_Default_RTL_Group/script/fifo_usage_spy.tcl:1681884270 4063347349
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/fifo_usage_spy.scm:1681884269 3586895265
+design/synth_Default_RTL_Group/edif/parity/parity.edf.gz
+	design/synth_Default_RTL_Group/script/parity.tcl:1681884270 2357633938
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/parity.scm:1681884269 2811465419
+design/synth_Default_RTL_Group/edif/parity_check/parity_check.edf.gz
+	design/synth_Default_RTL_Group/script/parity_check.tcl:1681884270 170400428
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/parity_check.scm:1681884269 3230221940
+design/synth_Default_RTL_Group/edif/proba/proba.edf.gz
+	design/synth_Default_RTL_Group/script/proba.tcl:1681884270 503826569
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/proba.scm:1681884269 3140989805
+design/synth_Default_RTL_Group/edif/proba_0000/proba_0000.edf.gz
+	design/synth_Default_RTL_Group/script/proba_0000.tcl:1681884270 3617844314
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/proba_0000.scm:1681884269 3427616504
+design/synth_Default_RTL_Group/edif/ram/ram.edf.gz
+	design/synth_Default_RTL_Group/script/ram.tcl:1681884270 2476068030
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/ram.scm:1681884269 3790739360
+design/synth_Default_RTL_Group/edif/rom/rom.edf.gz
+	design/synth_Default_RTL_Group/script/rom.tcl:1681884270 1469435646
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/rom.scm:1681884269 1169943002
+design/synth_Default_RTL_Group/edif/stb/stb.edf.gz
+	design/synth_Default_RTL_Group/script/stb.tcl:1681884270 495053709
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/stb.scm:1681884269 306322443
+design/synth_Default_RTL_Group/edif/top/top.edf.gz
+	design/synth_Default_RTL_Group/script/top.tcl:1681884270 2548379491
+	design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl:1681884274 4124740339
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc:1681884255 4128308467
+	/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc:1681884255 930629965
+	design/synth_Default_RTL_Group/src/top.scm:1681884269 2460911238

@@ -1,0 +1,663 @@
+
+
+
+                                    ZeBu (R)
+                                      zFe
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 02, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+
+#   info : #----------------------------------------------------------------
+#   info : Setup
+#   info : #----------------------------------------------------------------
+# command line is /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/zFe compile_hdr.tcl script/Bundle_0_synp.tcl -log Bundle_0.log -zlog 1 
+# start time is Wed Apr 19 01:04:36 CDT 2023
+#   step Setup : CVS $Revision: #14 $
+#   step Setup : CVS $Date: 2021/08/23 $
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vhs/hc ...
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc /home/faculty/d/davidkebo/davidkebo/csce689/labs/ ...
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc /home/faculty/d/davidkebo/davidkebo/csce689/labs/ ...
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc /home/faculty/d/davidkebo/davidkebo/csce689/labs/ ...
+#   step Setup :         NEXT CALL to cmn::option fe_hcsrc hcsrc.iba
+#   step Setup :         NEXT CALL to cmn::option phase synthesis
+#   info : #----------------------------------------------------------------
+#   info : Synth
+#   info : #----------------------------------------------------------------
+#   step Synth :         NEXT CALL to fs::simple_compile -technology vtx7 -mode block_based -version NewMixe ...
+#   step REPORT : Synthesizing module : rom
+#   step REPORT : Synthesizing module : proba
+#   step REPORT : Synthesizing module : top
+#   step REPORT : Synthesizing module : proba_0000
+#   step REPORT : Synthesizing module : fifo_usage_spy
+#   step REPORT : Synthesizing module : stb
+#   step REPORT : Synthesizing module : clkg
+#   step REPORT : Synthesizing module : parity_check
+#   step REPORT : Synthesizing module : dut
+#   step REPORT : Synthesizing module : fifo_0000
+#   step REPORT : Synthesizing module : parity
+#   step REPORT : Synthesizing module : ram
+#   step REPORT : [39.349] Optimizing module : rom
+#   step REPORT : [6.1822] Got memory rom.mem (256 x 9) with 1 read port(s), 0 write port(s), and 0 RW port(s)
+#   step REPORT : 
+#   step REPORT : +------+-------------+-------+----------+---------------------------+---...
+#   step REPORT : | type | total bits  | width |   depth  |           PORTS           | Memory name
+#   step REPORT : +------+-------------+-------+----------+---------------------------+---...
+#   step REPORT : | zMem |        2304 |     9 |      256 |  CW: 0   NCW: 0   R: 1    |rom.mem
+#   step REPORT : +------+-------------+-------+----------+---------------------------+---...
+#   step REPORT : 
+#   step REPORT : [6.1690] There are 0 levels of combinational cells
+#   step REPORT : [6.1689] There are 0 distinct nets driving control pins
+#   step REPORT : [6.1696] Total LUT area: 0
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'rom' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  18 |                   1 |                   0 |                   0 |                   0 || rom
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'rom' to 'edif/rom/rom.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/rom/rom.edf.gz'
+#   step SERIALIZE : #bytes in: 611, #bytes out: 439, compression ratio: 1.391800
+#   step REPORT : [87.28] Resource usage for rom: 0.156s 16.1M
+#   step REPORT : [39.349] Optimizing module : proba
+#   step REPORT : [6.1690] There are 4 levels of combinational cells
+#   step REPORT : [6.1689] There are 2 distinct nets driving control pins
+#   step REPORT : [6.1695] 2-input LUTs: 1
+#   step REPORT : [6.1695] 3-input LUTs: 1
+#   step REPORT : [6.1695] 5-input LUTs: 3
+#   step REPORT : [6.1695] 6-input LUTs: 3
+#   step REPORT : [6.1696] Total LUT area: 8
+#   step REPORT : [6.1697] State    : 11
+#   step REPORT : [6.1697]   (FF)   : 11
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'proba' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                  11 |                   8 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  13 |                   0 |                   0 |                   0 |                   0 || proba
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'proba' to 'edif/proba/proba.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/proba/proba.edf.gz'
+#   step SERIALIZE : #bytes in: 1169, #bytes out: 802, compression ratio: 1.457606
+#   step REPORT : [87.28] Resource usage for proba: 0.031s 16.0M
+#   step REPORT : [39.349] Optimizing module : top
+#   step REPORT : [6.1690] There are 2 levels of combinational cells
+#   step REPORT : [6.1689] There are 0 distinct nets driving control pins
+#   step REPORT : [6.1696] Total LUT area: 0
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'top' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   2 |                   2 |                   0 |                   0 |                   0 || top
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'top' to 'edif/top/top.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/top/top.edf.gz'
+#   step SERIALIZE : #bytes in: 1175, #bytes out: 639, compression ratio: 1.838811
+#   step REPORT : [87.28] Resource usage for top: 0.029s 0.0M
+#   step REPORT : [39.349] Optimizing module : proba_0000
+#   step REPORT : [6.1690] There are 4 levels of combinational cells
+#   step REPORT : [6.1689] There are 2 distinct nets driving control pins
+#   step REPORT : [6.1695] 2-input LUTs: 1
+#   step REPORT : [6.1695] 3-input LUTs: 1
+#   step REPORT : [6.1695] 5-input LUTs: 3
+#   step REPORT : [6.1695] 6-input LUTs: 3
+#   step REPORT : [6.1696] Total LUT area: 8
+#   step REPORT : [6.1697] State    : 11
+#   step REPORT : [6.1697]   (FF)   : 11
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'proba_0000' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                  11 |                   8 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  13 |                   0 |                   0 |                   0 |                   0 || proba_0000
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'proba_0000' to 'edif/proba_0000/proba_0000.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/proba_0000/proba_0000.edf.gz'
+#   step SERIALIZE : #bytes in: 1184, #bytes out: 808, compression ratio: 1.465347
+#   step REPORT : [87.28] Resource usage for proba_0000: 0.030s 0.0M
+#   step REPORT : [39.349] Optimizing module : fifo_usage_spy
+#   step REPORT : Got DPI task gate ZDPI_TASK0: zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0
+#   step REPORT : [6.1690] There are 4 levels of combinational cells
+#   step REPORT : [6.1689] There are 4 distinct nets driving control pins
+#   step REPORT : [6.1695] 2-input LUTs: 2
+#   step REPORT : [6.1695] 3-input LUTs: 4
+#   step REPORT : [6.1695] 4-input LUTs: 1
+#   step REPORT : [6.1695] 5-input LUTs: 1
+#   step REPORT : [6.1696] Total LUT area: 8
+#   step REPORT : [6.1697] State    : 18
+#   step REPORT : [6.1697]   (FF)   : 18
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'fifo_usage_spy' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                  18 |                   8 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   6 |                   2 |                   0 |                   0 |                   0 || fifo_usage_spy
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'fifo_usage_spy' to 'edif/fifo_usage_spy/fifo_usage_spy.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/fifo_usage_spy/fifo_usage_spy.edf.gz'
+#   step SERIALIZE : #bytes in: 1912, #bytes out: 1043, compression ratio: 1.833174
+#   step REPORT : [87.28] Resource usage for fifo_usage_spy: 0.036s 0.0M
+#   step REPORT : [39.349] Optimizing module : stb
+### warning in ZFAST : (INTERNAL) no module information for net eVe_init_clk
+#   step REPORT : Got DPI task gate ZDPI_TASK0: zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0
+#   step REPORT : Got DPI task gate ZDPI_TASK1: zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1
+#   step REPORT : [6.1690] There are 14 levels of combinational cells
+#   step REPORT : [6.1689] There are 7 distinct nets driving control pins
+#   step REPORT : [6.1695] 2-input LUTs: 19
+#   step REPORT : [6.1695] 3-input LUTs: 7
+#   step REPORT : [6.1696] Total LUT area: 26
+#   step REPORT : [6.1697] State    : 470
+#   step REPORT : [6.1697]   (FF)   : 470
+#   step REPORT : [6.1697] XORCY    : 156
+#   step REPORT : [6.1697] MUXCY    : 156
+#   step REPORT : [6.1697] incl. CARRY4: 39
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.001 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'stb' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 470 |                  26 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  29 |                   8 |                   0 |                   0 |                   0 || stb
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'stb' to 'edif/stb/stb.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/stb/stb.edf.gz'
+#   step SERIALIZE : #bytes in: 26626, #bytes out: 9747, compression ratio: 2.731712
+#   step REPORT : [87.28] Resource usage for stb: 0.076s 0.0M
+#   step REPORT : [39.349] Optimizing module : clkg
+#   step REPORT : [6.1690] There are 1 levels of combinational cells
+#   step REPORT : [6.1689] There are 1 distinct nets driving control pins
+#   step REPORT : [6.1695] 2-input LUTs: 1
+#   step REPORT : [6.1696] Total LUT area: 1
+#   step REPORT : [6.1697] State    : 1
+#   step REPORT : [6.1697]   (Latch): 1
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'clkg' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   1 |                   1 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   3 |                   0 |                   0 |                   0 |                   0 || clkg
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'clkg' to 'edif/clkg/clkg.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/clkg/clkg.edf.gz'
+#   step SERIALIZE : #bytes in: 274, #bytes out: 256, compression ratio: 1.070312
+#   step REPORT : [87.28] Resource usage for clkg: 0.031s 0.0M
+#   step REPORT : [39.349] Optimizing module : parity_check
+#   step REPORT : Got SVA task gate ZSVA_IMM_TASK0: ZSVA_MOD_PLI_1
+### warning in ZFAST [6.1832] : PO net zsva_clock undriven
+#   step REPORT : [6.1690] There are 3 levels of combinational cells
+#   step REPORT : [6.1689] There are 1 distinct nets driving control pins
+#   step REPORT : [6.1695] 3-input LUTs: 1
+#   step REPORT : [6.1695] 5-input LUTs: 1
+#   step REPORT : [6.1695] 6-input LUTs: 1
+#   step REPORT : [6.1696] Total LUT area: 3
+#   step REPORT : [6.1697] State    : 3
+#   step REPORT : [6.1697]   (FF)   : 3
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'parity_check' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   3 |                   3 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  12 |                   2 |                   0 |                   0 |                   0 || parity_check
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'parity_check' to 'edif/parity_check/parity_check.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/parity_check/parity_check.edf.gz'
+#   step SERIALIZE : #bytes in: 1370, #bytes out: 864, compression ratio: 1.585648
+#   step REPORT : [87.28] Resource usage for parity_check: 0.034s 0.0M
+#   step REPORT : [39.349] Optimizing module : dut
+#   step REPORT : [6.1690] There are 2 levels of combinational cells
+#   step REPORT : [6.1689] There are 0 distinct nets driving control pins
+#   step REPORT : [6.1696] Total LUT area: 0
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'dut' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  27 |                   3 |                   0 |                   0 |                   0 || dut
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'dut' to 'edif/dut/dut.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/dut/dut.edf.gz'
+#   step SERIALIZE : #bytes in: 1442, #bytes out: 744, compression ratio: 1.938172
+#   step REPORT : [87.28] Resource usage for dut: 0.030s 0.0M
+#   step REPORT : [39.349] Optimizing module : fifo_0000
+#   step REPORT : [6.1690] There are 5 levels of combinational cells
+#   step REPORT : [6.1689] There are 12 distinct nets driving control pins
+#   step REPORT : [6.1695] 2-input LUTs: 10
+#   step REPORT : [6.1695] 3-input LUTs: 17
+#   step REPORT : [6.1695] 4-input LUTs: 2
+#   step REPORT : [6.1695] 5-input LUTs: 3
+#   step REPORT : [6.1695] 6-input LUTs: 21
+#   step REPORT : [6.1696] Total LUT area: 53
+#   step REPORT : [6.1697] State    : 76
+#   step REPORT : [6.1697]   (FF)   : 76
+#   step REPORT : [6.1697] XORCY    : 4
+#   step REPORT : [6.1697] MUXCY    : 4
+#   step REPORT : [6.1697] incl. CARRY4: 1
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'fifo_0000' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                  76 |                  58 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  32 |                   2 |                   0 |                   0 |                   0 || fifo_0000
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'fifo_0000' to 'edif/fifo_0000/fifo_0000.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/fifo_0000/fifo_0000.edf.gz'
+#   step SERIALIZE : #bytes in: 5809, #bytes out: 3229, compression ratio: 1.799009
+#   step REPORT : [87.28] Resource usage for fifo_0000: 0.046s 0.0M
+#   step REPORT : [39.349] Optimizing module : parity
+#   step REPORT : [6.1690] There are 2 levels of combinational cells
+#   step REPORT : [6.1689] There are 0 distinct nets driving control pins
+#   step REPORT : [6.1695] 4-input LUTs: 1
+#   step REPORT : [6.1695] 5-input LUTs: 1
+#   step REPORT : [6.1696] Total LUT area: 2
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'parity' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   0 |                   2 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   9 |                   0 |                   0 |                   0 |                   0 || parity
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'parity' to 'edif/parity/parity.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/parity/parity.edf.gz'
+#   step SERIALIZE : #bytes in: 388, #bytes out: 332, compression ratio: 1.168675
+#   step REPORT : [87.28] Resource usage for parity: 0.027s 0.0M
+#   step REPORT : [39.349] Optimizing module : ram
+#   step REPORT : [6.1822] Got memory ram.mem (256 x 9) with 0 read port(s), 1 write port(s), and 0 RW port(s)
+#   step REPORT : 
+#   step REPORT : +------+-------------+-------+----------+---------------------------+---...
+#   step REPORT : | type | total bits  | width |   depth  |           PORTS           | Memory name
+#   step REPORT : +------+-------------+-------+----------+---------------------------+---...
+#   step REPORT : | zMem |        2304 |     9 |      256 |  CW: 1   NCW: 0   R: 0    |ram.mem
+#   step REPORT : +------+-------------+-------+----------+---------------------------+---...
+#   step REPORT : 
+#   step REPORT : [6.1690] There are 0 levels of combinational cells
+#   step REPORT : [6.1689] There are 0 distinct nets driving control pins
+#   step REPORT : [6.1696] Total LUT area: 0
+#   step REPORT : [6.1884] Renaming SVA module instances in the netlist
+#   step REPORT : [6.1882] Renaming special verilog names in the netlist
+#   step REPORT : [6.1882] Special names renaming stats:
+#   step REPORT : [6.1882] Total time                 : 0.000 seconds
+#   step REPORT : [6.1882] Total wires renamed        : 0
+#   step REPORT : [6.1882] Total instances renamed    : 0
+#   step REPORT : [6.1883] Renaming wires like ports
+#   step REPORT : [6.1883] Renamed wires like ports (0 ports)
+#   step REPORT : [6.1885] Emitting RTLDB information for the netlist
+#   step REPORT : Converting netlist 'ram' to znl format
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                   0 |                  19 |                   1 |                   0 |                   0 |                   0 || ram
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step REPORT : Writing netlist 'ram' to 'edif/ram/ram.edf.gz'
+#   step SERIALIZE : writing netlist 'zmerge' into znl file 'edif/ram/ram.edf.gz'
+#   step SERIALIZE : #bytes in: 630, #bytes out: 447, compression ratio: 1.409396
+#   step REPORT : [87.28] Resource usage for ram: 0.028s 0.0M
+
+                                    ZeBu (R)
+                                      zMem
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zMem -createList -addScript ../../../../additionalZmemCommandFile.tcl -addScript /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zMem_config.tcl -debug ../ram.zmem 
+
+# start time is Wed Apr 19 01:04:38 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:02
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.17 0.05 0.06 2/475 36042
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185610 MB
+#            Total Free including cache: 190325 MB
+#            Swap cache: 0 MB Cached space: 4715 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 182 MB VmPeak: 182 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256337
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step DEFINE : Latency is using 4-bits-1-hot encoding
+#   step DEFINE : Evaluate additionnal script '../../../../additionalZmemCommandFile.tcl'.
+#   step DEFINE : Evaluate additionnal script '/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zMem_config.tcl'.
+#   step DEFINE : Global debug mode is ON
+#   step DEFINE : New memory : ram_ZMEM_mem
+#   step DEFINE : Set memory : ram_ZMEM_mem depth 256
+#   step DEFINE : Set memory : ram_ZMEM_mem width     9
+#   step DEFINE : New port : 'w0' 'w' for memory 'ram_ZMEM_mem'.
+#   step DEFINE : Set port access 'sync' of port 'w0' for memory 'ram_ZMEM_mem'.
+#   step DEFINE : Set 'clk' pin name 'w0clk' for port 'w0'.
+#   step DEFINE : Set 'addr' pin name 'w0addr' for port 'w0'.
+#   step DEFINE : Set 'di' pin name 'w0di' for port 'w0'.
+#   step DEFINE : Set 'we' pin name 'w0we' for port 'w0'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'bram' for memory 'ram_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'ramlut' for memory 'ram_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'zrm' for memory 'ram_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Type 'ramlut' has been chosen for memory 'ram_ZMEM_mem'.
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step MEMORY CHECK : Fast clock used for memory 'ram_ZMEM_mem'.
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step MEMORY CHECK : Fast clock used for memory 'ram_ZMEM_mem'.
+#   step ZMEM : Non-Optimizable zview instances used in module 'ram_ZMEM_mem'.
+#   step RESOURCE CHECK :   REG   36
+#   step RESOURCE CHECK :   LUT   71
+#   step RESOURCE CHECK :   BRAM  0
+#   step FREQUENCY : Worst case frequency of the memory 'ram_ZMEM_mem' would be 8333 kHz
+#   step ZMEM : Fast system clock 'clk_50' is used for memory 'ram_ZMEM_mem'.
+#   step SERIALIZE : writing netlist 'ram_ZMEM_mem' into znl file 'ram_ZMEM_mem.edf.gz'
+#   step SERIALIZE : #bytes in: 8950, #bytes out: 3408, compression ratio: 2.626174
+#   step GENERATE : generating vhdl wrapper 'ram_ZMEM_mem.vhd'
+#   step GENERATE : generating vhdl wrapper 'ram_ZMEM_mem_bbx.vhd'
+#   step GENERATE : generating verilog wrapper 'ram_ZMEM_mem.v'
+#   step GENERATE : generating verilog wrapper 'ram_ZMEM_mem_bbx.v'
+#   step GENERATE : generating report file 'ram_ZMEM_mem_report.log'
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m0.140s, sys 0m0.58s
+#   exec summary : Total memory: 370876 kB - RSS memory: 110972 kB - Data memory: 118388 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:38 2023
+
+                                    ZeBu (R)
+                                      zMem
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zMem -createList -addScript ../../../../additionalZmemCommandFile.tcl -addScript /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zMem_config.tcl -debug ../rom.zmem 
+
+# start time is Wed Apr 19 01:04:39 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:02
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.17 0.05 0.06 2/475 36044
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185611 MB
+#            Total Free including cache: 190326 MB
+#            Swap cache: 0 MB Cached space: 4715 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 182 MB VmPeak: 182 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256324
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step DEFINE : Latency is using 4-bits-1-hot encoding
+#   step DEFINE : Evaluate additionnal script '../../../../additionalZmemCommandFile.tcl'.
+#   step DEFINE : Evaluate additionnal script '/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zMem_config.tcl'.
+#   step DEFINE : Global debug mode is ON
+#   step DEFINE : New memory : rom_ZMEM_mem
+#   step DEFINE : Set memory : rom_ZMEM_mem depth 256
+#   step DEFINE : Set memory : rom_ZMEM_mem width     9
+#   step DEFINE : New port : 'r0' 'r' for memory 'rom_ZMEM_mem'.
+#   step DEFINE : Set port access 'sync' of port 'r0' for memory 'rom_ZMEM_mem'.
+#   step DEFINE : Set 'clk' pin name 'r0clk' for port 'r0'.
+#   step DEFINE : Set 'addr' pin name 'r0addr' for port 'r0'.
+#   step DEFINE : Set 'do' pin name 'r0do' for port 'r0'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'bram' for memory 'rom_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'ramlut' for memory 'rom_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'zrm' for memory 'rom_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Type 'ramlut' has been chosen for memory 'rom_ZMEM_mem'.
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step MEMORY CHECK : Fast clock used for memory 'rom_ZMEM_mem'.
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step MEMORY CHECK : Fast clock used for memory 'rom_ZMEM_mem'.
+#   step ZMEM : Non-Optimizable zview instances used in module 'rom_ZMEM_mem'.
+#   step RESOURCE CHECK :   REG   36
+#   step RESOURCE CHECK :   LUT   60
+#   step RESOURCE CHECK :   BRAM  0
+#   step FREQUENCY : Worst case frequency of the memory 'rom_ZMEM_mem' would be 8333 kHz
+#   step ZMEM : Fast system clock 'clk_50' is used for memory 'rom_ZMEM_mem'.
+#   step SERIALIZE : writing netlist 'rom_ZMEM_mem' into znl file 'rom_ZMEM_mem.edf.gz'
+#   step SERIALIZE : #bytes in: 7750, #bytes out: 2966, compression ratio: 2.612947
+#   step GENERATE : generating vhdl wrapper 'rom_ZMEM_mem.vhd'
+#   step GENERATE : generating vhdl wrapper 'rom_ZMEM_mem_bbx.vhd'
+#   step GENERATE : generating verilog wrapper 'rom_ZMEM_mem.v'
+#   step GENERATE : generating verilog wrapper 'rom_ZMEM_mem_bbx.v'
+#   step GENERATE : generating report file 'rom_ZMEM_mem_report.log'
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m0.131s, sys 0m0.68s
+#   exec summary : Total memory: 370876 kB - RSS memory: 110928 kB - Data memory: 118388 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:39 2023
+#   step Synth : RhinoDB status is set by default value: rhino_default_status:1.
+#   step Synth : Using zCreateNameDB from /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/bin/zCreateNameDB for RhinoDB population.
+#   step Synth : Running RhinoDB gate population on 12 modules. To skip this step please set SNPS_RHINODB_INTERNAL_3STEP_DISABLE env var.
+Running in 3step flow - bundle population mode, for bundle,modules = Bundle_0,ram,parity,fifo_0000,dut,parity_check,clkg,stb,fifo_usage_spy,proba_0000,top,proba,rom,
+Got following -X option = show_times
+#     Wed Apr 19 01:04:39 2023 : zCreateNameDB Started
+#      : Reading the Serializing VCS Version
+[2023-04-19 01:04:39.363326] [0x00007f3f7985f780] [info]    #      : Reading the Serializing VCS Version
+
+#      : Deserializing names dictionary
+[2023-04-19 01:04:39.363986] [0x00007f3f7985f780] [info]    #      : Deserializing names dictionary
+
+#      : Deserializing libraries
+[2023-04-19 01:04:39.364781] [0x00007f3f7985f780] [info]    #      : Deserializing libraries
+
+#      : Deserializing RTL
+[2023-04-19 01:04:39.365420] [0x00007f3f7985f780] [info]    #      : Deserializing RTL
+
+#      : Deserializing Gate
+[2023-04-19 01:04:39.366074] [0x00007f3f7985f780] [info]    #      : Deserializing Gate
+
+#      : Deserializing design object
+[2023-04-19 01:04:39.366647] [0x00007f3f7985f780] [info]    #      : Deserializing design object
+
+#      : Populating Dfs Table
+[2023-04-19 01:04:39.367306] [0x00007f3f7985f780] [info]    #      : Populating Dfs Table
+
+### Wed Apr 19 01:04:39 2023 : RTL Deserialized
+### Wed Apr 19 01:04:39 2023 : Starting CHUNK Population
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK ram
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module ram
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module ram
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK parity
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module parity
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module parity
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK fifo_0000
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module fifo_0000
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module fifo_0000
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK dut
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module dut
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module dut
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK parity_check
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module parity_check
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module parity_check
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK clkg
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module clkg
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module clkg
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK stb
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module stb
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module stb
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK fifo_usage_spy
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module fifo_usage_spy
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module fifo_usage_spy
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK proba_0000
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module proba_0000
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module proba_0000
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK top
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module top
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module top
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK proba
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module proba
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module proba
+#     Wed Apr 19 01:04:39 2023 : Populating CHUNK rom
+#     Wed Apr 19 01:04:39 2023 : Gate Building light signal container for module rom
+#     Wed Apr 19 01:04:39 2023 : End of Gate Building light signal container for module rom
+### Wed Apr 19 01:04:39 2023(+0s) : CHUNK Population done
+zCreateNameDB finished without errors or warnings.
+#     Wed Apr 19 01:04:39 2023 : zCreateNameDB Ended
+#   step Synth : Synthesis called the following command: '/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/bin/zCreateNameDB -bundle Bundle_0,ram,parity,fifo_0000,dut,parity_check,clkg,stb,fifo_usage_spy,proba_0000,top,proba,rom,  -v -X show_times -z /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/design/synth_Default_RTL_Group'
+
+#   step exec summary : time 0m3.107s
+#   exec summary : Total memory: 124000 kB minimum 
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:39 CDT 2023
+zFe exit status: 0
+command exit code is '0'

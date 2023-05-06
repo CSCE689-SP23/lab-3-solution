@@ -1,0 +1,18 @@
+Analyzing zTopBuildResult
+  Xcui file backend_default/zTopBuild.xcui is read
+  FPGA count : 9
+  zCoreBuild target found: Part_0
+    Number Of Dependencies zTopBuild -> zRTB_FW : 1
+ zRtbFe succesfully added
+ zRtbFeAnalyzer succesfully added
+    Number Of Dependencies zTopBuild -> zRTB_FE : 1
+  Unexpected target type: pBuild
+  zPar target found
+    Number Of Dependencies zTopBuild -> zPar : 2
+    Number Of Dependencies zTopBuild -> zTime : 1
+    Number Of Dependencies zTopBuild -> zTime_fpga : 1
+    Number Of Dependencies zTopBuild -> zRDB : 3
+    Number Of Dependencies zTopBuild -> zDB Global Controller : 0
+  Unexpected target type: hydra
+  SVA output -> Final Checker : xref.zsva
+  No target script

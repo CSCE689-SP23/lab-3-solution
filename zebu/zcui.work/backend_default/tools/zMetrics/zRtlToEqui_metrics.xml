@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics>
+<Table id="executionTimeAndMemoryUsage" name="">
+  <Header>
+    <step>
+      <Title>step</Title>
+    </step>
+    <vm>
+      <Title>vm</Title>
+    </vm>
+    <vmdelta>
+      <Title>vmdelta</Title>
+    </vmdelta>
+    <um>
+      <Title>um</Title>
+    </um>
+    <umdelta>
+      <Title>umdelta</Title>
+    </umdelta>
+    <freeMem>
+      <Title>freeMem</Title>
+    </freeMem>
+    <cpu>
+      <Title>%cpu</Title>
+    </cpu>
+    <load>
+      <Title>load</Title>
+    </load>
+    <elapsedTimeInSec>
+      <Title>elapsedTimeInSec</Title>
+    </elapsedTimeInSec>
+    <userTimeInSec>
+      <Title>userTimeInSec</Title>
+    </userTimeInSec>
+    <systemTimeInSec>
+      <Title>systemTimeInSec</Title>
+    </systemTimeInSec>
+    <name>
+      <Title>name</Title>
+    </name>
+  </Header>
+  <Row>
+    <step>   1</step>
+    <vm>258</vm>
+    <vmdelta>46</vmdelta>
+    <um>118</um>
+    <umdelta>35</umdelta>
+    <freeMem>185421</freeMem>
+    <cpu>117.65</cpu>
+    <load>0.00</load>
+    <elapsedTimeInSec>0.2</elapsedTimeInSec>
+    <userTimeInSec>0.1</userTimeInSec>
+    <systemTimeInSec>0.1</systemTimeInSec>
+    <name>Load_NameDb</name>
+  </Row>
+  <Row>
+    <step>   2</step>
+    <vm>258</vm>
+    <vmdelta>0</vmdelta>
+    <um>118</um>
+    <umdelta>0</umdelta>
+    <freeMem>185420</freeMem>
+    <cpu>0.00</cpu>
+    <load>0.00</load>
+    <elapsedTimeInSec>0</elapsedTimeInSec>
+    <userTimeInSec>0</userTimeInSec>
+    <systemTimeInSec>0</systemTimeInSec>
+    <name>Compute_indexes</name>
+  </Row>
+  <Row>
+    <step>   3</step>
+    <vm>283</vm>
+    <vmdelta>25</vmdelta>
+    <um>138</um>
+    <umdelta>20</umdelta>
+    <freeMem>185452</freeMem>
+    <cpu>96.30</cpu>
+    <load>0.00</load>
+    <elapsedTimeInSec>0.14</elapsedTimeInSec>
+    <userTimeInSec>0.12</userTimeInSec>
+    <systemTimeInSec>0.1</systemTimeInSec>
+    <name>Load_equi_netlist</name>
+  </Row>
+  <Row>
+    <step>   4</step>
+    <vm>316</vm>
+    <vmdelta>33</vmdelta>
+    <um>142</um>
+    <umdelta>4</umdelta>
+    <freeMem>185447</freeMem>
+    <cpu>800.00</cpu>
+    <load>0.00</load>
+    <elapsedTimeInSec>0</elapsedTimeInSec>
+    <userTimeInSec>0</userTimeInSec>
+    <systemTimeInSec>0.1</systemTimeInSec>
+    <name>Build_whiteboard</name>
+  </Row>
+  <Row>
+    <step>   5</step>
+    <vm>1085</vm>
+    <vmdelta>769</vmdelta>
+    <um>144</um>
+    <umdelta>2</umdelta>
+    <freeMem>185445</freeMem>
+    <cpu>0.00</cpu>
+    <load>0.00</load>
+    <elapsedTimeInSec>0.1</elapsedTimeInSec>
+    <userTimeInSec>0</userTimeInSec>
+    <systemTimeInSec>0</systemTimeInSec>
+    <name>Build_indexer</name>
+  </Row>
+  <Row>
+    <step>   6</step>
+    <vm>1085</vm>
+    <vmdelta>0</vmdelta>
+    <um>146</um>
+    <umdelta>2</umdelta>
+    <freeMem>185541</freeMem>
+    <cpu>210.53</cpu>
+    <load>0.00</load>
+    <elapsedTimeInSec>0</elapsedTimeInSec>
+    <userTimeInSec>0.1</userTimeInSec>
+    <systemTimeInSec>0</systemTimeInSec>
+    <name>Build_MuDb</name>
+  </Row>
+  <Row>
+    <step>   8</step>
+    <vm>1085</vm>
+    <vmdelta>0</vmdelta>
+    <um>146</um>
+    <umdelta>0</umdelta>
+    <freeMem>185541</freeMem>
+    <cpu>0.00</cpu>
+    <load>0.00</load>
+    <elapsedTimeInSec>0</elapsedTimeInSec>
+    <userTimeInSec>0</userTimeInSec>
+    <systemTimeInSec>0</systemTimeInSec>
+    <name>Build_RTL_to_equi_mapping/Creating_resolvers</name>
+  </Row>
+  <Row>
+    <step>   9</step>
+    <vm>1086</vm>
+    <vmdelta>1</vmdelta>
+    <um>147</um>
+    <umdelta>1</umdelta>
+    <freeMem>185542</freeMem>
+    <cpu>235.29</cpu>
+    <load>0.00</load>
+    <elapsedTimeInSec>0</elapsedTimeInSec>
+    <userTimeInSec>0.1</userTimeInSec>
+    <systemTimeInSec>0.1</systemTimeInSec>
+    <name>Build_RTL_to_equi_mapping/Running_resolvers</name>
+  </Row>
+  <Row>
+    <step>  10</step>
+    <vm>1089</vm>
+    <vmdelta>3</vmdelta>
+    <um>150</um>
+    <umdelta>3</umdelta>
+    <freeMem>185539</freeMem>
+    <cpu>0.00</cpu>
+    <load>0.00</load>
+    <elapsedTimeInSec>0.2</elapsedTimeInSec>
+    <userTimeInSec>0</userTimeInSec>
+    <systemTimeInSec>0</systemTimeInSec>
+    <name>Build_RTL_to_equi_mapping/Serialize_data</name>
+  </Row>
+</Table>
+<Attribute id="sysTime">
+  <Value>0.105</Value>
+</Attribute>
+<Attribute id="totalMemoryInKB">
+  <Value>1374124</Value>
+</Attribute>
+<Attribute id="userCompileTime">
+  <Value>0.190</Value>
+</Attribute>
+<Attribute id="wallclockTime">
+  <Value>0</Value>
+</Attribute>
+</Metrics>

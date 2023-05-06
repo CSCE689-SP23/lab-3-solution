@@ -1,0 +1,19 @@
+Module top{
+P _I_vcs_cdx_s_rw_topu_stb_clk0->_I_vcs_cdx_s_rw_topu_stb_clk0
+P _I_vcs_cdx_s_rw_topu_stb_clk1->_I_vcs_cdx_s_rw_topu_stb_clk1
+}
+Module dut{
+}
+Module stb{
+}
+
+EdfPortBounds dut{
+8 0 datain
+8 0 dataout
+}
+EdfPortBounds stb{
+8 0 data_rd
+8 0 data_wr
+}
+NonAliasNets top{
+}

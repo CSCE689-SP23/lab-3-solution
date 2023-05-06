@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zPar_archive">
+    <targets>
+        <target type="file" value="././tools/zPar/des.xref">
+            <menu>RunTime/zPar</menu>
+        </target>
+        <target type="file" value="././tools/zPar/design.pin">
+            <menu>RunTime/zPar</menu>
+        </target>
+        <target type="directory" value="././tools/zPar/design_fpga/U0_M0_F0" dereference="false">
+            <menu>RunTime/zPar</menu>
+        </target>
+        <target type="file" value="./U0/M0/F00/design.bit">
+            <menu>RunTime/FPGA/U0/M0/F00</menu>
+        </target>
+        <target type="file" value="./U0/M0/F00/design.bit.md5">
+            <menu>RunTime/FPGA/U0/M0/F00</menu>
+        </target>
+        <target type="file" value="./U0/M0/F00/design.fwc">
+            <menu>RunTime/FPGA/U0/M0/F00</menu>
+        </target>
+        <target type="file" value="./U0/M0/F00/zfwc_dpi.cc">
+            <menu>RunTime/FPGA/U0/M0/F00</menu>
+        </target>
+        <target type="file" value="./U0/M0/F08/design.bit">
+            <menu>RunTime/FPGA/U0/M0/F08</menu>
+        </target>
+        <target type="file" value="./U0/M0/F08/design.bit.md5">
+            <menu>RunTime/FPGA/U0/M0/F08</menu>
+        </target>
+        <target type="file" value="./U0/M0/F08/design.fwc">
+            <menu>RunTime/FPGA/U0/M0/F08</menu>
+        </target>
+        <target type="file" value="./U0/M0/F08/zfwc_dpi.cc">
+            <menu>RunTime/FPGA/U0/M0/F08</menu>
+        </target>
+        <target type="file" value="./U0/M0/IF/design.bit">
+            <menu>RunTime/FPGA/U0/M0/IF</menu>
+        </target>
+        <target type="file" value="./U0/M0/IF/design.bit.md5">
+            <menu>RunTime/FPGA/U0/M0/IF</menu>
+        </target>
+        <target type="file" value="./U0/M0/IF/design.fwc">
+            <menu>RunTime/FPGA/U0/M0/IF</menu>
+        </target>
+        <target type="file" value="./U0/M0/IF/zfwc_dpi.cc">
+            <menu>RunTime/FPGA/U0/M0/IF</menu>
+        </target>
+        <target type="file" value="./U0/M0/rtb.xref">
+            <menu>RunTime/FPGA/U0/M0</menu>
+        </target>
+        <target type="file" value="./tools/zPar/loc.xref">
+            <menu>RunTime/zPar</menu>
+        </target>
+    </targets>
+</ZeBuUiDoc>

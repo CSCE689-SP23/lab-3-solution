@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zRTB_FE">
+    <targets>
+        <target type="file" value="tools/zPrd/injector_list.xref">
+            <menu>RunTime/zRTB_FE</menu>
+        </target>
+    </targets>
+</ZeBuUiDoc>

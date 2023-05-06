@@ -1,0 +1,17 @@
+# Emulation Verification Engineering (c) - XDC generator
+# ------------------------------------------------------
+
+#xdc_addconst clock
+create_clock -name zebu_clock0 -period 50000.0 -waveform {25000.0 50000.0} [get_nets {design/U0_M0_F0/zcgen_w_zcg_filterClock}]
+create_clock -name zebu_clock1 -period 100000.0 [get_nets {design/U0_M0_F0/zcgen_w_zcg_compositeClock}]
+create_clock -name zebu_clock2 -period 100000.0 [get_nets {design/U0_M0_F0/zebu_zdly_z_dclk_delay_12524327392187371745}]
+set_clock_groups -asynchronous -name GRP_zebu_main_clock_sync -group [get_clocks {zebu_clock0 zebu_clock1 zebu_clock2 }]
+set_false_path -setup -from [get_clocks {zebu_clock0}] -to [get_clocks {zebu_clock0}]
+set_false_path -setup -from [get_clocks {zebu_clock0}] -to [get_clocks {zebu_clock1}]
+set_false_path -setup -from [get_clocks {zebu_clock0}] -to [get_clocks {zebu_clock2}]
+set_false_path -setup -from [get_clocks {zebu_clock1}] -to [get_clocks {zebu_clock0}]
+set_false_path -setup -from [get_clocks {zebu_clock1}] -to [get_clocks {zebu_clock1}]
+set_false_path -setup -from [get_clocks {zebu_clock1}] -to [get_clocks {zebu_clock2}]
+set_false_path -setup -from [get_clocks {zebu_clock2}] -to [get_clocks {zebu_clock0}]
+set_false_path -setup -from [get_clocks {zebu_clock2}] -to [get_clocks {zebu_clock1}]
+set_false_path -setup -from [get_clocks {zebu_clock2}] -to [get_clocks {zebu_clock2}]

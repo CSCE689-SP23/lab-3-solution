@@ -1,0 +1,89 @@
+# Archive File Setting Up
+
+## Zebu Root Setting
+- Default zebu_root in zPar_target_config.tcl is archive creator's release.
+- If you want to use your current setup release, uncomment the following line in zPar_target_config.tcl:
+set zebu_root $env(ZEBU_ROOT)
+
+## Environment Variables List
+- The following shows all the environment variables set by archive creator.
+- Before launching, please set the environment variables if needed.
+
+CDC_JOINED_DC=ops3.engr.tamu.edu
+CDC_JOINED_DOMAIN=engr.tamu.edu
+CDC_JOINED_SITE=TAMU
+CDC_JOINED_ZONE=CN=Linux-Server-Resources,CN=CoE-Wide,CN=Global,CN=Zones,OU=Centrify,OU=Services,DC=engr,DC=tamu,DC=edu
+CDC_LOCALHOST=csce-quinn-s1.engr.tamu.edu
+CDC_PREW2KHOST=csce-quinn-s1
+DA_SESSION_ID_AUTH=ca725099-5e2e-b54f-866b-e7017a4a7af5
+DMTCP_PLUGIN=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib/libthreadmalloc.so:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib/libpthread_join.so
+EDITOR=vim
+FLEXLM_BORROWFILE=/home/faculty/d/davidkebo/.csce-quinn-s1.engr.tamu.edu-borrow.txt
+HISTCONTROL=ignoredups
+HISTFILESIZE=10000
+HISTSIZE=1000
+HISTTIMEFORMAT=%F %T 
+HOME=/home/faculty/d/davidkebo
+HOSTNAME=csce-quinn-s1.engr.tamu.edu
+KRB5CCNAME=FILE:/tmp/krb5cc_421004447
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+LD_LIBRARY_PATH=:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbWriter/LINUX64/:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbReader/LINUX64/:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/cmlp/etc/python36_cmlp1/lib/python3.6/site-packages/cll:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/cmlp/etc/python36_cmlp1/lib/:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw/lib/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/NPI/lib/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbReader/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbWriter/linux64:/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/confpro/linux_a_64:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/confpro/linux_a_64/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/thirdparty/gtk
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LIBRARY_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib
+LM_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+LOGNAME=davidkebo
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+MAIL=/var/spool/mail/davidkebo
+OLD_LD_LIBRARY_PATH=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbWriter/LINUX64/:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbReader/LINUX64/:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/cmlp/etc/python36_cmlp1/lib/python3.6/site-packages/cll:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/cmlp/etc/python36_cmlp1/lib/:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw/lib/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/NPI/lib/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbReader/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbWriter/linux64:/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/confpro/linux_a_64:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/confpro/linux_a_64/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/thirdparty/gtk
+PAGER=less
+PATH=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/bin:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw/bin/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/platform/linux64/bin:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/bin:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/zsynbatch/bin:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/confpro/bin:/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/bin:/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/hspice/bin:/usr/lib64/qt-3.3/bin:/opt/coe/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/coe/script_repo/sw
+PROXIMA_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+PWD=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default
+PYTHONPATH=:
+QTDIR=/usr/lib64/qt-3.3
+QTINC=/usr/lib64/qt-3.3/include
+QTLIB=/usr/lib64/qt-3.3/lib
+QT_GRAPHICSSYSTEM_CHECKED=1
+SELINUX_LEVEL_REQUESTED=
+SELINUX_ROLE_REQUESTED=
+SELINUX_USE_CURRENT_RANGE=
+SHELL=/bin/bash
+SHLVL=3
+SNPSLMD_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+SNPS_ZEBU_ADDITIONAL_DEFAULT_COMMANDS=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/utf/default_commands.utf
+SNPS_ZEBU_INTERNAL_INCREMENTAL_NETLIST_EDITION=false
+SNPS_ZEBU_INTERNAL_INCREMENTAL_PARTITION=false
+SNPS_ZEBU_INTERNAL_INCREMENTAL_PNR=false
+SNPS_ZEBU_INTERNAL_INCREMENTAL_SYNTHESIS=false
+SNPS_ZEBU_INTERNAL_INCREMENTAL_SYSTEM_ROUTE=false
+SSH_CLIENT=172.31.18.101 49921 22
+SSH_CONNECTION=172.31.18.101 49921 10.125.204.21 22
+SSH_TTY=/dev/pts/0
+TCLLIBPATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl
+TCL_LIBRARY=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl/tcl8.6
+TCL_LIBRARY_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl
+TERM=xterm-color
+USER=davidkebo
+USER_PRINCIPAL_NAME=davidkebo@AUTH.TAMU.EDU
+VCS_ARCH_OVERRIDE=linux
+VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+XDG_RUNTIME_DIR=/run/user/421004447
+XDG_SESSION_ID=16
+XILINX_LOCAL_USER_DATA=no
+ZCUI_MESSAGES_CONFIG=task=backend_default_zPar|pid=35001|index=0|tcphost=csce-quinn-s1.engr.tamu.edu|tcpport=5200|retry=10|delay=500|blocking=1|nmap=0
+ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+ZXLPAR_NOPROGRESSBAR=1
+_=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/zPar

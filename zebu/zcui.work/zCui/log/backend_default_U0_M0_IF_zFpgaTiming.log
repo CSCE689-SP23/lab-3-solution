@@ -1,0 +1,364 @@
+
+                                    ZeBu (R)
+                                  zFpgaTiming
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/zFpgaTiming /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/zfpgatiming/zFpgaTiming.tcl 
+
+# start time is Wed Apr 19 01:17:28 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:15
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.84 1.76 1.26 2/497 13617
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 181813 MB
+#            Total Free including cache: 186567 MB
+#            Swap cache: 0 MB Cached space: 4754 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 316 MB VmPeak: 316 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255290
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ZFPGATIMING : Aynchronous set reset domain analysis disabled
+#   step SOCKET DETECTION : automatic socket detection activated with type mux_input
+#   step ZFPGATIMING : Configure analysis for clock handling 'FGS'.
+#   step read SDF file : Starting
+#   info : reading file 'timing.sdf'.
+#   step SDF Parser : Delay of between ports RST and RDY on instance RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0 is excessive (3213600ps) and will be reduced to 50ns.
+#   step SDF Parser : Delay of between ports RST and RDY on instance RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0_REPLICATED_0 is excessive (3213600ps) and will be reduced to 50ns.
+#   step SDF Parser : Delay of between ports RST and RDY on instance RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0_REPLICATED_0_1 is excessive (3213600ps) and will be reduced to 50ns.
+#   step read SDF file : Done in    elapsed:0.58 s   user:0.57 s    system:0.1 s      %cpu:99.78       load:0.84       fm:181770 m      vm:422 m      vm:+45 m      um:138 m      um:+43 m
+#   step XDL rename : Starting
+#   info : 0 XDL name to replace.
+#   step XDL rename : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181770 m      vm:422 m       vm:+0 m      um:138 m       um:+0 m
+#   step Transformations Identification : Starting
+#   step Transformations Identification : Done in     elapsed:0.1 s    user:0.1 s      system:0 s     %cpu:166.67       load:0.84       fm:181770 m      vm:422 m       vm:+0 m      um:138 m       um:+0 m
+#   step Find properties based on SDF names : Starting
+#   step Find properties based on SDF names : Done in     elapsed:0.7 s      user:2 s    system:0.2 s    %cpu:3346.41       load:0.84       fm:181723 m      vm:575 m     vm:+153 m      um:184 m      um:+46 m
+#   step Modify instance connections : Starting
+#   step Modify instance connections : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181723 m      vm:575 m       vm:+0 m      um:184 m       um:+0 m
+#   info : Initialize requested paths.
+#   step False Timing Arcs : Starting
+#   step False Timing Arcs : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181723 m      vm:575 m       vm:+0 m      um:184 m       um:+0 m
+#   step User Manipulations : Starting
+#   step User Manipulations : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181723 m      vm:575 m       vm:+0 m      um:184 m       um:+0 m
+#   step False Paths Marking : Starting
+#   info : ----------------------------------
+#   info :     False Paths Information
+#   info : ----------------------------------
+#   info :  
+#   info : Rules description :
+#   info : Rule 0 => THROUGH *zbufg_zcgen_w_zcg_skewClock* -clock -data 
+#   info : Rule 1 => THROUGH *zebu_sample_event_filter_mux*I1 -clock -data 
+#   info : Rule 2 => TO */zview*/D -clock -data 
+#   info : Rule 3 => TO */qiwc_ip_cluster/cluster_qiwc_ip_pipelined_mux*/*/D -clock -data 
+#   info :  
+#   info : Ports matching a rule :
+#   info :  
+#   step False Paths Marking : Done in       elapsed:0 s   user:0.30 s      system:0 s    %cpu:3428.57       load:0.84       fm:181723 m      vm:575 m       vm:+0 m      um:184 m       um:+0 m
+#   step Clock Relationship : Starting
+#   step Clock Relationship DB populator : Starting
+#   step Clock Relationship Populator : Loading clock relationship graph from file 'clock_dependencies.db'
+#   step Clock Relationship Populator : Hydra mode is disabled.
+#   step Clock Relationship Populator : MuDB path is /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default.
+#   step Loading EDIF : Starting
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step EDIF LOADER : reading EDIF file 'design.edf'
+#   step Loading EDIF : Done in    elapsed:0.82 s   user:0.81 s    system:0.2 s     %cpu:100.36       load:0.84       fm:181672 m      vm:616 m      vm:+41 m      um:236 m      um:+52 m
+#   step Loading SDC file : Starting
+#   step Loading SDC file : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181672 m      vm:616 m       vm:+0 m      um:236 m       um:+0 m
+#   step Clock Relationship Populator : Couldn't find 35333 entries in SDF Graph.
+#   step Diagnose and fix populator : Starting
+#   step Diagnose and fix populator : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181669 m      vm:623 m       vm:+0 m      um:239 m       um:+0 m
+#   step Clock Relationship DB populator : Done in       elapsed:1 s      user:1 s    system:0.3 s     %cpu:111.76       load:0.84       fm:181669 m      vm:623 m      vm:+48 m      um:239 m      um:+55 m
+#   step Clock Relationship : Done in       elapsed:1 s      user:1 s    system:0.3 s     %cpu:111.74       load:0.84       fm:181669 m      vm:623 m      vm:+48 m      um:239 m      um:+55 m
+#   step Sanity Check : Starting
+#   step Sanity Check : Done in       elapsed:0 s    user:0.1 s      system:0 s       %cpu:0.00       load:0.84       fm:181669 m      vm:623 m       vm:+0 m      um:239 m       um:+0 m
+#   step ANALYSIS : Multi-cycle path analysis disabled
+#   step Skew Paths Analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  SKEW PATHS: 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step Skew Paths Analysis : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181669 m      vm:623 m       vm:+0 m      um:239 m       um:+0 m
+#   step Filter Paths Analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FILTER PATHS: 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step Filter Paths Analysis : Done in     elapsed:0.3 s    user:0.3 s      system:0 s     %cpu:116.50       load:0.84       fm:181669 m      vm:623 m       vm:+0 m      um:242 m       um:+3 m
+#   step Internal Data Paths Analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  INTERNAL DATA PATHS (NOT FILTERED): 10/8134 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 27274ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/sys_idel_clk_in_zpt_ibuf/I (IBUFDS)
+#   info : |   1038 |        1038 |      1 | RTB/zins_fp_ctrl/sys_idel_clk_in_zpt_ibuf/O (IBUFDS)
+#   info : |   2299 |        3337 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/bufg_0/I (BUFG)
+#   info : |    120 |        3457 |     44 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/bufg_0/O (BUFG)
+#   info : |   1671 |        5128 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/C (FDPE)
+#   info : |    183 |        5311 |      7 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/Q (FDPE)
+#   info : |   6011 |       11322 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/I0 (LUT3)
+#   info : |     53 |       11375 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/O (LUT3)
+#   info : |   6067 |       17442 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/RST (MMCME2_ADV)
+#   info : |   3000 |       20442 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/LOCKED (MMCME2_ADV)
+#   info : |   6719 |       27161 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/I0 (LUT3)
+#   info : |     53 |       27214 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/O (LUT3)
+#   info : |     60 |       27274 |      0 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 27274ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/sys_idel_clk_in_zpt_ibuf/IB (IBUFDS)
+#   info : |   1038 |        1038 |      1 | RTB/zins_fp_ctrl/sys_idel_clk_in_zpt_ibuf/O (IBUFDS)
+#   info : |   2299 |        3337 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/bufg_0/I (BUFG)
+#   info : |    120 |        3457 |     44 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/bufg_0/O (BUFG)
+#   info : |   1671 |        5128 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/C (FDPE)
+#   info : |    183 |        5311 |      7 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/Q (FDPE)
+#   info : |   6011 |       11322 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/I0 (LUT3)
+#   info : |     53 |       11375 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/O (LUT3)
+#   info : |   6067 |       17442 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/RST (MMCME2_ADV)
+#   info : |   3000 |       20442 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/LOCKED (MMCME2_ADV)
+#   info : |   6719 |       27161 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/I0 (LUT3)
+#   info : |     53 |       27214 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/O (LUT3)
+#   info : |     60 |       27274 |      0 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 22822ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_startup_0/eos_inv1_INV_0/I0 (LUT1)
+#   info : |     53 |          53 |      5 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_startup_0/eos_inv1_INV_0/O (LUT1)
+#   info : |    445 |         498 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/PRE (FDPE)
+#   info : |    361 |         859 |      7 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_startup_0/sys_pwron_rst_RnM/Q (FDPE)
+#   info : |   6011 |        6870 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/I0 (LUT3)
+#   info : |     53 |        6923 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/O (LUT3)
+#   info : |   6067 |       12990 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/RST (MMCME2_ADV)
+#   info : |   3000 |       15990 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/LOCKED (MMCME2_ADV)
+#   info : |   6719 |       22709 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/I0 (LUT3)
+#   info : |     53 |       22762 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/O (LUT3)
+#   info : |     60 |       22822 |      0 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 21122ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/virtex7_pll_fib/CLKOUT3 (MMCME2_ADV)
+#   info : |   1733 |        1733 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/I0 (BUFGCTRL)
+#   info : |    120 |        1853 |   2617 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O (BUFGCTRL)
+#   info : |   1971 |        3824 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_registers_dut_0/reg_sys_xclk_enable_RnM/C (FDRE)
+#   info : |    197 |        4021 |      8 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_registers_dut_0/reg_sys_xclk_enable_RnM/Q (FDRE)
+#   info : |   1149 |        5170 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/I1 (LUT3)
+#   info : |     53 |        5223 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/O (LUT3)
+#   info : |   6067 |       11290 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/RST (MMCME2_ADV)
+#   info : |   3000 |       14290 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/LOCKED (MMCME2_ADV)
+#   info : |   6719 |       21009 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/I0 (LUT3)
+#   info : |     53 |       21062 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/O (LUT3)
+#   info : |     60 |       21122 |      0 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20906ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/mxifmxif_sys_pclk_in_zpt_ibuf/I (IBUFDS)
+#   info : |   1089 |        1089 |      1 | RTB/zins_fp_ctrl/mxifmxif_sys_pclk_in_zpt_ibuf/O (IBUFDS)
+#   info : |      0 |        1089 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |        1893 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   1913 |        3806 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/bufg_0/I (BUFG)
+#   info : |    120 |        3926 |    712 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/bufg_0/O (BUFG)
+#   info : |   2781 |        6707 |      1 | RTB/zins_fp_ctrl/wrapper/synchronous_readback/dclk_posedge_ready_0/C (FDRE)
+#   info : |    197 |        6904 |      1 | RTB/zins_fp_ctrl/wrapper/synchronous_readback/dclk_posedge_ready_0/Q (FDRE)
+#   info : |   2046 |        8950 |      1 | zpl_iwa_dclk_posedge_ready\[0\]/I0 (LUT2)
+#   info : |     53 |        9003 |      1 | zpl_iwa_dclk_posedge_ready\[0\]/O (LUT2)
+#   info : |    807 |        9810 |      1 | FK/zuf_clockgen/wrapper/dclk_posedge_ready\[0\]1/I0 (LUT2)
+#   info : |     68 |        9878 |      1 | FK/zuf_clockgen/wrapper/dclk_posedge_ready\[0\]1/O (LUT2)
+#   info : |    582 |       10460 |      1 | FK/zuf_clockgen/wrapper/clockgen_mode_pilote_0/clockgen_logic_0/not_ready\[0\]1/I3 (LUT5)
+#   info : |     53 |       10513 |      6 | FK/zuf_clockgen/wrapper/clockgen_mode_pilote_0/clockgen_logic_0/not_ready\[0\]1/O (LUT5)
+#   info : |    616 |       11129 |      1 | FK/zuf_clockgen/wrapper/clockgen_mode_pilote_0/clockgen_logic_0/dclk_posedge_en\[0\]1/I4 (LUT6)
+#   info : |     53 |       11182 |     35 | FK/zuf_clockgen/wrapper/clockgen_mode_pilote_0/clockgen_logic_0/dclk_posedge_en\[0\]1/O (LUT6)
+#   info : |    714 |       11896 |      1 | FK/zuf_clockgen/wrapper/dclk_posedge_en_0_and00001/I2 (LUT3)
+#   info : |     53 |       11949 |     67 | FK/zuf_clockgen/wrapper/dclk_posedge_en_0_and00001/O (LUT3)
+#   info : |    884 |       12833 |      1 | FK/zuf_clockgen/wrapper/svaclk_edge_en/I4 (LUT5)
+#   info : |     53 |       12886 |      1 | FK/zuf_clockgen/wrapper/svaclk_edge_en/O (LUT5)
+#   info : |    458 |       13344 |      1 | FK/zuf_clockgen/wrapper/sys_svaclk_en1/I2 (LUT3)
+#   info : |     53 |       13397 |     49 | FK/zuf_clockgen/wrapper/sys_svaclk_en1/O (LUT3)
+#   info : |    491 |       13888 |      1 | FK/zuf_clockgen/wrapper/clockgen_wc_0/Mmux_wc_ip_dclk_nxt3_G/I3 (LUT6)
+#   info : |     53 |       13941 |      1 | FK/zuf_clockgen/wrapper/clockgen_wc_0/Mmux_wc_ip_dclk_nxt3_G/O (LUT6)
+#   info : |      9 |       13950 |      1 | FK/zuf_clockgen/wrapper/clockgen_wc_0/Mmux_wc_ip_dclk_nxt3/I1 (MUXF7)
+#   info : |    114 |       14064 |      2 | FK/zuf_clockgen/wrapper/clockgen_wc_0/Mmux_wc_ip_dclk_nxt3/O (MUXF7)
+#   info : |   3579 |       17643 |      1 | FK/xdlName_jbedibhechfagfgbbda/cki_inv/I0 (LUT1)
+#   info : |     53 |       17696 |      1 | FK/xdlName_jbedibhechfagfgbbda/cki_inv/O (LUT1)
+#   info : |   3210 |       20906 |      0 | FK/xdlName_jbedibhechfagfgbbda/cko/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20906ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/mxifmxif_sys_pclk_in_zpt_ibuf/IB (IBUFDS)
+#   info : |   1089 |        1089 |      1 | RTB/zins_fp_ctrl/mxifmxif_sys_pclk_in_zpt_ibuf/O (IBUFDS)
+#   info : |      0 |        1089 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |        1893 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   1913 |        3806 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/bufg_0/I (BUFG)
+#   info : |    120 |        3926 |    712 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/bufg_0/O (BUFG)
+#   info : |   2781 |        6707 |      1 | RTB/zins_fp_ctrl/wrapper/synchronous_readback/dclk_posedge_ready_0/C (FDRE)
+#   info : |    197 |        6904 |      1 | RTB/zins_fp_ctrl/wrapper/synchronous_readback/dclk_posedge_ready_0/Q (FDRE)
+#   info : |   2046 |        8950 |      1 | zpl_iwa_dclk_posedge_ready\[0\]/I0 (LUT2)
+#   info : |     53 |        9003 |      1 | zpl_iwa_dclk_posedge_ready\[0\]/O (LUT2)
+#   info : |    807 |        9810 |      1 | FK/zuf_clockgen/wrapper/dclk_posedge_ready\[0\]1/I0 (LUT2)
+#   info : |     68 |        9878 |      1 | FK/zuf_clockgen/wrapper/dclk_posedge_ready\[0\]1/O (LUT2)
+#   info : |    582 |       10460 |      1 | FK/zuf_clockgen/wrapper/clockgen_mode_pilote_0/clockgen_logic_0/not_ready\[0\]1/I3 (LUT5)
+#   info : |     53 |       10513 |      6 | FK/zuf_clockgen/wrapper/clockgen_mode_pilote_0/clockgen_logic_0/not_ready\[0\]1/O (LUT5)
+#   info : |    616 |       11129 |      1 | FK/zuf_clockgen/wrapper/clockgen_mode_pilote_0/clockgen_logic_0/dclk_posedge_en\[0\]1/I4 (LUT6)
+#   info : |     53 |       11182 |     35 | FK/zuf_clockgen/wrapper/clockgen_mode_pilote_0/clockgen_logic_0/dclk_posedge_en\[0\]1/O (LUT6)
+#   info : |    714 |       11896 |      1 | FK/zuf_clockgen/wrapper/dclk_posedge_en_0_and00001/I2 (LUT3)
+#   info : |     53 |       11949 |     67 | FK/zuf_clockgen/wrapper/dclk_posedge_en_0_and00001/O (LUT3)
+#   info : |    884 |       12833 |      1 | FK/zuf_clockgen/wrapper/svaclk_edge_en/I4 (LUT5)
+#   info : |     53 |       12886 |      1 | FK/zuf_clockgen/wrapper/svaclk_edge_en/O (LUT5)
+#   info : |    458 |       13344 |      1 | FK/zuf_clockgen/wrapper/sys_svaclk_en1/I2 (LUT3)
+#   info : |     53 |       13397 |     49 | FK/zuf_clockgen/wrapper/sys_svaclk_en1/O (LUT3)
+#   info : |    491 |       13888 |      1 | FK/zuf_clockgen/wrapper/clockgen_wc_0/Mmux_wc_ip_dclk_nxt3_G/I3 (LUT6)
+#   info : |     53 |       13941 |      1 | FK/zuf_clockgen/wrapper/clockgen_wc_0/Mmux_wc_ip_dclk_nxt3_G/O (LUT6)
+#   info : |      9 |       13950 |      1 | FK/zuf_clockgen/wrapper/clockgen_wc_0/Mmux_wc_ip_dclk_nxt3/I1 (MUXF7)
+#   info : |    114 |       14064 |      2 | FK/zuf_clockgen/wrapper/clockgen_wc_0/Mmux_wc_ip_dclk_nxt3/O (MUXF7)
+#   info : |   3579 |       17643 |      1 | FK/xdlName_jbedibhechfagfgbbda/cki_inv/I0 (LUT1)
+#   info : |     53 |       17696 |      1 | FK/xdlName_jbedibhechfagfgbbda/cki_inv/O (LUT1)
+#   info : |   3210 |       20906 |      0 | FK/xdlName_jbedibhechfagfgbbda/cko/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 19389ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/I1 (BUFGCTRL)
+#   info : |    120 |         120 |   2617 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O (BUFGCTRL)
+#   info : |   1971 |        2091 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_registers_dut_0/reg_sys_xclk_enable_RnM/C (FDRE)
+#   info : |    197 |        2288 |      8 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_registers_dut_0/reg_sys_xclk_enable_RnM/Q (FDRE)
+#   info : |   1149 |        3437 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/I1 (LUT3)
+#   info : |     53 |        3490 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/_or00001/O (LUT3)
+#   info : |   6067 |        9557 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/RST (MMCME2_ADV)
+#   info : |   3000 |       12557 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk/LOCKED (MMCME2_ADV)
+#   info : |   6719 |       19276 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/I0 (LUT3)
+#   info : |     53 |       19329 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/O (LUT3)
+#   info : |     60 |       19389 |      0 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 15917ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/mxfcmxif_sys_mclk_zpt_ibuf/I (IBUFDS)
+#   info : |   1064 |        1064 |      1 | RTB/zins_fp_ctrl/mxfcmxif_sys_mclk_zpt_ibuf/O (IBUFDS)
+#   info : |      0 |        1064 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |        1868 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   1932 |        3800 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/bufg_0/I (BUFG)
+#   info : |    120 |        3920 |   2122 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/bufg_0/O (BUFG)
+#   info : |   1924 |        5844 |      1 | FK/zuf_clockgen/wrapper/clockgen_pclkgen_0/sys_pclk_en_RnM/C (FDRE)
+#   info : |    197 |        6041 |     94 | FK/zuf_clockgen/wrapper/clockgen_pclkgen_0/sys_pclk_en_RnM/Q (FDRE)
+#   info : |    729 |        6770 |      1 | FK/zuf_clockgen/wrapper/dclk_posedge_en_int_0_or00001/I3 (LUT6)
+#   info : |     53 |        6823 |     54 | FK/zuf_clockgen/wrapper/dclk_posedge_en_int_0_or00001/O (LUT6)
+#   info : |    800 |        7623 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_edge_en_SW0/I1 (LUT3)
+#   info : |     53 |        7676 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_edge_en_SW0/O (LUT3)
+#   info : |    459 |        8135 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_edge_en/I3 (LUT6)
+#   info : |     53 |        8188 |     20 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_edge_en/O (LUT6)
+#   info : |    600 |        8788 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_delay_nxt1/I1 (LUT6)
+#   info : |     53 |        8841 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_delay_nxt1/O (LUT6)
+#   info : |    465 |        9306 |      1 | FK/zuf_clockgen/wrapper/dclk_delay_nxt_1_mux00001/I0 (LUT3)
+#   info : |     53 |        9359 |      2 | FK/zuf_clockgen/wrapper/dclk_delay_nxt_1_mux00001/O (LUT3)
+#   info : |   6558 |       15917 |      0 | FK/xdlName_hjejfaabdchcachbfea/cko/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 15917ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/mxfcmxif_sys_mclk_zpt_ibuf/IB (IBUFDS)
+#   info : |   1064 |        1064 |      1 | RTB/zins_fp_ctrl/mxfcmxif_sys_mclk_zpt_ibuf/O (IBUFDS)
+#   info : |      0 |        1064 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0/IDATAIN (IDELAYE2)
+#   info : |    804 |        1868 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0/DATAOUT (IDELAYE2)
+#   info : |   1932 |        3800 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/bufg_0/I (BUFG)
+#   info : |    120 |        3920 |   2122 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/bufg_0/O (BUFG)
+#   info : |   1924 |        5844 |      1 | FK/zuf_clockgen/wrapper/clockgen_pclkgen_0/sys_pclk_en_RnM/C (FDRE)
+#   info : |    197 |        6041 |     94 | FK/zuf_clockgen/wrapper/clockgen_pclkgen_0/sys_pclk_en_RnM/Q (FDRE)
+#   info : |    729 |        6770 |      1 | FK/zuf_clockgen/wrapper/dclk_posedge_en_int_0_or00001/I3 (LUT6)
+#   info : |     53 |        6823 |     54 | FK/zuf_clockgen/wrapper/dclk_posedge_en_int_0_or00001/O (LUT6)
+#   info : |    800 |        7623 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_edge_en_SW0/I1 (LUT3)
+#   info : |     53 |        7676 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_edge_en_SW0/O (LUT3)
+#   info : |    459 |        8135 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_edge_en/I3 (LUT6)
+#   info : |     53 |        8188 |     20 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_edge_en/O (LUT6)
+#   info : |    600 |        8788 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_delay_nxt1/I1 (LUT6)
+#   info : |     53 |        8841 |      1 | FK/zuf_clockgen/wrapper/clockgen_dclkdelay\[1\]/dclk_delay_nxt1/O (LUT6)
+#   info : |    465 |        9306 |      1 | FK/zuf_clockgen/wrapper/dclk_delay_nxt_1_mux00001/I0 (LUT3)
+#   info : |     53 |        9359 |      2 | FK/zuf_clockgen/wrapper/dclk_delay_nxt_1_mux00001/O (LUT3)
+#   info : |   6558 |       15917 |      0 | FK/xdlName_hjejfaabdchcachbfea/cko/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 12687ps
+#   info : |      0 |           0 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/virtex7_pll_fib/CLKOUT0 (MMCME2_ADV)
+#   info : |   1733 |        1733 |      1 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/I0 (BUFGCTRL)
+#   info : |    120 |        1853 |    445 | RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O (BUFGCTRL)
+#   info : |   1926 |        3779 |      1 | RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_fifo_async_0/rst_RnM/C (FDRE)
+#   info : |    197 |        3976 |    137 | RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/fib_bridge_rx_fifo_async_0/rst_RnM/Q (FDRE)
+#   info : |   3126 |        7102 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/rstblk\/wr_rst_asreg/PRE (FDPE)
+#   info : |    361 |        7463 |      2 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/rstblk\/wr_rst_asreg/Q (FDPE)
+#   info : |    245 |        7708 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/rstblk\/wr_rst_comb1/I1 (LUT2)
+#   info : |     53 |        7761 |      2 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/rstblk\/wr_rst_comb1/O (LUT2)
+#   info : |    542 |        8303 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/rstblk\/wr_rst_reg_1/PRE (FDPE)
+#   info : |    389 |        8692 |     35 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/rstblk\/wr_rst_reg_1/Q (FDPE)
+#   info : |   1016 |        9708 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/wpntr\/count_d1_7/CLR (FDCE)
+#   info : |    485 |       10193 |      4 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/wpntr\/count_d1_7/Q (FDCE)
+#   info : |   1231 |       11424 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/gwas_wsts\/c1\/v1_3_and00001/I1 (LUT4)
+#   info : |     53 |       11477 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/gwas_wsts\/c1\/v1_3_and00001/O (LUT4)
+#   info : |     12 |       11489 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/gwas_wsts\/c1\/gmux_gm\[0\]_gm1_m1_CARRY4/S[3] (CARRY4)
+#   info : |    221 |       11710 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/gwas_wsts\/c1\/gmux_gm\[0\]_gm1_m1_CARRY4/CO[3] (CARRY4)
+#   info : |      0 |       11710 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/gwas_wsts\/c1\/gmux_gm\[4\]_gms_ms_CARRY4/CI (CARRY4)
+#   info : |    195 |       11905 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/gwas_wsts\/c1\/gmux_gm\[4\]_gms_ms_CARRY4/CO[0] (CARRY4)
+#   info : |    672 |       12577 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/gwas_wsts\/ram_full_i_or00001/I3 (LUT4)
+#   info : |     53 |       12630 |      1 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/gwas_wsts\/ram_full_i_or00001/O (LUT4)
+#   info : |     57 |       12687 |      0 | RTB/zins_fp_ctrl/wrapper/srb_bridge/srb_bridge_fib2srb_fifo_0/fifo1023x36_fwft_0/fifo1023x36_fwft_0/BU2/U0\/grf_rf\/gl0_wr\/gwas_wsts\/ram_full_fb_i/D (FDPE)
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  INTERNAL DATA PATHS (FILTERED): 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step Internal Data Paths Analysis : Done in     elapsed:0.4 s   user:0.33 s    system:0.4 s     %cpu:813.19       load:0.84       fm:181656 m      vm:639 m      vm:+16 m      um:258 m      um:+16 m
+#   step From FPGA inputs to data analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM SOCKET TO DATA PATHS: 1/1 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 9709ps
+#   info : |      0 |           0 |      1 | top/FP_00_09_00_08/ClockRegion000RD_18B/dser0/I1/O (IBUFDS)
+#   info : |   9709 |        9709 |      0 | top/FP_00_09_00_08/ClockRegion000RD_18B/dser0/lvdsdes/ld_0/D (LDCE)
+#   step From FPGA inputs to data analysis : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181656 m      vm:639 m       vm:+0 m      um:258 m       um:+0 m
+#   step From FPGA inputs to socket analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM SOCKET TO SOCKET PATHS: 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step From FPGA inputs to socket analysis : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181656 m      vm:639 m       vm:+0 m      um:258 m       um:+0 m
+#   step From data to FPGA outputs analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM DATA TO SOCKET PATHS (NOT FILTERED): 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM DATA TO SOCKET PATHS (FILTERED): 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step From data to FPGA outputs analysis : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.84       fm:181656 m      vm:639 m       vm:+0 m      um:258 m       um:+0 m
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m3s, user 0m5.39s, sys 0m0.185s
+#   exec summary : Total memory: 655164 kB - RSS memory: 264264 kB - Data memory: 373864 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:17:31 2023
+command exit code is '0'

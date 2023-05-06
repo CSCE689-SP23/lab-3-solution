@@ -1,0 +1,38 @@
+grid_cmd -queue DEFAULT_QUEUE -njobs 1 -local
+grid_cmd -queue Zebu -njobs 0 -local
+grid_cmd -queue ZebuIse -njobs 20 -local
+grid_cmd -queue ZebuSynthesis -njobs 7 -local
+clocks -localize_clock_tree FPGA
+fpga -inter_die_tdm f -inter_die_tdm_params strategy=PDM_DIRECT
+timing_analysis -use_hdl_names f -delay_min_zfilter_skew 40000 -advanced_async_set_reset_analysis f -pre_fpga CONSTANTS_BASE_DELAY_MODEL
+utf__evaluate_default_generated_commands
+zpar -effort medium
+eco -reserve_qiwc 2048 -reserve_fwc 1152 -reserve_force 32 -reserve_monitor 0 -enable false
+coverage -auto_bin_max 64
+synthesis -use_vfs false
+memories -zrm_latency_encoding ONEHOT
+# open source file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/utf/default_commands.utf'
+nfs_settings -max_retries 120 -delay 1000 -access_level 5
+fpga -parff true
+timing_analysis -post_fpga BACK_ANNOTATED
+ztopbuild -advanced_command {enable advanced_incremental_mode}
+set_perf_flow -patch 2020.03-2
+set_perf_flow -patch_list {2020.03 2020.03-1 2020.03-2 2020.03-LCA 2020.03-SP1-1-LCA}
+set_perf_flow flow1
+# close source file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/utf/default_commands.utf'
+# open source file './src/settings.utf'
+architecture_file -filename /mnt/quinn_zebu/ZEBU_SYSTEM_DIR/config/zse_configuration.tcl
+# close source file './src/settings.utf'
+vcs_exec_command src/vcs_cmd.sh
+set_hwtop -module top
+design_size -mode AUTO
+debug -all true
+memories -drop_write_only false
+dpi_synthesis -enable all
+system_tasks -enable -task {$display}
+assertion_synthesis -enable ALL -never_fatal
+zforce -rtlname top.u_stb.proba_wr
+zforce -rtlname top.u_stb.proba_rd
+zforce -rtlname top.u_stb.rstn
+probe_signals -rtlname top.u_stb.cnt_error_in
+probe_signals -rtlname top.u_stb.cnt_error_out

@@ -1,0 +1,225 @@
+Module top {
+	Net clk0 wire -dir UN -sign UN
+	Net clk1 wire -dir UN -sign UN
+	Net rstn wire -dir UN -sign UN
+	Net errorin wire -dir UN -sign UN
+	Net errorout wire -dir UN -sign UN
+	Net data_write {8:0} wire -dir UN -sign UN
+	Net data_read {8:0} wire -dir UN -sign UN
+	Net ready_write wire -dir UN -sign UN
+	Net ready_read wire -dir UN -sign UN
+	Net we wire -dir UN -sign UN
+	Net re wire -dir UN -sign UN
+	Instance dut u_dut	
+	Instance stb u_stb	
+}
+Module parity_check {
+	Port clk IN
+	Port ena IN
+	Port a IN
+	Port error OUT
+	Net clk wire -dir IN -sign UN
+	Net ena wire -dir IN -sign UN
+	Net a {8:0} wire -dir IN -sign UN
+	Net error reg -dir OUT -sign UN
+	Scope sva_parity_error {
+	}
+}
+Module clkg {
+	Port clkin IN
+	Port enable IN
+	Port clkout OUT
+	Net clkin wire -dir IN -sign UN
+	Net enable wire -dir IN -sign UN
+	Net clkout wire -dir OUT -sign UN
+	Net enable_r reg -dir UN -sign UN
+}
+Module dut {
+	Port clk0 IN
+	Port clk1 IN
+	Port rstn IN
+	Port we IN
+	Port datain IN
+	Port re IN
+	Port readyin OUT
+	Port dataout OUT
+	Port readyout OUT
+	Port error OUT
+	Net clk0 wire -dir IN -sign UN
+	Net clk1 wire -dir IN -sign UN
+	Net rstn wire -dir IN -sign UN
+	Net we wire -dir IN -sign UN
+	Net datain {8:0} wire -dir IN -sign UN
+	Net re wire -dir IN -sign UN
+	Net readyin wire -dir OUT -sign UN
+	Net dataout {8:0} wire -dir OUT -sign UN
+	Net readyout wire -dir OUT -sign UN
+	Net error wire -dir OUT -sign UN
+	Net readyin_n wire -dir UN -sign UN
+	Net readyout_n wire -dir UN -sign UN
+	Net dataout_noparity {7:0} wire -dir UN -sign UN
+	Net parout wire -dir UN -sign UN
+	Instance parity_check u_check	
+	Instance fifo_0000 u_fifo	
+	Instance parity u_parity	
+}
+Module parity {
+	Port a IN
+	Port par OUT
+	Net a {7:0} wire -dir IN -sign UN
+	Net par wire -dir OUT -sign UN
+}
+Module ram {
+	Port clk IN
+	Port a IN
+	Port d IN
+	Port we IN
+	Net clk wire -dir IN -sign UN
+	Net a {7:0} wire -dir IN -sign UN
+	Net d {8:0} wire -dir IN -sign UN
+	Net we wire -dir IN -sign UN
+	Net mem {8:0} reg {0:255} -dir UN -sign UN
+}
+Module rom {
+	Port clk IN
+	Port a IN
+	Port q OUT
+	Net clk wire -dir IN -sign UN
+	Net a {7:0} wire -dir IN -sign UN
+	Net q {8:0} reg -dir OUT -sign UN
+	Net mem {8:0} reg {0:255} -dir UN -sign UN
+}
+Module stb {
+	Port clk0 OUT
+	Port clk1 OUT
+	Port rstn OUT
+	Port we OUT
+	Port data_wr OUT
+	Port re OUT
+	Port ready_wr IN
+	Port data_rd IN
+	Port ready_rd IN
+	Port error IN
+	Net clk0 reg -dir OUT -sign UN
+	Net clk1 reg -dir OUT -sign UN
+	Net rstn reg -dir OUT -sign UN
+	Net we reg -dir OUT -sign UN
+	Net data_wr {8:0} wire -dir OUT -sign UN
+	Net re reg -dir OUT -sign UN
+	Net ready_wr wire -dir IN -sign UN
+	Net data_rd {8:0} wire -dir IN -sign UN
+	Net ready_rd wire -dir IN -sign UN
+	Net error wire -dir IN -sign UN
+	Var cnt_error_in integer -dir UN 
+	Var cnt_error_out integer -dir UN 
+	Net addr_wr {7:0} reg -dir UN -sign UN
+	Net addr_wr_nxt {7:0} wire -dir UN -sign UN
+	Net addr_rd {7:0} reg -dir UN -sign UN
+	Net addr_rd_nxt {7:0} reg -dir UN -sign UN
+	Net proba_wr {9:0} reg -dir UN -sign UN
+	Net proba_rd {9:0} reg -dir UN -sign UN
+	Net write wire -dir UN -sign UN
+	Net read wire -dir UN -sign UN
+	Net clk0_cycle_counter {47:0} reg -dir UN -sign UN
+	Net clk1_cycle_counter {47:0} reg -dir UN -sign UN
+	Net ram_we wire -dir UN -sign UN
+	Instance zceiClockPort u_clk0	
+	Instance zceiClockPort u_clk1	
+	Instance proba u0_proba	
+	Instance rom u_rom	
+	Instance proba_0000 u1_proba	
+	Instance ram u_ram	
+	Instance parity_check u_check	
+}
+Module proba {
+	Port clk IN
+	Port rstn IN
+	Port level IN
+	Port hit OUT
+	Net clk wire -dir IN -sign UN
+	Net rstn wire -dir IN -sign UN
+	Net level {9:0} wire -dir IN -sign UN
+	Net hit reg -dir OUT -sign UN
+	Net mask {9:0} wire -dir UN -sign UN
+	Net sht {9:0} reg -dir UN -sign UN
+	Net sht_a {9:0} wire -dir UN -sign UN
+}
+Module fifo_usage_spy {
+	Port clk IN
+	Port rstn IN
+	Port remain IN
+	Net clk wire -dir IN -sign UN
+	Net rstn wire -dir IN -sign UN
+	Net remain {3:0} wire -dir IN -sign UN
+	Net min {3:0} reg -dir UN -sign UN
+	Function fifo_usage_spy_notify {
+		Var min {3:0} bit -sign UN
+	}
+}
+Module zceiClockPort {
+}
+Module fifo_0000 -origname fifo {
+	Port rstn_i IN
+	Port wclk_i IN
+	Port rclk_i IN
+	Port we_i IN
+	Port d_i IN
+	Port re_i IN
+	Port q_o OUT
+	Port qa_o OUT
+	Port ff_o OUT
+	Port hff_o OUT
+	Port ef_o OUT
+	Net rstn_i wire -dir IN -sign UN
+	Net wclk_i wire -dir IN -sign UN
+	Net rclk_i wire -dir IN -sign UN
+	Net we_i wire -dir IN -sign UN
+	Net d_i {7:0} wire -dir IN -sign UN
+	Net re_i wire -dir IN -sign UN
+	Net q_o {7:0} wire -dir OUT -sign UN
+	Net qa_o {7:0} wire -dir OUT -sign UN
+	Net ff_o wire -dir OUT -sign UN
+	Net hff_o wire -dir OUT -sign UN
+	Net ef_o wire -dir OUT -sign UN
+	Net wa {2:0} reg -dir UN -sign UN
+	Net wa_nxt {2:0} wire -dir UN -sign UN
+	Net wag {2:0} wire -dir UN -sign UN
+	Net wag_nxt {2:0} wire -dir UN -sign UN
+	Net ra {2:0} reg -dir UN -sign UN
+	Net ra_nxt {2:0} wire -dir UN -sign UN
+	Net rag {2:0} wire -dir UN -sign UN
+	Net rag_nxt {2:0} wire -dir UN -sign UN
+	Net we wire -dir UN -sign UN
+	Net re wire -dir UN -sign UN
+	Net q {7:0} reg -dir UN -sign UN
+	Net q_a {7:0} wire -dir UN -sign UN
+	Net ef reg -dir UN -sign UN
+	Net ff reg -dir UN -sign UN
+	Net hff reg -dir UN -sign UN
+	Net w_rag {2:0} reg -dir UN -sign UN
+	Net w_ra {2:0} wire -dir UN -sign UN
+	Net w_remain {3:0} wire -dir UN -sign UN
+	Net wclk_g wire -dir UN -sign UN
+	Net mem {7:0} reg {0:6} -dir UN -sign UN
+	Instance clkg u0_clkg	
+	Instance fifo_usage_spy u_fifo_usage_spy	
+}
+Module proba_0000 -origname proba {
+	Port clk IN
+	Port rstn IN
+	Port level IN
+	Port hit OUT
+	Net clk wire -dir IN -sign UN
+	Net rstn wire -dir IN -sign UN
+	Net level {9:0} wire -dir IN -sign UN
+	Net hit reg -dir OUT -sign UN
+	Net mask {9:0} wire -dir UN -sign UN
+	Net sht {9:0} reg -dir UN -sign UN
+	Net sht_a {9:0} wire -dir UN -sign UN
+}
+# Reopened for append : Uniq
+DveInstanceName {top.u_stb.u_clk0} u_clk0
+DveInstanceName {top.u_stb.u_clk1} u_clk1
+DvePortName {top.u_stb.clk0} {_I_vcs_cdx_s_rw_topu_stb_clk0}
+DvePortName {top.u_stb.clk1} {_I_vcs_cdx_s_rw_topu_stb_clk1}
+# Reopened for append : XMR Xform

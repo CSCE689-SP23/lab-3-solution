@@ -1,0 +1,11 @@
+<ZeBuUiDoc version="1.0" creator="glog" type="xcui">
+ <author>zCui</author>
+ <date>pipo</date>
+ <views>
+  <view order="0" name="Compile profile">
+   <h1>FPGA compilation</h1>
+   <p>Duration per compilation step for each FPGA</p>
+   <p>^TABLE(tools/zMetrics/zCui_pnrsteps_metrics.xml,pnr_steps,DTT)Place &amp; Route steps^TABLE-</p>
+  </view>
+ </views>
+</ZeBuUiDoc>

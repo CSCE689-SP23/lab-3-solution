@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zCuiFpgaParameterSet">
+<sets>
+   <set label="param1">
+       <script>$ZEBU_ROOT/etc/vivado_v7/fpga_monitoring_v7.sh</script>
+       <launch label="L0_Triton_CombiPath">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L0_Triton_CombiPath</parameter>
+           <parameter name="ZEBU_PROCESS_COMBI_PATH">1</parameter>
+       </launch>
+       <launch label="L1_Vivado_emulation_mode">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L1_Vivado_emulation_mode</parameter>
+           <parameter name="VIVADO_ENABLE_EMULATION_MODE">1</parameter>
+       </launch>
+       <launch label="L2_Vivado_Performance_ExploreSLLs">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L2_Vivado_Performance_ExploreSLLs</parameter>
+           <parameter name="ZEBU_DISABLE_TRITON">1</parameter>
+           <parameter name="VIVADO_OPT_DESIGN_OL0PTIONS">-directive Default</parameter>
+           <parameter name="VIVADO_PLACE_DESIGN_OPTIONS">-directive SSI_ExtraTimingOpt</parameter>
+           <parameter name="VIVADO_ROUTE_DESIGN_OPTIONS">-directive NoTimingRelaxation</parameter>
+       </launch>
+       <launch label="L3_Triton_Remap">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L3_Triton_Area_Remap</parameter>
+           <parameter name="VIVADO_OPT_DESIGN_ENABLE_REMAP">1</parameter>
+       </launch>
+       <launch label="L4_Vivado_Param_LutPinSwapping">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L4_Vivado_Param_LutPinSwapping</parameter>
+           <parameter name="ZEBU_DISABLE_TRITON">1</parameter>
+           <parameter name="VIVADO_SETPARAM_NAME">place.enableLutPinSwapping</parameter>
+           <parameter name="VIVADO_SETPARAM_VALUE">0</parameter>
+       </launch>
+       <launch label="L5_Vivado_Remove_muxcy_xorcy_noTriton">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L5_Vivado_Remove_muxcy_xorcy</parameter>
+           <parameter name="ZEBU_DISABLE_TRITON">1</parameter>
+           <parameter name="ZEBU_REMOVE_ALL_MUXCY_XORCY">1</parameter>
+           <parameter name="ZEBU_NO_INSTR_MUXCY_XORCY">1</parameter>
+       </launch>
+       <launch label="L6_Vivado_Congestion_CompressSLRs">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L6_Vivado_Congestion_CompressSLRs</parameter>
+           <parameter name="ZEBU_DISABLE_TRITON">1</parameter>
+           <parameter name="VIVADO_OPT_DESIGN_OPTIONS">-directive Default</parameter>
+           <parameter name="VIVADO_PLACE_DESIGN_OPTIONS">-directive SSI_HighUtilSLRs</parameter>
+           <parameter name="VIVADO_ROUTE_DESIGN_OPTIONS">-directive Default</parameter>
+       </launch>
+       <launch label="L7_Vivado_Congestion_BalanceSLRs">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L7_Vivado_Congestion_BalanceSLRs</parameter>
+           <parameter name="ZEBU_DISABLE_TRITON">1</parameter>
+           <parameter name="VIVADO_OPT_DESIGN_OPTIONS">-directive Default</parameter>
+           <parameter name="VIVADO_PLACE_DESIGN_OPTIONS">-directive SSI_BalanceSLRs</parameter>
+           <parameter name="VIVADO_ROUTE_DESIGN_OPTIONS">-directive Default</parameter>
+       </launch>
+       <launch label="L8_Triton_Split_Fanout">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L8_Triton_Split_Fanout</parameter>
+           <parameter name="ZEBU_SPLIT_FANOUT">1</parameter>
+           <parameter name="ZEBU_SPLIT_FANOUT_OPTIONS">-l1 16 -l2 16 -splitInFWMacro </parameter>
+       </launch>
+       <launch label="L9_Triton_Delete_Pblock">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L9_Triton_Delete_Pblock</parameter>
+           <parameter name="ZEBU_DELETE_FXMACRO_PBLOCK">1</parameter>
+           <parameter name="ZEBU_LOCK_SOCKET">no</parameter>
+       </launch>
+       <launch label="L10_Vivado_Performance_WLBlockPlacement">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L10_Vivado_WLBlockPlacement</parameter>
+           <parameter name="ZEBU_DISABLE_TRITON">1</parameter>
+           <parameter name="VIVADO_OPT_DESIGN_OPTIONS">-directive Default</parameter>
+           <parameter name="VIVADO_PLACE_DESIGN_OPTIONS">-directive WLDrivenBlockPlacement</parameter>
+           <parameter name="VIVADO_ROUTE_DESIGN_OPTIONS">-directive MoreGlobalIterations</parameter>
+       </launch>
+       <launch label="L11_Vivado_remove_pblock">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L17_Vivado_remove_pblock</parameter>
+           <parameter name="VIVADO_DISABLE_ZCAHSRASH_PBLOCK">1</parameter>
+       </launch>
+       <launch label="L12_DAP_Triton_GP_SLL_SpreadAll">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L12_DAP_Triton_GP_SLL_SpreadAll</parameter>
+           <parameter name="ZEBU_MDTMX_USE">1</parameter>
+           <parameter name="ZEBU_MDTMX_PARTONLY">1</parameter>
+           <parameter name="ZEBU_MDTMX_TOOL">zBlockPartitioning</parameter>
+           <parameter name="VIVADO_TRITON_GP_SPREAD_SLL">1</parameter>
+           <parameter name="VIVADO_TRITON_GP_SLL_UPDATE_YLOC">1</parameter>
+           <parameter name="VIVADO_TRITON_PARTITION_UTIL_ADJUST_FIRST_SECOND">1</parameter>
+           <parameter name="VIVADO_TRITON_PARTITION_LUTFF">1</parameter>
+       </launch>
+       <launch label="L13_Vivado_resize_pblock_to_SLR1">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L18_Vivado_resize_pblock_to_SLR1</parameter>
+           <parameter name="VIVADO_PLACE_ZCAHSRASH_PBLOCK_SLR1">1</parameter>
+       </launch>
+       <launch label="L14_Vivado_Remove_muxcy_xorcy">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L15_Vivado_Remove_muxcy_xorcy</parameter>
+           <parameter name="ZEBU_REMOVE_ALL_MUXCY_XORCY">1</parameter>
+           <parameter name="ZEBU_NO_INSTR_MUXCY_XORCY">1</parameter>
+       </launch>
+       <launch label="L15_zNetgen_noMUXF">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L16_Vivado_noMUXF</parameter>
+           <parameter name="ZNETGEN_CONVERT_MUXFX_TO_LUTS">1</parameter>
+       </launch>
+       <launch label="L16_Vivado_InsertLUT1_LUT56">
+           <parameter name="ZEBU_PARFF_XCUI_FILE_NAME">fpgaparameterset_v7.xcui</parameter>
+           <parameter name="ZEBU_PARFF_XCUI_TARGET_NAME">L17_Vivado_InsertLUT1_LUT56</parameter>
+           <parameter name="VIVADO_ENABLE_INSERT_LUT1_LUT56">1</parameter>
+       </launch>
+   </set>
+</sets>
+<retry_script>$ZEBU_ROOT/etc/ise/zCpuLoad</retry_script>
+<max_depth_of_retry>2</max_depth_of_retry>
+<max_depth_of_relaunch>1</max_depth_of_relaunch>
+<polling_time>1</polling_time>
+</ZeBuUiDoc>

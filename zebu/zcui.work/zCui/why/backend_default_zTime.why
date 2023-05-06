@@ -1,0 +1,15 @@
+ KO input backend_default/tools/zTime/zPar_timing.zti out of date (non equal checksum) <- Backend: default backend/System Compilation/Place and Route System
+ KO input backend_default/zTime_zcui.tcl out of date (non equal checksum)
+ KO input utf_generatefiles/zTime_config.tcl out of date (non equal checksum)
+ OK input internal dependency (structural) <- Backend: default backend/System Compilation/Analyze zPar result
+ KO input backend_default/tools/zTime/zTopBuild_timing.zti out of date (non equal checksum) <- Backend: default backend/System Compilation/Build System
+ KO input /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_zTime_config.tcl out of date (non equal checksum)
+ KO input /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_zTime_report_config.tcl out of date (non equal checksum)
+ OK input internal dependency (structural) <- Final Check/Compilation Profiler (after ZParAnalyzer)
+ KO input backend_default/tools/zTime/zTime_hierarchy.edf.gz out of date (non equal checksum) <- Backend: default backend/System Compilation/Analyze System Building Results
+ KO input backend_default/work.Part_0//./tools/zTime/zCoreBuild_timing.zti out of date (non equal checksum) <- Backend: default backend/System Compilation/zCore Compilation/Analyze zCore Building Results Part_0
+ KO input backend_default/work.Part_0//./tools/zTime/global_time.edf.gz out of date (non equal checksum) <- Backend: default backend/System Compilation/zCore Compilation/Analyze zCore Building Results Part_0
+ KO input backend_default/work.Part_0//./tools/zTime/zTime_clock_domain.cds out of date (non equal checksum) <- Backend: default backend/System Compilation/zCore Compilation/Analyze zCore Building Results Part_0
+ OK input internal dependency (structural) <- Backend: default backend/System Compilation/Analyze zRTB_FW result: U0_M0_IF
+ KO input backend_default/tools/zTime/zPar_timing.zti out of date (non equal checksum) <- Backend: default backend/System Compilation/Analyze zPar result
+ KO input backend_default/U0/M0/IF.src/../../../tools/zTime/global_rtb_time_U0_M0_IF.edf.gz out of date (non equal checksum) <- Backend: default backend/System Compilation/Analyze zRTB_FW result: U0_M0_IF

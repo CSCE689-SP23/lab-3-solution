@@ -1,0 +1,6 @@
+symbolic_path, target_path
+./tools/zPar/design_fpga/U0_M0_F0,../../../U0/M0/F00
+U0/M0/F00.src/fpga.edf.gz,../../../work.Part_0/edif/U0_M0_F0.edf.gz
+U0/M0/F00.src/from_core,../../../work.Part_0/tools/to_zNetgen
+U0/M0/F00.src/from_backend,../../../tools/to_zNetgen
+U0/M0/F08.src/from_backend,../../../tools/to_zNetgen

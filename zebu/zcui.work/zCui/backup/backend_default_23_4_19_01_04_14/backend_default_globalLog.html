@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* micro reset */
+* {
+	box-sizing: border-box;
+}
+html, body, ul {
+	padding: 0; margin: 0;
+}
+body {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.main-header {
+	background: #FFF;
+	z-index : 5;
+}
+.header-inner {
+	display: table;
+	width: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 20px 25px;
+}
+.header-inner > * {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.header-nav {
+    background-color: #EEEEEE;
+	text-align: right;
+}
+.header-nav ul,
+.header-nav li {
+	display: inline;
+	list-style: none;
+}
+.header-nav a {
+	position: relative;
+	display: inline-block;
+	padding: 8px 20px;
+	vertical-align: middle;
+	font-weight: 300; /* between regular and light */
+	letter-spacing: 0.025em;
+	color: inherit;
+	text-decoration: none;
+}
+.header-nav a:after {
+	content: "";
+	position: absolute;
+	bottom: 0; right: 20px; left: 20px;
+	height: 2px;
+	background-color: #B13C2E;
+
+	/* for animation */
+	opacity: 0;
+	transform: translateY(5px);
+	transition: all .4s;
+}
+.header-nav a:hover:after,
+.header-nav a:focus:after {
+	opacity: .6;
+	bottom: 0;
+	transform: translateY(0);
+}
+.header-nav a:focus {
+	outline: none; /* I can do it because I already have a style for that */
+}
+
+/* When navbar is stuck */
+.nav-is-stuck .main-header {
+	position: sticky; 
+}
+.nav-is-stuck .main-header {
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	box-shadow: 0 1px 4px rgba(0,0,0,.15);
+	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.15);
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.15);
+	animation: stickAnim .3s;
+}
+
+@keyframes stickAnim {
+	0% {
+		transform: translateY(-86px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+#header {
+    margin: 0;
+    width: 100%;
+    padding-top: 10px;
+	padding-bottom: 10px;
+    border: 4px;
+    border-bottom-style: solid;
+    border-bottom-color: #000000;
+    text-align: center;
+    background-color: #88047a;
+    font-family: "Helvetica";
+    font-size: 2.0em;
+    color: #ffffff;
+}
+
+.timestamp {
+   font-family: "Helvetica";
+   font-size: 0.5em;
+}
+
+#footer {
+    margin: 0;
+    width: 100%;
+    border: 1px;
+    border-top-style: solid;
+    border-top-color: #bfbfbf;
+    text-align: center;
+    font-family: "Helvetica";
+    font-size: 1.0em;
+    color: #000000;
+}
+#all {
+    //display: table;
+    margin: 0;
+}
+row {
+    display: table-row;
+    margin: 0;
+}
+
+#content {
+    display : table-cell;
+    margin: 0;
+    border: 1px;
+//    border-left-style: solid;
+//    border-left-color: #bfbfbf;
+//    border-right-style: solid;
+//    border-right-color: #bfbfbf;
+    background-color: #ffffff;
+    font-family: "courier";
+    font-size: 14px;
+	padding-top: 5px;
+    padding-bottom: 50px;
+}
+.contentview {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 80px;
+}
+
+.contenttitle-container {
+    display: block;
+    position: relative;
+}
+.contenttitle-container:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  bottom: -4px;
+  left: 0;
+  border-bottom: 5px solid #000;
+  z-index: 1;
+}
+
+.contenttitle {
+    position: relative;
+    display: inline-block;
+    background-color: #000000;
+	border-top-right-radius : 15px;
+    color: #ffffff;
+    font-family: "Helvetica";
+    font-size: 30px;
+    padding: 12px;
+	padding-right: 30px;
+	z-index: 0;
+}
+
+.contenttitle:after {
+  position: absolute;
+  bottom: 0px;
+  width: 15px;
+  height: 15px;
+  content: " ";
+  right: -15px;
+  border: 1px solid #000;
+  border-bottom-left-radius: 15px;
+  border-width: 0 0 1px 1px;
+  box-shadow: -4px 4px 0 #000;
+  -webkit-box-shadow: -4px 4px 0 #000;
+  -moz-box-shadow: -4px 4px 0 #000;
+}
+
+.contenttitle-nav {
+   positive: fixed;
+   display: inline-block;
+   float: right;
+   top: 5%;
+   right: 5%;
+   width : 100px;
+   height: 30px;
+}
+
+.atocview {
+    text-decoration: none;
+    color: #ffffff;
+	background-color : #EEEEEE;
+    font-family: "Helvetica";
+    font-size: 22px;
+}
+.atoctitle0 {
+    text-decoration: none;
+    padding-left: 20px;
+    color: #1f1f7f;
+	background-color : #EEEEEE;
+    font-family: "Helvetica";
+    font-size: 20px;
+}
+.atoctitle1 {
+    text-decoration: none;
+    padding-left: 60px;
+    color: #7f7f1f;
+	background-color : #FFFFFF;
+    font-family: "Helvetica";
+    font-size: 18px;
+}
+h1 {
+    /*color: #1f1f7f;*/
+	color: #000000;
+    font-family: "Helvetica";
+}
+h2 {
+    color: #555555;
+    font-family: "Helvetica";
+}
+.toctableview {
+    background-color: #000000;
+    padding: 3px;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.toctable {
+    border: 1px;
+    border-style: solid;
+    margin: 8px;
+    border-inline-start-color: #bfbfbf;
+    border-inline-end-color: #bfbfbf;
+    border-block-start-color: #bfbfbf;
+    border-block-end-color: #bfbfbf;
+    margin-bottom: 20px;
+}
+.glogtable {
+    border: 1px;
+    margin: 8px;
+    border-style: solid;
+    background-color: #efefef;
+    border-collapse: collapse;
+}
+.glogtable th {
+    border: 1px solid #000000;
+	color: #FFFFFF;
+	background-color: #88047a;
+    padding: 2px;
+    text-align: right;
+    font-family: "Helvetica";
+}
+.glogtable td {
+    border: 1px;
+    border-style: solid;
+    padding: 2px;
+    text-align: right;
+}
+
+#menu, #menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menu {
+    margin-top: 10px;
+    text-align: left;
+}
+#menu li {
+    display: inline-block;
+}
+#menu ul li {
+    display: inherit;
+}
+#menu a {
+    text-decoration: none;
+    display: block;
+	color:#000;
+}
+#menu ul {
+    position: absolute;
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+#menu li:hover ul {
+    left: auto;
+}
+</style>
+<title>Performance diagnostic profiler</title>
+</head>
+<body>
+<div id="header" class="main-header">
+<div>backend_default [ ZS3 ]<span class="timestamp">&nbsp;Wed 19 Apr 2023 01:22:26 AM CDT</span></div>
+<nav>
+<!-- toc -->
+<ul id="menu" class="header-nav">
+<li><a href="#view0" class="atocview">Performance</a><ul>
+<li><a href="#anchor_0" class="atoctitle0">Timing Analysis</a></li>
+<li><a href="#anchor_1" class="atoctitle1">Theoretical frequency: 10000 Khz</a></li>
+<li><a href="#anchor_2" class="atoctitle0">System Compilation</a></li>
+<li><a href="#anchor_3" class="atoctitle1">Final resource utilization and IO cut by core</a></li>
+<li><a href="#anchor_4" class="atoctitle0">zCore Compilation : Part_0</a></li>
+<li><a href="#anchor_5" class="atoctitle1">Final resource utilization and IO cut by FPGA</a></li>
+<li><a href="#anchor_6" class="atoctitle0">Routing paths</a></li>
+<li><a href="#anchor_7" class="atoctitle0">Place and Route System</a></li>
+<li><a href="#anchor_8" class="atoctitle1">Resource utilization and IO cut after routing</a></li>
+</ul></li>
+
+<li><a href="#view1" class="atocview">Target</a><ul>
+<li><a href="#anchor_9" class="atoctitle0">System Compilation</a></li>
+<li><a href="#anchor_10" class="atoctitle1">Size</a></li>
+<li><a href="#anchor_11" class="atoctitle1">Hardware Configuration</a></li>
+<li><a href="#anchor_12" class="atoctitle0">System compilation</a></li>
+<li><a href="#anchor_13" class="atoctitle1">Design size estimation</a></li>
+<li><a href="#anchor_14" class="atoctitle0">zCore Compilation : Part_0</a></li>
+<li><a href="#anchor_15" class="atoctitle1">Size</a></li>
+</ul></li>
+
+<li><a href="#view2" class="atocview">Design</a><ul>
+<li><a href="#anchor_16" class="atoctitle0">Synthesis</a></li>
+<li><a href="#anchor_17" class="atoctitle1">Top 10 (ordered by reg)</a></li>
+<li><a href="#anchor_18" class="atoctitle1">Top 10 (ordered by lut)</a></li>
+<li><a href="#anchor_19" class="atoctitle1">Top 10 (ordered by IO)</a></li>
+<li><a href="#anchor_20" class="atoctitle0">Memories</a></li>
+<li><a href="#anchor_21" class="atoctitle1">Memory types</a></li>
+<li><a href="#anchor_22" class="atoctitle0">System Compilation</a></li>
+<li><a href="#anchor_23" class="atoctitle1">Statistics</a></li>
+<li><a href="#anchor_24" class="atoctitle1">Size</a></li>
+</ul></li>
+
+<li><a href="#view3" class="atocview">Optimization</a><ul>
+<li><a href="#anchor_25" class="atoctitle0">System compilation</a></li>
+<li><a href="#anchor_26" class="atoctitle1">Global compilation options</a></li>
+<li><a href="#anchor_27" class="atoctitle1">Logic optimization options</a></li>
+<li><a href="#anchor_28" class="atoctitle1">Target</a></li>
+<li><a href="#anchor_29" class="atoctitle1">Partitioning</a></li>
+<li><a href="#anchor_30" class="atoctitle0">zCore Compilation : Part_0</a></li>
+<li><a href="#anchor_31" class="atoctitle1">Partitioning</a></li>
+<li><a href="#anchor_32" class="atoctitle0">Route System</a></li>
+<li><a href="#anchor_33" class="atoctitle0">Timing analysis</a></li>
+</ul></li>
+
+<li><a href="#view4" class="atocview">Clock</a><ul>
+<li><a href="#anchor_34" class="atoctitle0">System compilation</a></li>
+<li><a href="#anchor_35" class="atoctitle1">Clock path analysis</a></li>
+<li><a href="#anchor_36" class="atoctitle1">Clock localization</a></li>
+<li><a href="#anchor_37" class="atoctitle0">zCore Compilation : Part_0</a></li>
+<li><a href="#anchor_38" class="atoctitle1">Clock localization</a></li>
+</ul></li>
+
+<li><a href="#view5" class="atocview">Memory</a><ul>
+<li><a href="#anchor_39" class="atoctitle0">Delays summary</a></li>
+<li><a href="#anchor_40" class="atoctitle0">ZMEM</a></li>
+<li><a href="#anchor_41" class="atoctitle1">Top 10 (ordered by size)</a></li>
+<li><a href="#anchor_42" class="atoctitle1">Top 10 (ordered by number of ports)</a></li>
+<li><a href="#anchor_43" class="atoctitle0">Delays</a></li>
+</ul></li>
+
+<li><a href="#view6" class="atocview">Partitioning</a><ul>
+<li><a href="#anchor_44" class="atoctitle0">zCore Compilation : Part_0</a></li>
+<li><a href="#anchor_45" class="atoctitle1">Resource utilization and IO cut by FPGA</a></li>
+</ul></li>
+
+<li><a href="#view7" class="atocview">Compile profile</a><ul>
+<li><a href="#anchor_46" class="atoctitle0">Compilation Summary</a></li>
+<li><a href="#anchor_47" class="atoctitle0">Compile time with delay (slot and grid)</a></li>
+<li><a href="#anchor_48" class="atoctitle0">Compile time without delay</a></li>
+<li><a href="#anchor_49" class="atoctitle0">Main Compilation Stages</a></li>
+<li><a href="#anchor_50" class="atoctitle1">Front End Stages Timing</a></li>
+<li><a href="#anchor_51" class="atoctitle1">Top 10 Synthesis Bundles</a></li>
+<li><a href="#anchor_52" class="atoctitle1">Back-end Stages</a></li>
+<li><a href="#anchor_53" class="atoctitle1">Top 5 zCore</a></li>
+<li><a href="#anchor_54" class="atoctitle1">Top 10 FPGAs</a></li>
+<li><a href="#anchor_55" class="atoctitle0">FPGA Winner Details</a></li>
+<li><a href="#anchor_56" class="atoctitle0">Hosts</a></li>
+<li><a href="#anchor_57" class="atoctitle0">Memory usage</a></li>
+<li><a href="#anchor_58" class="atoctitle0">Job Queue Memory Analysis</a></li>
+<li><a href="#anchor_59" class="atoctitle0">Grid Delay</a></li>
+<li><a href="#anchor_60" class="atoctitle0">Grid Delay Per Job Queue</a></li>
+<li><a href="#anchor_61" class="atoctitle0">Compile times</a></li>
+<li><a href="#anchor_62" class="atoctitle0">FPGA compilation</a></li>
+</ul></li>
+
+<li><a href="#view8" class="atocview">Warnings/Errors</a><ul>
+<li><a href="#anchor_63" class="atoctitle0">System Compilation</a></li>
+<li><a href="#anchor_64" class="atoctitle1">Warning</a></li>
+<li><a href="#anchor_65" class="atoctitle0">zCoreCompilation : default</a></li>
+<li><a href="#anchor_66" class="atoctitle1">Warning</a></li>
+<li><a href="#anchor_67" class="atoctitle0">zCoreCompilation : Part_0</a></li>
+<li><a href="#anchor_68" class="atoctitle1">Warning</a></li>
+<li><a href="#anchor_69" class="atoctitle0">Place and route system</a></li>
+<li><a href="#anchor_70" class="atoctitle1">Warning</a></li>
+<li><a href="#anchor_71" class="atoctitle0">TimingDB</a></li>
+<li><a href="#anchor_72" class="atoctitle1">Warning</a></li>
+</ul></li></ul>
+
+</nav>
+</div>
+
+<div id="all">
+<div id="row">
+<div id="content">
+<!-- view Performance -->
+<a name="view0" class="contenttitle-container"><div class="contenttitle">Performance</div></a>
+<div class="contentview">
+<a name="anchor_0"><h1>Timing Analysis</h1></a>
+<a name="anchor_1"><h2>Theoretical frequency: 10000 Khz</h2></a>
+&nbsp;&nbsp;&nbsp;(using default settings)<br>
+<br>
+&nbsp;&nbsp;&nbsp;Driver clock frequency is limited by clock paths (driverClk.Period = zClockSkewTime + DELAY_MIN_SKEW_DRVCLK) : 100ns<br>
+&nbsp;&nbsp;&nbsp;see Clock tab<br>
+&nbsp;&nbsp;&nbsp;see zTime.html<br>
+&nbsp;&nbsp;&nbsp;source : <a href="../../../backend_default/zTime.html">zTime.log</a><br>
+<br>
+&nbsp;&nbsp;&nbsp;Longest inter-fpga filter path delay is : 33 ns<br>
+&nbsp;&nbsp;&nbsp;Critical routing data path delay : 80 ns<br>
+&nbsp;&nbsp;&nbsp;. Constant part&nbsp;&nbsp;&nbsp;&nbsp;: 20 ns<br>
+&nbsp;&nbsp;&nbsp;. Multiplexed part : 0 ns<br>
+&nbsp;&nbsp;&nbsp;. Memory latency part : 60 ns<br>
+&nbsp;&nbsp;&nbsp;Xclock frequency is : 450 MHz<br>
+&nbsp;&nbsp;&nbsp;Longest memory latency is : 120 ns<br>
+&nbsp;&nbsp;&nbsp;Fast Waveform Captures detected, if use at run-time the driverClk frequency might be limited.<br>
+<a name="anchor_2"><h1>System Compilation</h1></a>
+<a name="anchor_3"><h2>Final resource utilization and IO cut by core</h2></a>
+<br>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp;ZCORE &nbsp;</th><th style="text-align:right">&nbsp;REG&nbsp;</th><th style="text-align:right">&nbsp;LUT&nbsp;</th><th style="text-align:right">&nbsp;RAMLUT&nbsp;</th><th style="text-align:right">&nbsp;LUT6&nbsp;</th><th style="text-align:right">&nbsp;MUXCY&nbsp;</th><th style="text-align:right">&nbsp;BRAM&nbsp;</th><th style="text-align:right">&nbsp;DSP&nbsp;</th><th style="text-align:right">&nbsp;LUT (w/o weighting)&nbsp;</th><th style="text-align:right">&nbsp;IO&nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp;Part_0&nbsp;</td><td style="text-align:right">&nbsp;595&nbsp;</td><td style="text-align:right">&nbsp;275&nbsp;</td><td style="text-align:right">&nbsp;    72&nbsp;</td><td style="text-align:right">&nbsp;  29&nbsp;</td><td style="text-align:right">&nbsp;    2&nbsp;</td><td style="text-align:right">&nbsp;   0&nbsp;</td><td style="text-align:right">&nbsp;  0&nbsp;</td><td style="text-align:right">&nbsp;                275&nbsp;</td><td style="text-align:right">&nbsp; 0&nbsp;</td></tr>
+</table>
+<a name="anchor_4"><h1>zCore Compilation : Part_0</h1></a>
+<a name="anchor_5"><h2>Final resource utilization and IO cut by FPGA</h2></a>
+<br>
+ FPGAs after partitioning and clock localization steps.<br>
+<br>
+ FPGAs after partitioning and clock localization steps.<br>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp;FPGA         &nbsp;</th><th style="text-align:right">&nbsp;         REG&nbsp;</th><th style="text-align:right">&nbsp;(*)MUXF7,8&nbsp;</th><th style="text-align:right">&nbsp;         LUT&nbsp;</th><th style="text-align:right">&nbsp;    RAMLUT&nbsp;</th><th style="text-align:right">&nbsp;                   (**)MUXCY&nbsp;</th><th style="text-align:right">&nbsp;   BRAM&nbsp;</th><th style="text-align:right">&nbsp;URAM&nbsp;</th><th style="text-align:right">&nbsp;    DSP&nbsp;</th><th style="text-align:right">&nbsp;CUT&nbsp;</th><th style="text-align:right">&nbsp;STATUS&nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp;UNIT0.MOD0.F0&nbsp;</td><td style="text-align:right">&nbsp;948 /2443200&nbsp;</td><td style="text-align:right">&nbsp;         0&nbsp;</td><td style="text-align:right">&nbsp;273 /1221600&nbsp;</td><td style="text-align:right">&nbsp;72 /344800&nbsp;</td><td style="text-align:right">&nbsp;2/lut(2)/lut_no_weighting(2)&nbsp;</td><td style="text-align:right">&nbsp;0 /1290&nbsp;</td><td style="text-align:right">&nbsp;0 /0&nbsp;</td><td style="text-align:right">&nbsp;0 /2160&nbsp;</td><td style="text-align:right">&nbsp;  5&nbsp;</td><td style="text-align:right">&nbsp;    OK&nbsp;</td></tr>
+<tr><td style="text-align:left">&nbsp;SUM          &nbsp;</td><td style="text-align:right">&nbsp;948 /2443200&nbsp;</td><td style="text-align:right">&nbsp;        --&nbsp;</td><td style="text-align:right">&nbsp;273 /1221600&nbsp;</td><td style="text-align:right">&nbsp;72 /344800&nbsp;</td><td style="text-align:right">&nbsp;2/lut(2)/lut_no_weighting(2)&nbsp;</td><td style="text-align:right">&nbsp;0 /1290&nbsp;</td><td style="text-align:right">&nbsp;0 /0&nbsp;</td><td style="text-align:right">&nbsp;0 /2160&nbsp;</td><td style="text-align:right">&nbsp;  5&nbsp;</td><td style="text-align:right">&nbsp;    --&nbsp;</td></tr>
+</table>
+ REG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: REG count in generated netlists / FPGA capacity. <br>
+ (*)MUXF7,8 : MUXF7 and MUXF8 count in generated netlists. A cost of 1 register is associated to each MUXF7 or MUXF8, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this additionnal cost is not included in the REG column. <br>
+ LUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: LUT count in generated netlists, including RAMLUTs / FPGA capacity. <br>
+ RAMLUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: RAMLUT count in generated netlists / FPGA capacity. <br>
+ (**)MUXCY&nbsp;&nbsp;: MUXCY count in generated netlists. Depending on connectivity, a cost of 1 LUT (modulo lut weighting) is <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;associated to MUXCY, this additionnal cost is not included in the LUT column. <br>
+ BRAM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Block RAM count in generated netlists / FPGA capacity. <br>
+ URAM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Block URAM count in generated netlists / FPGA capacity. <br>
+ DSP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: DSP count in generated netlists / FPGA capacity. <br>
+ CUT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Number of ports at the interface of the FPGA. <br>
+ STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: FPGA capacity and cut status. <br>
+<a name="anchor_6"><h1>Routing paths</h1></a>
+ Report a maximum of 100 first routing data path(s) <br>
+<br>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp; Slack &nbsp;</th><th style="text-align:right">&nbsp;    Required Time &nbsp;</th><th style="text-align:right">&nbsp; Delay &nbsp;</th><th style="text-align:right">&nbsp; Fpga &nbsp;</th><th style="text-align:left">&nbsp; Clock Domain Source                       &nbsp;</th><th style="text-align:left">&nbsp; Clock Domain Target                       &nbsp;</th><th style="text-align:left">&nbsp;Port Name Source                                  &nbsp;</th><th style="text-align:left">&nbsp;Port Name Target                                        &nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;   0 ns&nbsp;</td><td style="text-align:right">&nbsp;160 ns ( 2 dvrCk )&nbsp;</td><td style="text-align:right">&nbsp; 160 ns&nbsp;</td><td style="text-align:right">&nbsp;     2&nbsp;</td><td style="text-align:left">&nbsp;top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge)&nbsp;</td><td style="text-align:left">&nbsp;top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge)&nbsp;</td><td style="text-align:left">&nbsp;top.u_stb.u_rom.mem-r0do                          &nbsp;</td><td style="text-align:left">&nbsp;U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_check.error.D   &nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;   0 ns&nbsp;</td><td style="text-align:right">&nbsp;160 ns ( 2 dvrCk )&nbsp;</td><td style="text-align:right">&nbsp; 160 ns&nbsp;</td><td style="text-align:right">&nbsp;     2&nbsp;</td><td style="text-align:left">&nbsp;top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge)&nbsp;</td><td style="text-align:left">&nbsp;top.u_dut.u_fifo.u0_clkg.clkout (posedge)  &nbsp;</td><td style="text-align:left">&nbsp;top.u_stb.u_rom.mem-r0do                          &nbsp;</td><td style="text-align:left">&nbsp;U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_fifo.mem[0][7].D&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;  75 ns&nbsp;</td><td style="text-align:right">&nbsp; 80 ns ( 1 dvrCk )&nbsp;</td><td style="text-align:right">&nbsp;   5 ns&nbsp;</td><td style="text-align:right">&nbsp;     2&nbsp;</td><td style="text-align:left">&nbsp;DRIVERCLOCK (system)                       &nbsp;</td><td style="text-align:left">&nbsp;DRIVERCLOCK (system)                       &nbsp;</td><td style="text-align:left">&nbsp;zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0&nbsp;</td><td style="text-align:left">&nbsp;U0_M0_F0.zcg_zceiClock[1]                               &nbsp;</td></tr>
+</table>
+ A total of 3 inter-fpga path(s) displayed<br>
+<br>
+ Report a maximum of 50 first different delay(s) <br>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp; Delay     &nbsp;</th><th style="text-align:left">&nbsp; Paths     &nbsp;</th><th style="text-align:left">&nbsp; Max Fpga  &nbsp;</th><th style="text-align:left">&nbsp; Max Hop   &nbsp;</th><th style="text-align:right">&nbsp; Max Async &nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp;    160 ns &nbsp;</td><td style="text-align:left">&nbsp;         3 &nbsp;</td><td style="text-align:left">&nbsp;         2 &nbsp;</td><td style="text-align:left">&nbsp;         0 &nbsp;</td><td style="text-align:right">&nbsp;         0 &nbsp;</td></tr>
+</table>
+ A total of 1 different delay(s) displayed<br>
+<br>
+ Histogram with a maximum of 50 first different delay(s) <br>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp; Delay               &nbsp;</th><th style="text-align:left">&nbsp; Paths                                            &nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp; [  160 ns         ] &nbsp;</td><td style="text-align:left">&nbsp;---------------------------------------->        3&nbsp;</td></tr>
+</table>
+ A total of 1 different delay(s) encountered<br>
+<br>
+<a name="anchor_7"><h1>Place and Route System</h1></a>
+<a name="anchor_8"><h2>Resource utilization and IO cut after routing</h2></a>
+ Design matrix after routing (U0_M0)<br>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;       &nbsp;</th><th style="text-align:right">&nbsp;    F00&nbsp;</th><th style="text-align:right">&nbsp;    F01&nbsp;</th><th style="text-align:right">&nbsp;    F02&nbsp;</th><th style="text-align:right">&nbsp;    F03&nbsp;</th><th style="text-align:right">&nbsp;    F04&nbsp;</th><th style="text-align:right">&nbsp;    F05&nbsp;</th><th style="text-align:right">&nbsp;    F06&nbsp;</th><th style="text-align:right">&nbsp;    F07&nbsp;</th><th style="text-align:right">&nbsp;    F08&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;    F00&nbsp;</td><td style="text-align:right">&nbsp;      -&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      1&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    F01&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      -&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    F02&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      -&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    F03&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      -&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    F04&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      -&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    F05&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      -&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    F06&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      -&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    F07&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      -&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    F08&nbsp;</td><td style="text-align:right">&nbsp;      1&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      -&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;     IF&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      1&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    Sum&nbsp;</td><td style="text-align:right">&nbsp;      1&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      2&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    Sum&nbsp;</td><td style="text-align:right">&nbsp;      1&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      .&nbsp;</td><td style="text-align:right">&nbsp;      2&nbsp;</td></tr>
+</table>
+ Maximum xDR per component:<br>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp;            &nbsp;</th><th style="text-align:right">&nbsp;  IF &nbsp;</th><th style="text-align:right">&nbsp;   0 &nbsp;</th><th style="text-align:right">&nbsp;   1 &nbsp;</th><th style="text-align:right">&nbsp;   2 &nbsp;</th><th style="text-align:right">&nbsp;   3 &nbsp;</th><th style="text-align:right">&nbsp;   4 &nbsp;</th><th style="text-align:right">&nbsp;   5 &nbsp;</th><th style="text-align:right">&nbsp;   6 &nbsp;</th><th style="text-align:right">&nbsp;   7 &nbsp;</th><th style="text-align:right">&nbsp;   8 &nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp;U0_M0       &nbsp;</td><td style="text-align:right">&nbsp;   1 &nbsp;</td><td style="text-align:right">&nbsp;   1 &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   1 &nbsp;</td></tr>
+<tr><td style="text-align:left">&nbsp;LVDS        &nbsp;</td><td style="text-align:right">&nbsp;   1 &nbsp;</td><td style="text-align:right">&nbsp;   1 &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   1 &nbsp;</td></tr>
+<tr><td style="text-align:left">&nbsp;MGT         &nbsp;</td><td style="text-align:right">&nbsp;   0 &nbsp;</td><td style="text-align:right">&nbsp;   0 &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   - &nbsp;</td><td style="text-align:right">&nbsp;   0 &nbsp;</td></tr>
+</table>
+</div>
+<!-- view Target -->
+<a name="view1" class="contenttitle-container"><div class="contenttitle">Target</div></a>
+<div class="contentview">
+<a name="anchor_9"><h1>System Compilation</h1></a>
+<a name="anchor_10"><h2>Size</h2></a>
+ MODE=virtex7<br>
+ Chosen part reference for resource evaluation is VIRTEX7 7vlx2000tff1925 .<br>
+ System size : 45 FPGA<br>
+<br>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp;                &nbsp;</th><th style="text-align:right">&nbsp;   REG&nbsp;</th><th style="text-align:right">&nbsp;   LUT&nbsp;</th><th style="text-align:right">&nbsp;RAMLUT&nbsp;</th><th style="text-align:right">&nbsp;  LUT6&nbsp;</th><th style="text-align:right">&nbsp; MUXCY&nbsp;</th><th style="text-align:right">&nbsp; BRAM&nbsp;</th><th style="text-align:right">&nbsp;  DSP&nbsp;</th><th style="text-align:right">&nbsp;QIWC&nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp;VIRTEX7 (FPGA)  &nbsp;</td><td style="text-align:right">&nbsp;2,443K&nbsp;</td><td style="text-align:right">&nbsp;1,222K&nbsp;</td><td style="text-align:right">&nbsp;  345K&nbsp;</td><td style="text-align:right">&nbsp;1,222K&nbsp;</td><td style="text-align:right">&nbsp;1,222K&nbsp;</td><td style="text-align:right">&nbsp;1,290&nbsp;</td><td style="text-align:right">&nbsp;2,160&nbsp;</td><td style="text-align:right">&nbsp;524K&nbsp;</td></tr>
+<tr><td style="text-align:left">&nbsp;VIRTEX7 (System)&nbsp;</td><td style="text-align:right">&nbsp;  110M&nbsp;</td><td style="text-align:right">&nbsp;   55M&nbsp;</td><td style="text-align:right">&nbsp;   16M&nbsp;</td><td style="text-align:right">&nbsp;   55M&nbsp;</td><td style="text-align:right">&nbsp;   55M&nbsp;</td><td style="text-align:right">&nbsp;  58K&nbsp;</td><td style="text-align:right">&nbsp;  97K&nbsp;</td><td style="text-align:right">&nbsp; 24M&nbsp;</td></tr>
+</table>
+ Number of hardware modules requested to map the design : 1.<br>
+<a name="anchor_11"><h2>Hardware Configuration</h2></a>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp; Name  &nbsp;</th><th style="text-align:left">&nbsp; Module                   &nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp; U0.M0 &nbsp;</td><td style="text-align:left">&nbsp;      zse_xc7v_8c_2000_v1 &nbsp;</td></tr>
+</table>
+<a name="anchor_12"><h1>System compilation</h1></a>
+<a name="anchor_13"><h2>Design size estimation</h2></a>
+Design size estimation (only used resources are reported here)<br>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;Resource usage                 &nbsp;</th><th style="text-align:left">&nbsp;LUT   &nbsp;</th><th style="text-align:left">&nbsp;LUT6  &nbsp;</th><th style="text-align:left">&nbsp;REG   &nbsp;</th><th style="text-align:left">&nbsp;RAMLUT&nbsp;</th><th style="text-align:left">&nbsp;FWC_IP_NUM&nbsp;</th><th style="text-align:left">&nbsp;FWC_IP_BITS&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Estimated size of the design   &nbsp;</td><td style="text-align:left">&nbsp;1,239 &nbsp;</td><td style="text-align:left">&nbsp;29    &nbsp;</td><td style="text-align:left">&nbsp;1,238 &nbsp;</td><td style="text-align:left">&nbsp;72    &nbsp;</td><td style="text-align:left">&nbsp;3         &nbsp;</td><td style="text-align:left">&nbsp;136        &nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Board size with user fill-rates&nbsp;</td><td style="text-align:left">&nbsp;5,497K&nbsp;</td><td style="text-align:left">&nbsp;2,199K&nbsp;</td><td style="text-align:left">&nbsp;4,838K&nbsp;</td><td style="text-align:left">&nbsp;1,241K&nbsp;</td><td style="text-align:left">&nbsp;7,137     &nbsp;</td><td style="text-align:left">&nbsp;617K       &nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp; For 1 boards                  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%      &nbsp;</td><td style="text-align:left">&nbsp;0.0%       &nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                  For 2 boards &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%      &nbsp;</td><td style="text-align:left">&nbsp;0.0%       &nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                  For 3 boards &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%      &nbsp;</td><td style="text-align:left">&nbsp;0.0%       &nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                  For 4 boards &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%      &nbsp;</td><td style="text-align:left">&nbsp;0.0%       &nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                  For 5 boards &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%  &nbsp;</td><td style="text-align:left">&nbsp;0.0%      &nbsp;</td><td style="text-align:left">&nbsp;0.0%       &nbsp;</td></tr>
+</table>
+<a name="anchor_14"><h1>zCore Compilation : Part_0</h1></a>
+<a name="anchor_15"><h2>Size</h2></a>
+ MODE=virtex7<br>
+ Chosen part reference for resource evaluation is VIRTEX7 7vlx2000tff1925 .<br>
+ System size : 9 FPGA<br>
+<br>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp;                &nbsp;</th><th style="text-align:right">&nbsp;   REG&nbsp;</th><th style="text-align:right">&nbsp;   LUT&nbsp;</th><th style="text-align:right">&nbsp;RAMLUT&nbsp;</th><th style="text-align:right">&nbsp;  LUT6&nbsp;</th><th style="text-align:right">&nbsp; MUXCY&nbsp;</th><th style="text-align:right">&nbsp; BRAM&nbsp;</th><th style="text-align:right">&nbsp;  DSP&nbsp;</th><th style="text-align:right">&nbsp;  QIWC&nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp;VIRTEX7 (FPGA)  &nbsp;</td><td style="text-align:right">&nbsp;2,443K&nbsp;</td><td style="text-align:right">&nbsp;1,222K&nbsp;</td><td style="text-align:right">&nbsp;  345K&nbsp;</td><td style="text-align:right">&nbsp;1,222K&nbsp;</td><td style="text-align:right">&nbsp;1,222K&nbsp;</td><td style="text-align:right">&nbsp;1,290&nbsp;</td><td style="text-align:right">&nbsp;2,160&nbsp;</td><td style="text-align:right">&nbsp;  524K&nbsp;</td></tr>
+<tr><td style="text-align:left">&nbsp;VIRTEX7 (System)&nbsp;</td><td style="text-align:right">&nbsp;   22M&nbsp;</td><td style="text-align:right">&nbsp;   11M&nbsp;</td><td style="text-align:right">&nbsp;3,103K&nbsp;</td><td style="text-align:right">&nbsp;   11M&nbsp;</td><td style="text-align:right">&nbsp;   11M&nbsp;</td><td style="text-align:right">&nbsp;  12K&nbsp;</td><td style="text-align:right">&nbsp;  19K&nbsp;</td><td style="text-align:right">&nbsp;4,719K&nbsp;</td></tr>
+</table>
+</div>
+<!-- view Design -->
+<a name="view2" class="contenttitle-container"><div class="contenttitle">Design</div></a>
+<div class="contentview">
+<a name="anchor_16"><h1>Synthesis</h1></a>
+<a name="anchor_17"><h2>Top 10 (ordered by reg)</h2></a>
+<error while loading table><br>
+<a name="anchor_18"><h2>Top 10 (ordered by lut)</h2></a>
+<error while loading table><br>
+<a name="anchor_19"><h2>Top 10 (ordered by IO)</h2></a>
+<error while loading table><br>
+<a name="anchor_20"><h1>Memories</h1></a>
+<a name="anchor_21"><h2>Memory types</h2></a>
+Number of memory types ordered by memory size:<br>
+logic: A(ll) C(onst write) F(forced) P(orts too many)<br>
+<error while loading table><br>
+<a name="anchor_22"><h1>System Compilation</h1></a>
+<a name="anchor_23"><h2>Statistics</h2></a>
+ 64 zviews, 0 sram_trace access, 0 read_port and 0 write_port were inserted, and 0 DVE XMRs were scheduled.<br>
+ 0 port (top and cores) has been simplified by a constant<br>
+<a name="anchor_24"><h2>Size</h2></a>
+More detailed information about design size can be found in <a href="../../../backend_default/zTopBuild_report.html#K5.6.">zTopBuild_report.log, 5.6.Detection of sub-system candidates</a><br>
+<br>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;           &nbsp;</th><th style="text-align:right">&nbsp;REG&nbsp;</th><th style="text-align:right">&nbsp;LUT&nbsp;</th><th style="text-align:right">&nbsp;LUT W/O W&nbsp;</th><th style="text-align:right">&nbsp;RAMLUT&nbsp;</th><th style="text-align:right">&nbsp;LUT6&nbsp;</th><th style="text-align:right">&nbsp;MUXCY&nbsp;</th><th style="text-align:right">&nbsp;BRAM&nbsp;</th><th style="text-align:right">&nbsp;DSP&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Design size&nbsp;</td><td style="text-align:right">&nbsp;595&nbsp;</td><td style="text-align:right">&nbsp;275&nbsp;</td><td style="text-align:right">&nbsp;      275&nbsp;</td><td style="text-align:right">&nbsp;    72&nbsp;</td><td style="text-align:right">&nbsp;  29&nbsp;</td><td style="text-align:right">&nbsp;    2&nbsp;</td><td style="text-align:right">&nbsp;   0&nbsp;</td><td style="text-align:right">&nbsp;  0&nbsp;</td></tr>
+</table>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;65	Module(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11	Blackbox module(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0	External memory module(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1	Fast Waveform Capture IP module(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3	DPI module(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0	Qiwc IP module(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0	Asynchronous ZMEM module(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2	Synchronous ZMEM module(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2	Disconnected module port(s)&nbsp;&nbsp;&nbsp;&nbsp;[in=2 out=0 inout=0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;248	Disconnected instance port(s)&nbsp;&nbsp;[in=71 out=177 inout=0]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0	Disconnected wire(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4	Loadless wire(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2	Sourceless wire(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;457	Uninitialized Register(s)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8	Initialized Register(s)<br>
+<br>
+Detailed manipulation logic size (*)<br>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;                              &nbsp;</th><th style="text-align:right">&nbsp;            REG&nbsp;</th><th style="text-align:right">&nbsp;            LUT&nbsp;</th><th style="text-align:right">&nbsp;         RAMLUT&nbsp;</th><th style="text-align:right">&nbsp;           LUT6&nbsp;</th><th style="text-align:right">&nbsp;          MUXCY&nbsp;</th><th style="text-align:right">&nbsp;      BRAM&nbsp;</th><th style="text-align:right">&nbsp;            DSP&nbsp;</th><th style="text-align:right">&nbsp;           QIWC&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;        Post-split design size&nbsp;</td><td style="text-align:right">&nbsp;            595&nbsp;</td><td style="text-align:right">&nbsp;            275&nbsp;</td><td style="text-align:right">&nbsp;             72&nbsp;</td><td style="text-align:right">&nbsp;             29&nbsp;</td><td style="text-align:right">&nbsp;              2&nbsp;</td><td style="text-align:right">&nbsp;         0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Sync elements routing cost(**)&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td><td style="text-align:right">&nbsp;         0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                           SUM&nbsp;</td><td style="text-align:right">&nbsp;            595&nbsp;</td><td style="text-align:right">&nbsp;            275&nbsp;</td><td style="text-align:right">&nbsp;             72&nbsp;</td><td style="text-align:right">&nbsp;             29&nbsp;</td><td style="text-align:right">&nbsp;              2&nbsp;</td><td style="text-align:right">&nbsp;         0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td><td style="text-align:right">&nbsp;              0&nbsp;</td></tr>
+</table>
+(**)Note that sync elements routing cost include :&nbsp;&nbsp;reg cost of non-reg sync elements.<br>
+</div>
+<!-- view Optimization -->
+<a name="view3" class="contenttitle-container"><div class="contenttitle">Optimization</div></a>
+<div class="contentview">
+<a name="anchor_25"><h1>System compilation</h1></a>
+<a name="anchor_26"><h2>Global compilation options</h2></a>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;                     Process&nbsp;</th><th style="text-align:right">&nbsp;   Mode&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;                 Loop report&nbsp;</td><td style="text-align:right">&nbsp;enabled&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;   Clock localization (core)&nbsp;</td><td style="text-align:right">&nbsp;enabled&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;   Clock localization (fpga)&nbsp;</td><td style="text-align:right">&nbsp;enabled&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    Data localization (core)&nbsp;</td><td style="text-align:right">&nbsp;enabled&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;    Data localization (fpga)&nbsp;</td><td style="text-align:right">&nbsp;enabled&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;ac_annotate_neighbord_zcores&nbsp;</td><td style="text-align:right">&nbsp;enabled&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;     ac_annotate_prob_routes&nbsp;</td><td style="text-align:right">&nbsp;enabled&nbsp;</td></tr>
+</table>
+<a name="anchor_27"><h2>Logic optimization options</h2></a>
+Logic optimization is enabled (default).<br>
+<br>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;                                           Process&nbsp;</th><th style="text-align:right">&nbsp;             Mode&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;                              Constant propagation&nbsp;</td><td style="text-align:right">&nbsp;enabled (default)&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Constant propagation (through low power instances)&nbsp;</td><td style="text-align:right">&nbsp;          enabled&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                              Unused logic removal&nbsp;</td><td style="text-align:right">&nbsp;enabled (default)&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                  Write-only memories optimization&nbsp;</td><td style="text-align:right">&nbsp;         disabled&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                Drop optimizable waveform captures&nbsp;</td><td style="text-align:right">&nbsp;          enabled&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                 List of kept up-instances modules&nbsp;</td><td style="text-align:right">&nbsp;           <none>&nbsp;</td></tr>
+</table>
+<a name="anchor_28"><h2>Target</h2></a>
+Use module<br>
+	U0.M0<br>
+<a name="anchor_29"><h2>Partitioning</h2></a>
+The partitioner used is : zTopPartitioning.<br>
+<br>
+Filling rates<br>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;                          &nbsp;</th><th style="text-align:right">&nbsp;REG&nbsp;</th><th style="text-align:right">&nbsp;LUT&nbsp;</th><th style="text-align:right">&nbsp;RAMLUT&nbsp;</th><th style="text-align:right">&nbsp;BRAM&nbsp;</th><th style="text-align:right">&nbsp;DSP&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;User max filling rates (%)&nbsp;</td><td style="text-align:right">&nbsp; 22&nbsp;</td><td style="text-align:right">&nbsp; 50&nbsp;</td><td style="text-align:right">&nbsp;    40&nbsp;</td><td style="text-align:right">&nbsp;  50&nbsp;</td><td style="text-align:right">&nbsp; 50&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;   User overflow rates (%)&nbsp;</td><td style="text-align:right">&nbsp;  5&nbsp;</td><td style="text-align:right">&nbsp;  5&nbsp;</td><td style="text-align:right">&nbsp;    10&nbsp;</td><td style="text-align:right">&nbsp;   5&nbsp;</td><td style="text-align:right">&nbsp;  0&nbsp;</td></tr>
+</table>
+Lut weight<br>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;   LUT&nbsp;</th><th style="text-align:right">&nbsp;1&nbsp;</th><th style="text-align:right">&nbsp;2&nbsp;</th><th style="text-align:right">&nbsp;3&nbsp;</th><th style="text-align:right">&nbsp;4&nbsp;</th><th style="text-align:right">&nbsp;5&nbsp;</th><th style="text-align:right">&nbsp;6&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Weight&nbsp;</td><td style="text-align:right">&nbsp;0&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td></tr>
+</table>
+<a name="anchor_30"><h1>zCore Compilation : Part_0</h1></a>
+<a name="anchor_31"><h2>Partitioning</h2></a>
+The partitioner used is : zCorePartitioning.<br>
+<a name="anchor_32"><h1>Route System</h1></a>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;       Process&nbsp;</th><th style="text-align:right">&nbsp;  Mode&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Routing effort&nbsp;</td><td style="text-align:right">&nbsp;medium&nbsp;</td></tr>
+</table>
+<a name="anchor_33"><h1>Timing analysis</h1></a>
+Multicycle paths analysis enabled<br>
+<br>
+0 false path(s) displayed<br>
+</div>
+<!-- view Clock -->
+<a name="view4" class="contenttitle-container"><div class="contenttitle">Clock</div></a>
+<div class="contentview">
+<a name="anchor_34"><h1>System compilation</h1></a>
+<a name="anchor_35"><h2>Clock path analysis</h2></a>
+For the clock path analysis in Verdi, please use the following command in the additional command file of zTopBuild :<br>
+- enable rtl_names_save_all<br>
+<a name="anchor_36"><h2>Clock localization</h2></a>
+ Only one partition, no clock localization will be performed<br>
+<a name="anchor_37"><h1>zCore Compilation : Part_0</h1></a>
+<a name="anchor_38"><h2>Clock localization</h2></a>
+ Only one partition, no clock localization will be performed<br>
+</div>
+<!-- view Memory -->
+<a name="view5" class="contenttitle-container"><div class="contenttitle">Memory</div></a>
+<div class="contentview">
+<a name="anchor_39"><h1>Delays summary</h1></a>
+ Report all different memory delay(s)<br>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp; Delay     &nbsp;</th><th style="text-align:right">&nbsp;  Memory  &nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp;    120 ns &nbsp;</td><td style="text-align:right">&nbsp;        2 &nbsp;</td></tr>
+</table>
+ A total of 1 different delay(s) displayed<br>
+<br>
+ Histogram with all memory delay(s)<br>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp; Delay               &nbsp;</th><th style="text-align:left">&nbsp; Memory                                           &nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp; [  120 ns         ] &nbsp;</td><td style="text-align:left">&nbsp;---------------------------------------->        2&nbsp;</td></tr>
+</table>
+ A total of 1 different delay(s) encountered<br>
+<br>
+<a name="anchor_40"><h1>ZMEM</h1></a>
+<a name="anchor_41"><h2>Top 10 (ordered by size)</h2></a>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp;Module            &nbsp;</th><th style="text-align:right">&nbsp;       Mode&nbsp;</th><th style="text-align:right">&nbsp;Data width&nbsp;</th><th style="text-align:right">&nbsp;Address width&nbsp;</th><th style="text-align:right">&nbsp;Nb ports&nbsp;</th><th style="text-align:right">&nbsp;Nb instances&nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp;work, rom_ZMEM_mem&nbsp;</td><td style="text-align:right">&nbsp;SYNCHRONOUS&nbsp;</td><td style="text-align:right">&nbsp;         9&nbsp;</td><td style="text-align:right">&nbsp;            8&nbsp;</td><td style="text-align:right">&nbsp;       1&nbsp;</td><td style="text-align:right">&nbsp;           1&nbsp;</td></tr>
+<tr><td style="text-align:left">&nbsp;work, ram_ZMEM_mem&nbsp;</td><td style="text-align:right">&nbsp;SYNCHRONOUS&nbsp;</td><td style="text-align:right">&nbsp;         9&nbsp;</td><td style="text-align:right">&nbsp;            8&nbsp;</td><td style="text-align:right">&nbsp;       1&nbsp;</td><td style="text-align:right">&nbsp;           1&nbsp;</td></tr>
+</table>
+<a name="anchor_42"><h2>Top 10 (ordered by number of ports)</h2></a>
+<table class="glogtable">
+<tr><th style="text-align:left">&nbsp;Module            &nbsp;</th><th style="text-align:right">&nbsp;       Mode&nbsp;</th><th style="text-align:right">&nbsp;Data width&nbsp;</th><th style="text-align:right">&nbsp;Address width&nbsp;</th><th style="text-align:right">&nbsp;Nb ports&nbsp;</th><th style="text-align:right">&nbsp;Nb instances&nbsp;</th></tr>
+<tr><td style="text-align:left">&nbsp;work, rom_ZMEM_mem&nbsp;</td><td style="text-align:right">&nbsp;SYNCHRONOUS&nbsp;</td><td style="text-align:right">&nbsp;         9&nbsp;</td><td style="text-align:right">&nbsp;            8&nbsp;</td><td style="text-align:right">&nbsp;       1&nbsp;</td><td style="text-align:right">&nbsp;           1&nbsp;</td></tr>
+<tr><td style="text-align:left">&nbsp;work, ram_ZMEM_mem&nbsp;</td><td style="text-align:right">&nbsp;SYNCHRONOUS&nbsp;</td><td style="text-align:right">&nbsp;         9&nbsp;</td><td style="text-align:right">&nbsp;            8&nbsp;</td><td style="text-align:right">&nbsp;       1&nbsp;</td><td style="text-align:right">&nbsp;           1&nbsp;</td></tr>
+</table>
+<a name="anchor_43"><h1>Delays</h1></a>
+ Memory report<br>
+<table class="glogtable">
+</table>
+ | Physical Memory| Delay&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;Type&nbsp;&nbsp;| Sys Freq |&nbsp;&nbsp;Property&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Logical Memory Name(s)|Memory RTL Name|<br>
+<table class="glogtable">
+</table>
+ | ram_ZMEM_mem|&nbsp;&nbsp;120 ns | ramlut | 8.33 MHz | P: 1 W: 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| top.u_stb.u_ram.mem&nbsp;&nbsp;&nbsp;&nbsp;| ram.mem&nbsp;&nbsp;|<br>
+ | rom_ZMEM_mem|&nbsp;&nbsp;120 ns | ramlut | 8.33 MHz | P: 1 W: 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| top.u_stb.u_rom.mem&nbsp;&nbsp;&nbsp;&nbsp;| rom.mem&nbsp;&nbsp;|<br>
+<table class="glogtable">
+</table>
+ A total of 2 memory displayed<br>
+<br>
+</div>
+<!-- view Partitioning -->
+<a name="view6" class="contenttitle-container"><div class="contenttitle">Partitioning</div></a>
+<div class="contentview">
+<a name="anchor_44"><h1>zCore Compilation : Part_0</h1></a>
+<a name="anchor_45"><h2>Resource utilization and IO cut by FPGA</h2></a>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;FPGA\ Res(Used/Available)&nbsp;</th><th style="text-align:right">&nbsp;        LUT&nbsp;</th><th style="text-align:right">&nbsp;     LUT6&nbsp;</th><th style="text-align:right">&nbsp;        REG&nbsp;</th><th style="text-align:right">&nbsp;   RAMLUT&nbsp;</th><th style="text-align:right">&nbsp;FWC_IP_NUM&nbsp;</th><th style="text-align:right">&nbsp;FWC_IP_BITS&nbsp;</th><th style="text-align:right">&nbsp;IO&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;                U0_M0_F00&nbsp;</td><td style="text-align:right">&nbsp;5338/671880&nbsp;</td><td style="text-align:right">&nbsp;29/342048&nbsp;</td><td style="text-align:right">&nbsp;5950/659664&nbsp;</td><td style="text-align:right">&nbsp;72/172400&nbsp;</td><td style="text-align:right">&nbsp;     3/843&nbsp;</td><td style="text-align:right">&nbsp;  136/68567&nbsp;</td><td style="text-align:right">&nbsp; 0&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;                      SUM&nbsp;</td><td style="text-align:right">&nbsp;5338/671880&nbsp;</td><td style="text-align:right">&nbsp;29/342048&nbsp;</td><td style="text-align:right">&nbsp;5950/659664&nbsp;</td><td style="text-align:right">&nbsp;72/172400&nbsp;</td><td style="text-align:right">&nbsp;     3/843&nbsp;</td><td style="text-align:right">&nbsp;  136/68567&nbsp;</td><td style="text-align:right">&nbsp; 0&nbsp;</td></tr>
+</table>
+Inter partitions IO cuts (undirected)<br>
+<table class="glogtable">
+<tr><th style="text-align:right">&nbsp;From \ To&nbsp;</th><th style="text-align:right">&nbsp;U0_M0_F00&nbsp;</th><th style="text-align:right">&nbsp;Interface&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00&nbsp;</td><td style="text-align:right">&nbsp;        0&nbsp;</td><td style="text-align:right">&nbsp;        0&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Interface&nbsp;</td><td style="text-align:right">&nbsp;        0&nbsp;</td><td style="text-align:right">&nbsp;        0&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;  SUM CUT&nbsp;</td><td style="text-align:right">&nbsp;        0&nbsp;</td><td style="text-align:right">&nbsp;        0&nbsp;</td></tr>
+</table>
+</div>
+<!-- view Compile profile -->
+<a name="view7" class="contenttitle-container"><div class="contenttitle">Compile profile</div></a>
+<div class="contentview">
+<br>
+<br>
+BETA version: results may not be fully accurate<br>
+<a name="anchor_46"><h1>Compilation Summary</h1></a>
+Last session wall clock times:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 29s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 17min 27s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Total&nbsp;&nbsp;: 17min 56s<br>
+<br>
+All sessions cumulative compile times:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;without delay&nbsp;&nbsp;: 16min 55s<br>
+&nbsp;&nbsp;&nbsp;&nbsp;with delay*&nbsp;&nbsp;&nbsp;&nbsp;: 17min 26s<br>
+<br>
+*including slot and grid delays, difference with total wall clock time could be NFS wait or internal flow handling delays
+<br>
+<table class="glogtable">
+<tr><th>&nbsp;Phase&nbsp;</th><th>&nbsp;(%)&nbsp;</th><th>&nbsp;Slot delay&nbsp;</th><th>&nbsp;Grid delay&nbsp;</th><th>&nbsp;Elapsed time&nbsp;</th><th>&nbsp;Host&nbsp;</th><th>&nbsp;Total # of jobs fired&nbsp;</th><th>&nbsp;Max memory consumption&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;VCS&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;151.47MB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Synthesis&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;109.00MB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;zTopBuild&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;336.87MB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;zCoreBuild&nbsp;</td><td style="text-align:right">&nbsp;1.18&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:12&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;479.02MB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;zPar&nbsp;</td><td style="text-align:right">&nbsp;0.79&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:08&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;1.47GB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;FPGA Compile&nbsp;</td><td style="text-align:right">&nbsp;93.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:15:47&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td><td style="text-align:right">&nbsp;0 Orig&nbsp;</td><td style="text-align:right">&nbsp;5.22GB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Create Timing DB (post FPGA)&nbsp;</td><td style="text-align:right">&nbsp;0.10&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td><td style="text-align:right">&nbsp;1&nbsp;</td><td style="text-align:right">&nbsp;149.01MB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Other tasks&nbsp;</td><td style="text-align:right">&nbsp;3.45&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:16&nbsp;</td><td style="text-align:right">&nbsp;00:00:35&nbsp;</td><td style="text-align:right">&nbsp;-&nbsp;</td><td style="text-align:right">&nbsp;12&nbsp;</td><td style="text-align:right">&nbsp;-&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Total&nbsp;</td><td style="text-align:right">&nbsp;100.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:31&nbsp;</td><td style="text-align:right">&nbsp;00:16:55&nbsp;</td><td style="text-align:right">&nbsp;-&nbsp;</td><td style="text-align:right">&nbsp;24&nbsp;</td><td style="text-align:right">&nbsp;-&nbsp;</td></tr>
+</table>
+Columns:<br>
+ - Phase&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: compilation phase<br>
+ - (%)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: percentage of contribution to the overall compile time<br>
+ - Slot delay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: time waiting for a slot on the grid<br>
+ - Grid delay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: time between the task is spawed and the task is launched<br>
+ - Elapsed time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: contribution to the overall compile time<br>
+ - Host&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: host where the task was launched (only for tasks external to zCui)<br>
+ - Total # of jobs fired&nbsp;&nbsp;: number of jobs with same phase fired<br>
+ - Max memory consumption : job in the phase with max memory taken<br>
+<a name="anchor_47"><h1>Compile time with delay (slot and grid)</h1></a>
+<table class="glogtable">
+<tr><th>&nbsp;Task&nbsp;</th><th>&nbsp;(%)&nbsp;</th><th>&nbsp;Slot delay&nbsp;</th><th>&nbsp;Grid delay&nbsp;</th><th>&nbsp;Elapsed time&nbsp;</th><th>&nbsp;Spawn Time&nbsp;</th><th>&nbsp;Finish Time&nbsp;</th><th>&nbsp;Host&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Check Vcs Binaries Version&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Target Configuration&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:04&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze Target Configuration Results&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:04&nbsp;</td><td style="text-align:right">&nbsp;00:00:04&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Build Fs Macro Script&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:06&nbsp;</td><td style="text-align:right">&nbsp;00:00:06&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Build Fs Macro Library&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:08&nbsp;</td><td style="text-align:right">&nbsp;00:00:10&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;VCS&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:00:10&nbsp;</td><td style="text-align:right">&nbsp;00:00:16&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze VCS Results&nbsp;</td><td style="text-align:right">&nbsp;0.10&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:16&nbsp;</td><td style="text-align:right">&nbsp;00:00:17&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Bundle 0&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:00:19&nbsp;</td><td style="text-align:right">&nbsp;00:00:23&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Bundle_0_Analyzer&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:23&nbsp;</td><td style="text-align:right">&nbsp;00:00:23&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Memory ram_zMem&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Prepare Backend Flow&nbsp;</td><td style="text-align:right">&nbsp;0.10&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:27&nbsp;</td><td style="text-align:right">&nbsp;00:00:28&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Make RTL DB indexes&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:30&nbsp;</td><td style="text-align:right">&nbsp;00:00:32&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Make RTL DB link&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:32&nbsp;</td><td style="text-align:right">&nbsp;00:00:34&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;zTopBuild&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:00:34&nbsp;</td><td style="text-align:right">&nbsp;00:00:40&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze System Building Results&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:40&nbsp;</td><td style="text-align:right">&nbsp;00:00:40&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Build zCore Part_0&nbsp;</td><td style="text-align:right">&nbsp;1.18&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:12&nbsp;</td><td style="text-align:right">&nbsp;00:00:42&nbsp;</td><td style="text-align:right">&nbsp;00:00:56&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze zCore Building Results Part_0&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:56&nbsp;</td><td style="text-align:right">&nbsp;00:00:56&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Post ZCore Compilation Join&nbsp;</td><td style="text-align:right">&nbsp;0.10&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:58&nbsp;</td><td style="text-align:right">&nbsp;00:00:59&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Pre PAR Script Builder&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:01:01&nbsp;</td><td style="text-align:right">&nbsp;00:01:01&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;zPar&nbsp;</td><td style="text-align:right">&nbsp;0.79&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:08&nbsp;</td><td style="text-align:right">&nbsp;00:01:01&nbsp;</td><td style="text-align:right">&nbsp;00:01:11&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze zPar result&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:01:11&nbsp;</td><td style="text-align:right">&nbsp;00:01:11&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00 Cleaning All PaRs&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:01:13&nbsp;</td><td style="text-align:right">&nbsp;00:01:15&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00 Original&nbsp;</td><td style="text-align:right">&nbsp;93.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:15:47&nbsp;</td><td style="text-align:right">&nbsp;00:01:17&nbsp;</td><td style="text-align:right">&nbsp;00:17:06&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00 Finish&nbsp;</td><td style="text-align:right">&nbsp;2.96&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:30&nbsp;</td><td style="text-align:right">&nbsp;00:17:10&nbsp;</td><td style="text-align:right">&nbsp;00:17:42&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Create Timing DB (SDF Mode)&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:17:45&nbsp;</td><td style="text-align:right">&nbsp;00:17:49&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Create Timing DB (post FPGA)&nbsp;</td><td style="text-align:right">&nbsp;0.10&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:17:50&nbsp;</td><td style="text-align:right">&nbsp;00:17:52&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;zAudit Report&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:17:52&nbsp;</td><td style="text-align:right">&nbsp;00:17:54&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze Compilation Profiler Results&nbsp;</td><td style="text-align:right">&nbsp;0.20&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:17:54&nbsp;</td><td style="text-align:right">&nbsp;00:17:56&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Total time&nbsp;</td><td style="text-align:right">&nbsp;100.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;00:00:31&nbsp;</td><td style="text-align:right">&nbsp;00:16:55&nbsp;</td><td style="text-align:right">&nbsp;-&nbsp;</td><td style="text-align:right">&nbsp;-&nbsp;</td><td style="text-align:right">&nbsp;-&nbsp;</td></tr>
+</table>
+Columns:<br>
+ - Task&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: task label<br>
+ - (%)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: percentage of contribution to the overall compile time<br>
+ - Slot delay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: time waiting for a slot on the grid<br>
+ - Grid delay&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: time between the task is spawed and the task is launched<br>
+ - Elapsed time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: contribution to the overall compile time<br>
+ - Spawn time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: time spawning on the grid, taking the spawn time of the first task as reference<br>
+ - Finish time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: time finishing, taking the spawn time of the first task as reference<br>
+ - Host&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: host where the task was launched (only for tasks external to zCui)<br>
+Compile time with delay (slot and grid)<br>
+<svg width="800" height="430" style="display: block">
+	<circle cx="150.00" cy="150.00" r="141.00" stroke="#3f3f3f"></circle>
+	<path d="M 150.00 150.00 L 147.77 10.02 A140.00 140.00 0 0 1 155.49 10.11" fill="#7f372a"/>
+	<path d="M 150.00 150.00 L 151.04 10.00 A140.00 140.00 0 0 1 158.76 10.27" fill="#bf5600"/>
+	<path d="M 150.00 150.00 L 154.31 10.07 A140.00 140.00 0 0 1 162.01 10.52" fill="#ffd555"/>
+	<path d="M 150.00 150.00 L 157.57 10.20 A140.00 140.00 0 0 1 169.32 11.34" fill="#797f00"/>
+	<path d="M 150.00 150.00 L 164.90 10.79 A140.00 140.00 0 0 1 170.13 11.45" fill="#93bf3f"/>
+	<path d="M 150.00 150.00 L 165.71 10.88 A140.00 140.00 0 0 1 174.16 12.10" fill="#59ff00"/>
+	<path d="M 150.00 150.00 L 169.76 11.40 A140.00 140.00 0 0 1 174.96 12.24" fill="#2e7f2a"/>
+	<path d="M 150.00 150.00 L 170.57 11.52 A140.00 140.00 0 0 1 178.17 12.86" fill="#00bf2f"/>
+	<path d="M 150.00 150.00 L 173.79 12.04 A140.00 140.00 0 0 1 181.36 13.56" fill="#55ffb3"/>
+	<path d="M 150.00 150.00 L 177.00 12.63 A140.00 140.00 0 0 1 188.48 15.39" fill="#007f6c"/>
+	<path d="M 150.00 150.00 L 184.18 14.24 A140.00 140.00 0 0 1 200.86 19.56" fill="#3facbf"/>
+	<path d="M 150.00 150.00 L 196.68 18.01 A140.00 140.00 0 0 1 201.62 19.86" fill="#008cff"/>
+	<path d="M 150.00 150.00 L 197.45 18.29 A140.00 140.00 0 0 1 210.60 23.79" fill="#2a3f7f"/>
+	<path d="M 150.00 150.00 L 206.55 21.93 A140.00 140.00 0 0 1 213.52 25.24" fill="#0900bf"/>
+	<path d="M 150.00 150.00 L 209.52 23.28 A140.00 140.00 0 1 1 113.45 14.85" fill="#9155ff"/>
+	<path d="M 150.00 150.00 L 109.17 16.09 A140.00 140.00 0 0 1 140.80 10.30" fill="#53007f"/>
+	<path d="M 150.00 150.00 L 136.36 10.67 A140.00 140.00 0 0 1 144.88 10.09" fill="#b93fbf"/>
+	<path d="M 150.00 150.00 L 140.43 10.33 A140.00 140.00 0 0 1 147.33 10.03" fill="#ff00bf"/>
+	<path d="M 150.00 150.00 L 142.87 10.18 A140.00 140.00 0 0 1 150.59 10.00" fill="#7f2a51"/>
+	<path d="M 150.00 150.00 L 146.14 10.05 A140.00 140.00 0 0 1 152.23 10.02" fill="#bf001c"/>
+	<rect x="310" y="20" width="10" height="10" style="fill:#7f372a"/><text x="328" y="30">Check Vcs Binaries Version</text>
+	<rect x="310" y="40" width="10" height="10" style="fill:#bf5600"/><text x="328" y="50">Target Configuration</text>
+	<rect x="310" y="60" width="10" height="10" style="fill:#ffd555"/><text x="328" y="70">Build Fs Macro Library</text>
+	<rect x="310" y="80" width="10" height="10" style="fill:#797f00"/><text x="328" y="90">VCS</text>
+	<rect x="310" y="100" width="10" height="10" style="fill:#93bf3f"/><text x="328" y="110">Analyze VCS Results</text>
+	<rect x="310" y="120" width="10" height="10" style="fill:#59ff00"/><text x="328" y="130">Bundle 0</text>
+	<rect x="310" y="140" width="10" height="10" style="fill:#2e7f2a"/><text x="328" y="150">Prepare Backend Flow</text>
+	<rect x="310" y="160" width="10" height="10" style="fill:#00bf2f"/><text x="328" y="170">Make RTL DB indexes</text>
+	<rect x="310" y="180" width="10" height="10" style="fill:#55ffb3"/><text x="328" y="190">Make RTL DB link</text>
+	<rect x="310" y="200" width="10" height="10" style="fill:#007f6c"/><text x="328" y="210">zTopBuild</text>
+	<rect x="310" y="220" width="10" height="10" style="fill:#3facbf"/><text x="328" y="230">Build zCore Part_0</text>
+	<rect x="310" y="240" width="10" height="10" style="fill:#008cff"/><text x="328" y="250">Post ZCore Compilation Join</text>
+	<rect x="310" y="260" width="10" height="10" style="fill:#2a3f7f"/><text x="328" y="270">zPar</text>
+	<rect x="310" y="280" width="10" height="10" style="fill:#0900bf"/><text x="328" y="290">U0_M0_F00 Cleaning All PaRs</text>
+	<rect x="310" y="300" width="10" height="10" style="fill:#9155ff"/><text x="328" y="310">U0_M0_F00 Original</text>
+	<rect x="310" y="320" width="10" height="10" style="fill:#53007f"/><text x="328" y="330">U0_M0_F00 Finish</text>
+	<rect x="310" y="340" width="10" height="10" style="fill:#b93fbf"/><text x="328" y="350">Create Timing DB (SDF Mode)</text>
+	<rect x="310" y="360" width="10" height="10" style="fill:#ff00bf"/><text x="328" y="370">Create Timing DB (post FPGA)</text>
+	<rect x="310" y="380" width="10" height="10" style="fill:#7f2a51"/><text x="328" y="390">zAudit Report</text>
+	<rect x="310" y="400" width="10" height="10" style="fill:#bf001c"/><text x="328" y="410">Analyze Compilation Profiler Results</text>
+</svg>
+<a name="anchor_48"><h1>Compile time without delay</h1></a>
+<table class="glogtable">
+<tr><th>&nbsp;Task&nbsp;</th><th>&nbsp;(%)&nbsp;</th><th>&nbsp;Elapsed time&nbsp;</th><th>&nbsp;Host&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Check Vcs Binaries Version&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Target Configuration&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze Target Configuration Results&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Build Fs Macro Script&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Build Fs Macro Library&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;VCS&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze VCS Results&nbsp;</td><td style="text-align:right">&nbsp;0.10&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Bundle 0&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Bundle_0_Analyzer&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Memory ram_zMem&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Prepare Backend Flow&nbsp;</td><td style="text-align:right">&nbsp;0.10&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Make RTL DB indexes&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Make RTL DB link&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;zTopBuild&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze System Building Results&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Build zCore Part_0&nbsp;</td><td style="text-align:right">&nbsp;1.18&nbsp;</td><td style="text-align:right">&nbsp;00:00:12&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze zCore Building Results Part_0&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Post ZCore Compilation Join&nbsp;</td><td style="text-align:right">&nbsp;0.10&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Pre PAR Script Builder&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;zPar&nbsp;</td><td style="text-align:right">&nbsp;0.79&nbsp;</td><td style="text-align:right">&nbsp;00:00:08&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze zPar result&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00 Cleaning All PaRs&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00 Original&nbsp;</td><td style="text-align:right">&nbsp;93.30&nbsp;</td><td style="text-align:right">&nbsp;00:15:47&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00 Finish&nbsp;</td><td style="text-align:right">&nbsp;2.96&nbsp;</td><td style="text-align:right">&nbsp;00:00:30&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Create Timing DB (SDF Mode)&nbsp;</td><td style="text-align:right">&nbsp;0.30&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Create Timing DB (post FPGA)&nbsp;</td><td style="text-align:right">&nbsp;0.10&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;zAudit Report&nbsp;</td><td style="text-align:right">&nbsp;0.00&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Analyze Compilation Profiler Results&nbsp;</td><td style="text-align:right">&nbsp;0.20&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Total&nbsp;</td><td style="text-align:right">&nbsp;100.00&nbsp;</td><td style="text-align:right">&nbsp;00:16:55&nbsp;</td><td style="text-align:right">&nbsp;-&nbsp;</td></tr>
+</table>
+Columns:<br>
+ - Task&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: task label<br>
+ - (%)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: percentage of contribution to the overall compile time<br>
+ - Elapsed time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: contribution to the overall compile time<br>
+ - Host&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: host where the task was launched (only for tasks external to zCui)<br>
+Compile time without delay<br>
+<svg width="800" height="300" style="display: block">
+	<circle cx="150.00" cy="150.00" r="141.00" stroke="#3f3f3f"></circle>
+	<path d="M 150.00 150.00 L 147.77 10.02 A140.00 140.00 0 0 1 154.83 10.08" fill="#7f3e2a"/>
+	<path d="M 150.00 150.00 L 150.37 10.00 A140.00 140.00 0 0 1 155.69 10.12" fill="#bf8400"/>
+	<path d="M 150.00 150.00 L 151.24 10.01 A140.00 140.00 0 0 1 158.29 10.25" fill="#e5ff55"/>
+	<path d="M 150.00 150.00 L 153.84 10.05 A140.00 140.00 0 0 1 159.15 10.30" fill="#317f00"/>
+	<path d="M 150.00 150.00 L 154.70 10.08 A140.00 140.00 0 0 1 161.75 10.49" fill="#3fbf49"/>
+	<path d="M 150.00 150.00 L 157.30 10.19 A140.00 140.00 0 0 1 172.07 11.75" fill="#00ff89"/>
+	<path d="M 150.00 150.00 L 167.66 11.12 A140.00 140.00 0 0 1 172.92 11.89" fill="#2a7f7f"/>
+	<path d="M 150.00 150.00 L 168.52 11.23 A140.00 140.00 0 0 1 179.73 13.19" fill="#0067bf"/>
+	<path d="M 150.00 150.00 L 175.36 12.32 A140.00 140.00 0 1 1 121.24 12.99" fill="#5562ff"/>
+	<path d="M 150.00 150.00 L 116.89 13.97 A140.00 140.00 0 0 1 147.03 10.03" fill="#31007f"/>
+	<path d="M 150.00 150.00 L 142.58 10.20 A140.00 140.00 0 0 1 149.63 10.00" fill="#ac3fbf"/>
+	<path d="M 150.00 150.00 L 145.17 10.08 A140.00 140.00 0 0 1 150.49 10.00" fill="#ff00b1"/>
+	<path d="M 150.00 150.00 L 146.04 10.06 A140.00 140.00 0 0 1 152.23 10.02" fill="#7f2a3e"/>
+	<rect x="310" y="20" width="10" height="10" style="fill:#7f3e2a"/><text x="328" y="30">VCS</text>
+	<rect x="310" y="40" width="10" height="10" style="fill:#bf8400"/><text x="328" y="50">Analyze VCS Results</text>
+	<rect x="310" y="60" width="10" height="10" style="fill:#e5ff55"/><text x="328" y="70">Bundle 0</text>
+	<rect x="310" y="80" width="10" height="10" style="fill:#317f00"/><text x="328" y="90">Prepare Backend Flow</text>
+	<rect x="310" y="100" width="10" height="10" style="fill:#3fbf49"/><text x="328" y="110">zTopBuild</text>
+	<rect x="310" y="120" width="10" height="10" style="fill:#00ff89"/><text x="328" y="130">Build zCore Part_0</text>
+	<rect x="310" y="140" width="10" height="10" style="fill:#2a7f7f"/><text x="328" y="150">Post ZCore Compilation Join</text>
+	<rect x="310" y="160" width="10" height="10" style="fill:#0067bf"/><text x="328" y="170">zPar</text>
+	<rect x="310" y="180" width="10" height="10" style="fill:#5562ff"/><text x="328" y="190">U0_M0_F00 Original</text>
+	<rect x="310" y="200" width="10" height="10" style="fill:#31007f"/><text x="328" y="210">U0_M0_F00 Finish</text>
+	<rect x="310" y="220" width="10" height="10" style="fill:#ac3fbf"/><text x="328" y="230">Create Timing DB (SDF Mode)</text>
+	<rect x="310" y="240" width="10" height="10" style="fill:#ff00b1"/><text x="328" y="250">Create Timing DB (post FPGA)</text>
+	<rect x="310" y="260" width="10" height="10" style="fill:#7f2a3e"/><text x="328" y="270">Analyze Compilation Profiler Results</text>
+</svg>
+<a name="anchor_49"><h1>Main Compilation Stages</h1></a>
+<a name="anchor_50"><h2>Front End Stages Timing</h2></a>
+<table class="glogtable">
+<tr><th>&nbsp;Task&nbsp;</th><th>&nbsp;Elapsed time&nbsp;</th><th>&nbsp;Execution time&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Launch VCS&nbsp;</td><td style="text-align:right">&nbsp;00:00:06&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Elaboration Analyzer&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Launch Verdi&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Synthesis&nbsp;</td><td style="text-align:right">&nbsp;00:00:04&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Back end Entry&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td></tr>
+</table>
+Columns :<br>
+ - elapsed time&nbsp;&nbsp;&nbsp;: the time for the task being spawed and released<br>
+ - execution time : the time for the task being executed<br>
+<a name="anchor_51"><h2>Top 10 Synthesis Bundles</h2></a>
+<table class="glogtable">
+<tr><th>&nbsp;Duration&nbsp;</th><th>&nbsp;Waiting for Slot Duration&nbsp;</th><th>&nbsp;Total Duration&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Bundle 0 (3s)&nbsp;</td><td style="text-align:right">&nbsp;Bundle 0 (1s)&nbsp;</td><td style="text-align:right">&nbsp;Bundle 0 (4s)&nbsp;</td></tr>
+</table>
+<a name="anchor_52"><h2>Back-end Stages</h2></a>
+Back End Stages Timing for backend_default<br>
+<table class="glogtable">
+<tr><th>&nbsp;Task&nbsp;</th><th>&nbsp;Elapsed time&nbsp;</th><th>&nbsp;Execution time&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Build Accessibility Graphs&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Build System&nbsp;</td><td style="text-align:right">&nbsp;00:00:06&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Build zCore Part_0&nbsp;</td><td style="text-align:right">&nbsp;00:00:14&nbsp;</td><td style="text-align:right">&nbsp;00:00:12&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Convert Netlist&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Create Global DB&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Create Timing DB&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Create Timing DB (SDF Mode)&nbsp;</td><td style="text-align:right">&nbsp;00:00:04&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Create Timing DB (post FPGA)&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Place and Route System&nbsp;</td><td style="text-align:right">&nbsp;00:00:10&nbsp;</td><td style="text-align:right">&nbsp;00:00:08&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Simulate Graphs&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:00&nbsp;</td></tr>
+</table>
+Columns :<br>
+ - elapsed time&nbsp;&nbsp;&nbsp;: the time for the task being spawed and released<br>
+ - execution time : the time for the task being executed<br>
+<a name="anchor_53"><h2>Top 5 zCore</h2></a>
+<table class="glogtable">
+<tr><th>&nbsp;Duration&nbsp;</th><th>&nbsp;Waiting for Slot Duration&nbsp;</th><th>&nbsp;Total Duration&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Build zCore Part_0 (12s)&nbsp;</td><td style="text-align:right">&nbsp;Build zCore Part_0 (2s)&nbsp;</td><td style="text-align:right">&nbsp;Build zCore Part_0 (14s)&nbsp;</td></tr>
+</table>
+<a name="anchor_54"><h2>Top 10 FPGAs</h2></a>
+<table class="glogtable">
+<tr><th>&nbsp;Duration&nbsp;</th><th>&nbsp;Waiting for Slot Duration&nbsp;</th><th>&nbsp;Total Duration&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00 Original (15min 47s)&nbsp;</td><td style="text-align:right">&nbsp;U0_M0_F08 Original (3s)&nbsp;</td><td style="text-align:right">&nbsp;U0_M0_F00 Original (15min 49s)&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_IF Original (11min 00s)&nbsp;</td><td style="text-align:right">&nbsp;U0_M0_IF Original (2s)&nbsp;</td><td style="text-align:right">&nbsp;U0_M0_IF Original (11min 02s)&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F08 Original (10min 07s)&nbsp;</td><td style="text-align:right">&nbsp;U0_M0_F00 Original (2s)&nbsp;</td><td style="text-align:right">&nbsp;U0_M0_F08 Original (10min 10s)&nbsp;</td></tr>
+</table>
+<a name="anchor_55"><h1>FPGA Winner Details</h1></a>
+Duration per compilation step for each FPGA<br>
+<table class="glogtable">
+<tr><th>&nbsp;&nbsp;</th><th>&nbsp;&nbsp;</th><th>&nbsp;&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;FPGA&nbsp;</td><td style="text-align:right">&nbsp;WRITE_BIT*&nbsp;</td><td style="text-align:right">&nbsp;total&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00/U0_M0_F0&nbsp;</td><td style="text-align:right">&nbsp;189&nbsp;</td><td style="text-align:right">&nbsp;189&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F08/Route U0_M0_F08&nbsp;</td><td style="text-align:right">&nbsp;157&nbsp;</td><td style="text-align:right">&nbsp;157&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_IF/U0_M0_IF&nbsp;</td><td style="text-align:right">&nbsp;149&nbsp;</td><td style="text-align:right">&nbsp;149&nbsp;</td></tr>
+</table>
+Annex :<br>
+WRITE_BIT* : WRITE_BITSTREAM<br>
+<a name="anchor_56"><h1>Hosts</h1></a>
+<table class="glogtable">
+<tr><th>&nbsp;Machine name&nbsp;</th><th>&nbsp;Model name&nbsp;</th><th>&nbsp;CPU (MHz)&nbsp;</th><th>&nbsp;Cache size&nbsp;</th><th>&nbsp;CPU cores&nbsp;</th><th>&nbsp;Bogomips&nbsp;</th><th>&nbsp;Address sizes&nbsp;</th><th>&nbsp;Percent of CPU&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;csce-quinn-s1.engr.tamu.edu&nbsp;</td><td style="text-align:right">&nbsp; Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz&nbsp;</td><td style="text-align:right">&nbsp; 2117.224&nbsp;</td><td style="text-align:right">&nbsp; 25600 KB&nbsp;</td><td style="text-align:right">&nbsp; 10&nbsp;</td><td style="text-align:right">&nbsp; 4600.33&nbsp;</td><td style="text-align:right">&nbsp; 46 bits physical, 48 bits virtual&nbsp;</td><td style="text-align:right">&nbsp; 80&nbsp;</td></tr>
+</table>
+<a name="anchor_57"><h1>Memory usage</h1></a>
+<table class="glogtable">
+<tr><th>&nbsp;Task&nbsp;</th><th>&nbsp;Maximum resident set size&nbsp;</th><th>&nbsp;Task Label&nbsp;</th><th>&nbsp;Job Queue&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_F00_Original&nbsp;</td><td style="text-align:right">&nbsp;5.22GB&nbsp;</td><td style="text-align:right">&nbsp;Original&nbsp;</td><td style="text-align:right">&nbsp;ZebuIse&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_IF_Original&nbsp;</td><td style="text-align:right">&nbsp;4.52GB&nbsp;</td><td style="text-align:right">&nbsp;Original&nbsp;</td><td style="text-align:right">&nbsp;ZebuIse&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_F08_Original&nbsp;</td><td style="text-align:right">&nbsp;4.42GB&nbsp;</td><td style="text-align:right">&nbsp;Original&nbsp;</td><td style="text-align:right">&nbsp;ZebuIse&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zFW_U0_M0_IF&nbsp;</td><td style="text-align:right">&nbsp;1.63GB&nbsp;</td><td style="text-align:right">&nbsp;Create RTB Configuration: U0_M0_IF&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zPar&nbsp;</td><td style="text-align:right">&nbsp;1.47GB&nbsp;</td><td style="text-align:right">&nbsp;Place and Route System&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zSimzilla&nbsp;</td><td style="text-align:right">&nbsp;504.13MB&nbsp;</td><td style="text-align:right">&nbsp;Simulate Graphs&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zCoreBuild_Part_0&nbsp;</td><td style="text-align:right">&nbsp;479.02MB&nbsp;</td><td style="text-align:right">&nbsp;Build zCore Part_0&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_F00_zFpgaTiming&nbsp;</td><td style="text-align:right">&nbsp;415.80MB&nbsp;</td><td style="text-align:right">&nbsp;Create Timing DB (SDF Mode)&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zDB_Global&nbsp;</td><td style="text-align:right">&nbsp;351.54MB&nbsp;</td><td style="text-align:right">&nbsp;Create Global DB&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zTopBuild&nbsp;</td><td style="text-align:right">&nbsp;336.87MB&nbsp;</td><td style="text-align:right">&nbsp;Build System&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_IF_zFpgaTiming&nbsp;</td><td style="text-align:right">&nbsp;259.23MB&nbsp;</td><td style="text-align:right">&nbsp;Create Timing DB (SDF Mode)&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;BE_Version_Checker&nbsp;</td><td style="text-align:right">&nbsp;247.37MB&nbsp;</td><td style="text-align:right">&nbsp;Check Back-End Binaries Version&nbsp;</td><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zGraphGenerator&nbsp;</td><td style="text-align:right">&nbsp;198.04MB&nbsp;</td><td style="text-align:right">&nbsp;Build Accessibility Graphs&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_F08_zFpgaTiming&nbsp;</td><td style="text-align:right">&nbsp;190.17MB&nbsp;</td><td style="text-align:right">&nbsp;Create Timing DB (SDF Mode)&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zRtlToEqui&nbsp;</td><td style="text-align:right">&nbsp;153.03MB&nbsp;</td><td style="text-align:right">&nbsp;Convert Netlist&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;vcs_splitter_VCS_Task_Builder&nbsp;</td><td style="text-align:right">&nbsp;151.47MB&nbsp;</td><td style="text-align:right">&nbsp;Launch VCS&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zTime&nbsp;</td><td style="text-align:right">&nbsp;149.73MB&nbsp;</td><td style="text-align:right">&nbsp;Create Timing DB&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zTimeFpga&nbsp;</td><td style="text-align:right">&nbsp;149.01MB&nbsp;</td><td style="text-align:right">&nbsp;Create Timing DB (post FPGA)&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zEquiGenerator&nbsp;</td><td style="text-align:right">&nbsp;148.72MB&nbsp;</td><td style="text-align:right">&nbsp;Build Equipotentials&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_RTB_Front_End&nbsp;</td><td style="text-align:right">&nbsp;122.07MB&nbsp;</td><td style="text-align:right">&nbsp;RTB Front-End&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;design_Default_RTL_GroupBundle_0_Synthesis&nbsp;</td><td style="text-align:right">&nbsp;109.00MB&nbsp;</td><td style="text-align:right">&nbsp;Bundle 0&nbsp;</td><td style="text-align:right">&nbsp;ZebuSynthesis&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zSimuFsdbHeader&nbsp;</td><td style="text-align:right">&nbsp;105.27MB&nbsp;</td><td style="text-align:right">&nbsp;zSimuFsdbHeader&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zDveTool&nbsp;</td><td style="text-align:right">&nbsp;91.18MB&nbsp;</td><td style="text-align:right">&nbsp;Analyze DVE&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;RhinoFsdb_Builder&nbsp;</td><td style="text-align:right">&nbsp;83.00MB&nbsp;</td><td style="text-align:right">&nbsp;Build Rhino Fsdb&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_RTL_DB_Indexer&nbsp;</td><td style="text-align:right">&nbsp;76.11MB&nbsp;</td><td style="text-align:right">&nbsp;Make RTL DB indexes&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_zAuditReport&nbsp;</td><td style="text-align:right">&nbsp;56.40MB&nbsp;</td><td style="text-align:right">&nbsp;zAudit Report&nbsp;</td><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Vcs_Version_Checker&nbsp;</td><td style="text-align:right">&nbsp;53.58MB&nbsp;</td><td style="text-align:right">&nbsp;Check Vcs Binaries Version&nbsp;</td><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;design_Fs_Macro&nbsp;</td><td style="text-align:right">&nbsp;47.18MB&nbsp;</td><td style="text-align:right">&nbsp;Build Fs Macro Library&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_RTL_DB_Link&nbsp;</td><td style="text-align:right">&nbsp;44.05MB&nbsp;</td><td style="text-align:right">&nbsp;Make RTL DB link&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_RTL_DB_RunTime&nbsp;</td><td style="text-align:right">&nbsp;44.05MB&nbsp;</td><td style="text-align:right">&nbsp;Make RTL DB for Run Time&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_Vcs_Link&nbsp;</td><td style="text-align:right">&nbsp;44.05MB&nbsp;</td><td style="text-align:right">&nbsp;Make VCS file links&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_OptionsDbProc&nbsp;</td><td style="text-align:right">&nbsp;44.05MB&nbsp;</td><td style="text-align:right">&nbsp;Make optionsdb dump&nbsp;</td><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Verdi_Compilation&nbsp;</td><td style="text-align:right">&nbsp;43.18MB&nbsp;</td><td style="text-align:right">&nbsp;Launch Verdi&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Target_Config&nbsp;</td><td style="text-align:right">&nbsp;37.53MB&nbsp;</td><td style="text-align:right">&nbsp;Target Configuration&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer&nbsp;</td><td style="text-align:right">&nbsp;18.04MB&nbsp;</td><td style="text-align:right">&nbsp;Compilation Profiler (after ZTopBuildAnalyzer)&nbsp;</td><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer&nbsp;</td><td style="text-align:right">&nbsp;18.04MB&nbsp;</td><td style="text-align:right">&nbsp;Compilation Profiler (after ZParAnalyzer)&nbsp;</td><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer&nbsp;</td><td style="text-align:right">&nbsp;18.04MB&nbsp;</td><td style="text-align:right">&nbsp;Compilation Profiler (after VCSAnalyzer)&nbsp;</td><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry&nbsp;</td><td style="text-align:right">&nbsp;18.04MB&nbsp;</td><td style="text-align:right">&nbsp;Compilation Profiler (after BackendEntry)&nbsp;</td><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;FE_Version_Checker&nbsp;</td><td style="text-align:right">&nbsp;14.80MB&nbsp;</td><td style="text-align:right">&nbsp;Check Front-End Binaries Version&nbsp;</td><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_FpgaResultAnalyzer&nbsp;</td><td style="text-align:right">&nbsp;7.55MB&nbsp;</td><td style="text-align:right">&nbsp;FPGA PaRs Analyzer&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_F00_Finish&nbsp;</td><td style="text-align:right">&nbsp;2.04MB&nbsp;</td><td style="text-align:right">&nbsp;Finish&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_IF_Cleaning&nbsp;</td><td style="text-align:right">&nbsp;2.03MB&nbsp;</td><td style="text-align:right">&nbsp;Cleaning All PaRs&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_F08_Finish&nbsp;</td><td style="text-align:right">&nbsp;2.03MB&nbsp;</td><td style="text-align:right">&nbsp;Finish&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_F08_Cleaning&nbsp;</td><td style="text-align:right">&nbsp;2.03MB&nbsp;</td><td style="text-align:right">&nbsp;Cleaning All PaRs&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_F00_Cleaning&nbsp;</td><td style="text-align:right">&nbsp;2.03MB&nbsp;</td><td style="text-align:right">&nbsp;Cleaning All PaRs&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;backend_default_U0_M0_IF_Finish&nbsp;</td><td style="text-align:right">&nbsp;2.03MB&nbsp;</td><td style="text-align:right">&nbsp;Finish&nbsp;</td><td style="text-align:right">&nbsp;Zebu&nbsp;</td></tr>
+</table>
+<a name="anchor_58"><h1>Job Queue Memory Analysis</h1></a>
+<table class="glogtable">
+<tr><th>&nbsp;Job queue&nbsp;</th><th>&nbsp;Maximum RSS : max value&nbsp;</th><th>&nbsp;Maximum RSS : average value&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Zebu&nbsp;</td><td style="text-align:right">&nbsp;1.63GB&nbsp;</td><td style="text-align:right">&nbsp;224.69MB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;ZebuIse&nbsp;</td><td style="text-align:right">&nbsp;5.22GB&nbsp;</td><td style="text-align:right">&nbsp;4.72GB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td><td style="text-align:right">&nbsp;247.37MB&nbsp;</td><td style="text-align:right">&nbsp;54.26MB&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;ZebuSynthesis&nbsp;</td><td style="text-align:right">&nbsp;109.00MB&nbsp;</td><td style="text-align:right">&nbsp;109.00MB&nbsp;</td></tr>
+</table>
+<a name="anchor_59"><h1>Grid Delay</h1></a>
+There are no tasks with grid delay &gt; 30s<br>
+<a name="anchor_60"><h1>Grid Delay Per Job Queue</h1></a>
+<table class="glogtable">
+<tr><th>&nbsp;Job queue&nbsp;</th><th>&nbsp;Wait(max)&nbsp;</th><th>&nbsp;Wait(average)&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Zebu&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;ZebuIse&nbsp;</td><td style="text-align:right">&nbsp;00:00:03&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;ZebuLocal&nbsp;</td><td style="text-align:right">&nbsp;00:00:02&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;ZebuSynthesis&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td><td style="text-align:right">&nbsp;00:00:01&nbsp;</td></tr>
+</table>
+<a name="anchor_61"><h1>Compile times</h1></a>
+<table class="glogtable">
+<tr><th>&nbsp;&nbsp;</th><th>&nbsp;CPU time&nbsp;</th><th>&nbsp;Wall clock&nbsp;</th><th>&nbsp;CPU time with grid&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;Front end&nbsp;</td><td style="text-align:right">&nbsp;7s&nbsp;</td><td style="text-align:right">&nbsp;29s&nbsp;</td><td style="text-align:right">&nbsp;26s&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;Back end&nbsp;</td><td style="text-align:right">&nbsp;39min 07s&nbsp;</td><td style="text-align:right">&nbsp;17min 27s&nbsp;</td><td style="text-align:right">&nbsp;40min 18s&nbsp;</td></tr>
+</table>
+<a name="anchor_62"><h1>FPGA compilation</h1></a>
+Duration per compilation step for each FPGA<br>
+<table class="glogtable">
+<tr><th>&nbsp;FPGA&nbsp;</th><th>&nbsp;WRITE_BITSTREAM&nbsp;</th><th>&nbsp;Total&nbsp;</th></tr>
+<tr><td style="text-align:right">&nbsp;FPGA&nbsp;</td><td style="text-align:right">&nbsp;FPGA&nbsp;</td><td style="text-align:right">&nbsp;total&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F00/U0_M0_F0&nbsp;</td><td style="text-align:right">&nbsp;3min 09s&nbsp;</td><td style="text-align:right">&nbsp;3min 09s&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_F08/Route U0_M0_F08&nbsp;</td><td style="text-align:right">&nbsp;2min 37s&nbsp;</td><td style="text-align:right">&nbsp;2min 37s&nbsp;</td></tr>
+<tr><td style="text-align:right">&nbsp;U0_M0_IF/U0_M0_IF&nbsp;</td><td style="text-align:right">&nbsp;2min 29s&nbsp;</td><td style="text-align:right">&nbsp;2min 29s&nbsp;</td></tr>
+</table>
+</div>
+<!-- view Warnings/Errors -->
+<a name="view8" class="contenttitle-container"><div class="contenttitle">Warnings/Errors</div></a>
+<div class="contentview">
+<a name="anchor_63"><h1>System Compilation</h1></a>
+<a name="anchor_64"><h2>Warning</h2></a>
+[ZTB0249W] can't set stack to unlimited, zTopBuild may randomly crash.<br>
+[ZTB1036W] The command 'disable ztime_uses_rtl_names' is deprecated and will be removed in the next ZeBu software release.<br>
+[LST0478W] The leaf instance uniquification ratio is less then 4.00<br>
+[LST0479W] The hierarchical instance per module uniquification ratio is less then 4.00<br>
+[ZTB1122W] Clock accuracy of 0 is not supported. It will be set to 24.<br>
+[ZTB0707W] Cleaned up 1 undriven primitive ports - please check the report.<br>
+[EDI0079W] Enable port 'sva_en' of System Verilog Assertion instance 'sva_parity_error' (ZSVA_MOD_PLI_1) is already connected. Disconnected it.<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_reqsig_clock_zcompositeclock<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module ZSVA_MOD_PLI_1<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_wb_reg<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zfwc_hs_1<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module ZXLSYS<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_clk<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_di<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_addr<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_we<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_do<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_reqsig_clock_driverclock<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_clockGen<br>
+[KBD0213W] cannot open report file for writing make sure './.zTopBuild_AC_report.log.dir/SEC_AC_OPT_SOLUTION_CORE_SIZE' has writing rights.<br>
+[KBD0213W] cannot open report file for writing make sure './.zTopBuild_AC_report.log.dir/SEC_AC_OPT_SOLUTION_CORE_XO' has writing rights.<br>
+[KBD0214W] cannot open report file for appending make sure './.zTopBuild_AC_report.log.dir/SEC_AC_PROF' has writing rights.<br>
+<a name="anchor_65"><h1>zCoreCompilation : default</h1></a>
+<a name="anchor_66"><h2>Warning</h2></a>
+[ZBD0328W] max_deph will become hidden (under expert mode '!') in next release.<br>
+[ZBD0329W] max_node will become hidden (under expert mode '!') in next release.<br>
+[ZBD0334W] delete_stuck_at_z will become hidden (under expert mode '!') in next release.<br>
+<a name="anchor_67"><h1>zCoreCompilation : Part_0</h1></a>
+<a name="anchor_68"><h2>Warning</h2></a>
+[CLU0081W] Multiple occurence of the same command, using&nbsp;&nbsp;cluster set max_fill_bram=50<br>
+[KBD2077W] zCorePartitioning: Terminal FPGA cannot be identified<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_wb_reg<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zfwc_hs_1<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module ZXLSYS<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_clk<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_di<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_addr<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_we<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_do<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zfwc_hs_48<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module ZebuClockFilterData<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zfwc_hs_4<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module ZebuClockFilterClock<br>
+[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_clockGen<br>
+[CLK0388W] Failed to parse Core Interface<br>
+[CLK0388W] Failed to parse Core Interface<br>
+[CLK0388W] Failed to parse Core Interface<br>
+[KBD2251W] usage of timing model can't be enable on zse<br>
+[KBD2093W] Using ZFILTER_ASYNC_SET_RESET_PATH on 'timing' command might increase the longest filter path<br>
+[KBD2160W] Using ZFILTER_FETCH_FEEDBACK on 'timing' command might increase the longest filter path<br>
+[ZBD0301W] Critical Path Optimization is disabled because fetch mode is not enabled<br>
+<a name="anchor_69"><h1>Place and route system</h1></a>
+<a name="anchor_70"><h2>Warning</h2></a>
+[KPR0982W] file '../timing.data' not found, timing tasks of previous compilation will not be used<br>
+[KPR1518W] This command will be deprecated in the next major release after ZEBU20.03.<br>
+[KPR1518W] This command will be deprecated in the next major release after ZEBU20.03.<br>
+[KPR1571W] Environment variable "ZEBU_NO_LOCAL_RTB_ROUTING" will be deprecated in the next major release after ZEBU20.03.<br>
+[KPR1572W] Environment variable "ZEBU_NO_LOCAL_RTB_ROUTING" will be deprecated in the next major release after ZEBU20.03.<br>
+[KTM0674W] Port U0_M0_F0.z_dclk_delay created by zPar&nbsp;&nbsp;but not seen by zTime<br>
+[KTM0674W] Port .zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1 created by zPar&nbsp;&nbsp;but not seen by zTime<br>
+[KTM0674W] Port .zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0 created by zPar&nbsp;&nbsp;but not seen by zTime<br>
+[KTM0674W] Port .zcg_filterClock created by zPar&nbsp;&nbsp;but not seen by zTime<br>
+[KTM0674W] Port .zcg_compositeClock created by zPar&nbsp;&nbsp;but not seen by zTime<br>
+[KTM0674W] Port .zcg_skewClock created by zPar&nbsp;&nbsp;but not seen by zTime<br>
+[KPR0630W] This design is empty, no wire to route.<br>
+[KPR0984W] Could not open file of timing tasks '../timing.data' : This file not found or corrupted.<br>
+<a name="anchor_71"><h1>TimingDB</h1></a>
+<a name="anchor_72"><h2>Warning</h2></a>
+[KTM0674W] Port U0_M0_F0.z_dclk_delay created by zPar&nbsp;&nbsp;but not seen by zTime<br>
+[KTM0665W] Driver&nbsp;&nbsp;assigned as source clock domain of PORT .zcg_compositeClock.<br>
+[KTM0671W] Driver&nbsp;&nbsp;assigned as target clock domain of PORT U0_M0_F0.zcg_compositeClock.<br>
+[KTM0665W] Driver&nbsp;&nbsp;assigned as source clock domain of PORT .zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1.<br>
+[KTM0671W] Driver&nbsp;&nbsp;assigned as target clock domain of PORT U0_M0_F0.zcg_zceiClock[0].<br>
+[KTM0665W] Driver&nbsp;&nbsp;assigned as source clock domain of PORT .zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0.<br>
+[KTM0671W] Driver&nbsp;&nbsp;assigned as target clock domain of PORT U0_M0_F0.zcg_zceiClock[1].<br>
+</div>
+</div>
+</div>
+</div>
+<div style="clear:both"></div>
+<div id="footer">
+<div style="float: left; text-align: center; width: 50%;">Synopsys</div>
+<div style="float: right; text-align: center; width: 50%;">generated by zCui</div>
+</div>
+<script>
+/*
+	RequestAnimationFrame Polyfill
+
+	http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+	http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+	by Erik Möller, fixes from Paul Irish and Tino Zijdel
+
+	MIT license
+ */ 
+
+(function() {
+	var lastTime = 0;
+	var vendors = ['ms', 'moz', 'webkit', 'o'];
+	for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+		window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+		window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+	}
+
+	if ( ! window.requestAnimationFrame ) {
+		window.requestAnimationFrame = function(callback, element) {
+			var currTime = new Date().getTime();
+			var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+			var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+			timeToCall);
+			lastTime = currTime + timeToCall;
+			return id;
+		};
+	}
+
+	if ( ! window.cancelAnimationFrame ) {
+		window.cancelAnimationFrame = function(id) {
+			clearTimeout(id);
+		};
+	}
+}());
+
+
+/*
+	Sticky menu script
+ */
+
+(function(w,d,undefined){
+	var el_html = d.documentElement,
+		el_body = d.getElementsByTagName('body')[0],
+		header = d.getElementById('header'),
+		lastScroll = w.pageYOffset || el_body.scrollTop,
+
+		menuIsStuck = function(triggerElement, wScrollTop, lastScroll) {
+			var regexp		= /(nav\-is\-stuck)/i,
+				classFound	= el_html.className.match( regexp ),
+				navHeight	= header.offsetHeight,
+				bodyRect	= el_body.getBoundingClientRect(),
+				scrollValue	= triggerElement ? triggerElement.getBoundingClientRect().top - bodyRect.top - navHeight  : 800,
+				scrollValFix = classFound ? scrollValue : scrollValue + navHeight;
+
+			// if scroll down is 700 or more AND nav-is-stuck class doesn't exist AND we are going up
+			if ( wScrollTop > scrollValFix && !classFound && wScrollTop < lastScroll ) {
+				el_html.className = el_html.className + ' nav-is-stuck';
+				el_body.style.paddingTop = navHeight + 'px';
+			}
+
+			// if we are to high in the page AND nav-is-stuck class exists
+			if ( classFound && wScrollTop > lastScroll ) {
+				el_html.className = el_html.className.replace( regexp, '' );
+				el_body.style.paddingTop = '0px';
+			}
+		},
+
+		onScrolling = function() {
+			var wScrollTop = w.pageYOffset || el_body.scrollTop;
+			
+			// use scroll datas as parameters...
+			menuIsStuck( d.getElementById('main'), wScrollTop, lastScroll );
+			
+			// save current scroll as last scroll position
+			lastScroll = wScrollTop;
+			
+		};
+
+
+	el_html.className = el_html.className + ' js';
+
+	// when you scroll, fire onScrolling() function
+	w.addEventListener('scroll', function(){
+		w.requestAnimationFrame( onScrolling );
+	});
+
+}(window, document));
+</script>
+</body>
+</html>

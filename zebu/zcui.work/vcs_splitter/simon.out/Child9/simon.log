@@ -1,0 +1,42 @@
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: ram Parameterized Name: ram
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '9' with process id '35879'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: ram
+
+
+Note-[SM_MEM_INFO] Module has inferred memories
+../source/stb/ram.sv, 8
+  Inferred memory statistics for module 'ram' (Instances: 1)
+  ------------------------------------------------------------------------------
+  |Name |Size |TotalPorts |ReadPorts |WritePorts |Reset |Initial |
+  ------------------------------------------------------------------------------
+  | mem | 2304(256x9) |TP:1 |RP:0(A:0,S:0) |WP:1(A:0,S:1) |R:None |I:No |
+  ------------------------------------------------------------------------------
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '9' with process id '35895'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.04 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+

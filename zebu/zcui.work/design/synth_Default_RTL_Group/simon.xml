@@ -1,0 +1,54 @@
+<SVI>
+<SVI_SIMON>
+    <option data="addInputResolution" />
+    <option data="allowInitialBlock" />
+    <option data="alwaysSplitStructArrays" />
+    <option data="buildTop" />
+    <option data="combineAdders" />
+    <option data="designAttribute" />
+    <option data="dumpAllBBInfoForNonBB" />
+    <option data="edifCompatName=0" />
+    <option data="exitOnError" />
+    <option data="exitPostAnalysis" />
+    <option data="extractHolds" />
+    <option data="full_hier" />
+    <option data="incrementCompile" />
+    <option data="markRawSigs" />
+    <option data="memXform" />
+    <option data="memXformAfterGlobalOpt" />
+    <option data="neverInlineModules=stb" />
+    <option data="newParallelCase" />
+    <option data="noRemoveConstants" />
+    <option data="noSkipSimMemModels" />
+    <option data="optParallelIf" />
+    <option data="parMux" />
+    <option data="preserveMemLatchWrites" />
+    <option data="preserveSigs" />
+    <option data="processInitialValue" />
+    <option data="readFullCase" />
+    <option data="retainCaseXZ" />
+    <option data="rewriteMdaSetPart" />
+    <option data="taskInstXform" />
+    <option data="trackLocations" />
+    <option data="transferUserInstAttr=*" />
+    <option data="ufeBboxModules=eVe_initial" />
+    <option data="ufeBboxModules=zebu_reqsig_clock_zcompositeclock" />
+    <option data="unifiedCompile" />
+    <option data="useDot" />
+    <option data="top=top" />
+    <option data="consistencyCheck=0" />
+    <option data="nativeXmrMultipleThreads=0" />
+    <option data="clkAnalysisOnMemAndLatch=0" />
+    <option data="removeUnused=NONE" />
+    <option data="constantPropagate=ALL" />
+    <option data="memSizeThreshold=2048" />
+    <option data="memPortThreshold=128" />
+    <option data="loopCountLimit=16384" />
+    <option data="unrollActionLimit=16384" />
+    <option data="unrollWithBreakLimit=16384" />
+    <option data="j=16" />
+    <option data="dumpDataDB" />
+    <f data="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/additional_simon_config.txt" />
+</SVI_SIMON>
+</SVI>
+

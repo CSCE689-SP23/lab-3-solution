@@ -1,0 +1,22 @@
+set triton_LUT  Util
+set triton_sll_23  2
+set triton_sll_12  18
+set triton_sll_01  8
+set triton_slr3_util  0.0
+set triton_slr2_util  3.4
+set triton_slr1_util  0.0
+set triton_slr0_util  0.0
+set triton_violated_nb 0
+set triton_violated_worst 0.000ns
+set triton_timing_violated 0
+set triton_violated_clock  CLK_fib_clk
+set triton_violated_path 0
+set triton_cpu_time 53
+set triton_slice_util  0.9
+set triton_max_slr_util 3.4
+set triton_very_high_SLL  0
+
+set Triton_Timing_path_crossing_SLR 0 
+set triton_real_timing_violated 0
+set triton_non_uniform_util  0
+set triton_high_SLL  0

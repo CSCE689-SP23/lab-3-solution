@@ -1,0 +1,55 @@
+Reading memory list file design/synth_Default_RTL_Group/zmem/Memory_ram_zMem/zMem.lst
+    found: 'ram_ZMEM_mem'
+Reading memory list file design/synth_Default_RTL_Group/zmem/Memory_rom_zMem/zMem.lst
+    found: 'rom_ZMEM_mem'
+Computing EDIF dependencies
+    Relative directory backend_default
+    Edif-file list file open
+    No context file found
+    Number of edif files removed since the last compilation: 0
+    Number of missing edif files: 0
+    Number of changed edif files: 15
+    Number of unchanged edif files: 0
+Creating archive directories
+    Directory tools created
+    Directory zCui created
+Creating zDveTool script for 
+    DVE Tool script written
+ zDVE succesfully added
+Clustering mode: FullAuto
+No clustering mapping file
+Creating script for zTopBuild
+    zTopBuild script written
+Version file written.
+Xml Version file written.
+Version file written.
+Xml Version file written.
+Version Archive File Written
+Building Simu flow
+       Added: Simulate Graphs
+       Added: Build Accessibility Graphs
+Linking ZEMI3 Transactors
+    Creating archive directories
+        Directory tools created
+        Directory zCui created
+    ZEMI3 Transactor Archive File Written
+    No DPI transactors found
+Creating zRTLDB flow
+    Flow Indexer built
+    Creating script for zRTLDB Indexer
+        zRTLDB script written
+    Creating script for zRTLDB Link
+        zRTLDB script written
+    Flow Link built
+    Creating script for zRTLDB RunTime
+        zRTLDB script written
+    Flow RunTime built
+Creating VCS link flow
+    Flow Vcs Linker built
+    Creating script for VCS Link
+        zRTLDB script written
+Creating optionsdb flow
+    Flow optionsdb built
+    Creating script for options db
+        zRTLDB script written
+Backend Entry completed

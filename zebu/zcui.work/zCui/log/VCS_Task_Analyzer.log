@@ -1,0 +1,26 @@
+Init DB
+Virtual file system: OFF
+UC Flow Type
+   Flow UC2.0
+DUT top name found: top
+Group: Default_RTL_Group top name found: top
+No memory
+DVE file: vcs.dve
+dependecies tag found
+Rhino Fsdb Flow built
+Analyzing DUT synthesis
+Bundling regular synthesis
+Reading and assigning contexts (2/10)
+   File: zCui/ctx/design_Default_RTL_Group_Synthesis_Result.ctx
+   Cannot open file
+Evaluating synthesis (3/10)
+   Synthesis incrementability is enabled
+   Cache statistics 33 hits on 48 calls
+   Number of unrealizable synthesis 0
+   Number of synthesis to be redone 12
+   Number of stable synthesis 0
+Making synthesis bundles (4/10)
+   Size method: 23
+Number of regular stable synthesis: 0
+Number of regular synthesis to be redone: 1
+File ./zCui/why/design_Default_RTL_Group_Synthesis_Result.why written

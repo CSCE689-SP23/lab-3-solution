@@ -1,0 +1,3 @@
+fifo_usage_spy
+sqnod25 -> sqnod25 -> zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0
+sva_clock_inst -> sva_clock_inst -> zebu_reqsig_clock_zcompositeclock

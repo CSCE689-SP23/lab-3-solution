@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zFs">
+<modname>top</modname>
+<interface>
+ <ports>
+  <input>2</input>
+ </ports>
+ <bits>
+  <input>2</input>
+ </bits>
+</interface>
+<stats/>
+</ZeBuUiDoc>

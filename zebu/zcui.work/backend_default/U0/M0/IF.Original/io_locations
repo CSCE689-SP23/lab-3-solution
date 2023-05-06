@@ -1,0 +1,131 @@
+IO  pin (230,  15) /lib_driver_boxes/ztop/NETLIST/zrdn_AW10
+IO  pin ( 58, 223) /lib_driver_boxes/ztop/NETLIST/zrdn_AB41
+IO  pin (230,  25) /lib_driver_boxes/ztop/NETLIST/zrdn_AT12
+IO  pin ( 58, 175) /lib_driver_boxes/ztop/NETLIST/zrdn_AF40
+IO  pin ( 58, 171) /lib_driver_boxes/ztop/NETLIST/zrdn_AF42
+IO  pin (230, 381) /lib_driver_boxes/ztop/NETLIST/zrdn_K1
+IO  pin ( 58, 271) /lib_driver_boxes/ztop/NETLIST/zrdn_Y41
+IO  pin (230,  17) /lib_driver_boxes/ztop/NETLIST/zrdn_AW11
+IO  pin (230, 275) /lib_driver_boxes/ztop/NETLIST/zrdn_AU30
+IO  pin (230,  39) /lib_driver_boxes/ztop/NETLIST/zrdn_AL10
+IO  pin (230,  43) /lib_driver_boxes/ztop/NETLIST/zrdn_AL12
+IO  pin (230,  43) /lib_driver_boxes/ztop/NETLIST/zrdn_AL13
+IO  pin (230, 275) /lib_driver_boxes/ztop/NETLIST/zrdn_AU31
+IO  pin (230,   1) /lib_driver_boxes/ztop/NETLIST/zrdn_BD13
+IO  pin ( 58, 223) /lib_driver_boxes/ztop/NETLIST/zrdn_AC41
+IO  pin ( 58, 359) /lib_driver_boxes/ztop/NETLIST/zrdn_K27
+IO  pin (230,   9) /lib_driver_boxes/ztop/NETLIST/zrdn_BC11
+IO  pin (230,  23) /lib_driver_boxes/ztop/NETLIST/zrdn_AU11
+IO  pin (230,  23) /lib_driver_boxes/ztop/NETLIST/zrdn_AU12
+IO  pin (230,   3) /lib_driver_boxes/ztop/NETLIST/zrdn_BC12
+IO  pin (230, 381) /lib_driver_boxes/ztop/NETLIST/zrdn_J1
+IO  pin (230,   1) /lib_driver_boxes/ztop/NETLIST/zrdn_BC13
+IO  pin (230,   5) /lib_driver_boxes/ztop/NETLIST/zrdn_BD10
+IO  pin (230,  37) /lib_driver_boxes/ztop/NETLIST/zrdn_AK10
+IO  pin (230,  37) /lib_driver_boxes/ztop/NETLIST/zrdn_AK11
+IO  pin (230,  41) /lib_driver_boxes/ztop/NETLIST/zrdn_AK12
+IO  pin ( 58, 271) /lib_driver_boxes/ztop/NETLIST/zrdn_W41
+IO  pin (230,  41) /lib_driver_boxes/ztop/NETLIST/zrdn_AK13
+IO  pin (230,   5) /lib_driver_boxes/ztop/NETLIST/zrdn_BD11
+IO  pin ( 58, 173) /lib_driver_boxes/ztop/NETLIST/zrdn_AD41
+IO  pin (230,  15) /lib_driver_boxes/ztop/NETLIST/zrdn_AY10
+IO  pin (230,  17) /lib_driver_boxes/ztop/NETLIST/zrdn_AY11
+IO  pin ( 58, 359) /lib_driver_boxes/ztop/NETLIST/zrdn_L27
+IO  pin (230,   9) /lib_driver_boxes/ztop/NETLIST/zrdn_BB11
+IO  pin (230,  35) /lib_driver_boxes/ztop/NETLIST/zrdn_AP10
+IO  pin (230,  27) /lib_driver_boxes/ztop/NETLIST/zrdn_AP11
+IO  pin (230, 377) /lib_driver_boxes/ztop/NETLIST/zrdn_M5
+IO  pin (230,  35) /lib_driver_boxes/ztop/NETLIST/zrdn_AR10
+IO  pin (230,  31) /lib_driver_boxes/ztop/NETLIST/zrdn_AN11
+IO  pin ( 58, 245) /lib_driver_boxes/ztop/NETLIST/zrdn_AA34
+IO  pin (230,  31) /lib_driver_boxes/ztop/NETLIST/zrdn_AN12
+IO  pin ( 58, 233) /lib_driver_boxes/ztop/NETLIST/zrdn_AA37
+IO  pin ( 58, 225) /lib_driver_boxes/ztop/NETLIST/zrdn_AA38
+IO  pin ( 58, 225) /lib_driver_boxes/ztop/NETLIST/zrdn_AA39
+IO  pin ( 58, 175) /lib_driver_boxes/ztop/NETLIST/zrdn_AE40
+IO  pin ( 58, 173) /lib_driver_boxes/ztop/NETLIST/zrdn_AE41
+IO  pin ( 58, 217) /lib_driver_boxes/ztop/NETLIST/zrdn_AA42
+IO  pin ( 58, 217) /lib_driver_boxes/ztop/NETLIST/zrdn_AA43
+IO  pin ( 58, 171) /lib_driver_boxes/ztop/NETLIST/zrdn_AE42
+IO  pin (230,  27) /lib_driver_boxes/ztop/NETLIST/zrdn_AR11
+IO  pin (230,  25) /lib_driver_boxes/ztop/NETLIST/zrdn_AR12
+IO  pin (230,  21) /lib_driver_boxes/ztop/NETLIST/zrdn_AV11
+IO  pin (230, 377) /lib_driver_boxes/ztop/NETLIST/zrdn_M4
+IO  pin ( 58, 273) /lib_driver_boxes/ztop/NETLIST/zrdn_V42
+IO  pin ( 58, 273) /lib_driver_boxes/ztop/NETLIST/zrdn_V41
+IO  pin (230,  39) /lib_driver_boxes/ztop/NETLIST/zrdn_AM10
+IO  pin (230,  47) /lib_driver_boxes/ztop/NETLIST/zrdn_AM11
+IO  pin (230,  21) /lib_driver_boxes/ztop/NETLIST/zrdn_AV12
+IO  pin ( 58, 245) /lib_driver_boxes/ztop/NETLIST/zrdn_AB34
+IO  pin ( 58, 241) /lib_driver_boxes/ztop/NETLIST/zrdn_AB35
+IO  pin ( 58, 241) /lib_driver_boxes/ztop/NETLIST/zrdn_AB36
+IO  pin ( 58, 233) /lib_driver_boxes/ztop/NETLIST/zrdn_AB37
+IO  pin (230,   3) /lib_driver_boxes/ztop/NETLIST/zrdn_BB12
+IO inst (58, 217) (OBUFDS) FK/xdlName_ddchiahfeebihhfbiij[0]/ckobuf
+IO inst (59, 217) (ODELAYE2) FK/xdlName_ddchiahfeebihhfbiij[0]/iodel
+IO inst (58, 225) (OBUFDS) FK/xdlName_ddchiahfeebihhfbiij[1]/ckobuf
+IO inst (59, 225) (ODELAYE2) FK/xdlName_ddchiahfeebihhfbiij[1]/iodel
+IO inst (58, 245) (OBUFDS) FK/xdlName_hjejfaabdchcachbfea/ckobuf
+IO inst (59, 245) (ODELAYE2) FK/xdlName_hjejfaabdchcachbfea/iodel
+IO inst (58, 241) (OBUFDS) FK/xdlName_iehfcggeifdegadjfde/ckobuf
+IO inst (59, 241) (ODELAYE2) FK/xdlName_iehfcggeifdegadjfde/iodel
+IO inst (58, 233) (OBUFDS) FK/xdlName_jbedibhechfagfgbbda/ckobuf
+IO inst (59, 233) (ODELAYE2) FK/xdlName_jbedibhechfagfgbbda/iodel
+IO inst (230, 17) (OBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_mclk_zpt_obuf
+IO inst (230, 9) (OBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_mdata[0]_zpt_obuf
+IO inst (230, 1) (OBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_mdata[1]_zpt_obuf
+IO inst (230, 5) (OBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_mdata[2]_zpt_obuf
+IO inst (230, 3) (OBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_mdata[3]_zpt_obuf
+IO inst (230, 21) (OBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_mdata[4]_zpt_obuf
+IO inst (230, 15) (OBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_mdata[5]_zpt_obuf
+IO inst (230, 23) (OBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_mdata[6]_zpt_obuf
+IO inst (230, 25) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_sclk_zpt_ibuf
+IO inst (230, 43) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_sdata[0]_zpt_ibuf
+IO inst (230, 37) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_sdata[1]_zpt_ibuf
+IO inst (230, 35) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_sdata[2]_zpt_ibuf
+IO inst (230, 27) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_sdata[3]_zpt_ibuf
+IO inst (230, 39) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_sdata[4]_zpt_ibuf
+IO inst (230, 31) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_sdata[5]_zpt_ibuf
+IO inst (230, 41) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_fib_sdata[6]_zpt_ibuf
+IO inst (58, 223) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_sys_mclk_zpt_ibuf
+IO inst (230, 47) (OBUF) RTB/zins_fp_ctrl/mxfcmxif_sys_overtemp_zpt_obuf
+IO inst (58, 171) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_sys_sclk[0]_zpt_ibuf
+IO inst (58, 173) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_sys_sclk[1]_zpt_ibuf
+IO inst (58, 273) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_sys_xclk2_zpt_ibuf
+IO inst (58, 271) (IBUFDS) RTB/zins_fp_ctrl/mxfcmxif_sys_xclk_zpt_ibuf
+IO inst (230, 275) (OBUFDS) RTB/zins_fp_ctrl/mxfsmxif_capture_zpt_obuf
+IO inst (230, 377) (IBUFDS) RTB/zins_fp_ctrl/mxifmxif_sys_pclk_in_zpt_ibuf
+IO inst (230, 381) (OBUFDS) RTB/zins_fp_ctrl/mxifmxif_sys_pclk_zpt_obuf
+IO inst (229, 381) (ODELAYE2) RTB/zins_fp_ctrl/mxifmxif_sys_pclk_zpt_odelay
+IO inst (58, 175) (IBUFDS) RTB/zins_fp_ctrl/sys_idel_clk_in_zpt_ibuf
+IO inst (2, 1) (XADC) RTB/zins_fp_ctrl/wrapper/system_monitorif_basic/SYSMON_0
+IO inst (58, 359) (IBUFDS) top/FP_00_09_00_08/ClockRegion000RD_18B/dser0/I1
+IO inst (60, 58) (MMCME2_ADV) RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_bus_dut_0/virtex7_pll_fib
+IO inst (60, 208) (MMCME2_ADV) RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk2_0/series7_pll_xclk
+IO inst (60, 258) (MMCME2_ADV) RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_xclk_0/series7_pll_xclk
+IO inst (59, 223) (IDELAYE2) RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_mclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0
+IO inst (229, 377) (IDELAYE2) RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/ckpadgc_pclk_in/x_idelay_0/u_xst_wrapper_0/iodelay_0
+IO inst (229, 25) (BUFIO) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/bufio_0
+IO inst (229, 25) (BUFR) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/bufr_0
+IO inst (229, 17) (ODDR) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/ck_out[0]_oddr_0
+IO inst (229, 43) (IDELAYE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[0]/virtex7_idelaye2_master
+IO inst (229, 43) (ISERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[0]/virtex7_iserdese2_master
+IO inst (229, 37) (IDELAYE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[1]/virtex7_idelaye2_master
+IO inst (229, 37) (ISERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[1]/virtex7_iserdese2_master
+IO inst (229, 35) (IDELAYE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[2]/virtex7_idelaye2_master
+IO inst (229, 35) (ISERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[2]/virtex7_iserdese2_master
+IO inst (229, 27) (IDELAYE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[3]/virtex7_idelaye2_master
+IO inst (229, 27) (ISERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[3]/virtex7_iserdese2_master
+IO inst (229, 39) (IDELAYE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[4]/virtex7_idelaye2_master
+IO inst (229, 39) (ISERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[4]/virtex7_iserdese2_master
+IO inst (229, 31) (IDELAYE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[5]/virtex7_idelaye2_master
+IO inst (229, 31) (ISERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[5]/virtex7_iserdese2_master
+IO inst (229, 41) (IDELAYE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[6]/virtex7_idelaye2_master
+IO inst (229, 41) (ISERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_in_0/u_xst_wrapper_0/socket_lvds_gp_in_is[6]/virtex7_iserdese2_master
+IO inst (229, 9) (OSERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[0]/virtex7_oserdese2_master
+IO inst (229, 1) (OSERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[1]/virtex7_oserdese2_master
+IO inst (229, 5) (OSERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[2]/virtex7_oserdese2_master
+IO inst (229, 3) (OSERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[3]/virtex7_oserdese2_master
+IO inst (229, 21) (OSERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[4]/virtex7_oserdese2_master
+IO inst (229, 15) (OSERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[5]/virtex7_oserdese2_master
+IO inst (229, 23) (OSERDESE2) RTB/zins_fp_ctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_gp_out_0/u_xst_wrapper_0/socket_lvds_gp_out_os[6]/virtex7_oserdese2_master

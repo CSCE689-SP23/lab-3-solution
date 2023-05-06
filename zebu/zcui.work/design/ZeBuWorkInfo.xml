@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="FrontEndBackEndLink">
+<ZeBuWorkInfo>
+<Flow>
+<Csa>1</Csa>
+<Eco>0</Eco>
+<FrontEnd>UC2.0</FrontEnd>
+<IfLess>0</IfLess>
+<NameDb>RHINODB</NameDb>
+<Upf>NONE</Upf>
+</Flow>
+<Platform>ZS3</Platform>
+<Top>top</Top>
+</ZeBuWorkInfo>
+</ZeBuUiDoc>

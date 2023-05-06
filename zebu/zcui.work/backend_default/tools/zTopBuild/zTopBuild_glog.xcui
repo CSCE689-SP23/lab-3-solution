@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="glog">
+    <author>zTopBuild</author>
+    <date>Wed Apr 19 01:04:55 2023</date>
+    <views>
+        <view name="Warnings/Errors">
+            <h1>System Compilation</h1>
+                <h2>Warning</h2>
+                <p>[ZTB0249W] can&#39;t set stack to unlimited, zTopBuild may randomly crash.</p>
+                <p>[ZTB1036W] The command &#39;disable ztime_uses_rtl_names&#39; is deprecated and will be removed in the next ZeBu software release.</p>
+                <p>[LST0478W] The leaf instance uniquification ratio is less then 4.00</p>
+                <p>[LST0479W] The hierarchical instance per module uniquification ratio is less then 4.00</p>
+                <p>[ZTB1122W] Clock accuracy of 0 is not supported. It will be set to 24.</p>
+                <p>[ZTB0707W] Cleaned up 1 undriven primitive ports - please check the report.</p>
+                <p>[EDI0079W] Enable port &#39;sva_en&#39; of System Verilog Assertion instance &#39;sva_parity_error&#39; (ZSVA_MOD_PLI_1) is already connected. Disconnected it.</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_reqsig_clock_zcompositeclock</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module ZSVA_MOD_PLI_1</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_wb_reg</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zfwc_hs_1</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module ZXLSYS</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_clk</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_di</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_addr</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_we</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_do</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_reqsig_clock_driverclock</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0</p>
+                <p>[RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_clockGen</p>
+                <p>[KBD0213W] cannot open report file for writing make sure &#39;./.zTopBuild_AC_report.log.dir/SEC_AC_OPT_SOLUTION_CORE_SIZE&#39; has writing rights.</p>
+                <p>[KBD0213W] cannot open report file for writing make sure &#39;./.zTopBuild_AC_report.log.dir/SEC_AC_OPT_SOLUTION_CORE_XO&#39; has writing rights.</p>
+                <p>[KBD0214W] cannot open report file for appending make sure &#39;./.zTopBuild_AC_report.log.dir/SEC_AC_PROF&#39; has writing rights.</p>
+        </view>
+        <view name="Target">
+            <h1>System Compilation</h1>
+                <h2>Size</h2>
+                <p> MODE=virtex7</p>
+                <p> Chosen part reference for resource evaluation is VIRTEX7 7vlx2000tff1925 .</p>
+                <p> System size : 45 FPGA</p>
+                <p> </p>
+                <p> +----------------+------+------+------+------+------+-----+-----+----+</p>
+                <p> |                |   REG|   LUT|RAMLUT|  LUT6| MUXCY| BRAM|  DSP|QIWC|</p>
+                <p> +----------------+------+------+------+------+------+-----+-----+----+</p>
+                <p> |VIRTEX7 (FPGA)  |2,443K|1,222K|  345K|1,222K|1,222K|1,290|2,160|524K|</p>
+                <p> |VIRTEX7 (System)|  110M|   55M|   16M|   55M|   55M|  58K|  97K| 24M|</p>
+                <p> +----------------+------+------+------+------+------+-----+-----+----+</p>
+                <p> Number of hardware modules requested to map the design : 1.</p>
+                <h2>Hardware Configuration</h2>
+                <p>+-------+--------------------------+</p>
+                <p>| Name  | Module                   |</p>
+                <p>+-------+--------------------------+</p>
+                <p>| U0.M0 |      zse_xc7v_8c_2000_v1 |</p>
+                <p>+-------+--------------------------+</p>
+            <h1>System compilation</h1>
+                <h2>Design size estimation</h2>
+                <p>Design size estimation (only used resources are reported here)</p>
+                <p>+-------------------------------+------+------+------+------+----------+-----------+</p>
+                <p>|Resource usage                 |LUT   |LUT6  |REG   |RAMLUT|FWC_IP_NUM|FWC_IP_BITS|</p>
+                <p>+-------------------------------+------+------+------+------+----------+-----------+</p>
+                <p>|Estimated size of the design   |1,239 |29    |1,238 |72    |3         |136        |</p>
+                <p>|Board size with user fill-rates|5,497K|2,199K|4,838K|1,241K|7,137     |617K       |</p>
+                <p>+-------------------------------+------+------+------+------+----------+-----------+</p>
+                <p>| For 1 boards                  |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |</p>
+                <p>|                  For 2 boards |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |</p>
+                <p>|                  For 3 boards |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |</p>
+                <p>|                  For 4 boards |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |</p>
+                <p>|                  For 5 boards |0.0%  |0.0%  |0.0%  |0.0%  |0.0%      |0.0%       |</p>
+                <p>+-------------------------------+------+------+------+------+----------+-----------+</p>
+                <p></p>
+        </view>
+        <view name="Optimization">
+            <h1>System compilation</h1>
+                <h2>Global compilation options</h2>
+                <p>+----------------------------+-------+</p>
+                <p>|                     Process|   Mode|</p>
+                <p>+----------------------------+-------+</p>
+                <p>|                 Loop report|enabled|</p>
+                <p>|   Clock localization (core)|enabled|</p>
+                <p>|   Clock localization (fpga)|enabled|</p>
+                <p>|    Data localization (core)|enabled|</p>
+                <p>|    Data localization (fpga)|enabled|</p>
+                <p>|ac_annotate_neighbord_zcores|enabled|</p>
+                <p>|     ac_annotate_prob_routes|enabled|</p>
+                <p>+----------------------------+-------+</p>
+                <p></p>
+                <h2>Logic optimization options</h2>
+                <p>Logic optimization is enabled (default).</p>
+                <p></p>
+                <p>+--------------------------------------------------+-----------------+</p>
+                <p>|                                           Process|             Mode|</p>
+                <p>+--------------------------------------------------+-----------------+</p>
+                <p>|                              Constant propagation|enabled (default)|</p>
+                <p>|Constant propagation (through low power instances)|          enabled|</p>
+                <p>|                              Unused logic removal|enabled (default)|</p>
+                <p>|                  Write-only memories optimization|         disabled|</p>
+                <p>|                Drop optimizable waveform captures|          enabled|</p>
+                <p>|                 List of kept up-instances modules|           &#60;none&#62;|</p>
+                <p>+--------------------------------------------------+-----------------+</p>
+                <p></p>
+                <h2>Target</h2>
+                <p>Use module</p>
+                <p>	U0.M0</p>
+                <h2>Partitioning</h2>
+                <p>The partitioner used is : zTopPartitioning.</p>
+                <p></p>
+                <p>Filling rates</p>
+                <p>+--------------------------+---+---+------+----+---+</p>
+                <p>|                          |REG|LUT|RAMLUT|BRAM|DSP|</p>
+                <p>+--------------------------+---+---+------+----+---+</p>
+                <p>|User max filling rates (%)| 22| 50|    40|  50| 50|</p>
+                <p>|   User overflow rates (%)|  5|  5|    10|   5|  0|</p>
+                <p>+--------------------------+---+---+------+----+---+</p>
+                <p></p>
+                <p>Lut weight</p>
+                <p>+------+-+-+-+-+-+-+</p>
+                <p>|   LUT|1|2|3|4|5|6|</p>
+                <p>+------+-+-+-+-+-+-+</p>
+                <p>|Weight|0|1|1|1|1|1|</p>
+                <p>+------+-+-+-+-+-+-+</p>
+                <p></p>
+        </view>
+        <view name="Clock">
+            <h1>System compilation</h1>
+                <h2>Clock path analysis</h2>
+                <p>For the clock path analysis in Verdi, please use the following command in the additional command file of zTopBuild :</p>
+                <p>- enable rtl_names_save_all</p>
+                <h2>Clock localization</h2>
+                <p> Only one partition, no clock localization will be performed</p>
+        </view>
+        <view name="Design">
+            <h1>System Compilation</h1>
+                <h2>Statistics</h2>
+                <p> 64 zviews, 0 sram_trace access, 0 read_port and 0 write_port were inserted, and 0 DVE XMRs were scheduled.</p>
+                <p> 0 port (top and cores) has been simplified by a constant</p>
+                <h2>Size</h2>
+                <p>More detailed information about design size can be found in ^LINK(zTopBuild_report.html#K5.6.)zTopBuild_report.log, 5.6.Detection of sub-system candidates^LINK-</p>
+                <p></p>
+                <p>+-----------+---+---+---------+------+----+-----+----+---+</p>
+                <p>|           |REG|LUT|LUT W/O W|RAMLUT|LUT6|MUXCY|BRAM|DSP|</p>
+                <p>+-----------+---+---+---------+------+----+-----+----+---+</p>
+                <p>|Design size|595|275|      275|    72|  29|    2|   0|  0|</p>
+                <p>+-----------+---+---+---------+------+----+-----+----+---+</p>
+                <p></p>
+                <p>       65	Module(s)</p>
+                <p>       11	Blackbox module(s)</p>
+                <p>        0	External memory module(s)</p>
+                <p>        1	Fast Waveform Capture IP module(s)</p>
+                <p>        3	DPI module(s)</p>
+                <p>        0	Qiwc IP module(s)</p>
+                <p>        0	Asynchronous ZMEM module(s)</p>
+                <p>        2	Synchronous ZMEM module(s)</p>
+                <p>        2	Disconnected module port(s)    [in=2 out=0 inout=0]</p>
+                <p>      248	Disconnected instance port(s)  [in=71 out=177 inout=0]</p>
+                <p>        0	Disconnected wire(s)</p>
+                <p>        4	Loadless wire(s)</p>
+                <p>        2	Sourceless wire(s)</p>
+                <p>      457	Uninitialized Register(s)</p>
+                <p>        8	Initialized Register(s)</p>
+                <p></p>
+                <p>Detailed manipulation logic size (*)</p>
+                <p>+------------------------------+---------------+---------------+---------------+---------------+---------------+----------+---------------+---------------+</p>
+                <p>|                              |            REG|            LUT|         RAMLUT|           LUT6|          MUXCY|      BRAM|            DSP|           QIWC|</p>
+                <p>+------------------------------+---------------+---------------+---------------+---------------+---------------+----------+---------------+---------------+</p>
+                <p>|        Post-split design size|            595|            275|             72|             29|              2|         0|              0|              0|</p>
+                <p>|Sync elements routing cost(**)|              0|              0|              0|              0|              0|         0|              0|              0|</p>
+                <p>|                           SUM|            595|            275|             72|             29|              2|         0|              0|              0|</p>
+                <p>+------------------------------+---------------+---------------+---------------+---------------+---------------+----------+---------------+---------------+</p>
+                <p></p>
+                <p>(**)Note that sync elements routing cost include :  reg cost of non-reg sync elements.</p>
+        </view>
+        <view name="Memory" order="-500">
+            <h1>ZMEM</h1>
+                <h2>Top 10 (ordered by size)</h2>
+                <p>+------------------+-----------+----------+-------------+--------+------------+</p>
+                <p>|Module            |       Mode|Data width|Address width|Nb ports|Nb instances|</p>
+                <p>+------------------+-----------+----------+-------------+--------+------------+</p>
+                <p>|work, rom_ZMEM_mem|SYNCHRONOUS|         9|            8|       1|           1|</p>
+                <p>+------------------+-----------+----------+-------------+--------+------------+</p>
+                <p>|work, ram_ZMEM_mem|SYNCHRONOUS|         9|            8|       1|           1|</p>
+                <p>+------------------+-----------+----------+-------------+--------+------------+</p>
+                <p></p>
+                <h2>Top 10 (ordered by number of ports)</h2>
+                <p>+------------------+-----------+----------+-------------+--------+------------+</p>
+                <p>|Module            |       Mode|Data width|Address width|Nb ports|Nb instances|</p>
+                <p>+------------------+-----------+----------+-------------+--------+------------+</p>
+                <p>|work, rom_ZMEM_mem|SYNCHRONOUS|         9|            8|       1|           1|</p>
+                <p>+------------------+-----------+----------+-------------+--------+------------+</p>
+                <p>|work, ram_ZMEM_mem|SYNCHRONOUS|         9|            8|       1|           1|</p>
+                <p>+------------------+-----------+----------+-------------+--------+------------+</p>
+                <p></p>
+        </view>
+        <view name="Performance" order="-9000">
+            <h1>System Compilation</h1>
+                <h2>Final resource utilization and IO cut by core</h2>
+                <p> </p>
+                <p> +------+---+---+------+----+-----+----+---+-------------------+--+</p>
+                <p> |ZCORE |REG|LUT|RAMLUT|LUT6|MUXCY|BRAM|DSP|LUT (w/o weighting)|IO|</p>
+                <p> +------+---+---+------+----+-----+----+---+-------------------+--+</p>
+                <p> |Part_0|595|275|    72|  29|    2|   0|  0|                275| 0|</p>
+                <p> +------+---+---+------+----+-----+----+---+-------------------+--+</p>
+        </view>
+    </views>
+</ZeBuUiDoc>

@@ -1,0 +1,37 @@
+
+Note-[SM_PME] Processing Module/Entity
+  Processing: parity_check Parameterized Name: parity_check
+
+
+Note-[SM_IIF] Instance Info
+  Instance Count : module 'parity_check' has 1 instances
+  
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '3' with process id '35873'
+  is done with synthesis of total '1' modules
+  SIMON Child CPU Time        : 0.01 sec
+  SIMON Child Wall-Clock Time : 0.02 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+
+
+Note-[SM_POME] Processing Module/Entity
+  Performing post-processing optimizations on Module/Entity: fifo_0000
+
+
+Note-[SM_CHLDRUN_DONE] Child process run completed
+  Child process number '3' with process id '35889'
+  is done with post-processing optimizations of total '1' modules
+  SIMON Child CPU Time        : 0.00 sec
+  SIMON Child Wall-Clock Time : 0.03 sec
+  SIMON Child Current Memory  : 587 MB
+  SIMON Child Peak Memory     : 587 MB
+  SIMON Distribution          : 0.00,0.00,0.00,0.00 sec
+  End time                    : Wed Apr 19 01:04:29 2023
+  .
+

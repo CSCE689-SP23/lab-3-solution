@@ -1,0 +1,12 @@
+top.zfwc_ip__I_vcs_cdx_s_rw_topu_stb_clk1_0
+top.zafth__I_vcs_cdx_s_rw_topu_stb_clk0
+top.zafth__I_vcs_cdx_s_rw_topu_stb_clk1
+top.zfwc_ip__I_vcs_cdx_s_rw_topu_stb_clk1
+top.zforce_rstn
+top.zfwc_ip__I_vcs_cdx_s_rw_topu_stb_clk0_0
+top.u_stb
+top.u_dut
+top.val
+top.zebu_clockGen
+top.zfwc_ip__I_vcs_cdx_s_rw_topu_stb_clk0
+top.zebu_FT_inout_mod_hidden_wire_new

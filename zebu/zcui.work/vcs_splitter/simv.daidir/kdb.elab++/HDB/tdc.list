@@ -1,0 +1,14 @@
+../source/design/clkg.sv
+../source/design/dut.sv
+../source/design/fifo.sv
+../source/design/parity.sv
+../source/design/parity_check.sv
+../source/stb/bind_spy.sv
+../source/stb/fifo_usage_spy.sv
+../source/stb/proba.sv
+../source/stb/ram.sv
+../source/stb/rom.sv
+../source/stb/stb.sv
+../source/stb/top.sv
+../source/stb/wave.sv
+/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/verilog/zceiClockPort.v

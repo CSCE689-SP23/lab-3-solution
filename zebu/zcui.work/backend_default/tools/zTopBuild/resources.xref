@@ -1,0 +1,3 @@
+$DesignNbFpga = 1;
+$DesignNbLut = 275;
+$DesignNbReg = 595;

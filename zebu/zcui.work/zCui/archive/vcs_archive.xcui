@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="FrontEnd">
+    <targets>
+        <target type="directory" value="design/synth_Default_RTL_Group/dpi_log">
+            <menu>RunTime</menu>
+        </target>
+    </targets>
+</ZeBuUiDoc>

@@ -1,0 +1,14 @@
+memory set_global_debug_mode true
+mem new rom_ZMEM_mem auto
+#
+# Inferred from ../source/stb/rom.sv, line 14
+# Variable is mem
+#
+mem depth 256
+mem width 9
+mem add_port r0 r
+mem set_port_access r0 sync
+mem_port r0 clk r0clk 
+mem_port r0 addr r0addr 
+mem_port r0 do r0do 
+mem generate

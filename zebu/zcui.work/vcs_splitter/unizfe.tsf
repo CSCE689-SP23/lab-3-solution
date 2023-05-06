@@ -1,0 +1,149 @@
+45
++cli+1
++define+ASSERTIONS
++define+ZEBU
++itf+/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/vcsdp.tab
++memcbk
++vcsd
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mdir=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/vcs_splitter/csrc
+-Mdirectory=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/vcs_splitter/csrc
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/libvirsim.so /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/liberrorinf.so /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/libsnpsmalloc.so /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/include
+-Mxllcflags=
+-Xcbug=0x1
+-Xcbug=0x1
+-Xzcuiwork=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work
+-debug=1
+-debug_access
+-f ../source/sources.f
+-full64
+-gen_obj
+-kdb
+-lca
+-picarchive
+-sverilog
+-top
+-top
+-xzebu
+-xzebu_flow=zebu_scm
+/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/bin/vcs1
+top
+wave
+76
+CDC_JOINED_DC=ops3.engr.tamu.edu
+CDC_JOINED_DOMAIN=engr.tamu.edu
+CDC_JOINED_SITE=TAMU
+CDC_JOINED_ZONE=CN=Linux-Server-Resources,CN=CoE-Wide,CN=Global,CN=Zones,OU=Centrify,OU=Services,DC=engr,DC=tamu,DC=edu
+CDC_LOCALHOST=csce-quinn-s1.engr.tamu.edu
+CDC_PREW2KHOST=csce-quinn-s1
+DA_SESSION_ID_AUTH=ca725099-5e2e-b54f-866b-e7017a4a7af5
+DMTCP_PLUGIN=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib/libthreadmalloc.so:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib/libpthread_join.so
+HISTCONTROL=ignoredups
+HISTFILESIZE=10000
+HISTTIMEFORMAT=%F %T
+KRB5CCNAME=FILE:/tmp/krb5cc_421004447
+LC_ALL=en_US.utf-8
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LIBRARY_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib
+OLD_LD_LIBRARY_PATH=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbWriter/LINUX64/:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbReader/LINUX64/:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/cmlp/etc/python36_cmlp1/lib/python3.6/site-packages/cll:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/cmlp/etc/python36_cmlp1/lib/:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw/lib/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/NPI/lib/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbReader/linux64:/opt/coe/synopsys/verdi/Q-2020.03-SP2-12/share/FsdbWriter/linux64:/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/confpro/linux_a_64:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/confpro/linux_a_64/lib:/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/thirdparty/gtk
+OVA_UUM=0
+PROXIMA_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+PYTHONPATH=:
+QTDIR=/usr/lib64/qt-3.3
+QTINC=/usr/lib64/qt-3.3/include
+QTLIB=/usr/lib64/qt-3.3/lib
+QT_GRAPHICSSYSTEM_CHECKED=1
+SCRIPT_NAME=vcs
+SCRNAME=vcs
+SELINUX_LEVEL_REQUESTED=
+SELINUX_ROLE_REQUESTED=
+SELINUX_USE_CURRENT_RANGE=
+SNPS_SIM_BC_CONFIG_FILE=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vcs/synopsys_bc.setup
+SNPS_UTF_ENFORCE_ENABLED_COMMAND=set_perf_flow:ztopbuild
+SNPS_VCS_ATE_DISABLE_TCL_INTERNAL_=1
+SNPS_VCS_INTERNAL_CURR_PID=35235
+SNPS_VCS_INTERNAL_ROOT_PID=35235
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1681884267.616394460
+SNPS_VCS_INTERNAL_UTF_TRAN_MODE=1
+SNPS_ZEBU_ADDITIONAL_DEFAULT_COMMANDS=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/utf/default_commands.utf
+SSH_CLIENT=172.31.18.101 49921 22
+SSH_CONNECTION=172.31.18.101 49921 10.125.204.21 22
+SSH_TTY=/dev/pts/0
+TCLLIBPATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl
+TCL_LIBRARY=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl/tcl8.6
+TCL_LIBRARY_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/tcl
+TOOL_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64
+UC_FLOW_NAME=noZfe
+UNAME=/bin/uname
+USER_PRINCIPAL_NAME=davidkebo@AUTH.TAMU.EDU
+UTF_DUMP_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles
+VCS_ARCH=linux64
+VCS_ARCH_OVERRIDE=linux
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_DEPTH=0
+VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+VCS_LCAMSG_PRINT_OFF=1
+VCS_MODE_FLAG=64
+VCS_MX_HOME_INTERNAL=1
+VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+VMR_MODE_FLAG=64
+XDG_RUNTIME_DIR=/run/user/421004447
+XDG_SESSION_ID=16
+XILINX_LOCAL_USER_DATA=no
+ZCUI_MESSAGES_CONFIG=task=vcs_splitter_VCS_Task_Builder|pid=35001|index=0|tcphost=csce-quinn-s1.engr.tamu.edu|tcpport=5200|retry=10|delay=500|blocking=1|nmap=0
+ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+ZEBU_VCS_CONFIG_FILE=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/vcs_splitter/vcs_splitter_config_file
+ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+ZXLPAR_NOPROGRESSBAR=1
+sysc_uni_pwd=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu
+16
+1666062672 /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/verilog/zceiClockPort.v
+1681884141 ../source/stb/wave.sv
+1681884141 ../source/stb/fifo_usage_spy.sv
+1681884141 ../source/stb/bind_spy.sv
+1681884141 ../source/stb/proba.sv
+1681884141 ../source/stb/top.sv
+1681884141 ../source/stb/stb.sv
+1681884141 ../source/stb/rom.sv
+1681884141 ../source/stb/ram.sv
+1681884141 ../source/design/parity.sv
+1681884141 ../source/design/dut.sv
+1681884141 ../source/design/clkg.sv
+1681884141 ../source/design/fifo.sv
+1681884141 ../source/design/parity_check.sv
+1681884141 ../source/sources.f
+1666062585 /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/vcsdp.tab
+0
+1 /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/vcs_splitter/verdi_synopsys_sim.setup
+5
+-623477987 /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/vcs_splitter/vcs_splitter_config_file
+1666062671 /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/Empty.tcl
+1666062671 /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/lib_vcs.tcl
+1666062671 /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl
+1666062671 /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/post_vcs.tcl
+/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/design/synth_Default_RTL_Group/RTLDB

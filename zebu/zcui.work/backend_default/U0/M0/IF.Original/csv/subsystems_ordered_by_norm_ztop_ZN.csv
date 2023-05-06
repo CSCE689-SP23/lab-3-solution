@@ -1,0 +1,45 @@
+Nb_FPGA,Module,REG%,REG,LUT%,LUT,RAMLUT%,RAMLUT,LUT6%,LUT6,MUXCY%,MUXCY,BRAM%,BRAM,URAM%,URAM,DSP%,DSP,IOs,Path
+1,ztop,100%,7278,100%,7060,100%,312,100%,2680,100%,2563,100%,2, 0%,0, 0%,0,1200,ztop
+1,fp_firmware,59%,4285,58%,4047, 8%,24,58%,1540,39%,986,100%,2, 0%,0, 0%,0,504,ztop.RTB
+1,if_if_macro,59%,4253,57%,3978, 8%,24,58%,1536,39%,981,100%,2, 0%,0, 0%,0,680,ztop.RTB.zins_fp_ctrl
+1,if_macro_xclk2_DEVICE_7_PCLK_ODELAY_0_0_8...(1)*,59%,4252,57%,3978, 8%,24,58%,1536,39%,981,100%,2, 0%,0, 0%,0,1048,ztop.RTB.zins_fp_ctrl.wrapper
+1,fk_firmware,41%,2983,43%,2976,93%,288,43%,1140,62%,1577, 0%,0, 0%,0, 0%,0,335,ztop.FK
+1,if_clockgen2,27%,1938,34%,2362,93%,288,27%,716,27%,673, 0%,0, 0%,0, 0%,0,134,ztop.FK.zuf_clockgen
+1,clockgen2_0,27%,1938,34%,2362,93%,288,27%,716,27%,673, 0%,0, 0%,0, 0%,0,166,ztop.FK.zuf_clockgen.wrapper
+1,synchronous_readback_59073a5d_7381973c,44%,3142,40%,2796, 8%,24,47%,1249,30%,766, 0%,0, 0%,0, 0%,0,218,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback
+1,clockgen2_lib_clockgen_command_2753c2f3,10%,672, 9%,587,62%,192, 7%,164, 5%,112, 0%,0, 0%,0, 0%,0,125,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0
+1,clockgen2_lib_clockgen_command_crossdomai...(2)*, 8%,539, 6%,376,62%,192, 3%,56, 0%,0, 0%,0, 0%,0, 0%,0,220,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0.clockgen_command_crossdomain_0
+1,wc_ip_clock_manager_0,14%,983, 8%,542, 0%,0,15%,387,36%,899, 0%,0, 0%,0, 0%,0,186,ztop.FK.wc_ip_clock_manager.wrapper
+1,if_wc_ip_clock_manager,14%,983, 8%,542, 0%,0,15%,387,36%,899, 0%,0, 0%,0, 0%,0,154,ztop.FK.wc_ip_clock_manager
+1,if_macro_xclk2_DEVICE_7_PCLK_ODELAY_0_lib...(3)*, 7%,495, 6%,420, 0%,0, 2%,49, 4%,89,50%,1, 0%,0, 0%,0,107,ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx
+1,fib_bridge_rx_SIZE_7_MUX_6_MUXE_1_ARB_6_C...(4)*, 7%,495, 6%,420, 0%,0, 2%,49, 4%,89,50%,1, 0%,0, 0%,0,107,ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0
+1,clockgen2_lib_clockgen_registers_e50f5f93, 8%,571,11%,736,31%,96,15%,390, 1%,6, 0%,0, 0%,0, 0%,0,1079,ztop.FK.zuf_clockgen.wrapper.clockgen_registers_0
+1,srb_bridge_4f143765_4959f1fa, 5%,331, 4%,235, 0%,0, 3%,54, 4%,90,50%,1, 0%,0, 0%,0,315,ztop.RTB.zins_fp_ctrl.wrapper.srb_bridge
+1,fib_bridge_rx_fifo_async_3b393531_8067713...(5)*, 4%,224, 2%,122, 0%,0, 1%,8, 4%,77,50%,1, 0%,0, 0%,0,112,ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.fib_bridge_rx_fifo_async_0
+1,srb_bridge_fib2srb_fifo_7dbbfc80_c5c43d81, 3%,188, 2%,82, 0%,0, 1%,7, 2%,48,50%,1, 0%,0, 0%,0,79,ztop.RTB.zins_fp_ctrl.wrapper.srb_bridge.srb_bridge_fib2srb_fifo_0
+1,fifo1023x36_fwft_core_fifo_generator_v5_3...(6)*, 3%,188, 2%,82, 0%,0, 1%,7, 2%,48,50%,1, 0%,0, 0%,0,119,ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.fib_bridge_rx_fifo_async_0.fifo1023x36_fwft_0.fifo1023x36_fwft_0.BU2
+1,fifo1023x36_fwft_core_fifo_generator_v5_3...(7)*, 3%,188, 2%,82, 0%,0, 1%,7, 2%,48,50%,1, 0%,0, 0%,0,119,ztop.RTB.zins_fp_ctrl.wrapper.srb_bridge.srb_bridge_fib2srb_fifo_0.fifo1023x36_fwft_0.fifo1023x36_fwft_0.BU2
+1,fifo1023x36_fwft_core_16923df7_c5c43d81, 3%,188, 2%,82, 0%,0, 1%,7, 2%,48,50%,1, 0%,0, 0%,0,80,ztop.RTB.zins_fp_ctrl.wrapper.srb_bridge.srb_bridge_fib2srb_fifo_0.fifo1023x36_fwft_0.fifo1023x36_fwft_0
+1,fifo1023x36_fwft_core_16923df7_10dffb68, 3%,188, 2%,82, 0%,0, 1%,7, 2%,48,50%,1, 0%,0, 0%,0,80,ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.fib_bridge_rx_fifo_async_0.fifo1023x36_fwft_0.fifo1023x36_fwft_0
+1,fifo1023x36_fwft_5c15bea4_e46a7fa5, 3%,188, 2%,82, 0%,0, 1%,7, 2%,48,50%,1, 0%,0, 0%,0,80,ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.fib_bridge_rx_fifo_async_0.fifo1023x36_fwft_0
+1,fifo1023x36_fwft_5c15bea4_3171b94c, 3%,188, 2%,82, 0%,0, 1%,7, 2%,48,50%,1, 0%,0, 0%,0,80,ztop.RTB.zins_fp_ctrl.wrapper.srb_bridge.srb_bridge_fib2srb_fifo_0.fifo1023x36_fwft_0
+1,synchronous_readback_registers_2e525073_9...(8)*,16%,1108, 8%,538, 0%,0,16%,413, 1%,6, 0%,0, 0%,0, 0%,0,2023,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback.synchronous_readback_registers
+1,clockgen2_lib_clockgen_mode_pilote_23c5984f, 3%,210,12%,779, 0%,0, 4%,103, 6%,140, 0%,0, 0%,0, 0%,0,397,ztop.FK.zuf_clockgen.wrapper.clockgen_mode_pilote_0
+1,wc_ip_clock_manager_registers_468cf880, 1%,35, 8%,508, 0%,0,15%,387, 1%,6, 0%,0, 0%,0, 0%,0,1062,ztop.FK.wc_ip_clock_manager.wrapper.wc_ip_clock_manager_registers_0
+1,clockgen_command_crossdomain_fifo_fifo_ge...(9)*, 2%,129, 2%,92,16%,48, 1%,14, 0%,0, 0%,0, 0%,0, 0%,0,107,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0.clockgen_command_crossdomain_0.clockgen_command_crossdomain_fifo_1.BU2
+1,clockgen_command_crossdomain_fifo_fifo_ge...(10)*, 2%,129, 2%,92,16%,48, 1%,14, 0%,0, 0%,0, 0%,0, 0%,0,107,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0.clockgen_command_crossdomain_0.clockgen_command_crossdomain_fifo_2.BU2
+1,clockgen_command_crossdomain_fifo_fifo_ge...(11)*, 2%,129, 2%,92,16%,48, 1%,14, 0%,0, 0%,0, 0%,0, 0%,0,107,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0.clockgen_command_crossdomain_0.clockgen_command_crossdomain_fifo_3.BU2
+1,clockgen_command_crossdomain_fifo_fifo_ge...(12)*, 2%,129, 2%,92,16%,48, 1%,14, 0%,0, 0%,0, 0%,0, 0%,0,107,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0.clockgen_command_crossdomain_0.clockgen_command_crossdomain_fifo_0.BU2
+1,clockgen_command_crossdomain_fifo_f7cca03...(13)*, 2%,129, 2%,92,16%,48, 1%,14, 0%,0, 0%,0, 0%,0, 0%,0,79,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0.clockgen_command_crossdomain_0.clockgen_command_crossdomain_fifo_3
+1,clockgen_command_crossdomain_fifo_f7cca03...(14)*, 2%,129, 2%,92,16%,48, 1%,14, 0%,0, 0%,0, 0%,0, 0%,0,79,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0.clockgen_command_crossdomain_0.clockgen_command_crossdomain_fifo_2
+1,clockgen_command_crossdomain_fifo_f7cca03...(15)*, 2%,129, 2%,92,16%,48, 1%,14, 0%,0, 0%,0, 0%,0, 0%,0,79,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0.clockgen_command_crossdomain_0.clockgen_command_crossdomain_fifo_1
+1,clockgen_command_crossdomain_fifo_f7cca03d, 2%,129, 2%,92,16%,48, 1%,14, 0%,0, 0%,0, 0%,0, 0%,0,79,ztop.FK.zuf_clockgen.wrapper.clockgen_command_0.clockgen_command_crossdomain_0.clockgen_command_crossdomain_fifo_0
+1,clockgen2_lib_clockgen_cycle_61b46f13, 4%,288, 1%,1, 0%,0, 0%,0,12%,282, 0%,0, 0%,0, 0%,0,300,ztop.FK.zuf_clockgen.wrapper.clockgen_cycle_0
+1,synchronous_readback_core_NO7_u0_0__synch...(16)*, 2%,139, 4%,262, 0%,0, 4%,98, 4%,94, 0%,0, 0%,0, 0%,0,336,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback.u0[0]_synchronous_readback_core
+1,synchronous_readback_core_NO6_u0_1__synch...(17)*, 2%,139, 4%,262, 0%,0, 4%,98, 4%,94, 0%,0, 0%,0, 0%,0,336,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback.u0[1]_synchronous_readback_core
+1,synchronous_readback_core_NO4_u0_3__synch...(18)*, 2%,139, 4%,262, 0%,0, 4%,98, 4%,94, 0%,0, 0%,0, 0%,0,336,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback.u0[3]_synchronous_readback_core
+1,synchronous_readback_core_NO1_u0_6__synch...(19)*, 2%,139, 4%,263, 0%,0, 4%,97, 4%,94, 0%,0, 0%,0, 0%,0,336,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback.u0[6]_synchronous_readback_core
+1,synchronous_readback_core_NO1_u0_6__synch...(20)*, 2%,139, 4%,263, 0%,0, 4%,97, 4%,94, 0%,0, 0%,0, 0%,0,336,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback.u0[5]_synchronous_readback_core
+1,synchronous_readback_core_NO5_u0_2__synch...(21)*, 2%,139, 4%,261, 0%,0, 4%,98, 4%,94, 0%,0, 0%,0, 0%,0,336,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback.u0[2]_synchronous_readback_core
+1,synchronous_readback_core_NO3_u0_4__synch...(22)*, 2%,139, 4%,260, 0%,0, 4%,98, 4%,94, 0%,0, 0%,0, 0%,0,336,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback.u0[4]_synchronous_readback_core
+1,synchronous_readback_core_4475ea86_42382c19, 2%,139, 4%,260, 0%,0, 4%,98, 4%,94, 0%,0, 0%,0, 0%,0,336,ztop.RTB.zins_fp_ctrl.wrapper.synchronous_readback.u0[7]_synchronous_readback_core

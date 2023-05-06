@@ -1,0 +1,12 @@
+parity_check edif/parity_check/parity_check.edf.gz NameDir/parity_check
+clkg edif/clkg/clkg.edf.gz NameDir/clkg
+fifo_usage_spy edif/fifo_usage_spy/fifo_usage_spy.edf.gz NameDir/fifo_usage_spy
+fifo_0000 edif/fifo_0000/fifo_0000.edf.gz NameDir/fifo_0000
+parity edif/parity/parity.edf.gz NameDir/parity
+dut edif/dut/dut.edf.gz NameDir/dut
+proba edif/proba/proba.edf.gz NameDir/proba
+rom edif/rom/rom.edf.gz NameDir/rom
+proba_0000 edif/proba_0000/proba_0000.edf.gz NameDir/proba_0000
+ram edif/ram/ram.edf.gz NameDir/ram
+stb edif/stb/stb.edf.gz NameDir/stb
+top edif/top/top.edf.gz NameDir/top

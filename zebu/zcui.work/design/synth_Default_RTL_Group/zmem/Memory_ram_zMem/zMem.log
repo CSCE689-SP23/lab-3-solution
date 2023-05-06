@@ -1,0 +1,111 @@
+
+                                    ZeBu (R)
+                                      zMem
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zMem -createList -addScript ../../../../additionalZmemCommandFile.tcl -addScript /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zMem_config.tcl -debug ../ram.zmem 
+
+# start time is Wed Apr 19 01:04:38 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:02
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.17 0.05 0.06 2/475 36042
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185610 MB
+#            Total Free including cache: 190325 MB
+#            Swap cache: 0 MB Cached space: 4715 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 182 MB VmPeak: 182 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256337
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step DEFINE : Latency is using 4-bits-1-hot encoding
+#   step DEFINE : Evaluate additionnal script '../../../../additionalZmemCommandFile.tcl'.
+set_fpga_family {v7}
+automatic_selection -ramlut_to_bram {11}
+automatic_selection -ramlut -max_blocs {34480}
+automatic_selection -bram -max_blocs {645}
+set_max_sys_freq {clk_50}
+#   step DEFINE : Evaluate additionnal script '/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zMem_config.tcl'.
+memory {set_global_debug_mode} {true}
+#   step DEFINE : Global debug mode is ON
+mem {new} {ram_ZMEM_mem} {auto}
+#   step DEFINE : New memory : ram_ZMEM_mem
+mem {depth} {256}
+#   step DEFINE : Set memory : ram_ZMEM_mem depth 256
+mem {width} {9}
+#   step DEFINE : Set memory : ram_ZMEM_mem width     9
+mem {add_port} {w0} {w}
+#   step DEFINE : New port : 'w0' 'w' for memory 'ram_ZMEM_mem'.
+mem {set_port_access} {w0} {sync}
+#   step DEFINE : Set port access 'sync' of port 'w0' for memory 'ram_ZMEM_mem'.
+mem_port {w0} {clk} {w0clk}
+#   step DEFINE : Set 'clk' pin name 'w0clk' for port 'w0'.
+mem_port {w0} {addr} {w0addr}
+#   step DEFINE : Set 'addr' pin name 'w0addr' for port 'w0'.
+mem_port {w0} {di} {w0di}
+#   step DEFINE : Set 'di' pin name 'w0di' for port 'w0'.
+mem_port {w0} {we} {w0we}
+#   step DEFINE : Set 'we' pin name 'w0we' for port 'w0'.
+mem {generate}
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'bram' for memory 'ram_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'ramlut' for memory 'ram_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'zrm' for memory 'ram_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Type 'ramlut' has been chosen for memory 'ram_ZMEM_mem'.
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step MEMORY CHECK : Fast clock used for memory 'ram_ZMEM_mem'.
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step MEMORY CHECK : Fast clock used for memory 'ram_ZMEM_mem'.
+#   step ZMEM : Non-Optimizable zview instances used in module 'ram_ZMEM_mem'.
+#   step RESOURCE CHECK :   REG   36
+#   step RESOURCE CHECK :   LUT   71
+#   step RESOURCE CHECK :   BRAM  0
+#   step FREQUENCY : Worst case frequency of the memory 'ram_ZMEM_mem' would be 8333 kHz
+#   step ZMEM : Fast system clock 'clk_50' is used for memory 'ram_ZMEM_mem'.
+#   step SERIALIZE : writing netlist 'ram_ZMEM_mem' into znl file 'ram_ZMEM_mem.edf.gz'
+#   step SERIALIZE : #bytes in: 8950, #bytes out: 3408, compression ratio: 2.626174
+#   step GENERATE : generating vhdl wrapper 'ram_ZMEM_mem.vhd'
+#   step GENERATE : generating vhdl wrapper 'ram_ZMEM_mem_bbx.vhd'
+#   step GENERATE : generating verilog wrapper 'ram_ZMEM_mem.v'
+#   step GENERATE : generating verilog wrapper 'ram_ZMEM_mem_bbx.v'
+#   step GENERATE : generating report file 'ram_ZMEM_mem_report.log'
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m0.140s, sys 0m0.58s
+#   exec summary : Total memory: 370876 kB - RSS memory: 110972 kB - Data memory: 118388 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:38 2023

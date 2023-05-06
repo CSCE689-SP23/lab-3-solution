@@ -1,0 +1,185 @@
+---------------------------------------------------------------
+Triton version 2018-SP42H, built on Dec  3 2018, 14:42:12
+Copyright 2013-2014 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------
+Host: csce-quinn-s1.engr.tamu.edu
+Input script: ./fpga_reports/triton/run_1/triton.tcl
+set internal config variable num_threads to 4
+set internal config variable target_util to 10
+set internal config variable prepack_mode to 2
+set internal config variable pack_mode to util2
+set internal config variable partition_safe_util_choice to 1
+set internal config variable partition_max_allowed to 13700
+set internal config variable pack_lut6_limit to 2
+set internal config variable pack_target_util to 80
+Set device: xc7v2000tflg1925-1
+Reading EDIF file ./fpga_reports/triton/design_triton.edf...
+Started Design Setup...
+  PART from edif:            xc7v2000tflg1925-1
+  PART from setpart command: xc7v2000tflg1925-1
+  Applied PART from setpart command (xc7v2000tflg1925-1)
+Design Info:  Family VIRTEX7  Device XC7V2000T  Package FLG1925  Speedgrade -1
+Design Size: 2014 instances (668 LUTs)
+Finished Design Setup. CPU time: 0 secs (0.0 mins)    Wall time: 0 secs (0.0 mins)
+Setup 4-SLR's:
+Applying LOC properties on instances...
+  applied 7 (total 7) LOC properties on instances
+Reading constraint file ioclock.xdc...
+Reading constraint file ./fpga_reports/triton/design_triton.xdc...
+Warning: can't find timing model for /hdi_primitives/CAPTUREE2/netlist
+Loading sdc file ./fpga_reports/triton/design_triton.xdc
+
+Placement Started ...
+
+Resource Utilization Report:
+  Resource LUT       : Usage     668  Fixed       0  Supply 1221600  Util =  0.06%
+  Resource FF        : Usage     806  Fixed       0  Supply 2443200  Util =  0.03%
+  Resource DSP       : Usage       0  Fixed       0  Supply    2160  Util =  0.00%
+  Resource RAMB18    : Usage       0  Fixed       0  Supply    2584  Util =  0.00%
+  Resource RAMB36    : Usage       2  Fixed       0  Supply    1292  Util =  0.15%
+
+Multi-SLR net crossing (SLL demand):
+  SLR 2 - 3 :      3 (  0%)      3.0
+  SLR 1 - 2 :      4 (  0%)      4.0
+  SLR 0 - 1 :      5 (  0%)      7.8
+  Total     :     12       
+
+Finished SLR Partitioning.
+
+Finishes marking multi-SLR nets and creating SLL's:
+  Total      Nets :   3201
+  Multi-SLR  Nets :      8
+  Total SLL's     :     12
+
+Global Placement ...
+pack_info: Used Clustering Score: CONNECTIVITY LOCALITY TIECTR_DRIVER
+pack_info: Used Clustering Bonus:
+pack_info: Used Clustering Limit:
+..........................pack_info: Used Clustering Score: CONNECTIVITY LOCALITY TIECTR_DRIVER
+pack_info: Used Clustering Bonus: LUT_FF_NET
+pack_info: Used Clustering Limit:
+....................................
+Design checksum: f71555b3
+
+
+Placement and Timing Optimization...
+******************************************
+Optimizing design....
+Optimize Stage 1
+==========================================
+ OPT  Step  WNS(ns)      TNS(ns)    FEP
+==========================================
+ OPT     0    0.456        0.000      0
+ OPT     1    0.456        0.000      0
+Design checksum: 35da3d3a
+ OPT     2    0.456        0.000      0
+Optimize Stage 2
+==========================================
+ OPT  Step  WNS(ns)      TNS(ns)    FEP
+==========================================
+ OPT     0    0.456        0.000      0
+ OPT     1    0.456        0.000      0
+
+---------- Global Clock Distribution -------------
+  Y11     0     0  
+  Y10     0     0  
+  Y 9     0     0  
+  Y 8     0     0  
+  Y 7     0     0  
+  Y 6     0     0  
+  Y 5     0     1  
+  Y 4     0     0  
+  Y 3     0     0  
+  Y 2     0     0  
+  Y 1     0     0  
+  Y 0     0     0  
+--------------------------------------------------
+
+Placement Total Wirelength = 14193
+Design checksum: 80b7ea87
+
+Slice Utilization:   0.1% (   371 out of 305400)
+            SLR 3:   0.0% (    10 out of  76350)
+            SLR 2:   0.0% (     0 out of  76350)
+            SLR 1:   0.5% (   352 out of  76350)
+            SLR 0:   0.0% (     9 out of  76350)
+
+Design Placement Statistics by SLR:
++-----+--------+--------+------------+---------+-----------+---------+-------+-------+--------------+--------------+
+|     |        | Slices |            |         | Total LUT |         |       |       |              |   Fully Used |
+| SLR | Slices |    (%) | Total LUTs | LUTRAMs |       (%) |     FFs | BRAMs |  DSPs | LUT-FF Pairs | LUT-FF Pairs |
++-----+--------+--------+------------+---------+-----------+---------+-------+-------+--------------+--------------+
+|   3 |     10 |  0.01% |         13 |      10 |     0.00% |       0 |     0 |     0 |          N/A |          N/A |
+|   2 |      0 |  0.00% |          0 |       0 |     0.00% |       0 |     0 |     0 |          N/A |          N/A |
+|   1 |    352 |  0.46% |        642 |     107 |     0.11% |     806 |     4 |     0 |          N/A |          N/A |
+|   0 |      9 |  0.01% |         13 |       9 |     0.00% |       0 |     0 |     0 |          N/A |          N/A |
++-----+--------+--------+------------+---------+-----------+---------+-------+-------+--------------+--------------+
+
+**********************************************************
+                      Timing Summary
+**********************************************************
+Design:fx_top
+  Case: Setup
+  Total path end: 1948
+  Violated path end: 0
+  Total negative slack:      0.000ns
+  Worst negative slack:      0.000ns
+
+Placement Completed
+[MEM_RPT] Placement                     : Peak = 545MB, Current = 545MB
+
+Total Placement Runtime: CPU time: 13 secs (0.2 mins)    Wall time: 12 secs (0.2 mins)
+
+TCL-1 "place all" finished in 13 CPU seconds (12 Wall seconds)
+**********************************************************
+                   Timing Path Report
+**********************************************************
+Design:fx_top
+Case: Setup, No.  1
+==========================================================================================
+Launching Clock Path: (Ideal clock)
+Clock: CLK_sys_idel_clk, cycle time 4.500ns, @rise edge
+No.  Delay   Arrival   Cell       Fanout  Tag  Placement        Pin
+--------------------------------------------------------------------------------------------------------------
+  1  0.000 1073741.875   fx_top          1    0  (- -)            zrdn_AE40
+  2  0.000 1073741.875   IBUFDS          1    0  AE40             design/zkprctrl/sys_idel_clk_in_zpt_ibuf/I
+  3  0.120 1073741.875   IBUFDS          0    0  AE40             design/zkprctrl/sys_idel_clk_in_zpt_ibuf/O
+  4  0.000 1073741.875   BUFG            1    0  (  -   - - -)    design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/I
+  5  0.108     0.000   BUFG            0    2  (  -   - - -)    design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/O
+  6  0.000     0.000   FDRE           42    2  SLICE_X452Y268   design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/cnt_period_2/C
+
+Receiving Clock Path: (Ideal clock)
+Clock: CLK_sys_idel_clk, cycle time 4.500ns, @rise edge
+Clock uncertainty: 200ps
+No.  Delay   Arrival   Cell       Fanout  Tag  Placement        Pin
+------------------------------------------------------------------------------------------
+  1  0.000 1073741.875   fx_top          1    0  (- -)            zrdn_AE40
+  2  0.000 1073741.875   IBUFDS          1    0  AE40             design/zkprctrl/sys_idel_clk_in_zpt_ibuf/I
+  3  0.120 1073741.875   IBUFDS          0    0  AE40             design/zkprctrl/sys_idel_clk_in_zpt_ibuf/O
+  4  0.000 1073741.875   BUFG            1    0  (  -   - - -)    design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/I
+  5  0.108     0.000   BUFG            0    2  (  -   - - -)    design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/O
+  6  0.000     0.000   FDRE           42    2  SLICE_X447Y269   design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok/C
+
+Data path:
+No.  Delay Arrival Require   Slack Cell       Fanout Placement                      Die Pin
+--------------------------------------------------------------------------------------------------------------
+  1  0.276   0.276   0.732   0.456 FDRE            0 SLICE_X452Y268                  1  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/cnt_period_2/Q
+  2  1.067   1.343   1.799   0.456                 8 --                                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok_cmp_ge00001/I3
+  3  0.096   1.439   1.895   0.456 LUT6            0 SLICE_X454Y269                  1  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok_cmp_ge00001/O
+  4  0.300   1.739   2.195   0.456                 1 --                                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok_mux0000232_SW0/I5
+  5  0.096   1.835   2.291   0.456 LUT6            0 SLICE_X455Y269                  1  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok_mux0000232_SW0/O
+  6  0.861   2.696   3.152   0.456                 1 --                                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok_mux0000232/I4
+  7  0.096   2.792   3.248   0.456 LUT5            0 SLICE_X452Y269                  1  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok_mux0000232/O
+  8  0.180   2.972   3.428   0.456                 1 --                                 design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok_mux0000234/I5
+  9  0.096   3.068   3.524   0.456 LUT6            0 SLICE_X452Y269                  1  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok_mux0000234/O
+ 10  0.656   3.724   4.180   0.456 FDRE            1 SLICE_X447Y269                  1  design/zkprctrl/wrapper/fib_bridge_rx/u_xst_wrapper_0/socket_lvds_sys_slave_0/u_xst_wrapper_0/socket_lvds_sys_slave_reset_0/period_ok/D
+
+Writing output files...
+  Writing placement constraint file ./placement.tcl in gzip format ...
+  Totally    1546 instances
+  Annotated  1546 LOC constraints (100.0%)
+  Annotated  1476 BEL constraints (95.5%)
+  opening file ./unplaced
+
+Total Runtime: CPU time: 18 secs (0.3 mins)    Wall time: 16 secs (0.3 mins)
+

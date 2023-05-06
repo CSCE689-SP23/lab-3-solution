@@ -1,0 +1,71 @@
+if [ -f "./job.F00.qdel.done" -o -f "./job.F00.bkill.done"  ]; then \
+  echo "" ;\
+  echo "fpga FX=F00 has already a winner ... This job will not start" ;\
+  echo "" ;\
+else \
+    if [[ "Original" == "Original" ]]; then if [ -e  F00.src/zebu_common_env.mk ]; then rm -rf F00.src/zebu_common_env.mk; fi ; if [ -e  F00.src/zebu_lic_error ]; then rm -rf F00.src/zebu_lic_error; fi; echo "export ZEBU_FPGA_SRC_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/F00.src"            > F00.src/zebu_common_env.mk ; echo "export ZEBU_FPGA_ORIGINAL_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/F00.Original" >> F00.src/zebu_common_env.mk ; echo "export ZEBU_FPGA_MODULE_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0"                  >> F00.src/zebu_common_env.mk ; fi ;\
+	LABEL=Original FX=F00 zIseManager F00 Original YES /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vivado_v7/fpgaparameterset_v7.xcui NO  ;\
+fi
+# FX=F00 LABEL=Original :  
+# FX=F00 LABEL=Original :                                      ZeBu (R)
+# FX=F00 LABEL=Original :                                    zIseManager
+# FX=F00 LABEL=Original :  
+# FX=F00 LABEL=Original :                Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+# FX=F00 LABEL=Original :  
+# FX=F00 LABEL=Original :                      Copyright (c) 2002 - 2022 Synopsys, Inc.
+# FX=F00 LABEL=Original :     This software and the associated documentation are proprietary to Synopsys,
+# FX=F00 LABEL=Original :   Inc. This software may only be used in accordance with the terms and conditions
+# FX=F00 LABEL=Original :   of a written license agreement with Synopsys, Inc. All other use, reproduction,
+# FX=F00 LABEL=Original :     or distribution of this software is strictly prohibited.  Licensed Products
+# FX=F00 LABEL=Original :       communicate with Synopsys servers for the purpose of providing software
+# FX=F00 LABEL=Original :      updates, detecting software piracy and verifying that customers are using
+# FX=F00 LABEL=Original :      Licensed Products in conformity with the applicable License Key for such
+# FX=F00 LABEL=Original :    Licensed Products. Synopsys will use information gathered in connection with
+# FX=F00 LABEL=Original :      this process to deliver software updates and pursue software pirates and
+# FX=F00 LABEL=Original :                                     infringers.
+# FX=F00 LABEL=Original :  
+# FX=F00 LABEL=Original :   Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+# FX=F00 LABEL=Original :              Inclusivity and Diversity" (Refer to article 000036315 at
+# FX=F00 LABEL=Original :                          https://solvnetplus.synopsys.com)
+# FX=F00 LABEL=Original :  
+# FX=F00 LABEL=Original :  
+# FX=F00 LABEL=Original : Parsing parameter file /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vivado_v7/fpgaparameterset_v7.xcui
+# FX=F00 LABEL=Original : Synchronization policy: 2
+# FX=F00 LABEL=Original : Lock file name: /tmp/zim.lock_oIA4WfxdXL
+# FX=F00 LABEL=Original : pid 36697
+# FX=F00 LABEL=Original : Monitor father = 36697
+# FX=F00 LABEL=Original : Monitoring compilation F00.Original
+./fpga_data.info.parff: line 278: 0.01: No such file or directory
+./fpga_data.info.parff: line 279: 0.01: No such file or directory
+./fpga_data.info.parff: line 281: 0.01: No such file or directory
+./fpga_data.info.parff: line 278: 0.01: No such file or directory
+./fpga_data.info.parff: line 279: 0.01: No such file or directory
+./fpga_data.info.parff: line 281: 0.01: No such file or directory
+./fpga_data.info.parff: line 278: 0.01: No such file or directory
+./fpga_data.info.parff: line 279: 0.01: No such file or directory
+./fpga_data.info.parff: line 281: 0.01: No such file or directory
+# FX=F00 LABEL=Original : running WRITE_BITSTREAM
+./fpga_data.info.parff: line 278: 0.01: No such file or directory
+./fpga_data.info.parff: line 279: 0.01: No such file or directory
+./fpga_data.info.parff: line 281: 0.01: No such file or directory
+./fpga_data.info.parff: line 278: 0.01: No such file or directory
+./fpga_data.info.parff: line 279: 0.01: No such file or directory
+./fpga_data.info.parff: line 281: 0.01: No such file or directory
+# FX=F00 LABEL=Original : 1681885140 : FPGA compilation finished with status 0
+./fpga_data.info.parff: line 278: 0.01: No such file or directory
+./fpga_data.info.parff: line 279: 0.01: No such file or directory
+./fpga_data.info.parff: line 281: 0.01: No such file or directory
+./fpga_data.info.parff: line 278: 0.01: No such file or directory
+./fpga_data.info.parff: line 279: 0.01: No such file or directory
+./fpga_data.info.parff: line 281: 0.01: No such file or directory
+./fpga_data.info.parff: line 278: 0.01: No such file or directory
+./fpga_data.info.parff: line 279: 0.01: No such file or directory
+./fpga_data.info.parff: line 281: 0.01: No such file or directory
+# FX=F00 LABEL=Original : finished OK
+# FX=F00 LABEL=Original : receive TERM for 36697
+# FX=F00 LABEL=Original : killing Monitor process: 36706
+
+# FX=F00 LABEL=Original : Makefile - End of zIseManager
+# FX=F00 LABEL=Original : Makefile - Checking Final status from xstep.cui file
+# FX=F00 LABEL=Original : Makefile - Finished detected
+command exit code is '0'

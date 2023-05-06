@@ -1,0 +1,10 @@
+<ZeBuUiDoc version="1.0" creator="glog" type="xcui">
+ <author>zCui</author>
+ <date>pipo</date>
+ <views>
+  <view order="0" name="Compile profile">
+   <h1>Compile times</h1>
+   <p>^TABLE(tools/zMetrics/zCui_compiletimes_metrics.xml,compile_times,DTTT)Compile times^TABLE-</p>
+  </view>
+ </views>
+</ZeBuUiDoc>

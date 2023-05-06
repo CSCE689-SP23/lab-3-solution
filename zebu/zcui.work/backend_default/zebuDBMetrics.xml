@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc version="1.0" creator="zCui" type="xcui">
+ <Metrics>
+  <Attribute id="compileStatus">
+   <Value>PASS</Value>
+  </Attribute>
+  <Attribute id="frontendCompileTime">
+   <Value>29</Value>
+  </Attribute>
+  <Attribute id="frontendCPU">
+   <Value>7</Value>
+  </Attribute>
+  <Attribute id="backendCompileTime">
+   <Value>1047</Value>
+  </Attribute>
+  <Attribute id="backendCPU">
+   <Value>2347</Value>
+  </Attribute>
+  <Attribute id="noFpgaBackendCompileTime">
+   <Value>62</Value>
+  </Attribute>
+  <Attribute id="overallCompileTime">
+   <Value>1076</Value>
+  </Attribute>
+  <Attribute id="compileTimeWithGrid">
+   <Value>2444</Value>
+  </Attribute>
+  <Attribute id="compileTimeWithoutGrid">
+   <Value>2354</Value>
+  </Attribute>
+  <Attribute id="idealCompileTime">
+   <Value>927</Value>
+  </Attribute>
+  <Attribute id="ZebuIse_CumulativeTime">
+   <Value>2221</Value>
+  </Attribute>
+  <Attribute id="ZebuLocal_CumulativeTime">
+   <Value>18</Value>
+  </Attribute>
+  <Attribute id="ZebuSynthesis_CumulativeTime">
+   <Value>4</Value>
+  </Attribute>
+  <Attribute id="Zebu_CumulativeTime">
+   <Value>201</Value>
+  </Attribute>
+  <Attribute id="boardNumber">
+   <Value>1</Value>
+  </Attribute>
+  <Attribute id="fpgaNumber">
+   <Value>3</Value>
+  </Attribute>
+  <Attribute id="systemArchitecture">
+   <Value>ZS3</Value>
+  </Attribute>
+  <Attribute id="softwareRelease">
+   <Value>Q-2020.03-SP1-4</Value>
+  </Attribute>
+  <Attribute id="driverClockFrequencyKHz">
+   <Value>10000</Value>
+  </Attribute>
+  <Table id="main_stage_duration">
+   <Header>
+    <VCS>
+     <Title>vcs</Title>
+    </VCS>
+    <VCS_ANALYZER>
+     <Title>vcs analyzer</Title>
+    </VCS_ANALYZER>
+    <SYNTHESIS>
+     <Title>synthesis</Title>
+    </SYNTHESIS>
+    <BACKEND_ENTRY>
+     <Title>backend entry</Title>
+    </BACKEND_ENTRY>
+    <RTLDB_INDEXER>
+     <Title>rtldb indexer</Title>
+    </RTLDB_INDEXER>
+    <BUILD_SYSTEM>
+     <Title>build system</Title>
+    </BUILD_SYSTEM>
+    <CORES>
+     <Title>cores</Title>
+    </CORES>
+    <PLACE_AND_ROUTE>
+     <Title>place and route</Title>
+    </PLACE_AND_ROUTE>
+    <FPGAS>
+     <Title>FPGAs</Title>
+    </FPGAS>
+    <BUILD_DATABASE>
+     <Title>build data base</Title>
+    </BUILD_DATABASE>
+    <ZGRAPHGENERATOR>
+     <Title>zgraphgenerator</Title>
+    </ZGRAPHGENERATOR>
+   </Header>
+   <Row>
+    <VCS>6</VCS>
+    <VCS_ANALYZER>1</VCS_ANALYZER>
+    <SYNTHESIS>4</SYNTHESIS>
+    <BACKEND_ENTRY>2</BACKEND_ENTRY>
+    <RTLDB_INDEXER>2</RTLDB_INDEXER>
+    <BUILD_SYSTEM>6</BUILD_SYSTEM>
+    <CORES>14</CORES>
+    <PLACE_AND_ROUTE>10</PLACE_AND_ROUTE>
+    <FPGAS>949</FPGAS>
+    <BUILD_DATABASE>2</BUILD_DATABASE>
+    <ZGRAPHGENERATOR>2</ZGRAPHGENERATOR>
+   </Row>
+   <Row>
+    <VCS>3</VCS>
+    <VCS_ANALYZER>1</VCS_ANALYZER>
+    <SYNTHESIS>3</SYNTHESIS>
+    <BACKEND_ENTRY>0</BACKEND_ENTRY>
+    <RTLDB_INDEXER>0</RTLDB_INDEXER>
+    <BUILD_SYSTEM>3</BUILD_SYSTEM>
+    <CORES>12</CORES>
+    <PLACE_AND_ROUTE>8</PLACE_AND_ROUTE>
+    <FPGAS>947</FPGAS>
+    <BUILD_DATABASE>1</BUILD_DATABASE>
+    <ZGRAPHGENERATOR>0</ZGRAPHGENERATOR>
+   </Row>
+   <Row>
+    <VCS> 155104</VCS>
+    <VCS_ANALYZER>0</VCS_ANALYZER>
+    <SYNTHESIS> 111612</SYNTHESIS>
+    <BACKEND_ENTRY> 18468</BACKEND_ENTRY>
+    <RTLDB_INDEXER> 77940</RTLDB_INDEXER>
+    <BUILD_SYSTEM> 344956</BUILD_SYSTEM>
+    <CORES> 490520</CORES>
+    <PLACE_AND_ROUTE> 1536264</PLACE_AND_ROUTE>
+    <FPGAS> 4638032</FPGAS>
+    <BUILD_DATABASE> 359980</BUILD_DATABASE>
+    <ZGRAPHGENERATOR> 202796</ZGRAPHGENERATOR>
+   </Row>
+  </Table>
+ </Metrics>
+</ZeBuUiDoc>

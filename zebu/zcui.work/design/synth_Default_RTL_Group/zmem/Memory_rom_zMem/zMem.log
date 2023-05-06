@@ -1,0 +1,109 @@
+
+                                    ZeBu (R)
+                                      zMem
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zMem -createList -addScript ../../../../additionalZmemCommandFile.tcl -addScript /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zMem_config.tcl -debug ../rom.zmem 
+
+# start time is Wed Apr 19 01:04:39 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:02
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.17 0.05 0.06 2/475 36044
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185611 MB
+#            Total Free including cache: 190326 MB
+#            Swap cache: 0 MB Cached space: 4715 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 182 MB VmPeak: 182 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256324
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step DEFINE : Latency is using 4-bits-1-hot encoding
+#   step DEFINE : Evaluate additionnal script '../../../../additionalZmemCommandFile.tcl'.
+set_fpga_family {v7}
+automatic_selection -ramlut_to_bram {11}
+automatic_selection -ramlut -max_blocs {34480}
+automatic_selection -bram -max_blocs {645}
+set_max_sys_freq {clk_50}
+#   step DEFINE : Evaluate additionnal script '/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/zMem_config.tcl'.
+memory {set_global_debug_mode} {true}
+#   step DEFINE : Global debug mode is ON
+mem {new} {rom_ZMEM_mem} {auto}
+#   step DEFINE : New memory : rom_ZMEM_mem
+mem {depth} {256}
+#   step DEFINE : Set memory : rom_ZMEM_mem depth 256
+mem {width} {9}
+#   step DEFINE : Set memory : rom_ZMEM_mem width     9
+mem {add_port} {r0} {r}
+#   step DEFINE : New port : 'r0' 'r' for memory 'rom_ZMEM_mem'.
+mem {set_port_access} {r0} {sync}
+#   step DEFINE : Set port access 'sync' of port 'r0' for memory 'rom_ZMEM_mem'.
+mem_port {r0} {clk} {r0clk}
+#   step DEFINE : Set 'clk' pin name 'r0clk' for port 'r0'.
+mem_port {r0} {addr} {r0addr}
+#   step DEFINE : Set 'addr' pin name 'r0addr' for port 'r0'.
+mem_port {r0} {do} {r0do}
+#   step DEFINE : Set 'do' pin name 'r0do' for port 'r0'.
+mem {generate}
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'bram' for memory 'rom_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'ramlut' for memory 'rom_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Evaluating type 'zrm' for memory 'rom_ZMEM_mem'.
+#   step AUTOMATIC TYPE SELECTION : Type 'ramlut' has been chosen for memory 'rom_ZMEM_mem'.
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step MEMORY CHECK : Fast clock used for memory 'rom_ZMEM_mem'.
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step gen_edif_add_memories : Replace Model with name RAM256X1S
+#   step MEMORY CHECK : Fast clock used for memory 'rom_ZMEM_mem'.
+#   step ZMEM : Non-Optimizable zview instances used in module 'rom_ZMEM_mem'.
+#   step RESOURCE CHECK :   REG   36
+#   step RESOURCE CHECK :   LUT   60
+#   step RESOURCE CHECK :   BRAM  0
+#   step FREQUENCY : Worst case frequency of the memory 'rom_ZMEM_mem' would be 8333 kHz
+#   step ZMEM : Fast system clock 'clk_50' is used for memory 'rom_ZMEM_mem'.
+#   step SERIALIZE : writing netlist 'rom_ZMEM_mem' into znl file 'rom_ZMEM_mem.edf.gz'
+#   step SERIALIZE : #bytes in: 7750, #bytes out: 2966, compression ratio: 2.612947
+#   step GENERATE : generating vhdl wrapper 'rom_ZMEM_mem.vhd'
+#   step GENERATE : generating vhdl wrapper 'rom_ZMEM_mem_bbx.vhd'
+#   step GENERATE : generating verilog wrapper 'rom_ZMEM_mem.v'
+#   step GENERATE : generating verilog wrapper 'rom_ZMEM_mem_bbx.v'
+#   step GENERATE : generating report file 'rom_ZMEM_mem_report.log'
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m0.131s, sys 0m0.68s
+#   exec summary : Total memory: 370876 kB - RSS memory: 110928 kB - Data memory: 118388 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:39 2023

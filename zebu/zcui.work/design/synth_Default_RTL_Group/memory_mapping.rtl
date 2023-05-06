@@ -1,0 +1,2 @@
+top.u_stb.u_rom  [8:0] mem  [0:255]
+top.u_stb.u_ram  [8:0] mem  [0:255]

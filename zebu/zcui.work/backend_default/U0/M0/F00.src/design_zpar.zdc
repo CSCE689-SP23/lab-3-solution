@@ -1,0 +1,14 @@
+# Emulation Verification Engineering (c) - XDC generator
+# ------------------------------------------------------
+
+# zPar XDC dump -----------------------
+#xdc_addconst false_path
+set_false_path -quiet -to [get_pins -hierarchical {zview_*/D}]
+set_false_path -quiet -from [get_pins -hierarchical {*ztig_*/C}]
+set_false_path -quiet -through [get_nets  -hier -filter {TIG=="TRUE"}]
+set_false_path -quiet -from    [get_cells -hier -filter {TIG=="TRUE"}]
+#xdc_addconst delay
+set_max_delay -datapath_only -from [get_pins -hierarchical {*zMem_multiport_FROM_clk_50*/Q}] -to [get_cells -hierarchical {*zMem_multiport_TO_clk_50*}] 40.0
+set_property LOC BUFGCTRL_X0Y36 [get_cells {design/U0_M0_F0/zbufg_zcgen_w_zcg_filterClock}]
+set_property LOC BUFGCTRL_X0Y40 [get_cells {design/U0_M0_F0/zbufg_zcgen_w_zcg_compositeClock}]
+set_property LOC BUFGCTRL_X0Y35 [get_cells {design/U0_M0_F0/zbufg_zebu_zdly_z_dclk_delay_12524327392187371745}]

@@ -1,0 +1,20 @@
+ KO input backend_default/zTopBuild.tcl out of date (non equal checksum) <- Backend: default backend/System Compilation/Prepare Backend Flow
+ KO input backend_default/zTopBuild_edif.inf out of date (non equal checksum) <- Backend: default backend/System Compilation/Prepare Backend Flow
+ KO input .. out of date (non equal checksum)
+ KO input utf_generatefiles/zTopBuild_netlist_config.tcl out of date (non equal checksum)
+ KO input .. out of date (non equal checksum)
+ KO input utf_generatefiles/zTopBuild_config.tcl out of date (non equal checksum)
+ KO input .. out of date (non equal checksum)
+ KO input .. out of date (non equal checksum)
+ KO input .. out of date (non equal checksum)
+ KO input .. out of date (non equal checksum)
+ KO input /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_zTopBuild_config.tcl out of date (non equal checksum)
+ KO input /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_zTopBuild_netlist_config.tcl out of date (non equal checksum)
+ KO input /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_zTopClustering_config.tcl out of date (non equal checksum)
+ KO input dumpvars.hcsrc out of date (non equal checksum) <- VCS/Analyze VCS Results
+ KO input headers/dumpvars.db out of date (non equal checksum) <- VCS/Analyze VCS Results
+ OK input internal dependency (structural) <- Backend: default backend/System Compilation/Make RTL DB link
+ OK input internal dependency (structural) <- Backend: default backend/System Compilation/Make VCS file links
+ OK input internal dependency (structural) <- Backend: default backend/System Compilation/Make optionsdb dump
+ KO input design/synth_Default_RTL_Group/zconnectnew.be.script out of date (non equal checksum) <- Backend: default backend/System Compilation/Prepare Backend Flow
+ OK input internal dependency (structural) <- Final Check/Compilation Profiler (after BackendEntry)

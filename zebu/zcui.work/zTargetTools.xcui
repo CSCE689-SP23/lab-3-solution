@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiConf type="xcui" version="1.2" creator="zTargetTools">
+
+<architecture_type>zebu</architecture_type>
+<fpga_type>7</fpga_type>
+<product_type>1</product_type>
+<backends>
+    <backend id="default">
+        <fpga_number>45</fpga_number>
+        <disk_space>13590</disk_space>
+        <low_filling_rates>
+            <LUT>40</LUT>
+            <REG>15</REG>
+            <BRAM>50</BRAM>
+            <URAM>0</URAM>
+            <DSP>40</DSP>
+            <RAMLUT>40</RAMLUT>
+            <FWC>10</FWC>
+            <QIWC>30</QIWC>
+        </low_filling_rates>
+        <default_filling_rates>
+            <LUT>50</LUT>
+            <REG>22</REG>
+            <BRAM>50</BRAM>
+            <URAM>0</URAM>
+            <DSP>50</DSP>
+            <RAMLUT>40</RAMLUT>
+            <FWC>18</FWC>
+            <QIWC>40</QIWC>
+        </default_filling_rates>
+        <high_filling_rates>
+            <LUT>55</LUT>
+            <REG>30</REG>
+            <BRAM>90</BRAM>
+            <URAM>0</URAM>
+            <DSP>90</DSP>
+            <RAMLUT>55</RAMLUT>
+            <FWC>25</FWC>
+            <QIWC>50</QIWC>
+        </high_filling_rates>
+    </backend>
+</backends>
+
+<resources_max>
+    <BRAM>645</BRAM>
+    <URAM>0</URAM>
+    <RAMLUT>34480</RAMLUT>
+</resources_max>
+
+<disk_space_constants>
+    <CstG>302.000000</CstG>
+    <CstS>1.040000</CstS>
+    <CstB>229.000000</CstB>
+    <CstC>164.000000</CstC>
+    <CstX>156.699997</CstX>
+    <CstE>400.000000</CstE>
+    <CstV>517.000000</CstV>
+</disk_space_constants>
+
+</ZeBuUiConf>

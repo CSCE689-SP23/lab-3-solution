@@ -1,0 +1,22 @@
+
+Processing fifo_0000
+before constantPropagate: 0u 0s 1029e 601560kB
+after constantPropagate: 0u 0s 1029e 601560kB
+before removeUnusedSignals circuit: 0u 0s 1029e 601560kB
+after removeUnusedSignals circuit: 0u 0s 1029e 601560kB
+before optimize latch enable: 0u 0s 1029e 601560kB
+after optimize latch enable: 0u 0s 1029e 601560kB
+before removeReadAfterMissingWrite: 0u 0s 1029e 601560kB
+after removeReadAfterMissingWrite: 0u 0s 1029e 601560kB
+before undoDimensionalSplitOfMemories: 0u 0s 1029e 601560kB
+after undoDimensionalSplitOfMemories: 0u 0s 1029e 601560kB
+before extractMemories: 0u 0s 1029e 601560kB
+after extractMemories: 0u 0s 1029e 601560kB
+before extractHolds: 0u 0s 1029e 601560kB
+after extractHolds: 0u 0s 1039e 601560kB
+before simplifyAdders: 0u 0s 1039e 601560kB
+after simplifyAdders: 0u 0s 1039e 601560kB
+before reportUnresolvedType: 0u 0s 1039e 601560kB
+after reportUnresolvedType: 0u 0s 1039e 601560kB
+before dumpingPerModuleScm : 0u 0s 1039e 601560kB
+after dumpingPerModuleScm : 0u 0s 1039e 601560kB

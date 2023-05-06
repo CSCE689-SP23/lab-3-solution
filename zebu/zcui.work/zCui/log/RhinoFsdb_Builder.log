@@ -1,0 +1,38 @@
+#      : 
+                             /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/bin/zGenerateRhinoFsdb
+
+                   Copyright (c) 2019 - 2023 Synopsys, Inc.
+     This software and the associated documentation are proprietary to Synopsys
+, Inc. This software may only be used in accordance with the terms and conditions
+  of a written license agreement with Synopsys, Inc. All other use, reproduction,
+              or distribution of this software is strictly prohibited.
+
+# CommandLine  : /opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/bin/zGenerateRhinoFsdb -z zcui.work -l zGenerateRhinoFsdb.log 
+
+# Start Time   : Wed Apr 19 01:04:36 2023
+
+# Memory Stats :  (VM Peak:125M, Size:125M, RSS:74M, Data:66M)
+
+
+#      : Reading the Serializing VCS Version
+#      : Deserializing names dictionary
+#      : Deserializing libraries
+#      : Deserializing RTL
+#      : Deserializing Gate
+#      : Deserializing design object
+#      : Populating Dfs Table
+#      : [INFO] Loaded design from /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/design/synth_Default_RTL_Group/RTLDB
+#      : [INFO] Running Wave Assignment and dumping of novas.fsdb.
+#      : Wed Apr 19 01:04:36 2023 : [INFO] Starting Enumeration of Wave IDs 
+#      : Running WaveAssign traversal.
+#      : WaveAssign traversal finished without errors.
+#      : LibZrtlHandler destructor
+#      : End of LibZrtlHandler destructor
+#      : Running WaveAssign range merging.
+#      : WaveAssign range merging finished without errors.
+#      : Dumping Fsdb header.
+FSDB Writer, Release Verdi_Q-2020.03-SP2-12, RH Linux x86_64/64bit, 04/19/2023
+(C) 1996 - 2023 by Synopsys, Inc.
+#      : Wed Apr 19 01:04:36 2023 : [INFO] Enumeration of Wave IDs Ended
+#      : [INFO] Enumerated 13 Wave IDs
+command exit code is '0'

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zCoreBuild">
+
+<targets>
+
+<target type="zPar">
+  <output typeCrc="dateFile">./edif/top.edf.gz</output>
+  <output typeCrc="dateFile">./edif/U0_M0.edf.gz</output>
+  <output typeCrc="crcFile">./zPar_core_conf.tcl</output>
+  <output typeCrc="crcFile">./zPar_cmds.tcl</output>
+</target>
+
+<target type="zTime">
+  <output typeCrc="crcFile">./tools/zTime/zCoreBuild_timing.zti</output>
+  <output typeCrc="crcFile">./tools/zTime/global_time.edf.gz</output>
+  <output typeCrc="crcFile">./tools/zTime/zTime_clock_domain.cds</output>
+</target>
+
+<target type="zTime_fpga">
+  <output typeCrc="crcFile">./tools/zTime/zCoreBuild_timing.zti</output>
+  <output typeCrc="crcFile">./tools/zTime/global_time.edf.gz</output>
+  <output typeCrc="crcFile">./tools/zTime/zTime_clock_domain.cds</output>
+</target>
+
+<target type="zDB_final">
+  <output typeCrc="crcFile">./zCoreBuildDB.zdb</output>
+</target>
+
+</targets>
+
+
+</ZeBuUiDoc>

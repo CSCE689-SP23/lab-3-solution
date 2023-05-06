@@ -1,0 +1,88 @@
+  Xcui parse error(s)
+      /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/tools/zTopClustering/zTopClustering_glog.xcui file does not exist.
+  Xcui parse error(s)
+      /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/work.Part_0/tools/zCoreClustering/zCoreClustering_glog.xcui file does not exist.
+  Xcui parse error(s)
+      /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/work.Part_0/tools/zCorePartitioning/zCorePartitioning_glog.xcui file does not exist.
+  Xcui parse error(s)
+      /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/tools/zCui/zCui_compile_times_glog.xcui file does not exist.
+  System Compilation
+    Warning
+      [ZTB0249W] can't set stack to unlimited, zTopBuild may randomly crash.
+      [ZTB1036W] The command 'disable ztime_uses_rtl_names' is deprecated and will be removed in the next ZeBu software release.
+      [LST0478W] The leaf instance uniquification ratio is less then 4.00
+      [LST0479W] The hierarchical instance per module uniquification ratio is less then 4.00
+      [ZTB1122W] Clock accuracy of 0 is not supported. It will be set to 24.
+      [ZTB0707W] Cleaned up 1 undriven primitive ports - please check the report.
+      [EDI0079W] Enable port 'sva_en' of System Verilog Assertion instance 'sva_parity_error' (ZSVA_MOD_PLI_1) is already connected. Disconnected it.
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_reqsig_clock_zcompositeclock
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module ZSVA_MOD_PLI_1
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_wb_reg
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zfwc_hs_1
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module ZXLSYS
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_clk
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_di
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_addr
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_we
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_do
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_reqsig_clock_driverclock
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_clockGen
+      [KBD0213W] cannot open report file for writing make sure './.zTopBuild_AC_report.log.dir/SEC_AC_OPT_SOLUTION_CORE_SIZE' has writing rights.
+      [KBD0213W] cannot open report file for writing make sure './.zTopBuild_AC_report.log.dir/SEC_AC_OPT_SOLUTION_CORE_XO' has writing rights.
+      [KBD0214W] cannot open report file for appending make sure './.zTopBuild_AC_report.log.dir/SEC_AC_PROF' has writing rights.
+  zCoreCompilation : default
+    Warning
+      [ZBD0328W] max_deph will become hidden (under expert mode '!') in next release.
+      [ZBD0329W] max_node will become hidden (under expert mode '!') in next release.
+      [ZBD0334W] delete_stuck_at_z will become hidden (under expert mode '!') in next release.
+  zCoreCompilation : Part_0
+    Warning
+      [CLU0081W] Multiple occurence of the same command, using  cluster set max_fill_bram=50
+      [KBD2077W] zCorePartitioning: Terminal FPGA cannot be identified
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_wb_reg
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zfwc_hs_1
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module ZXLSYS
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_clk
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_di
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_addr
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_we
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_do
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zfwc_hs_48
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module ZebuClockFilterData
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zfwc_hs_4
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module ZebuClockFilterClock
+      [RAS0020W] ZBNF Resources: No resource information can be found for Module zebu_clockGen
+      [CLK0388W] Failed to parse Core Interface
+      [CLK0388W] Failed to parse Core Interface
+      [CLK0388W] Failed to parse Core Interface
+      [KBD2251W] usage of timing model can't be enable on zse
+      [KBD2093W] Using ZFILTER_ASYNC_SET_RESET_PATH on 'timing' command might increase the longest filter path
+      [KBD2160W] Using ZFILTER_FETCH_FEEDBACK on 'timing' command might increase the longest filter path
+      [ZBD0301W] Critical Path Optimization is disabled because fetch mode is not enabled
+  Place and route system
+    Warning
+      [KPR0982W] file '../timing.data' not found, timing tasks of previous compilation will not be used
+      [KPR1518W] This command will be deprecated in the next major release after ZEBU20.03.
+      [KPR1518W] This command will be deprecated in the next major release after ZEBU20.03.
+      [KPR1571W] Environment variable "ZEBU_NO_LOCAL_RTB_ROUTING" will be deprecated in the next major release after ZEBU20.03.
+      [KPR1572W] Environment variable "ZEBU_NO_LOCAL_RTB_ROUTING" will be deprecated in the next major release after ZEBU20.03.
+      [KTM0674W] Port U0_M0_F0.z_dclk_delay created by zPar  but not seen by zTime
+      [KTM0674W] Port .zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1 created by zPar  but not seen by zTime
+      [KTM0674W] Port .zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0 created by zPar  but not seen by zTime
+      [KTM0674W] Port .zcg_filterClock created by zPar  but not seen by zTime
+      [KTM0674W] Port .zcg_compositeClock created by zPar  but not seen by zTime
+      [KTM0674W] Port .zcg_skewClock created by zPar  but not seen by zTime
+      [KPR0630W] This design is empty, no wire to route.
+      [KPR0984W] Could not open file of timing tasks '../timing.data' : This file not found or corrupted.
+  TimingDB
+    Warning
+      [KTM0674W] Port U0_M0_F0.z_dclk_delay created by zPar  but not seen by zTime
+      [KTM0665W] Driver  assigned as source clock domain of PORT .zcg_compositeClock.
+      [KTM0671W] Driver  assigned as target clock domain of PORT U0_M0_F0.zcg_compositeClock.
+      [KTM0665W] Driver  assigned as source clock domain of PORT .zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1.
+      [KTM0671W] Driver  assigned as target clock domain of PORT U0_M0_F0.zcg_zceiClock[0].
+      [KTM0665W] Driver  assigned as source clock domain of PORT .zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0.
+      [KTM0671W] Driver  assigned as target clock domain of PORT U0_M0_F0.zcg_zceiClock[1].

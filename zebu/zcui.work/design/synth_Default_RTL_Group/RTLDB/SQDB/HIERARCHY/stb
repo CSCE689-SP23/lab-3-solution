@@ -1,0 +1,11 @@
+stb
+sqnod683 -> sqnod683 -> zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1
+sqnod631 -> sqnod631 -> zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0
+sva_clock_inst -> sva_clock_inst -> zebu_reqsig_clock_zcompositeclock
+u_check -> u_check -> parity_check
+u_ram -> u_ram -> ram
+u1_proba -> u1_proba -> proba_0000
+u_rom -> u_rom -> rom
+u0_proba -> u0_proba -> proba
+u_clk0 -> u_clk0 -> zceiClockPort
+u_clk1 -> u_clk1 -> zceiClockPort

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics>
+<Table id="Partition Sizes _ IOs" name="">
+  <Header>
+    <Part_Name__Res_Used_Available_>
+      <Title>Part Name\ Res(Used/Available)</Title>
+    </Part_Name__Res_Used_Available_>
+    <LUT>
+      <Title>LUT</Title>
+    </LUT>
+    <LUT6>
+      <Title>LUT6</Title>
+    </LUT6>
+    <REG>
+      <Title>REG</Title>
+    </REG>
+    <RAMLUT>
+      <Title>RAMLUT</Title>
+    </RAMLUT>
+    <FWC_IP_NUM>
+      <Title>FWC_IP_NUM</Title>
+    </FWC_IP_NUM>
+    <FWC_IP_BITS>
+      <Title>FWC_IP_BITS</Title>
+    </FWC_IP_BITS>
+    <IO>
+      <Title>IO</Title>
+    </IO>
+  </Header>
+  <Row>
+    <Part_Name__Res_Used_Available_>Part_0</Part_Name__Res_Used_Available_>
+    <LUT>1239</LUT>
+    <LUT6>29</LUT6>
+    <REG>1211</REG>
+    <RAMLUT>72</RAMLUT>
+    <FWC_IP_NUM>3</FWC_IP_NUM>
+    <FWC_IP_BITS>136</FWC_IP_BITS>
+    <IO>0</IO>
+  </Row>
+  <Row>
+    <Part_Name__Res_Used_Available_>SUM</Part_Name__Res_Used_Available_>
+    <LUT>1239</LUT>
+    <LUT6>29</LUT6>
+    <REG>1211</REG>
+    <RAMLUT>72</RAMLUT>
+    <FWC_IP_NUM>3</FWC_IP_NUM>
+    <FWC_IP_BITS>136</FWC_IP_BITS>
+    <IO>0</IO>
+  </Row>
+</Table>
+<Attribute id="Max cut">
+  <Value>0</Value>
+</Attribute>
+<Attribute id="NbBoard">
+  <Value>1</Value>
+</Attribute>
+<Attribute id="NbPartition">
+  <Value>1</Value>
+</Attribute>
+<Attribute id="Sum cut">
+  <Value>0</Value>
+</Attribute>
+<Attribute id="XDR Cost:">
+  <Value>0</Value>
+</Attribute>
+</Metrics>

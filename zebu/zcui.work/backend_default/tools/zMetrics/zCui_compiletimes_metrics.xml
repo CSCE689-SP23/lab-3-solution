@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics>
+<Table id="compile_times" name="">
+	<Header>
+		<part>
+			<Title></Title>
+		</part>
+		<cputime>
+			<Title>CPU time</Title>
+		</cputime>
+		<wallclock>
+			<Title>Wall clock</Title>
+		</wallclock>
+		<cputime_with_grid>
+			<Title>CPU time with grid</Title>
+		</cputime_with_grid>
+	</Header>
+	<Row>
+		<part>Front end</part>
+		<cputime>7</cputime>
+		<wallclock>29</wallclock>
+		<cputime_with_grid>26</cputime_with_grid>
+	</Row>
+	<Row>
+		<part>Back end</part>
+		<cputime>2347</cputime>
+		<wallclock>1047</wallclock>
+		<cputime_with_grid>2418</cputime_with_grid>
+	</Row>
+</Table>
+</Metrics>

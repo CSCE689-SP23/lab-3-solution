@@ -1,0 +1,20 @@
+ KO input zPar_env out of date (non equal checksum)
+ KO input backend_default_zPar_cmdline out of date (non equal checksum)
+ OK input internal dependency (structural) <- Backend: default backend/System Compilation/Pre PAR Script Builder
+ KO input utf_generatefiles/zPar_config.tcl out of date (non equal checksum)
+ KO input utf_generatefiles/zTime_config.tcl out of date (non equal checksum)
+ KO input /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_zPar_config.tcl out of date (non equal checksum)
+ KO input /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_zTime_config.tcl out of date (non equal checksum)
+ OK input internal dependency (structural) <- Final Check/Compilation Profiler (after ZTopBuildAnalyzer)
+ KO input backend_default/zPar_dve.tcl out of date (non equal checksum) <- Backend: default backend/System Compilation/Analyze DVE
+ OK input internal dependency (structural) <- Backend: default backend/System Compilation/zCore Compilation/Analyze zCore Building Results Part_0
+ OK input internal dependency (structural) <- Backend: default backend/System Compilation/Analyze RTB Front-End Results
+ KO input backend_default/zPar_cmds.tcl out of date (non equal checksum) <- Backend: default backend/System Compilation/Analyze System Building Results
+ KO input backend_default/edif/top.edf.gz out of date (non equal checksum) <- Backend: default backend/System Compilation/Analyze System Building Results
+ KO input backend_default/zPar_target_conf.tcl out of date (non equal checksum) <- Backend: default backend/System Compilation/Analyze System Building Results
+ KO input backend_default/./tools/zRTB_FE/dut_io_zpar.edf.gz out of date (non equal checksum) <- Backend: default backend/System Compilation/RTB Front-End
+ KO input backend_default/work.Part_0//./edif/top.edf.gz out of date (non equal checksum) <- Backend: default backend/System Compilation/zCore Compilation/Analyze zCore Building Results Part_0
+ KO input backend_default/work.Part_0//./edif/U0_M0.edf.gz out of date (non equal checksum) <- Backend: default backend/System Compilation/zCore Compilation/Analyze zCore Building Results Part_0
+ KO input backend_default/work.Part_0//./zPar_core_conf.tcl out of date (non equal checksum) <- Backend: default backend/System Compilation/zCore Compilation/Analyze zCore Building Results Part_0
+ KO input backend_default/work.Part_0//./zPar_cmds.tcl out of date (non equal checksum) <- Backend: default backend/System Compilation/zCore Compilation/Analyze zCore Building Results Part_0
+ KO input backend_default/zPar_zCui.tcl out of date (non equal checksum) <- Backend: default backend/System Compilation/Pre PAR Script Builder

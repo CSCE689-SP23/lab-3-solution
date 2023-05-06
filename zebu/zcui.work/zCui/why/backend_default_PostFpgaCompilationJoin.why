@@ -1,0 +1,4 @@
+ KO input internal dependency (always redo) <- Backend: default backend/System Compilation/Analyze zPar result
+ OK input internal dependency (structural) <- Backend: default backend/FPGA Place & Route/0/0/00 (U0_M0_F0)/Controller
+ OK input internal dependency (structural) <- Backend: default backend/FPGA Place & Route/0/0/08 (Route U0_M0_F08)/Controller
+ OK input internal dependency (structural) <- Backend: default backend/FPGA Place & Route/0/0/F (U0_M0_IF)/Controller

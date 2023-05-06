@@ -1,0 +1,575 @@
+
+                                    ZeBu (R)
+                                    zNetgen
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zNetgen design.tcl 
+
+# start time is Wed Apr 19 01:05:53 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:44
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.79 0.24 0.12 4/504 37692
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 183827 MB
+#            Total Free including cache: 188550 MB
+#            Swap cache: 0 MB Cached space: 4723 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 426 MB VmPeak: 426 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255454
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ENV.VAR : LM_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : SNPSLMD_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+#   step ENV.VAR : VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+#   step ENV.VAR : ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+#   step ENV.VAR : ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+#   step ENV.VAR : ZEBU_COMPILATION_OBJECTIVE=
+#   step ENV.VAR : ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+#   step ENV.VAR : ZEBU_FPGA_MODULE_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0
+#   step ENV.VAR : ZEBU_FPGA_ORIGINAL_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original
+#   step ENV.VAR : ZEBU_FPGA_SRC_DIR=/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.src
+#   step ENV.VAR : ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   step ENV.VAR : ZEBU_SDF_ANALYSIS=1
+#   step ENV.VAR : ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+#   step ENV.VAR : ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+#   step ENV.VAR : ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+#   step ENV.VAR : ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+#   step ENV.VAR : ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+### warning in zNetgen [CCT0300W] : can't set stack to unlimited, zNetgen may randomly crash.
+#   step INIT : Advanced commands have been loaded
+set_timer_log {.zNetgen_timer}
+begin_quiet_timer {znetgen_fpga}
+begin_zmetrics
+hide_log_advanced {true}
+section {1} {0} {LOAD EDIFS}
+##############################################
+# 1 LOAD EDIFS
+##############################################
+begin_quiet_timer {load_edifs}
+read_edif {fpga.edf.gz}
+#   step ZNF PARSER : reading netlist from ZNF file 'fpga.edf.gz'
+end_quiet_timer {load_edifs}
+section {2} {0} {MERGE}
+##############################################
+# 2 MERGE
+##############################################
+begin_quiet_timer {merge}
+merge
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step merge : merging file 'fpga.edf.gz'
+#   step merge : setting top module 'ztop' from library 'lib_driver_boxes'.
+set_top {ztop}
+#   step set_top : setting module 'ztop' as top of netlist 'zmerge from ztop'
+elaborate
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+begin_quiet_timer {smart_metrics_read_edifs}
+report_netlist_metrics -file {fpga_data.info} -prefix {zNetgen_read_edifs}
+#   step NtgTclReportNetlistMetric : The netlist resource usage has been written into fpga_data.info with mode:zNetgen_read_edifs.
+end_quiet_timer {smart_metrics_read_edifs}
+mudb_editor -open
+### warning in mudb_editor [CCC0919W] : MuDb directory does not exist.
+begin_quiet_timer {instrument_fetch_mode_clocks}
+instrument_fetch_mode_clocks
+#   step FETCH_MODE : Performing fetch mode clock instrumentation for Critical Path Optimization
+end_quiet_timer {instrument_fetch_mode_clocks}
+begin_quiet_timer {instrument_loops}
+instrument_loops
+end_quiet_timer {instrument_loops}
+begin_quiet_timer {check_socket_edif}
+check_socket_edif -verbose
+#   step SOCKET SANITY CHECK : INSTANCE=ClockRegion000RD_18B, MOD=RecvClockRegionD1__1, PV=O
+#   step SOCKET SANITY CHECK : INSTANCE=ClockRegion000RD_18B, MOD=RecvClockRegionD1__1, PV=I
+end_quiet_timer {check_socket_edif}
+merge_ibufds
+end_quiet_timer {merge}
+section {3} {0} {NETLIST PROCESSING}
+##############################################
+# 3 NETLIST PROCESSING
+##############################################
+begin_quiet_timer {netlist_processing}
+section {3.0} {1} {ZEBU_DONT_TOUCH}
+   ##############################################
+   # 3.0 ZEBU_DONT_TOUCH
+   ##############################################
+begin_quiet_timer {zebu_dont_touch}
+dont_touch -vivado_stop_timing -verbose {0}
+#   step DONT TOUCH : Protect all instances with 'ZEBU_VIVADO_STOP_TIMING' attribute.
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step DONT TOUCH : 0 instance has been protected.
+end_quiet_timer {zebu_dont_touch}
+begin_quiet_timer {zebu_gnd_unused_trigger_bits}
+gnd_unused_trigger_bits -verbose {0}
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+end_quiet_timer {zebu_gnd_unused_trigger_bits}
+section {3.1} {1} {ZVIEW}
+   ##############################################
+   # 3.1 ZVIEW
+   ##############################################
+begin_quiet_timer {zview}
+instr_zview -fpgaFamily {V7} -isOrionpp {0}
+instr_zview -fpgaFamily {V7} -isOrionpp {0}
+end_quiet_timer {zview}
+section {3.2} {1} {XDL RENAME}
+   ##############################################
+   # 3.2 XDL RENAME
+   ##############################################
+begin_quiet_timer {xdl_rename}
+section {3.2} {1} {XDL RENAME}
+   ##############################################
+   # 3.2 XDL RENAME
+   ##############################################
+xdl_rename -designCore=RTB -tool {vivado}
+#   step XDL RENAME : Log file named xdlRename.log
+xdl_rename -designCore=FK -tool {vivado}
+#   step XDL RENAME : Log file named xdlRename.log
+end_quiet_timer {xdl_rename}
+section {3.6} {1} {ZXLSYS}
+   ##############################################
+   # 3.6 ZXLSYS
+   ##############################################
+begin_quiet_timer {zxlsys}
+instr_ztig_reg
+#   step instr_ztig_reg : 0 instances of the writeback blackbox registers replaced.
+instr_zxlsys
+#   step instr_zxlsys : zxlsys manipulation 
+end_quiet_timer {zxlsys}
+begin_quiet_timer {zplug}
+end_quiet_timer {zplug}
+section {3.6} {2} {ZXLSYS FOR IF}
+      ##############################################
+      # 3.6 ZXLSYS FOR IF
+      ##############################################
+begin_quiet_timer {zxlsys_for_if}
+instr_zxlsys -rtb
+#   step instr_zxlsys : zxlsys manipulation RTB
+end_quiet_timer {zxlsys_for_if}
+section {3.9} {1} {INSERT ADDITIONAL BUFG}
+   ##############################################
+   # 3.9 INSERT ADDITIONAL BUFG
+   ##############################################
+begin_quiet_timer {additional_bufg}
+insert_additional_bufgs {12} {3} {150000}
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.bufg_sys_sclk[1]' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_1.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_2.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_3.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.bufg_sys_sclk[0]' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Bufg 'ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clko.u_xst_wrapper_0.virtex7_bufgctrl_0' is considered as useless, it won't be counted.
+#   step BUFG INSERTION : Found 6 BUFGs in the design (max 12)
+end_quiet_timer {additional_bufg}
+section {3.10} {1} {SPLIT FANOUT}
+   ##############################################
+   # 3.10 SPLIT FANOUT
+   ##############################################
+begin_quiet_timer {split_fanout}
+end_quiet_timer {split_fanout}
+section {3.11} {1} {SYNCHRO}
+   ##############################################
+   # 3.11 SYNCHRO
+   ##############################################
+begin_quiet_timer {synchro}
+synchro
+#   step synchro : design synchronization statistics
+#   step CLOCK NETWORK : writing report for design 'ztop'
+#   info :    #-------- Summary 
+
+#   info :      - 7468 synchronous items
+#   info :      - 5 primary clocks 
+#   info :      - 36 derived clocks 
+#   info :      - 0 multi-driven clock 
+#   info :      - 15 stuck clocks 
+#   info :      - 0 undriven clock
+#   info :      - Total : 56 clocks
+
+#   info :      - 0 zxlsys instance
+
+
+#   info :    #-------- PRIMARY clocks
+
+#   info :       2627 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_mclk_in.o (BUFG)
+#   info :       1493 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_pclk_in.o (BUFG)
+#   info :         44 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.sys_idel_clk (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sys_sclk[0] (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sys_sclk[1] (BUFG)
+#   info :  
+
+#   info :    #-------- DERIVED clocks
+
+#   info :       2567 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_srb_clk.u_xst_wrapper_0.O (BUFG)
+#   info :        455 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk.u_xst_wrapper_0.O (BUFG)
+#   info :        164 items : ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.socket_lvds_sys_slave_0.u_xst_wrapper_0.socket_lvds_gp_in_0.u_xst_wrapper_0.clk_dv
+#   info :          9 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk_hs.u_xst_wrapper_0.O (BUFG)
+#   info :          7 items : ztop.RTB.zins_fp_ctrl.wrapper.fib_bridge_rx.u_xst_wrapper_0.socket_lvds_sys_slave_0.u_xst_wrapper_0.socket_lvds_gp_in_0.u_xst_wrapper_0.clk_hs
+#   info :          2 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_registers_dut_0.reg_sock_ce
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_1.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_2.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_3.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.FK.xdlName_ddchiahfeebihhfbiij[0].cko_no_pad
+#   info :          1 items : ztop.FK.xdlName_ddchiahfeebihhfbiij[1].cko_no_pad
+#   info :          1 items : ztop.FK.xdlName_hjejfaabdchcachbfea.cko_no_pad
+#   info :          1 items : ztop.FK.xdlName_iehfcggeifdegadjfde.cko_no_pad
+#   info :          1 items : ztop.FK.xdlName_jbedibhechfagfgbbda.cko_no_pad
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.mxfcmxif_sys_xclk2_zpt_xbuf
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.mxfcmxif_sys_xclk_zpt_xbuf
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clko.u_xst_wrapper_0.O (BUFG)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_fb
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.pll_fb
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.pll_fb
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.pll_fb
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout0
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout1
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clk_hs.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout2
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_fib_clko.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.pll_clkout3
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_bus_dut_0.x_bufgctrl_ce_srb_clk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.clka1d2
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_1.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.clka1d4
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_2.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.clka1d8
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.x_bufgctrl_3.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.pll_clkout0
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.pll_clkout1
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk2_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.pll_clkout0
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info :          0 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.pll_clkout1
+#   info : #    warning: potential clock skew with buffer 'bufgctrl' ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_xclk_0.x_bufgctrl_ce_sys_xclk_dv4.u_xst_wrapper_0.virtex7_bufgctrl_0
+#   info : 
+
+#   info :    #-------- STUCK clocks
+
+#   info :         64 items : ztop.RTB.fp_ctrl_stuck_0 (STUCK)
+#   info :          2 items : ztop.zebu_fake_zview.gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_ddchiahfeebihhfbiij[0].gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_ddchiahfeebihhfbiij[1].gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_hjejfaabdchcachbfea.gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_iehfcggeifdegadjfde.gnd (STUCK)
+#   info :          1 items : ztop.FK.xdlName_jbedibhechfagfgbbda.gnd (STUCK)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_mclk_in.x_idelay_0.u_xst_wrapper_0.N0 (STUCK)
+#   info :          1 items : ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_pclk_in.x_idelay_0.u_xst_wrapper_0.N0 (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_clk_100_zMem_multiport_TO_clk_100_.gnd (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_clk_200_zMem_multiport_TO_clk_200_.gnd (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_clk_25_zMem_multiport_TO_clk_25_.gnd (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_clk_50_zMem_multiport_TO_clk_50_.gnd (STUCK)
+#   info :          1 items : ztop.top.zMem_multiport_FROM_zMem_multiport_TO_.gnd (STUCK)
+#   info :          1 items : ztop.top.zebu_fake_ztig.gnd (STUCK)
+#   info : 
+
+
+#   info : # clock buffer list:
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_mclk_in.bufg_0     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_mclk
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.ckpadgc_pclk_in.bufg_0     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_pclk
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.sysclk_idly_0.bufg_0     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_idel_clk
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.bufg_sys_sclk[1]     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_sclk[1]
+#   info : #        bufg   ztop.RTB.zins_fp_ctrl.wrapper.sysclk_mxif.u_xst_wrapper_0.bufg_sys_sclk[0]     net: ztop.zpl_wr_RTB#zins_fp_ctrlsys_sclk[0]
+
+#   info : # 5 clock buffer(s) found
+
+end_quiet_timer {synchro}
+end_quiet_timer {netlist_processing}
+section {8.1} {1} {FPGA STATS}
+   ##############################################
+   # 8.1 FPGA STATS
+   ##############################################
+begin_quiet_timer {fpga_stats}
+stat -path {ztop} -zstatistics {out}
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                 reg |                 lut |                bram |                uram |             memsize |              m18x18 |                bufg |                buft |               nbI/O |                nbBB |                nbZV |                nbME |               dsp48 || name
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#   step STATS :  |                7278 |                7060 |                   2 |                   0 |               65536 |                   0 |                  16 |                   0 |                 121 |                   0 |                   0 |                   0 |                   0 || ztop
+#   step STATS :  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+end_quiet_timer {fpga_stats}
+begin_quiet_timer {muxcy_xorcy_processes}
+section {3.12} {1} {MANIPULATION OF MUXCY/XORCY}
+   ##############################################
+   # 3.12 MANIPULATION OF MUXCY/XORCY
+   ##############################################
+instr_muxcy_xorcy {vivado} {ztop.RTB}
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step instr_muxcy_xorcy : 0 muxcy chains broken because of size greater then 73
+end_quiet_timer {muxcy_xorcy_processes}
+begin_quiet_timer {undriven_nets_processing}
+query_undriven_nets -file {./fpga_reports/zNetgen/undriven_nets_and_pins.rpt.gz}
+#   step query_undriven_nets : Found 78 undriven nets in the netlist.
+#   step query_undriven_nets : Found 0 undriven pins in the netlist.
+#   step query_undriven_nets : See './fpga_reports/zNetgen/undriven_nets_and_pins.rpt.gz' report for additional information regarding undriven elements in the netlist.
+fix_undriven_nets -verbose
+#   step UNIQUIFY : Netlist with Top 'ztop'
+#   step UNIQUIFY : 0 modules created
+#   step fix_undriven_nets : 78 nets were connected to a constant, 0 were deleted.
+end_quiet_timer {undriven_nets_processing}
+section {7} {0} {CONSISTENCY CHECK}
+##############################################
+# 7 CONSISTENCY CHECK
+##############################################
+begin_quiet_timer {consistency_check}
+consistency_check {check_xilinx} {check_system} {check_ngo}
+#   step Consistency Check : Performing consistency check on the netlist
+end_quiet_timer {consistency_check}
+begin_quiet_timer {smart_metrics_before_DAP}
+report_netlist_metrics -file {fpga_data.info} -prefix {zNetgen_before_DAP} -app
+#   step NtgTclReportNetlistMetric : The netlist resource usage has been written into fpga_data.info with mode:zNetgen_before_DAP.
+end_quiet_timer {smart_metrics_before_DAP}
+populateZOptDB -znetgen_mode {zrtb_fw} -mode {off} -abcopt_env {} -parff_env {} -octane_env {}
+begin_quiet_timer {cluster_split}
+cluster_split -virtexType {V7} -fpgaPart {7vlx2000tff1925}
+#   step CLUSTER_SPLIT : cluster_split is triggered on invalid FPGA(possibly IF). Exit.
+end_quiet_timer {cluster_split}
+begin_quiet_timer {post_process_opt}
+post_process_fpga -virtex_type {v7} -rtb
+#   step post_process_fpga : post process fpga aborted because rtb flag is enabled
+end_quiet_timer {post_process_opt}
+begin_quiet_timer {lock_socket}
+section {3.11} {1} {LOCK_SOCKET}
+   ##############################################
+   # 3.11 LOCK_SOCKET
+   ##############################################
+lock_socket {7vlx2000tff1925} {false}
+#   step XDC GENERATOR : Writing XDC file 'design_zlcr.zdc.incr_tmp' with 0 constraints
+#   step XDC GENERATOR : constraints have changed - regenerate XDC file 'design_zlcr.zdc'
+end_quiet_timer {lock_socket}
+section {5} {0} {GENERATION}
+##############################################
+# 5 GENERATION
+##############################################
+begin_quiet_timer {generation}
+section {6} {0} {CHECK AND FIX NETLIST}
+##############################################
+# 6 CHECK AND FIX NETLIST
+##############################################
+check_and_fix_netlist
+#   step CHECK_AND_FIX_NETLIST : Performing check and fix for netlist 'zmerge'.
+#   step RESOLVE_NAME_CONFLICTS : 0 ports have been renamed.
+clean_netlist
+#   step clean_netlist : cleaning netlist 'zmerge'
+is_hydra_enabled
+end_quiet_timer {generation}
+begin_quiet_timer {instr_fw_zdc}
+instr_fw_zdc {vivado} {} {}
+#   step XDC GENERATOR : Writing XDC file 'design_fw.zdc' with 63 constraints
+end_quiet_timer {instr_fw_zdc}
+populateZOptDB -znetgen_mode {zrtb_fw} -mode {off} -abcopt_env {} -parff_env {} -octane_env {}
+begin_quiet_timer {design_db}
+add_bufg_constraints
+#   step XDC GENERATOR : Writing XDC file 'design_bufg.zdc' with 1 constraints
+add_ice_constraints -isOrionpp {0}
+write_znf {./fpga_reports/zNetgen/design_db.znf} -keep_unconnected
+#   step SERIALIZE : writing netlist 'zmerge' into znl file './fpga_reports/zNetgen/design_db.znf'
+#   step SERIALIZE : #bytes in: 1855822, #bytes out: 465253, compression ratio: 3.988845
+end_quiet_timer {design_db}
+section {7} {0} {VIVADO WA}
+##############################################
+# 7 VIVADO WA
+##############################################
+begin_quiet_timer {vivado_wa}
+aggregate_topgnd -gnd_fanout {500}
+#   step aggregate_topgnd : # info : Found 0 design IO ports on GND. 0 new GND driver created
+replace_inv_with_lut1
+replace_buf_with_lut1
+end_quiet_timer {vivado_wa}
+section {7} {1} {CLEAN PROPERTIES}
+   ##############################################
+   # 7 CLEAN PROPERTIES
+   ##############################################
+begin_quiet_timer {clean_properties}
+clean_properties
+end_quiet_timer {clean_properties}
+section {8} {0} {STATS AND INFOS}
+##############################################
+# 8 STATS AND INFOS
+##############################################
+begin_quiet_timer {stats_and_infos}
+section {.0} {1} {BLACKBOXES}
+   ##############################################
+   # .0 BLACKBOXES
+   ##############################################
+begin_quiet_timer {show_black_box}
+show_black_box
+#   step show_black_box : Searching blackbox in module 'ztop' :
+#   step show_black_box : Number of blackbox found : 0.
+end_quiet_timer {show_black_box}
+section {8.1} {2} { STATS}
+      ##############################################
+      # 8.1  STATS
+      ##############################################
+fpga_stats -zstatistics
+#   step FPGA STATS : xilinx primitives
+#   step FPGA STATS :         4961 fde
+#   step FPGA STATS :         2680 lut6
+#   step FPGA STATS :         2563 muxcy
+#   step FPGA STATS :         2417 xorcy
+#   step FPGA STATS :         1747 lut1
+#   step FPGA STATS :         1572 lut4
+#   step FPGA STATS :         1004 lut5
+#   step FPGA STATS :          917 fd
+#   step FPGA STATS :          844 lut2
+#   step FPGA STATS :          611 lut3
+#   step FPGA STATS :          372 fdce
+#   step FPGA STATS :          371 fdc
+#   step FPGA STATS :          268 muxf7
+#   step FPGA STATS :          260 gnd
+#   step FPGA STATS :          250 fdre
+#   step FPGA STATS :          181 vcc
+#   step FPGA STATS :          127 fdr
+#   step FPGA STATS :           96 fdp
+#   step FPGA STATS :           80 fds
+#   step FPGA STATS :           49 fdse
+#   step FPGA STATS :           48 ram64m
+#   step FPGA STATS :           48 ram16x1d
+#   step FPGA STATS :           33 fdpe
+#   step FPGA STATS :           32 or2
+#   step FPGA STATS :           24 srlc32e
+#   step FPGA STATS :           20 fdrs
+#   step FPGA STATS :           16 ibufds
+#   step FPGA STATS :           15 obufds
+#   step FPGA STATS :           11 bufgctrl
+#   step FPGA STATS :            8 iodelay
+#   step FPGA STATS :            7 oserdese2
+#   step FPGA STATS :            7 iserdese2
+#   step FPGA STATS :            7 idelaye2
+#   step FPGA STATS :            5 bufg
+#   step FPGA STATS :            4 mmcme2_base
+#   step FPGA STATS :            4 and3
+#   step FPGA STATS :            2 ramb36_exp
+#   step FPGA STATS :            2 ld
+#   step FPGA STATS :            1 sysmon
+#   step FPGA STATS :            1 startupe2
+#   step FPGA STATS :            1 oddr
+#   step FPGA STATS :            1 obuf
+#   step FPGA STATS :            1 muxf8
+#   step FPGA STATS :            1 idelayctrl
+#   step FPGA STATS :            1 capturee2
+#   step FPGA STATS :            1 bufr
+#   step FPGA STATS :            1 bufio
+#   step FPGA STATS :            1 and2
+#   step FPGA STATS : hierachic instances
+#   step FPGA STATS : 
+#   step FPGA STATS : This fpga has an interface of 1 wires (1 recv_out, recv_out_fast, recv_out_direct and 0 send_in, send_in_fast, send_in_direct)
+#   step FPGA STATS : 
+#   step FPGA STATS : +---------------------------+-----------+-----------+--------+--------+--------+--------+---------+-----+-----+-----+-----+-----+-----+-----+-----+------+------+
+#   step FPGA STATS : |                         1 |         2 |         3 |      4 |      5 |      6 |      7 |       8 |   9 |  10 |  11 |  12 |  13 |  14 |  15 |  16 |   17 |   18 |
+#   step FPGA STATS : +---------------------------+-----------+-----------+--------+--------+--------+--------+---------+-----+-----+-----+-----+-----+-----+-----+-----+------+------+
+#   step FPGA STATS : |      FP_00_09_00_08(LVDS) |  U0/M0/IF | U0/M0/F08 |      0 |      0 |      0 |      1 |    1/24 |   0 |   0 |   0 |   1 |   1 |   1 |   1 |   1 |    0 |    0 |
+#   step FPGA STATS : +---------------------------+-----------+-----------+--------+--------+--------+--------+---------+-----+-----+-----+-----+-----+-----+-----+-----+------+------+
+#   step FPGA STATS : 1  => socket name
+#   step FPGA STATS : 2  => fpga from
+#   step FPGA STATS : 3  => fpga to
+#   step FPGA STATS : 4  => design wire out with xdr
+#   step FPGA STATS : 5  => design wire out with sdr
+#   step FPGA STATS : 6  => design wire in with xdr
+#   step FPGA STATS : 7  => design wire in with sdr
+#   step FPGA STATS : 8  => physical wire used/physical wire total
+#   step FPGA STATS : 9  => physical wire used out with xdr
+#   step FPGA STATS : 10  => physical wire used out with sdr
+#   step FPGA STATS : 11  => physical wire used in with xdr
+#   step FPGA STATS : 12  => physical wire used in with sdr
+#   step FPGA STATS : 13  => min xdr out
+#   step FPGA STATS : 14 => max xdr out
+#   step FPGA STATS : 15 => min xdr in
+#   step FPGA STATS : 16 => max xdr in
+#   step FPGA STATS : 17 => Available slot out
+#   step FPGA STATS : 18 => Available slot in
+#   step FPGA STATS : 
+#   step FPGA STATS : Number of Flip Flop Or Latches controls set (ce, s, r, pre, clr, ge) : 453 
+#   step FPGA STATS : 
+#   step FPGA STATS : Number of Synchronous Elements controls set (ce, s, r, pre, ge, clr, we, clk) : 514 
+#   step FPGA STATS : 
+#   step FPGA STATS : Number of Synchronous Elements controls set with Ise approximation used (ce, s, r, pre, clr. clk) : 166 
+#   step FPGA STATS : 
+section {8.1} {2} {SUBSYSTEM STATS}
+      ##############################################
+      # 8.1 SUBSYSTEM STATS
+      ##############################################
+stat -subsystems
+end_quiet_timer {stats_and_infos}
+begin_quiet_timer {inter_die_tdm}
+inter_die_tdm
+#   step NtgTclTDMRegMarking : Warning: cannot find design/*/U_M_F, exit.
+#   step NtgTclTDMRegMarking : Setting inter-die TDM properties ZDEL(0 new, 0 existed) and DUT(0 new, 0 existed) on registers.
+#   step NtgTclTDMRegMarking : inserted 0 inter-die TDM properties in total.
+
+end_quiet_timer {inter_die_tdm}
+begin_quiet_timer {insert_falsepath_feedthroughs}
+insert_falsepath_feedthroughs
+#   step FalsePathFeedThroughInserter : inserted 0 false path feedthrough(s).
+end_quiet_timer {insert_falsepath_feedthroughs}
+begin_quiet_timer {filterReg}
+mark_filter_registers
+#   step NtgTclFilterRegMarking : Setting 0 filter register for replication among 0 total filter registers.
+#   step NtgTclFilterRegMarking : Setting 0 LUT1 for replication in Aux --> LUT1(INV) --> LD path.
+end_quiet_timer {filterReg}
+begin_quiet_timer {design.edf}
+begin_quiet_timer {smart_metrics_after_DAP}
+report_netlist_metrics -file {fpga_data.info} -prefix {zNetgen_after_DAP} -app
+#   step NtgTclReportNetlistMetric : The netlist resource usage has been written into fpga_data.info with mode:zNetgen_after_DAP.
+end_quiet_timer {smart_metrics_after_DAP}
+sanity_check -reportLimit {10}
+#   step NtgTclTDMRegMarking : Sanity check PASS, no duplicated attribute found on primitives.
+write_xl {design.edf.gz} {design}
+#   step EDIF GENERATOR : writing netlist 'clean_properties' into EDIF file 'design.edf.gz'
+end_quiet_timer {design.edf}
+begin_quiet_timer {zebu_filter}
+end_quiet_timer {zebu_filter}
+begin_quiet_timer {adaptive_znetgen}
+generate_design_info {V7}
+end_quiet_timer {adaptive_znetgen}
+end_zmetrics
+end_quiet_timer {znetgen_fpga}
+mudb_editor -save
+### warning in mudb_editor [CCC0919W] : MuDb directory does not exist.
+--> 23478 advanced commands were hidden.
+
+#   exec summary :    3 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m7.675s, sys 0m1.48s
+#   exec summary : Total memory: 1890000 kB - RSS memory: 1530744 kB - Data memory: 1521452 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:06:02 2023

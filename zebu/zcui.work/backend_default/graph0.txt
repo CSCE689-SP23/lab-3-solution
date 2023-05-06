@@ -1,0 +1,87 @@
+create_zcore Core1 {name=Part_0}
+add_zcore_fpga Core1 {ins=U0_M0_F0}
+add_zcore_fpga Core1 {ins=U0_M0_F0_SLR0}
+add_zcore_fpga Core1 {ins=U0_M0_F0_SLR1}
+add_zcore_fpga Core1 {ins=U0_M0_F0_SLR2}
+add_zcore_fpga Core1 {ins=U0_M0_F0_SLR3}
+add_zcore_fpga Core1 {ins=zebu_clockGen}
+add_zcore_fpga Core1 {ins=zebu_clockGen_SLR0}
+add_zcore_fpga Core1 {ins=zebu_clockGen_SLR1}
+add_zcore_fpga Core1 {ins=zebu_clockGen_SLR2}
+add_zcore_fpga Core1 {ins=zebu_clockGen_SLR3}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_compositeClock}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_compositeClock_SLR0}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_compositeClock_SLR1}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_compositeClock_SLR2}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_compositeClock_SLR3}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[0]}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[0]_SLR0}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[0]_SLR1}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[0]_SLR2}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[0]_SLR3}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[1]}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[1]_SLR0}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[1]_SLR1}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[1]_SLR2}
+add_zcore_fpga Core1 {ins=ztwbufg_zcg_zceiClock[1]_SLR3}
+add_zcore_fpga Core1 {ins=z_dclk_delay_bufg}
+add_zcore_fpga Core1 {ins=z_dclk_delay_bufg_SLR0}
+add_zcore_fpga Core1 {ins=z_dclk_delay_bufg_SLR1}
+add_zcore_fpga Core1 {ins=z_dclk_delay_bufg_SLR2}
+add_zcore_fpga Core1 {ins=z_dclk_delay_bufg_SLR3}
+add_zcore_fpga Core1 {ins=z_dclk_delay2_bufg}
+add_zcore_fpga Core1 {ins=z_dclk_delay2_bufg_SLR0}
+add_zcore_fpga Core1 {ins=z_dclk_delay2_bufg_SLR1}
+add_zcore_fpga Core1 {ins=z_dclk_delay2_bufg_SLR2}
+add_zcore_fpga Core1 {ins=z_dclk_delay2_bufg_SLR3}
+create_node CkNode0 type=fpga unit=0 mod=0 fpga=IF {name=zcg_compositeClock} {wire=zcg_compositeClock}
+create_node CkNode1 type=sock unit=0 mod=0 fpga=IF
+create_node CkNode2 type=sock unit=0 mod=0 fpga=F00
+create_node CkNode3 type=fpga unit=0 mod=0 fpga=F00 {name=zcg_compositeClock} {wire=zcg_compositeClock} {ins=U0_M0_F0} clock_target=true
+create_node CkNode4 type=fpga unit=0 mod=0 fpga=IF {name=zcg_filterClock} {wire=zcg_filterClock}
+create_node CkNode5 type=sock unit=0 mod=0 fpga=IF
+create_node CkNode6 type=sock unit=0 mod=0 fpga=F00
+create_node CkNode7 type=fpga unit=0 mod=0 fpga=F00 {name=z_dclk_delay2} {wire=z_dclk_delay2} {ins=U0_M0_F0} clock_target=true asyncsr_target=true
+create_node CkNode8 type=fpga unit=0 mod=0 fpga=IF {name=zcg_skewClock} {wire=zcg_skewClock}
+create_node CkNode9 type=sock unit=0 mod=0 fpga=IF
+create_node CkNode10 type=sock unit=0 mod=0 fpga=F00
+create_node CkNode11 type=fpga unit=0 mod=0 fpga=F00 {name=z_dclk_delay} {wire=z_dclk_delay} {ins=U0_M0_F0}
+create_node CkNode12 type=fpga unit=0 mod=0 fpga=IF {name=zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1} {wire=zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1}
+create_node CkNode13 type=sock unit=0 mod=0 fpga=IF
+create_node CkNode14 type=sock unit=0 mod=0 fpga=F00
+create_node CkNode15 type=fpga unit=0 mod=0 fpga=F00 {name=zcg_zceiClock[0]} {wire=zcg_zceiClock[0]} {ins=U0_M0_F0} clock_target=true
+create_node CkNode16 type=fpga unit=0 mod=0 fpga=IF {name=zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0} {wire=zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0}
+create_node CkNode17 type=sock unit=0 mod=0 fpga=IF
+create_node CkNode18 type=sock unit=0 mod=0 fpga=F00
+create_node CkNode19 type=fpga unit=0 mod=0 fpga=F00 {name=zcg_zceiClock[1]} {wire=zcg_zceiClock[1]} {ins=U0_M0_F0} clock_target=true
+create_arc CkNode0 CkNode1 type=f2s lowskew=true
+create_arc CkNode1 CkNode2 type=s2s_ext lowskew=true xdr=1 fast=true lvds=true
+create_arc CkNode2 CkNode3 type=s2f lowskew=true
+create_arc CkNode3 CdNode1717837926 type=f2f
+create_arc CkNode4 CkNode5 type=f2s lowskew=true
+create_arc CkNode5 CkNode6 type=s2s_ext lowskew=true xdr=1 fast=true lvds=true
+create_arc CkNode6 CkNode7 type=s2f lowskew=true
+create_arc CkNode7 CdNode1717837927 type=f2f
+create_arc CkNode8 CkNode9 type=f2s lowskew=true
+create_arc CkNode9 CkNode10 type=s2s_ext lowskew=true xdr=1 fast=true lvds=true
+create_arc CkNode10 CkNode11 type=s2f lowskew=true
+create_arc CkNode12 CkNode13 type=f2s lowskew=true
+create_arc CkNode13 CkNode14 type=s2s_ext lowskew=true xdr=1 fast=true lvds=true
+create_arc CkNode14 CkNode15 type=s2f lowskew=true
+create_arc CkNode15 CdNode1717837926 type=f2f
+create_arc CkNode15 CdNode1717837928 type=f2f
+create_arc CkNode16 CkNode17 type=f2s lowskew=true
+create_arc CkNode17 CkNode18 type=s2s_ext lowskew=true xdr=1 fast=true lvds=true
+create_arc CkNode18 CkNode19 type=s2f lowskew=true
+create_arc CkNode19 CdNode1717837926 type=f2f
+create_arc CkNode19 CdNode1717837929 type=f2f
+create_arc U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_check.error.D CdNode1717837930 type=f2f
+create_arc U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_fifo.mem[0][7].D CdNode1717837931 type=f2f
+create_arc U0_M0_F0-top.u_stb.u_rom.mem-r0do U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_check.error.D type=f2f
+create_arc U0_M0_F0-top.u_stb.u_rom.mem-r0do U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_fifo.mem[0][7].D type=f2f
+create_arc CdNode1717837924 CkNode0 type=f2f
+create_arc CdNode1717837924 CkNode12 type=f2f
+create_arc CdNode1717837924 CkNode16 type=f2f
+create_arc CdNode1717837932 U0_M0_F0-top.u_stb.u_rom.mem-r0do type=f2f
+create_arc CdNode1717837933 CdNode1717837932 type=f2f
+set_fgs_mode onset_fwc_mode on

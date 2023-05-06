@@ -1,0 +1,121 @@
+
+                                    ZeBu (R)
+                                   zRtlToEqui
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zRtlToEqui --zebu-work . 
+
+# start time is Wed Apr 19 01:04:57 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:24
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.27 0.08 0.06 5/484 36289
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185493 MB
+#            Total Free including cache: 190211 MB
+#            Swap cache: 0 MB Cached space: 4718 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 147 MB VmPeak: 147 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256023
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step RTE : --threads: using 10 threads (maximum is 40).
+#   step Load NameDb : Starting
+#   step RTE : Loading NameDb (RHINODB) from '/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/linux64/lib/libNameDB.so'...
+#   step Load NameDb : Done in     elapsed:0.2 s    user:0.1 s    system:0.1 s     %cpu:117.65       load:0.27       fm:185421 m      vm:258 m      vm:+46 m      um:118 m      um:+35 m
+#   step Compute indexes : Starting
+#   step RTE : signals = 126, vectors = 609.
+#   step Compute indexes : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185420 m      vm:258 m       vm:+0 m      um:118 m       um:+0 m
+#   step Load equi netlist : Starting
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step ZNF PARSER : reading netlist from ZNF file './tools/zDB/zTopBuild_equi.edf.gz'
+#   step Load equi netlist : Done in    elapsed:0.14 s   user:0.12 s    system:0.1 s      %cpu:96.30       load:0.27       fm:185452 m      vm:283 m      vm:+25 m      um:138 m      um:+20 m
+#   step Build whiteboard : Starting
+#   step Build whiteboard : Done in       elapsed:0 s      user:0 s    system:0.1 s     %cpu:800.00       load:0.27       fm:185447 m      vm:316 m      vm:+33 m      um:142 m       um:+4 m
+#   step Build indexer : Starting
+#   step RTE : 1138 equis, 1580 unfolded wires.
+#   step Build indexer : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185445 m     vm:1085 m     vm:+769 m      um:144 m       um:+2 m
+#   step Build MuDb : Starting
+#   step RTE : Constants file loading...
+#   step AnoDB : Anotation file './tools/zDB/zTopBuild_equi.inf' successfully opened
+#   step RTE : 202 signals with a constant value have been loaded.
+#   step RTE : 0 aliases have been loaded.
+#   step Annotation DB : Closing file './tools/zDB/zTopBuild_equi.inf'
+### warning in GateMapping [GTMP0003W] : Unknown simulation macro 'zclkgen_library/zebu_reqsig_clock_driverclock'.
+#   step Build MuDb : Done in       elapsed:0 s    user:0.1 s      system:0 s     %cpu:210.53       load:0.27       fm:185541 m     vm:1085 m       vm:+0 m      um:146 m       um:+2 m
+#   step RTE : Build EquiIndexToZrdbRep started at Wed Apr 19 01:04:57 2023.
+#   step Build RTL to equi mapping : Starting
+#   step Creating resolvers : Starting
+#   step Creating resolvers : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185541 m     vm:1085 m       vm:+0 m      um:146 m       um:+0 m
+#   step RTE : 8 resolvers created.
+#   step RTE : Build EquiIndexToZrdbRep ended at Wed Apr 19 01:04:57 2023.
+#   step Running resolvers : Starting
+#   step Running resolvers : Done in       elapsed:0 s    user:0.1 s    system:0.1 s     %cpu:235.29       load:0.27       fm:185542 m     vm:1086 m       vm:+1 m      um:147 m       um:+1 m
+#   step Serialize data : Starting
+#   step RTE : signals = 126, vectors = 601.
+#   step Serialize data : Done in     elapsed:0.2 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185539 m     vm:1089 m       vm:+3 m      um:150 m       um:+3 m
+#   step Build RTL to equi mapping : Done in     elapsed:0.9 s    user:0.1 s    system:0.2 s      %cpu:33.15       load:0.27       fm:185539 m     vm:1089 m       vm:+4 m      um:150 m       um:+4 m
+#   step Property DB : reading property DB from file './tools/zTopBuild/zTopBuild_propertyDB.gz'
+#   step Property DB : reading property DB from file './tools/zTopBuild/zTopBuild_propertyDB.gz'
+#   step RTE : Print MuDb stats before remapping
+Number of equiMasters: 1144
+	Number of equiMasters with no slaves: 1144
+Number of equiSlaves: 0
+	Number of alias read slaves: 0
+	Number of alias duplicate slaves: 0
+	Number of alias merge slaves: 0
+	Number of alias transferread slaves: 0
+	Number of alias transferwrite slaves: 0
+	Number of alias transferreadwrite slaves: 0
+Number of leaves with a depth in [0 ; 1[: 1144
+Number of leaves with a depth in [1 ; 2[: 0
+Number of leaves with a depth in [2 ; 5[: 0
+Number of leaves with a depth in [5 ; 10[: 0
+Number of leaves with a depth in [10 ; 100[: 0
+Number of leaves with a depth in [100 ; 1000[: 0
+Number of leaves with a depth in [1000 ; 10000[: 0
+Number of leaves with a depth superior to 10000: 0
+Maximal depth for a leaf: 0 reached for the equiID 0
+Number of equiClasses with a number of leaves in [1 ; 2[: 1144
+Number of equiClasses with a number of leaves in [2 ; 5[: 0
+Number of equiClasses with a number of leaves in [5 ; 10[: 0
+Number of equiClasses with a number of leaves in [10 ; 20[: 0
+Number of equiClasses with a number of leaves in [20 ; 100[: 0
+Number of equiClasses with a number of leaves in [100 ; 1000[: 0
+Number of equiClasses with a number of leaves in [1000 ; 10000[: 0
+Number of equiClasses with a number of leaves superior to 10000: 0
+Maximal number of leaves for an equiClass: 1 reached for the class with master equiID 0
+
+
+#   exec summary :    1 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m0s, user 0m0.190s, sys 0m0.105s
+#   exec summary : Total memory: 1378224 kB - RSS memory: 153088 kB - Data memory: 1231576 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:57 2023
+command exit code is '0'

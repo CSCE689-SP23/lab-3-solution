@@ -1,0 +1,725 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html&nbsp;charset=ISO-8859-1" />
+<title align="center">Report(/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/work.Part_0)</title>
+</head>
+<body>
+<div id="title" class="title">
+    <h1>Report</h1>
+  </div>
+  <div id="content" class="content">
+
+
+<h2>Command line:</h2>
+    <h3>Directory:(/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/work.Part_0)</h3>
+<pre>
+
+
+
+
+                                    ZeBu (R)
+                                   zCoreBuild
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zCoreBuild zCoreBuild_ztb.tcl 
+
+# start time is Wed Apr 19 01:04:59 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:46
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.27 0.08 0.06 4/522 36410
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185112 MB
+#            Total Free including cache: 189830 MB
+#            Swap cache: 0 MB Cached space: 4718 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 380 MB VmPeak: 380 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255920
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+
+
+
+</pre>
+<h2>Table of content:</h2><ul>
+<li>
+<a href="#K1.">
+ 1.Automatic clustering report
+</a>
+<ul>
+<li>
+<a href="#K1.1.">
+    1.1.Defaults (debugging)
+</a>
+</li>
+<li>
+<a href="#K1.2.">
+    1.2.Design analysis
+</a>
+</li>
+<li>
+<a href="#K1.3.">
+    1.3.Optimization
+</a>
+</li>
+<li>
+<a href="#K1.4.">
+    1.4.Clock evaluation
+</a>
+</li>
+<li>
+<a href="#K1.5.">
+    1.5.Single FPGA constraints
+</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<pre>
+======================================================================================================
+</pre>
+
+
+
+<a name="K1." id="K1."></a>
+<h4><a href="#">1.Automatic clustering report
+</a></h4>
+<pre>
+</pre>
+<a name="K1.1." id="K1.1."></a>
+<h4><a href="#">1.1.Defaults (debugging)
+</a></h4>
+<pre>
+INITIAL_DEFAULT_BEGIN
+Defaults:
+int interco_main_gran_block_factor=15 : granularity factor (number of block per fpga), this does not include the clock constraint.
+bool compute_interco_main_gran_block_factor=true : compute granularity factor if not provided (number of block per fpga).
+int gran_block_factor_max_nb_block=150 : if compute granularity factor, do a max_nb_block/max_fpga to obtain gran factor.
+int interco_secondary_gran_block_factor=8 : not used yet
+bool an_enable_localize_glue=false : not used yet
+bool an_debug_localize_glue=false : not used yet
+long an_localize_glue_max_trace_storage=1024 : not used yet
+long an_localize_glue_max_trace_display=100 : not used yet
+long an_localize_glue_max_size_block=50 : max size of an instance to be considered as glue
+bool an_drive_post_analysis=false : not used yet
+bool an_enable_dump_clock_tree=false : not used yet
+bool an_enable_dump_clock_sizes=false : not used yet
+bool an_disable_constraint_errors=true : not used yet
+bool opt_disable_constraint_errors=true : not used yet
+int blk_min_reg=2 : Minimum block size in reg
+int blk_min_lut=15 : Minimum block size in lut
+int blk_min_bram=1 : Minimum block size in bram
+int blk_min_uram=1 : Minimum block size in uram
+int blk_min_mult=1 : Minimum block size in mult
+int blk_min_bram_mult=2 : Minimum block size in bram mult
+int blk_min_dsp_mult=2 : Minimum block size in dsp/mult
+bool ac_an_default_flag_max_group_limit=true : Taille max du modele -1 (feature desactivee)
+int ac_an_default_max_group_limit=1500 : Taille max du modele -1 (feature desactivee)
+int ac_an_max_group_limit=1500 : Taille max du modele -1 (feature desactivee)
+int ac_an_default_max_try_reduce_group_limit=20 : Nombre max d'essais
+int ac_an_max_try_reduce_group_limit=20 : Nombre max d'essais
+int blk_min_fwc_ip=5 : Minimum block size in fwc_ip
+bool flat_block_overflow_check=true : Check les gros block --> erreur
+bool try_partition_init=true : Try partitionning initial solution
+bool accept_zrm_in_core=true : Support clustering with zrm and cores
+bool bandwidth_model2=true : New algo to compute bandwidth matrix
+bool compute_freq=false : router evaluate freq
+bool partition_includes_tristate_buses=true : bus are in the partitionner
+bool default_map_IF_uniq=true : Consider only IF module 0, unit 0
+bool default_enable_multi_bank_zrm_DRAM=true : multi bank mapping DRAM
+bool default_enable_multi_bank_zrm_RLDRAM=false : multi bank mapping RLDRAM
+bool default_enable_multi_bank_zrm_SSRAM=false : multi bank mapping SSRAM
+bool default_allow_routing_through_IF=true : Allow routing of nets through IF
+bool allow_routing_through_IF=true : Allow routing of nets through IF
+const int default_clock_coverage_latch=100 : clocks covering this percentage of the design will be included in the FK mapping
+const int default_fpga_max_cut=0x7fffffff : fpga max cut that makes a solution non acceptable
+const int default_maxwire=8500 : max wire between 2 fpga that makes a solution non acceptable
+const int default_max_phase=3000 : maximum number of phases in the simulated annealing (for fpga cut)
+const int default_max_phase_combo_cut=1000 : maximum number of phases in the simulated annealing (for combo cut)
+const int default_max_phase_mb_cut=1000 : maximum number of phases in the simulated annealing (for board cut)
+const int default_max_reheat=2 : maximum number of reheating
+const float default_T_DEC=0.9 : Beta value (temperature decrement factor).
+const int max_fill_reglut=100 : 0.000000illing using average of lut+reg
+bool max_fill_constraint_adjustement_by_usage=false : only to be activated in zCoreBuild
+int user_max_fill_reglut=100 : 0.000000illing using average of lut+reg
+float overflow_factor=1. : weight of overflow.
+const int default_maxtime=0 : in minutes, max time for fpga cut.
+const int fpga_iter_init_solution=2500 : search for the initial solution and SA parameter setting, number of iterations (fpga cut)
+const int module_iter_init_solution=1000 : search for the initial solution and SA parameter setting, number of iterations (board cut)
+const int combo_iter_init_solution=1000 : search for the initial solution and SA parameter setting, number of iterations (combo cut)
+bool debug_start_eval_using_hier=true : tries using hierarchy to build an initial solution, not necessary acceptable.
+bool debug_start_eval_using_random=false : tries using random to build an initial solution, not necessary acceptable.
+bool debug_start_eval_using_partition=false : tries using partitionning to build an initial solution, not necessary acceptable.
+bool debug_start_eval_using_defmapping=false : tries using defmaps to build an initial solution, not necessary acceptable.
+bool default_do_map_fk_src=false : maps cone logic from clocks to FK
+bool FK_AC_feature=false : feature that allows AC to map design on FK
+int combo_cut_counter_max=200 : max iteration in a phase (combo cut).
+int board_cut_counter_max=200 : max iteration in a phase (board cut).
+int max_clock_threshold_xxl=9 : XXL max user clock for an fpga that doesn't affect the cost function. (cluster debug set)
+int max_clock_threshold_xl=6 : XL max user clock for an fpga that doesn't affect the cost function. (cluster debug set)
+int max_clock_threshold_uf=16 : UF max user clock for an fpga that doesn't affect the cost function. (cluster debug set)
+int max_clock_threshold_server=9 : UF max user clock for an fpga that doesn't affect the cost function. (cluster debug set)
+int weight_clock_threshold=100 : weight of exceeding clock for an fpga.(cluster debug set)
+bool start_from_user_defmapping=false : Accept user defmaps as starting point
+bool lock_fpga_num=false : Keep constant the number of fpgas.
+bool combo_module_cut=false : Call the SA for combo and module remapping
+bool show_matrix=false : show interco on screen
+bool add_primary_clk_to_interco=true : Bring in primary clocks from fk
+bool remove_driver_from_primary_clk=false : pb when find drivers on primary clock
+bool error_when_driver_on_primary_clk=false : pb when find drivers on primary clock
+bool ignore_black_or_wire_boxes=false : when loading interco, ignore empty groups (black boxes or wire boxes)
+int normalized_payload=0 : maximum value in the payload matrix
+double normalized_payload_stretch=1. : Some rescaling  applied to the payload matrices
+int fm_0_wire=10 : Additionnal factor to disconnected (external mem -- fpga)
+bool default_do_adjust_target_interco=false : approximates bandwidth between FPGA's like in zxlPar
+bool no_zeroes_payload=true : remove 0 in weight matrix
+int def_cm_cfg_max_hop_cpt=2 : max depth of fpga interco exploration, beyond this depth all fpga are equivalent
+int def_cm_cfg_step_hop=1 : weight given to each hop
+int def_cm_cfg_last_hop=1 : weight given to the last hop to the far fpga
+int default_algo_cost=33 : merge small fpga
+int default_algo_cost_die=35 : 33 for die=> 35 LVDS, 37=LVDS+SLL
+int default_algo_cost_sll_alloc=36 : for only sll alloc
+int init_swap_nb_phase=50 : Nb phases SA init hierarchy
+int init_swap_nb_cycle=1000 : Nb cycles SA init hierarchy
+bool default_multiplex_clock_inter_fpga=true : Multiplexing of inter fpga clocks
+bool default_init_defmap_adjust_fpga_constraint=true : Adjust overflowed fpga constraints when using defmapping init 
+bool default_use_ice_module=true : In server Ice fpga are true design FPGA
+bool default_use_mem_module=false : Mem fpga not used (valid only UF4 and XXL)
+bool default_use_ice_module_at_init=true : In server Ice fpga are true design FPGA
+bool default_use_mem_module_for_core_init=false : Use FM when init mapping logic from cores.
+bool default_use_ice_module_for_core_init=true : In server Ice fpga are true design FPGA.
+double default_additionnal_cost_ddr_mapping=1. : Default Additional factor to push zrms to RLDRAM
+double additionnal_cost_ddr_mapping=1. : Additional factor to push zrms to RLDRAM
+int delta_design=20 : percentage of the design added to its size in order to evaluate maxfpga
+int nb_phases_no_gain=30 : Will interrupt after this number of phases if no gain has been found (-1 is no interrupt)
+int default_opt_level=0 : Only basic optimization (initial solution)
+int init_hier_nb_phase=100 : Nb phases SA init hierarchy
+int init_hier_nb_cycle=1000 : Nb cycles SA init hierarchy
+bool init_hier_maximize_unallocated_combos=false : use cost_algo_swap_heur cost function to maximize unallocated combos
+bool init_hier_lock_unallocated_fpga=false : lock unallocated fpga(s) during init_hier when guessing the number of fpga to use
+bool reverse_cost=false : processing on payload matrix
+double default_inter_module_fact=1.0 : additionnal factor for inter-module weight
+bool debug_fwc_ip=false : debug fast waveform capture ip
+bool ac_opt_enable_fwc_ip=true : optimizer uses fast waveform capture ip
+bool ac_ana_enable_fwc_ip=true : analyzer includes fast waveform capture ip
+int ac_max_fwc_ip_fpga_fwc_ip=64 : 64 FWC_IP (s) per fpga
+int ac_max_bit_per_fwc_ip=480 : 480 bits per FWC_IP (s)
+int ac_min_fwc_ip_bit_cost_fwc_ip=1 : 1 bit min cost per FWC_IP
+int ac_default_fill_rate_fwc_ip_fpga_fwc_ip=100 : 100% 64 FWC_IP (s) per fpga
+int ac_default_fill_rate_qiwc_bits_fpga=100 : 100% QIWC bits (s) per fpga
+int ac_adjusted_fill_rate_fwc_ip_fpga_fwc_ip=100 : 100% 64 FWC_IP (s) per fpga
+int ac_adjusted_fill_rate_qiwc_bits_fpga=100 : 100% QIWC bits (s) per fpga
+int ac_adjusted_max_fwc_ip_fpga_fwc_ip=64 : 64 FWC_IP (s) per fpga
+int ac_adjusted_max_qiwc_bits_fpga=-1 : 512 000 QIWC bits per fpga
+int ac_raw_max_qiwc_bits_fpga=-1 : 512 000 QIWC bits per fpga
+bool debug_qiwc_ip=false : debug qiwc ip
+int ac_default_fill_rate_wap_crit_sig_fpga=100 : 100% Critical wap signals (s) per fpga
+int ac_adjusted_fill_rate_wap_crit_sig_fpga=100 : 100% Critical Wap signals (s) per fpga
+int ac_adjusted_max_wap_crit_sig_fpga=-1 : 512 000 Critical WAP signals per fpga
+int ac_raw_max_wap_crit_sig_fpga=-1 : 512 000 Critical WAP signals per fpga
+int ac_max_bit_per_v5_fpga_fwc_ip=61440 : 60k FWC_IP bits per V5 fpga
+int ac_max_bit_per_v6_fpga_fwc_ip=122880 : 120k FWC_IP bits per V6 fpga
+int ac_max_bit_per_v7_fpga_fwc_ip=380928 : no max FWC_IP bits per V7 fpga
+int ac_max_ips_per_v5_fpga_fwc_ip=15 : 60k FWC_IP ips per V5 fpga
+int ac_max_ips_per_v6_fpga_fwc_ip=31 : 120k FWC_IP ips per V6 fpga
+int ac_max_ips_per_v7_fpga_fwc_ip=100 : no max FWC_IP ips per V7 fpga
+int ac_max_read_port_bits_fpga=8192 : 8192 read port bits per fpga
+int ac_max_read_port_ips_fpga=256 : 256 read port ips per fpga
+int ac_adjusted_max_read_port_bits_fpga=8192 : 8192 read port bits per fpga
+int ac_adjusted_max_read_port_ips_fpga=256 : 256 read port ips per fpga
+int ac_adjusted_fill_rate_read_port_bits_fpga=100 : 100% read port bits (s) per fpga
+int ac_adjusted_fill_rate_read_port_ips_fpga=100 : 100% read port ips (s) per fpga
+int ac_default_fill_rate_read_port_ips_fpga=100 : 100% read port ips (s) per fpga
+int ac_default_fill_rate_read_port_bits_fpga=100 : 100% read port bits (s) per fpga
+int ac_max_write_port_bits_fpga=8192 : 8192 write port bits per fpga
+int ac_max_write_port_ips_fpga=256 : 256 write port ips per fpga
+int ac_adjusted_max_write_port_bits_fpga=8192 : 8192 write port bits per fpga
+int ac_adjusted_max_write_port_ips_fpga=256 : 256 write port ips per fpga
+int ac_adjusted_fill_rate_write_port_bits_fpga=100 : 100% write port bits (s) per fpga
+int ac_adjusted_fill_rate_write_port_ips_fpga=100 : 100% write port ips (s) per fpga
+int ac_default_fill_rate_write_port_ips_fpga=100 : 100% write port ips (s) per fpga
+int ac_default_fill_rate_write_port_bits_fpga=100 : 100% write port bits (s) per fpga
+bool ac_zcei_on_U0_M0_F0=false : Force zcei blocks on U0_M0_F0
+int ac_max_zc_trace_bits_fpga=65536 : 60k ZC_TRACE_BIT bits per fpga
+int ac_adjusted_fill_rate_zc_trace_bits_fpga=100 : 100% ZC_TRACE_BIT bits per fpga
+int ac_adjusted_max_zc_trace_bits_fpga=65536 : 6ok ZC_TRACE_BIT bits per fpga
+int ac_max_static_force_fpga=8000 : 8k static force per fpga
+int ac_adjusted_fill_rate_static_force_fpga=100 :  (100%) of 8k static force per fpga
+int ac_adjusted_max_static_force_fpga=8000 : 8k static force per fpga
+unsigned ac_max_zforce_fpga=(std::numeric_limits<unsigned>::max()/4096) : no limit
+unsigned ac_adjusted_fill_rate_zforce_fpga=100 :  (100%) of 8k static force per fpga
+unsigned ac_adjusted_max_zforce_fpga=(std::numeric_limits<unsigned>::max()/4096) : no limit
+unsigned ac_max_sabre_ff_fpga=(8*1280*128) : no limit
+unsigned ac_adjusted_fill_rate_sabre_ff_fpga=100 :  (100%) of 8k static force per fpga
+unsigned ac_adjusted_max_sabre_ff_fpga=(8*1280*128) : no limit
+unsigned ac_max_sabre_pi_fpga=(8*256*128) : no limit
+unsigned ac_adjusted_fill_rate_sabre_pi_fpga=100 :  (100%) of 8k static force per fpga
+unsigned ac_adjusted_max_sabre_pi_fpga=(8*256*128) : no limit
+int ac_default_fill_rate_lanceBB_fpga=100 : 100% Lance BB(s) per fpga
+int ac_adjusted_fill_rate_lanceBB_fpga=100 : 100% Lance BB (s) per fpga
+int ac_adjusted_max_lanceBB_fpga=-1 : 1024 Lance BB per fpga
+int ac_raw_max_lanceBB_fpga=-1 : 1024 Lance BB per fpga
+int ac_max_zcei_mess_in_fpga=512 : 512 zcei message inputs bits per fpga
+int ac_adjusted_fill_rate_zcei_mess_in_fpga=95 : 95% zcei message inputs bits per fpga
+int ac_default_fill_rate_zcei_mess_in_fpga=95 : 95% zcei message input(s) per fpga
+int ac_adjusted_max_zcei_mess_in_fpga=512 : 512 zcei message inputs bits per fpga
+int ac_max_zcei_mess_out_fpga=512 : 512 zcei message outputs bits per fpga
+int ac_adjusted_fill_rate_zcei_mess_out_fpga=95 : 95% zcei message outputs bits per fpga
+int ac_default_fill_rate_zcei_mess_out_fpga=95 : 95% zcei message output(s) per fpga
+int ac_adjusted_max_zcei_mess_out_fpga=512 : 512 zcei message outputs bits per fpga
+int ac_max_zprd_fpga=8000 : 8000 zPrd blackboxes per fpga
+int ac_adjusted_fill_rate_zprd_fpga=100 : 100% zPrd blackboxesper fpga
+int ac_default_fill_rate_zprd_fpga=100 : 100% zPrd blackboxes per fpga
+int ac_adjusted_max_zprd_fpga=8000 : 8000 zPrd blackboxes per fpga
+const char virtual_block_sep[]="%" : virtual block: top.a.b.%fname%
+const char virtual_block_name_sep[]="#vb_lib#" : separate mod name from lib name.
+const char interco_file_version[]="AC_INTERCO_142_2016_03_04" : file version for interco file.
+const char interco_file_clock_sep[]="ZZ_clock_list_140_2007_24_01" : separator clock section.
+const char interco_file_domain_sep[]="ZZ_domain_list_140_2007_24_01" : separator domain section.
+const char interco_file_link_sep[]="ZZ_link_sep_140_2007_24_01" : separator link section.
+const char interco_file_defmap_sep[]="ZZ_defmap_sep_140_2007_24_01" : separator defmap section.
+const char interco_file_memory_defmap_sep[]="ZZ_defmap_memory_sep_140_2007_24_01" : separator direct defmap section.
+const char interco_file_system_defmap_sep[]="ZZ_defmap_system_sep_140_2007_24_01" : separator macro defmap section.
+const char interco_file_fwc_sep[]="ZZ_fwc_sep_140_2007_24_01" : separator fast waveform capture ip section.
+const char interco_file_fw_resources_sep[]="ZZ_fw_resources_sep_140_2007_24_01" : separator fw resources placement constraints section.
+const char interco_file_clock_cone_sep[]="ZZ_clock_cone_sep_140_2007_24_01" : separator clock cone placement constraints section.
+const char interco_file_zcore_def_sep[]="ZZ_ztopbuild_zcore_def_150_2009_22_04" : Ztopbuild core def section.
+const char interco_file_top_io_sep[]="ZZ_top_io_151_2009_01_12" : interco file top io section
+const char interco_file_cluster_cmd_sep_0[]="ZZ_cluster_cmd_151_2012_05_09" : interco file internal cluster commands section
+const char interco_file_cluster_cmd_sep[]="ZZ_cluster_cmd_151_2017_10_03" : interco file internal cluster commands section
+const char interco_file_time_sep[]="ZZ_timing_sep_2014" : interco file timing section
+const char interco_file_zdelay_sep[]="ZZ_zdelay_juil_2015" : interco file zdelay section
+const char interco_file_intradomain_sep[]="ZZ_intra_domain_db_nov_2017" : interco file zdelay section
+const char interco_file_block_part_property_0[]="ZZ_block_part_prop_19juil_2016_0" : block prop
+const char interco_file_block_part_property[]="ZZ_block_part_prop_19juil_2016" : Additional block property section (includes ZMEM)
+const char interco_file_block_part_property_ext[]="ZZ_block_part_prop_21fev_2017" : extended Additional block property section (includes ZMEM)
+const char interco_file_zrm_sep[]="ZZ_zrm_1dec_2016" : interco file additional block zrms section
+const char interco_file_module_sep[]="ZZ_module_11jan_2019" : modular information section
+bool debug_try_suggestion=false : For debugging purpose, allow def mapping definition in the interco file
+bool debug=false : Debug flag
+bool debug_1=false : Debug more flag
+bool debug_clk=false : Debug clk flag
+bool debug_sa=false : Debug flag SA
+bool debug_pre=false : Debug flag pre-analysis
+bool debug_build_group=false : Debug flag pre-analysis
+bool debug_post=false : Debug flag clustering (optimization)
+bool debug_hallocate=false : Debug initial hier alloc (sugg v1)
+bool debug_hallocate2=false : Debug initial hier alloc more detailed(sugg v1)
+bool debug_move=false : Debug flag clustering (moving blocks optimization)
+bool debug_aggregate=false : Debug data assembling
+bool debug_constraint=false : Debug constraint processing
+bool debug_allocation=false : Debug allocation during optimization
+bool debug_defmapping=false : Debug allocation during optimization
+bool debug_imatrix=false : Payload matrix
+bool debug_cost=false : debug cost function
+bool debug_interco=false : Payload matrix
+bool debug_interco_build=false : Payload matrix
+bool debug_merge_blocks=false : block merge
+bool debug_merge_groups=false : group merge
+bool debug_core_blocks=false : block core
+bool debug_block_traction=false : detailed block attractions
+bool debug_defmap_optimizer=false : defmap generator
+bool debug_clock_domain=false : clock_domain clustering
+bool debug_clock_domain_db=false : clock_domain DB
+bool debug_init_hier=false : Debug flag clustering (init)
+bool debug_node=false : Debug flag clustering (init) target node creation
+bool debug_target=false : Debug target
+bool debug_acceptable_weight=false : Debug acceptable solution
+bool debug_acceptable_zrm=false : Debug acceptable solution
+bool debug_log_phase=false : Log stat at each end of phase
+bool debug_compute_freq=false : dump files for debugggin mini router
+bool debug_clustering_mode=false : debug_clustering_mode
+bool debug_pre_merge_blocks=false : debug_pre_merge_blocks
+bool limit_display=true : Avoid huge matrix in the report.
+int sa_limit_display_nb_node=20 : (rapport ac) apres on n'affiche les matrices d'interco que sur demande
+int sol_eval_limit_display_nb_node=64 : (rapport ac) apres on n'affiche les matrices d'interco que sur demande
+int sol_eval_limit_display_col=12 : (rapport ac) apres on n'affiche les matrices d'interco que sur demande
+bool drive_dummy_nl=false : drive a dummy netlist to allow a zPar
+bool zpar_direct=false : generate a place direct for zPar
+bool drive_design_stat=false : regenerate the stat on design just before analysis
+bool drive_hmetis_design=false : generate an hmetis graph from the design model
+const char gpe_path_sep='|' : Separator used between instances in the interco file
+bool default_create_defmap_best_freq=true : generates defmap of the best solution by mean of freq.
+bool default_use_router=true : Use router algo to estimate zPar freq.
+bool default_use_router_cost_eval=false : only accept solutions with better zpar freq. estimates.
+bool default_select_best_freq_sol_heuristic=false : at the end of an heuristic, select the best solution after evaluating frequency.
+bool default_select_best_freq_sol_global=false : at the end, select the best solution after evaluating frequency .
+bool warn_sec_clock_on_zrm=false : warn secondary clocks on zrms (deprecated).
+bool use_alias_first=false : use aliases of instance names when dumping paths in interco file.
+bool debug_disable_zrm_ac=false : Forget about zrm during optimization.
+bool select_node_to_refine=false : When optimizing, break only highest cut nodes.
+bool an_enable_optimization_V2=true : Use new optimization flow.
+bool enable_AC_AN_V2=true : Use new analysis flow.
+bool debug_AC_AN_V2=false : Use new analysis flow.
+int clock_domain_depth_default=21 : try to make it match with cklmindiv (1+)
+unsigned int default_clk_min_div=20 : Default maximum division of clocks in the model.
+bool default_aggregate_partition=false : Aggregate partitionning.
+bool default_optimize_partition=true : Optimize partitionning.
+bool default_debug_partition=false : Trace partitionning.
+bool error_if_inter_core_in_merge_blocks=false : generates an error when merging blocks.
+bool enable_mono_core_flow=true : no  core defined, will define a mono_core top.
+bool run_strategies_sequentially=false : Run the partitioning strategies sequentially.
+bool dump_fm_stats=false : Dump stats from FM when it is run.
+bool read_model_from_dumped_interco=false : Read the partitioning model from the interco file dumped by the block selection instead of taking it from the block selection data structures.
+bool dump_model_interconnections=false : Dump information related to the model interconnections.
+
+End defaults
+
+INITIAL_DEFAULT_END
+
+MODIFIED_DEFAULT_BEGIN
+Defaults:
+int interco_main_gran_block_factor=15 : granularity factor (number of block per fpga), this does not include the clock constraint.
+bool compute_interco_main_gran_block_factor=true : compute granularity factor if not provided (number of block per fpga).
+int gran_block_factor_max_nb_block=150 : if compute granularity factor, do a max_nb_block/max_fpga to obtain gran factor.
+int interco_secondary_gran_block_factor=8 : not used yet
+bool an_enable_localize_glue=false : not used yet
+bool an_debug_localize_glue=false : not used yet
+long an_localize_glue_max_trace_storage=1024 : not used yet
+long an_localize_glue_max_trace_display=100 : not used yet
+long an_localize_glue_max_size_block=50 : max size of an instance to be considered as glue
+bool an_drive_post_analysis=false : not used yet
+bool an_enable_dump_clock_tree=false : not used yet
+bool an_enable_dump_clock_sizes=false : not used yet
+bool an_disable_constraint_errors=true : not used yet
+bool opt_disable_constraint_errors=true : not used yet
+int blk_min_reg=2 : Minimum block size in reg
+int blk_min_lut=15 : Minimum block size in lut
+int blk_min_bram=1 : Minimum block size in bram
+int blk_min_uram=1 : Minimum block size in uram
+int blk_min_mult=1 : Minimum block size in mult
+int blk_min_bram_mult=2 : Minimum block size in bram mult
+int blk_min_dsp_mult=2 : Minimum block size in dsp/mult
+bool ac_an_default_flag_max_group_limit=true : Taille max du modele -1 (feature desactivee)
+int ac_an_default_max_group_limit=1500 : Taille max du modele -1 (feature desactivee)
+int ac_an_max_group_limit=1500 : Taille max du modele -1 (feature desactivee)
+int ac_an_default_max_try_reduce_group_limit=20 : Nombre max d'essais
+int ac_an_max_try_reduce_group_limit=20 : Nombre max d'essais
+int blk_min_fwc_ip=5 : Minimum block size in fwc_ip
+bool flat_block_overflow_check=true : Check les gros block --> erreur
+bool try_partition_init=true : Try partitionning initial solution
+bool accept_zrm_in_core=true : Support clustering with zrm and cores
+bool bandwidth_model2=true : New algo to compute bandwidth matrix
+bool compute_freq=false : router evaluate freq
+bool partition_includes_tristate_buses=true : bus are in the partitionner
+bool default_map_IF_uniq=true : Consider only IF module 0, unit 0
+bool default_enable_multi_bank_zrm_DRAM=true : multi bank mapping DRAM
+bool default_enable_multi_bank_zrm_RLDRAM=false : multi bank mapping RLDRAM
+bool default_enable_multi_bank_zrm_SSRAM=false : multi bank mapping SSRAM
+bool default_allow_routing_through_IF=true : Allow routing of nets through IF
+bool allow_routing_through_IF=true : Allow routing of nets through IF
+const int default_clock_coverage_latch=100 : clocks covering this percentage of the design will be included in the FK mapping
+const int default_fpga_max_cut=0x7fffffff : fpga max cut that makes a solution non acceptable
+const int default_maxwire=8500 : max wire between 2 fpga that makes a solution non acceptable
+const int default_max_phase=3000 : maximum number of phases in the simulated annealing (for fpga cut)
+const int default_max_phase_combo_cut=1000 : maximum number of phases in the simulated annealing (for combo cut)
+const int default_max_phase_mb_cut=1000 : maximum number of phases in the simulated annealing (for board cut)
+const int default_max_reheat=2 : maximum number of reheating
+const float default_T_DEC=0.9 : Beta value (temperature decrement factor).
+const int max_fill_reglut=100 : 0.000000illing using average of lut+reg
+bool max_fill_constraint_adjustement_by_usage=false : only to be activated in zCoreBuild
+int user_max_fill_reglut=100 : 0.000000illing using average of lut+reg
+float overflow_factor=1. : weight of overflow.
+const int default_maxtime=0 : in minutes, max time for fpga cut.
+const int fpga_iter_init_solution=2500 : search for the initial solution and SA parameter setting, number of iterations (fpga cut)
+const int module_iter_init_solution=1000 : search for the initial solution and SA parameter setting, number of iterations (board cut)
+const int combo_iter_init_solution=1000 : search for the initial solution and SA parameter setting, number of iterations (combo cut)
+bool debug_start_eval_using_hier=true : tries using hierarchy to build an initial solution, not necessary acceptable.
+bool debug_start_eval_using_random=false : tries using random to build an initial solution, not necessary acceptable.
+bool debug_start_eval_using_partition=false : tries using partitionning to build an initial solution, not necessary acceptable.
+bool debug_start_eval_using_defmapping=false : tries using defmaps to build an initial solution, not necessary acceptable.
+bool default_do_map_fk_src=false : maps cone logic from clocks to FK
+bool FK_AC_feature=false : feature that allows AC to map design on FK
+int combo_cut_counter_max=200 : max iteration in a phase (combo cut).
+int board_cut_counter_max=200 : max iteration in a phase (board cut).
+int max_clock_threshold_xxl=9 : XXL max user clock for an fpga that doesn't affect the cost function. (cluster debug set)
+int max_clock_threshold_xl=6 : XL max user clock for an fpga that doesn't affect the cost function. (cluster debug set)
+int max_clock_threshold_uf=16 : UF max user clock for an fpga that doesn't affect the cost function. (cluster debug set)
+int max_clock_threshold_server=9 : UF max user clock for an fpga that doesn't affect the cost function. (cluster debug set)
+int weight_clock_threshold=100 : weight of exceeding clock for an fpga.(cluster debug set)
+bool start_from_user_defmapping=false : Accept user defmaps as starting point
+bool lock_fpga_num=false : Keep constant the number of fpgas.
+bool combo_module_cut=false : Call the SA for combo and module remapping
+bool show_matrix=false : show interco on screen
+bool add_primary_clk_to_interco=true : Bring in primary clocks from fk
+bool remove_driver_from_primary_clk=false : pb when find drivers on primary clock
+bool error_when_driver_on_primary_clk=false : pb when find drivers on primary clock
+bool ignore_black_or_wire_boxes=false : when loading interco, ignore empty groups (black boxes or wire boxes)
+int normalized_payload=0 : maximum value in the payload matrix
+double normalized_payload_stretch=1. : Some rescaling  applied to the payload matrices
+int fm_0_wire=10 : Additionnal factor to disconnected (external mem -- fpga)
+bool default_do_adjust_target_interco=false : approximates bandwidth between FPGA's like in zxlPar
+bool no_zeroes_payload=true : remove 0 in weight matrix
+int def_cm_cfg_max_hop_cpt=2 : max depth of fpga interco exploration, beyond this depth all fpga are equivalent
+int def_cm_cfg_step_hop=1 : weight given to each hop
+int def_cm_cfg_last_hop=1 : weight given to the last hop to the far fpga
+int default_algo_cost=33 : merge small fpga
+int default_algo_cost_die=35 : 33 for die=> 35 LVDS, 37=LVDS+SLL
+int default_algo_cost_sll_alloc=36 : for only sll alloc
+int init_swap_nb_phase=50 : Nb phases SA init hierarchy
+int init_swap_nb_cycle=1000 : Nb cycles SA init hierarchy
+bool default_multiplex_clock_inter_fpga=true : Multiplexing of inter fpga clocks
+bool default_init_defmap_adjust_fpga_constraint=true : Adjust overflowed fpga constraints when using defmapping init 
+bool default_use_ice_module=true : In server Ice fpga are true design FPGA
+bool default_use_mem_module=false : Mem fpga not used (valid only UF4 and XXL)
+bool default_use_ice_module_at_init=true : In server Ice fpga are true design FPGA
+bool default_use_mem_module_for_core_init=false : Use FM when init mapping logic from cores.
+bool default_use_ice_module_for_core_init=true : In server Ice fpga are true design FPGA.
+double default_additionnal_cost_ddr_mapping=1. : Default Additional factor to push zrms to RLDRAM
+double additionnal_cost_ddr_mapping=1. : Additional factor to push zrms to RLDRAM
+int delta_design=20 : percentage of the design added to its size in order to evaluate maxfpga
+int nb_phases_no_gain=30 : Will interrupt after this number of phases if no gain has been found (-1 is no interrupt)
+int default_opt_level=0 : Only basic optimization (initial solution)
+int init_hier_nb_phase=100 : Nb phases SA init hierarchy
+int init_hier_nb_cycle=1000 : Nb cycles SA init hierarchy
+bool init_hier_maximize_unallocated_combos=false : use cost_algo_swap_heur cost function to maximize unallocated combos
+bool init_hier_lock_unallocated_fpga=false : lock unallocated fpga(s) during init_hier when guessing the number of fpga to use
+bool reverse_cost=false : processing on payload matrix
+double default_inter_module_fact=1.0 : additionnal factor for inter-module weight
+bool debug_fwc_ip=false : debug fast waveform capture ip
+bool ac_opt_enable_fwc_ip=true : optimizer uses fast waveform capture ip
+bool ac_ana_enable_fwc_ip=true : analyzer includes fast waveform capture ip
+int ac_max_fwc_ip_fpga_fwc_ip=64 : 64 FWC_IP (s) per fpga
+int ac_max_bit_per_fwc_ip=480 : 480 bits per FWC_IP (s)
+int ac_min_fwc_ip_bit_cost_fwc_ip=1 : 1 bit min cost per FWC_IP
+int ac_default_fill_rate_fwc_ip_fpga_fwc_ip=100 : 100% 64 FWC_IP (s) per fpga
+int ac_default_fill_rate_qiwc_bits_fpga=100 : 100% QIWC bits (s) per fpga
+int ac_adjusted_fill_rate_fwc_ip_fpga_fwc_ip=100 : 100% 64 FWC_IP (s) per fpga
+int ac_adjusted_fill_rate_qiwc_bits_fpga=100 : 100% QIWC bits (s) per fpga
+int ac_adjusted_max_fwc_ip_fpga_fwc_ip=64 : 64 FWC_IP (s) per fpga
+int ac_adjusted_max_qiwc_bits_fpga=-1 : 512 000 QIWC bits per fpga
+int ac_raw_max_qiwc_bits_fpga=-1 : 512 000 QIWC bits per fpga
+bool debug_qiwc_ip=false : debug qiwc ip
+int ac_default_fill_rate_wap_crit_sig_fpga=100 : 100% Critical wap signals (s) per fpga
+int ac_adjusted_fill_rate_wap_crit_sig_fpga=100 : 100% Critical Wap signals (s) per fpga
+int ac_adjusted_max_wap_crit_sig_fpga=-1 : 512 000 Critical WAP signals per fpga
+int ac_raw_max_wap_crit_sig_fpga=-1 : 512 000 Critical WAP signals per fpga
+int ac_max_bit_per_v5_fpga_fwc_ip=61440 : 60k FWC_IP bits per V5 fpga
+int ac_max_bit_per_v6_fpga_fwc_ip=122880 : 120k FWC_IP bits per V6 fpga
+int ac_max_bit_per_v7_fpga_fwc_ip=380928 : no max FWC_IP bits per V7 fpga
+int ac_max_ips_per_v5_fpga_fwc_ip=15 : 60k FWC_IP ips per V5 fpga
+int ac_max_ips_per_v6_fpga_fwc_ip=31 : 120k FWC_IP ips per V6 fpga
+int ac_max_ips_per_v7_fpga_fwc_ip=100 : no max FWC_IP ips per V7 fpga
+int ac_max_read_port_bits_fpga=8192 : 8192 read port bits per fpga
+int ac_max_read_port_ips_fpga=256 : 256 read port ips per fpga
+int ac_adjusted_max_read_port_bits_fpga=8192 : 8192 read port bits per fpga
+int ac_adjusted_max_read_port_ips_fpga=256 : 256 read port ips per fpga
+int ac_adjusted_fill_rate_read_port_bits_fpga=100 : 100% read port bits (s) per fpga
+int ac_adjusted_fill_rate_read_port_ips_fpga=100 : 100% read port ips (s) per fpga
+int ac_default_fill_rate_read_port_ips_fpga=100 : 100% read port ips (s) per fpga
+int ac_default_fill_rate_read_port_bits_fpga=100 : 100% read port bits (s) per fpga
+int ac_max_write_port_bits_fpga=8192 : 8192 write port bits per fpga
+int ac_max_write_port_ips_fpga=256 : 256 write port ips per fpga
+int ac_adjusted_max_write_port_bits_fpga=8192 : 8192 write port bits per fpga
+int ac_adjusted_max_write_port_ips_fpga=256 : 256 write port ips per fpga
+int ac_adjusted_fill_rate_write_port_bits_fpga=100 : 100% write port bits (s) per fpga
+int ac_adjusted_fill_rate_write_port_ips_fpga=100 : 100% write port ips (s) per fpga
+int ac_default_fill_rate_write_port_ips_fpga=100 : 100% write port ips (s) per fpga
+int ac_default_fill_rate_write_port_bits_fpga=100 : 100% write port bits (s) per fpga
+bool ac_zcei_on_U0_M0_F0=false : Force zcei blocks on U0_M0_F0
+int ac_max_zc_trace_bits_fpga=65536 : 60k ZC_TRACE_BIT bits per fpga
+int ac_adjusted_fill_rate_zc_trace_bits_fpga=100 : 100% ZC_TRACE_BIT bits per fpga
+int ac_adjusted_max_zc_trace_bits_fpga=65536 : 6ok ZC_TRACE_BIT bits per fpga
+int ac_max_static_force_fpga=8000 : 8k static force per fpga
+int ac_adjusted_fill_rate_static_force_fpga=100 :  (100%) of 8k static force per fpga
+int ac_adjusted_max_static_force_fpga=8000 : 8k static force per fpga
+unsigned ac_max_zforce_fpga=(std::numeric_limits<unsigned>::max()/4096) : no limit
+unsigned ac_adjusted_fill_rate_zforce_fpga=100 :  (100%) of 8k static force per fpga
+unsigned ac_adjusted_max_zforce_fpga=(std::numeric_limits<unsigned>::max()/4096) : no limit
+unsigned ac_max_sabre_ff_fpga=(8*1280*128) : no limit
+unsigned ac_adjusted_fill_rate_sabre_ff_fpga=100 :  (100%) of 8k static force per fpga
+unsigned ac_adjusted_max_sabre_ff_fpga=(8*1280*128) : no limit
+unsigned ac_max_sabre_pi_fpga=(8*256*128) : no limit
+unsigned ac_adjusted_fill_rate_sabre_pi_fpga=100 :  (100%) of 8k static force per fpga
+unsigned ac_adjusted_max_sabre_pi_fpga=(8*256*128) : no limit
+int ac_default_fill_rate_lanceBB_fpga=100 : 100% Lance BB(s) per fpga
+int ac_adjusted_fill_rate_lanceBB_fpga=100 : 100% Lance BB (s) per fpga
+int ac_adjusted_max_lanceBB_fpga=-1 : 1024 Lance BB per fpga
+int ac_raw_max_lanceBB_fpga=-1 : 1024 Lance BB per fpga
+int ac_max_zcei_mess_in_fpga=512 : 512 zcei message inputs bits per fpga
+int ac_adjusted_fill_rate_zcei_mess_in_fpga=95 : 95% zcei message inputs bits per fpga
+int ac_default_fill_rate_zcei_mess_in_fpga=95 : 95% zcei message input(s) per fpga
+int ac_adjusted_max_zcei_mess_in_fpga=512 : 512 zcei message inputs bits per fpga
+int ac_max_zcei_mess_out_fpga=512 : 512 zcei message outputs bits per fpga
+int ac_adjusted_fill_rate_zcei_mess_out_fpga=95 : 95% zcei message outputs bits per fpga
+int ac_default_fill_rate_zcei_mess_out_fpga=95 : 95% zcei message output(s) per fpga
+int ac_adjusted_max_zcei_mess_out_fpga=512 : 512 zcei message outputs bits per fpga
+int ac_max_zprd_fpga=8000 : 8000 zPrd blackboxes per fpga
+int ac_adjusted_fill_rate_zprd_fpga=100 : 100% zPrd blackboxesper fpga
+int ac_default_fill_rate_zprd_fpga=100 : 100% zPrd blackboxes per fpga
+int ac_adjusted_max_zprd_fpga=8000 : 8000 zPrd blackboxes per fpga
+const char virtual_block_sep[]="%" : virtual block: top.a.b.%fname%
+const char virtual_block_name_sep[]="#vb_lib#" : separate mod name from lib name.
+const char interco_file_version[]="AC_INTERCO_142_2016_03_04" : file version for interco file.
+const char interco_file_clock_sep[]="ZZ_clock_list_140_2007_24_01" : separator clock section.
+const char interco_file_domain_sep[]="ZZ_domain_list_140_2007_24_01" : separator domain section.
+const char interco_file_link_sep[]="ZZ_link_sep_140_2007_24_01" : separator link section.
+const char interco_file_defmap_sep[]="ZZ_defmap_sep_140_2007_24_01" : separator defmap section.
+const char interco_file_memory_defmap_sep[]="ZZ_defmap_memory_sep_140_2007_24_01" : separator direct defmap section.
+const char interco_file_system_defmap_sep[]="ZZ_defmap_system_sep_140_2007_24_01" : separator macro defmap section.
+const char interco_file_fwc_sep[]="ZZ_fwc_sep_140_2007_24_01" : separator fast waveform capture ip section.
+const char interco_file_fw_resources_sep[]="ZZ_fw_resources_sep_140_2007_24_01" : separator fw resources placement constraints section.
+const char interco_file_clock_cone_sep[]="ZZ_clock_cone_sep_140_2007_24_01" : separator clock cone placement constraints section.
+const char interco_file_zcore_def_sep[]="ZZ_ztopbuild_zcore_def_150_2009_22_04" : Ztopbuild core def section.
+const char interco_file_top_io_sep[]="ZZ_top_io_151_2009_01_12" : interco file top io section
+const char interco_file_cluster_cmd_sep_0[]="ZZ_cluster_cmd_151_2012_05_09" : interco file internal cluster commands section
+const char interco_file_cluster_cmd_sep[]="ZZ_cluster_cmd_151_2017_10_03" : interco file internal cluster commands section
+const char interco_file_time_sep[]="ZZ_timing_sep_2014" : interco file timing section
+const char interco_file_zdelay_sep[]="ZZ_zdelay_juil_2015" : interco file zdelay section
+const char interco_file_intradomain_sep[]="ZZ_intra_domain_db_nov_2017" : interco file zdelay section
+const char interco_file_block_part_property_0[]="ZZ_block_part_prop_19juil_2016_0" : block prop
+const char interco_file_block_part_property[]="ZZ_block_part_prop_19juil_2016" : Additional block property section (includes ZMEM)
+const char interco_file_block_part_property_ext[]="ZZ_block_part_prop_21fev_2017" : extended Additional block property section (includes ZMEM)
+const char interco_file_zrm_sep[]="ZZ_zrm_1dec_2016" : interco file additional block zrms section
+const char interco_file_module_sep[]="ZZ_module_11jan_2019" : modular information section
+bool debug_try_suggestion=false : For debugging purpose, allow def mapping definition in the interco file
+bool debug=false : Debug flag
+bool debug_1=false : Debug more flag
+bool debug_clk=false : Debug clk flag
+bool debug_sa=false : Debug flag SA
+bool debug_pre=false : Debug flag pre-analysis
+bool debug_build_group=false : Debug flag pre-analysis
+bool debug_post=false : Debug flag clustering (optimization)
+bool debug_hallocate=false : Debug initial hier alloc (sugg v1)
+bool debug_hallocate2=false : Debug initial hier alloc more detailed(sugg v1)
+bool debug_move=false : Debug flag clustering (moving blocks optimization)
+bool debug_aggregate=false : Debug data assembling
+bool debug_constraint=false : Debug constraint processing
+bool debug_allocation=false : Debug allocation during optimization
+bool debug_defmapping=false : Debug allocation during optimization
+bool debug_imatrix=false : Payload matrix
+bool debug_cost=false : debug cost function
+bool debug_interco=false : Payload matrix
+bool debug_interco_build=false : Payload matrix
+bool debug_merge_blocks=false : block merge
+bool debug_merge_groups=false : group merge
+bool debug_core_blocks=false : block core
+bool debug_block_traction=false : detailed block attractions
+bool debug_defmap_optimizer=false : defmap generator
+bool debug_clock_domain=false : clock_domain clustering
+bool debug_clock_domain_db=false : clock_domain DB
+bool debug_init_hier=false : Debug flag clustering (init)
+bool debug_node=false : Debug flag clustering (init) target node creation
+bool debug_target=false : Debug target
+bool debug_acceptable_weight=false : Debug acceptable solution
+bool debug_acceptable_zrm=false : Debug acceptable solution
+bool debug_log_phase=false : Log stat at each end of phase
+bool debug_compute_freq=false : dump files for debugggin mini router
+bool debug_clustering_mode=false : debug_clustering_mode
+bool debug_pre_merge_blocks=false : debug_pre_merge_blocks
+bool limit_display=true : Avoid huge matrix in the report.
+int sa_limit_display_nb_node=20 : (rapport ac) apres on n'affiche les matrices d'interco que sur demande
+int sol_eval_limit_display_nb_node=64 : (rapport ac) apres on n'affiche les matrices d'interco que sur demande
+int sol_eval_limit_display_col=12 : (rapport ac) apres on n'affiche les matrices d'interco que sur demande
+bool drive_dummy_nl=false : drive a dummy netlist to allow a zPar
+bool zpar_direct=false : generate a place direct for zPar
+bool drive_design_stat=false : regenerate the stat on design just before analysis
+bool drive_hmetis_design=false : generate an hmetis graph from the design model
+const char gpe_path_sep='|' : Separator used between instances in the interco file
+bool default_create_defmap_best_freq=true : generates defmap of the best solution by mean of freq.
+bool default_use_router=true : Use router algo to estimate zPar freq.
+bool default_use_router_cost_eval=false : only accept solutions with better zpar freq. estimates.
+bool default_select_best_freq_sol_heuristic=false : at the end of an heuristic, select the best solution after evaluating frequency.
+bool default_select_best_freq_sol_global=false : at the end, select the best solution after evaluating frequency .
+bool warn_sec_clock_on_zrm=false : warn secondary clocks on zrms (deprecated).
+bool use_alias_first=false : use aliases of instance names when dumping paths in interco file.
+bool debug_disable_zrm_ac=false : Forget about zrm during optimization.
+bool select_node_to_refine=false : When optimizing, break only highest cut nodes.
+bool an_enable_optimization_V2=true : Use new optimization flow.
+bool enable_AC_AN_V2=true : Use new analysis flow.
+bool debug_AC_AN_V2=false : Use new analysis flow.
+int clock_domain_depth_default=21 : try to make it match with cklmindiv (1+)
+unsigned int default_clk_min_div=20 : Default maximum division of clocks in the model.
+bool default_aggregate_partition=false : Aggregate partitionning.
+bool default_optimize_partition=true : Optimize partitionning.
+bool default_debug_partition=false : Trace partitionning.
+bool error_if_inter_core_in_merge_blocks=false : generates an error when merging blocks.
+bool enable_mono_core_flow=true : no  core defined, will define a mono_core top.
+bool run_strategies_sequentially=false : Run the partitioning strategies sequentially.
+bool dump_fm_stats=false : Dump stats from FM when it is run.
+bool read_model_from_dumped_interco=false : Read the partitioning model from the interco file dumped by the block selection instead of taking it from the block selection data structures.
+bool dump_model_interconnections=false : Dump information related to the model interconnections.
+
+End defaults
+
+MODIFIED_DEFAULT_END
+
+
+
+2 predefined clustering modes: 
+	fast V7 :    REG=     25%   LUT=     50%RAMLUT=     60%  LUT6=     50% MUXCY=     30%BRAM=  80% DSP_MULT=  80%  QIWC=     50% : ulimit    REG=     45%   LUT=     70%RAMLUT=     70%  LUT6=     70% MUXCY=     90%BRAM= 100% DSP_MULT= 100%  QIWC=    100% OVF:    REG=      5%   LUT=     10%RAMLUT=     10%  LUT6=     10% MUXCY=     10%BRAM=   0% DSP_MULT=   0%  QIWC=     10%(reserve_ovf) MIN_US:    REG=     60%   LUT=     60%RAMLUT=      0%  LUT6=      0% MUXCY=      0%BRAM=   0% DSP_MULT=   0%  QIWC=     60% MAX_US:    REG=     96%   LUT=     96%RAMLUT=     90%  LUT6=     96% MUXCY=     90%BRAM= 100% DSP_MULT= 100%  QIWC=     90% (default)
+	customized V7 :    REG=     25%   LUT=     50%RAMLUT=     60%  LUT6=     50% MUXCY=     30%BRAM=  80% DSP_MULT=  80%  QIWC=     50% : ulimit    REG=     45%   LUT=     70%RAMLUT=     70%  LUT6=     70% MUXCY=     90%BRAM= 100% DSP_MULT= 100%  QIWC=    100% OVF:    REG=      5%   LUT=     10%RAMLUT=     10%  LUT6=     10% MUXCY=     10%BRAM=   0% DSP_MULT=   0%  QIWC=     10%(reserve_ovf) MIN_US:    REG=     60%   LUT=     60%RAMLUT=      0%  LUT6=      0% MUXCY=      0%BRAM=   0% DSP_MULT=   0%  QIWC=     60% MAX_US:    REG=     96%   LUT=     96%RAMLUT=     90%  LUT6=     96% MUXCY=     90%BRAM= 100% DSP_MULT= 100%  QIWC=     90% (active)
+
+
+</pre>
+<a name="K1.2." id="K1.2."></a>
+<h4><a href="#">1.2.Design analysis
+</a></h4>
+<pre>
+
+
+                 *** EMPTY SECTION *** 
+
+
+</pre>
+<a name="K1.3." id="K1.3."></a>
+<h4><a href="#">1.3.Optimization
+</a></h4>
+<pre>
+
+
+                 *** EMPTY SECTION *** 
+
+
+</pre>
+<a name="K1.4." id="K1.4."></a>
+<h4><a href="#">1.4.Clock evaluation
+</a></h4>
+<pre>
+
+
+                 *** EMPTY SECTION *** 
+
+
+</pre>
+<a name="K1.5." id="K1.5."></a>
+<h4><a href="#">1.5.Single FPGA constraints
+</a></h4>
+<pre>
+
+Initial defmapping tree:
+
+Final defmapping tree:
+</pre>
+</div>
+</body>
+</html>

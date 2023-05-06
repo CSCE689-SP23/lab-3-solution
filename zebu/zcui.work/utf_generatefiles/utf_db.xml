@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<utfproject major="1" minor="0" type="UC1">
+    <sourcepath>src/project.utf</sourcepath>
+    <commands>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/settings.utf" line="12">
+            <name>architecture_file</name>
+            <options>
+                <option name="-converged_flow" type="bool">f</option>
+                <option name="-filename" type="file">/mnt/quinn_zebu/ZEBU_SYSTEM_DIR/config/zse_configuration.tcl</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl" line="26">
+            <name>coverage</name>
+            <options>
+                <option name="-auto_bin_max" type="int">64</option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="33">
+            <name>debug</name>
+            <options>
+                <option name="-all" type="bool">t</option>
+                <option name="-enable_hwtop_ports_access" type="enum">all</option>
+                <option name="-offline_debug" type="bool">t</option>
+                <option name="-set_dyn_probes_on_dut_ios" type="bool">t</option>
+                <option name="-set_dyn_probes_on_memory_ios" type="bool">t</option>
+                <option name="-verdi_db" type="enum">true</option>
+                <option name="-waveform_reconstruction" type="bool">t</option>
+                <option name="-waveform_reconstruction_params" type="multilist">
+                    <suboption name="csa" type="bool">t</suboption>
+                    <suboption name="simzilla" type="enum">t</suboption>
+                    <suboption name="simzilla_distributed_build" type="bool">f</suboption>
+                    <suboption name="swave" type="enum">disabled</suboption>
+                </option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="26">
+            <name>design_size</name>
+            <options>
+                <option name="-mode" type="enum">AUTO</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl" line="23">
+            <name>eco</name>
+            <options>
+                <option name="-enable" type="bool">f</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl" line="23">
+            <name>eco</name>
+            <options>
+                <option name="-reserve_force" type="int">32</option>
+                <option name="-reserve_fwc" type="int">1152</option>
+                <option name="-reserve_monitor" type="int">0</option>
+                <option name="-reserve_qiwc" type="int">2048</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/utf/default_commands.utf" line="7">
+            <name>fpga</name>
+            <options>
+                <option name="-inter_die_tdm" type="bool">f</option>
+                <option name="-inter_die_tdm_params" type="multilist">
+                    <suboption name="strategy" type="enum">Pdm_Direct</suboption>
+                </option>
+                <option name="-parff" type="enum">t</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl" line="12">
+            <name>grid_cmd</name>
+            <options>
+                <option name="-njobs" type="int">1</option>
+                <option name="-queue" type="string">DEFAULT_QUEUE</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl" line="12">
+            <name>grid_cmd</name>
+            <options>
+                <option name="-njobs" type="int">0</option>
+                <option name="-queue" type="string">Zebu</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl" line="12">
+            <name>grid_cmd</name>
+            <options>
+                <option name="-njobs" type="int">20</option>
+                <option name="-queue" type="string">ZebuIse</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl" line="12">
+            <name>grid_cmd</name>
+            <options>
+                <option name="-njobs" type="int">7</option>
+                <option name="-queue" type="string">ZebuSynthesis</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl" line="32">
+            <name>memories</name>
+            <options>
+                <option name="-zrm_latency_encoding" type="enum">ONEHOT</option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="36">
+            <name>memories</name>
+            <options>
+                <option name="-drop_write_only" type="bool">f</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/utf/default_commands.utf" line="6">
+            <name>nfs_settings</name>
+            <options>
+                <option name="-access_level" type="enum">5</option>
+                <option name="-delay" type="int">1000</option>
+                <option name="-max_retries" type="int">120</option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="55">
+            <name>probe_signals</name>
+            <options>
+                <option name="-rtlname" type="list">
+                    <element>top.u_stb.cnt_error_in</element>
+                </option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="56">
+            <name>probe_signals</name>
+            <options>
+                <option name="-rtlname" type="list">
+                    <element>top.u_stb.cnt_error_out</element>
+                </option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="22">
+            <name>set_hwtop</name>
+            <options>
+                <option name="-module" type="string">top</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/utf/default_commands.utf" line="46">
+            <name>set_perf_flow</name>
+            <options>
+                <option name="-patch" type="string">2020.03-2</option>
+                <option name="-patch_list" type="list">
+                    <element>2020.03</element>
+                    <element>2020.03-1</element>
+                    <element>2020.03-2</element>
+                    <element>2020.03-LCA</element>
+                    <element>2020.03-SP1-1-LCA</element>
+                </option>
+                <option name="mode" type="string">flow1</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/utf/default_commands.utf" line="10">
+            <name>timing_analysis</name>
+            <options>
+                <option name="-advanced_async_set_reset_analysis" type="bool">f</option>
+                <option name="-delay_min_zfilter_skew" type="int">40000</option>
+                <option name="-post_fpga" type="enum">BACK_ANNOTATED</option>
+                <option name="-pre_fpga" type="enum">CONSTANTS_BASE_DELAY_MODEL</option>
+                <option name="-use_hdl_names" type="bool">f</option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="18">
+            <name>vcs_exec_command</name>
+            <options>
+                <option name="script" type="list">
+                    <element>/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/vcs_cmd.sh</element>
+                </option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="49">
+            <name>zforce</name>
+            <options>
+                <option name="-hier_sep" type="string">.</option>
+                <option name="-line_no" type="int">49</option>
+                <option name="-mode" type="enum">dynamic</option>
+                <option name="-object_not_found" type="enum">fatal</option>
+                <option name="-rtlname" type="list">
+                    <element>top.u_stb.proba_wr</element>
+                </option>
+                <option name="-utf_file" type="string">/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf</option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="50">
+            <name>zforce</name>
+            <options>
+                <option name="-hier_sep" type="string">.</option>
+                <option name="-line_no" type="int">50</option>
+                <option name="-mode" type="enum">dynamic</option>
+                <option name="-object_not_found" type="enum">fatal</option>
+                <option name="-rtlname" type="list">
+                    <element>top.u_stb.proba_rd</element>
+                </option>
+                <option name="-utf_file" type="string">/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf</option>
+            </options>
+        </command>
+        <command file="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf" line="51">
+            <name>zforce</name>
+            <options>
+                <option name="-hier_sep" type="string">.</option>
+                <option name="-line_no" type="int">51</option>
+                <option name="-mode" type="enum">dynamic</option>
+                <option name="-object_not_found" type="enum">fatal</option>
+                <option name="-rtlname" type="list">
+                    <element>top.u_stb.rstn</element>
+                </option>
+                <option name="-utf_file" type="string">/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/src/project.utf</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/vcs/Q-2020.03-SP2-12/etc/unizfe/utf/default_commands.tcl" line="20">
+            <name>zpar</name>
+            <options>
+                <option name="-effort" type="enum">Medium</option>
+            </options>
+        </command>
+        <command file="/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/utf/default_commands.utf" line="11">
+            <name>ztopbuild</name>
+            <options>
+                <option name="-advanced_command" type="string">enable advanced_incremental_mode</option>
+            </options>
+        </command>
+    </commands>
+</utfproject>

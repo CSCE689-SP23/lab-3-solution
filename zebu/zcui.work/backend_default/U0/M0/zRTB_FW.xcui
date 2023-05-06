@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zRTB_FW">
+<targets>
+  <ifFpga>
+    <label>U0_M0_IF</label>
+    <directory>U0/M0/IF</directory>
+    <name>zrdb/ZebuDB.zdb</name>
+    <dependencies>
+      <dependency>../ZebuDB.rtb.zdb</dependency>
+      <dependency>design_zpar.zdc</dependency>
+      <dependency>design.tcl</dependency>
+      <dependency>design_var.tcl</dependency>
+      <dependency>design.mk</dependency>
+      <dependency>fpga.edf.gz</dependency>
+    </dependencies>
+  </ifFpga>
+  <zFpgaTiming>
+    <label>U0_M0_IF</label>
+    <directory>U0/M0/IF</directory>
+      <input typeCrc="crcFile">zFpga_timing_paths.tcl</input>
+  </zFpgaTiming>
+  <target type="zTime">
+    <output typeCrc="dateFile">../../../tools/zTime/global_rtb_time_U0_M0_IF.edf.gz</output>
+  </target>
+  <target type="zTime_fpga">
+    <output typeCrc="dateFile">../../../tools/zTime/global_rtb_time_U0_M0_IF.edf.gz</output>
+    <input typeCrc="crcFile">U0/M0/IF/zFpgaTiming.zti</input>
+  </target>
+</targets>
+</ZeBuUiDoc>

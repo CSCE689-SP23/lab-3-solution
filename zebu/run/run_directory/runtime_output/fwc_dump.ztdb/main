@@ -1,0 +1,52 @@
+VERSION
+3.2_0
+PLATFORM
+ZeBu-Server
+COMPRESSION
+1
+ZRDB_ID
+a975888f
+DUAL_EDGE_MODE
+false
+COMPOSITE_CLK_SAMPLING
+true
+ZPRD_MODE
+false
+FULLNAME
+fwc_fifo_ports & fwc_essential_signals
+QIWC
+false
+UDP
+false
+UDP_BIT_WIDTH
+14
+SAMPLING CLOCK
+top.u_stb.clk1 or top.u_stb.clk0
+NUMBER OF CONTROLLED CLOCKS
+2
+CLOCK SPECIFICATIONS
+top.u_stb.clk0
+myGroup
+3
+1
+_-
+top.u_stb.clk1
+myGroup
+3
+1
+_-
+START_CYCLE
+0
+DEVICE
+32
+raw_fwc_32_cycle_0_index_0
+END_CYCLE
+2020
+START_CYCLE
+2020
+DEVICE
+32
+raw_fwc_32_cycle_2020_index_1
+END_CYCLE
+2020
+END_OF_FILE

@@ -1,0 +1,61 @@
+---------------------------------------------------------------
+Triton version 2018-SP42H, built on Dec  3 2018, 14:42:12
+Copyright 2013-2014 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------
+Host: csce-quinn-s1.engr.tamu.edu
+Input script: ./fpga_reports/triton/run_1/triton.tcl
+set internal config variable num_threads to 4
+set internal config variable target_util to 10
+set internal config variable prepack_mode to 2
+set internal config variable pack_mode to util2
+set internal config variable partition_safe_util_choice to 1
+set internal config variable partition_max_allowed to 13700
+set internal config variable pack_lut6_limit to 2
+set internal config variable pack_target_util to 80
+Set device: xc7v2000tflg1925-1
+Reading EDIF file ./fpga_reports/triton/design_triton.edf...
+Started Design Setup...
+  PART from edif:            xc7v2000tflg1925-1
+  PART from setpart command: xc7v2000tflg1925-1
+  Applied PART from setpart command (xc7v2000tflg1925-1)
+Design Info:  Family VIRTEX7  Device XC7V2000T  Package FLG1925  Speedgrade -1
+Design Size: 13028 instances (5448 LUTs)
+Finished Design Setup. CPU time: 0 secs (0.0 mins)    Wall time: 0 secs (0.0 mins)
+Setup 4-SLR's:
+Applying LOC properties on instances...
+  applied 8 (total 8) LOC properties on instances
+Reading constraint file ioclock.xdc...
+WARNING: XDC reader: cannot find instance RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0_REPLICATED_0
+WARNING: XDC reader: cannot find instance RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sysclk_idly_0/idelayctrl_0_REPLICATED_0_1
+Reading constraint file ./fpga_reports/triton/design_triton.xdc...
+Warning: can't find timing model for /hdi_primitives/CAPTUREE2/netlist
+Loading sdc file ./fpga_reports/triton/design_triton.xdc
+Warning, SDC reader cannot find clock CLK_loopback_*
+Warning, SDC reader cannot find clock get_clocks
+Warning, SDC reader cannot find clock -include_generated_clocks:yes;patterns:CLK_sys_pclk;
+Warning, SDC reader cannot find clock get_clocks
+Warning, SDC reader cannot find clock patterns:CLK_loopback_*;
+Warning, SDC reader cannot find clock get_clocks
+Warning, SDC reader cannot find clock -include_generated_clocks:yes
+Warning, SDC reader cannot find clock ks
+Warning, SDC reader cannot find clock patterns:CLK_loopback_*
+Warning, SDC max delay cannot find complete condition, skip it.
+  -through
+  get_pins patterns:RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sock_sr[*];
+Warning, SDC max delay cannot find complete condition, skip it.
+  -through
+  get_pins patterns:RTB/zins_fp_ctrl/wrapper/sysclk_mxif/u_xst_wrapper_0/sock_clko_en[*];
+Warning, SDC false path cannot find complete condition, skip it: -through get_pins patterns:FK/zuf_clockgen/wrapper/clockgen_reset_0/dut_dreset; 
+
+Placement Started ...
+
+Resource Utilization Report:
+  Resource LUT       : Usage    5555  Fixed       0  Supply 1221600  Util =  0.46%
+  Resource FF        : Usage    5807  Fixed       6  Supply 2443200  Util =  0.24%
+  Resource DSP       : Usage       0  Fixed       0  Supply    2160  Util =  0.00%
+  Resource RAMB18    : Usage       0  Fixed       0  Supply    2584  Util =  0.00%
+  Resource RAMB36    : Usage       2  Fixed       0  Supply    1292  Util =  0.15%
+
+  Created 12 ASYNC groups out of    124       FDRE instances.
+Util::Assert failed
+Failed at: hmpart.cpp:1641 PartitionAllTypesOneByOne_Adaptive()

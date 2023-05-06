@@ -1,0 +1,20 @@
+Found zmem module ram_ZMEM_mem
+Iterating over its ports
+  Processing memory port w0
+  Creating blackbox on clock port w0clk
+  Creating blackbox on di portVector w0di
+  Creating blackbox on addr portVector w0addr
+  Creating blackbox on we port w0we
+  Instrumenting port w0clk with attribute : ZMEM_INSTR_CD_POSEDGE = 1
+  Instrumenting portVector w0di with attribute : ZMEM_INSTR_CLOCK_NAME = w0clk
+  Instrumenting portVector w0addr with attribute : ZMEM_INSTR_CLOCK_NAME = w0clk
+  Instrumenting port w0we with attribute : ZMEM_INSTR_CLOCK_NAME = w0clk
+Found zmem module rom_ZMEM_mem
+Iterating over its ports
+  Processing memory port r0
+  Creating blackbox on clock port r0clk
+  Creating blackbox on do portVector r0do
+  Creating blackbox on addr portVector r0addr
+  Instrumenting port r0clk with attribute : ZMEM_INSTR_CD_POSEDGE = 1
+  Instrumenting portVector r0do with attribute : ZMEM_INSTR_CLOCK_NAME = r0clk
+  Instrumenting portVector r0addr with attribute : ZMEM_INSTR_CLOCK_NAME = r0clk

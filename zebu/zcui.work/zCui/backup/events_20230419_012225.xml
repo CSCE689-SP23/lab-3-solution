@@ -1,0 +1,3228 @@
+<compilation>
+ <events med="0" cid="ZMON" min="1" maj="0">
+  <Event timeStamp="1681884255" className="ClearAllEvent"/>
+  <Event toolTipText="" timeStamp="1681884255" total="100" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="0"/>
+   </values>
+  </Event>
+  <Event timeStamp="1681884255" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event hierarchy="HEADER_1[Initial Check]" taskName="backend_default_Project_Analyzer" row="0" taskType="0" taskDir="" timeStamp="1681884255" label="Analyze Project" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="backend_default_SingleBackend_Compilation_Checker" row="1" taskType="0" taskDir="" timeStamp="1681884255" label="Backend Checker : default" className="AddTaskEvent"/>
+  <Event timeStamp="1681884255" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event version="0" projectFilename="src/project.utf" timeStamp="1681884255" windowTitle="" workingDirectory="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work" className="CompilationDataEvent">
+   <backendNames>
+    <item v="backend_default"/>
+   </backendNames>
+  </Event>
+  <Event taskName="backend_default_Project_Analyzer" success="1" comment="" timeStamp="1681884255" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_Project_Analyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681884255" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884255" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_SingleBackend_Compilation_Checker" v_1="8"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_BackendEntry" row="9" taskType="0" taskDir="" timeStamp="1681884255" label="Prepare Backend Flow" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[VCS]" taskName="vcs_splitter_VCS_Task_Builder" row="6" taskType="1" taskDir="" timeStamp="1681884255" label="Launch VCS" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[VCS]" taskName="Post_Vcs_Task_Builder" row="7" taskType="0" taskDir="" timeStamp="1681884255" label="Prepare Post Vcs Tasks" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[VCS]" taskName="VCS_Task_Analyzer" row="7" taskType="0" taskDir="" timeStamp="1681884255" label="Analyze VCS Results" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer" row="8" taskType="1" taskDir="" timeStamp="1681884255" label="Compilation Profiler (after VCSAnalyzer)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]|G[Target Configuration]" taskName="Target_Config" row="2" taskType="1" taskDir="" timeStamp="1681884255" label="Target Configuration" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]|G[Target Configuration]" taskName="Target_Config_Analyzer" row="3" taskType="0" taskDir="" timeStamp="1681884255" label="Analyze Target Configuration Results" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_2[Design]|G[Build Fs Macro]" taskName="design_Fs_Macro_Script_Builder" row="4" taskType="0" taskDir="" timeStamp="1681884255" label="Build Fs Macro Script" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_2[Design]|G[Build Fs Macro]" taskName="design_Fs_Macro" row="5" taskType="1" taskDir="" timeStamp="1681884255" label="Build Fs Macro Library" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]" taskName="Vcs_Version_Checker" row="1" taskType="1" taskDir="" timeStamp="1681884255" label="Check Vcs Binaries Version" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]" taskName="FE_Version_Checker" row="1" taskType="1" taskDir="" timeStamp="1681884255" label="Check Front-End Binaries Version" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_1[Initial Check]" taskName="BE_Version_Checker" row="1" taskType="1" taskDir="" timeStamp="1681884255" label="Check Back-End Binaries Version" className="AddTaskEvent"/>
+  <Event timeStamp="1681884255" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="BE_Version_Checker" success="1" comment="Pid: 35025" timeStamp="1681884257" queue="queue ZebuLocal, 1 used" className="RunTaskEvent"/>
+  <Event taskName="FE_Version_Checker" success="1" comment="Pid: 35026" timeStamp="1681884257" queue="queue ZebuLocal, 2 used" className="RunTaskEvent"/>
+  <Event taskName="Vcs_Version_Checker" success="1" comment="Pid: 35027" timeStamp="1681884257" queue="queue ZebuLocal, 3 used" className="RunTaskEvent"/>
+  <Event taskName="Vcs_Version_Checker" taskStatus="1" eventType="0" comment="" timeStamp="1681884259" className="TaskFinishEvent"/>
+  <Event taskName="FE_Version_Checker" taskStatus="1" eventType="0" comment="" timeStamp="1681884259" className="TaskFinishEvent"/>
+  <Event taskName="BE_Version_Checker" taskStatus="1" eventType="0" comment="" timeStamp="1681884259" className="TaskFinishEvent"/>
+  <Event taskName="Target_Config" success="1" comment="Pid: 35165" timeStamp="1681884259" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="Target_Config" taskStatus="1" eventType="0" comment="" timeStamp="1681884261" className="TaskFinishEvent"/>
+  <Event toolTipText="Target Configuration" timeStamp="1681884261" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+   </values>
+  </Event>
+  <Event taskName="Target_Config_Analyzer" success="1" comment="" timeStamp="1681884261" queue="" className="RunTaskEvent"/>
+  <Event taskName="Target_Config_Analyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681884261" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884261" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_SingleBackend_Compilation_Checker" v_1="21"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zTopBuild" row="10" taskType="1" taskDir="" timeStamp="1681884261" label="Build System" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zTopBuildResultAnalyzer" row="11" taskType="0" taskDir="" timeStamp="1681884261" label="Analyze System Building Results" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_PreParScriptBuilder" row="13" taskType="0" taskDir="" timeStamp="1681884261" label="Pre PAR Script Builder" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_PostZCoreCompilationJoin" row="12" taskType="0" taskDir="" timeStamp="1681884261" label="Post ZCore Compilation Join" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zPar" row="14" taskType="1" taskDir="" timeStamp="1681884261" label="Place and Route System" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer" row="12" taskType="1" taskDir="" timeStamp="1681884261" label="Compilation Profiler (after ZTopBuildAnalyzer)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_Design_FPGA_Dispatch" row="15" taskType="0" taskDir="" timeStamp="1681884261" label="Analyze zPar result" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_PostFpgaCompilationJoin" row="16" taskType="0" taskDir="" timeStamp="1681884261" label="Post FPGA Compilation Join" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_FpgaResultAnalyzer" row="17" taskType="1" taskDir="" timeStamp="1681884261" label="FPGA PaRs Analyzer" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zTime" row="17" taskType="1" taskDir="" timeStamp="1681884261" label="Create Timing DB" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" row="16" taskType="1" taskDir="" timeStamp="1681884261" label="Compilation Profiler (after ZParAnalyzer)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[Global DB Controller]" taskName="backend_default_zDB_Global_Controller" row="16" taskType="0" taskDir="" timeStamp="1681884261" label="Global DB Controller" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_Build_ZDBPostProc_Script" row="17" taskType="0" taskDir="" timeStamp="1681884261" label="Create Script (DB PP)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_preparezTimeFpga" row="18" taskType="0" taskDir="" timeStamp="1681884261" label="Prepare Timing DB (post FPGA)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_zTimeFpga" row="19" taskType="1" taskDir="" timeStamp="1681884261" label="Create Timing DB (post FPGA)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_zAuditReport" row="20" taskType="1" taskDir="" timeStamp="1681884261" label="zAudit Report" className="AddTaskEvent"/>
+  <Event timeStamp="1681884261" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="design_Fs_Macro_Script_Builder" success="1" comment="" timeStamp="1681884263" queue="" className="RunTaskEvent"/>
+  <Event taskName="design_Fs_Macro_Script_Builder" taskStatus="1" eventType="0" comment="" timeStamp="1681884263" className="TaskFinishEvent"/>
+  <Event taskName="design_Fs_Macro" success="1" comment="Pid: 35194" timeStamp="1681884265" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="design_Fs_Macro" taskStatus="1" eventType="0" comment="" timeStamp="1681884267" className="TaskFinishEvent"/>
+  <Event taskName="vcs_splitter_VCS_Task_Builder" success="1" comment="Pid: 35227" timeStamp="1681884267" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="vcs_splitter_VCS_Task_Builder" taskStatus="1" eventType="0" comment="" timeStamp="1681884273" className="TaskFinishEvent"/>
+  <Event toolTipText="Elaboration" timeStamp="1681884273" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+   </values>
+  </Event>
+  <Event taskName="VCS_Task_Analyzer" success="1" comment="" timeStamp="1681884273" queue="" className="RunTaskEvent"/>
+  <Event timeStamp="1681884274" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_BackendEntry" v_1="10"/>
+    <item v_0="backend_default_zTopBuild" v_1="11"/>
+    <item v_0="backend_default_zTopBuildResultAnalyzer" v_1="12"/>
+    <item v_0="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer" v_1="13"/>
+    <item v_0="backend_default_PostZCoreCompilationJoin" v_1="13"/>
+    <item v_0="backend_default_PreParScriptBuilder" v_1="14"/>
+    <item v_0="backend_default_zPar" v_1="15"/>
+    <item v_0="backend_default_Design_FPGA_Dispatch" v_1="16"/>
+    <item v_0="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" v_1="17"/>
+    <item v_0="backend_default_zDB_Global_Controller" v_1="17"/>
+    <item v_0="backend_default_zTime" v_1="18"/>
+    <item v_0="backend_default_PostFpgaCompilationJoin" v_1="17"/>
+    <item v_0="backend_default_Build_ZDBPostProc_Script" v_1="18"/>
+    <item v_0="backend_default_FpgaResultAnalyzer" v_1="18"/>
+    <item v_0="backend_default_preparezTimeFpga" v_1="19"/>
+    <item v_0="backend_default_zTimeFpga" v_1="20"/>
+    <item v_0="backend_default_zAuditReport" v_1="21"/>
+    <item v_0="backend_default_SingleBackend_Compilation_Checker" v_1="22"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_1[VCS]" taskName="RhinoFsdb_Builder" row="8" taskType="1" taskDir="" timeStamp="1681884274" label="Build Rhino Fsdb" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_2[Design]|G[RTL Synthesis : Default_RTL_Group]|G[Synthesis To Be Redone]" taskName="design_Default_RTL_GroupBundle_0_Synthesis" row="8" taskType="3" taskDir="" timeStamp="1681884274" label="Bundle 0" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_2[Design]|G[RTL Synthesis : Default_RTL_Group]|G[Analyze Synthesis Results]" taskName="design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer" row="9" taskType="0" taskDir="" timeStamp="1681884274" label="Bundle_0" className="AddTaskEvent"/>
+  <Event timeStamp="1681884274" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="VCS_Task_Analyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681884274" className="TaskFinishEvent"/>
+  <Event toolTipText="Elaboration Analyzer" timeStamp="1681884274" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+   </values>
+  </Event>
+  <Event taskName="Post_Vcs_Task_Builder" success="1" comment="" timeStamp="1681884274" queue="" className="RunTaskEvent"/>
+  <Event taskName="Post_Vcs_Task_Builder" taskStatus="1" eventType="0" comment="" timeStamp="1681884274" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884274" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event hierarchy="HEADER_1[VCS]" taskName="Verdi_Compilation" row="8" taskType="1" taskDir="" timeStamp="1681884274" label="Launch Verdi" className="AddTaskEvent"/>
+  <Event timeStamp="1681884274" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer" success="1" comment="Pid: 35955" timeStamp="1681884276" queue="queue ZebuLocal, 1 used" className="RunTaskEvent"/>
+  <Event taskName="RhinoFsdb_Builder" success="1" comment="Pid: 35956" timeStamp="1681884276" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="Verdi_Compilation" success="1" comment="Pid: 35957" timeStamp="1681884276" queue="queue Zebu, 2 used" className="RunTaskEvent"/>
+  <Event taskName="design_Default_RTL_GroupBundle_0_Synthesis" success="1" comment="Pid: 35958" timeStamp="1681884276" queue="queue ZebuSynthesis, 1 used out of 7" className="RunTaskEvent"/>
+  <Event taskName="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681884278" className="TaskFinishEvent"/>
+  <Event taskName="Verdi_Compilation" taskStatus="1" eventType="0" comment="" timeStamp="1681884278" className="TaskFinishEvent"/>
+  <Event toolTipText="Verdi" timeStamp="1681884278" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+   </values>
+  </Event>
+  <Event taskName="RhinoFsdb_Builder" taskStatus="1" eventType="0" comment="" timeStamp="1681884278" className="TaskFinishEvent"/>
+  <Event taskName="design_Default_RTL_GroupBundle_0_Synthesis" taskStatus="1" eventType="0" comment="" timeStamp="1681884280" className="TaskFinishEvent"/>
+  <Event toolTipText="Synthesis (1/1)" timeStamp="1681884280" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+   </values>
+  </Event>
+  <Event taskName="design_Default_RTL_GroupBundle_0_Synthesis" bundleNumber="0" rtlGroupName="Default_RTL_Group" timeStamp="1681884280" sourceUnitName="" className="SynthesisBundleFinishEvent">
+   <synthStatusVector>
+    <item v_0="clkg" v_1="1"/>
+    <item v_0="dut" v_1="1"/>
+    <item v_0="fifo_0000" v_1="1"/>
+    <item v_0="fifo_usage_spy" v_1="1"/>
+    <item v_0="parity" v_1="1"/>
+    <item v_0="parity_check" v_1="1"/>
+    <item v_0="proba" v_1="1"/>
+    <item v_0="proba_0000" v_1="1"/>
+    <item v_0="ram" v_1="1"/>
+    <item v_0="rom" v_1="1"/>
+    <item v_0="stb" v_1="1"/>
+    <item v_0="top" v_1="1"/>
+   </synthStatusVector>
+  </Event>
+  <Event taskName="design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer" success="1" comment="" timeStamp="1681884280" queue="" className="RunTaskEvent"/>
+  <Event taskName="design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681884280" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884280" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_BackendEntry" v_1="11"/>
+    <item v_0="backend_default_zTopBuild" v_1="12"/>
+    <item v_0="backend_default_zTopBuildResultAnalyzer" v_1="13"/>
+    <item v_0="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer" v_1="14"/>
+    <item v_0="backend_default_PostZCoreCompilationJoin" v_1="14"/>
+    <item v_0="backend_default_PreParScriptBuilder" v_1="15"/>
+    <item v_0="backend_default_zPar" v_1="16"/>
+    <item v_0="backend_default_Design_FPGA_Dispatch" v_1="17"/>
+    <item v_0="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" v_1="18"/>
+    <item v_0="backend_default_zDB_Global_Controller" v_1="18"/>
+    <item v_0="backend_default_zTime" v_1="19"/>
+    <item v_0="backend_default_PostFpgaCompilationJoin" v_1="18"/>
+    <item v_0="backend_default_Build_ZDBPostProc_Script" v_1="19"/>
+    <item v_0="backend_default_FpgaResultAnalyzer" v_1="19"/>
+    <item v_0="backend_default_preparezTimeFpga" v_1="20"/>
+    <item v_0="backend_default_zTimeFpga" v_1="21"/>
+    <item v_0="backend_default_zAuditReport" v_1="22"/>
+    <item v_0="backend_default_SingleBackend_Compilation_Checker" v_1="23"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_2[Design]|G[RTL Synthesis : Default_RTL_Group]|G[Build Memories and Divmods]" taskName="design_Default_RTL_Group_Memory_ram_zMem" row="10" taskType="1" taskDir="" timeStamp="1681884280" label="Memory ram_zMem" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_2[Design]|G[RTL Synthesis : Default_RTL_Group]|G[Build Memories and Divmods]" taskName="design_Default_RTL_Group_Memory_rom_zMem" row="10" taskType="1" taskDir="" timeStamp="1681884280" label="Memory rom_zMem" className="AddTaskEvent"/>
+  <Event timeStamp="1681884280" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="design_Default_RTL_Group_Memory_ram_zMem" taskStatus="1" eventType="0" comment="skipped" timeStamp="1681884282" className="TaskFinishEvent"/>
+  <Event taskName="design_Default_RTL_Group_Memory_rom_zMem" taskStatus="1" eventType="0" comment="skipped" timeStamp="1681884282" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_BackendEntry" success="1" comment="" timeStamp="1681884284" queue="" className="RunTaskEvent"/>
+  <Event timeStamp="1681884284" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zDveTool" row="12" taskType="1" taskDir="" timeStamp="1681884284" label="Analyze DVE" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_zEquiGenerator" row="13" taskType="1" taskDir="" timeStamp="1681884284" label="Build Equipotentials" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_zRtlToEqui" row="13" taskType="1" taskDir="" timeStamp="1681884284" label="Convert Netlist" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_zSimuFsdbHeader" row="13" taskType="1" taskDir="" timeStamp="1681884284" label="zSimuFsdbHeader" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_zSimzilla" row="14" taskType="1" taskDir="" timeStamp="1681884284" label="Simulate Graphs" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[System Data Base]" taskName="backend_default_zGraphGenerator" row="14" taskType="1" taskDir="" timeStamp="1681884284" label="Build Accessibility Graphs" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_RTL_DB_Indexer" row="-1" taskType="1" taskDir="" timeStamp="1681884284" label="Make RTL DB indexes" className="AddTaskEvent"/>
+  <Event timeStamp="1681884284" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event timeStamp="1681884285" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_zTopBuild" v_1="14"/>
+    <item v_0="backend_default_zRtlToEqui" v_1="15"/>
+    <item v_0="backend_default_zTopBuildResultAnalyzer" v_1="15"/>
+    <item v_0="backend_default_zEquiGenerator" v_1="15"/>
+    <item v_0="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer" v_1="16"/>
+    <item v_0="backend_default_zGraphGenerator" v_1="16"/>
+    <item v_0="backend_default_zSimuFsdbHeader" v_1="15"/>
+    <item v_0="backend_default_PostZCoreCompilationJoin" v_1="16"/>
+    <item v_0="backend_default_zSimzilla" v_1="16"/>
+    <item v_0="backend_default_PreParScriptBuilder" v_1="17"/>
+    <item v_0="backend_default_zPar" v_1="18"/>
+    <item v_0="backend_default_Design_FPGA_Dispatch" v_1="19"/>
+    <item v_0="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" v_1="20"/>
+    <item v_0="backend_default_zDB_Global_Controller" v_1="20"/>
+    <item v_0="backend_default_zTime" v_1="21"/>
+    <item v_0="backend_default_PostFpgaCompilationJoin" v_1="20"/>
+    <item v_0="backend_default_Build_ZDBPostProc_Script" v_1="21"/>
+    <item v_0="backend_default_FpgaResultAnalyzer" v_1="21"/>
+    <item v_0="backend_default_preparezTimeFpga" v_1="22"/>
+    <item v_0="backend_default_zTimeFpga" v_1="23"/>
+    <item v_0="backend_default_zAuditReport" v_1="24"/>
+    <item v_0="backend_default_SingleBackend_Compilation_Checker" v_1="25"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_RTL_DB_Link" row="13" taskType="1" taskDir="" timeStamp="1681884285" label="Make RTL DB link" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_RTL_DB_RunTime" row="14" taskType="1" taskDir="" timeStamp="1681884285" label="Make RTL DB for Run Time" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_Vcs_Link" row="12" taskType="1" taskDir="" timeStamp="1681884285" label="Make VCS file links" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_OptionsDbProc" row="12" taskType="1" taskDir="" timeStamp="1681884285" label="Make optionsdb dump" className="AddTaskEvent"/>
+  <Event timeStamp="1681884285" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_BackendEntry" taskStatus="1" eventType="0" comment="" timeStamp="1681884285" className="TaskFinishEvent"/>
+  <Event toolTipText="Backend Entry" timeStamp="1681884285" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+   </values>
+  </Event>
+  <Event timeStamp="1681884285" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry" row="12" taskType="1" taskDir="" timeStamp="1681884285" label="Compilation Profiler (after BackendEntry)" className="AddTaskEvent"/>
+  <Event timeStamp="1681884285" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event timeStamp="1681884285" className="GlogUpdatedEvent"/>
+  <Event taskName="backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry" success="1" comment="Pid: 36080" timeStamp="1681884287" queue="queue ZebuLocal, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_OptionsDbProc" success="1" comment="Pid: 36081" timeStamp="1681884287" queue="queue ZebuLocal, 2 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_RTL_DB_Indexer" success="1" comment="Pid: 36082" timeStamp="1681884287" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_Vcs_Link" success="1" comment="Pid: 36083" timeStamp="1681884287" queue="queue Zebu, 2 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zDveTool" success="1" comment="Pid: 36084" timeStamp="1681884287" queue="queue Zebu, 3 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_Vcs_Link" taskStatus="1" eventType="0" comment="" timeStamp="1681884289" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zDveTool" taskStatus="1" eventType="0" comment="" timeStamp="1681884289" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_OptionsDbProc" taskStatus="1" eventType="0" comment="" timeStamp="1681884289" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry" taskStatus="1" eventType="0" comment="" timeStamp="1681884289" className="TaskFinishEvent"/>
+  <Event toolTipText="Backend Entry" timeStamp="1681884289" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_RTL_DB_Indexer" taskStatus="1" eventType="0" comment="" timeStamp="1681884289" className="TaskFinishEvent"/>
+  <Event toolTipText="RTL Indexer" timeStamp="1681884289" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_RTL_DB_Link" success="1" comment="Pid: 36166" timeStamp="1681884289" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_RTL_DB_Link" taskStatus="1" eventType="0" comment="" timeStamp="1681884291" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:RTL Link" timeStamp="1681884291" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_RTL_DB_RunTime" success="1" comment="Pid: 36183" timeStamp="1681884291" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zTopBuild" success="1" comment="Pid: 36184" timeStamp="1681884291" queue="queue Zebu, 2 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_RTL_DB_RunTime" taskStatus="1" eventType="0" comment="" timeStamp="1681884293" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:RTL Runtime" timeStamp="1681884293" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_zTopBuild" taskStatus="1" eventType="0" comment="" timeStamp="1681884297" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:ZTopBuild" timeStamp="1681884297" total="530" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_zTopBuild" timeStamp="1681884297" beName="default backend" className="ZTopBuildFinishEvent"/>
+  <Event taskName="backend_default_zTopBuildResultAnalyzer" success="1" comment="" timeStamp="1681884297" queue="" className="RunTaskEvent"/>
+  <Event timeStamp="1681884297" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_PostZCoreCompilationJoin" v_1="18"/>
+    <item v_0="backend_default_PreParScriptBuilder" v_1="19"/>
+    <item v_0="backend_default_zPar" v_1="20"/>
+    <item v_0="backend_default_Design_FPGA_Dispatch" v_1="21"/>
+    <item v_0="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" v_1="22"/>
+    <item v_0="backend_default_zDB_Global_Controller" v_1="22"/>
+    <item v_0="backend_default_zTime" v_1="23"/>
+    <item v_0="backend_default_PostFpgaCompilationJoin" v_1="22"/>
+    <item v_0="backend_default_Build_ZDBPostProc_Script" v_1="23"/>
+    <item v_0="backend_default_FpgaResultAnalyzer" v_1="23"/>
+    <item v_0="backend_default_preparezTimeFpga" v_1="24"/>
+    <item v_0="backend_default_zTimeFpga" v_1="25"/>
+    <item v_0="backend_default_zAuditReport" v_1="26"/>
+    <item v_0="backend_default_SingleBackend_Compilation_Checker" v_1="27"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zBuildClusteringSaver" row="17" taskType="0" taskDir="" timeStamp="1681884297" label="Save Clustering Results" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]|G[zCore Compilation]" taskName="backend_default_zCoreBuild_Part_0" row="16" taskType="1" taskDir="" timeStamp="1681884297" label="Build zCore Part_0" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]|G[zCore Compilation]" taskName="backend_default_zCoreBuildAnalyzer_Part_0" row="17" taskType="0" taskDir="" timeStamp="1681884297" label="Analyze zCore Building Results Part_0" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_RTB_Front_End" row="16" taskType="1" taskDir="" timeStamp="1681884297" label="RTB Front-End" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_RTB_Front_End_Result_Analyzer" row="17" taskType="0" taskDir="" timeStamp="1681884297" label="Analyze RTB Front-End Results" className="AddTaskEvent"/>
+  <Event timeStamp="1681884297" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_zTopBuildResultAnalyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681884297" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:ZTopBuild Analyzer" timeStamp="1681884297" total="510" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer" success="1" comment="Pid: 36271" timeStamp="1681884297" queue="queue ZebuLocal, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zEquiGenerator" success="1" comment="Pid: 36272" timeStamp="1681884297" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zRtlToEqui" success="1" comment="Pid: 36273" timeStamp="1681884297" queue="queue Zebu, 2 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zSimuFsdbHeader" success="1" comment="Pid: 36274" timeStamp="1681884297" queue="queue Zebu, 3 used" className="RunTaskEvent"/>
+  <Event timeStamp="1681884297" className="GlogUpdatedEvent"/>
+  <Event taskName="backend_default_zRtlToEqui" taskStatus="1" eventType="0" comment="" timeStamp="1681884299" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zEquiGenerator" taskStatus="1" eventType="0" comment="" timeStamp="1681884299" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681884299" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zSimuFsdbHeader" taskStatus="1" eventType="0" comment="" timeStamp="1681884299" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_RTB_Front_End" success="1" comment="Pid: 36350" timeStamp="1681884299" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zCoreBuild_Part_0" success="1" comment="Pid: 36351" timeStamp="1681884299" queue="queue Zebu, 2 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zGraphGenerator" success="1" comment="Pid: 36352" timeStamp="1681884299" queue="queue Zebu, 3 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zSimzilla" success="1" comment="Pid: 36353" timeStamp="1681884299" queue="queue Zebu, 4 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zSimzilla" taskStatus="1" eventType="0" comment="" timeStamp="1681884301" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zGraphGenerator" taskStatus="1" eventType="0" comment="" timeStamp="1681884301" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:CSA" timeStamp="1681884301" total="510" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_RTB_Front_End" taskStatus="1" eventType="0" comment="" timeStamp="1681884301" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_RTB_Front_End_Result_Analyzer" success="1" comment="" timeStamp="1681884301" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_RTB_Front_End_Result_Analyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681884301" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884301" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event timeStamp="1681884301" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_zCoreBuild_Part_0" taskStatus="1" eventType="0" comment="" timeStamp="1681884313" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:ZCoreBuild" timeStamp="1681884313" total="510" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+    <item v_0="205" v_1="255"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_zCoreBuild_Part_0" timeStamp="1681884313" beName="default backend" className="ZCoreBuildFinishEvent"/>
+  <Event taskName="backend_default_zBuildClusteringSaver" success="1" comment="" timeStamp="1681884313" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zBuildClusteringSaver" taskStatus="1" eventType="0" comment="" timeStamp="1681884313" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zCoreBuildAnalyzer_Part_0" success="1" comment="" timeStamp="1681884313" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zCoreBuildAnalyzer_Part_0" taskStatus="1" eventType="0" comment="" timeStamp="1681884313" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884313" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event timeStamp="1681884313" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event timeStamp="1681884313" className="GlogUpdatedEvent"/>
+  <Event taskName="backend_default_PostZCoreCompilationJoin" success="1" comment="" timeStamp="1681884315" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_PostZCoreCompilationJoin" taskStatus="1" eventType="0" comment="" timeStamp="1681884316" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_PreParScriptBuilder" success="1" comment="" timeStamp="1681884318" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_PreParScriptBuilder" taskStatus="1" eventType="0" comment="" timeStamp="1681884318" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zPar" success="1" comment="Pid: 36573" timeStamp="1681884318" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event timeStamp="1681884318" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event timeStamp="1681884318" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_zPar" taskStatus="1" eventType="0" comment="" timeStamp="1681884328" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:ZPar" timeStamp="1681884328" total="510" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+    <item v_0="205" v_1="255"/>
+    <item v_0="255" v_1="270"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_zPar" timeStamp="1681884328" beName="default backend" className="ZParFinishEvent"/>
+  <Event taskName="backend_default_Design_FPGA_Dispatch" success="1" comment="" timeStamp="1681884328" queue="" className="RunTaskEvent"/>
+  <Event timeStamp="1681884328" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_zDB_Global_Controller" v_1="24"/>
+    <item v_0="backend_default_zTime" v_1="24"/>
+    <item v_0="backend_default_Build_ZDBPostProc_Script" v_1="25"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[00 (U0_M0_F0)]" taskName="backend_default_U0_M0_F00_PaR_Controller" row="22" taskType="0" taskDir="" timeStamp="1681884328" label="Controller" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[00 (U0_M0_F0)]" taskName="backend_default_U0_M0_F00_FpgaPostProc" row="23" taskType="1" taskDir="" timeStamp="1681884328" label="FPGA post Process" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[00 (U0_M0_F0)]" taskName="backend_default_U0_M0_F00_zFpgaTiming" row="25" taskType="1" taskDir="" timeStamp="1681884328" label="Create Timing DB (SDF Mode)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_PostZFpgaTimingJoin" row="26" taskType="0" taskDir="" timeStamp="1681884328" label="Post zFpgaTiming Join" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[08 (Route U0_M0_F08)]" taskName="backend_default_U0_M0_F08_PaR_Controller" row="22" taskType="0" taskDir="" timeStamp="1681884328" label="Controller" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[08 (Route U0_M0_F08)]" taskName="backend_default_U0_M0_F08_FpgaPostProc" row="23" taskType="1" taskDir="" timeStamp="1681884328" label="FPGA post Process" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[08 (Route U0_M0_F08)]" taskName="backend_default_U0_M0_F08_zFpgaTiming" row="25" taskType="1" taskDir="" timeStamp="1681884328" label="Create Timing DB (SDF Mode)" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_zFW_U0_M0_IF" row="22" taskType="1" taskDir="" timeStamp="1681884328" label="Create RTB Configuration: U0_M0_IF" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|I[F (U0_M0_IF)]" taskName="backend_default_U0_M0_IF_PaR_Controller" row="-1" taskType="0" taskDir="" timeStamp="1681884328" label="Controller" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_1[System Compilation]" taskName="backend_default_RTB_FPGA_Dispatch_U0_M0_IF" row="23" taskType="0" taskDir="" timeStamp="1681884328" label="Analyze zRTB_FW result: U0_M0_IF" className="AddTaskEvent"/>
+  <Event timeStamp="1681884328" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_Design_FPGA_Dispatch" taskStatus="1" eventType="0" comment="" timeStamp="1681884328" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:ZPar Analyzer" timeStamp="1681884328" total="500" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+    <item v_0="205" v_1="255"/>
+    <item v_0="255" v_1="270"/>
+    <item v_0="270" v_1="275"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" success="1" comment="Pid: 36618" timeStamp="1681884328" queue="queue ZebuLocal, 1 used" className="RunTaskEvent"/>
+  <Event timeStamp="1681884328" className="GlogUpdatedEvent"/>
+  <Event taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681884330" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_F00_PaR_Controller" success="1" comment="" timeStamp="1681884330" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_F08_PaR_Controller" success="1" comment="" timeStamp="1681884330" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_F08_Cleaning" success="1" comment="Pid: 36632" timeStamp="1681884330" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_F00_Cleaning" success="1" comment="Pid: 36633" timeStamp="1681884330" queue="queue Zebu, 2 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zFW_U0_M0_IF" success="1" comment="Pid: 36634" timeStamp="1681884330" queue="queue Zebu, 3 used" className="RunTaskEvent"/>
+  <Event timeStamp="1681884330" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F00_FpgaPostProc" v_1="24"/>
+    <item v_0="backend_default_U0_M0_F08_FpgaPostProc" v_1="24"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[00 (U0_M0_F0)]" taskName="backend_default_U0_M0_F00_Cleaning" row="1" taskType="1" taskDir="" timeStamp="1681884330" label="Cleaning All PaRs" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[08 (Route U0_M0_F08)]" taskName="backend_default_U0_M0_F08_Cleaning" row="1" taskType="1" taskDir="" timeStamp="1681884330" label="Cleaning All PaRs" className="AddTaskEvent"/>
+  <Event timeStamp="1681884330" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_U0_M0_F08_Cleaning" taskStatus="1" eventType="0" comment="" timeStamp="1681884332" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_F00_Cleaning" taskStatus="1" eventType="0" comment="" timeStamp="1681884332" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884332" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[00 (U0_M0_F0)]" taskName="backend_default_U0_M0_F00_Original" row="2" taskType="2" taskDir="backend_default/U0/M0/F00.Original/compilation.log" timeStamp="1681884332" label="Original" className="AddTaskEvent"/>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[08 (Route U0_M0_F08)]" taskName="backend_default_U0_M0_F08_Original" row="2" taskType="2" taskDir="backend_default/U0/M0/F08.Original/compilation.log" timeStamp="1681884332" label="Original" className="AddTaskEvent"/>
+  <Event timeStamp="1681884332" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_U0_M0_F00_Original" success="1" comment="Pid: 36686" timeStamp="1681884334" queue="queue ZebuIse, 1 used out of 20" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_F08_Original" success="1" comment="Pid: 36687" timeStamp="1681884334" queue="queue ZebuIse, 2 used out of 20" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zFW_U0_M0_IF" taskStatus="1" eventType="0" comment="" timeStamp="1681884342" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_RTB_FPGA_Dispatch_U0_M0_IF" success="1" comment="" timeStamp="1681884342" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_RTB_FPGA_Dispatch_U0_M0_IF" taskStatus="1" eventType="0" comment="" timeStamp="1681884342" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884342" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_IF_PaR_Controller" v_1="0"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|I[F]" taskName="backend_default_U0_M0_IF_zFpgaTiming" row="25" taskType="1" taskDir="" timeStamp="1681884342" label="Create Timing DB (SDF Mode)" className="AddTaskEvent"/>
+  <Event timeStamp="1681884342" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_zDB_Global_Controller" success="1" comment="" timeStamp="1681884344" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_IF_PaR_Controller" success="1" comment="" timeStamp="1681884344" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_IF_Cleaning" success="1" comment="Pid: 37240" timeStamp="1681884344" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zTime" success="1" comment="Pid: 37241" timeStamp="1681884344" queue="queue Zebu, 2 used" className="RunTaskEvent"/>
+  <Event timeStamp="1681884344" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_PostFpgaCompilationJoin" v_1="26"/>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_FpgaResultAnalyzer" v_1="27"/>
+    <item v_0="backend_default_preparezTimeFpga" v_1="27"/>
+    <item v_0="backend_default_U0_M0_IF_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_IF_zFpgaTiming" v_1="26"/>
+    <item v_0="backend_default_zTimeFpga" v_1="28"/>
+    <item v_0="backend_default_PostZFpgaTimingJoin" v_1="27"/>
+    <item v_0="backend_default_zAuditReport" v_1="29"/>
+    <item v_0="backend_default_SingleBackend_Compilation_Checker" v_1="30"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|I[F (U0_M0_IF)]" taskName="backend_default_U0_M0_IF_Cleaning" row="1" taskType="1" taskDir="" timeStamp="1681884344" label="Cleaning All PaRs" className="AddTaskEvent"/>
+  <Event timeStamp="1681884344" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_zTime" taskStatus="1" eventType="0" comment="" timeStamp="1681884346" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:ZTime" timeStamp="1681884346" total="500" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+    <item v_0="205" v_1="255"/>
+    <item v_0="255" v_1="270"/>
+    <item v_0="270" v_1="275"/>
+    <item v_0="275" v_1="280"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_zTime" timeStamp="1681884346" beName="default backend" className="ZTimeFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_IF_Cleaning" taskStatus="1" eventType="0" comment="" timeStamp="1681884346" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884346" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_IF_PaR_Controller" v_1="0"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|I[F (U0_M0_IF)]" taskName="backend_default_U0_M0_IF_Original" row="2" taskType="2" taskDir="backend_default/U0/M0/IF.Original/compilation.log" timeStamp="1681884346" label="Original" className="AddTaskEvent"/>
+  <Event timeStamp="1681884346" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event timeStamp="1681884346" className="GlogUpdatedEvent"/>
+  <Event taskName="backend_default_U0_M0_IF_Original" success="1" comment="Pid: 37334" timeStamp="1681884348" queue="queue ZebuIse, 3 used out of 20" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_F08_Original" taskStatus="1" eventType="0" comment="" timeStamp="1681884944" className="TaskFinishEvent"/>
+  <Event timeStamp="1681884946" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_IF_PaR_Controller" v_1="0"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[08 (Route U0_M0_F08)]" taskName="backend_default_U0_M0_F08_Finish" row="3" taskType="1" taskDir="" timeStamp="1681884946" label="Finish" className="AddTaskEvent"/>
+  <Event timeStamp="1681884946" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_U0_M0_F08_Finish" success="1" comment="Pid: 12640" timeStamp="1681884948" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_F08_Finish" taskStatus="1" eventType="0" comment="" timeStamp="1681884980" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_F08_PaR_Controller" taskStatus="1" eventType="0" comment="" timeStamp="1681884982" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:FPGA Compilation (1/3)" timeStamp="1681884982" total="500" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+    <item v_0="205" v_1="255"/>
+    <item v_0="255" v_1="270"/>
+    <item v_0="270" v_1="275"/>
+    <item v_0="275" v_1="280"/>
+    <item v_0="280" v_1="346"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_U0_M0_F08_FpgaPostProc" taskStatus="1" eventType="0" comment="skipped" timeStamp="1681884982" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_F08_zFpgaTiming" success="1" comment="Pid: 13011" timeStamp="1681884982" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_F08_zFpgaTiming" taskStatus="1" eventType="0" comment="" timeStamp="1681884984" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_IF_Original" taskStatus="1" eventType="0" comment="" timeStamp="1681885010" className="TaskFinishEvent"/>
+  <Event timeStamp="1681885012" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_IF_PaR_Controller" v_1="0"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|I[F (U0_M0_IF)]" taskName="backend_default_U0_M0_IF_Finish" row="3" taskType="1" taskDir="" timeStamp="1681885012" label="Finish" className="AddTaskEvent"/>
+  <Event timeStamp="1681885012" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_U0_M0_IF_Finish" success="1" comment="Pid: 13418" timeStamp="1681885014" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_IF_Finish" taskStatus="1" eventType="0" comment="" timeStamp="1681885046" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_IF_PaR_Controller" taskStatus="1" eventType="0" comment="" timeStamp="1681885048" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:FPGA Compilation (2/3)" timeStamp="1681885048" total="500" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+    <item v_0="205" v_1="255"/>
+    <item v_0="255" v_1="270"/>
+    <item v_0="270" v_1="275"/>
+    <item v_0="275" v_1="280"/>
+    <item v_0="280" v_1="346"/>
+    <item v_0="346" v_1="412"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_U0_M0_IF_zFpgaTiming" success="1" comment="Pid: 13613" timeStamp="1681885048" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_IF_zFpgaTiming" taskStatus="1" eventType="0" comment="" timeStamp="1681885052" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_F00_Original" taskStatus="1" eventType="0" comment="" timeStamp="1681885283" className="TaskFinishEvent"/>
+  <Event timeStamp="1681885285" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_IF_PaR_Controller" v_1="0"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_2[FPGA Place &amp; Route]|U[0]|M[0]|F[00 (U0_M0_F0)]" taskName="backend_default_U0_M0_F00_Finish" row="3" taskType="1" taskDir="" timeStamp="1681885285" label="Finish" className="AddTaskEvent"/>
+  <Event timeStamp="1681885285" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_U0_M0_F00_Finish" success="1" comment="Pid: 15298" timeStamp="1681885287" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_U0_M0_F00_Finish" taskStatus="1" eventType="0" comment="" timeStamp="1681885319" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_F00_PaR_Controller" taskStatus="1" eventType="0" comment="" timeStamp="1681885321" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:FPGA Compilation (3/3)" timeStamp="1681885321" total="500" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+    <item v_0="205" v_1="255"/>
+    <item v_0="255" v_1="270"/>
+    <item v_0="270" v_1="275"/>
+    <item v_0="275" v_1="280"/>
+    <item v_0="280" v_1="346"/>
+    <item v_0="346" v_1="412"/>
+    <item v_0="412" v_1="480"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_PostFpgaCompilationJoin" success="1" comment="" timeStamp="1681885321" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_PostFpgaCompilationJoin" taskStatus="1" eventType="0" comment="" timeStamp="1681885322" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_F00_FpgaPostProc" taskStatus="1" eventType="0" comment="skipped" timeStamp="1681885322" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_U0_M0_F00_zFpgaTiming" success="1" comment="Pid: 15466" timeStamp="1681885322" queue="queue Zebu, 1 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_preparezTimeFpga" success="1" comment="" timeStamp="1681885324" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_preparezTimeFpga" taskStatus="1" eventType="0" comment="" timeStamp="1681885324" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_FpgaResultAnalyzer" success="1" comment="Pid: 15518" timeStamp="1681885324" queue="queue Zebu, 2 used" className="RunTaskEvent"/>
+  <Event timeStamp="1681885324" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_IF_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_Build_ZDBPostProc_Script" v_1="26"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_4[Backend: default backend]|HEADER_3[Global DB Controller]" taskName="backend_default_zDB_Global" row="1" taskType="1" taskDir="" timeStamp="1681885324" label="Create Global DB" className="AddTaskEvent"/>
+  <Event timeStamp="1681885324" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="backend_default_U0_M0_F00_zFpgaTiming" taskStatus="1" eventType="0" comment="" timeStamp="1681885326" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_PostZFpgaTimingJoin" success="1" comment="" timeStamp="1681885326" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_PostZFpgaTimingJoin" taskStatus="1" eventType="0" comment="" timeStamp="1681885327" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zDB_Global" success="1" comment="Pid: 16928" timeStamp="1681885327" queue="queue Zebu, 2 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zTimeFpga" success="1" comment="Pid: 16929" timeStamp="1681885327" queue="queue Zebu, 3 used" className="RunTaskEvent"/>
+  <Event taskName="backend_default_zTimeFpga" taskStatus="1" eventType="0" comment="" timeStamp="1681885329" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:ZTime FPGA" timeStamp="1681885329" total="500" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+    <item v_0="205" v_1="255"/>
+    <item v_0="255" v_1="270"/>
+    <item v_0="270" v_1="275"/>
+    <item v_0="275" v_1="280"/>
+    <item v_0="280" v_1="346"/>
+    <item v_0="346" v_1="412"/>
+    <item v_0="412" v_1="480"/>
+    <item v_0="480" v_1="490"/>
+   </values>
+  </Event>
+  <Event taskName="backend_default_zTimeFpga" timeStamp="1681885329" beName="default backend" className="ZTimeFinishEvent"/>
+  <Event taskName="backend_default_FpgaResultAnalyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681885329" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zDB_Global" taskStatus="1" eventType="0" comment="" timeStamp="1681885329" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zAuditReport" success="1" comment="Pid: 17052" timeStamp="1681885329" queue="queue ZebuLocal, 1 used" className="RunTaskEvent"/>
+  <Event timeStamp="1681885329" className="GlogUpdatedEvent"/>
+  <Event taskName="backend_default_zAuditReport" taskStatus="1" eventType="0" comment="Return status 7" timeStamp="1681885331" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_zDB_Global_Controller" taskStatus="1" eventType="0" comment="" timeStamp="1681885331" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_Build_ZDBPostProc_Script" success="1" comment="" timeStamp="1681885331" queue="" className="RunTaskEvent"/>
+  <Event taskName="backend_default_Build_ZDBPostProc_Script" taskStatus="1" eventType="0" comment="" timeStamp="1681885331" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_SingleBackend_Compilation_Checker" success="1" comment="" timeStamp="1681885331" queue="" className="RunTaskEvent"/>
+  <Event taskName="Profiling_Results_Analyzer" success="1" comment="Pid: 17068" timeStamp="1681885331" queue="queue ZebuLocal, 1 used" className="RunTaskEvent"/>
+  <Event timeStamp="1681885331" quiet="1" className="ChangeRowsEvent">
+   <newRowsVector>
+    <item v_0="backend_default_U0_M0_F00_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_F08_PaR_Controller" v_1="0"/>
+    <item v_0="backend_default_U0_M0_IF_PaR_Controller" v_1="0"/>
+   </newRowsVector>
+  </Event>
+  <Event hierarchy="HEADER_5[Final Check]" taskName="Profiling_Results_Analyzer" row="31" taskType="1" taskDir="" timeStamp="1681885331" label="Analyze Compilation Profiler Results" className="AddTaskEvent"/>
+  <Event timeStamp="1681885331" quiet="0" className="ChangeRowsEvent">
+   <newRowsVector/>
+  </Event>
+  <Event taskName="Profiling_Results_Analyzer" taskStatus="1" eventType="0" comment="" timeStamp="1681885333" className="TaskFinishEvent"/>
+  <Event taskName="backend_default_SingleBackend_Compilation_Checker" taskStatus="1" eventType="0" comment="" timeStamp="1681885337" className="TaskFinishEvent"/>
+  <Event toolTipText="backend_default:Final Check" timeStamp="1681885337" total="500" className="UpdateProgressBarEvent">
+   <values>
+    <item v_0="0" v_1="5"/>
+    <item v_0="5" v_1="25"/>
+    <item v_0="25" v_1="35"/>
+    <item v_0="35" v_1="45"/>
+    <item v_0="45" v_1="90"/>
+    <item v_0="90" v_1="100"/>
+    <item v_0="100" v_1="110"/>
+    <item v_0="110" v_1="120"/>
+    <item v_0="120" v_1="130"/>
+    <item v_0="130" v_1="140"/>
+    <item v_0="140" v_1="175"/>
+    <item v_0="175" v_1="190"/>
+    <item v_0="190" v_1="205"/>
+    <item v_0="205" v_1="255"/>
+    <item v_0="255" v_1="270"/>
+    <item v_0="270" v_1="275"/>
+    <item v_0="275" v_1="280"/>
+    <item v_0="280" v_1="346"/>
+    <item v_0="346" v_1="412"/>
+    <item v_0="412" v_1="480"/>
+    <item v_0="480" v_1="490"/>
+    <item v_0="490" v_1="495"/>
+   </values>
+  </Event>
+  <Event success="1" timeStamp="1681885337" className="CompilationFinishEvent"/>
+  <Event timeStamp="1681885337" className="GlogUpdatedEvent"/>
+ </events>
+ <actions>
+  <BE_Version_Checker synthName="" taskName="BE_Version_Checker" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/BE_Version_Checker.log"/>
+      <item v="Check Back-End Binaries Version"/>
+      <item v="BE_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="BE_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/BE_Version_Checker.why"/>
+      <item v="Check Back-End Binaries Version"/>
+      <item v="BE_Version_Checker"/>
+     </v_1>
+    </item>
+   </actionList>
+  </BE_Version_Checker>
+  <FE_Version_Checker synthName="" taskName="FE_Version_Checker" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/FE_Version_Checker.log"/>
+      <item v="Check Front-End Binaries Version"/>
+      <item v="FE_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="FE_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/FE_Version_Checker.why"/>
+      <item v="Check Front-End Binaries Version"/>
+      <item v="FE_Version_Checker"/>
+     </v_1>
+    </item>
+   </actionList>
+  </FE_Version_Checker>
+  <Post_Vcs_Task_Builder synthName="" taskName="Post_Vcs_Task_Builder" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/Post_Vcs_Task_Builder.log"/>
+      <item v="Prepare Post Vcs Tasks"/>
+      <item v="Post_Vcs_Task_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="Post_Vcs_Task_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/Post_Vcs_Task_Builder.why"/>
+      <item v="Prepare Post Vcs Tasks"/>
+      <item v="Post_Vcs_Task_Builder"/>
+     </v_1>
+    </item>
+   </actionList>
+  </Post_Vcs_Task_Builder>
+  <Profiling_Results_Analyzer synthName="" taskName="Profiling_Results_Analyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/Profiling_Results_Analyzer.log"/>
+      <item v="Analyze Compilation Profiler Results"/>
+      <item v="Profiling_Results_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="Profiling_Results_Analyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </Profiling_Results_Analyzer>
+  <RhinoFsdb_Builder synthName="" taskName="RhinoFsdb_Builder" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/RhinoFsdb_Builder.log"/>
+      <item v="Build Rhino Fsdb"/>
+      <item v="RhinoFsdb_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="RhinoFsdb_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/RhinoFsdb_Builder.why"/>
+      <item v="Build Rhino Fsdb"/>
+      <item v="RhinoFsdb_Builder"/>
+     </v_1>
+    </item>
+   </actionList>
+  </RhinoFsdb_Builder>
+  <Target_Config synthName="" taskName="Target_Config" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/Target_Config.log"/>
+      <item v="Target Configuration"/>
+      <item v="Target_Config"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="Target_Config"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/Target_Config.why"/>
+      <item v="Target Configuration"/>
+      <item v="Target_Config"/>
+     </v_1>
+    </item>
+   </actionList>
+  </Target_Config>
+  <Target_Config_Analyzer synthName="" taskName="Target_Config_Analyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/Target_Config_Analyzer.log"/>
+      <item v="Analyze Target Configuration Results"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTargetTools Script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/zTargetTools.tcl"/>
+      <item v="Analyze Target Configuration Results"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTargetTools Xcui Result File">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/zTargetTools.xcui"/>
+      <item v="Analyze Target Configuration Results"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/Target_Config_Analyzer.why"/>
+      <item v="Analyze Target Configuration Results"/>
+      <item v="Target_Config_Analyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </Target_Config_Analyzer>
+  <VCS_Task_Analyzer synthName="" taskName="VCS_Task_Analyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/VCS_Task_Analyzer.log"/>
+      <item v="Analyze VCS Results"/>
+      <item v="VCS_Task_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="VCS_Task_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/VCS_Task_Analyzer.why"/>
+      <item v="Analyze VCS Results"/>
+      <item v="VCS_Task_Analyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </VCS_Task_Analyzer>
+  <Vcs_Version_Checker synthName="" taskName="Vcs_Version_Checker" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/Vcs_Version_Checker.log"/>
+      <item v="Check Vcs Binaries Version"/>
+      <item v="Vcs_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="Vcs_Version_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/Vcs_Version_Checker.why"/>
+      <item v="Check Vcs Binaries Version"/>
+      <item v="Vcs_Version_Checker"/>
+     </v_1>
+    </item>
+   </actionList>
+  </Vcs_Version_Checker>
+  <Verdi_Compilation synthName="" taskName="Verdi_Compilation" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/Verdi_Compilation.log"/>
+      <item v="Launch Verdi"/>
+      <item v="Verdi_Compilation"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="Verdi_Compilation"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/Verdi_Compilation.why"/>
+      <item v="Launch Verdi"/>
+      <item v="Verdi_Compilation"/>
+     </v_1>
+    </item>
+   </actionList>
+  </Verdi_Compilation>
+  <backend_default_BackendEntry synthName="" taskName="backend_default_BackendEntry" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_BackendEntry.log"/>
+      <item v="Prepare Backend Flow"/>
+      <item v="backend_default_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Show zDveTools script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zDveTools.tcl"/>
+      <item v="Prepare Backend Flow"/>
+      <item v="backend_default_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTopBuild script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zTopBuild.tcl"/>
+      <item v="Prepare Backend Flow"/>
+      <item v="backend_default_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Show EDIF file checker">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zTopBuild_edif.inf"/>
+      <item v="Prepare Backend Flow"/>
+      <item v="backend_default_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Show EDIF file list">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/edifListScript.tcl"/>
+      <item v="Prepare Backend Flow"/>
+      <item v="backend_default_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Show ">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/tools/zCui/synthesis_glog.xcui"/>
+      <item v="Prepare Backend Flow"/>
+      <item v="backend_default_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Show ">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/tools/zCui/memff_glog.xcui"/>
+      <item v="Prepare Backend Flow"/>
+      <item v="backend_default_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_BackendEntry.why"/>
+      <item v="Prepare Backend Flow"/>
+      <item v="backend_default_BackendEntry"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_BackendEntry>
+  <backend_default_Build_ZDBPostProc_Script synthName="" taskName="backend_default_Build_ZDBPostProc_Script" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_Build_ZDBPostProc_Script.log"/>
+      <item v="Create Script (DB PP)"/>
+      <item v="backend_default_Build_ZDBPostProc_Script"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_Build_ZDBPostProc_Script"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_Build_ZDBPostProc_Script.why"/>
+      <item v="Create Script (DB PP)"/>
+      <item v="backend_default_Build_ZDBPostProc_Script"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_Build_ZDBPostProc_Script>
+  <backend_default_Design_FPGA_Dispatch synthName="" taskName="backend_default_Design_FPGA_Dispatch" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_Design_FPGA_Dispatch.log"/>
+      <item v="Analyze zPar result"/>
+      <item v="backend_default_Design_FPGA_Dispatch"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_Design_FPGA_Dispatch"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_Design_FPGA_Dispatch.why"/>
+      <item v="Analyze zPar result"/>
+      <item v="backend_default_Design_FPGA_Dispatch"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_Design_FPGA_Dispatch>
+  <backend_default_FpgaResultAnalyzer synthName="" taskName="backend_default_FpgaResultAnalyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_FpgaResultAnalyzer.log"/>
+      <item v="FPGA PaRs Analyzer"/>
+      <item v="backend_default_FpgaResultAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_FpgaResultAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_FpgaResultAnalyzer.why"/>
+      <item v="FPGA PaRs Analyzer"/>
+      <item v="backend_default_FpgaResultAnalyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_FpgaResultAnalyzer>
+  <backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry synthName="" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry.log"/>
+      <item v="Compilation Profiler (after BackendEntry)"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry.why"/>
+      <item v="Compilation Profiler (after BackendEntry)"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_Intermediate_Profiling_Results_Analyzer_BackendEntry>
+  <backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer synthName="" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer.log"/>
+      <item v="Compilation Profiler (after VCSAnalyzer)"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer.why"/>
+      <item v="Compilation Profiler (after VCSAnalyzer)"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_Intermediate_Profiling_Results_Analyzer_VCSAnalyzer>
+  <backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer synthName="" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer.log"/>
+      <item v="Compilation Profiler (after ZParAnalyzer)"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer.why"/>
+      <item v="Compilation Profiler (after ZParAnalyzer)"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_Intermediate_Profiling_Results_Analyzer_ZParAnalyzer>
+  <backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer synthName="" taskName="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer.log"/>
+      <item v="Compilation Profiler (after ZTopBuildAnalyzer)"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer.why"/>
+      <item v="Compilation Profiler (after ZTopBuildAnalyzer)"/>
+      <item v="backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_Intermediate_Profiling_Results_Analyzer_ZTopBuildAnalyzer>
+  <backend_default_OptionsDbProc synthName="" taskName="backend_default_OptionsDbProc" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_OptionsDbProc.log"/>
+      <item v="Make optionsdb dump"/>
+      <item v="backend_default_OptionsDbProc"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_OptionsDbProc"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_OptionsDbProc.why"/>
+      <item v="Make optionsdb dump"/>
+      <item v="backend_default_OptionsDbProc"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_OptionsDbProc>
+  <backend_default_PostFpgaCompilationJoin synthName="" taskName="backend_default_PostFpgaCompilationJoin" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_PostFpgaCompilationJoin.log"/>
+      <item v="Post FPGA Compilation Join"/>
+      <item v="backend_default_PostFpgaCompilationJoin"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_PostFpgaCompilationJoin"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_PostFpgaCompilationJoin.why"/>
+      <item v="Post FPGA Compilation Join"/>
+      <item v="backend_default_PostFpgaCompilationJoin"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_PostFpgaCompilationJoin>
+  <backend_default_PostZCoreCompilationJoin synthName="" taskName="backend_default_PostZCoreCompilationJoin" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_PostZCoreCompilationJoin.log"/>
+      <item v="Post ZCore Compilation Join"/>
+      <item v="backend_default_PostZCoreCompilationJoin"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_PostZCoreCompilationJoin"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_PostZCoreCompilationJoin.why"/>
+      <item v="Post ZCore Compilation Join"/>
+      <item v="backend_default_PostZCoreCompilationJoin"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_PostZCoreCompilationJoin>
+  <backend_default_PostZFpgaTimingJoin synthName="" taskName="backend_default_PostZFpgaTimingJoin" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_PostZFpgaTimingJoin.log"/>
+      <item v="Post zFpgaTiming Join"/>
+      <item v="backend_default_PostZFpgaTimingJoin"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_PostZFpgaTimingJoin"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_PostZFpgaTimingJoin.why"/>
+      <item v="Post zFpgaTiming Join"/>
+      <item v="backend_default_PostZFpgaTimingJoin"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_PostZFpgaTimingJoin>
+  <backend_default_PreParScriptBuilder synthName="" taskName="backend_default_PreParScriptBuilder" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_PreParScriptBuilder.log"/>
+      <item v="Pre PAR Script Builder"/>
+      <item v="backend_default_PreParScriptBuilder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_PreParScriptBuilder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_PreParScriptBuilder.why"/>
+      <item v="Pre PAR Script Builder"/>
+      <item v="backend_default_PreParScriptBuilder"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_PreParScriptBuilder>
+  <backend_default_Project_Analyzer synthName="" taskName="backend_default_Project_Analyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_Project_Analyzer.log"/>
+      <item v="Analyze Project"/>
+      <item v="backend_default_Project_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_Project_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_Project_Analyzer.why"/>
+      <item v="Analyze Project"/>
+      <item v="backend_default_Project_Analyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_Project_Analyzer>
+  <backend_default_RTB_FPGA_Dispatch_U0_M0_IF synthName="" taskName="backend_default_RTB_FPGA_Dispatch_U0_M0_IF" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_RTB_FPGA_Dispatch_U0_M0_IF.log"/>
+      <item v="Analyze zRTB_FW result: U0_M0_IF"/>
+      <item v="backend_default_RTB_FPGA_Dispatch_U0_M0_IF"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_RTB_FPGA_Dispatch_U0_M0_IF"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_RTB_FPGA_Dispatch_U0_M0_IF.why"/>
+      <item v="Analyze zRTB_FW result: U0_M0_IF"/>
+      <item v="backend_default_RTB_FPGA_Dispatch_U0_M0_IF"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_RTB_FPGA_Dispatch_U0_M0_IF>
+  <backend_default_RTB_Front_End synthName="" taskName="backend_default_RTB_Front_End" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_RTB_Front_End.log"/>
+      <item v="RTB Front-End"/>
+      <item v="backend_default_RTB_Front_End"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_RTB_Front_End"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_RTB_Front_End.why"/>
+      <item v="RTB Front-End"/>
+      <item v="backend_default_RTB_Front_End"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_RTB_Front_End>
+  <backend_default_RTB_Front_End_Result_Analyzer synthName="" taskName="backend_default_RTB_Front_End_Result_Analyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_RTB_Front_End_Result_Analyzer.log"/>
+      <item v="Analyze RTB Front-End Results"/>
+      <item v="backend_default_RTB_Front_End_Result_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_RTB_Front_End_Result_Analyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_RTB_Front_End_Result_Analyzer.why"/>
+      <item v="Analyze RTB Front-End Results"/>
+      <item v="backend_default_RTB_Front_End_Result_Analyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_RTB_Front_End_Result_Analyzer>
+  <backend_default_RTL_DB_Indexer synthName="" taskName="backend_default_RTL_DB_Indexer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_RTL_DB_Indexer.log"/>
+      <item v="Make RTL DB indexes"/>
+      <item v="backend_default_RTL_DB_Indexer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_RTL_DB_Indexer"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_RTL_DB_Indexer.why"/>
+      <item v="Make RTL DB indexes"/>
+      <item v="backend_default_RTL_DB_Indexer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_RTL_DB_Indexer>
+  <backend_default_RTL_DB_Link synthName="" taskName="backend_default_RTL_DB_Link" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_RTL_DB_Link.log"/>
+      <item v="Make RTL DB link"/>
+      <item v="backend_default_RTL_DB_Link"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_RTL_DB_Link"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_RTL_DB_Link.why"/>
+      <item v="Make RTL DB link"/>
+      <item v="backend_default_RTL_DB_Link"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_RTL_DB_Link>
+  <backend_default_RTL_DB_RunTime synthName="" taskName="backend_default_RTL_DB_RunTime" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_RTL_DB_RunTime.log"/>
+      <item v="Make RTL DB for Run Time"/>
+      <item v="backend_default_RTL_DB_RunTime"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_RTL_DB_RunTime"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_RTL_DB_RunTime.why"/>
+      <item v="Make RTL DB for Run Time"/>
+      <item v="backend_default_RTL_DB_RunTime"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_RTL_DB_RunTime>
+  <backend_default_SingleBackend_Compilation_Checker synthName="" taskName="backend_default_SingleBackend_Compilation_Checker" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_SingleBackend_Compilation_Checker.log"/>
+      <item v="Backend Checker : default"/>
+      <item v="backend_default_SingleBackend_Compilation_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_SingleBackend_Compilation_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Show GLog">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/tools/zCui/zCui_PNR_steps_glog.xcui"/>
+      <item v="Backend Checker : default"/>
+      <item v="backend_default_SingleBackend_Compilation_Checker"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_SingleBackend_Compilation_Checker.why"/>
+      <item v="Backend Checker : default"/>
+      <item v="backend_default_SingleBackend_Compilation_Checker"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_SingleBackend_Compilation_Checker>
+  <backend_default_U0_M0_F00_Cleaning synthName="" taskName="backend_default_U0_M0_F00_Cleaning" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_F00_Cleaning.log"/>
+      <item v="Cleaning All PaRs"/>
+      <item v="backend_default_U0_M0_F00_Cleaning"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_F00_Cleaning"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F00_Cleaning>
+  <backend_default_U0_M0_F00_Finish synthName="" taskName="backend_default_U0_M0_F00_Finish" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_F00_Finish.log"/>
+      <item v="Finish"/>
+      <item v="backend_default_U0_M0_F00_Finish"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_F00_Finish"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F00_Finish>
+  <backend_default_U0_M0_F00_FpgaPostProc synthName="" taskName="backend_default_U0_M0_F00_FpgaPostProc" className="SendActionMessage">
+   <actionList>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_U0_M0_F00_FpgaPostProc.why"/>
+      <item v="FPGA post Process"/>
+      <item v="backend_default_U0_M0_F00_FpgaPostProc"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F00_FpgaPostProc>
+  <backend_default_U0_M0_F00_Original synthName="" taskName="backend_default_U0_M0_F00_Original" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/U0/M0/F00.Original/compilation.log"/>
+      <item v="Original"/>
+      <item v="backend_default_U0_M0_F00_Original"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showcompilationloginwindow"/>
+      <item v="zcui.work/backend_default/U0/M0/F00.Original/compilation.log"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log of zIseManager">
+     <v_1>
+      <item v="zisemanagerlog"/>
+      <item v="backend_default/U0/M0/F00.Original/compilation.log"/>
+      <item v="Original"/>
+      <item v="backend_default_U0_M0_F00_Original"/>
+     </v_1>
+    </item>
+    <item v_0="Show History of the PaR">
+     <v_1>
+      <item v="historyofpar"/>
+      <item v="backend_default_U0_M0_F00_Original"/>
+      <item v="Original"/>
+      <item v="#   Wed 19 Apr 2023 01:05:34 AM CDT - "/>
+      <item v="#   Wed 19 Apr 2023 01:17:52 AM CDT - running WRITE_BITSTREAM"/>
+      <item v="#   Wed 19 Apr 2023 01:21:01 AM CDT - finished OK"/>
+     </v_1>
+    </item>
+    <item v_0="Show Ancestry of the PaR">
+     <v_1>
+      <item v="ancestryofpar"/>
+      <item v="backend_default_U0_M0_F00_Original"/>
+      <item v="Original"/>
+      <item v=""/>
+     </v_1>
+    </item>
+    <item v_0="Show Descendants of the PaR">
+     <v_1>
+      <item v="descendantsofpar"/>
+      <item v="backend_default_U0_M0_F00_Original"/>
+      <item v="Original"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F00_Original>
+  <backend_default_U0_M0_F00_PaR_Controller synthName="" taskName="backend_default_U0_M0_F00_PaR_Controller" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_F00_PaR_Controller.log"/>
+      <item v="Controller"/>
+      <item v="backend_default_U0_M0_F00_PaR_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_F00_PaR_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_U0_M0_F00_PaR_Controller.why"/>
+      <item v="Controller"/>
+      <item v="backend_default_U0_M0_F00_PaR_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Compilation Log">
+     <v_1>
+      <item v="compilationlog"/>
+      <item v="backend_default_U0_M0_F00_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="backend_default/U0/M0/F00/compilation.log"/>
+     </v_1>
+    </item>
+    <item v_0="Show History of PaRs">
+     <v_1>
+      <item v="historyofpars"/>
+      <item v="backend_default_U0_M0_F00_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="For FPGA U0_M0_F0"/>
+      <item v=" F00.Original"/>
+     </v_1>
+    </item>
+    <item v_0="Show PaR events">
+     <v_1>
+      <item v="eventsofpars"/>
+      <item v="backend_default_U0_M0_F00_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="#   Wed 19 Apr 2023 01:05:34 AM CDT - F00.Original "/>
+      <item v="#   Wed 19 Apr 2023 01:17:52 AM CDT - F00.Original running WRITE_BITSTREAM"/>
+      <item v="#   Wed 19 Apr 2023 01:21:01 AM CDT - F00.Original finished OK"/>
+     </v_1>
+    </item>
+    <item v_0="Show Current Parameter Sets">
+     <v_1>
+      <item v="parametersets"/>
+      <item v="backend_default_U0_M0_F00_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="Relaunch Id&#x9;Set Label&#x9;Launch Label&#x9; Parameters"/>
+      <item v="L0&#x9;param1&#x9;L0_Triton_CombiPath&#x9; ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L0_Triton_CombiPath' ZEBU_PROCESS_COMBI_PATH='1'"/>
+      <item v="L1&#x9;param1&#x9;L1_Vivado_emulation_mode&#x9; VIVADO_ENABLE_EMULATION_MODE='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L1_Vivado_emulation_mode'"/>
+      <item v="L2&#x9;param1&#x9;L2_Vivado_Performance_ExploreSLLs&#x9; VIVADO_OPT_DESIGN_OL0PTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive SSI_ExtraTimingOpt' VIVADO_ROUTE_DESIGN_OPTIONS='-directive NoTimingRelaxation' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L2_Vivado_Performance_ExploreSLLs'"/>
+      <item v="L3&#x9;param1&#x9;L3_Triton_Remap&#x9; VIVADO_OPT_DESIGN_ENABLE_REMAP='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L3_Triton_Area_Remap'"/>
+      <item v="L4&#x9;param1&#x9;L4_Vivado_Param_LutPinSwapping&#x9; VIVADO_SETPARAM_NAME='place.enableLutPinSwapping' VIVADO_SETPARAM_VALUE='0' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L4_Vivado_Param_LutPinSwapping'"/>
+      <item v="L5&#x9;param1&#x9;L5_Vivado_Remove_muxcy_xorcy_noTriton&#x9; ZEBU_DISABLE_TRITON='1' ZEBU_NO_INSTR_MUXCY_XORCY='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L5_Vivado_Remove_muxcy_xorcy' ZEBU_REMOVE_ALL_MUXCY_XORCY='1'"/>
+      <item v="L6&#x9;param1&#x9;L6_Vivado_Congestion_CompressSLRs&#x9; VIVADO_OPT_DESIGN_OPTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive SSI_HighUtilSLRs' VIVADO_ROUTE_DESIGN_OPTIONS='-directive Default' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L6_Vivado_Congestion_CompressSLRs'"/>
+      <item v="L7&#x9;param1&#x9;L7_Vivado_Congestion_BalanceSLRs&#x9; VIVADO_OPT_DESIGN_OPTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive SSI_BalanceSLRs' VIVADO_ROUTE_DESIGN_OPTIONS='-directive Default' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L7_Vivado_Congestion_BalanceSLRs'"/>
+      <item v="L8&#x9;param1&#x9;L8_Triton_Split_Fanout&#x9; ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L8_Triton_Split_Fanout' ZEBU_SPLIT_FANOUT='1' ZEBU_SPLIT_FANOUT_OPTIONS='-l1 16 -l2 16 -splitInFWMacro '"/>
+      <item v="L9&#x9;param1&#x9;L9_Triton_Delete_Pblock&#x9; ZEBU_DELETE_FXMACRO_PBLOCK='1' ZEBU_LOCK_SOCKET='no' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L9_Triton_Delete_Pblock'"/>
+      <item v="L10&#x9;param1&#x9;L10_Vivado_Performance_WLBlockPlacement&#x9; VIVADO_OPT_DESIGN_OPTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive WLDrivenBlockPlacement' VIVADO_ROUTE_DESIGN_OPTIONS='-directive MoreGlobalIterations' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L10_Vivado_WLBlockPlacement'"/>
+      <item v="L11&#x9;param1&#x9;L11_Vivado_remove_pblock&#x9; VIVADO_DISABLE_ZCAHSRASH_PBLOCK='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L17_Vivado_remove_pblock'"/>
+      <item v="L12&#x9;param1&#x9;L12_DAP_Triton_GP_SLL_SpreadAll&#x9; VIVADO_TRITON_GP_SLL_UPDATE_YLOC='1' VIVADO_TRITON_GP_SPREAD_SLL='1' VIVADO_TRITON_PARTITION_LUTFF='1' VIVADO_TRITON_PARTITION_UTIL_ADJUST_FIRST_SECOND='1' ZEBU_MDTMX_PARTONLY='1' ZEBU_MDTMX_TOOL='zBlockPartitioning' ZEBU_MDTMX_USE='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L12_DAP_Triton_GP_SLL_SpreadAll'"/>
+      <item v="L13&#x9;param1&#x9;L13_Vivado_resize_pblock_to_SLR1&#x9; VIVADO_PLACE_ZCAHSRASH_PBLOCK_SLR1='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L18_Vivado_resize_pblock_to_SLR1'"/>
+      <item v="L14&#x9;param1&#x9;L14_Vivado_Remove_muxcy_xorcy&#x9; ZEBU_NO_INSTR_MUXCY_XORCY='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L15_Vivado_Remove_muxcy_xorcy' ZEBU_REMOVE_ALL_MUXCY_XORCY='1'"/>
+      <item v="L15&#x9;param1&#x9;L15_zNetgen_noMUXF&#x9; ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L16_Vivado_noMUXF' ZNETGEN_CONVERT_MUXFX_TO_LUTS='1'"/>
+      <item v="L16&#x9;param1&#x9;L16_Vivado_InsertLUT1_LUT56&#x9; VIVADO_ENABLE_INSERT_LUT1_LUT56='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L17_Vivado_InsertLUT1_LUT56'"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F00_PaR_Controller>
+  <backend_default_U0_M0_F00_zFpgaTiming synthName="" taskName="backend_default_U0_M0_F00_zFpgaTiming" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_F00_zFpgaTiming.log"/>
+      <item v="Create Timing DB (SDF Mode)"/>
+      <item v="backend_default_U0_M0_F00_zFpgaTiming"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_F00_zFpgaTiming"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_U0_M0_F00_zFpgaTiming.why"/>
+      <item v="Create Timing DB (SDF Mode)"/>
+      <item v="backend_default_U0_M0_F00_zFpgaTiming"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F00_zFpgaTiming>
+  <backend_default_U0_M0_F08_Cleaning synthName="" taskName="backend_default_U0_M0_F08_Cleaning" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_F08_Cleaning.log"/>
+      <item v="Cleaning All PaRs"/>
+      <item v="backend_default_U0_M0_F08_Cleaning"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_F08_Cleaning"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F08_Cleaning>
+  <backend_default_U0_M0_F08_Finish synthName="" taskName="backend_default_U0_M0_F08_Finish" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_F08_Finish.log"/>
+      <item v="Finish"/>
+      <item v="backend_default_U0_M0_F08_Finish"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_F08_Finish"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F08_Finish>
+  <backend_default_U0_M0_F08_FpgaPostProc synthName="" taskName="backend_default_U0_M0_F08_FpgaPostProc" className="SendActionMessage">
+   <actionList>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_U0_M0_F08_FpgaPostProc.why"/>
+      <item v="FPGA post Process"/>
+      <item v="backend_default_U0_M0_F08_FpgaPostProc"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F08_FpgaPostProc>
+  <backend_default_U0_M0_F08_Original synthName="" taskName="backend_default_U0_M0_F08_Original" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/U0/M0/F08.Original/compilation.log"/>
+      <item v="Original"/>
+      <item v="backend_default_U0_M0_F08_Original"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showcompilationloginwindow"/>
+      <item v="zcui.work/backend_default/U0/M0/F08.Original/compilation.log"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log of zIseManager">
+     <v_1>
+      <item v="zisemanagerlog"/>
+      <item v="backend_default/U0/M0/F08.Original/compilation.log"/>
+      <item v="Original"/>
+      <item v="backend_default_U0_M0_F08_Original"/>
+     </v_1>
+    </item>
+    <item v_0="Show History of the PaR">
+     <v_1>
+      <item v="historyofpar"/>
+      <item v="backend_default_U0_M0_F08_Original"/>
+      <item v="Original"/>
+      <item v="#   Wed 19 Apr 2023 01:05:34 AM CDT - "/>
+      <item v="#   Wed 19 Apr 2023 01:12:45 AM CDT - running WRITE_BITSTREAM"/>
+      <item v="#   Wed 19 Apr 2023 01:15:22 AM CDT - finished OK"/>
+     </v_1>
+    </item>
+    <item v_0="Show Ancestry of the PaR">
+     <v_1>
+      <item v="ancestryofpar"/>
+      <item v="backend_default_U0_M0_F08_Original"/>
+      <item v="Original"/>
+      <item v=""/>
+     </v_1>
+    </item>
+    <item v_0="Show Descendants of the PaR">
+     <v_1>
+      <item v="descendantsofpar"/>
+      <item v="backend_default_U0_M0_F08_Original"/>
+      <item v="Original"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F08_Original>
+  <backend_default_U0_M0_F08_PaR_Controller synthName="" taskName="backend_default_U0_M0_F08_PaR_Controller" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_F08_PaR_Controller.log"/>
+      <item v="Controller"/>
+      <item v="backend_default_U0_M0_F08_PaR_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_F08_PaR_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_U0_M0_F08_PaR_Controller.why"/>
+      <item v="Controller"/>
+      <item v="backend_default_U0_M0_F08_PaR_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Compilation Log">
+     <v_1>
+      <item v="compilationlog"/>
+      <item v="backend_default_U0_M0_F08_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="backend_default/U0/M0/F08/compilation.log"/>
+     </v_1>
+    </item>
+    <item v_0="Show History of PaRs">
+     <v_1>
+      <item v="historyofpars"/>
+      <item v="backend_default_U0_M0_F08_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="For FPGA Route U0_M0_F08"/>
+      <item v=" F08.Original"/>
+     </v_1>
+    </item>
+    <item v_0="Show PaR events">
+     <v_1>
+      <item v="eventsofpars"/>
+      <item v="backend_default_U0_M0_F08_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="#   Wed 19 Apr 2023 01:05:34 AM CDT - F08.Original "/>
+      <item v="#   Wed 19 Apr 2023 01:12:45 AM CDT - F08.Original running WRITE_BITSTREAM"/>
+      <item v="#   Wed 19 Apr 2023 01:15:22 AM CDT - F08.Original finished OK"/>
+     </v_1>
+    </item>
+    <item v_0="Show Current Parameter Sets">
+     <v_1>
+      <item v="parametersets"/>
+      <item v="backend_default_U0_M0_F08_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="Relaunch Id&#x9;Set Label&#x9;Launch Label&#x9; Parameters"/>
+      <item v="L0&#x9;param1&#x9;L0_Triton_CombiPath&#x9; ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L0_Triton_CombiPath' ZEBU_PROCESS_COMBI_PATH='1'"/>
+      <item v="L1&#x9;param1&#x9;L1_Vivado_emulation_mode&#x9; VIVADO_ENABLE_EMULATION_MODE='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L1_Vivado_emulation_mode'"/>
+      <item v="L2&#x9;param1&#x9;L2_Vivado_Performance_ExploreSLLs&#x9; VIVADO_OPT_DESIGN_OL0PTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive SSI_ExtraTimingOpt' VIVADO_ROUTE_DESIGN_OPTIONS='-directive NoTimingRelaxation' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L2_Vivado_Performance_ExploreSLLs'"/>
+      <item v="L3&#x9;param1&#x9;L3_Triton_Remap&#x9; VIVADO_OPT_DESIGN_ENABLE_REMAP='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L3_Triton_Area_Remap'"/>
+      <item v="L4&#x9;param1&#x9;L4_Vivado_Param_LutPinSwapping&#x9; VIVADO_SETPARAM_NAME='place.enableLutPinSwapping' VIVADO_SETPARAM_VALUE='0' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L4_Vivado_Param_LutPinSwapping'"/>
+      <item v="L5&#x9;param1&#x9;L5_Vivado_Remove_muxcy_xorcy_noTriton&#x9; ZEBU_DISABLE_TRITON='1' ZEBU_NO_INSTR_MUXCY_XORCY='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L5_Vivado_Remove_muxcy_xorcy' ZEBU_REMOVE_ALL_MUXCY_XORCY='1'"/>
+      <item v="L6&#x9;param1&#x9;L6_Vivado_Congestion_CompressSLRs&#x9; VIVADO_OPT_DESIGN_OPTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive SSI_HighUtilSLRs' VIVADO_ROUTE_DESIGN_OPTIONS='-directive Default' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L6_Vivado_Congestion_CompressSLRs'"/>
+      <item v="L7&#x9;param1&#x9;L7_Vivado_Congestion_BalanceSLRs&#x9; VIVADO_OPT_DESIGN_OPTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive SSI_BalanceSLRs' VIVADO_ROUTE_DESIGN_OPTIONS='-directive Default' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L7_Vivado_Congestion_BalanceSLRs'"/>
+      <item v="L8&#x9;param1&#x9;L8_Triton_Split_Fanout&#x9; ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L8_Triton_Split_Fanout' ZEBU_SPLIT_FANOUT='1' ZEBU_SPLIT_FANOUT_OPTIONS='-l1 16 -l2 16 -splitInFWMacro '"/>
+      <item v="L9&#x9;param1&#x9;L9_Triton_Delete_Pblock&#x9; ZEBU_DELETE_FXMACRO_PBLOCK='1' ZEBU_LOCK_SOCKET='no' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L9_Triton_Delete_Pblock'"/>
+      <item v="L10&#x9;param1&#x9;L10_Vivado_Performance_WLBlockPlacement&#x9; VIVADO_OPT_DESIGN_OPTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive WLDrivenBlockPlacement' VIVADO_ROUTE_DESIGN_OPTIONS='-directive MoreGlobalIterations' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L10_Vivado_WLBlockPlacement'"/>
+      <item v="L11&#x9;param1&#x9;L11_Vivado_remove_pblock&#x9; VIVADO_DISABLE_ZCAHSRASH_PBLOCK='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L17_Vivado_remove_pblock'"/>
+      <item v="L12&#x9;param1&#x9;L12_DAP_Triton_GP_SLL_SpreadAll&#x9; VIVADO_TRITON_GP_SLL_UPDATE_YLOC='1' VIVADO_TRITON_GP_SPREAD_SLL='1' VIVADO_TRITON_PARTITION_LUTFF='1' VIVADO_TRITON_PARTITION_UTIL_ADJUST_FIRST_SECOND='1' ZEBU_MDTMX_PARTONLY='1' ZEBU_MDTMX_TOOL='zBlockPartitioning' ZEBU_MDTMX_USE='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L12_DAP_Triton_GP_SLL_SpreadAll'"/>
+      <item v="L13&#x9;param1&#x9;L13_Vivado_resize_pblock_to_SLR1&#x9; VIVADO_PLACE_ZCAHSRASH_PBLOCK_SLR1='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L18_Vivado_resize_pblock_to_SLR1'"/>
+      <item v="L14&#x9;param1&#x9;L14_Vivado_Remove_muxcy_xorcy&#x9; ZEBU_NO_INSTR_MUXCY_XORCY='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L15_Vivado_Remove_muxcy_xorcy' ZEBU_REMOVE_ALL_MUXCY_XORCY='1'"/>
+      <item v="L15&#x9;param1&#x9;L15_zNetgen_noMUXF&#x9; ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L16_Vivado_noMUXF' ZNETGEN_CONVERT_MUXFX_TO_LUTS='1'"/>
+      <item v="L16&#x9;param1&#x9;L16_Vivado_InsertLUT1_LUT56&#x9; VIVADO_ENABLE_INSERT_LUT1_LUT56='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L17_Vivado_InsertLUT1_LUT56'"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F08_PaR_Controller>
+  <backend_default_U0_M0_F08_zFpgaTiming synthName="" taskName="backend_default_U0_M0_F08_zFpgaTiming" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_F08_zFpgaTiming.log"/>
+      <item v="Create Timing DB (SDF Mode)"/>
+      <item v="backend_default_U0_M0_F08_zFpgaTiming"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_F08_zFpgaTiming"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_U0_M0_F08_zFpgaTiming.why"/>
+      <item v="Create Timing DB (SDF Mode)"/>
+      <item v="backend_default_U0_M0_F08_zFpgaTiming"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_F08_zFpgaTiming>
+  <backend_default_U0_M0_IF_Cleaning synthName="" taskName="backend_default_U0_M0_IF_Cleaning" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_IF_Cleaning.log"/>
+      <item v="Cleaning All PaRs"/>
+      <item v="backend_default_U0_M0_IF_Cleaning"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_IF_Cleaning"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_IF_Cleaning>
+  <backend_default_U0_M0_IF_Finish synthName="" taskName="backend_default_U0_M0_IF_Finish" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_IF_Finish.log"/>
+      <item v="Finish"/>
+      <item v="backend_default_U0_M0_IF_Finish"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_IF_Finish"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_IF_Finish>
+  <backend_default_U0_M0_IF_Original synthName="" taskName="backend_default_U0_M0_IF_Original" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/U0/M0/IF.Original/compilation.log"/>
+      <item v="Original"/>
+      <item v="backend_default_U0_M0_IF_Original"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showcompilationloginwindow"/>
+      <item v="zcui.work/backend_default/U0/M0/IF.Original/compilation.log"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log of zIseManager">
+     <v_1>
+      <item v="zisemanagerlog"/>
+      <item v="backend_default/U0/M0/IF.Original/compilation.log"/>
+      <item v="Original"/>
+      <item v="backend_default_U0_M0_IF_Original"/>
+     </v_1>
+    </item>
+    <item v_0="Show History of the PaR">
+     <v_1>
+      <item v="historyofpar"/>
+      <item v="backend_default_U0_M0_IF_Original"/>
+      <item v="Original"/>
+      <item v="#   Wed 19 Apr 2023 01:05:48 AM CDT - "/>
+      <item v="#   Wed 19 Apr 2023 01:14:00 AM CDT - running WRITE_BITSTREAM"/>
+      <item v="#   Wed 19 Apr 2023 01:16:29 AM CDT - finished OK"/>
+     </v_1>
+    </item>
+    <item v_0="Show Ancestry of the PaR">
+     <v_1>
+      <item v="ancestryofpar"/>
+      <item v="backend_default_U0_M0_IF_Original"/>
+      <item v="Original"/>
+      <item v=""/>
+     </v_1>
+    </item>
+    <item v_0="Show Descendants of the PaR">
+     <v_1>
+      <item v="descendantsofpar"/>
+      <item v="backend_default_U0_M0_IF_Original"/>
+      <item v="Original"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_IF_Original>
+  <backend_default_U0_M0_IF_PaR_Controller synthName="" taskName="backend_default_U0_M0_IF_PaR_Controller" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_IF_PaR_Controller.log"/>
+      <item v="Controller"/>
+      <item v="backend_default_U0_M0_IF_PaR_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_IF_PaR_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_U0_M0_IF_PaR_Controller.why"/>
+      <item v="Controller"/>
+      <item v="backend_default_U0_M0_IF_PaR_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Compilation Log">
+     <v_1>
+      <item v="compilationlog"/>
+      <item v="backend_default_U0_M0_IF_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="backend_default/U0/M0/IF/compilation.log"/>
+     </v_1>
+    </item>
+    <item v_0="Show History of PaRs">
+     <v_1>
+      <item v="historyofpars"/>
+      <item v="backend_default_U0_M0_IF_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="For FPGA U0_M0_IF"/>
+      <item v=" IF.Original"/>
+     </v_1>
+    </item>
+    <item v_0="Show PaR events">
+     <v_1>
+      <item v="eventsofpars"/>
+      <item v="backend_default_U0_M0_IF_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="#   Wed 19 Apr 2023 01:05:48 AM CDT - IF.Original "/>
+      <item v="#   Wed 19 Apr 2023 01:14:00 AM CDT - IF.Original running WRITE_BITSTREAM"/>
+      <item v="#   Wed 19 Apr 2023 01:16:29 AM CDT - IF.Original finished OK"/>
+     </v_1>
+    </item>
+    <item v_0="Show Current Parameter Sets">
+     <v_1>
+      <item v="parametersets"/>
+      <item v="backend_default_U0_M0_IF_PaR_Controller"/>
+      <item v="Controller"/>
+      <item v="Relaunch Id&#x9;Set Label&#x9;Launch Label&#x9; Parameters"/>
+      <item v="L0&#x9;param1&#x9;L0_Triton_CombiPath&#x9; ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L0_Triton_CombiPath' ZEBU_PROCESS_COMBI_PATH='1'"/>
+      <item v="L1&#x9;param1&#x9;L1_Vivado_emulation_mode&#x9; VIVADO_ENABLE_EMULATION_MODE='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L1_Vivado_emulation_mode'"/>
+      <item v="L2&#x9;param1&#x9;L2_Vivado_Performance_ExploreSLLs&#x9; VIVADO_OPT_DESIGN_OL0PTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive SSI_ExtraTimingOpt' VIVADO_ROUTE_DESIGN_OPTIONS='-directive NoTimingRelaxation' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L2_Vivado_Performance_ExploreSLLs'"/>
+      <item v="L3&#x9;param1&#x9;L3_Triton_Remap&#x9; VIVADO_OPT_DESIGN_ENABLE_REMAP='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L3_Triton_Area_Remap'"/>
+      <item v="L4&#x9;param1&#x9;L4_Vivado_Param_LutPinSwapping&#x9; VIVADO_SETPARAM_NAME='place.enableLutPinSwapping' VIVADO_SETPARAM_VALUE='0' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L4_Vivado_Param_LutPinSwapping'"/>
+      <item v="L5&#x9;param1&#x9;L5_Vivado_Remove_muxcy_xorcy_noTriton&#x9; ZEBU_DISABLE_TRITON='1' ZEBU_NO_INSTR_MUXCY_XORCY='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L5_Vivado_Remove_muxcy_xorcy' ZEBU_REMOVE_ALL_MUXCY_XORCY='1'"/>
+      <item v="L6&#x9;param1&#x9;L6_Vivado_Congestion_CompressSLRs&#x9; VIVADO_OPT_DESIGN_OPTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive SSI_HighUtilSLRs' VIVADO_ROUTE_DESIGN_OPTIONS='-directive Default' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L6_Vivado_Congestion_CompressSLRs'"/>
+      <item v="L7&#x9;param1&#x9;L7_Vivado_Congestion_BalanceSLRs&#x9; VIVADO_OPT_DESIGN_OPTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive SSI_BalanceSLRs' VIVADO_ROUTE_DESIGN_OPTIONS='-directive Default' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L7_Vivado_Congestion_BalanceSLRs'"/>
+      <item v="L8&#x9;param1&#x9;L8_Triton_Split_Fanout&#x9; ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L8_Triton_Split_Fanout' ZEBU_SPLIT_FANOUT='1' ZEBU_SPLIT_FANOUT_OPTIONS='-l1 16 -l2 16 -splitInFWMacro '"/>
+      <item v="L9&#x9;param1&#x9;L9_Triton_Delete_Pblock&#x9; ZEBU_DELETE_FXMACRO_PBLOCK='1' ZEBU_LOCK_SOCKET='no' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L9_Triton_Delete_Pblock'"/>
+      <item v="L10&#x9;param1&#x9;L10_Vivado_Performance_WLBlockPlacement&#x9; VIVADO_OPT_DESIGN_OPTIONS='-directive Default' VIVADO_PLACE_DESIGN_OPTIONS='-directive WLDrivenBlockPlacement' VIVADO_ROUTE_DESIGN_OPTIONS='-directive MoreGlobalIterations' ZEBU_DISABLE_TRITON='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L10_Vivado_WLBlockPlacement'"/>
+      <item v="L11&#x9;param1&#x9;L11_Vivado_remove_pblock&#x9; VIVADO_DISABLE_ZCAHSRASH_PBLOCK='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L17_Vivado_remove_pblock'"/>
+      <item v="L12&#x9;param1&#x9;L12_DAP_Triton_GP_SLL_SpreadAll&#x9; VIVADO_TRITON_GP_SLL_UPDATE_YLOC='1' VIVADO_TRITON_GP_SPREAD_SLL='1' VIVADO_TRITON_PARTITION_LUTFF='1' VIVADO_TRITON_PARTITION_UTIL_ADJUST_FIRST_SECOND='1' ZEBU_MDTMX_PARTONLY='1' ZEBU_MDTMX_TOOL='zBlockPartitioning' ZEBU_MDTMX_USE='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L12_DAP_Triton_GP_SLL_SpreadAll'"/>
+      <item v="L13&#x9;param1&#x9;L13_Vivado_resize_pblock_to_SLR1&#x9; VIVADO_PLACE_ZCAHSRASH_PBLOCK_SLR1='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L18_Vivado_resize_pblock_to_SLR1'"/>
+      <item v="L14&#x9;param1&#x9;L14_Vivado_Remove_muxcy_xorcy&#x9; ZEBU_NO_INSTR_MUXCY_XORCY='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L15_Vivado_Remove_muxcy_xorcy' ZEBU_REMOVE_ALL_MUXCY_XORCY='1'"/>
+      <item v="L15&#x9;param1&#x9;L15_zNetgen_noMUXF&#x9; ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L16_Vivado_noMUXF' ZNETGEN_CONVERT_MUXFX_TO_LUTS='1'"/>
+      <item v="L16&#x9;param1&#x9;L16_Vivado_InsertLUT1_LUT56&#x9; VIVADO_ENABLE_INSERT_LUT1_LUT56='1' ZEBU_PARFF_XCUI_FILE_NAME='fpgaparameterset_v7.xcui' ZEBU_PARFF_XCUI_TARGET_NAME='L17_Vivado_InsertLUT1_LUT56'"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_IF_PaR_Controller>
+  <backend_default_U0_M0_IF_zFpgaTiming synthName="" taskName="backend_default_U0_M0_IF_zFpgaTiming" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_U0_M0_IF_zFpgaTiming.log"/>
+      <item v="Create Timing DB (SDF Mode)"/>
+      <item v="backend_default_U0_M0_IF_zFpgaTiming"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_U0_M0_IF_zFpgaTiming"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_U0_M0_IF_zFpgaTiming.why"/>
+      <item v="Create Timing DB (SDF Mode)"/>
+      <item v="backend_default_U0_M0_IF_zFpgaTiming"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_U0_M0_IF_zFpgaTiming>
+  <backend_default_Vcs_Link synthName="" taskName="backend_default_Vcs_Link" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_Vcs_Link.log"/>
+      <item v="Make VCS file links"/>
+      <item v="backend_default_Vcs_Link"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_Vcs_Link"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_Vcs_Link.why"/>
+      <item v="Make VCS file links"/>
+      <item v="backend_default_Vcs_Link"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_Vcs_Link>
+  <backend_default_preparezTimeFpga synthName="" taskName="backend_default_preparezTimeFpga" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_preparezTimeFpga.log"/>
+      <item v="Prepare Timing DB (post FPGA)"/>
+      <item v="backend_default_preparezTimeFpga"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_preparezTimeFpga"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_preparezTimeFpga.why"/>
+      <item v="Prepare Timing DB (post FPGA)"/>
+      <item v="backend_default_preparezTimeFpga"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_preparezTimeFpga>
+  <backend_default_zAuditReport synthName="" taskName="backend_default_zAuditReport" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zAuditReport.log"/>
+      <item v="zAudit Report"/>
+      <item v="backend_default_zAuditReport"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zAuditReport"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zAuditReport.why"/>
+      <item v="zAudit Report"/>
+      <item v="backend_default_zAuditReport"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zAuditReport>
+  <backend_default_zBuildClusteringSaver synthName="" taskName="backend_default_zBuildClusteringSaver" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zBuildClusteringSaver.log"/>
+      <item v="Save Clustering Results"/>
+      <item v="backend_default_zBuildClusteringSaver"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zBuildClusteringSaver"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zBuildClusteringSaver.why"/>
+      <item v="Save Clustering Results"/>
+      <item v="backend_default_zBuildClusteringSaver"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zBuildClusteringSaver>
+  <backend_default_zCoreBuildAnalyzer_Part_0 synthName="" taskName="backend_default_zCoreBuildAnalyzer_Part_0" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zCoreBuildAnalyzer_Part_0.log"/>
+      <item v="Analyze zCore Building Results Part_0"/>
+      <item v="backend_default_zCoreBuildAnalyzer_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zCoreBuildAnalyzer_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zCoreBuildAnalyzer_Part_0.why"/>
+      <item v="Analyze zCore Building Results Part_0"/>
+      <item v="backend_default_zCoreBuildAnalyzer_Part_0"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zCoreBuildAnalyzer_Part_0>
+  <backend_default_zCoreBuild_Part_0 synthName="" taskName="backend_default_zCoreBuild_Part_0" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zCoreBuild_Part_0.log"/>
+      <item v="Build zCore Part_0"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show zCoreBuild Script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/work.Part_0//zCoreBuild_ztb.tcl"/>
+      <item v="Build zCore Part_0"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show zCoreBuild Native Log">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/work.Part_0//zCoreBuild.log"/>
+      <item v="Build zCore Part_0"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show zCoreBuild Report">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/work.Part_0//zCoreBuild_report.log"/>
+      <item v="Build zCore Part_0"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show zCoreBuild HTML Report">
+     <v_1>
+      <item v="html"/>
+      <item v="zcui.work/backend_default/work.Part_0//zCoreBuild_report.html"/>
+      <item v="Build zCore Part_0"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show zCoreBuild AC Report">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/work.Part_0//zCoreBuild_AC_report.log"/>
+      <item v="Build zCore Part_0"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show zCoreBuild AC HTML Report">
+     <v_1>
+      <item v="html"/>
+      <item v="zcui.work/backend_default/work.Part_0//zCoreBuild_AC_report.html"/>
+      <item v="Build zCore Part_0"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Show GLog">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/work.Part_0//tools/zCoreBuild/zCoreBuild_glog.xcui"/>
+      <item v="Build zCore Part_0"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zCoreBuild_Part_0.why"/>
+      <item v="Build zCore Part_0"/>
+      <item v="backend_default_zCoreBuild_Part_0"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zCoreBuild_Part_0>
+  <backend_default_zDB_Global synthName="" taskName="backend_default_zDB_Global" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zDB_Global.log"/>
+      <item v="Create Global DB"/>
+      <item v="backend_default_zDB_Global"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zDB_Global"/>
+     </v_1>
+    </item>
+    <item v_0="Show zDb script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zDB_final_zcui.tcl"/>
+      <item v="Create Global DB"/>
+      <item v="backend_default_zDB_Global"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zDB_Global>
+  <backend_default_zDB_Global_Controller synthName="" taskName="backend_default_zDB_Global_Controller" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zDB_Global_Controller.log"/>
+      <item v="Global DB Controller"/>
+      <item v="backend_default_zDB_Global_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zDB_Global_Controller"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zDB_Global_Controller.why"/>
+      <item v="Global DB Controller"/>
+      <item v="backend_default_zDB_Global_Controller"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zDB_Global_Controller>
+  <backend_default_zDveTool synthName="" taskName="backend_default_zDveTool" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zDveTool.log"/>
+      <item v="Analyze DVE"/>
+      <item v="backend_default_zDveTool"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zDveTool"/>
+     </v_1>
+    </item>
+    <item v_0="Show zDveTools Script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zDveTools.tcl"/>
+      <item v="Analyze DVE"/>
+      <item v="backend_default_zDveTool"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zDveTool.why"/>
+      <item v="Analyze DVE"/>
+      <item v="backend_default_zDveTool"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zDveTool>
+  <backend_default_zEquiGenerator synthName="" taskName="backend_default_zEquiGenerator" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zEquiGenerator.log"/>
+      <item v="Build Equipotentials"/>
+      <item v="backend_default_zEquiGenerator"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zEquiGenerator"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zEquiGenerator.why"/>
+      <item v="Build Equipotentials"/>
+      <item v="backend_default_zEquiGenerator"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zEquiGenerator>
+  <backend_default_zFW_U0_M0_IF synthName="" taskName="backend_default_zFW_U0_M0_IF" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zFW_U0_M0_IF.log"/>
+      <item v="Create RTB Configuration: U0_M0_IF"/>
+      <item v="backend_default_zFW_U0_M0_IF"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zFW_U0_M0_IF"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zFW_U0_M0_IF.why"/>
+      <item v="Create RTB Configuration: U0_M0_IF"/>
+      <item v="backend_default_zFW_U0_M0_IF"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zFW_U0_M0_IF>
+  <backend_default_zGraphGenerator synthName="" taskName="backend_default_zGraphGenerator" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zGraphGenerator.log"/>
+      <item v="Build Accessibility Graphs"/>
+      <item v="backend_default_zGraphGenerator"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zGraphGenerator"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zGraphGenerator.why"/>
+      <item v="Build Accessibility Graphs"/>
+      <item v="backend_default_zGraphGenerator"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zGraphGenerator>
+  <backend_default_zPar synthName="" taskName="backend_default_zPar" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zPar.log"/>
+      <item v="Place and Route System"/>
+      <item v="backend_default_zPar"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zPar"/>
+     </v_1>
+    </item>
+    <item v_0="Show zPar script from zCui">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zPar_zCui.tcl"/>
+      <item v="Place and Route System"/>
+      <item v="backend_default_zPar"/>
+     </v_1>
+    </item>
+    <item v_0="Show zPar Clock Tree">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zPar_clk.log"/>
+      <item v="Place and Route System"/>
+      <item v="backend_default_zPar"/>
+     </v_1>
+    </item>
+    <item v_0="Show GLog">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/tools/zPar/zPar_glog.xcui"/>
+      <item v="Place and Route System"/>
+      <item v="backend_default_zPar"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zPar.why"/>
+      <item v="Place and Route System"/>
+      <item v="backend_default_zPar"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zPar>
+  <backend_default_zRtlToEqui synthName="" taskName="backend_default_zRtlToEqui" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zRtlToEqui.log"/>
+      <item v="Convert Netlist"/>
+      <item v="backend_default_zRtlToEqui"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zRtlToEqui"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zRtlToEqui.why"/>
+      <item v="Convert Netlist"/>
+      <item v="backend_default_zRtlToEqui"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zRtlToEqui>
+  <backend_default_zSimuFsdbHeader synthName="" taskName="backend_default_zSimuFsdbHeader" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zSimuFsdbHeader.log"/>
+      <item v="zSimuFsdbHeader"/>
+      <item v="backend_default_zSimuFsdbHeader"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zSimuFsdbHeader"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zSimuFsdbHeader.why"/>
+      <item v="zSimuFsdbHeader"/>
+      <item v="backend_default_zSimuFsdbHeader"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zSimuFsdbHeader>
+  <backend_default_zSimzilla synthName="" taskName="backend_default_zSimzilla" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zSimzilla.log"/>
+      <item v="Simulate Graphs"/>
+      <item v="backend_default_zSimzilla"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zSimzilla"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zSimzilla.why"/>
+      <item v="Simulate Graphs"/>
+      <item v="backend_default_zSimzilla"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zSimzilla>
+  <backend_default_zTime synthName="" taskName="backend_default_zTime" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zTime.log"/>
+      <item v="Create Timing DB"/>
+      <item v="backend_default_zTime"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zTime"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTime abstract Report">
+     <v_1>
+      <item v="html"/>
+      <item v="zcui.work/backend_default/zTime.html"/>
+      <item v="Create Timing DB"/>
+      <item v="backend_default_zTime"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTime critical data paths Report">
+     <v_1>
+      <item v="html"/>
+      <item v="zcui.work/backend_default/ztime_out_paths_abs.html"/>
+      <item v="Create Timing DB"/>
+      <item v="backend_default_zTime"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTime critical paths with filters Report">
+     <v_1>
+      <item v="html"/>
+      <item v="zcui.work/backend_default/ztime_filter_out_paths_abs.html"/>
+      <item v="Create Timing DB"/>
+      <item v="backend_default_zTime"/>
+     </v_1>
+    </item>
+    <item v_0="Show ztime script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zTime_zcui.tcl"/>
+      <item v="Create Timing DB"/>
+      <item v="backend_default_zTime"/>
+     </v_1>
+    </item>
+    <item v_0="Show GLog">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/tools/zTime/zTime_glog.xcui"/>
+      <item v="Create Timing DB"/>
+      <item v="backend_default_zTime"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zTime.why"/>
+      <item v="Create Timing DB"/>
+      <item v="backend_default_zTime"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zTime>
+  <backend_default_zTimeFpga synthName="" taskName="backend_default_zTimeFpga" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zTimeFpga.log"/>
+      <item v="Create Timing DB (post FPGA)"/>
+      <item v="backend_default_zTimeFpga"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zTimeFpga"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTime abstract Report (Post FPGA)">
+     <v_1>
+      <item v="html"/>
+      <item v="zcui.work/backend_default/zTime_fpga.html"/>
+      <item v="Create Timing DB (post FPGA)"/>
+      <item v="backend_default_zTimeFpga"/>
+     </v_1>
+    </item>
+    <item v_0="Show ztime (Post FPGA) native log">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zTime_fpga.log"/>
+      <item v="Create Timing DB (post FPGA)"/>
+      <item v="backend_default_zTimeFpga"/>
+     </v_1>
+    </item>
+    <item v_0="Show ztime (Post FPGA) script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zTime_fpga_zcui.tcl"/>
+      <item v="Create Timing DB (post FPGA)"/>
+      <item v="backend_default_zTimeFpga"/>
+     </v_1>
+    </item>
+    <item v_0="Show GLog (Post FPGA)">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/tools/zTime/zTime_fpga_glog.xcui"/>
+      <item v="Create Timing DB (post FPGA)"/>
+      <item v="backend_default_zTimeFpga"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zTimeFpga.why"/>
+      <item v="Create Timing DB (post FPGA)"/>
+      <item v="backend_default_zTimeFpga"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zTimeFpga>
+  <backend_default_zTopBuild synthName="" taskName="backend_default_zTopBuild" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zTopBuild.log"/>
+      <item v="Build System"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTopBuild Script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zTopBuild.tcl"/>
+      <item v="Build System"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTopBuild Native Log">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zTopBuild.log"/>
+      <item v="Build System"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTopBuild Report">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zTopBuild_report.log"/>
+      <item v="Build System"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTopBuild HTML Report">
+     <v_1>
+      <item v="html"/>
+      <item v="zcui.work/backend_default/zTopBuild_report.html"/>
+      <item v="Build System"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTopBuild AC Report">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/zTopBuild_AC_report.log"/>
+      <item v="Build System"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+    <item v_0="Show zTopBuild AC HTML Report">
+     <v_1>
+      <item v="html"/>
+      <item v="zcui.work/backend_default/zTopBuild_AC_report.html"/>
+      <item v="Build System"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+    <item v_0="Show GLog">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/backend_default/tools/zTopBuild/zTopBuild_glog.xcui"/>
+      <item v="Build System"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zTopBuild.why"/>
+      <item v="Build System"/>
+      <item v="backend_default_zTopBuild"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zTopBuild>
+  <backend_default_zTopBuildResultAnalyzer synthName="" taskName="backend_default_zTopBuildResultAnalyzer" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/backend_default_zTopBuildResultAnalyzer.log"/>
+      <item v="Analyze System Building Results"/>
+      <item v="backend_default_zTopBuildResultAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="backend_default_zTopBuildResultAnalyzer"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/backend_default_zTopBuildResultAnalyzer.why"/>
+      <item v="Analyze System Building Results"/>
+      <item v="backend_default_zTopBuildResultAnalyzer"/>
+     </v_1>
+    </item>
+   </actionList>
+  </backend_default_zTopBuildResultAnalyzer>
+  <design_Default_RTL_GroupBundle_0_Synthesis synthName="top" taskName="design_Default_RTL_GroupBundle_0_Synthesis" className="SendActionMessage">
+   <actionList>
+    <item v_0="Tell why">
+     <v_1>
+      <item v="whystringlist"/>
+      <item v="design_Default_RTL_GroupBundle_0_Synthesis"/>
+      <item v="top"/>
+      <item v=" KO input design/synth_Default_RTL_Group/script/top.tcl out of date (non equal checksum)"/>
+      <item v=" KO input design/synth_Default_RTL_Group/../zfepp_Default_RTL_Group.tcl out of date (non equal checksum)"/>
+      <item v=" KO input /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/new_global_utf_config.hcsrc out of date (non equal checksum)"/>
+      <item v=" KO input /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/utf_generatefiles/global_utf.hcsrc out of date (non equal checksum)"/>
+      <item v=" KO input design/synth_Default_RTL_Group/src/top.scm out of date (non equal checksum)"/>
+      <item v=" KO output design/synth_Default_RTL_Group/edif/top/top.edf.gz does not exist"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log top">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/design/synth_Default_RTL_Group/synthesis_log_dir/top.log"/>
+      <item v="top"/>
+      <item v="log"/>
+     </v_1>
+    </item>
+   </actionList>
+  </design_Default_RTL_GroupBundle_0_Synthesis>
+  <design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer synthName="" taskName="design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer" className="SendActionMessage">
+   <actionList/>
+  </design_Default_RTL_GroupBundle_0_Synthesis_Bundle_0_analyzer>
+  <design_Default_RTL_Group_Memory_ram_zMem synthName="" taskName="design_Default_RTL_Group_Memory_ram_zMem" className="SendActionMessage">
+   <actionList>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/design_Default_RTL_Group_Memory_ram_zMem.why"/>
+      <item v="Memory ram_zMem"/>
+      <item v="design_Default_RTL_Group_Memory_ram_zMem"/>
+     </v_1>
+    </item>
+   </actionList>
+  </design_Default_RTL_Group_Memory_ram_zMem>
+  <design_Default_RTL_Group_Memory_rom_zMem synthName="" taskName="design_Default_RTL_Group_Memory_rom_zMem" className="SendActionMessage">
+   <actionList>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/design_Default_RTL_Group_Memory_rom_zMem.why"/>
+      <item v="Memory rom_zMem"/>
+      <item v="design_Default_RTL_Group_Memory_rom_zMem"/>
+     </v_1>
+    </item>
+   </actionList>
+  </design_Default_RTL_Group_Memory_rom_zMem>
+  <design_Fs_Macro synthName="" taskName="design_Fs_Macro" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/design_Fs_Macro.log"/>
+      <item v="Build Fs Macro Library"/>
+      <item v="design_Fs_Macro"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="design_Fs_Macro"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/design_Fs_Macro.why"/>
+      <item v="Build Fs Macro Library"/>
+      <item v="design_Fs_Macro"/>
+     </v_1>
+    </item>
+   </actionList>
+  </design_Fs_Macro>
+  <design_Fs_Macro_Script_Builder synthName="" taskName="design_Fs_Macro_Script_Builder" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/design_Fs_Macro_Script_Builder.log"/>
+      <item v="Build Fs Macro Script"/>
+      <item v="design_Fs_Macro_Script_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="design_Fs_Macro_Script_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Fs Macro script">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="zcui.work/design/fs_macros.tcl"/>
+      <item v="Build Fs Macro Script"/>
+      <item v="design_Fs_Macro_Script_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Dependencies">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/design_Fs_Macro_Script_Builder.why"/>
+      <item v="Build Fs Macro Script"/>
+      <item v="design_Fs_Macro_Script_Builder"/>
+     </v_1>
+    </item>
+   </actionList>
+  </design_Fs_Macro_Script_Builder>
+  <vcs_splitter_VCS_Task_Builder synthName="" taskName="vcs_splitter_VCS_Task_Builder" className="SendActionMessage">
+   <actionList>
+    <item v_0="Show Log in Place">
+     <v_1>
+      <item v="plaintext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/log/vcs_splitter_VCS_Task_Builder.log"/>
+      <item v="Launch VCS"/>
+      <item v="vcs_splitter_VCS_Task_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Show Log in Window">
+     <v_1>
+      <item v="showlog"/>
+      <item v="vcs_splitter_VCS_Task_Builder"/>
+     </v_1>
+    </item>
+    <item v_0="Tell Why">
+     <v_1>
+      <item v="whytext"/>
+      <item v="/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/zCui/why/vcs_splitter_VCS_Task_Builder.why"/>
+      <item v="Launch VCS"/>
+      <item v="vcs_splitter_VCS_Task_Builder"/>
+     </v_1>
+    </item>
+   </actionList>
+  </vcs_splitter_VCS_Task_Builder>
+ </actions>
+</compilation>

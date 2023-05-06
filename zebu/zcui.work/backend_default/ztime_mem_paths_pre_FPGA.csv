@@ -1,0 +1,2 @@
+Memory Names List < Nb ports >, Slack, Multi cycle path ratio, Delay, Latency, Nb paths, FPGA, Clock Domain src, Clock Domain tgt
+top.u_stb.u_rom.mem-r0do <1>,0ns,2,120ns,120ns,1,2,top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge),top.u_dut.u_fifo.u0_clkg.clkout (posedge)

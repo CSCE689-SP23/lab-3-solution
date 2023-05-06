@@ -1,0 +1,4 @@
+dut
+u_parity -> u_parity -> parity
+u_fifo -> u_fifo -> fifo_0000
+u_check -> u_check -> parity_check

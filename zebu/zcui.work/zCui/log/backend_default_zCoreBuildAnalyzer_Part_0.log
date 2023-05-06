@@ -1,0 +1,9 @@
+Xcui file backend_default/work.Part_0//zCoreBuild.xcui is read
+zPar target found
+  Number Of Dependencies zCoreBuild -> zPar : 4
+zTime target found
+  Number Of Dependencies zCoreBuild -> zTime : 3
+zTime_fpga target found
+  Number Of Dependencies zCoreBuild -> zTime_fpga : 3
+zDB_final target found
+  Number Of Dependencies zCoreBuild -> zDB Global : 1

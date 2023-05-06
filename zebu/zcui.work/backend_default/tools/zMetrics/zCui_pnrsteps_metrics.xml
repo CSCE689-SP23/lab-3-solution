@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics>
+<Table id="pnr_steps" name="">
+	<Header>
+		<FPGA>
+			<Title>FPGA</Title>
+		</FPGA>
+		<WRITE_BITSTREAM>
+			<Title>WRITE_BITSTREAM</Title>
+		</WRITE_BITSTREAM>
+		<total>
+			<Title>Total</Title>
+		</total>
+	</Header>
+	<Row>
+		<FPGA>FPGA</FPGA>
+		<WRITE_BITSTREAM>FPGA</WRITE_BITSTREAM>
+		<total>total</total>
+	</Row>
+	<Row>
+		<FPGA>U0_M0_F00/U0_M0_F0</FPGA>
+		<WRITE_BITSTREAM>189</WRITE_BITSTREAM>
+		<total>189</total>
+	</Row>
+	<Row>
+		<FPGA>U0_M0_F08/Route U0_M0_F08</FPGA>
+		<WRITE_BITSTREAM>157</WRITE_BITSTREAM>
+		<total>157</total>
+	</Row>
+	<Row>
+		<FPGA>U0_M0_IF/U0_M0_IF</FPGA>
+		<WRITE_BITSTREAM>149</WRITE_BITSTREAM>
+		<total>149</total>
+	</Row>
+</Table>
+</Metrics>

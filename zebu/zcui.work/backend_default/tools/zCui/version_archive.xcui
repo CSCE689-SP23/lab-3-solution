@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="BackendEntry">
+    <targets>
+        <target type="file" value="version" dereference="true">
+            <menu>RunTime</menu>
+        </target>
+        <target type="file" value="ZeBuWorkInfo.xml">
+            <menu>RunTime</menu>
+        </target>
+    </targets>
+</ZeBuUiDoc>

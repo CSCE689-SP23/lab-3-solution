@@ -1,0 +1,665 @@
+
+                                    ZeBu (R)
+                                   zCoreBuild
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zCoreBuild zCoreBuild_ztb.tcl 
+
+# start time is Wed Apr 19 01:04:59 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:58:46
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.27 0.08 0.06 4/522 36410
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185112 MB
+#            Total Free including cache: 189830 MB
+#            Swap cache: 0 MB Cached space: 4718 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 380 MB VmPeak: 380 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255920
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+### warning in zCoreBuild [ZBD0218W] : can't set stack to unlimited, zCoreBuild may randomly crash.
+Core name is Part_0 and can be used through tcl variable ZEBU_CORE_NAME.
+Defining input edif files.
+Defining netlist top.
+Loading zPar_target_conf.tcl for design top
+# Configuration used is:
+#   created by       : davidkebo
+#   based on release : /opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   platform type    : zse
+
+
+Defining allowed fpgas for this instance of zCoreBuild.
+Other commands for zCoreBuild.
+### warning in USAGE_CHANGE_NOTICE [ZBD0328W] : max_deph will become hidden (under expert mode '!') in next release.
+### warning in USAGE_CHANGE_NOTICE [ZBD0329W] : max_node will become hidden (under expert mode '!') in next release.
+### warning in USAGE_CHANGE_NOTICE [ZBD0334W] : delete_stuck_at_z will become hidden (under expert mode '!') in next release.
+#   step ZNF PARSER : reading netlist from ZNF file '../ztb_tg_remapped.edf.gz'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/edifs/zse_xc7v_8c_2000_v1.edf.gz'
+#   step zCoreBuild :      #################################################################
+#   step zCoreBuild :      # I. Loading input files.                                       #
+#   step zCoreBuild :      #################################################################
+Target new zebu
+Target set zebu.netlist "../ztb_tg_remapped.edf.gz"
+# Target set zebu.thirdparty_hw_config <UNDEF>
+Target set zebu.top "zse_sbp_5s"
+Target set zebu.product zse
+Target set zebu.module 0  U0.M0 zse_xc7v_8c_2000_v1 { 58A2} 
+# Target set zebu.hub <UNDEF>
+# Target set zebu.qsfp_cable <UNDEF>
+# Target set zebu.clockhub_fx <UNDEF>
+# Target set zebu.version <UNDEF>
+Target set zebu.mbname "zse_sbp_5s"
+Target set zebu.id "5S"
+Target set zebu.zparfwlib "zse_hw_zPar.edf.gz"
+# Target set zebu.zpargtlib <UNDEF>
+# Target set zebu.zpardiblib <UNDEF>
+Target set zebu.zrmfwlib "zse_hw_zrm.edf.gz"
+Target set zebu.zfwfwlib "zse_hw_zFW.edf.gz"
+# Target set zebu.clocklib <UNDEF>
+# Target set zebu.xtorfwlib <UNDEF>
+# Target set zebu.zicefwlib <UNDEF>
+# Target set zebu.rbipfwlib <UNDEF>
+# Target set zebu.smartzicefwlib <UNDEF>
+# Target set zebu.sabrefwlib <UNDEF>
+# Target set zebu.lancefwlib <UNDEF>
+# Target set zebu.rtb <UNDEF>
+# Target set zebu.rtbconfig <UNDEF>
+Target set zebu.frequency 450
+# Target set zebu.frequency2 <UNDEF>
+# Target set zebu.dibfrequency <UNDEF>
+# Target set zebu.dibtdm <UNDEF>
+# Target set zebu.sysclock <UNDEF>
+# Target set zebu.max_delay <UNDEF>
+Target set zebu.trace "on"
+# Target set zebu.cable <UNDEF>
+# Target set zebu.uipfwlib <UNDEF>
+# Target set zebu.cxp_cable <UNDEF>
+# Target set zebu.mtp_lane <UNDEF>
+# Target set zebu.aura_cable_file <UNDEF>
+# Target set zebu.system_resource_file <UNDEF>
+#   step AC : FWCs: using gen2 model
+#   step FWC : Configuring for Virtex 7, fast waveform capture gen2
+#   step QIWC : IP_LIMIT_CONFIG (FR = 100%, VFAMILY = 7, VMEMBER = 2000)
+#   step QIWC : Configuring for Virtex 7
+#   step QIWC_FF_PI : QIWC_FF_PI_IP_LIMIT_CONFIG (Full frame FR = 100%  PI FR=100%, VFAMILY = 8, VMEMBER = 0max ff bit 1310720 max pi bit 262144)
+#   step AC_TGT : Architecture type is set as zse
+#   step AC : FWCS LIMIT: 992 fwc_ip(s)/fpga, 384 bit(s) per fwc_ip
+#   step AC : QIWC LIMIT: 524288 qiwc bits/fpga
+#   step loading_files : Starting
+#   step DVE LOADER : reading dve file '../../vcs_splitter/vcs.dve'
+#   step Loading edif source files. : Starting
+#   step ZNF PARSER : reading netlist from ZNF file '../tools/zTopBuild/global_ztb_top.edf.gz'
+#   step zCoreBuild : Set top 'top'
+#   step Loading edif source files. : Done in     elapsed:0.3 s    user:0.2 s    system:0.1 s      %cpu:89.55       load:0.27       fm:185513 m      vm:502 m       vm:+8 m      um:200 m       um:+9 m
+#   step NPH_GATE_LOCALIZER : Post-merge localize gate didn't find any additional path to process.
+#   step loading_files : Done in     elapsed:0.5 s    user:0.2 s    system:0.1 s      %cpu:72.73       load:0.27       fm:185513 m      vm:502 m       vm:+8 m      um:200 m       um:+9 m
+#   step zCoreBuild :      #################################################################
+#   step zCoreBuild :      # II. PRE-UNIQUIFY FLOW.                                        #
+#   step zCoreBuild :      #################################################################
+#   step zCoreBuild : Checking input netlist zCoreBuild_netlist.
+#   step zCoreBuild : Detected 0 zrm module(s).
+#   step COLLECT MAPPINGS : 
+
+#   step PRE-CLUSTERING STAT : Starting
+#   step PRE-CLUSTERING STAT : *******************************************
+#   step PRE-CLUSTERING STAT : start
+#   step DESIGN_STAT : Using LUT weighting: LUT1(0) 
+#   step DES_STAT : Instances affected user define cost (NPL cost) in .//zCoreBuild_report.log, 2.12.2.
+#   step PRE-CLUSTERING STAT :       64	module(s).
+#   step PRE-CLUSTERING STAT :       14	blackbox module(s).
+#   step PRE-CLUSTERING STAT :        0	external memory module(s)
+#   step PRE-CLUSTERING STAT :        0	Asynchronous ZMEM module(s)
+#   step PRE-CLUSTERING STAT :        2	Synchronous ZMEM module(s)
+#   step PRE-CLUSTERING STAT :        1	fast waveform capture ip module(s)
+#   step PRE-CLUSTERING STAT :        0	qiwc ip module(s)
+#   step PRE-CLUSTERING STAT :        0	zc_trace module(s)
+#   step PRE-CLUSTERING STAT :        0	zforce module(s)
+#   step PRE-CLUSTERING STAT :        0	static_force module(s)
+#   step PRE-CLUSTERING STAT :        0	tzview module(s)
+#   step PRE-CLUSTERING STAT :        0	disconnected module port(s)   , [in=0 out=0 inout=0].
+#   step PRE-CLUSTERING STAT :        0	disconnected instance port(s) , [in=0 out=0 inout=0].
+#   step PRE-CLUSTERING STAT :        0	disconnected wire(s).
+#   step PRE-CLUSTERING STAT :        0	loadless wire(s).
+#   step PRE-CLUSTERING STAT :        0	sourceless wire(s).
+#   step PRE-CLUSTERING STAT : *******************************************
+#   step PRE-CLUSTERING STAT : Done in    elapsed:0.18 s    user:0.3 s    system:0.3 s      %cpu:33.80       load:0.27       fm:185483 m      vm:623 m     vm:+121 m      um:225 m      um:+25 m
+#   step Technology mapping pre-elaborate : Starting
+#   step NETLIST CLUSTERING : Technology mapping pre-elaborate.
+#   step Technology mapping pre-elaborate : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185483 m      vm:623 m       vm:+0 m      um:225 m       um:+0 m
+#   step Process DPIs, SVAs and Waveform Captures : Starting
+#   step DPI : 3 bits will be captured with fast waveform for DPI processing.
+#   step FWC : 135 bits will be captured with fast waveform.
+#   step Process DPIs, SVAs and Waveform Captures : Done in       elapsed:0 s      user:0 s    system:0.1 s     %cpu:250.00       load:0.27       fm:185483 m      vm:623 m       vm:+0 m      um:225 m       um:+0 m
+#   step UNIQUIFY : Starting
+#   step UNIQUIFY : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185483 m      vm:623 m       vm:+0 m      um:225 m       um:+0 m
+#   step FAST_WAVEFORM_CAPTURES : Inserted 0 static probes, 0 dynamic probes and 136 fast waveform captures 0 monitors.
+#   step ZDPI REDUCTION : We get maximum of 0 flops reduction using ZDPI capacity mode.
+#   step clustering : Starting
+#   step Pre-split processing : Starting
+#   step zCoreBuild : Incremental status Pre-split processing : OK
+#   step zCoreBuild :      #################################################################
+#   step zCoreBuild :      # III. PRE-SPLIT FLOW.                                          #
+#   step zCoreBuild :      #################################################################
+### warning in AC [CLU0081W] : Multiple occurence of the same command, using  cluster set max_fill_bram=50
+#   step AC : Maximum allowed number of fast waveform capture bits per FPGA: 68567
+#   step AC : Fill rate of the fast waveform capture bits on one FPGA: 18
+#   step AC : Maximum allowed number of fast waveform IPs per FPGA: 793
+#   step AC : Fill rate of the fast waveform IP on one FPGA: 80
+#   step AC : Found 9 FPGA(s) available for auto clustering.
+#   step STAT : MODE=virtex7
+#   step AC : Chosen part reference for resource evaluation is VIRTEX7 7vlx2000tff1925 .
+#   step AC : System size : 9 FPGA
+#   step AC : 
+# +----------------+------+------+------+------+------+-----+-----+------+
+# |                |   REG|   LUT|RAMLUT|  LUT6| MUXCY| BRAM|  DSP|  QIWC|
+# +----------------+------+------+------+------+------+-----+-----+------+
+# |VIRTEX7 (FPGA)  |2,443K|1,222K|  345K|1,222K|1,222K|1,290|2,160|  524K|
+# |VIRTEX7 (System)|   22M|   11M|3,103K|   11M|   11M|  12K|  19K|4,719K|
+# +----------------+------+------+------+------+------+-----+-----+------+
+#   step AC : 
+# +
+#   step zCoreBuild : 'zsva_assertion_control_task_feature' feature not found.
+#   step zCoreBuild : 'zsfinish_feature' feature not found.
+#   step zCoreBuild : 'zreadmem_drm_task_feature' feature not found.
+#   step zCoreBuild : 'zsfopen_feature' feature not found.
+#   step Technology mapping post-elaborate : Starting
+#   step NETLIST CLUSTERING : Technology mapping post-elaborate.
+#   step Technology mapping post-elaborate : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185483 m      vm:624 m       vm:+0 m      um:226 m       um:+0 m
+#   step Annotation DB : Opening file 'zCoreBuild_equi.inf' for writing
+#   step CONSTANT PROPAGATION : Starting
+#   step Constant propagation : Starting
+#   step LO : 
+#   step Constant propagation : Done in     elapsed:0.1 s    user:0.5 s    system:0.2 s     %cpu:823.53       load:0.27       fm:185474 m      vm:654 m      vm:+30 m      um:237 m      um:+11 m
+#   step CONSTANT PROPAGATION : Done in     elapsed:0.1 s    user:0.5 s    system:0.2 s     %cpu:682.93       load:0.27       fm:185474 m      vm:654 m      vm:+30 m      um:237 m      um:+11 m
+#   step BUFFER/INV : factorizing
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185474 m      vm:654 m       vm:+0 m      um:237 m       um:+0 m
+#   step BUFFER/INV : 8 items factorized
+#   step BUFFER/INV : end
+#   step Remove unused logic : Starting
+#   step LO : 
+#   step Remove unused logic : Done in     elapsed:0.1 s    user:0.7 s      system:0 s    %cpu:1000.00       load:0.27       fm:185474 m      vm:655 m       vm:+1 m      um:237 m       um:+0 m
+#   step Annotation DB : Closing file 'zCoreBuild_equi.inf'
+#   step LOOPS : '0' modules with the logic to save and restore the state of the loops deleted.
+#   step POWER MANIPULATION : Starting
+#   step POWER MANIPULATION : end
+#   step COVERAGE MANIPULATION : Starting
+#   step COVERAGE MANIPULATION : end
+#   step NETLIST CLUSTERING : Tristates manipulation.
+#   step TRISTATE MANIPULATION : begin
+#   step TRISTATE MANIPULATION : end
+#   step CLOCK PROCESSING : Changing polarity of synchronous elements by absorbing inverters.
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185450 m      vm:679 m       vm:+0 m      um:263 m       um:+0 m
+#   step Filter Glitches Synchronous : Starting
+#   step FILTER GLITCHES SYNCHRONOUS : adding filters in the design.
+#   step FILTER GLITCHES SYNCHRONOUS : 3 filters added for clocks.
+#   step FILTER GLITCHES SYNCHRONOUS : 1 filters added for asynchronous set/reset.
+#   step FITLER GLITCHES SYNCHRONOUS : factorizing edge detectors in the design.
+#   step FILTER GLITCHES SYNCHRONOUS : 0 edge detectors found, 0 removed.
+#   step Filter Glitches Synchronous : Done in       elapsed:0 s    user:0.1 s    system:0.1 s     %cpu:666.67       load:0.33       fm:185453 m      vm:679 m       vm:+0 m      um:263 m       um:+0 m
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185453 m      vm:679 m       vm:+0 m      um:263 m       um:+0 m
+#   step Remove unused logic : Starting
+#   step LO : 
+#   step Remove unused logic : Done in     elapsed:0.1 s    user:0.5 s    system:0.5 s     %cpu:888.89       load:0.33       fm:185427 m      vm:706 m       vm:+0 m      um:290 m       um:+0 m
+#   step FALSE_PATH_ATTR : Added ZEBU_FALSE_PATH attribute to 86 ports
+#   step PARTITIONING : COSTING_OPTIONS:  zdelay_dynamic user_dynamic fwc_ip_dynamic qiwc_nb_bits read_port_bits write_port_bits static_force zview_bits zcei
+#   step PARTITIONING : Drive target configuration for partitioning process
+#   step ZBTF GENERATOR : writing target into ZBTF file 'tools/zCorePartitioning/netlist.zbtf'
+#   step Resource remapping : 
+# +-------------+----------------------+
+# |Resource Name|Remapped resource name|
+# +-------------+----------------------+
+# | STATIC FORCE|                ZFORCE|
+# +-------------+----------------------+
+# | WAP_CRIT_SIG|       WRITE_PORT_BITS|
+# +-------------+----------------------+
+#   step Target capacity : 
+# +-------------------+-----------------------+----------+-----------+
+# |      Resource Name|Fill Rate (without ovf)|       Raw|Raw with FR|
+# +-------------------+-----------------------+----------+-----------+
+# |         FWC_IP_NUM|                     80|       992|        793|
+# |        FWC_IP_BITS|                     18|    380928|      68567|
+# |       QIWC_IP_BITS|                     40|    524288|     209715|
+# |      READ_PORT_IPS|                    100|       256|        256|
+# |     READ_PORT_BITS|                    100|      8192|       8192|
+# |     WRITE_PORT_IPS|                    100|       256|        256|
+# |    WRITE_PORT_BITS|                    100|      8192|       8192|
+# |       ZC_TRACE_BIT|                    100|     65536|      65536|
+# | ZCEI_MESSAGE_INPUT|                     95|       512|        486|
+# |ZCEI_MESSAGE_OUTPUT|                     95|       512|        486|
+# |       FW_RESOURCES|                    100|4294967295| 4294967295|
+# |            ZPRD_BB|                    100|      8000|       8000|
+# |             ZFORCE|                    100|      8000|       8000|
+# |              ZVIEW|                    100|    100000|     100000|
+# +-------------------+-----------------------+----------+-----------+
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : |                          | REG     | LUT     | RAMLUT  | RAM     | DSP     | URAM    |
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : | User max filling rates   |  22     |  50     |  40     |  50     |  50     |  80     |
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : | User overflow rates      |   5     |   5     |  10     |   5     |   0     |   0     |
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+---------+
+#   step PARTITIONING : | Target rates              |  27 (*) |  55 (*) |  50     |  55     |  50     |  80     |
+#   step PARTITIONING : +--------------------------+---------+---------+---------+---------+---------+
+#   step PARTITIONING :  
+#   step PARTITIONING :  (*) : Target rate is equal to User max + User overflow 
+#   step PARTITIONING :  
+### warning in zCoreBuild [KBD2077W] : zCorePartitioning: Terminal FPGA cannot be identified
+#   step PARTITIONING : Set lut weighting LUT1 = 0.0
+#   step ZCOREPARTITIONING : Starting
+#   step PARTITIONING : Logic for fast waveform captures estimate    : REG=     5182     |     LUT=     5140     |     BRAM=        0
+#   step PARTITIONING : zDelay cost estimate                  : REG=      166     |     LUT=        0     |     BRAM=        0
+#   step PARTITIONING : Parsing tools/zCorePartitioning/tools/zCorePartitioning/script.tcl.
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_wb_reg
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zfwc_hs_1
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module ZXLSYS
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_clk
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_di
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_addr
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_we
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_bb_zmem_do
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zfwc_hs_48
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module ZebuClockFilterData
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zfwc_hs_4
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module ZebuClockFilterClock
+### warning in ZBNF GENERATOR [RAS0020W] : ZBNF Resources: No resource information can be found for Module zebu_clockGen
+#   step ZBTF READER : reading ZBTF file 'tools/zCorePartitioning/netlist.zbtf'
+#   step zCorePartitioning : Running zCorePartitioning on 'top'.
+#   step zCoreBuild : Design size : 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|LUT                |LUT6               |RAM                |REG                |DSP                |RAMLUT             |FWC_IP_NUM         |FWC_IP_BITS        |QIWC_IP_BITS       |READ_PORT_IPS      |READ_PORT_BITS     |WRITE_PORT_IPS     |WRITE_PORT_BITS    |ZC_TRACE_BIT       |ZCEI_MESSAGE_INPUT |ZCEI_MESSAGE_OUTPUT|FW_RESOURCES       |ZPRD_BB            |ZFORCE             |ZVIEW              |ZRM_SLOTS          |ZRM_PORTS          |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|5337.00            |29.00              |0.00               |5950.40            |0.00               |72.00              |3.00               |136.00             |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |0.00               |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#   step MODELGEN : Starting
+#   step MODELGEN : Block Selection..
+#   step MODELGEN : Number of blocks 15
+#   step MODELGEN : Creating partitioning graph from Block selection using WB
+#   step HGraphCSR : Dumping out interco file zCoreBuild_AC_interco.txt
+#   step MODELGEN : Done in     elapsed:0.3 s    user:0.1 s      system:0 s      %cpu:34.78       load:0.33       fm:185421 m     vm:1475 m     vm:+768 m      um:297 m       um:+6 m
+#   step doSubPartitionOnBigGroups : Do sub-partitioning on overflow big groups.
+#   step Build Route Table : Starting
+#   step ROUTE_TABLE : Start Computing Route Table ...
+#   step ROUTE_TABLE : Done Computing Route Table
+#   step Build Route Table : Done in     elapsed:0.4 s   user:0.13 s    system:0.2 s     %cpu:333.33       load:0.33       fm:185419 m     vm:1479 m       vm:+4 m      um:300 m       um:+3 m
+#   step RouteCost : Using Max delay mode of kpath
+#   step ZCOREPARTITIONING : Architecture Aware flow enabled. Will optimize XDRs between FPGAs during partitioning
+#   step zCorePartitioning : Legalization for overflow during partitioning enabled 1
+#   step Partitioner : Starting
+#   step PARTITIONING : Single partitions can fit the entire design.
+#   step PARTITIONING : No partitioning required
+#   step PARTITIONING : Design size and Partition Size constraints 
+#   step PARTITIONING : 
+# +--------------+------+------+---+------+----+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+------+------+---------+---------+
+# |              |   LUT|  LUT6|RAM|   REG| DSP|RAMLUT|FWC_IP_NUM|FWC_IP_BITS|QIWC_IP_BITS|READ_PORT_IPS|READ_PORT_BITS|WRITE_PORT_IPS|WRITE_PORT_BITS|ZC_TRACE_BIT|ZCEI_MESSAGE_INPUT|ZCEI_MESSAGE_OUTPUT|FW_RESOURCES|ZPRD_BB|ZFORCE| ZVIEW|ZRM_SLOTS|ZRM_PORTS|
+# +--------------+------+------+---+------+----+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+------+------+---------+---------+
+# |   Design Size|  5338|    29|  0|  5950|   0|    72|         3|        136|           0|            0|             0|             0|              0|           0|                 0|                  0|           0|      0|     0|     0|        0|        0|
+# +--------------+------+------+---+------+----+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+------+------+---------+---------+
+# |U0_M0_F00(max)|671880|342048|709|659664|1080|172400|       843|      68567|      235929|          256|          8192|           256|           8192|       65536|                 0|                  0|  4294967295|      0|  8000|100000|     4096|       16|
+# +--------------+------+------+---+------+----+------+----------+-----------+------------+-------------+--------------+--------------+---------------+------------+------------------+-------------------+------------+-------+------+------+---------+---------+
+#   step PARTITIONING : HyperGraph Information: 
+#   step PARTITIONING :  vertices=15, hedges=33, constraints=22
+#   step PARTITIONING : Options: 
+#   step PARTITIONING :  otype=SOED, ctype=H1, rtype=KPM, dbglvl=0, nruns=5, seed=0, sof(idx_t)=8, sof(wgt_t)=8
+#   step PARTITIONING :  utilfrac=1, cmaxnet=50, rmaxnet=50, npmin=1, npmax= 1
+#   step MCPData : Building from HGraphCSR......
+#   step MCPData : Populating MCP Arc - Invalid/Total = 60/60
+#   step PARTITIONING : Summary for the   1-way partition
+#   step PARTITIONING : ------------------------------------------------
+#   step PARTITIONING :                     Hyperedge Cut:          0.00
+#   step PARTITIONING :                              SOED:          0.00
+#   step PARTITIONING :                             MAXED:             0
+#   step PARTITIONING :                          XDR Cost:          0.00
+#   step PARTITIONING : Partition Sizes & IOs
+
+#   step PARTITIONING : 
+# +-------------------------+-----------+---------+-----------+---------+----------+-----------+--+
+# |FPGA\ Res(Used/Available)|        LUT|     LUT6|        REG|   RAMLUT|FWC_IP_NUM|FWC_IP_BITS|IO|
+# +-------------------------+-----------+---------+-----------+---------+----------+-----------+--+
+# |                U0_M0_F00|5338/671880|29/342048|5950/659664|72/172400|     3/843|  136/68567| 0|
+# +-------------------------+-----------+---------+-----------+---------+----------+-----------+--+
+# |                      SUM|5338/671880|29/342048|5950/659664|72/172400|     3/843|  136/68567| 0|
+# +-------------------------+-----------+---------+-----------+---------+----------+-----------+--+
+#   step PARTITIONING : Inter Partition Cuts (undirected)
+
+#   step zCorePartitioning : 
+# +---------+---------+---------+
+# |From \ To|U0_M0_F00|Interface|
+# +---------+---------+---------+
+# |U0_M0_F00|        0|        0|
+# |Interface|        0|        0|
+# +---------+---------+---------+
+# |  SUM CUT|        0|        0|
+# +---------+---------+---------+
+#   step Partitioner : Done in     elapsed:0.3 s    user:0.1 s    system:0.1 s      %cpu:79.21       load:0.33       fm:185419 m     vm:1479 m       vm:+0 m      um:300 m       um:+0 m
+#   step PARTITIONING : Factorizing defcoremap
+#   step zCoreBuild : Partitioning: Incremental status=KO
+#   step ZCOREPARTITIONING : Done in    elapsed:0.13 s   user:0.18 s    system:0.4 s     %cpu:172.21       load:0.33       fm:185419 m     vm:1479 m     vm:+773 m      um:300 m      um:+10 m
+#   step PARTITIONING : Read partitioning results from file 'zCoreBuild_AC_defmapping.tcl'
+#   step PARTITIONING : Import defmapping file 'zCoreBuild_AC_defmapping.tcl'
+#   step PARTITIONING : fpga partitioning completed
+#   step NETLIST CLUSTERING : Processing memories
+#   step MEMORY TIMING DB : Found 0 ZRM(s) and 2 zMem(s).
+#   step Default Mapping : UNIT0.MOD0.F0  (from DUT-top defmapping)
+#   step NETLIST CLUSTERING : Creating fpga netlists
+#   step TRISTATE : 0 tristate outputs where shielded.
+#   step zCoreBuild : Pre-split zview localizing (can be disabled with 'disable localize_zview')
+#   step LOC_ZVIEW_DEFMAP_CREATE : Starting
+#   step LOC_ZVIEW_DEFMAP_CREATE : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185417 m     vm:1480 m       vm:+0 m      um:302 m       um:+0 m
+#   step LOCALIZE_ZVIEW : 115 zviews on 115 signals. (0 redundant zviews deleted)
+#   step zCoreBuild :      #################################################################
+#   step zCoreBuild :      # IV. NETLIST SPLIT.                                            #
+#   step zCoreBuild :      #################################################################
+#   step SPLITTING : begin
+#   step Data localization : Starting
+#   step LOCALIZE DATA : Localization of tri-state/multidrivers resolution module(s) (SRM) is enabled.
+#   step LOCALIZE DATA : Localization of previously manually localized wire(s) and/or instance(s) in zTopBuild is enabled.
+#   step LOCALIZE DATA : 0 SRM (tri-state/multidriver resolution module) wire(s) found.
+#   step LOCALIZE DATA : 0 manually localized wire(s) from zTopBuild found.
+#   step LOCALIZE DATA : Nothing to localize, stop here.
+#   step Data localization : Done in       elapsed:0 s    user:0.2 s      system:0 s    %cpu:1600.00       load:0.33       fm:185417 m     vm:1482 m       vm:+0 m      um:302 m       um:+0 m
+#   step advanced localize clock : Starting
+#   step ADVANCED LOCALIZE CLOCK : begin
+#   step ADVANCED LOCALIZE CLOCK : Stops at ports with 'ZEBU_RLC_NO_RETRO' attribute.
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185417 m     vm:1483 m       vm:+0 m      um:303 m       um:+0 m
+#   step ADVANCED LOCALIZE CLOCK : Extend clock cone
+### warning in CONE_GRAPH_IOS [CLK0388W] : Failed to parse Core Interface
+#   step XTOR : Cone Instance Size 7
+#   step ADVANCED LOCALIZE CLOCK : Max IO cut is 15000.
+#   step ADVANCED LOCALIZE CLOCK : Max DIB IO cut is 7000.
+#   step ADVANCED LOCALIZE CLOCK : LUT filling rate => 65% (794040/1221600)
+#   step ADVANCED LOCALIZE CLOCK : REG filling rate => 37% (903984/2443200)
+### warning in CONE_GRAPH_IOS [CLK0388W] : Failed to parse Core Interface
+### warning in CONE_GRAPH_IOS [CLK0388W] : Failed to parse Core Interface
+#   step Advanced localize clock process : Starting
+#   step ADVANCED LOCALIZE CLOCK : Only one partition, no clock localization will be performed
+#   step Advanced localize clock process : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185416 m     vm:1484 m       vm:+0 m      um:304 m       um:+0 m
+#   step ADVANCED LOCALIZE CLOCK : LocalizeClockDB (RLC executed with following parameters):
+#   step ADVANCED LOCALIZE CLOCK : 	-strategy:	CLOCK_LOCALIZATION_AUTO
+#   step ADVANCED LOCALIZE CLOCK : 	-io_cut_count:	FANOUT
+#   step ADVANCED LOCALIZE CLOCK : 	-max_io_cut_type:	GLOBAL
+#   step ADVANCED LOCALIZE CLOCK : 	-io_compare:	GLOBAL
+#   step ADVANCED LOCALIZE CLOCK : 	-max_io_cut:	15000
+#   step ADVANCED LOCALIZE CLOCK : 	-max_io_cut_dib:	7000
+#   step ADVANCED LOCALIZE CLOCK : 	-overflow_io_cut:	3000
+#   step ADVANCED LOCALIZE CLOCK : 	-overflow_io_cut_dib:	3000
+#   step ADVANCED LOCALIZE CLOCK : 	-max_reg_overflow:	10
+#   step ADVANCED LOCALIZE CLOCK : 	-max_lut_overflow:	10
+#   step ADVANCED LOCALIZE CLOCK : 	-nb_longest_paths_to_pre_display:	0
+#   step ADVANCED LOCALIZE CLOCK : 	-nb_longest_paths_to_display_during:	0
+#   step ADVANCED LOCALIZE CLOCK : 	-nb_longest_paths_to_post_display:	0
+#   step ADVANCED LOCALIZE CLOCK : 	-stop_at_latch_input:	yes
+#   step ADVANCED LOCALIZE CLOCK : 	-stop_at_async_set_reset:	no
+#   step ADVANCED LOCALIZE CLOCK : 	-stop_at_synchronous_cells:	no
+#   step ADVANCED LOCALIZE CLOCK : 	-stop_at_feedback:	yes
+#   step ADVANCED LOCALIZE CLOCK : 	-stop_at_driverclk_feedback:	yes
+#   step ADVANCED LOCALIZE CLOCK : 	-stop_at_feedback_not_goto_clockbus:	no
+#   step ADVANCED LOCALIZE CLOCK : 	-add_async_logic_as_start_points:	no
+#   step ADVANCED LOCALIZE CLOCK : 	-check_paths_to_preserve:	yes
+#   step ADVANCED LOCALIZE CLOCK : 	-localize_clock_core_output:	no
+#   step ADVANCED LOCALIZE CLOCK : 	-extend_clock_cone:	yes
+#   step ADVANCED LOCALIZE CLOCK : 	-localize_clock_of_composite_dut:	no
+#   step ADVANCED LOCALIZE CLOCK : Found no valid strategy, do nothing.
+#   step ADVANCED_LOCALIZE CLOCK : end
+#   step advanced localize clock : Done in     elapsed:0.2 s    user:0.3 s    system:0.5 s     %cpu:363.64       load:0.33       fm:185416 m     vm:1484 m       vm:+2 m      um:304 m       um:+2 m
+#   step FILTER GLITCHES SYNCHRONOUS : Added 0 (0 for clock, 0 for clear and preset) additionnal filter in order to reduce clock skew.
+#   step CLUSTERING (Clock processing) : done
+#   step Remove unused logic : Starting
+#   step LO : 
+#   step Remove unused logic : Done in       elapsed:0 s    user:0.6 s    system:0.3 s    %cpu:1333.33       load:0.33       fm:185416 m     vm:1484 m       vm:+0 m      um:304 m       um:+0 m
+#   step CLUSTERING : Clock defmapping(s).
+#   step PowerDB_splitProcess : Starting
+#   step PowerDB_splitProcess : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185416 m     vm:1484 m       vm:+0 m      um:304 m       um:+0 m
+#   step CLOCK LOOP : Clock tree runtime loop detection not enabled.
+#   step Pre-split inter-fpga tristate processing. : Starting
+#   step Pre-split inter-fpga tristate processing. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185416 m     vm:1484 m       vm:+0 m      um:304 m       um:+0 m
+#   step Pre-split processing : Done in       elapsed:4 s      user:4 s   system:0.27 s     %cpu:111.09       load:0.33       fm:185416 m     vm:1484 m     vm:+861 m      um:304 m      um:+79 m
+#   step NETLIST CLUSTERING : 1 FPGA(s) detected
+#   step Splitting : Starting
+#   step Split : Starting
+#   step Prepare SplitDB : Starting
+#   step Prepare SplitDB : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185412 m     vm:1488 m       vm:+0 m      um:308 m       um:+0 m
+#   step Split execution : Starting
+#   step Split execution : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185412 m     vm:1488 m       vm:+0 m      um:308 m       um:+0 m
+#   step Post split SplitDB processing : Starting
+#   step Post split SplitDB processing : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185412 m     vm:1488 m       vm:+0 m      um:308 m       um:+0 m
+#   step Split : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185412 m     vm:1488 m       vm:+0 m      um:308 m       um:+0 m
+#   step Constant localization : Starting
+#   step Constant Localization : 0 port (top and cores) has been simplified by a constant
+#   step Constant localization : Done in       elapsed:0 s      user:0 s    system:0.1 s    %cpu:4000.00       load:0.33       fm:185412 m     vm:1488 m       vm:+0 m      um:308 m       um:+0 m
+#   step XFE_DB update : Starting
+#   step XFE_DB update : Done in     elapsed:0.2 s    user:0.1 s      system:0 s      %cpu:74.07       load:0.33       fm:185408 m     vm:1491 m       vm:+3 m      um:312 m       um:+4 m
+#   step Splitting : Done in     elapsed:0.2 s    user:0.2 s    system:0.1 s     %cpu:133.33       load:0.33       fm:185408 m     vm:1491 m       vm:+3 m      um:312 m       um:+4 m
+#   step Post-split processing : Starting
+#   step post_split_interco_split : Starting
+#   step post_split_interco_split : Done in       elapsed:0 s    user:0.1 s      system:0 s     %cpu:250.00       load:0.33       fm:185408 m     vm:1491 m       vm:+0 m      um:312 m       um:+0 m
+#   step POST-SPLIT : Tristate processing.
+#   step ICE connection : Starting
+#   step ICE connection : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185408 m     vm:1491 m       vm:+0 m      um:312 m       um:+0 m
+#   step POST-SPLIT : Tristate processing completed.
+#   step SPLITTING : end
+#   step zCoreBuild : Incremental status Post-split processing : KO
+#   step zCoreBuild :      #################################################################
+#   step zCoreBuild :      # V. POST-SPLIT FLOW.                                           #
+#   step zCoreBuild :      #################################################################
+#   step OPTIMIZE INTER-FPGA LACES : Starting
+#   step OPTIMIZE INTER-FPGA LACES : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185408 m     vm:1491 m       vm:+0 m      um:312 m       um:+0 m
+#   step POST-SPLIT : Clocks processing.
+#   step ZTIME : save file tools/zTime/zCoreBuild_timing.zti
+#   step FAST CLOCK NETS : save file zPar_fastnet.tcl
+#   step LO : 
+#   step LOCAL BUFG : Reserving a total of 0 bufg(s) for user IP(s) in FPGA 'U0_M0_F0'.
+#   step LOCAL BUFG : 3 BUFG(s) used for clocks on FPGA 'UNIT0.MOD0.F0' (limit = 4).
+#   step POST-SPLIT : Clocks processing completed.
+#   step Post-split remap_linked_gates : Starting
+#   step Post-split remap_linked_gates : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185408 m     vm:1491 m       vm:+0 m      um:312 m       um:+0 m
+#   step Pre-split implement zebu blackbox protectors. : Starting
+#   step Pre-split implement zebu blackbox protectors. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185408 m     vm:1491 m       vm:+0 m      um:312 m       um:+0 m
+#   step POST-SPLIT MANIPULATION : Starting
+#   step MONITOR : 0 monitors were implemented..
+### warning in timing_model [KBD2251W] : usage of timing model can't be enable on zse
+#   step timing_model : zCoreTiming flow is turned Off
+#   step TimingOptions : skip_msgport_clockgen_internal_timing_analysis_nodes is enabled
+#   step ASYNC_PATH : Timing options: TRISTATE_PATH ZFILTER_ASYNC_SET_RESET_PATH ZFILTER_FETCH_FEEDBACK 
+#   step ASYNC_PATH : Processing module 'U0_M0_F0'
+#   step ASYNC_PATH : Module 'U0_M0_F0' : Async paths 0 data, 0 clock - max depth traversed 0 data, 0 clock
+#   step ASYNC_PATH : Processing module 'U0_M0_F0' - Switching to memory startpoints
+#   step ASYNC_PATH : Module 'U0_M0_F0' : Factorized sync endpoints : 55 data, 55 clock - time 140545 sec
+#   step ASYNC_PATH : Module 'U0_M0_F0' : Async paths found : 2 data, 0 clock - max depth traversed 0 data, 0 clock - elapsed 0.0038705 sec
+#   step timing analysis pre-manipulation : done in     elapsed:0.1 s    user:0.1 s    system:0.2 s       %cpu:0.00       load:0.33 pid(36365), vmem(1491 m) .
+#   step Post-split manipulation : Starting
+#   step NETLIST MANIPULATION : ...
+#   step POST-SPLIT CLOCK PROCESS : Starting
+#   step POST-SPLIT : Sequential clock processing.
+#   step DELAY INSERTION : Starting zdelay insertion on FPGA 'UNIT0.MOD0.F0'
+#   step DELAY INSERTION : Getting clock domains infos
+#   step DELAY INSERTION : Getting zdelay insertion infos
+#   step DELAY INSERTION : Adding zdelay registers for synchronous data and asynchronous set/reset
+#   step DELAY INSERTION : 370 registers inserted 0 latches spared
+#   step POST-SPLIT CLOCK PROCESS : Done in     elapsed:0.2 s    user:0.2 s    system:0.3 s     %cpu:344.83       load:0.33       fm:185408 m     vm:1491 m       vm:+0 m      um:313 m       um:+0 m
+#   step ZDELAY Clock File : Generating : ./zCoreBuild_zdelay_clock.tcl
+#   step Post-split manipulation : Done in     elapsed:0.2 s    user:0.2 s    system:0.3 s     %cpu:250.00       load:0.33       fm:185408 m     vm:1491 m       vm:+0 m      um:313 m       um:+0 m
+#   step ZMEM_INSTR : Moving special instances out of memory hierachies
+#   step ZMEM_INSTR : Moved 36 instances outside 2 memories within FPGA 'U0_M0_F0'
+#   step ZMEM_INSTR : Reconnecting memory clock domain instrumentation BBs in FPGA 'U0_M0_F0'
+#   step ZMEM_INSTR : Reconnecting memory clock domain instrumentation BBs in FPGA 'U0_M0_F0'
+#   step fill_rate : U0_M0_F0,0.0003876,0.0002235
+#   step ZTIME : EDIF TRANSFER is ON
+#   step ZTIME : save FGS latch to sva data in file tools/zTime/zCoreBuild_timing.zti
+#   step CLOCK_DOMAINS : Retrieve clock domain information on U0_M0_F0.
+#   step ZMEM CK : Processing registers connected to memory output within the same FPGA U0_M0_F0
+#   step ZTIME : Save clock domains file "tools/zTime/zTime_clock_domain.cds".
+#   step ZTIME : save port and clock domain mapping in file tools/zTime/zCoreBuild_timing.zti
+#   step ZTIME : save port and clock domain mapping in file tools/zTime/zCoreBuild_timing.zti
+#   step ZTIME : save fast waveform capture data in file tools/zTime/zCoreBuild_timing.zti
+#   step ZTIME : save file tools/zTime/zCoreBuild_timing.zti
+#   step ZTIME : save instance name for each FPGA ports in file tools/zTime/zCoreBuild_timing.zti
+#   step TRANSLATE_ATTRIBUTES : Translating attributes in FPGA 'U0_M0_F0'
+### warning in TIMING ANALYSIS [KBD2093W] : Using ZFILTER_ASYNC_SET_RESET_PATH on 'timing' command might increase the longest filter path
+### warning in TIMING ANALYSIS [KBD2160W] : Using ZFILTER_FETCH_FEEDBACK on 'timing' command might increase the longest filter path
+#   step SERIALIZE : writing netlist 'timing_paths' into znl file 'tools/zTime/global_time.edf.gz'
+#   step SERIALIZE : #bytes in: 888, #bytes out: 542, compression ratio: 1.638376
+#   step timing analysis post-instrumentation : done in     elapsed:0.7 s    user:0.6 s    system:0.2 s       %cpu:0.00       load:0.33 pid(36365), vmem(1492 m) .
+#   step ZTIME : save file tools/zTime/zCoreBuild_timing.zti
+#   step Partial uniquify : Starting
+#   step Partial uniquify : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.33       fm:185249 m     vm:1650 m       vm:+0 m      um:472 m       um:+0 m
+#   step zCoreBuild : Per-fpga post-split techmapping
+#   step zCoreBuild : Per-fpga post-split techmapping on 'U0_M0_F0'
+#   step POST-SPLIT MANIPULATION : Done in       elapsed:1 s      user:1 s   system:0.16 s     %cpu:114.34       load:0.33       fm:185249 m     vm:1650 m     vm:+159 m      um:472 m     um:+160 m
+#   step POST-SPLIT CHECK_RESOURCES : Starting
+#   step POST-SPLIT CHECK_RESOURCES : Done in     elapsed:0.3 s    user:0.5 s    system:0.2 s     %cpu:350.00       load:0.38       fm:185249 m     vm:1650 m       vm:+0 m      um:472 m       um:+0 m
+#   step Post-split processing : Done in       elapsed:1 s      user:1 s   system:0.27 s     %cpu:130.28       load:0.38       fm:185249 m     vm:1650 m     vm:+159 m      um:472 m     um:+160 m
+#   step zCoreBuild : Incremental status zCoreBuild : KO
+#   step clustering : Done in       elapsed:5 s      user:5 s   system:0.55 s     %cpu:115.29       load:0.38       fm:185249 m     vm:1650 m    vm:+1027 m      um:472 m     um:+247 m
+#   step post_split_interco : Starting
+#   step post_split_interco : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.38       fm:185249 m     vm:1650 m       vm:+0 m      um:472 m       um:+0 m
+#   step zCoreBuild :      #################################################################
+#   step zCoreBuild :      # VI. OUTPUT GENERATION.                                        #
+#   step zCoreBuild :      #################################################################
+#   step dumping : Starting
+### warning in DUMP [ZBD0301W] : Critical Path Optimization is disabled because fetch mode is not enabled
+#   step zPar files : writing './zPar_cmds.tcl'
+#   step SERIALIZE : writing netlist 'top' into znl file './edif/top.edf.gz'
+#   step SERIALIZE : #bytes in: 123, #bytes out: 132, compression ratio: 0.931818
+#   step SERIALIZE : writing netlist 'top' into znl file './edif/U0_M0.edf.gz'
+#   step SERIALIZE : #bytes in: 1589, #bytes out: 839, compression ratio: 1.893921
+#   step zPar files : writing './zPar_core_conf.tcl'
+#   step Multiquify and signature generation : Starting
+#   step parallel multiquify and signature generation: start : 
+#   step parallel multiquify and signature generation: end : 
+#   step Multiquify and signature generation : Done in     elapsed:0.1 s    user:0.1 s      system:0 s      %cpu:90.91       load:0.38       fm:185245 m     vm:1654 m       vm:+0 m      um:476 m       um:+1 m
+#   step SERIALIZE : writing netlist 'UNIT0.MOD0.F0' into znl file './edif/U0_M0_F0.edf.gz'
+#   step SERIALIZE : #bytes in: 110159, #bytes out: 40949, compression ratio: 2.690151
+#   step dumping : Done in    elapsed:0.13 s    user:0.6 s    system:0.3 s      %cpu:68.31       load:0.38       fm:185245 m     vm:1654 m       vm:+4 m      um:476 m       um:+4 m
+#   step zCoreBuild :      #################################################################
+#   step zCoreBuild :      # VII. POST-PROCESSING REPORT.                                  #
+#   step zCoreBuild :      #################################################################
+#   step zCoreBuild : All defmapping path(s) found.
+#   step DEBUG BUG : table empty
+#
+#
+# Generated Netlist, REG statistics :
+#
+#
+# Generated Netlist, REG statistics :
+# +-------------+------------+----------+
+# |FPGA         |         REG|(*)MUXF7,8|
+# +-------------+------------+----------+
+# |UNIT0.MOD0.F0|948 /2443200|         0|
+# +-------------+------------+----------+
+# |SUM          |948 /2443200|        --|
+# +-------------+------------+----------+
+#
+# REG        : REG count in generated netlists / FPGA capacity. 
+# (*)MUXF7,8 : MUXF7 and MUXF8 count in generated netlists. A cost of 1 register is associated to each MUXF7 or MUXF8, 
+#              this additionnal cost is not included in the REG column. 
+#
+#
+# Generated Netlist, LUT statistics :
+#
+#
+# Generated Netlist, LUT statistics :
+# +-------------+------------+----------------------------+-----------------+----------+
+# |FPGA         |         LUT|                   (**)MUXCY|LUT w/o weighting|    RAMLUT|
+# +-------------+------------+----------------------------+-----------------+----------+
+# |UNIT0.MOD0.F0|273 /1221600|2/lut(2)/lut_no_weighting(2)|              273|72 /344800|
+# +-------------+------------+----------------------------+-----------------+----------+
+# |SUM          |273 /1221600|2/lut(2)/lut_no_weighting(2)|              273|72 /344800|
+# +-------------+------------+----------------------------+-----------------+----------+
+#
+# LUT               : LUT count in generated netlists, including RAMLUTs / FPGA capacity. 
+# (**)MUXCY         : MUXCY count in generated netlists. Depending on connectivity, a cost of 1 LUT (modulo lut 
+#                     weighting) is associated to MUXCY, this additionnal cost is not included in the LUT column. 
+# LUT w/o weighting : LUT count in generated netlists if LUT weighting was not applied (include RAMLUTs) / FPGA 
+#                     capacity. 
+# RAMLUT            : RAMLUT count in generated netlists / FPGA capacity. 
+#
+#
+# Generated Netlist, resource mapping summary :
+#
+#
+# Generated Netlist, resource mapping summary :
+# +-------------+------------+----------+------------+----------------------------+----------+-------+----+-------+------------+------+
+# |FPGA         |         REG|(*)MUXF7,8|         LUT|                   (**)MUXCY|    RAMLUT|   BRAM|URAM|    DSP|CONTROLS SET|STATUS|
+# +-------------+------------+----------+------------+----------------------------+----------+-------+----+-------+------------+------+
+# |UNIT0.MOD0.F0|948 /2443200|         0|273 /1221600|2/lut(2)/lut_no_weighting(2)|72 /344800|0 /1290|0 /0|0 /2160|          25|    OK|
+# +-------------+------------+----------+------------+----------------------------+----------+-------+----+-------+------------+------+
+# |SUM          |948 /2443200|        --|273 /1221600|2/lut(2)/lut_no_weighting(2)|72 /344800|0 /1290|0 /0|0 /2160|          25|    --|
+# +-------------+------------+----------+------------+----------------------------+----------+-------+----+-------+------------+------+
+#
+# REG          : REG count in generated netlists / FPGA capacity. 
+# (*)MUXF7,8   : MUXF7 and MUXF8 count in generated netlists. A cost of 1 register is associated to each MUXF7 or MUXF8, 
+#                this additionnal cost is not included in the REG column. 
+# LUT          : LUT count in generated netlists, including RAMLUTs / FPGA capacity. 
+# (**)MUXCY    : MUXCY count in generated netlists. Depending on connectivity, a cost of 1 LUT (modulo lut weighting) is 
+#                associated to MUXCY, this additionnal cost is not included in the LUT column. 
+# RAMLUT       : RAMLUT count in generated netlists / FPGA capacity. 
+# BRAM         : Block RAM count in generated netlists / FPGA capacity. 
+# URAM         : Block URAM count in generated netlists / FPGA capacity. 
+# DSP          : DSP count in generated netlists / FPGA capacity. 
+# CONTROLS SET : Controls set estimation 
+# STATUS       : FPGAs capacity status. 
+#
+#
+# FPGA IO :
+# Statistics on FPGA IOs
+#
+#
+# FPGA IO :
+# Statistics on FPGA IOs
+# +-------------+---+
+# |FPGA         |CUT|
+# +-------------+---+
+# |UNIT0.MOD0.F0|  5|
+# +-------------+---+
+# |SUM          |  5|
+# +-------------+---+
+# CUT : Number of ports at the interface of the FPGA. 
+#
+# Max error FPGA CUT estimate: 0.000000.
+#   step DEBUG BUG : table empty
+#
+#   step zCoreBuild : 
+#   step zCoreBuild : done in       elapsed:7 s      user:6 s   system:0.75 s       %cpu:0.00       load:0.38 pid(36365), vmem(1654 m) 
+#   step zCoreBuild : 
+
+#   exec summary :   26 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : user 0m6.506s, sys 0m0.795s
+#   exec summary : Total memory: 1693832 kB - RSS memory: 487836 kB - Data memory: 1368420 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:05:07 2023
+#   step zCoreBuild : Saving AC report.
+command exit code is '0'

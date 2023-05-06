@@ -1,0 +1,233 @@
+
+                                    ZeBu (R)
+                                   zSimzilla
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zSimzilla --zebu-work . --generate-graphs 
+
+# start time is Wed Apr 19 01:04:59 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:01:26
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.27 0.08 0.06 4/483 36368
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185252 MB
+#            Total Free including cache: 189970 MB
+#            Swap cache: 0 MB Cached space: 4718 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 389 MB VmPeak: 389 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255933
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step SIMZILLA : --threads: using 10 threads (maximum is 40).
+#   step Update options by env : Starting
+#   step Update options by env : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185233 m      vm:453 m       vm:+0 m      um:211 m       um:+0 m
+#   step SMZ : Disable virtual slicing during graph generation
+### warning in SIMZILLA [PRL0001W] : SMZ0079 - Disable '--pgb-enable-distributed-header-generation' in non-PGB flow
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step SMZ : 
+#   step === Load equi netlist : Starting
+#   step SMZ : reading netlist ./tools/zDB/zTopBuild_equi.edf.gz
+#   step ZNF PARSER : reading netlist from ZNF file './tools/zDB/zTopBuild_equi.edf.gz'
+#   step === Load equi netlist : Done in     elapsed:0.3 s    user:0.2 s      system:0 s      %cpu:71.43       load:0.27       fm:185275 m      vm:467 m       vm:+1 m      um:226 m       um:+1 m
+#   step LINK : Starting
+#   step SMZ : linkMacros = 2
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/zSimzilla/edifs/extra_cells.edf.txt'
+#   step SMZ : function addelt has 2 representent(s)
+#   step SMZ : 	 module fs_macros.addelt: 0 up-insts
+#   step SMZ : 	 module fs_macros.nf_addelt: 0 up-insts
+#   step SMZ : function addelt3 has 2 representent(s)
+#   step SMZ : 	 module fs_macros.addelt3: 0 up-insts
+#   step SMZ : 	 module fs_macros.nf_addelt3: 0 up-insts
+#   step SMZ : function addelt3_so has 2 representent(s)
+#   step SMZ : 	 module fs_macros.addelt3_so: 0 up-insts
+#   step SMZ : 	 module fs_macros.nf_addelt3_so: 0 up-insts
+#   step SMZ : function addelt_co has 2 representent(s)
+#   step SMZ : 	 module fs_macros.addelt_co: 0 up-insts
+#   step SMZ : 	 module fs_macros.nf_addelt_co: 0 up-insts
+#   step SMZ : function addelt_so has 2 representent(s)
+#   step SMZ : 	 module fs_macros.addelt_so: 0 up-insts
+#   step SMZ : 	 module fs_macros.nf_addelt_so: 0 up-insts
+#   step SMZ : function carry4 has 1 representent(s)
+#   step SMZ : 	 module xcve.carry4: 41 up-insts, is blackbox
+#   step SMZ : function carry8 has 1 representent(s)
+#   step SMZ : 	 module xcve.carry8: 0 up-insts, is blackbox
+#   step SMZ : function encmux16_v5 has 2 representent(s)
+#   step SMZ : 	 module fs_macros.encmux16_v5: 0 up-insts
+#   step SMZ : 	 module fs_macros.nf_encmux16_v5: 0 up-insts
+#   step SMZ : function encmux2 has 1 representent(s)
+#   step SMZ : 	 module fs_macros.encmux2: 0 up-insts
+#   step SMZ : function encmux22 has 1 representent(s)
+#   step SMZ : 	 module fs_macros.encmux22: 0 up-insts
+#   step SMZ : function encmux32_v8 has 1 representent(s)
+#   step SMZ : 	 module fs_macros.encmux32_v8: 0 up-insts
+#   step SMZ : function encmux3_v5 has 1 representent(s)
+#   step SMZ : 	 module fs_macros.encmux3_v5: 0 up-insts
+#   step SMZ : function encmux4_v5 has 1 representent(s)
+#   step SMZ : 	 module fs_macros.encmux4_v5: 0 up-insts
+#   step SMZ : function encmux8_v5 has 2 representent(s)
+#   step SMZ : 	 module fs_macros.encmux8_v5: 0 up-insts
+#   step SMZ : 	 module fs_macros.nf_encmux8_v5: 0 up-insts
+#   step SMZ : function lesselt has 2 representent(s)
+#   step SMZ : 	 module fs_macros.lesselt: 0 up-insts
+#   step SMZ : 	 module fs_macros.nf_lesselt: 0 up-insts
+#   step SMZ : function mult18x18 has 1 representent(s)
+#   step SMZ : 	 module xcve.mult18x18: 0 up-insts, is blackbox
+#   step SMZ : function mult18x18s has 1 representent(s)
+#   step SMZ : 	 module xcve.mult18x18s: 0 up-insts, is blackbox
+#   step SMZ : function mult18x18sio has 1 representent(s)
+#   step SMZ : 	 module xcve.mult18x18sio: 0 up-insts, is blackbox
+#   step SMZ : function mult25x18 has 1 representent(s)
+#   step SMZ : 	 module fs_macros.mult25x18: 0 up-insts
+#   step SMZ : function mult27x18 has 1 representent(s)
+#   step SMZ : 	 module fs_macros.mult27x18: 0 up-insts
+#   step SMZ : replaced module (old -> new, #up-insts): xcve.carry4 -> simzilla_extra_cells.CARRY4, 41
+#   step SMZ : replaced module (old -> new, #up-insts): xcve.carry8 -> simzilla_extra_cells.CARRY8, 0
+#   step LINK : Done in     elapsed:0.1 s    user:0.2 s      system:0 s     %cpu:109.59       load:0.27       fm:185271 m      vm:470 m       vm:+3 m      um:230 m       um:+4 m
+#   step === GraphBuilder : Starting
+#   step Build WB : Starting
+#   step Build WB : Done in       elapsed:0 s      user:0 s    system:0.1 s     %cpu:444.44       load:0.27       fm:185264 m      vm:503 m      vm:+33 m      um:238 m       um:+8 m
+#   step Build HW : Starting
+#   step SMZ : #hierWires: 1138
+#   step SMZ : #equis:     1138
+#   step Build HW : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185264 m      vm:503 m       vm:+0 m      um:238 m       um:+0 m
+#   step report unknown models : Starting
+#   step SMZ : #unknown behavior driver modules: 7
+#   step SMZ : Module rom_ZMEM_mem (memory): 1 occurences
+#   step SMZ : Module zebu_clockGen: 1 occurences
+#   step SMZ : Module zebu_reqsig_clock_zcompositeclock: 4 occurences
+#   step SMZ : Module zebu_reqsig_clock_driverclock: 21 occurences
+#   step SMZ : Module ZSVA_MOD_PLI_1: 2 occurences
+#   step SMZ : Module CARRY4: 40 occurences
+#   step SMZ : Module zebu_bb_wb_reg: 41 occurences
+#   step SMZ : #unknown behavior driver instances: 110
+#   step report unknown models : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185264 m      vm:503 m       vm:+0 m      um:238 m       um:+0 m
+#   step Load AnnotationDB : Starting
+#   step AnoDB : Anotation file './tools/zDB/zTopBuild_equi.inf' successfully opened
+#   step Annotation DB : Closing file './tools/zDB/zTopBuild_equi.inf'
+#   step SMZ : #constants           from AnnotationDB: 0
+#   step SMZ : #transparent latches from AnnotationDB: 0
+#   step Load AnnotationDB : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185264 m      vm:503 m       vm:+0 m      um:238 m       um:+0 m
+#   step resize cells : Starting
+#   step resize cells : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185264 m      vm:503 m       vm:+0 m      um:238 m       um:+0 m
+#   step Build indexer for equiID : Starting
+#   step SMZ : #EquiID (#unfolded wire on equi netlist): 1138 (1580)
+#   step Build indexer for equiID : Done in       elapsed:0 s    user:0.1 s      system:0 s     %cpu:800.00       load:0.27       fm:185259 m     vm:1271 m     vm:+768 m      um:242 m       um:+4 m
+#   step Set EquiID of cells : Starting
+#   step Set EquiID of cells : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185259 m     vm:1271 m       vm:+0 m      um:242 m       um:+0 m
+#   step SMZ : EquiID done with 0 errors
+#   step Create rtl2Equi : Starting
+#   step SMZ : rtl2Equi uses mmap iterator
+#   step Create rtl2Equi : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185258 m     vm:1271 m       vm:+0 m      um:242 m       um:+0 m
+#   step populate cells : Starting
+#   step SMZ : ##################################simplified LUT: 69
+#   step SMZ : #LUT3: avg.#products/#ops (nodes): 46 / 2.19565 / 3.43478 (4.63043)
+#   step SMZ : #LUT4: avg.#products/#ops (nodes): 4 / 4 / 9.5 (6)
+#   step SMZ : #LUT5: avg.#products/#ops (nodes): 2 / 4.5 / 15.5 (10.5)
+#   step SMZ : #LUT6: avg.#products/#ops (nodes): 17 / 4.47059 / 10.4118 (21.1176)
+#   step SMZ : ############################# NOT SIMPLIFIED LUT: 20
+#   step SMZ : #LUT5: avg.#products/#ops (nodes): 8 / 16 / 79 (10.75)
+#   step SMZ : #LUT6: avg.#products/#ops (nodes): 12 / 22.3333 / 133 (14.8333)
+#   step SMZ : #LUT5: avg.#products/#ops for min: 8 / 7.125 / 20.5
+#   step SMZ : #LUT6: avg.#products/#ops for min: 12 / 9.41667 / 40.6667
+#   step SMZ : #transparent latches (#processed): 0(0)
+#   step populate cells : Done in     elapsed:0.1 s    user:0.4 s    system:0.3 s     %cpu:373.33       load:0.27       fm:185165 m     vm:1361 m      vm:+90 m      um:333 m      um:+91 m
+#   step Populating MacroCells : Starting
+#   step Populating MacroCells : Done in       elapsed:0 s    user:0.4 s      system:0 s     %cpu:695.65       load:0.27       fm:185165 m     vm:1361 m       vm:+0 m      um:333 m       um:+0 m
+#   step Substituting MacroCells : Starting
+#   step SMZ : Total 40 macro cells are substituted
+#   step Substituting MacroCells : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185165 m     vm:1361 m       vm:+0 m      um:333 m       um:+0 m
+#   step SCC computation : Starting
+#   step SMZ : #SCCs: 0
+#   step SCC computation : Done in     elapsed:0.1 s      user:0 s    system:0.4 s     %cpu:761.90       load:0.27       fm:184999 m     vm:1617 m     vm:+256 m      um:499 m     um:+166 m
+#   step Compute level of cells for combinational graph : Starting
+#   step Compute level of cells for combinational graph : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:184999 m     vm:1617 m       vm:+0 m      um:499 m       um:+0 m
+#   step SMZ : DeadLogicRemoval is disabled.
+#   step Reordering cells : Starting
+#   step Sort cells by level : Starting
+#   step SMZ : #cells= 1585
+#   step Sort cells by level : Done in       elapsed:0 s      user:0 s    system:0.1 s    %cpu:4000.00       load:0.27       fm:184999 m     vm:1617 m       vm:+0 m      um:499 m       um:+0 m
+#   step Reorder cells : Starting
+#   step Reorder cells : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:184999 m     vm:1617 m       vm:+0 m      um:499 m       um:+0 m
+#   step Reordering cells : Done in       elapsed:0 s      user:0 s    system:0.1 s     %cpu:666.67       load:0.27       fm:184999 m     vm:1617 m       vm:+0 m      um:499 m       um:+0 m
+#   step insert MID to SCC : Starting
+#   step insert MID to SCC : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:184999 m     vm:1617 m       vm:+0 m      um:499 m       um:+0 m
+#   step SMZ : #watched     : 361
+#   step SMZ : #watched (by cid2Pocs): 0
+#   step SMZ : #EquiID         : 1138
+#   step SMZ : #HierWires      : 1138
+#   step SMZ : #cells          : 1550
+#   step SMZ : #macro cells    : 0
+#   step SMZ : linkMacros mode : 2
+#   step SMZ : #buses          : 0
+#   step SMZ : #levels: 58
+#   step SMZ : list level/# cells: [0/719 1/98 2/44 3/47 4/33 5/32 6/21 7/16 8/21 9/25 10/21 11/13 12/11 13/17 14/16 15/16 16/8 17/8 18/16 19/16 20/16 21/8 22/8 23/16 24/16 25/16 26/8 27/8 28/16 29/16 30/16 31/8 32/8 33/16 34/16 35/16 36/8 37/8 38/8 39/8 40/8 41/4 42/4 43/8 44/8 45/8 46/4 47/4 48/8 49/8 50/8 51/4 52/4 53/8 54/8 55/8 56/4 57/4 ]
+#   step SMZ : avg. #cells/level: 26.7241
+#   step SMZ : list level/#mcells: []
+#   step SMZ : cell distribution (exclusive):
+#   step SMZ : #cells (#with coord), avg.#inputs  READ : 81 (0), 0
+#   step SMZ : #cells (#with coord), avg.#inputs  CST  : 4 (0), 0
+#   step SMZ : #cells (#with coord), avg.#inputs  XOR  : 147 (0), 2.08163
+#   step SMZ : #cells (#with coord), avg.#inputs  ISOP : 664 (0), 2.00151, #AND/OR=395
+#   step SMZ : #cells (#with coord), avg.#inputs  LUT  : 20 (0), 5.6
+#   step SMZ : #cells (#with coord), avg.#inputs  LATCH: 1 (0), 2
+#   step SMZ : #cells (#with coord), avg.#inputs  FF   : 633 (0), 2.64139
+#   step SMZ : #cells (#with coord), avg.#inputs  LB   : 0 (0), 0
+#   step SMZ : #cells (#with coord), avg.#inputs  PORT : 0 (0), 0
+#   step SMZ : #cells (#with coord), avg.#inputs  EDGE_DETECTOR: 0 (0), 0
+#   step SMZ : #cells (#with coord), avg.#inputs  ONE_POS_SHIFTER: 0 (0), 0
+#   step SMZ : #LUT1 w/o coord / avg.% of 1's: 0 / 0
+#   step SMZ : #LUT2 w/o coord / avg.% of 1's: 0 / 0
+#   step SMZ : #LUT3 w/o coord / avg.% of 1's: 0 / 0
+#   step SMZ : #LUT4 w/o coord / avg.% of 1's: 0 / 0
+#   step SMZ : #LUT5 w/o coord / avg.% of 1's: 8 / 0.5
+#   step SMZ : #LUT6 w/o coord / avg.% of 1's: 12 / 0.348958
+#   step SMZ : SCC size/#LBs distribution: []
+#   step SMZ : #PrimarySeq/#PI (0/0) 
+#   step SMZ : #PrimarySeq/#Seqs (0/634) = 0%
+#   step === Write graph : Starting
+#   step 	(1. save cid2Nnames) : Starting
+#   step 	(1. save cid2Nnames) : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:184998 m     vm:1617 m       vm:+0 m      um:499 m       um:+0 m
+#   step 	(2. save equi2cid) : Starting
+#   step 	(2. save equi2cid) : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:184998 m     vm:1617 m       vm:+0 m      um:499 m       um:+0 m
+#   step 	(3. save graph) : Starting
+#   step 	(3. save graph) : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185099 m     vm:1617 m       vm:+0 m      um:499 m       um:+0 m
+#   step 	(4. serialize cells) : Starting
+#   step SMZ : saving 1550 cell(s) to keyed file by 10 partition(s) w. 10 thread(s)
+#   step 	(4. serialize cells) : Done in     elapsed:0.2 s    user:0.1 s      system:0 s      %cpu:50.63       load:0.27       fm:185095 m     vm:1617 m       vm:+0 m      um:504 m       um:+5 m
+#   step === Write graph : Done in     elapsed:0.4 s    user:0.1 s      system:0 s      %cpu:20.73       load:0.27       fm:185095 m     vm:1617 m       vm:+0 m      um:504 m       um:+5 m
+#   step === GraphBuilder : Done in    elapsed:0.10 s   user:0.12 s   system:0.10 s     %cpu:221.11       load:0.27       fm:185099 m     vm:1617 m    vm:+1147 m      um:504 m     um:+274 m
+#   step SMZ : Created Archive File ./tools/zCui/zSimzilla_archive.xcui
+#   step SMZ : END OF SIMZILLA JOB
+
+#   exec summary :    1 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m0s, user 0m0.347s, sys 0m0.178s
+#   exec summary : Total memory: 1648308 kB - RSS memory: 508448 kB - Data memory: 1408004 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:59 2023

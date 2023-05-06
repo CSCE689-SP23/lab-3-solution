@@ -1,0 +1,8 @@
+post FPGA compilation analyze tools
+
+prashb_dir --> /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/F00
+Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+grep: backend_default/zTime.log: No such file or directory
+grep: backend_default/zTime_fpga.log: No such file or directory
+else: endif not found.
+command exit code is '0'

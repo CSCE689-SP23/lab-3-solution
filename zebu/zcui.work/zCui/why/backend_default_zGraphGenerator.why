@@ -1,0 +1,2 @@
+ KO input internal dependency (redo if redone) <- Backend: default backend/System Data Base/Convert Netlist
+ KO input backend_default/tools/zDB/zTopBuild_equi.edf.gz out of date (non equal checksum) <- Backend: default backend/System Compilation/Build System

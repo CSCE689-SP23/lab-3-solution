@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html&nbsp;charset=ISO-8859-1" />
+<style>
+body { background-color: #fff; color: #333; }
+body, p, ol, ul, td, tr, th  {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+ul, li, button, p {
+  list-style-type:none;
+  text-align: left;
+  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+table  tr{
+   background-color: #f0f0f0;
+}
+table  th{
+   background-color: #48d1cc;
+}
+table td {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: top;
+}
+table td.middle {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: top;
+  word-spacing: 10px;
+}
+table  tr.odd{
+  background-color: #add8e6;
+}
+table  tr {
+  background-color: #f0f0f0;
+}
+table  tr:hover {
+   background-color: #bffefe;
+}
+.collapsible {
+  background-color: #add8e6;
+  cursor: pointer;
+  border: none;
+  -moz-user-select: text;
+}
+.active, .collapsible:hover {
+  background-color: #48d1cc;
+}
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+<title align="center">zTime Report: critical output routing data paths</title>
+</head>
+<body>
+<div id="title" class="title">
+  <p><h1>zTime Report: critical output routing data paths</h1></p>
+<p><h2>Date: Wed Apr 19 01:22:07 2023
+</h2></p></div>
+<div id="content" class="content">
+</div>
+<table ><tbody>
+<tr>
+<th width=60px title="Required time - Delay">Slack</th>
+<th width=130px title="Maximal arrival time possible on the path">Required Time</th>
+<th width=60px title="Timing path length">Delay</th>
+<th width=40px title="Total number of FPGAs on the path">Fpga</th>
+<th width=130px title="Source Clock domain and Target Clock domain ">Clock domains <br/> <small>From -&gt; To</small></th>
+<th title="Source port and Target port">Ports <br/> <small>From -> To</small></th>
+<th title="Path details">Details</th>
+</tr>
+<tr>
+<td>0 ns</td>
+<td>160 ns<br/> ( 2 driver clock )</td>
+<td>160 ns</td>
+<td>2</td>
+<td>Clock  : top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge) <br/>  -&gt;  <br/> Clock  : top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge)</td>
+<td>top.u_stb.u_rom.mem-r0do <br/>  -&gt;  <br/> U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_check.error.D</td>
+	<td id="p0">
+<table width="100%" style="white-space:nowrap;"><tbody>
+<tr>
+<th width=40px title="FPGA location">Fpga</th>
+<th width=60px title="Propagation delay">Delay</th>
+<th width=60px title="Arrival time">Arrival</th>
+<th width=30px title="Multiplexing ratio">XDR</th>
+<th width=40px title="Multiplexing type">XTYPE</th>
+<th width=20px title="if crossing zebu mux feedback">FB</th>
+<th width=100px title="zCore name">zCore</th>
+<th width=180px title="FPGA port name">Port</th>
+<th title="Routing wire name">Wire</th>
+<th title="DUT instance pin name">Alias</th>
+<th ></th>
+<th ></th>
+<th ></th>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">Internal</td><td></td><td>40 ns</td><td></td><td></td><td></td><td></td><td>DutClock domain</td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">U0/M0/F00</td><td style="background-color: #9C7373">120 ns</td><td>160 ns</td><td></td><td></td><td></td><td></td><td>U0_M0_F0/top.u_stb.u_rom.mem-r0do</td><td></td><td>top.u_stb.u_rom.mem</td><td></td><td></td><td></td>
+</tr>
+<tr class=odd>
+<td></td><td>0 ns</td><td>160 ns</td><td></td><td></td><td></td><td></td><td>U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_check.error.D</td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">Internal</td><td></td><td>160 ns</td><td></td><td></td><td></td><td></td><td>DutClock domain</td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+</table>        </td>
+</tr>
+<tr>
+<td>0 ns</td>
+<td>160 ns<br/> ( 2 driver clock )</td>
+<td>160 ns</td>
+<td>2</td>
+<td>Clock  : top._I_vcs_cdx_s_rw_topu_stb_clk0 (posedge) <br/>  -&gt;  <br/> Clock  : top.u_dut.u_fifo.u0_clkg.clkout (posedge)</td>
+<td>top.u_stb.u_rom.mem-r0do <br/>  -&gt;  <br/> U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_fifo.mem[0][7].D</td>
+	<td id="p1">
+<table width="100%" style="white-space:nowrap;"><tbody>
+<tr>
+<th width=40px title="FPGA location">Fpga</th>
+<th width=60px title="Propagation delay">Delay</th>
+<th width=60px title="Arrival time">Arrival</th>
+<th width=30px title="Multiplexing ratio">XDR</th>
+<th width=40px title="Multiplexing type">XTYPE</th>
+<th width=20px title="if crossing zebu mux feedback">FB</th>
+<th width=100px title="zCore name">zCore</th>
+<th width=180px title="FPGA port name">Port</th>
+<th title="Routing wire name">Wire</th>
+<th title="DUT instance pin name">Alias</th>
+<th ></th>
+<th ></th>
+<th ></th>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">Internal</td><td></td><td>40 ns</td><td></td><td></td><td></td><td></td><td>DutClock domain</td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">U0/M0/F00</td><td style="background-color: #9C7373">120 ns</td><td>160 ns</td><td></td><td></td><td></td><td></td><td>U0_M0_F0/top.u_stb.u_rom.mem-r0do</td><td></td><td>top.u_stb.u_rom.mem</td><td></td><td></td><td></td>
+</tr>
+<tr class=odd>
+<td></td><td>0 ns</td><td>160 ns</td><td></td><td></td><td></td><td></td><td>U0_M0_F0-U0_M0_F0.U0_M0_F0_core.u_dut.u_fifo.mem[0][7].D</td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">Internal</td><td></td><td>160 ns</td><td></td><td></td><td></td><td></td><td>DutClock domain</td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+</table>        </td>
+</tr>
+<tr>
+<td>75 ns</td>
+<td>80 ns<br/> ( 1 driver clock )</td>
+<td>5 ns</td>
+<td>2</td>
+<td>DRIVERCLOCK (system) <br/>  -&gt;  <br/> DRIVERCLOCK (system)</td>
+<td>zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0 <br/>  -&gt;  <br/> U0_M0_F0.zcg_zceiClock[1]</td>
+	<td id="p2">
+<table width="100%" style="white-space:nowrap;"><tbody>
+<tr>
+<th width=40px title="FPGA location">Fpga</th>
+<th width=60px title="Propagation delay">Delay</th>
+<th width=60px title="Arrival time">Arrival</th>
+<th width=30px title="Multiplexing ratio">XDR</th>
+<th width=40px title="Multiplexing type">XTYPE</th>
+<th width=20px title="if crossing zebu mux feedback">FB</th>
+<th width=100px title="zCore name">zCore</th>
+<th width=180px title="FPGA port name">Port</th>
+<th title="Routing wire name">Wire</th>
+<th title="DUT instance pin name">Alias</th>
+<th ></th>
+<th ></th>
+<th ></th>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">Internal</td><td></td><td></td><td></td><td></td><td></td><td></td><td>DriverClock domain</td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">U0/M0/IF</td><td>0 ns</td><td></td><td></td><td></td><td></td><td></td><td>zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0</td><td>zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0</td><td></td><td></td><td></td><td></td>
+</tr>
+<tr >
+<td></td><td>5 ns</td><td></td><td>1</td><td>LVDS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">U0/M0/F00</td><td></td><td>5 ns</td><td></td><td></td><td></td><td>Part_0</td><td>U0_M0_F0/zcg_zceiClock[1]</td><td>zcg_zceiClock[1]</td><td>top.u_dut.u_fifo.u0_clkg.sqnod_clkout.I0</td><td></td><td></td><td></td>
+</tr>
+<tr class=odd>
+<td style="background-color: #72b7cd">Internal</td><td>0 ns</td><td>5 ns</td><td></td><td></td><td></td><td></td><td>DriverClock domain</td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+</table>        </td>
+</tr>
+</table><script>
+    function replaceButtonText(textA, textB, id){
+      if (document.getElementById)  {
+        var button=document.getElementById(id);
+        if (button){
+          if (button.innerHTML==textA){
+            button.innerHTML=textB;
+          }
+          else { 
+            button.innerHTML=textA;
+          }
+        }
+      }
+   }
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+        var parentDiv = this.closest("div");
+        parentDiv.style.maxHeight = (parentDiv.scrollHeight + content.scrollHeight) + "px";
+      });
+    }
+  </script>
+ </body>
+</html>

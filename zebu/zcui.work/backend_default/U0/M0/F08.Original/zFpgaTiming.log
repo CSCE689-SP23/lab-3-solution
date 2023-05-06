@@ -1,0 +1,584 @@
+
+                                    ZeBu (R)
+                                  zFpgaTiming
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/bin/zFpgaTiming /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/zfpgatiming/zFpgaTiming.tcl 
+
+# start time is Wed Apr 19 01:16:22 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:15
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 1.37 2.04 1.30 3/502 13015
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 181909 MB
+#            Total Free including cache: 186663 MB
+#            Swap cache: 0 MB Cached space: 4754 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 316 MB VmPeak: 316 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255310
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ENV.VAR : LM_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : SNPSLMD_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+#   step ENV.VAR : VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+#   step ENV.VAR : ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+#   step ENV.VAR : ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+#   step ENV.VAR : ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+#   step ENV.VAR : ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   step ENV.VAR : ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+#   step ENV.VAR : ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+#   step ENV.VAR : ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+#   step ENV.VAR : ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+#   step ENV.VAR : ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+#   step ZFPGATIMING : Aynchronous set reset domain analysis disabled
+#   step SOCKET DETECTION : automatic socket detection activated with type mux_input
+#   step ZFPGATIMING : Configure analysis for clock handling 'FGS'.
+#   step read SDF file : Starting
+#   info : reading file 'timing.sdf'.
+#   step read SDF file : Done in     elapsed:0.8 s    user:0.6 s    system:0.1 s      %cpu:94.92       load:1.37       fm:181901 m      vm:386 m       vm:+9 m      um:106 m       um:+7 m
+#   step XDL rename : Starting
+#   info : 0 XDL name to replace.
+#   step XDL rename : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181901 m      vm:386 m       vm:+0 m      um:106 m       um:+0 m
+#   step Transformations Identification : Starting
+#   step Transformations Identification : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181901 m      vm:386 m       vm:+0 m      um:106 m       um:+0 m
+#   step Find properties based on SDF names : Starting
+#   step FW CLOCK : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+#   step FW CLOCK : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_fib_clk_hs/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+#   step FW CLOCK : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O
+#   step FW CLOCK : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_idly_0/bufg_0/O
+#   step ZXLSYS : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk2_0/bufgctrl_en_and00001/O
+#   step ZXLSYS : design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_xclk_0/bufgctrl_en_and00001/O
+#   step Find properties based on SDF names : Done in     elapsed:0.2 s   user:0.40 s    system:0.3 s    %cpu:2356.16       load:1.37       fm:181848 m      vm:539 m     vm:+153 m      um:158 m      um:+52 m
+#   step Modify instance connections : Starting
+#   step Modify instance connections : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181848 m      vm:539 m       vm:+0 m      um:158 m       um:+0 m
+#   info : Initialize requested paths.
+#   step False Timing Arcs : Starting
+#   step False Timing Arcs : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181848 m      vm:539 m       vm:+0 m      um:158 m       um:+0 m
+#   step User Manipulations : Starting
+#   step User Manipulations : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181848 m      vm:539 m       vm:+0 m      um:158 m       um:+0 m
+#   step False Paths Marking : Starting
+#   info : ----------------------------------
+#   info :     False Paths Information
+#   info : ----------------------------------
+#   info :  
+#   info : Rules description :
+#   info : Rule 0 => THROUGH *zbufg_zcgen_w_zcg_skewClock* -clock -data 
+#   info : Rule 1 => THROUGH *zebu_sample_event_filter_mux*I1 -clock -data 
+#   info : Rule 2 => TO */zview*/D -clock -data 
+#   info : Rule 3 => TO */qiwc_ip_cluster/cluster_qiwc_ip_pipelined_mux*/*/D -clock -data 
+#   info :  
+#   info : Ports matching a rule :
+#   info :  
+#   step False Paths Marking : Done in     elapsed:0.1 s    user:0.4 s    system:0.1 s    %cpu:2222.22       load:1.37       fm:181848 m      vm:539 m       vm:+0 m      um:158 m       um:+0 m
+#   step Clock Relationship : Starting
+#   step Clock Relationship DB populator : Starting
+#   step Clock Relationship Populator : Loading clock relationship graph from file 'clock_dependencies.db'
+#   step Clock Relationship Populator : Hydra mode is disabled.
+#   step Clock Relationship Populator : MuDB path is /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default.
+#   step Loading EDIF : Starting
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step EDIF LOADER : reading EDIF file 'design.edf'
+#   step Loading EDIF : Done in    elapsed:0.24 s   user:0.25 s      system:0 s     %cpu:100.81       load:1.37       fm:181826 m      vm:558 m      vm:+19 m      um:181 m      um:+23 m
+#   step Loading SDC file : Starting
+#   step Loading SDC file : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181826 m      vm:558 m       vm:+0 m      um:181 m       um:+0 m
+#   step Clock Relationship Populator : Couldn't find 5581 entries in SDF Graph.
+#   step Diagnose and fix populator : Starting
+#   step Diagnose and fix populator : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181826 m      vm:560 m       vm:+0 m      um:182 m       um:+0 m
+#   step Clock Relationship DB populator : Done in    elapsed:0.30 s   user:0.33 s    system:0.3 s     %cpu:119.21       load:1.37       fm:181826 m      vm:560 m      vm:+21 m      um:182 m      um:+24 m
+#   step Clock Relationship : Done in    elapsed:0.30 s   user:0.33 s    system:0.3 s     %cpu:119.11       load:1.37       fm:181826 m      vm:560 m      vm:+21 m      um:182 m      um:+24 m
+#   step Sanity Check : Starting
+#   step Sanity Check : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181826 m      vm:560 m       vm:+0 m      um:182 m       um:+0 m
+#   step ANALYSIS : Multi-cycle path analysis disabled
+#   step Skew Paths Analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  SKEW PATHS: 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step Skew Paths Analysis : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181826 m      vm:560 m       vm:+0 m      um:182 m       um:+0 m
+#   step Filter Paths Analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FILTER PATHS: 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step Filter Paths Analysis : Done in     elapsed:0.2 s    user:0.2 s      system:0 s      %cpu:80.81       load:1.37       fm:181824 m      vm:562 m       vm:+2 m      um:186 m       um:+4 m
+#   step Internal Data Paths Analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  INTERNAL DATA PATHS (NOT FILTERED): 10/1294 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20874ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[63\]_zpt_iobuf/OBUFT/I (OBUFT)
+#   info : |   1273 |        1273 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[63\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1273 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[63\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    942 |        2215 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[63\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   2980 |        5195 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I4 (LUT6)
+#   info : |     53 |        5248 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    319 |        5567 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        5620 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    823 |        6443 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        6496 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    727 |        7223 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        7276 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        7486 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        7539 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |    673 |        8212 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        8265 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    580 |        8845 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        8898 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2201 |       11099 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       11152 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |    997 |       12149 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       12202 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       12412 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       12465 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    645 |       13110 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       13163 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    240 |       13403 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       13456 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    135 |       13591 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       13644 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   5282 |       18926 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     63 |       18989 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    697 |       19686 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I0 (LUT2)
+#   info : |     53 |       19739 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       19944 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       20000 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       20874 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20713ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[63\]_zpt_iobuf/OBUFT/T (OBUFT)
+#   info : |   1112 |        1112 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[63\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1112 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[63\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    942 |        2054 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[63\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   2980 |        5034 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I4 (LUT6)
+#   info : |     53 |        5087 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    319 |        5406 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        5459 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    823 |        6282 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        6335 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    727 |        7062 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        7115 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        7325 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        7378 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |    673 |        8051 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        8104 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    580 |        8684 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        8737 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2201 |       10938 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       10991 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |    997 |       11988 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       12041 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       12251 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       12304 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    645 |       12949 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       13002 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    240 |       13242 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       13295 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    135 |       13430 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       13483 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   5282 |       18765 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     63 |       18828 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    697 |       19525 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I0 (LUT2)
+#   info : |     53 |       19578 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       19783 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       19839 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       20713 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20657ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[63\]_zpt_iobuf/OBUFT/I (OBUFT)
+#   info : |   1310 |        1310 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[63\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1310 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[63\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    979 |        2289 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[63\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   2479 |        4768 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I4 (LUT6)
+#   info : |     53 |        4821 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    468 |        5289 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        5342 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    727 |        6069 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        6122 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    498 |        6620 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        6673 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        6883 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        6936 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |   1366 |        8302 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        8355 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    555 |        8910 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        8963 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2569 |       11532 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       11585 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |   1474 |       13059 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       13112 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       13322 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       13375 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    797 |       14172 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       14225 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    611 |       14836 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       14889 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    210 |       15099 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       15152 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   3677 |       18829 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     62 |       18891 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    578 |       19469 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I1 (LUT2)
+#   info : |     53 |       19522 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       19727 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       19783 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       20657 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20648ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[62\]_zpt_iobuf/OBUFT/I (OBUFT)
+#   info : |   1260 |        1260 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[62\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1260 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[62\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    929 |        2189 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[62\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   2780 |        4969 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I5 (LUT6)
+#   info : |     53 |        5022 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    319 |        5341 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        5394 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    823 |        6217 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        6270 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    727 |        6997 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        7050 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        7260 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        7313 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |    673 |        7986 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        8039 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    580 |        8619 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        8672 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2201 |       10873 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       10926 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |    997 |       11923 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       11976 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       12186 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       12239 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    645 |       12884 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       12937 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    240 |       13177 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       13230 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    135 |       13365 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       13418 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   5282 |       18700 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     63 |       18763 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    697 |       19460 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I0 (LUT2)
+#   info : |     53 |       19513 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       19718 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       19774 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       20648 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20526ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[62\]_zpt_iobuf/OBUFT/I (OBUFT)
+#   info : |   1315 |        1315 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[62\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1315 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[62\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    984 |        2299 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[62\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   2338 |        4637 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I5 (LUT6)
+#   info : |     53 |        4690 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    468 |        5158 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        5211 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    727 |        5938 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        5991 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    498 |        6489 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        6542 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        6752 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        6805 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |   1366 |        8171 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        8224 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    555 |        8779 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        8832 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2569 |       11401 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       11454 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |   1474 |       12928 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       12981 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       13191 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       13244 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    797 |       14041 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       14094 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    611 |       14705 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       14758 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    210 |       14968 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       15021 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   3677 |       18698 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     62 |       18760 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    578 |       19338 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I1 (LUT2)
+#   info : |     53 |       19391 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       19596 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       19652 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       20526 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20496ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[63\]_zpt_iobuf/OBUFT/T (OBUFT)
+#   info : |   1149 |        1149 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[63\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1149 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[63\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    979 |        2128 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[63\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   2479 |        4607 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I4 (LUT6)
+#   info : |     53 |        4660 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    468 |        5128 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        5181 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    727 |        5908 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        5961 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    498 |        6459 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        6512 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        6722 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        6775 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |   1366 |        8141 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        8194 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    555 |        8749 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        8802 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2569 |       11371 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       11424 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |   1474 |       12898 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       12951 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       13161 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       13214 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    797 |       14011 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       14064 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    611 |       14675 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       14728 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    210 |       14938 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       14991 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   3677 |       18668 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     62 |       18730 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    578 |       19308 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I1 (LUT2)
+#   info : |     53 |       19361 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       19566 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       19622 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       20496 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20487ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[62\]_zpt_iobuf/OBUFT/T (OBUFT)
+#   info : |   1099 |        1099 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[62\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1099 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[62\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    929 |        2028 |      1 | design/ddr3_ctrl_empty_128x512_0/ddr30_dq\[62\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   2780 |        4808 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I5 (LUT6)
+#   info : |     53 |        4861 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    319 |        5180 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        5233 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    823 |        6056 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        6109 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    727 |        6836 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        6889 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        7099 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        7152 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |    673 |        7825 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        7878 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    580 |        8458 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        8511 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2201 |       10712 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       10765 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |    997 |       11762 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       11815 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       12025 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       12078 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    645 |       12723 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       12776 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    240 |       13016 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       13069 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    135 |       13204 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       13257 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   5282 |       18539 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     63 |       18602 |      1 | design/ddr3_ctrl_empty_128x512_0/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    697 |       19299 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I0 (LUT2)
+#   info : |     53 |       19352 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       19557 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       19613 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       20487 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 20365ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[62\]_zpt_iobuf/OBUFT/T (OBUFT)
+#   info : |   1154 |        1154 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[62\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1154 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[62\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    984 |        2138 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[62\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   2338 |        4476 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I5 (LUT6)
+#   info : |     53 |        4529 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    468 |        4997 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        5050 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    727 |        5777 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        5830 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    498 |        6328 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        6381 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        6591 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        6644 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |   1366 |        8010 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        8063 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    555 |        8618 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        8671 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2569 |       11240 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       11293 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |   1474 |       12767 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       12820 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       13030 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       13083 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    797 |       13880 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       13933 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    611 |       14544 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       14597 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    210 |       14807 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       14860 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   3677 |       18537 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     62 |       18599 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    578 |       19177 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I1 (LUT2)
+#   info : |     53 |       19230 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       19435 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       19491 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       20365 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 19394ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[0\]_zpt_iobuf/OBUFT/I (OBUFT)
+#   info : |   1314 |        1314 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[0\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1314 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[0\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    983 |        2297 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[0\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   1208 |        3505 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I3 (LUT6)
+#   info : |     53 |        3558 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    468 |        4026 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        4079 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    727 |        4806 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        4859 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    498 |        5357 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        5410 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        5620 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        5673 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |   1366 |        7039 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        7092 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    555 |        7647 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        7700 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2569 |       10269 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       10322 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |   1474 |       11796 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       11849 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       12059 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       12112 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    797 |       12909 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       12962 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    611 |       13573 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       13626 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    210 |       13836 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       13889 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   3677 |       17566 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     62 |       17628 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    578 |       18206 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I1 (LUT2)
+#   info : |     53 |       18259 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       18464 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       18520 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       19394 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 19256ps
+#   info : |      0 |           0 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[2\]_zpt_iobuf/OBUFT/I (OBUFT)
+#   info : |   1315 |        1315 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[2\]_zpt_iobuf/OBUFT/O (OBUFT)
+#   info : |      0 |        1315 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[2\]_zpt_iobuf/IBUF/I (IBUF)
+#   info : |    984 |        2299 |      1 | design/ddr3_ctrl_empty_128x512_1/ddr31_dq\[2\]_zpt_iobuf/IBUF/O (IBUF)
+#   info : |   1068 |        3367 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/I1 (LUT6)
+#   info : |     53 |        3420 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]14/O (LUT6)
+#   info : |    468 |        3888 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/I5 (LUT6)
+#   info : |     53 |        3941 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]49/O (LUT6)
+#   info : |    727 |        4668 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/I5 (LUT6)
+#   info : |     53 |        4721 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]103/O (LUT6)
+#   info : |    498 |        5219 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/I5 (LUT6)
+#   info : |     53 |        5272 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]158/O (LUT6)
+#   info : |    210 |        5482 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/I5 (LUT6)
+#   info : |     53 |        5535 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]213/O (LUT6)
+#   info : |   1366 |        6901 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/I5 (LUT6)
+#   info : |     53 |        6954 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]268/O (LUT6)
+#   info : |    555 |        7509 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/I5 (LUT6)
+#   info : |     53 |        7562 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]323/O (LUT6)
+#   info : |   2569 |       10131 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/I5 (LUT6)
+#   info : |     53 |       10184 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]378/O (LUT6)
+#   info : |   1474 |       11658 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/I5 (LUT6)
+#   info : |     53 |       11711 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]433/O (LUT6)
+#   info : |    210 |       11921 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/I5 (LUT6)
+#   info : |     53 |       11974 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]488/O (LUT6)
+#   info : |    797 |       12771 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/I5 (LUT6)
+#   info : |     53 |       12824 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]543/O (LUT6)
+#   info : |    611 |       13435 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/I5 (LUT6)
+#   info : |     53 |       13488 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]598/O (LUT6)
+#   info : |    210 |       13698 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/I0 (LUT5)
+#   info : |     53 |       13751 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]646/O (LUT5)
+#   info : |   3677 |       17428 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/I2 (LUT3)
+#   info : |     62 |       17490 |      1 | design/ddr3_ctrl_empty_128x512_1/wrapper/ddr3_ctrl_empty_registers_0\/srb_data_rd\[0\]666/O (LUT3)
+#   info : |    578 |       18068 |      1 | design/zpl_iwo_srb_data_rd\[0\]/I1 (LUT2)
+#   info : |     53 |       18121 |      1 | design/zpl_iwo_srb_data_rd\[0\]/O (LUT2)
+#   info : |    205 |       18326 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/I0 (LUT2)
+#   info : |     56 |       18382 |      1 | design/zkprctrl/wrapper/srb_data_rd\[0\]1/O (LUT2)
+#   info : |    874 |       19256 |      0 | design/zkprctrl/wrapper/srb_bridge/srb_bridge_srb_0/srb_data_rd_buf_0/D (FDRE)
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  INTERNAL DATA PATHS (FILTERED): 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step Internal Data Paths Analysis : Done in       elapsed:0 s    user:0.6 s    system:0.1 s    %cpu:1076.92       load:1.37       fm:181823 m      vm:568 m       vm:+6 m      um:189 m       um:+3 m
+#   step From FPGA inputs to data analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM SOCKET TO DATA PATHS: 1/1 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 4976ps
+#   info : |      0 |           0 |      1 | design/socket_00_08_00_00/ClockRegion000RD_12A/dser0/I1/O (IBUFDS)
+#   info : |   4976 |        4976 |      0 | design/socket_00_08_00_00/ClockRegion000RD_12A/dser0/lvdsdes/ld_0/D (LDCE)
+#   step From FPGA inputs to data analysis : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181823 m      vm:568 m       vm:+0 m      um:189 m       um:+0 m
+#   step From FPGA inputs to socket analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM SOCKET TO SOCKET PATHS: 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step From FPGA inputs to socket analysis : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181823 m      vm:568 m       vm:+0 m      um:189 m       um:+0 m
+#   step From data to FPGA outputs analysis : Starting
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM DATA TO SOCKET PATHS (NOT FILTERED): 1/1 reported paths
+#   info : ----------------------------------------------------------
+#   info :  
+#   info : | Delay  | ArrivalTime | Fanout | 12986ps
+#   info : |      0 |           0 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/virtex7_pll_fib/CLKOUT3 (MMCME2_ADV)
+#   info : |   1714 |        1714 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/I0 (BUFGCTRL)
+#   info : |    120 |        1834 |    190 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_bus_dut_0/x_bufgctrl_ce_srb_clk/u_xst_wrapper_0/virtex7_bufgctrl_0/O (BUFGCTRL)
+#   info : |   1472 |        3306 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_registers_dut_0/reg_sock_ce_RnM/C (FDRE)
+#   info : |    197 |        3503 |      1 | design/zkprctrl/wrapper/sysclk_mxfx/u_xst_wrapper_0/sysclk_registers_dut_0/reg_sock_ce_RnM/Q (FDRE)
+#   info : |   2168 |        5671 |      1 | design/socket_00_08_00_00/ClockRegion000RD_12A/dser0/lvdsdes/ld_0/G (LDCE)
+#   info : |    277 |        5948 |      1 | design/socket_00_08_00_00/ClockRegion000RD_12A/dser0/lvdsdes/ld_0/Q (LDCE)
+#   info : |   7038 |       12986 |      2 | design/socket_00_08_00_09/ClockRegion000SD_20A/ser0/sock_dout/I (OBUFDS)
+#   info :  
+#   info :  
+#   info : ----------------------------------------------------------
+#   info : -----  FROM DATA TO SOCKET PATHS (FILTERED): 0/0 reported paths
+#   info : ----------------------------------------------------------
+#   step From data to FPGA outputs analysis : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:1.37       fm:181823 m      vm:568 m       vm:+0 m      um:189 m       um:+0 m
+
+#   exec summary :    0 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m1s, user 0m0.967s, sys 0m0.184s
+#   exec summary : Total memory: 582504 kB - RSS memory: 193744 kB - Data memory: 301204 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:16:23 2023

@@ -1,0 +1,124 @@
+
+                                    ZeBu (R)
+                                zGraphGenerator
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zGraphGenerator -l backend_default_zGraphGenerator.log -i tools/zDB/zTopBuild_equi.edf.gz -r top 
+
+# start time is Wed Apr 19 01:04:59 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 00:46:34
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.27 0.08 0.06 4/483 36366
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185424 MB
+#            Total Free including cache: 190142 MB
+#            Swap cache: 0 MB Cached space: 4718 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 172 MB VmPeak: 172 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255938
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step CSA : 
+# begin time is Wed Apr 19 01:04:59 2023
+
+# zGraphGenerator -l backend_default_zGraphGenerator.log -i tools/zDB/zTopBuild_equi.edf.gz -r top
+
+#   step CSA : Using 40 threads (maximum is 40).
+#   step CSA : Run the Graph Builder...
+#   exec summary : Total memory: 177988 kB - RSS memory: 84944 kB - Data memory: 90176 kB
+#   step CSA : Netlist loading...
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step CSA : Netlist loaded
+#   step CSA : Netlist loaded in 0.1 s
+#   exec summary : Total memory: 204612 kB - RSS memory: 106436 kB - Data memory: 116800 kB
+#   step CSA : Constants file loading...
+#   step AnoDB : Anotation file 'tools/zDB/zTopBuild_equi.inf' successfully opened
+#   step CSA : 0 transparent latch has been loaded
+#   step Annotation DB : Closing file 'tools/zDB/zTopBuild_equi.inf'
+#   step CSA : Simulation DB created
+#   exec summary : Total memory: 204612 kB - RSS memory: 106556 kB - Data memory: 116800 kB
+#   step WB : Initializing whiteboard
+#   step Building WB : Starting
+#   step Building WB : Done in     elapsed:0.1 s    user:0.1 s    system:0.1 s     %cpu:235.29       load:0.27       fm:185177 m      vm:353 m     vm:+154 m      um:154 m      um:+50 m
+#   exec summary : Total memory: 1148892 kB - RSS memory: 164160 kB - Data memory: 1061080 kB
+#   step HW : Starting
+#   step HW : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.27       fm:185169 m     vm:1121 m       vm:+0 m      um:160 m       um:+0 m
+#   step CSA : Whiteboard build in 0.0 s - 1188 instances, 1580 wires
+#   exec summary : Total memory: 1148892 kB - RSS memory: 164160 kB - Data memory: 1061080 kB
+#   exec summary : Total memory: 1198552 kB - RSS memory: 202344 kB - Data memory: 1096336 kB
+#   step CSA : Simulation DB creating...
+#   step CSA : Get System modules...
+#   step CSA : System modules identified in 0.0 s
+#   exec summary : Total memory: 1198564 kB - RSS memory: 202444 kB - Data memory: 1096336 kB
+### warning in GateMapping [GTMP0003W] : Unknown simulation macro 'zclkgen_library/zebu_reqsig_clock_driverclock'.
+#   step CSA : Explore hierarchicaly the modules from the top module 'top' to down
+
+#   step CSA : Modules explored in 0.0 s
+#   exec summary : Total memory: 1198564 kB - RSS memory: 202548 kB - Data memory: 1096336 kB
+
+#   step CSA : Graph 1 (cutId: 1): Nodes created: 231
+#   step CSA : Graph 1 : Wires created: 924
+#   step CSA : Graph 1: Graph levelizing...
+#   step CSA : Graph 1: Graph levelized done in 0.0 s
+#   step CSA : Graph 1 serializing...
+#   step DICTIONARY : Computing name indexes (188 names)
+#   step DICTIONARY : Indexation done in 0 seconds
+#   step DICTIONARY : Serializing dictionary
+#   step DICTIONARY : Serialized dictionary in 0 seconds, 188 different names
+#   step CSA : Graph 1 serialized in 0.0 s
+#   exec summary : Total memory: 1198564 kB - RSS memory: 202672 kB - Data memory: 1096336 kB
+#   step CSA : Graph 1: Graph levelizing...
+#   step CSA : Graph 1: Graph levelized done in 0.0 s
+#   step CSA : Graph 1 serializing...
+#   step DICTIONARY : Computing name indexes (0 names)
+#   step DICTIONARY : Indexation done in 0 seconds
+#   step DICTIONARY : Serializing dictionary
+#   step DICTIONARY : Serialized dictionary in 0 seconds, 0 different names
+#   step CSA : Graph 1 serialized in 0.0 s
+#   exec summary : Total memory: 1198564 kB - RSS memory: 202712 kB - Data memory: 1096336 kB
+#   step stat : ----------------------------------------------------------------------
+#   step stat : All gates Mapped in 0.0 s
+#   step stat : ----------------------------------------------------------------------
+#   step CSA : Graph Builder finished
+#   step CSA : Graph built in 0.2 s
+#   step CSA : DB serializing...
+#   step CSA : DB serialized in 0.0 s
+#   exec summary : Total memory: 1198552 kB - RSS memory: 202776 kB - Data memory: 1096336 kB
+#   step CSA : Cleaning DB...
+#   step CSA : DB cleaned in 0.0 s
+#   exec summary : Total memory: 1198552 kB - RSS memory: 202796 kB - Data memory: 1096336 kB
+#   step browsing : Total approximate work time is 0.21 s
+
+#   exec summary :    1 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m0s, user 0m0.180s, sys 0m0.104s
+#   exec summary : Total memory: 1194452 kB - RSS memory: 152696 kB - Data memory: 1071740 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:04:59 2023
+command exit code is '0'

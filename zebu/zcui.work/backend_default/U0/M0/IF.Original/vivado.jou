@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1_EP06_159265 (64-bit)
+# SW Build (by stepheny) on Fri Oct 11 16:37:07 PDT 2019
+# IP Build 2548770 on Wed May 29 13:01:34 MDT 2019
+# Start of session at: Wed Apr 19 01:06:13 2023
+# Process ID: 39970
+# Current directory: /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original
+# Command line: vivado -mode batch -notrace -source /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vivado_v7/compil_vivado_v7.tcl -tempDir tmp_dcp
+# Log file: /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/vivado.log
+# Journal file: /home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/zcui.work/backend_default/U0/M0/IF.Original/vivado.jou
+#-----------------------------------------------------------
+source /opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/vivado_v7/compil_vivado_v7.tcl -notrace

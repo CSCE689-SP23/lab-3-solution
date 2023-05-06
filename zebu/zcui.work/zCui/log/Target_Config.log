@@ -1,0 +1,67 @@
+
+                                    ZeBu (R)
+                                  zTargetTools
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zTargetTools zTargetTools.tcl 
+
+# start time is Wed Apr 19 01:04:19 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:00:11
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.01 0.02 0.05 1/471 35169
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185696 MB
+#            Total Free including cache: 190409 MB
+#            Swap cache: 0 MB Cached space: 4713 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 62 MB VmPeak: 62 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256846
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+# Configuration used is:
+#   valid machines   : 
+#   created by       : andrew.eggleston-t2
+#   date             : Tue Apr 18 15:57:19 2023
+#   based on release : /opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   platform type    : ZS3
+Loading basic configuration
+Loading ZeBu-Server 5 slots main board configuration
+Loading 8 FPGAs module configuration (ref zse_xc7v_8c_2000_v1)
+#
+#  pos | name  | module
+# -----+-------+--------------------------
+#    0 | U0.M0 | zse_xc7v_8c_2000_v1 
+#    1 | U0.M1 | zse_xc7v_8c_2000_v1 
+#    2 | U0.M2 | zse_xc7v_8c_2000_v1 
+#    3 | U0.M3 | zse_xc7v_8c_2000_v1 
+#    4 | U0.M4 | zse_xc7v_8c_2000_v1 
+#
+#   step TARGET INFO : Loading target informations from file '/mnt/quinn_zebu/ZEBU_SYSTEM_DIR/config/zse_configuration.tcl'
+#   step TARGET INFO : Driving target informations in file 'zTargetTools.xcui'
+command exit code is '0'

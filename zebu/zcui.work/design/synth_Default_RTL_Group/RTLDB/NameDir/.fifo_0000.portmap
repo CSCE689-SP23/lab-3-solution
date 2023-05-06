@@ -1,0 +1,52 @@
+Module fifo_0000{
+}
+Module clkg{
+}
+Module fifo_usage_spy{
+}
+
+EdfPortBounds ram{
+7 0 a
+8 0 d
+}
+EdfPortBounds fifo_0000{
+7 0 d_i
+7 0 q_o
+7 0 qa_o
+}
+EdfPortBounds parity{
+7 0 a
+}
+EdfPortBounds proba{
+9 0 level
+}
+EdfPortBounds dut{
+8 0 datain
+8 0 dataout
+}
+EdfPortBounds stb{
+8 0 data_rd
+8 0 data_wr
+}
+EdfPortBounds fifo_usage_spy{
+3 0 remain
+}
+EdfPortBounds proba_0000{
+9 0 level
+}
+EdfPortBounds parity_check{
+8 0 a
+}
+EdfPortBounds rom{
+7 0 a
+8 0 q
+}
+NonAliasNets fifo_0000{
+ra[2]    f   137
+ra[1]    f   138
+ra[0]    f   139
+w_rag[2]    f   140
+wa[2]    f   143
+wa[1]    f   144
+wa[0]    f   145
+}

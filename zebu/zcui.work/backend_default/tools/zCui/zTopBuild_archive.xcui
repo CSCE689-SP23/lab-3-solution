@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ZeBuUiDoc type="xcui" version="1.0" creator="zTopBuild_archive">
+    <targets>
+        <target type="directory" value="./U*/M*/ztune">
+            <menu>RunTime/zTopBuild</menu>
+        </target>
+        <target type="file" value="./rtl_clock.xref" dereference="true">
+            <menu>RunTime/zTopBuild</menu>
+        </target>
+        <target type="file" value="./tools/zTopBuild/fwc_valueSet2name.txt.gz">
+            <menu>RunTime/zTopBuild</menu>
+        </target>
+        <target type="file" value="./tools/zTopBuild/resources.xref">
+            <menu>RunTime/zTopBuild</menu>
+        </target>
+        <target type="file" value="./tools/zTopBuild/zTopBuild_trace.log">
+            <menu>Debug/zTopBuild</menu>
+        </target>
+        <target type="file" value="./xref.zsva">
+            <menu>RunTime/zTopBuild</menu>
+        </target>
+        <target type="file" value="./zTopBuild.log">
+            <menu>Log/zTopBuild</menu>
+        </target>
+        <target type="file" value="./zfwc.mk">
+            <menu>Debug/zTopBuild</menu>
+            <menu>RunTime/zTopBuild</menu>
+        </target>
+    </targets>
+</ZeBuUiDoc>

@@ -1,0 +1,813 @@
+
+                                    ZeBu (R)
+                                      zPar
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zPar zPar_zCui.tcl 
+
+# start time is Wed Apr 19 01:05:18 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:04:12
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.32 0.11 0.07 1/474 36577
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185586 MB
+#            Total Free including cache: 190305 MB
+#            Swap cache: 0 MB Cached space: 4719 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 401 MB VmPeak: 401 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524255814
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+#   step ENV.VAR : LM_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : SNPSLMD_LICENSE_FILE=27070@coe-vtls3.engr.tamu.edu:27020@csce-quinn-s1.engr.tamu.edu:2100@csce-quinn-s1.engr.tamu.edu
+#   step ENV.VAR : VCS_HOME=/opt/coe/synopsys/vcs/Q-2020.03-SP2-12
+#   step ENV.VAR : VERDI_HOME=/opt/coe/synopsys/verdi/Q-2020.03-SP2-12
+#   step ENV.VAR : ZEBU_AURA_FW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/fw
+#   step ENV.VAR : ZEBU_AURA_SW_HOME=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/aura/sw
+#   step ENV.VAR : ZEBU_DRIVER_PATH=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/drivers
+#   step ENV.VAR : ZEBU_ROOT=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4
+#   step ENV.VAR : ZEBU_SYSTEM_DIR=/mnt/quinn_zebu/ZEBU_SYSTEM_DIR
+#   step ENV.VAR : ZEBU_TRITON_ZS2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs2
+#   step ENV.VAR : ZEBU_TRITON_ZS3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/triton_zs3
+#   step ENV.VAR : ZEBU_XIL=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/ise/ISE_DS
+#   step ENV.VAR : ZEBU_XIL_VIVADO=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P2=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p2/
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P3=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p3/ids_lite
+#   step ENV.VAR : ZEBU_XIL_VIVADO_P4=/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/vivado_p4/
+#   step MGT_QSFP_CABLE_DELAY : Set qsfp_cable delay as 35000.000000 ps.
+#   step MGT_DIRECT_QSFP_CABLE_DELAY : Set direct_qsfp_cable delay as 35000.000000 ps.
+#   step MGT : Using GT_GP mode
+fwc {zcg_compositeClock} -version {gen2} -optimize {area} -fpgas {U0_M0_F0}
+fwc {zcg_compositeClock} -version {gen2} -optimize {area} -fpgas {U0_M0_F0}
+timing -analyze {TRISTATE_PATH ZFILTER_ASYNC_SET_RESET_PATH ZFILTER_FETCH_FEEDBACK }
+System {zpar_fpga_current_stats_file} {work.Part_0/zPar_fpga_stats}
+System {zpar_fpga_previous_stats_file} {work.Part_0/zPar_fpga_stats_hist_0}
+System {incremental} {true}
+System {incrementalPlace} {true}
+System {set_timing_task_file} {../timing.data}
+### warning in System [KPR0982W] : file '../timing.data' not found, timing tasks of previous compilation will not be used
+System {vivado_constraints} -mode=disabled -vivadoPlacerResponse=all -dryRun -maxTotalGates=10000000
+System {pinAssignmentEffort} {zap}
+System {sdfRequestType} {PRIO}
+System {xclkFrequency} {450000}
+System {driverFrequencyZtopBuild} {0}
+### warning in TCL RETIREMENT [KPR1518W] : This command will be deprecated in the next major release after ZEBU20.03.
+System {remapTristateArgs} -tristate_type pullup -conflict_type WAND -keeper_clock z_dclk_delay2 -keeper_edge falling
+### warning in TCL RETIREMENT [KPR1518W] : This command will be deprecated in the next major release after ZEBU20.03.
+relocate_mezzanine {U0.M0} { U0.M0 U0.M1 U0.M2 U0.M3 U0.M4 }
+relocate_mezzanine {U0.M0} { U0.M0 U0.M1 U0.M2 U0.M3 U0.M4 }
+System {routingEffort} {medium}
+System {generate_sdf_request}
+System {pdmCompileFlow} {false}
+System {scTdmCompileFlow} {false}
+System {timingCstFile} {../utf_generatefiles/zTime_config.tcl}
+System {quiet}
+System {quiet}
+Component {new} {M21605}
+Component {set} {M21605.type} {PROGRAMMABLE}
+Component {set} {M21605.usetype} {HUBCOMP}
+Component {set} {M21605.part} {MACOM21605}
+Component {set} {M21605.bitgen_options} -w -g persist:x32
+Component {set} {M21605.zcei_capable} {false}
+Component {new} {M23170}
+Component {set} {M23170.type} {PROGRAMMABLE}
+Component {set} {M23170.usetype} {HUBCOMP}
+Component {set} {M23170.part} {MACOM23170}
+Component {set} {M23170.bitgen_options} -w -g persist:x32
+Component {set} {M23170.zcei_capable} {false}
+Component {new} {S10_10MF_DIE_U1}
+Component {set} {S10_10MF_DIE_U1.type} {PROGRAMMABLE}
+Component {set} {S10_10MF_DIE_U1.usetype} {DESIGN}
+Component {set} {S10_10MF_DIE_U1.part} {ND7MF_PART_LEFT}
+Component {set} {S10_10MF_DIE_U1.bitgen_options} -w -g persist:x32
+Component {set} {S10_10MF_DIE_U1.die} {1}
+Component {set} {S10_10MF_DIE_U1.zcei_capable} {false}
+Component {new} {S10_10MF_DIE_U2}
+Component {set} {S10_10MF_DIE_U2.type} {PROGRAMMABLE}
+Component {set} {S10_10MF_DIE_U2.usetype} {DESIGN}
+Component {set} {S10_10MF_DIE_U2.part} {ND7MF_PART_RIGHT}
+Component {set} {S10_10MF_DIE_U2.bitgen_options} -w -g persist:x32
+Component {set} {S10_10MF_DIE_U2.die} {1}
+Component {set} {S10_10MF_DIE_U2.zcei_capable} {false}
+Component {new} {S10_10MPROD_DIE_U1}
+Component {set} {S10_10MPROD_DIE_U1.type} {PROGRAMMABLE}
+Component {set} {S10_10MPROD_DIE_U1.usetype} {DESIGN}
+Component {set} {S10_10MPROD_DIE_U1.part} {1SG10MHN3F74C2LG_U1}
+Component {set} {S10_10MPROD_DIE_U1.bitgen_options} -w -g persist:x32
+Component {set} {S10_10MPROD_DIE_U1.die} {1}
+Component {set} {S10_10MPROD_DIE_U1.zcei_capable} {false}
+Component {new} {S10_10MPROD_DIE_U2}
+Component {set} {S10_10MPROD_DIE_U2.type} {PROGRAMMABLE}
+Component {set} {S10_10MPROD_DIE_U2.usetype} {DESIGN}
+Component {set} {S10_10MPROD_DIE_U2.part} {1SG10MHN3F74C2LG_U2}
+Component {set} {S10_10MPROD_DIE_U2.bitgen_options} -w -g persist:x32
+Component {set} {S10_10MPROD_DIE_U2.die} {1}
+Component {set} {S10_10MPROD_DIE_U2.zcei_capable} {false}
+Component {new} {S10_10MS1_DIE_U1}
+Component {set} {S10_10MS1_DIE_U1.type} {PROGRAMMABLE}
+Component {set} {S10_10MS1_DIE_U1.usetype} {DESIGN}
+Component {set} {S10_10MS1_DIE_U1.part} {1SG10MHN3F74C2LGS1_U1}
+Component {set} {S10_10MS1_DIE_U1.bitgen_options} -w -g persist:x32
+Component {set} {S10_10MS1_DIE_U1.die} {1}
+Component {set} {S10_10MS1_DIE_U1.zcei_capable} {false}
+Component {new} {S10_10MS1_DIE_U2}
+Component {set} {S10_10MS1_DIE_U2.type} {PROGRAMMABLE}
+Component {set} {S10_10MS1_DIE_U2.usetype} {DESIGN}
+Component {set} {S10_10MS1_DIE_U2.part} {1SG10MHN3F74C2LGS1_U2}
+Component {set} {S10_10MS1_DIE_U2.bitgen_options} -w -g persist:x32
+Component {set} {S10_10MS1_DIE_U2.die} {1}
+Component {set} {S10_10MS1_DIE_U2.zcei_capable} {false}
+Component {new} {S10_10MS2_DIE_U1}
+Component {set} {S10_10MS2_DIE_U1.type} {PROGRAMMABLE}
+Component {set} {S10_10MS2_DIE_U1.usetype} {DESIGN}
+Component {set} {S10_10MS2_DIE_U1.part} {1SG10MHN3F74C2LGS2_U1}
+Component {set} {S10_10MS2_DIE_U1.bitgen_options} -w -g persist:x32
+Component {set} {S10_10MS2_DIE_U1.die} {1}
+Component {set} {S10_10MS2_DIE_U1.zcei_capable} {false}
+Component {new} {S10_10MS2_DIE_U2}
+Component {set} {S10_10MS2_DIE_U2.type} {PROGRAMMABLE}
+Component {set} {S10_10MS2_DIE_U2.usetype} {DESIGN}
+Component {set} {S10_10MS2_DIE_U2.part} {1SG10MHN3F74C2LGS2_U2}
+Component {set} {S10_10MS2_DIE_U2.bitgen_options} -w -g persist:x32
+Component {set} {S10_10MS2_DIE_U2.die} {1}
+Component {set} {S10_10MS2_DIE_U2.zcei_capable} {false}
+Component {new} {S10_10M_DIE}
+Component {set} {S10_10M_DIE.type} {PROGRAMMABLE}
+Component {set} {S10_10M_DIE.usetype} {DESIGN}
+Component {set} {S10_10M_DIE.part} {1sg10m_u1}
+Component {set} {S10_10M_DIE.bitgen_options} -w -g persist:x32
+Component {set} {S10_10M_DIE.die} {1}
+Component {set} {S10_10M_DIE.zcei_capable} {false}
+Component {new} {S10_10M_DIE_U1}
+Component {set} {S10_10M_DIE_U1.type} {PROGRAMMABLE}
+Component {set} {S10_10M_DIE_U1.usetype} {DESIGN}
+Component {set} {S10_10M_DIE_U1.part} {ND7M_PART1_U1}
+Component {set} {S10_10M_DIE_U1.bitgen_options} -w -g persist:x32
+Component {set} {S10_10M_DIE_U1.die} {1}
+Component {set} {S10_10M_DIE_U1.zcei_capable} {false}
+Component {new} {S10_10M_DIE_U2}
+Component {set} {S10_10M_DIE_U2.type} {PROGRAMMABLE}
+Component {set} {S10_10M_DIE_U2.usetype} {DESIGN}
+Component {set} {S10_10M_DIE_U2.part} {ND7M_PART1_U2}
+Component {set} {S10_10M_DIE_U2.bitgen_options} -w -g persist:x32
+Component {set} {S10_10M_DIE_U2.die} {1}
+Component {set} {S10_10M_DIE_U2.zcei_capable} {false}
+Component {new} {S10_280}
+Component {set} {S10_280.type} {PROGRAMMABLE}
+Component {set} {S10_280.usetype} {DESIGN}
+Component {set} {S10_280.part} {1sg280lh2f55i2vg}
+Component {set} {S10_280.bitgen_options} -w -g persist:x32
+Component {set} {S10_280.zcei_capable} {false}
+Component {new} {VU19P}
+Component {set} {VU19P.type} {PROGRAMMABLE}
+Component {set} {VU19P.usetype} {DESIGN}
+Component {set} {VU19P.part} {xcvu19p-fsva3824-1-e}
+Component {set} {VU19P.bitgen_options} -w -g persist:x32
+Component {set} {VU19P.die} {1}
+Component {set} {VU19P.zcei_capable} {false}
+Component {new} {VU3P}
+Component {set} {VU3P.type} {PROGRAMMABLE}
+Component {set} {VU3P.usetype} {DESIGN}
+Component {set} {VU3P.part} {xcvu3p-ffvc1517-1-e}
+Component {set} {VU3P.bitgen_options} -w -g persist:x32
+Component {set} {VU3P.die} {1}
+Component {set} {VU3P.zcei_capable} {false}
+Component {new} {XC5V110}
+Component {set} {XC5V110.type} {PROGRAMMABLE}
+Component {set} {XC5V110.usetype} {DESIGN}
+Component {set} {XC5V110.part} {5vlx110-1-ff1760}
+Component {set} {XC5V110.bitgen_options} -w -g persist:x32
+Component {set} {XC5V110.die} {1}
+Component {set} {XC5V110.zcei_capable} {false}
+Component {new} {XC5V110_IF}
+Component {set} {XC5V110_IF.type} {PROGRAMMABLE}
+Component {set} {XC5V110_IF.usetype} {IF}
+Component {set} {XC5V110_IF.part} {5vlx110-1-ff1760}
+Component {set} {XC5V110_IF.bitgen_options} -w -g persist:x32
+Component {set} {XC5V110_IF.die} {1}
+Component {set} {XC5V110_IF.zcei_capable} {false}
+Component {new} {XC5V330}
+Component {set} {XC5V330.type} {PROGRAMMABLE}
+Component {set} {XC5V330.usetype} {DESIGN}
+Component {set} {XC5V330.part} {5vlx330-1-ff1760}
+Component {set} {XC5V330.bitgen_options} -w -g persist:x32
+Component {set} {XC5V330.die} {1}
+Component {set} {XC5V330.zcei_capable} {false}
+Component {new} {XC5V330_IF}
+Component {set} {XC5V330_IF.type} {PROGRAMMABLE}
+Component {set} {XC5V330_IF.usetype} {IF}
+Component {set} {XC5V330_IF.part} {5vlx330-1-ff1760}
+Component {set} {XC5V330_IF.bitgen_options} -w -g persist:x32
+Component {set} {XC5V330_IF.die} {1}
+Component {set} {XC5V330_IF.zcei_capable} {false}
+Component {new} {XC6V550}
+Component {set} {XC6V550.type} {PROGRAMMABLE}
+Component {set} {XC6V550.usetype} {DESIGN}
+Component {set} {XC6V550.part} {6vlx550t-1-ff1760}
+Component {set} {XC6V550.bitgen_options} -w -g persist:x32
+Component {set} {XC6V550.die} {1}
+Component {set} {XC6V550.zcei_capable} {false}
+Component {new} {XC6V550_IF}
+Component {set} {XC6V550_IF.type} {PROGRAMMABLE}
+Component {set} {XC6V550_IF.usetype} {IF}
+Component {set} {XC6V550_IF.part} {6vlx550t-1-ff1760}
+Component {set} {XC6V550_IF.bitgen_options} -w -g persist:x32
+Component {set} {XC6V550_IF.die} {1}
+Component {set} {XC6V550_IF.zcei_capable} {false}
+Component {new} {XC6V760}
+Component {set} {XC6V760.type} {PROGRAMMABLE}
+Component {set} {XC6V760.usetype} {DESIGN}
+Component {set} {XC6V760.part} {6vlx760-1-ff1760}
+Component {set} {XC6V760.bitgen_options} -w -g persist:x32
+Component {set} {XC6V760.die} {1}
+Component {set} {XC6V760.zcei_capable} {false}
+Component {new} {XC6V760_IF}
+Component {set} {XC6V760_IF.type} {PROGRAMMABLE}
+Component {set} {XC6V760_IF.usetype} {IF}
+Component {set} {XC6V760_IF.part} {6vlx760-1-ff1760}
+Component {set} {XC6V760_IF.bitgen_options} -w -g persist:x32
+Component {set} {XC6V760_IF.die} {1}
+Component {set} {XC6V760_IF.zcei_capable} {false}
+Component {new} {XC7V2000}
+Component {set} {XC7V2000.type} {PROGRAMMABLE}
+Component {set} {XC7V2000.usetype} {DESIGN}
+Component {set} {XC7V2000.part} {7vlx2000tff1925}
+Component {set} {XC7V2000.bitgen_options} -w -g persist:x32
+Component {set} {XC7V2000.die} {1}
+Component {set} {XC7V2000.zcei_capable} {false}
+Component {new} {XC7V2000_DIE}
+Component {set} {XC7V2000_DIE.type} {PROGRAMMABLE}
+Component {set} {XC7V2000_DIE.usetype} {DESIGN}
+Component {set} {XC7V2000_DIE.part} {7vlx2000tff1925:die}
+Component {set} {XC7V2000_DIE.bitgen_options} -w -g persist:x32
+Component {set} {XC7V2000_DIE.die} {4}
+Component {set} {XC7V2000_DIE.zcei_capable} {false}
+Component {new} {XC7V2000_IF}
+Component {set} {XC7V2000_IF.type} {PROGRAMMABLE}
+Component {set} {XC7V2000_IF.usetype} {IF}
+Component {set} {XC7V2000_IF.part} {7vlx2000tff1925}
+Component {set} {XC7V2000_IF.bitgen_options} -w -g persist:x32
+Component {set} {XC7V2000_IF.die} {1}
+Component {set} {XC7V2000_IF.zcei_capable} {false}
+Component {new} {XCVU440}
+Component {set} {XCVU440.type} {PROGRAMMABLE}
+Component {set} {XCVU440.usetype} {DESIGN}
+Component {set} {XCVU440.part} {xcvu440flva2892}
+Component {set} {XCVU440.bitgen_options} -w -g persist:x32
+Component {set} {XCVU440.die} {1}
+Component {set} {XCVU440.zcei_capable} {false}
+Component {new} {XCVU440_DIE}
+Component {set} {XCVU440_DIE.type} {PROGRAMMABLE}
+Component {set} {XCVU440_DIE.usetype} {DESIGN}
+Component {set} {XCVU440_DIE.part} {xcvu440flva2892:die}
+Component {set} {XCVU440_DIE.bitgen_options} -w -g persist:x32
+Component {set} {XCVU440_DIE.die} {3}
+Component {set} {XCVU440_DIE.zcei_capable} {false}
+Component {new} {XCVU440_IF}
+Component {set} {XCVU440_IF.type} {PROGRAMMABLE}
+Component {set} {XCVU440_IF.usetype} {IF}
+Component {set} {XCVU440_IF.part} {xcvu440flva2892}
+Component {set} {XCVU440_IF.bitgen_options} -w -g persist:x32
+Component {set} {XCVU440_IF.zcei_capable} {false}
+Component {new} {ZSE_ICE_CONNECTOR}
+Component {set} {ZSE_ICE_CONNECTOR.type} {MACRO}
+Component {set} {ZSE_ICE_CONNECTOR.part} {SMC_Q_50}
+Component {set} {ZSE_ICE_CONNECTOR.class} {DIRECT_ICE}
+Component {set} {ZSE_ICE_CONNECTOR.bitgen_options} -w -g persist:x32
+Component {set} {ZSE_ICE_CONNECTOR.zcei_capable} {false}
+Component {new} {ZSE_ZALTA_CONNECTOR}
+Component {set} {ZSE_ZALTA_CONNECTOR.type} {MACRO}
+Component {set} {ZSE_ZALTA_CONNECTOR.part} {SMC_Q_50}
+Component {set} {ZSE_ZALTA_CONNECTOR.class} {DIRECT_ICE}
+Component {set} {ZSE_ZALTA_CONNECTOR.bitgen_options} -w -g persist:x32
+Component {set} {ZSE_ZALTA_CONNECTOR.zcei_capable} {false}
+Component {new} {F00_ZSE_XC7V_8C_2000_V1}
+Component {set} {F00_ZSE_XC7V_8C_2000_V1.type} {XC7V2000}
+Component {set} {F00_ZSE_XC7V_8C_2000_V1.bitgen_options} -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable
+Component {set} {F00_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Component {new} {F01_ZSE_XC7V_8C_2000_V1}
+Component {set} {F01_ZSE_XC7V_8C_2000_V1.type} {XC7V2000}
+Component {set} {F01_ZSE_XC7V_8C_2000_V1.bitgen_options} -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable
+Component {set} {F01_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Component {new} {F02_ZSE_XC7V_8C_2000_V1}
+Component {set} {F02_ZSE_XC7V_8C_2000_V1.type} {XC7V2000}
+Component {set} {F02_ZSE_XC7V_8C_2000_V1.bitgen_options} -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable
+Component {set} {F02_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Component {new} {F03_ZSE_XC7V_8C_2000_V1}
+Component {set} {F03_ZSE_XC7V_8C_2000_V1.type} {XC7V2000}
+Component {set} {F03_ZSE_XC7V_8C_2000_V1.bitgen_options} -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable
+Component {set} {F03_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Component {new} {F04_ZSE_XC7V_8C_2000_V1}
+Component {set} {F04_ZSE_XC7V_8C_2000_V1.type} {XC7V2000}
+Component {set} {F04_ZSE_XC7V_8C_2000_V1.bitgen_options} -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable
+Component {set} {F04_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Component {new} {F05_ZSE_XC7V_8C_2000_V1}
+Component {set} {F05_ZSE_XC7V_8C_2000_V1.type} {XC7V2000}
+Component {set} {F05_ZSE_XC7V_8C_2000_V1.bitgen_options} -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable
+Component {set} {F05_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Component {new} {F06_ZSE_XC7V_8C_2000_V1}
+Component {set} {F06_ZSE_XC7V_8C_2000_V1.type} {XC7V2000}
+Component {set} {F06_ZSE_XC7V_8C_2000_V1.bitgen_options} -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable
+Component {set} {F06_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Component {new} {F07_ZSE_XC7V_8C_2000_V1}
+Component {set} {F07_ZSE_XC7V_8C_2000_V1.type} {XC7V2000}
+Component {set} {F07_ZSE_XC7V_8C_2000_V1.bitgen_options} -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable
+Component {set} {F07_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Component {new} {F08_ZSE_XC7V_8C_2000_V1}
+Component {set} {F08_ZSE_XC7V_8C_2000_V1.type} {XC7V2000}
+Component {set} {F08_ZSE_XC7V_8C_2000_V1.bitgen_options} -w -g DriveDONE:Yes -g persist:x32 -g StartUpClk:CCLK -g OverTempPowerDown:Enable
+Component {set} {F08_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Component {new} {IF_ZSE_XC7V_8C_2000_V1}
+Component {set} {IF_ZSE_XC7V_8C_2000_V1.type} {XC7V2000_IF}
+Component {set} {IF_ZSE_XC7V_8C_2000_V1.bitgen_options} {do not edit this line (set by zRTB_FW via zse_xc7v_8c_2000_v1_rtb.tcl)}
+Component {set} {IF_ZSE_XC7V_8C_2000_V1.zcei_capable} {false}
+Module {new} {zse_xc7v_8c_2000_v1}
+Module {set} {zse_xc7v_8c_2000_v1.netlist} {/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/edifs/zse_xc7v_8c_2000_v1.edf.gz}
+Module {set} {zse_xc7v_8c_2000_v1.top} {zse_xc7v_8c_v1}
+Module {set} {zse_xc7v_8c_2000_v1.type} {zse_module}
+Module {set} {zse_xc7v_8c_2000_v1.id} {XC7V_8C}
+Module {set} {zse_xc7v_8c_2000_v1.bufg} {4} {20}
+Module {set} {zse_xc7v_8c_2000_v1.component} {0} {F00_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.component} {1} {F01_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.component} {2} {F02_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.component} {3} {F03_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.component} {4} {F04_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.component} {5} {F05_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.component} {6} {F06_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.component} {7} {F07_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.component} {8} {F08_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.component} {9} {IF_ZSE_XC7V_8C_2000_V1}
+Module {set} {zse_xc7v_8c_2000_v1.rtbconfig} {/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/configs/zse_xc7v_8c_2000_v1_rtb.tcl}
+Module {set} {zse_xc7v_8c_2000_v1.rtbmod} {false}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {0} {32x64} {dram} {0} {0}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {1} {32x64} {dram} {1} {0}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {2} {32x64} {dram} {0} {1}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {3} {32x64} {dram} {1} {1}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {4} {32x64} {dram} {0} {6}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {5} {32x64} {dram} {1} {6}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {6} {32x64} {dram} {0} {7}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {7} {32x64} {dram} {1} {7}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {8} {128x512} {dram} {0} {8}
+Module {set} {zse_xc7v_8c_2000_v1.embedded_zrm} {9} {128x512} {dram} {1} {8}
+Module {set} {zse_xc7v_8c_2000_v1.fwlibname} {zse_xc7v_8c_v1}
+Target {new} {zebu}
+Target {set} {zebu.netlist} {ztb_tg_remapped.edf.gz}
+Target {set} {zebu.top} {zse_sbp_5s}
+Target {set} {zebu.product} {zse}
+Target {set} {zebu.module} {0} {U0.M0} {zse_xc7v_8c_2000_v1} { 58A2}
+Target {set} {zebu.mbname} {zse_sbp_5s}
+Target {set} {zebu.id} {5S}
+Target {set} {zebu.zparfwlib} {zse_hw_zPar.edf.gz}
+Target {set} {zebu.zrmfwlib} {zse_hw_zrm.edf.gz}
+Target {set} {zebu.zfwfwlib} {zse_hw_zFW.edf.gz}
+Target {set} {zebu.frequency} {450}
+Target {set} {zebu.trace} {on}
+System {quiet}
+Design {new} {top}
+Design {set} {top.netlist} {edif/top.edf.gz}
+Design {set} {top.top} {top}
+Core {new} {Part_0}
+System {quiet}
+Core {set} {Part_0.netlist} {work.Part_0/edif/top.edf.gz}
+Core {set} {Part_0.top} {top}
+Module {new} {Part_0|U0_M0}
+Core {set} {Part_0.module} {0} {Part_0|U0_M0}
+Module {set} {Part_0|U0_M0.netlist} {work.Part_0/edif/U0_M0.edf.gz}
+Module {set} {Part_0|U0_M0.top} {U0_M0}
+Component {new} {U0_M0_F0}
+Component {set} {U0_M0_F0.netlist} {work.Part_0/edif/U0_M0_F0.edf.gz}
+Component {set} {U0_M0_F0.top} {U0_M0_F0}
+Component {set} {U0_M0_F0.type} {XC7V2000}
+Component {set} {U0_M0_F0.hierarchy} {U0_M0_F0.U0_M0_F0_core}
+Component {set} {U0_M0_F0.zcei_capable} {false}
+Module {set} {Part_0|U0_M0.component} {0} {U0_M0_F0}
+System {nobufg}
+Component {set} {U0_M0_F0.ConstraintLine} {#xdc_addconst delay
+set_max_delay -datapath_only -from [get_pins -hierarchical {*zMem_multiport_FROM_clk_50*/Q}] -to [get_cells -hierarchical {*zMem_multiport_TO_clk_50*}] 40.0}
+System {quiet}
+System {pinAssignmentEffort} {zap}
+System {merge}
+#   step Merge Cores : Starting
+#   step MERGING CORES : Start cores merging
+#   step ZNF PARSER : reading netlist from ZNF file 'edif/top.edf.gz'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/libXilinx.edif.gz'
+#   step ZNF PARSER : reading netlist from ZNF file 'work.Part_0/edif/top.edf.gz'
+#   step ZNF PARSER : reading netlist from ZNF file 'work.Part_0/edif/U0_M0.edf.gz'
+#   step SERIALIZE : writing netlist 'gmerge' into znl file 'tools/zPar/debug_netlists/global_merge.edf.gz'
+#   step SERIALIZE : #bytes in: 2008, #bytes out: 1095, compression ratio: 1.833790
+### warning in ENV RETIREMENT [KPR1571W] : Environment variable "ZEBU_NO_LOCAL_RTB_ROUTING" will be deprecated in the next major release after ZEBU20.03.
+#   step SERIALIZE : writing netlist 'gmerge' into znl file 'tools/zPar/debug_netlists/final_unflat_global_merge.edf.gz'
+#   step SERIALIZE : #bytes in: 1742, #bytes out: 898, compression ratio: 1.939866
+### warning in ENV RETIREMENT [KPR1572W] : Environment variable "ZEBU_NO_LOCAL_RTB_ROUTING" will be deprecated in the next major release after ZEBU20.03.
+#   step Clock routing : wire 'Part_0@U0_M0@zcg_zceiClock[0]' will be routed from local IF, on each module
+#   step Clock routing : wire 'Part_0@U0_M0@zcg_zceiClock[1]' will be routed from local IF, on each module
+#   step SERIALIZE : writing netlist 'gmerge' into znl file 'edif/mergetop.edf.gz'
+#   step SERIALIZE : #bytes in: 1253, #bytes out: 710, compression ratio: 1.764789
+#   step SERIALIZE : writing netlist 'gmerge' into znl file 'globalMerge.edf.gz'
+#   step SERIALIZE : #bytes in: 1742, #bytes out: 898, compression ratio: 1.939866
+#   step MERGING CORES : End cores merging
+#   step Merge Cores : Done in    elapsed:0.20 s   user:0.14 s    system:0.2 s      %cpu:77.48       load:0.32       fm:185552 m      vm:493 m      vm:+28 m      um:166 m      um:+33 m
+System {check}
+System {init}
+#   step ZNF PARSER : reading netlist from ZNF file 'ztb_tg_remapped.edf.gz'
+#   step EDIF LOADER : reading EDIF file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/sys/ZSE/edifs/zse_xc7v_8c_2000_v1.edf.gz'
+#   step INIT : Targeting product type: zse
+#   step INIT : Setting socket mode: v5v6v7
+#   step CLOCK : Wire Part_0@U0_M0@ztwbufg_zcg_compositeClock is a clock
+#   step CLOCK : Wire Part_0@U0_M0@ztwbufg_zcg_zceiClock[0] is a clock
+#   step CLOCK : Wire Part_0@U0_M0@ztwbufg_zcg_zceiClock[1] is a clock
+#   step CLOCK : Wire Part_0@U0_M0@z_dclk_delay_bufg is a clock
+#   step CLOCK : Wire Part_0@U0_M0@z_dclk_delay2_bufg is a clock
+Place
+#   step Place : Starting
+#   step ZTIME : Create timing graph for optimization
+#   step ZTIME : build clock IF->FPGA vertices
+#   step ZTIME : build IF<->FPGA vertices
+#   step ZTIME : build FPGA<->FPGA vertices
+#   step ZTIME : U0_M0_F0 In: 5, Out:0, Inout:0, Others:0
+#   step ZTIME : create 10 nodes
+#   step ZTIME : create 5 arcs
+source {/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/ztime/common_eval_params.tcl}
+#   step SOURCE : Source file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/ztime/common_eval_params.tcl' ...
+source {/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/ztime/v7_eval_params.tcl}
+#   step SOURCE : Source file '/opt/coe/synopsys/zebu/Q-2020.03-SP1-4/etc/ztime/v7_eval_params.tcl' ...
+set_eval_param {DELAY_ON_SINGLE_ZL=20000}
+set_eval_param {DELAY_ON_LVDS_ZL=1111}
+set_eval_param {DELAY_ON_LVDS_ZL2=833}
+set_eval_param {SLL_XCLK_PERIOD=10000}
+set_eval_param {SLL_LATENCY=10000}
+set_eval_param {MGT_LATENCY=74000}
+set_eval_param {SLL_UBDR=1.0}
+set_eval_param {MGT_UBDR=1.142857}
+set_eval_param {SDR_COFFICIENT=1.0}
+set_eval_param {SLL_SDR_DELAY=15000}
+set_eval_param {DELAY_ON_LOW_SKEW=5000}
+set_eval_param {DELAY_IN_FPGA=10000}
+set_eval_param {DELAY_IN_DIE=10000}
+set_eval_param {DELAY_IN_CLOCKGEN=5000}
+set_eval_param {DELAY_IN_MSGPORT=16000}
+set_eval_param {DELAY_ASYNC_FPGA=16000}
+set_eval_param {DELAY_ASYNC_DIE=16000}
+set_eval_param {DELAY_IN_SOCKET=1}
+set_eval_param {DELAY_CROSS_FPGA=0}
+set_eval_param {DELAY_S2S_INT=15000}
+set_eval_param {DELAY_S2S_INT_DIE=15000}
+set_eval_param {DELAY_F2F_INT=1}
+set_eval_param {DELAY_F2I_INT=1}
+set_eval_param {DELAY_I2F_INT=1}
+set_eval_param {DELAY_I2I_INT=1}
+set_eval_param {DELAY_RACC=0}
+set_eval_param {DELAY_DIE_AWARE=0}
+set_eval_param {DELAY_MIN_ZFILTER=40000}
+set_eval_param {DELAY_MIN_ZFILTER_SKEW=40000}
+set_eval_param {DELAY_MIN_SKEW_DRVCLK=40000}
+set_eval_param {DELAY_MIN_ZFILTER_DRVCLK=0}
+set_eval_param {DELAY_ADD_SKEW=0}
+set_eval_param {DELAY_ADD_DRVCLK=0}
+set_eval_param {SSRAM_HZ_CYCLE=2}
+set_eval_param {SSRAM_DUT2MEM_CYCLE=3}
+set_eval_param {SSRAM_CONTROL_CYCLE=4}
+set_eval_param {SSRAM_DEFAULT_FREQ=150.0}
+set_eval_param {SSRAM_FORCE_FREQ=0}
+set_eval_param {SSRAM_EMPIRICAL_FMAX=25.0}
+set_eval_param {SSRAM_WORD_WIDTH=32}
+set_eval_param {RLDRAM_DEFAULT_FREQ=200.0}
+set_eval_param {RLDRAM_FORCE_FREQ=0.0}
+set_eval_param {RLDRAM_EMPIRICAL_FMAX=25.0}
+set_eval_param {RLDRAM_WORD_WIDTH=32}
+set_eval_param {RLDRAM_HZ_CYCLE=3}
+set_eval_param {RLDRAM_SIMULTANEOUS_RW=0}
+set_eval_param {DRAM_DEFAULT_FREQ=234}
+set_eval_param {DRAM_FORCE_FREQ=0.0}
+set_eval_param {DRAM_EMPIRICAL_FMAX=25.0}
+set_eval_param {DRAM_EMPIRICAL_XTOR_FMAX=17.0}
+set_eval_param {DRAM_WORD_WIDTH=256}
+set_eval_param {DRAM_SIMULTANEOUS_RW=0}
+set_eval_param {DRAM3_DEFAULT_FREQ=400.0}
+set_eval_param {DRAM3_FORCE_FREQ=0.0}
+set_eval_param {DRAM3_EMPIRICAL_FMAX=25.0}
+set_eval_param {DRAM3_EMPIRICAL_XTOR_FMAX=17.0}
+set_eval_param {DRAM3_WORD_WIDTH=512}
+set_eval_param {DRAM3_SIMULTANEOUS_RW=0}
+set_eval_param {DRAM4_DEFAULT_FREQ=800.0}
+set_eval_param {DRAM4_FORCE_FREQ=0.0}
+set_eval_param {DRAM4_EMPIRICAL_FMAX=25.0}
+set_eval_param {DRAM4_EMPIRICAL_XTOR_FMAX=17.0}
+set_eval_param {DRAM4_WORD_WIDTH=512}
+set_eval_param {DRAM4_SIMULTANEOUS_RW=0}
+set_eval_param {BRAM_EMPIRICAL_FMAX=25.0}
+set_eval_param {RAMLUT_EMPIRICAL_FMAX=25.0}
+set_eval_param {MAX_FWCIP_SIZE=480}
+set_eval_param {MAX_SKEW_OFFSET=65530}
+set_eval_param {MAX_DRIVER_OFFSET=65530}
+set_eval_param {MASTER_CLOCK_FREQ=100.0}
+set_eval_param {XCLK_PERIOD=0}
+set_eval_param {DELAY_IF2IF=50000}
+set_eval_param {DELAY_IF2H=100000}
+set_eval_param {DELAY_I2I_EXT=30000}
+set_lazy_eval_func {DELAY_I2I_EXT=_tsInterfArcDelay}
+set_eval_param {DELAY_IN_CLKHUB=100000}
+set_eval_param {EXTRA_DELAY_TS_CLKBUS_IN=0}
+set_eval_param {EXTRA_DELAY_TS_CLKBUS_OUT=0}
+set_eval_param {DELAY_IN_TSINTERF=150000}
+set_lazy_eval_func {DELAY_IN_TSINTERF=_tsInterfInternalDelay}
+set_eval_param {EXTRA_DELAY_LANCE_LOGIC=0}
+source {tools/zTime/zTopBuild_timing.zti}
+#   step SOURCE : Source gzipped file 'tools/zTime/zTopBuild_timing.zti' ...
+set_hydra -enable {false}
+#   step HYDRA : Hydra mode is disabled.
+source {tools/zTime/clock_dependencies.zti}
+#   step SOURCE : Source gzipped file 'tools/zTime/clock_dependencies.zti' ...
+import_zref_info {tools/zTime/zTime_hierarchy.edf.gz}
+#   step ZNF PARSER : reading netlist from ZNF file 'tools/zTime/zTime_hierarchy.edf.gz'
+import_async_paths {work.Part_0/tools/zTime/global_time.edf.gz}
+#   step IMPORT : Clock domain deduplication is enabled
+#   step IMPORT : Starting
+#   step IMPORT : import use ZEBU_EDIF_TRANSFER
+#   step IMPORT : Import asynchronous paths from 'work.Part_0/tools/zTime/global_time.edf.gz'
+#   step ZNF PARSER : reading netlist from ZNF file 'work.Part_0/tools/zTime/global_time.edf.gz'
+#   step BINDATA : Reading clock domain file "work.Part_0/tools/zTime/zTime_clock_domain.cds".
+#   step BINDATA : Clock domains read: 2 sets with average 1.000000 and max 1 clock domains per set
+#   step BINDATA : Clock domains read: 0 deduplicated, result is average 1.000000 and max 1 clock domains per set
+#   step IMPORT : Import asynchronous paths from FPGA 'U0_M0_F0'
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port U0_M0_F0.z_dclk_delay created by zPar  but not seen by zTime
+#   step IMPORT : Number of timing arcs created: 2, of them 0 are ZCLK
+#   step Memories timing paths distribution : 
+# +
+#   step IMPORT : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.32       fm:185516 m      vm:524 m       vm:+0 m      um:204 m       um:+1 m
+import_async_paths {tools/zRTB_FE/global_rtb_time.edf.gz} -rtb=true
+#   step IMPORT : Clock domain deduplication is enabled
+#   step IMPORT : Starting
+#   step IMPORT : import use ZEBU_EDIF_TRANSFER
+#   step IMPORT : Import asynchronous paths from 'tools/zRTB_FE/global_rtb_time.edf.gz'
+#   step ZNF PARSER : reading netlist from ZNF file 'tools/zRTB_FE/global_rtb_time.edf.gz'
+#   step IMPORT : Import asynchronous paths from RTB
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1 created by zPar  but not seen by zTime
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0 created by zPar  but not seen by zTime
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_filterClock created by zPar  but not seen by zTime
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_compositeClock created by zPar  but not seen by zTime
+### warning in zTime-zPar Discrepancy [KTM0674W] : Port .zcg_skewClock created by zPar  but not seen by zTime
+#   step IMPORT : Number of timing arcs created: 0, of them 0 are ZCLK
+#   step Memories timing paths distribution : 
+# +
+#   step IMPORT : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.32       fm:185516 m      vm:524 m       vm:+0 m      um:204 m       um:+0 m
+source {work.Part_0/tools/zTime/zCoreBuild_timing.zti}
+#   step SOURCE : Source gzipped file 'work.Part_0/tools/zTime/zCoreBuild_timing.zti' ...
+#   step ZTIME : Timing graph for optimization created
+#   step ROUTE :  Apply user zTime false paths constraints
+source {../utf_generatefiles/zTime_config.tcl}
+#   step SOURCE : Source file '../utf_generatefiles/zTime_config.tcl' ...
+source {../utf_generatefiles/new_zTime_config.tcl}
+#   step SOURCE : Source file '../utf_generatefiles/new_zTime_config.tcl' ...
+set_advanced_asynchronous_set_reset_analysis {false}
+set_eval_param {DELAY_MIN_ZFILTER_SKEW=40000}
+
+#   step ZTIME : Disable slack ratio distribution
+#   step ZNF PARSER : reading netlist from ZNF file 'edif/mergetop.edf.gz'
+#   step ARCHIVE : Creating archive file ./tools/zCui/zParBE_archive.xcui
+#   step PLACE : Placement result for module U0_M0 placed on zebu:
+#   step PLACE :   +----+------------------------------+------------------------------+
+#   step PLACE :   |  0 | F00_ZSE_XC7V_8C_2000_V1      | U0_M0_F0                     |
+#   step PLACE :   |  1 | F01_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  2 | F02_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  3 | F03_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  4 | F04_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  5 | F05_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  6 | F06_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  7 | F07_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   |  8 | F08_ZSE_XC7V_8C_2000_V1      | unused                       |
+#   step PLACE :   +----+------------------------------+------------------------------+
+#   step Granularity : Granularity is disabled because the hardware type zse doesn't support granularity
+#   step KR_ROUTE : FPGA logical name U0_M0_F0 placed at  FPGA ID 0
+#   step Place : Done in    elapsed:0.15 s   user:0.10 s    system:0.1 s      %cpu:72.13       load:0.32       fm:185512 m      vm:528 m      vm:+24 m      um:208 m      um:+24 m
+Route
+#   step Route : Starting
+#   step System : routingEffort medium
+
+#   step STATS : Writing file zPar_stats/zPar_config.csv
+#   step STATS : Writing file zPar_stats/zPar_before.csv
+#   step STATS : Writing file zPar_stats/zPar_in_before.csv
+#   step STATS : Writing file zPar_stats/zPar_out_before.csv
+#   step STATS : Writing file zPar_stats/zPar_ratios_before.csv
+#   step STATS : Writing file zPar_stats/design.txt
+#   step STATS : Writing file zPar_stats/target.txt
+#   step ROUTE : Route design clocks
+#   step Clcok Route : Found driver port in IF/zcg_compositeClock for port U0_M0_F0/zcg_compositeClock
+#   step Clcok Route : Found driver port in IF/zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1 for port U0_M0_F0/zcg_zceiClock[0]
+#   step Clcok Route : Found driver port in IF/zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0 for port U0_M0_F0/zcg_zceiClock[1]
+#   step Clcok Route : Found driver port in IF/zcg_skewClock for port U0_M0_F0/z_dclk_delay
+#   step Clcok Route : Found driver port in IF/zcg_filterClock for port U0_M0_F0/z_dclk_delay2
+#   step ROUTE : 5 physical clock nets (on 63) used to route 5 design clocks
+### warning in CHECK [KPR0630W] : This design is empty, no wire to route.
+#   step MultiDie DB : ---------------- Begin creation of multi die DB info for module zse_xc7v_8c_2000_v1
+#   step MultiDie DB : ---------------- multi die DB for module zse_xc7v_8c_2000_v1, size : 10
+#   step MultiDie DB : ---------------- End creation of multi die DB info for module zse_xc7v_8c_2000_v1
+
+#   step STATS : Writing file zPar_stats/zPar_after.csv
+#   step STATS : Writing file zPar_stats/zPar_ratios_after.csv
+
+#   step ROUTE : =================================================================================
+#   step ROUTE : Design matrix after routing (U0_M0)
+#+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+#|       |    F00|    F01|    F02|    F03|    F04|    F05|    F06|    F07|    F08|
+#+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+#|    F00|      -|      .|      .|      .|      .|      .|      .|      .|      1|
+#|    F01|      .|      -|      .|      .|      .|      .|      .|      .|      .|
+#|    F02|      .|      .|      -|      .|      .|      .|      .|      .|      .|
+#|    F03|      .|      .|      .|      -|      .|      .|      .|      .|      .|
+#|    F04|      .|      .|      .|      .|      -|      .|      .|      .|      .|
+#|    F05|      .|      .|      .|      .|      .|      -|      .|      .|      .|
+#|    F06|      .|      .|      .|      .|      .|      .|      -|      .|      .|
+#|    F07|      .|      .|      .|      .|      .|      .|      .|      -|      .|
+#|    F08|      1|      .|      .|      .|      .|      .|      .|      .|      -|
+#|     IF|      .|      .|      .|      .|      .|      .|      .|      .|      1|
+#|    Sum|      1|      .|      .|      .|      .|      .|      .|      .|      2|
+#|    Sum|      1|      .|      .|      .|      .|      .|      .|      .|      2|
+#+-------+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+#   step Route : Done in    elapsed:0.29 s   user:0.20 s    system:0.2 s      %cpu:75.41       load:0.32       fm:185477 m      vm:562 m      vm:+34 m      um:243 m      um:+35 m
+Generate
+#   step INCR : Dumping config database './tools/zPar/zPar_db/configDB'
+#   step INCR : Dumping design database './tools/zPar/zPar_db/designDB'
+#   step INCR : Dumping place database './tools/zPar/zPar_db/placeDB'
+#   step GENERATION : RACC (Run-time Asynchronous Communication Check) : off
+#   step GENERATION : Generating merge script 'zPar_merge.tcl'
+#   step GENERATE : Create ./tools/zTime/zPar2PDMTiming.tcl script
+#   step zrm handling : zrm firmware-library version is '2014.12-2698295'
+#   step NETLIST CREATION : Create FPGA wrappers for module U0_M0
+#   step Sanity Checker : All sockets have been verified: no Xdr mismatch has been detected at this level. See tools/zPar/sanityChecker.txt for wire or LVDS mismatches
+
+#   step DISPLAY : Maximum xDR per component:
+#   step DISPLAY : +------------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+#   step DISPLAY : |            |  IF |   0 |   1 |   2 |   3 |   4 |   5 |   6 |   7 |   8 |
+#   step DISPLAY : +------------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+#   step DISPLAY : |U0_M0       |   1 |   1 |   - |   - |   - |   - |   - |   - |   - |   1 |
+#   step DISPLAY : |LVDS        |   1 |   1 |   - |   - |   - |   - |   - |   - |   - |   1 |
+#   step DISPLAY : |MGT         |   0 |   0 |   - |   - |   - |   - |   - |   - |   - |   0 |
+#   step DISPLAY : +------------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+#   step DISPLAY : 
+
+#   step SERIALIZE : writing netlist 'design' into znl file 'U0/M0/F00.src/wrapper.edf.gz'
+#   step SERIALIZE : #bytes in: 254335, #bytes out: 71743, compression ratio: 3.545084
+#   step XDC GENERATOR : Writing XDC file 'U0/M0/F00.src/design_zpar.zdc.incr_tmp' with 10 constraints
+#   step XDC GENERATOR : constraints have changed - regenerate XDC file 'U0/M0/F00.src/design_zpar.zdc'
+#   step GENERATE : Create symbolic link './tools/zPar/design_fpga/U0_M0_F0' on file '../../../U0/M0/F00'.
+#   step write Fpga Wrapper : Done in    elapsed:0.19 s   user:0.12 s    system:0.1 s      %cpu:68.60       load:0.38       fm:184224 m     vm:1830 m       vm:+2 m     um:1496 m       um:+4 m
+#   step SERIALIZE : writing netlist 'design' into znl file 'U0/M0/F08.src/wrapper.edf.gz'
+#   step SERIALIZE : #bytes in: 275432, #bytes out: 76691, compression ratio: 3.591451
+#   step XDC GENERATOR : Writing XDC file 'U0/M0/F08.src/design_zpar.zdc.incr_tmp' with 6 constraints
+#   step XDC GENERATOR : constraints have changed - regenerate XDC file 'U0/M0/F08.src/design_zpar.zdc'
+#   step GENERATE : Skip generating routing fpga: U0/M0/F08
+#   step write Fpga Wrapper : Done in    elapsed:0.18 s   user:0.12 s      system:0 s      %cpu:67.80       load:0.38       fm:184224 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step SERIALIZE : writing netlist 'design' into znl file 'U0/M0/IF_zFW.edf.gz'
+#   step SERIALIZE : #bytes in: 4292, #bytes out: 2067, compression ratio: 2.076439
+#   step GENERATE : Skip generating routing fpga: U0/M0/F09
+#   step write Fpga Wrapper : Done in     elapsed:0.3 s      user:0 s    system:0.1 s      %cpu:32.26       load:0.43       fm:184224 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step STATS : Writing file 'zPar_stats/zPar_socket_info.csv'
+#   step STATS : Writing file 'zPar_stats/zPar_config_opt.csv'
+#   step Sanity Checker : Check socket connectivity from U0/M0/F00 to U0/M0/F08
+#   step Sanity Checker : Check socket connectivity from U0/M0/F08 to U0/M0/F00
+#   step Sanity Checker : Check socket connectivity from U0/M0/F08 to U0/M0/IF
+#   step Sanity Checker : Check socket connectivity from U0/M0/IF to U0/M0/F08
+#   step GENERATE : All wrappers passed connectivity verfications.
+#   step XREF : Dump relocate xref file ./tools/zPar/loc.xref
+#   step GENERATION : Generating './tools/zPar/zpar.mk' makefile
+### warning in GENERATE [KPR0984W] : Could not open file of timing tasks '../timing.data' : This file not found or corrupted.
+#   step GENERATE : fpga task ordering : for fpga U0/M0/F00, greater duration found 0
+#   step GENERATE : fpga task ordering : for fpga U0/M0/F08, greater duration found 0
+#   step GENERATE : fpga task ordering : for fpga U0/M0/IF, greater duration found 0
+#   step link : Check the existance of each symbolic link
+#   step link : Dump symbolic link and their target path to ./tools/zPar/symbolic_link_table.csv
+#   step Generate : Done in       elapsed:6 s      user:5 s   system:0.56 s      %cpu:95.96       load:0.43       fm:184223 m     vm:1830 m    vm:+1268 m     um:1496 m    um:+1253 m
+Timing -zTime_mode
+#   step Timing : Starting
+#   step timingGraphBuilder::dumpTclTimingFile : Starting
+#   step ZTIME : Dump timing graph in file 'tools/zTime/zPar_timing.zti'
+#   step ZTIME : Dump clock
+#   step DEBUG_DUMP_ZTI : generate zti file for rtb local wire zcg_zceiClock[0]@top._I_vcs_cdx_s_rw_topu_stb_clk1
+#   step DEBUG_DUMP_ZTI : generate zti file for rtb local wire zcg_zceiClock[1]@top._I_vcs_cdx_s_rw_topu_stb_clk0
+#   step ZTIME : Dump nets from route
+#   step ZTIME : Dump loop arcs
+#   step ZTIME : Found 0 combinatorial loop(s) in design
+#   step timingGraphBuilder::dumpTclTimingFile : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpZfpgaTimingRequest : Starting
+#   step build_topPortToNodeId : Starting
+#   step ZPAR FW SDF : Total 0 FwPort Adding to SDF database
+#   step build_topPortToNodeId : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step getIntraFpgaTimingPathforZFpgaTiming : Starting
+#   step ZTIME FPGA : 0 socket->DUT timing path(s) and 0 DUT->socket timing path(s)
+#   step ZTIME FPGA : SDF requests done using priorities
+#   step getIntraFpgaTimingPathforZFpgaTiming : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step buildSdfRequestsFromTimingGraph : Starting
+#   step buildSdfRequestsFromTimingGraph : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpZfpgaTimingRequest : [before] isReturn:0, path size:0, capacity:0
+#   step buildRoutingHopSdfRequests : Starting
+#   step buildRoutingHopSdfRequests : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step buildSdfRequestsFromTimingGraph : Starting
+#   step buildSdfRequestsFromTimingGraph : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step buildFilterSdfRequests : Starting
+#   step buildFilterSdfRequests : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step addGlobalSdfCommands : Starting
+#   step addGlobalSdfCommands : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpSdfRequestBuilder : Starting
+#   step ZTIME FPGA : dumping 0 requests in U0/M0/zFpga_timing_paths.tcl
+#   step ZTIME FPGA : dumping 3 requests in U0/M0/F00.src/zFpga_timing_paths.tcl
+#   step ZTIME FPGA : dumping 0 requests in U0/M0/F08.src/zFpga_timing_paths.tcl
+#   step dumpSdfRequestBuilder : Done in     elapsed:0.1 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step handleAttributes : Starting
+#   step handleAttributes : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpSoftTimingConstraint : Starting
+#   step dumpSoftTimingConstraint : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpNodeIdAndNameOfIF : Starting
+#   step dumpNodeIdAndNameOfIF : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step dumpZfpgaTimingRequest : Done in     elapsed:0.2 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+#   step PATH ANALYSIS : Create tools/zPar/design.paf
+#   step Timing : Done in     elapsed:0.3 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+Finish
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | Usage                                 | Description                                        |Default | Status   |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | It's set in UTF file.                 | Product Type: ZS3, ZS4, ZS5, HAPS, Orion++, EP1    | N/A    | zse      |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | It's set in UTF file.                 | Hardware Family: V5, V6, V7 and V8                 | N/A    | V7       |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System enable_zs3_if_less_flow        | Turn on if less flow in ZS3                        |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System uc_pbuild_converged_flow       | Turn on continuum flow.                            |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System cf_zpar_route                  | Turn on continuum ZparFM Route flow.               |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System fm_zmem_reverse_mode           | Turn on Fetch Mode reverse mode.                   |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System set_placement_kind <val>       | Set the placer type of zPar and only available     | N/A    | N/A      |
+#   step  : |                                       | in ZS1,ZS2, and ZS3. Placement happens during      |        |          |
+#   step  : |                                       | partitioning in ZS4 and beyond.                    |        |          |
+#   step  : |                                       | The available types are Prob, Direct.              |        |          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System routingEffort <val>            | Set the routing effort of zPar.                    | medium |medium    |
+#   step  : |                                       | The available value are min_distance, no_effort,   |        |          |
+#   step  : |                                       | low, medium.                                       |        |          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System routerType  <val>              | Set the router type of zPar.                       | ZCR    | ZCR      |
+#   step  : |                                       | The available value are                            |        |          |
+#   step  : |                                       | wirelength_timing_coopt(ZCR)                       |        |          |
+#   step  : |                                       | partition_quality_checker(PQC)                     |        |          |
+#   step  : |                                       | shortest_path_router(SPR)                          |        |          |
+#   step  : |                                       | enhanced_zcr(EZCR)                                 |        |          |
+#   step  : |                                       | legacy                                             |        |          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System pinAssignmentEffort <val>      | Set the pinassignment effort of zpar.              |zap     | zap      |
+#   step  : |                                       | The available value are no_effort, low, medium,    |        |          |
+#   step  : |                                       | high, zap.                                         |        |          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System incremental                    | Incremental Mode                                   |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System socketMode <val>               | Set socket mode                                    | depend | v5v6v7   |
+#   step  : |                                       | The available value depends on product type        |   on   |          |
+#   step  : |                                       | Possible value: v5v6v7, component, native, leo     | product|          |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step  : | System socketGenerationSAG            | Turn on signal alignment generate flow.            |disabled| disabled |
+#   step  : +---------------------------------------+----------------------------------------------------+--------+----------+
+#   step REPORT : +-------------------------------------------------------------------------------+
+#   step REPORT :   No inter-fpga filter path found
+#   step REPORT :   No routing data path found
+#   step REPORT :   No memory found
+#   step REPORT :   Fast Waveform Captures detected, if use at run-time the driverClk frequency might be limited.
+#   step REPORT :   Driver clock frequency is limited by clock paths (driverClk.Period = zClockSkewTime + DELAY_MIN_SKEW_DRVCLK) : 40ns
+#   step REPORT :   zPar timing estimated delay cost is : 40 ns
+#   step REPORT : +-------------------------------------------------------------------------------+
+
+#   step FinishBody. : Done in       elapsed:0 s      user:0 s      system:0 s       %cpu:0.00       load:0.43       fm:184223 m     vm:1830 m       vm:+0 m     um:1496 m       um:+0 m
+
+#   exec summary :   13 warnings,    0 syntax errors,    0 fatal errors,    0 internal errors
+#   exec summary : wall clock 0m8s, user 0m6.557s, sys 0m0.729s
+#   exec summary : Total memory: 1874684 kB - RSS memory: 1532664 kB - Data memory: 1528744 kB
+#   exec summary : Successful execution
+
+# end time is Wed Apr 19 01:05:26 2023
+#   step zPar : Saving report before exiting.

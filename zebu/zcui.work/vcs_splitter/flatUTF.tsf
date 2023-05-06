@@ -1,0 +1,28 @@
+architecture_file
+coverage
+debug
+eco
+eco
+memories
+memories
+set_hwtop
+zforce
+zforce
+zforce
+eco -reserve_qiwc 2048 -reserve_fwc 1152 -reserve_force 32 -reserve_monitor 0 -enable false
+coverage -auto_bin_max 64
+vcs_uc_synth_opts -use_vfs f
+memories -zrm_latency_encoding ONEHOT
+architecture_file -filename /mnt/quinn_zebu/ZEBU_SYSTEM_DIR/config/zse_configuration.tcl
+set_hwtop -module top
+debug -all true
+memories -drop_write_only false
+vcs_dpi_synthesis -enable all
+system_tasks -enable -task $display
+vcs_pre_elab_assertion_synthesis -enable ALL
+vcs_pre_elab_assertion_synthesis -never_fatal
+zforce -rtlname top.u_stb.proba_wr
+zforce -rtlname top.u_stb.proba_rd
+zforce -rtlname top.u_stb.rstn
+probe_signals -rtlname top.u_stb.cnt_error_in
+probe_signals -rtlname top.u_stb.cnt_error_out

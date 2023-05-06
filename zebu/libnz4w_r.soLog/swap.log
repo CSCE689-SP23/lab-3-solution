@@ -1,0 +1,32 @@
+version: (200506)
+
+available memory: 64M bytes
+used memory: 65536 bytes [need 64K bytes if disable swap]
+
+used block: 28 [memory(1) file(27)]
+                 [ 64K(28) { total 2M bytes } ]
+overhead: (62418) bytes for (28) blocks [Average: (2229) bytes/block]
+
+write  => 0(times) 0K(bytes) [0K bytes to file]
+read   => 0(times) 0K(bytes) [0K bytes compressed data from file]
+access => 0(times) 0K(bytes)
+          [hit ratio: 0%]
+
+time: write(0) read(0)  unit: second
+
+swap file directory: (/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/libnz4w_r.soLog)
+used swap file number: (0)
+
+
+
+swap file manager:
+arrSize: (256)
+idxCnt: (2)
+closeHead: (0)
+closeTail: (0)
+openCnt: (0)
+fid(1): fd(0) fileName(/home/faculty/d/davidkebo/davidkebo/csce689/labs/lab3-davidkebo/zebu/libnz4w_r.soLog/_swap_0001#2097812940#35862)
+	size(0) lastModTime(0) curModTime(1681884269)
+	mode(w+b)	hot(0) cool(0) pos(0)
+fid(0): fd(0) fileName(NULL)
+	mode(NULL)	hot(0) cool(0) pos(0)

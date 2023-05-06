@@ -1,0 +1,2050 @@
+
+
+
+
+
+
+
+                                    ZeBu (R)
+                                   zTopBuild
+
+              Version Q-2020.03-SP1-4 for linux64 - Oct 18, 2022 
+
+                    Copyright (c) 2002 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+# zTopBuild zTopBuild.tcl 
+
+# start time is Wed Apr 19 01:04:51 2023
+
+
+
+
+# Build Date : Oct 18 2022 - 01:04:07
+# ---------------------------System Context--------------------------- 
+# Cpu        40 x bogomips - 4604.47 Intel(R) Xeon(R) CPU E5-2650 v3 @ 2.30GHz
+#            Load: 0.14 0.05 0.06 4/478 36202
+#            Hostname: csce-quinn-s1.engr.tamu.edu   OS: Linux 3.10.0-1160.88.1.el7.x86_64
+# Memory     Total: 193183 MB Free: 185594 MB
+#            Total Free including cache: 190310 MB
+#            Swap cache: 0 MB Cached space: 4716 MB
+#            Swap space: 4095 MB Free Swap space: 4095 MB
+#            VmSize: 420 MB VmPeak: 420 MB
+# Disk Space Total: 250 GB Available: 244 GB Used: 6 GB
+#            Free inodes: 524256153
+# Stack                                Soft Limit           Hard Limit  
+#            Max stack size            8388608              unlimited            bytes     
+# -------------------------------------------------------------------- 
+
+
+
+
+
+Table of content:
+-----------------
+
+
+ 1.Loading.
+    1.1.Netlist files loading.
+ 2.Incremental manipulations.
+ 3.Netlist editing.
+    3.1.zGate was applied to following wires/signals.
+    3.2.Removal of undriven assignment buffers.
+    3.3.Auto-fixing of undriven & multidriven nets.
+    3.4.Auto-fixing of undriven nets and ports.
+    3.5.Drive strength propagation.
+ 4.Checks on user original netlist.
+    4.1.Blackbox automated fixing.
+    4.2.Unexpected Blackboxes
+    4.3.Hierarchical references in the dve file.
+    4.4.TOP CONNECTIONS
+    4.5.Inout top port direction fixing.
+    4.6.Checking module names in input netlist.
+    4.7.Checking hierarchical paths of the dut referenced in the DVE.
+    4.8.Checking INIT values on netlist's instances.
+ 5.Pre-clustering.
+    5.1.Summary
+    5.2.Multiple instantiation
+        5.2.1.Multi-instantiation cost (ordered with various criteria)
+        5.2.2.Modules with unusual properties (ordered with various criteria)
+    5.3.Blackbox modules
+    5.4.Blackbox instances
+    5.5.ZMem resource utilization
+    5.6.Detection of sub-system candidates
+    5.7.Clock report
+    5.8.U0_M0 constraint generation
+ 6.Power network definition.
+ 7.User and netlist wire resolution directives.
+    7.1.Wire resolution user commands.
+    7.2.Wire resolution definitions from zebu macros.
+ 8.Modular compile directives.
+ 9.User and netlist tristate directives.
+    9.1.Tristate global parameters.
+    9.2.Tristate user commands.
+    9.3.Top-Ports tristate manipulations.
+    9.4.Top-Ports tristate manipulations.
+ 10.User probes.
+    10.1.Rtl name resolution in probes.
+    10.2.User dynamic probes.
+    10.3.User callbacks.
+    10.4.User sram_trace probes.
+    10.5.User read/write port probes.
+ 11.Fast Waveform Capture.
+ 12.Monitor.
+ 13.Pre-Split Data Localization.
+ 14.User forces (assign/undriven).
+ 15.User dynamic forces.
+    15.1.User dynamic forces (pre-netlist-load checks).
+    15.2.User dynamic forces (insertion).
+ 16.User forces and injection.
+    16.1.User forces and injections (pre-netlist-load checks).
+    16.2.User forces and injections (insertion).
+ 17.Memory non-determinism resolution.
+ 18.Logic Optimization.
+    18.1.Auto-fixing of undriven wires after logic optimization.
+    18.2.Sanity check of zCeiMessageOut.
+ 19.Post-buffer simplification undriven fixing.
+    19.1.Post-buffer simplification undriven fixing.
+ 20.Partitioning.
+    20.1.Partitioner constraints
+    20.2.Partitioner basic resource estimations
+ 21.Netlist split.
+    21.1.Initial core definition (defcore commands)
+ 22.Asynchronous paths optimization processing
+    22.1.Inter-zcore laces optimization
+ 23.Post-split modular compile handling.
+ 24.Post-split wire resolution handling.
+ 25.Post-split tristate handling.
+ 26.Clock handling.
+    26.1.Clock nets defined by user
+    26.2.Not clock nets defined by user
+    26.3.Primary clocks from 'zceiClockPort' in .DVE file
+ 27.Post-split statistics.
+    27.1.Core interconnections before netlist modification
+    27.2.Core driver to reader cuts before netlist modification
+    27.3.Core point to point cuts (p2p) before netlist modification
+    27.4.Debug instances relocation
+    27.5.Core interconnections after netlist modification
+    27.6.Core driver to reader cuts after netlist modification
+    27.7.Core point to point cuts (p2p) after netlist modification
+    27.8.Stats on generated netlists
+        27.8.1.Stats on core 0: Part_0
+ 28.Object IDs statistics.
+ 29.Ice connection processing.
+    29.1.ICE commands report.
+ 30.Combinational loops manipulations.
+ 31.Inter-partition combinational loops checks.
+ 32.Sparse Memory Conversion.
+ 33.Netlist memory usage.
+    33.1.Netlist memory information after the 'merged' step of the flow.
+ 34.Detailed execution time and memory usage. *** read .//zTopBuild_report_log_large_sections.dir/_SEC_34_Detailed_e.log
+ 35.SCC Reduction.
+ 36.Memory optimization.
+
+
+======================================================================================================
+
+
+
+
+
+ 1.Loading.
+ ==========
+
+
+    1.1.Netlist files loading.
+    --------------------------
+
+
+15 edif files read out of 15 commands.
+
+
+ 2.Incremental manipulations.
+ ============================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 3.Netlist editing.
+ ==================
+
+
+    3.1.zGate was applied to following wires/signals.
+    -------------------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    3.2.Removal of undriven assignment buffers.
+    -------------------------------------------
+
+A total of 0 undriven buffers have been removed
+
+    3.3.Auto-fixing of undriven & multidriven nets.
+    -----------------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    3.4.Auto-fixing of undriven nets and ports.
+    -------------------------------------------
+
+Undriven port 'parity_check.sva_parity_error.sva_en' (ZSVA_MOD_PLI_1) is forced.
+
+    3.5.Drive strength propagation.
+    -------------------------------
+
+Driver strength propagation is disabled. 
+Default strength for mos is defined as STRONG. Default strength for rmos is defined as WEAK.
+
+
+ 4.Checks on user original netlist.
+ ==================================
+
+
+    4.1.Blackbox automated fixing.
+    ------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    4.2.Unexpected Blackboxes
+    -------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    4.3.Hierarchical references in the dve file.
+    --------------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    4.4.TOP CONNECTIONS
+    -------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    4.5.Inout top port direction fixing.
+    ------------------------------------
+
+No INOUT port with invalid direction could be found.
+
+    4.6.Checking module names in input netlist.
+    -------------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    4.7.Checking hierarchical paths of the dut referenced in the DVE.
+    -----------------------------------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    4.8.Checking INIT values on netlist's instances.
+    ------------------------------------------------
+
+
+
+This check can be (de)activated with the tcl command 'check_input_netlist -check_init_values=yes|no'.
+
+
+ 5.Pre-clustering.
+ =================
+
+
+    5.1.Summary
+    -----------
+
+
+Net list information:
+          +--------------------------------+--------------------------------+
+          |Modules                         |                              65|
+          |Blackbox Module(s)              |                              11|
+          |Blackbox Memory(ies)            |                               0|
+          |Blackbox ZView(s)               |                               1|
+          |Fast Waveform Capture IP box(es)|                               1|
+          |DPI Module(s)                   |                               3|
+          |Qiwc IP box(es)                 |                               0|
+          |Asynchronous ZMEM Memory(ies)   |                               0|
+          |Synchronous ZMEM Memory(ies)    |                               2|
+          |Disconnected Module Port(s)     |   [in=2 out=0 inout=0]        2|
+          |Disconnected Instance Port(s)   |[in=71 out=177 inout=0]      248|
+          |Disconnected Wire(s)            |                               0|
+          |Loadless Wire(s)                |                               4|
+          |Sourceless Wire(s)              |                               2|
+          |Uninitialized register(s)       |                             457|
+          |Initialized register(s)         |                               8|
+          +--------------------------------+--------------------------------+
+
+
+
+Primitive count from the top module top
+          +----------------------------------------------------------------+------+---------+---------+
+          |Primitive                                                       |Number|Equiv LUT|Equiv REG|
+          +----------------------------------------------------------------+------+---------+---------+
+          |fd                                                              |   309|         |      309|
+          |fdc                                                             |    38|         |       38|
+          |fdce                                                            |    19|         |       19|
+          |fde                                                             |   132|         |      132|
+          |fdp                                                             |     7|         |        7|
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Flip-Flops                                              |   505|         |      505|
+          +----------------------------------------------------------------+------+---------+---------+
+          |gnd                                                             |     7|         |         |
+          |lut2                                                            |    60|       60|         |
+          |lut3                                                            |    56|       56|         |
+          |lut4                                                            |     8|        8|         |
+          |lut5                                                            |    13|       13|         |
+          |lut6                                                            |    29|       29|         |
+          |vcc                                                             |     5|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary General                                                 |   178|      166|         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |ld_1                                                            |     1|         |        1|
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Latches                                                 |     1|         |        1|
+          +----------------------------------------------------------------+------+---------+---------+
+          |and2                                                            |    33|       33|         |
+          |inv                                                             |    48|         |         |
+          |xor2                                                            |     4|        4|         |
+          |xorcy                                                           |     2|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Logic Primitives                                        |    87|       37|         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |ram256x1s                                                       |    18|       72|         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Memory Elements                                         |    18|       72|         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |muxcy_l                                                         |     2|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Multiplexers                                            |     2|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |carry4                                                          |    40|         |         |
+          |zebu_bb_wb_reg                                                  |    43|         |       43|
+          |zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0|     1|         |         |
+          |zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0       |     1|         |         |
+          |zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1       |     1|         |         |
+          |zebu_bb_zmem_addr                                               |    16|         |         |
+          |zebu_bb_zmem_clk                                                |     2|         |         |
+          |zebu_bb_zmem_di                                                 |     9|         |         |
+          |zebu_bb_zmem_do                                                 |     9|         |         |
+          |zebu_bb_zmem_we                                                 |     1|         |         |
+          |zebu_clockGen                                                   |     1|         |         |
+          |zebu_reqsig_clock_driverclock                                   |    21|         |         |
+          |zebu_reqsig_clock_zcompositeclock                               |     2|         |         |
+          |ZSVA_MOD_PLI_1                                                  |     2|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary                                                         |   149|         |       43|
+          +----------------------------------------------------------------+------+---------+---------+
+          |zfwc_hs_1                                                       |    36|         |         |
+          |zview                                                           |   115|         |         |
+          |ZXLSYS                                                          |     4|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary ZEBU Special Cells                                      |   155|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+
+
+
+Design content summary, Luts, BRams, Flip-Flops, Latches, Multiplexers, Multipliers, other logic:
+          +----------------------------------+---+
+          |Logic LUTs                        |166|
+          |RAMLUTs                           | 72|
+          |Logic LUTs + RAMLUTs              |238|
+          |Logic LUTs + RAMLUTs + other logic|275|
+          |BRAMs                             |  0|
+          |Flip-Flops                        |505|
+          |Latches                           |  1|
+          |Flip-Flops + Latches + other logic|550|
+          |Multiplexers                      |  2|
+          |MULT18/DSP                        |  0|
+          |Other logic                       |421|
+          |Lut equiv other logic             | 37|
+          |Reg equiv Other logic             | 44|
+          +----------------------------------+---+
+
+
+
+    5.2.Multiple instantiation
+    --------------------------
+
+
+    5.2.1.Multi-instantiation cost (ordered with various criteria)
+
+
+*** stat_mod -min_prim=0 -min_multi=0 -show_max=40 -local_primitive_only
+
+
+
+Multi-instantiation cost ordered by REG (flat logic only)
+ +--------+-------+-------+--------+-------+----------+--------+---------+------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |Nb Inst.|ALL REG|ALL LUT|ALL BRAM|ALL DSP|ALL RAMLUT|ALL LUT6|ALL MUXCY|                  Module|REG|LUT|BRAM|DSP|RAMLUT|LUT6|MUXCY|HLUT|HLUT(raw)|HREG|Nb IOs|
+ +--------+-------+-------+--------+-------+----------+--------+---------+------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |1       |298    |26     |0       |0      |0         |0       |0        |                     stb|298|26 |0   |0  |0     |0   |0    |206 |206      |502 |32    |
+ |43      |43     |0      |0       |0      |0         |0       |0        |          zebu_bb_wb_reg|1  |0  |0   |0  |0     |0   |0    |0   |0        |1   |1     |
+ |18      |36     |0      |0       |0      |0         |0       |0        |zebu_force_sync_LOGICOPT|2  |0  |0   |0  |0     |0   |0    |1   |1        |2   |3     |
+ |2       |6      |6      |0       |0      |0         |2       |0        |            parity_check|3  |3  |0   |0  |0     |1   |0    |5   |5        |4   |13    |
+ |2       |4      |0      |0       |0      |0         |0       |0        |         zebu_force_sync|2  |0  |0   |0  |0     |0   |0    |1   |1        |2   |3     |
+ |2       |4      |4      |0       |0      |0         |0       |2        |             counter2_re|2  |2  |0   |0  |0     |0   |1    |2   |2        |2   |7     |
+ |2       |2      |4      |0       |0      |0         |0       |0        |          zsva_trigger_1|1  |2  |0   |0  |0     |0   |0    |2   |2        |1   |6     |
+ +--------+-------+-------+--------+-------+----------+--------+---------+------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+Nb Inst.    : Number of instances
+ALL REG     : Nb inst. * Nb REG
+ALL LUT     : Nb inst. * Nb LUT
+ALL BRAM    : Nb inst. * Nb BRAM
+ALL DSP     : Nb inst. * Nb DSP
+ALL RAMLUT  : Nb inst. * Nb RAMLUT
+ALL LUT6    : Nb inst. * Nb LUT6
+ALL MUXCY   : Nb inst. * Nb MUXCY
+Module      : Module name, long names are truncated and displayed below
+LUT         : Lut counting
+HLUT        : HIER LUT EQUIV (lut weighting)
+HLUT(raw)   : HIER LUT EQUIV (no lut weighting)
+HREG        : HIER REG_EQUIV
+
+
+
+Multi-instantiation cost ordered by LUT (flat logic only)
+ +--------+-------+-------+--------+-------+----------+--------+---------+------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |Nb Inst.|ALL REG|ALL LUT|ALL BRAM|ALL DSP|ALL RAMLUT|ALL LUT6|ALL MUXCY|            Module|REG|LUT|BRAM|DSP|RAMLUT|LUT6|MUXCY|HLUT|HLUT(raw)|HREG|Nb IOs|
+ +--------+-------+-------+--------+-------+----------+--------+---------+------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |1       |298    |26     |0       |0      |0         |0       |0        |               stb|298|26 |0   |0  |0     |0   |0    |206 |206      |502 |32    |
+ |18      |0      |18     |0       |0      |0         |0       |0        |zmux2_1_0_LOGICOPT|0  |1  |0   |0  |0     |0   |0    |1   |1        |0   |4     |
+ |2       |6      |6      |0       |0      |0         |2       |0        |      parity_check|3  |3  |0   |0  |0     |1   |0    |5   |5        |4   |13    |
+ |2       |4      |4      |0       |0      |0         |0       |2        |       counter2_re|2  |2  |0   |0  |0     |0   |1    |2   |2        |2   |7     |
+ |2       |2      |4      |0       |0      |0         |0       |0        |    zsva_trigger_1|1  |2  |0   |0  |0     |0   |0    |2   |2        |1   |6     |
+ |2       |0      |2      |0       |0      |0         |0       |0        |         zmux2_1_0|0  |1  |0   |0  |0     |0   |0    |1   |1        |0   |4     |
+ +--------+-------+-------+--------+-------+----------+--------+---------+------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+Nb Inst.    : Number of instances
+ALL REG     : Nb inst. * Nb REG
+ALL LUT     : Nb inst. * Nb LUT
+ALL BRAM    : Nb inst. * Nb BRAM
+ALL DSP     : Nb inst. * Nb DSP
+ALL RAMLUT  : Nb inst. * Nb RAMLUT
+ALL LUT6    : Nb inst. * Nb LUT6
+ALL MUXCY   : Nb inst. * Nb MUXCY
+Module      : Module name, long names are truncated and displayed below
+LUT         : Lut counting
+HLUT        : HIER LUT EQUIV (lut weighting)
+HLUT(raw)   : HIER LUT EQUIV (no lut weighting)
+HREG        : HIER REG_EQUIV
+
+
+
+
+* No relevant data in Multi-instantiation cost ordered by BRAM
+
+
+
+* No relevant data in Multi-instantiation cost ordered by DSP
+
+
+
+* No relevant data in Multi-instantiation cost ordered by RAMLUT
+
+
+Multi-instantiation cost ordered by LUT6 (flat logic only)
+ +--------+-------+-------+--------+-------+----------+--------+---------+------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |Nb Inst.|ALL REG|ALL LUT|ALL BRAM|ALL DSP|ALL RAMLUT|ALL LUT6|ALL MUXCY|      Module|REG|LUT|BRAM|DSP|RAMLUT|LUT6|MUXCY|HLUT|HLUT(raw)|HREG|Nb IOs|
+ +--------+-------+-------+--------+-------+----------+--------+---------+------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |2       |6      |6      |0       |0      |0         |2       |0        |parity_check|3  |3  |0   |0  |0     |1   |0    |5   |5        |4   |13    |
+ +--------+-------+-------+--------+-------+----------+--------+---------+------------+---+---+----+---+------+----+-----+----+---------+----+------+
+Nb Inst.    : Number of instances
+ALL REG     : Nb inst. * Nb REG
+ALL LUT     : Nb inst. * Nb LUT
+ALL BRAM    : Nb inst. * Nb BRAM
+ALL DSP     : Nb inst. * Nb DSP
+ALL RAMLUT  : Nb inst. * Nb RAMLUT
+ALL LUT6    : Nb inst. * Nb LUT6
+ALL MUXCY   : Nb inst. * Nb MUXCY
+Module      : Module name, long names are truncated and displayed below
+LUT         : Lut counting
+HLUT        : HIER LUT EQUIV (lut weighting)
+HLUT(raw)   : HIER LUT EQUIV (no lut weighting)
+HREG        : HIER REG_EQUIV
+
+
+
+Multi-instantiation cost ordered by MUXCY (flat logic only)
+ +--------+-------+-------+--------+-------+----------+--------+---------+-----------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |Nb Inst.|ALL REG|ALL LUT|ALL BRAM|ALL DSP|ALL RAMLUT|ALL LUT6|ALL MUXCY|     Module|REG|LUT|BRAM|DSP|RAMLUT|LUT6|MUXCY|HLUT|HLUT(raw)|HREG|Nb IOs|
+ +--------+-------+-------+--------+-------+----------+--------+---------+-----------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |2       |4      |4      |0       |0      |0         |0       |2        |counter2_re|2  |2  |0   |0  |0     |0   |1    |2   |2        |2   |7     |
+ +--------+-------+-------+--------+-------+----------+--------+---------+-----------+---+---+----+---+------+----+-----+----+---------+----+------+
+Nb Inst.    : Number of instances
+ALL REG     : Nb inst. * Nb REG
+ALL LUT     : Nb inst. * Nb LUT
+ALL BRAM    : Nb inst. * Nb BRAM
+ALL DSP     : Nb inst. * Nb DSP
+ALL RAMLUT  : Nb inst. * Nb RAMLUT
+ALL LUT6    : Nb inst. * Nb LUT6
+ALL MUXCY   : Nb inst. * Nb MUXCY
+Module      : Module name, long names are truncated and displayed below
+LUT         : Lut counting
+HLUT        : HIER LUT EQUIV (lut weighting)
+HLUT(raw)   : HIER LUT EQUIV (no lut weighting)
+HREG        : HIER REG_EQUIV
+
+
+
+Multi-instantiation cost ordered by number of instance (flat logic only)
+ +--------+-------+-------+--------+-------+----------+--------+---------+---------------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |Nb Inst.|ALL REG|ALL LUT|ALL BRAM|ALL DSP|ALL RAMLUT|ALL LUT6|ALL MUXCY|                           Module|REG|LUT|BRAM|DSP|RAMLUT|LUT6|MUXCY|HLUT|HLUT(raw)|HREG|Nb IOs|
+ +--------+-------+-------+--------+-------+----------+--------+---------+---------------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |115     |0      |0      |0       |0      |0         |0       |0        |                            zview|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |43      |43     |0      |0       |0      |0         |0       |0        |                   zebu_bb_wb_reg|1  |0  |0   |0  |0     |0   |0    |0   |0        |1   |1     |
+ |36      |0      |0      |0       |0      |0         |0       |0        |                        zfwc_hs_1|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |3     |
+ |21      |0      |0      |0       |0      |0         |0       |0        |    zebu_reqsig_clock_driverclock|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |18      |36     |0      |0       |0      |0         |0       |0        |         zebu_force_sync_LOGICOPT|2  |0  |0   |0  |0     |0   |0    |1   |1        |2   |3     |
+ |18      |0      |18     |0       |0      |0         |0       |0        |               zmux2_1_0_LOGICOPT|0  |1  |0   |0  |0     |0   |0    |1   |1        |0   |4     |
+ |16      |0      |0      |0       |0      |0         |0       |0        |                zebu_bb_zmem_addr|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |12      |0      |0      |0       |0      |0         |0       |0        |zebu_FT_inout_mod_hidden_wire_new|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |2     |
+ |9       |0      |0      |0       |0      |0         |0       |0        |                  zebu_bb_zmem_do|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |9       |0      |0      |0       |0      |0         |0       |0        |                  zebu_bb_zmem_di|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |4       |0      |0      |0       |0      |0         |0       |0        |                           ZXLSYS|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |4     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |                 zebu_bb_zmem_clk|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |2       |2      |4      |0       |0      |0         |0       |0        |                   zsva_trigger_1|1  |2  |0   |0  |0     |0   |0    |2   |2        |1   |6     |
+ |2       |0      |2      |0       |0      |0         |0       |0        |                        zmux2_1_0|0  |1  |0   |0  |0     |0   |0    |1   |1        |0   |4     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |zebu_reqsig_clock_zcompositeclock|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |                   ZSVA_MOD_PLI_1|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |10    |
+ |2       |6      |6      |0       |0      |0         |2       |0        |                     parity_check|3  |3  |0   |0  |0     |1   |0    |5   |5        |4   |13    |
+ |2       |4      |4      |0       |0      |0         |0       |2        |                      counter2_re|2  |2  |0   |0  |0     |0   |1    |2   |2        |2   |7     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |                   z_feed_through|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |2     |
+ |2       |4      |0      |0       |0      |0         |0       |0        |                  zebu_force_sync|2  |0  |0   |0  |0     |0   |0    |1   |1        |2   |3     |
+ |1       |298    |26     |0       |0      |0         |0       |0        |                              stb|298|26 |0   |0  |0     |0   |0    |206 |206      |502 |32    |
+ |0       |0      |0      |0       |0      |0         |0       |0        |                              top|1  |0  |0   |0  |0     |0   |0    |275 |275      |595 |0     |
+ +--------+-------+-------+--------+-------+----------+--------+---------+---------------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+Nb Inst.    : Number of instances
+ALL REG     : Nb inst. * Nb REG
+ALL LUT     : Nb inst. * Nb LUT
+ALL BRAM    : Nb inst. * Nb BRAM
+ALL DSP     : Nb inst. * Nb DSP
+ALL RAMLUT  : Nb inst. * Nb RAMLUT
+ALL LUT6    : Nb inst. * Nb LUT6
+ALL MUXCY   : Nb inst. * Nb MUXCY
+Module      : Module name, long names are truncated and displayed below
+LUT         : Lut counting
+HLUT        : HIER LUT EQUIV (lut weighting)
+HLUT(raw)   : HIER LUT EQUIV (no lut weighting)
+HREG        : HIER REG_EQUIV
+
+
+
+Multi-instantiation cost ordered by (multi-instantiation * number of primitive) (flat logic only)
+ +--------+-------+-------+--------+-------+----------+--------+---------+---------------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |Nb Inst.|ALL REG|ALL LUT|ALL BRAM|ALL DSP|ALL RAMLUT|ALL LUT6|ALL MUXCY|                           Module|REG|LUT|BRAM|DSP|RAMLUT|LUT6|MUXCY|HLUT|HLUT(raw)|HREG|Nb IOs|
+ +--------+-------+-------+--------+-------+----------+--------+---------+---------------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |1       |298    |26     |0       |0      |0         |0       |0        |                              stb|298|26 |0   |0  |0     |0   |0    |206 |206      |502 |32    |
+ |43      |43     |0      |0       |0      |0         |0       |0        |                   zebu_bb_wb_reg|1  |0  |0   |0  |0     |0   |0    |0   |0        |1   |1     |
+ |18      |36     |0      |0       |0      |0         |0       |0        |         zebu_force_sync_LOGICOPT|2  |0  |0   |0  |0     |0   |0    |1   |1        |2   |3     |
+ |18      |0      |18     |0       |0      |0         |0       |0        |               zmux2_1_0_LOGICOPT|0  |1  |0   |0  |0     |0   |0    |1   |1        |0   |4     |
+ |2       |6      |6      |0       |0      |0         |2       |0        |                     parity_check|3  |3  |0   |0  |0     |1   |0    |5   |5        |4   |13    |
+ |2       |4      |4      |0       |0      |0         |0       |2        |                      counter2_re|2  |2  |0   |0  |0     |0   |1    |2   |2        |2   |7     |
+ |2       |2      |4      |0       |0      |0         |0       |0        |                   zsva_trigger_1|1  |2  |0   |0  |0     |0   |0    |2   |2        |1   |6     |
+ |2       |4      |0      |0       |0      |0         |0       |0        |                  zebu_force_sync|2  |0  |0   |0  |0     |0   |0    |1   |1        |2   |3     |
+ |2       |0      |2      |0       |0      |0         |0       |0        |                        zmux2_1_0|0  |1  |0   |0  |0     |0   |0    |1   |1        |0   |4     |
+ |0       |0      |0      |0       |0      |0         |0       |0        |                              top|1  |0  |0   |0  |0     |0   |0    |275 |275      |595 |0     |
+ |115     |0      |0      |0       |0      |0         |0       |0        |                            zview|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |                   z_feed_through|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |2     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |                   ZSVA_MOD_PLI_1|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |10    |
+ |2       |0      |0      |0       |0      |0         |0       |0        |zebu_reqsig_clock_zcompositeclock|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |                 zebu_bb_zmem_clk|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |4       |0      |0      |0       |0      |0         |0       |0        |                           ZXLSYS|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |4     |
+ |9       |0      |0      |0       |0      |0         |0       |0        |                  zebu_bb_zmem_di|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |9       |0      |0      |0       |0      |0         |0       |0        |                  zebu_bb_zmem_do|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |12      |0      |0      |0       |0      |0         |0       |0        |zebu_FT_inout_mod_hidden_wire_new|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |2     |
+ |16      |0      |0      |0       |0      |0         |0       |0        |                zebu_bb_zmem_addr|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |21      |0      |0      |0       |0      |0         |0       |0        |    zebu_reqsig_clock_driverclock|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |36      |0      |0      |0       |0      |0         |0       |0        |                        zfwc_hs_1|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |3     |
+ +--------+-------+-------+--------+-------+----------+--------+---------+---------------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+Nb Inst.    : Number of instances
+ALL REG     : Nb inst. * Nb REG
+ALL LUT     : Nb inst. * Nb LUT
+ALL BRAM    : Nb inst. * Nb BRAM
+ALL DSP     : Nb inst. * Nb DSP
+ALL RAMLUT  : Nb inst. * Nb RAMLUT
+ALL LUT6    : Nb inst. * Nb LUT6
+ALL MUXCY   : Nb inst. * Nb MUXCY
+Module      : Module name, long names are truncated and displayed below
+LUT         : Lut counting
+HLUT        : HIER LUT EQUIV (lut weighting)
+HLUT(raw)   : HIER LUT EQUIV (no lut weighting)
+HREG        : HIER REG_EQUIV
+
+
+
+    5.2.2.Modules with unusual properties (ordered with various criteria)
+
+
+Modules ordered by reg/lut ratio (decreasing order, only if 2*reg>lut) (flat logic only)
+ +--------+----+----+---------+------------------------+------+
+ |Nb Inst.|HREG|HLUT|HLUT(raw)|                  Module|Nb IOs|
+ +--------+----+----+---------+------------------------+------+
+ |43      |1   |0   |0        |          zebu_bb_wb_reg|1     |
+ |1       |502 |206 |206      |                     stb|32    |
+ |0       |595 |275 |275      |                     top|0     |
+ |2       |2   |1   |1        |         zebu_force_sync|3     |
+ |18      |2   |1   |1        |zebu_force_sync_LOGICOPT|3     |
+ |2       |2   |2   |2        |             counter2_re|7     |
+ |2       |4   |5   |5        |            parity_check|13    |
+ +--------+----+----+---------+------------------------+------+
+Nb Inst.   : Number of instances
+HREG       : HIER REG_EQUIV
+HLUT       : HIER LUT EQUIV (lut weighting)
+HLUT(raw)  : HIER LUT EQUIV (no lut weighting)
+Module     : Module name, long names are truncated and displayed below
+
+
+
+Cost ordered by biggest variation caused by lut weighting) (flat logic only)
+ +--------+----+----+---------+---------------------------------+------+
+ |Nb Inst.|HREG|HLUT|HLUT(raw)|                           Module|Nb IOs|
+ +--------+----+----+---------+---------------------------------+------+
+ |2       |0   |0   |0        |                   z_feed_through|2     |
+ |18      |0   |1   |1        |               zmux2_1_0_LOGICOPT|4     |
+ |2       |0   |1   |1        |                        zmux2_1_0|4     |
+ |2       |1   |2   |2        |                   zsva_trigger_1|6     |
+ |2       |4   |5   |5        |                     parity_check|13    |
+ |2       |2   |2   |2        |                      counter2_re|7     |
+ |18      |2   |1   |1        |         zebu_force_sync_LOGICOPT|3     |
+ |2       |2   |1   |1        |                  zebu_force_sync|3     |
+ |0       |595 |275 |275      |                              top|0     |
+ |1       |502 |206 |206      |                              stb|32    |
+ |115     |0   |0   |0        |                            zview|1     |
+ |43      |1   |0   |0        |                   zebu_bb_wb_reg|1     |
+ |2       |0   |0   |0        |                   ZSVA_MOD_PLI_1|10    |
+ |2       |0   |0   |0        |zebu_reqsig_clock_zcompositeclock|1     |
+ |2       |0   |0   |0        |                 zebu_bb_zmem_clk|1     |
+ |4       |0   |0   |0        |                           ZXLSYS|4     |
+ |9       |0   |0   |0        |                  zebu_bb_zmem_di|1     |
+ |9       |0   |0   |0        |                  zebu_bb_zmem_do|1     |
+ |12      |0   |0   |0        |zebu_FT_inout_mod_hidden_wire_new|2     |
+ |16      |0   |0   |0        |                zebu_bb_zmem_addr|1     |
+ |21      |0   |0   |0        |    zebu_reqsig_clock_driverclock|1     |
+ |36      |0   |0   |0        |                        zfwc_hs_1|3     |
+ +--------+----+----+---------+---------------------------------+------+
+Nb Inst.   : Number of instances
+HREG       : HIER REG_EQUIV
+HLUT       : HIER LUT EQUIV (lut weighting)
+HLUT(raw)  : HIER LUT EQUIV (no lut weighting)
+Module     : Module name, long names are truncated and displayed below
+
+
+
+Multi-instantiation cost ordered by number primitives (flat logic only)
+ +--------+-------+-------+--------+-------+----------+--------+---------+---------------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |Nb Inst.|ALL REG|ALL LUT|ALL BRAM|ALL DSP|ALL RAMLUT|ALL LUT6|ALL MUXCY|                           Module|REG|LUT|BRAM|DSP|RAMLUT|LUT6|MUXCY|HLUT|HLUT(raw)|HREG|Nb IOs|
+ +--------+-------+-------+--------+-------+----------+--------+---------+---------------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+ |1       |298    |26     |0       |0      |0         |0       |0        |                              stb|298|26 |0   |0  |0     |0   |0    |206 |206      |502 |32    |
+ |2       |6      |6      |0       |0      |0         |2       |0        |                     parity_check|3  |3  |0   |0  |0     |1   |0    |5   |5        |4   |13    |
+ |2       |4      |4      |0       |0      |0         |0       |2        |                      counter2_re|2  |2  |0   |0  |0     |0   |1    |2   |2        |2   |7     |
+ |2       |2      |4      |0       |0      |0         |0       |0        |                   zsva_trigger_1|1  |2  |0   |0  |0     |0   |0    |2   |2        |1   |6     |
+ |18      |36     |0      |0       |0      |0         |0       |0        |         zebu_force_sync_LOGICOPT|2  |0  |0   |0  |0     |0   |0    |1   |1        |2   |3     |
+ |2       |4      |0      |0       |0      |0         |0       |0        |                  zebu_force_sync|2  |0  |0   |0  |0     |0   |0    |1   |1        |2   |3     |
+ |18      |0      |18     |0       |0      |0         |0       |0        |               zmux2_1_0_LOGICOPT|0  |1  |0   |0  |0     |0   |0    |1   |1        |0   |4     |
+ |43      |43     |0      |0       |0      |0         |0       |0        |                   zebu_bb_wb_reg|1  |0  |0   |0  |0     |0   |0    |0   |0        |1   |1     |
+ |0       |0      |0      |0       |0      |0         |0       |0        |                              top|1  |0  |0   |0  |0     |0   |0    |275 |275      |595 |0     |
+ |2       |0      |2      |0       |0      |0         |0       |0        |                        zmux2_1_0|0  |1  |0   |0  |0     |0   |0    |1   |1        |0   |4     |
+ |115     |0      |0      |0       |0      |0         |0       |0        |                            zview|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |                   z_feed_through|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |2     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |                   ZSVA_MOD_PLI_1|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |10    |
+ |2       |0      |0      |0       |0      |0         |0       |0        |zebu_reqsig_clock_zcompositeclock|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |2       |0      |0      |0       |0      |0         |0       |0        |                 zebu_bb_zmem_clk|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |4       |0      |0      |0       |0      |0         |0       |0        |                           ZXLSYS|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |4     |
+ |9       |0      |0      |0       |0      |0         |0       |0        |                  zebu_bb_zmem_di|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |9       |0      |0      |0       |0      |0         |0       |0        |                  zebu_bb_zmem_do|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |12      |0      |0      |0       |0      |0         |0       |0        |zebu_FT_inout_mod_hidden_wire_new|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |2     |
+ |16      |0      |0      |0       |0      |0         |0       |0        |                zebu_bb_zmem_addr|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |21      |0      |0      |0       |0      |0         |0       |0        |    zebu_reqsig_clock_driverclock|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |1     |
+ |36      |0      |0      |0       |0      |0         |0       |0        |                        zfwc_hs_1|0  |0  |0   |0  |0     |0   |0    |0   |0        |0   |3     |
+ +--------+-------+-------+--------+-------+----------+--------+---------+---------------------------------+---+---+----+---+------+----+-----+----+---------+----+------+
+Nb Inst.    : Number of instances
+ALL REG     : Nb inst. * Nb REG
+ALL LUT     : Nb inst. * Nb LUT
+ALL BRAM    : Nb inst. * Nb BRAM
+ALL DSP     : Nb inst. * Nb DSP
+ALL RAMLUT  : Nb inst. * Nb RAMLUT
+ALL LUT6    : Nb inst. * Nb LUT6
+ALL MUXCY   : Nb inst. * Nb MUXCY
+Module      : Module name, long names are truncated and displayed below
+LUT         : Lut counting
+HLUT        : HIER LUT EQUIV (lut weighting)
+HLUT(raw)   : HIER LUT EQUIV (no lut weighting)
+HREG        : HIER REG_EQUIV
+
+
+
+    5.3.Blackbox modules
+    --------------------
+
+DPI MODULE : zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1
+DPI MODULE : zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0
+BLACKBOX MODULE   : zebu_reqsig_clock_zcompositeclock
+BLACKBOX MODULE   : ZSVA_MOD_PLI_1
+BLACKBOX MODULE   : zebu_bb_wb_reg
+ZVIEW MODULE   : zview
+ZFWC HS MODULE : zfwc_hs_1
+BLACKBOX MODULE   : ZXLSYS
+BLACKBOX MODULE   : zebu_bb_zmem_clk
+BLACKBOX MODULE   : zebu_bb_zmem_di
+BLACKBOX MODULE   : zebu_bb_zmem_addr
+BLACKBOX MODULE   : zebu_bb_zmem_we
+BLACKBOX MODULE   : zebu_bb_zmem_do
+BLACKBOX MODULE   : zebu_reqsig_clock_driverclock
+DPI MODULE : zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0
+BLACKBOX MODULE   : zebu_clockGen
+
+    5.4.Blackbox instances
+    ----------------------
+
+
+Found 264 blackbox instance(s) : 110 blackbox(es), 0 memory(ies), 115 zview(s), 36 fast waveform capture ip(s), 3 fast waveform captures marks, 0 dpi instances, 0 qiwc ip instances.
+
+    5.5.ZMem resource utilization
+    -----------------------------
+
+ZMEM module (work, ram_ZMEM_mem), Address width = 8 bits, Data width = 9 bits, Nb Ports = 1
+
+Primitive count in SYNCHRONOUS ZMEM module (work, ram_ZMEM_mem), Instantiated 1 times
+          +--------------------------+------+---------+---------+
+          |Primitive                 |Number|Equiv LUT|Equiv REG|
+          +--------------------------+------+---------+---------+
+          |fd                        |    36|         |       36|
+          +--------------------------+------+---------+---------+
+          |Summary Flip-Flops        |    36|         |       36|
+          +--------------------------+------+---------+---------+
+          |gnd                       |     1|         |         |
+          |lut2                      |     3|        3|         |
+          |lut3                      |    12|       12|         |
+          |lut4                      |     2|        2|         |
+          |vcc                       |     1|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary General           |    19|       17|         |
+          +--------------------------+------+---------+---------+
+          |and2                      |    21|       21|         |
+          |inv                       |     3|         |         |
+          |xor2                      |     1|        1|         |
+          |xorcy                     |     1|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary Logic Primitives  |    26|       22|         |
+          +--------------------------+------+---------+---------+
+          |ram256x1s                 |     9|       36|         |
+          +--------------------------+------+---------+---------+
+          |Summary Memory Elements   |     9|       36|         |
+          +--------------------------+------+---------+---------+
+          |muxcy_l                   |     1|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary Multiplexers      |     1|         |         |
+          +--------------------------+------+---------+---------+
+          |zebu_bb_zmem_addr         |     8|         |         |
+          |zebu_bb_zmem_clk          |     1|         |         |
+          |zebu_bb_zmem_di           |     9|         |         |
+          |zebu_bb_zmem_we           |     1|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary                   |    19|         |         |
+          +--------------------------+------+---------+---------+
+          |zview                     |    18|         |         |
+          |ZXLSYS                    |     2|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary ZEBU Special Cells|    20|         |         |
+          +--------------------------+------+---------+---------+
+
+
+ZMEM module (work, rom_ZMEM_mem), Address width = 8 bits, Data width = 9 bits, Nb Ports = 1
+
+Primitive count in SYNCHRONOUS ZMEM module (work, rom_ZMEM_mem), Instantiated 1 times
+          +--------------------------+------+---------+---------+
+          |Primitive                 |Number|Equiv LUT|Equiv REG|
+          +--------------------------+------+---------+---------+
+          |fd                        |    27|         |       27|
+          |fde                       |     9|         |        9|
+          +--------------------------+------+---------+---------+
+          |Summary Flip-Flops        |    36|         |       36|
+          +--------------------------+------+---------+---------+
+          |gnd                       |     2|         |         |
+          |lut2                      |     3|        3|         |
+          |lut3                      |    12|       12|         |
+          |lut4                      |     2|        2|         |
+          |vcc                       |     1|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary General           |    20|       17|         |
+          +--------------------------+------+---------+---------+
+          |and2                      |    10|       10|         |
+          |inv                       |     3|         |         |
+          |xor2                      |     1|        1|         |
+          |xorcy                     |     1|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary Logic Primitives  |    15|       11|         |
+          +--------------------------+------+---------+---------+
+          |ram256x1s                 |     9|       36|         |
+          +--------------------------+------+---------+---------+
+          |Summary Memory Elements   |     9|       36|         |
+          +--------------------------+------+---------+---------+
+          |muxcy_l                   |     1|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary Multiplexers      |     1|         |         |
+          +--------------------------+------+---------+---------+
+          |zebu_bb_zmem_addr         |     8|         |         |
+          |zebu_bb_zmem_clk          |     1|         |         |
+          |zebu_bb_zmem_do           |     9|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary                   |    18|         |         |
+          +--------------------------+------+---------+---------+
+          |zfwc_hs_1                 |     8|         |         |
+          |zview                     |     8|         |         |
+          |ZXLSYS                    |     2|         |         |
+          +--------------------------+------+---------+---------+
+          |Summary ZEBU Special Cells|    18|         |         |
+          +--------------------------+------+---------+---------+
+
+
+
+
+0 Asynchronous ZMEM modules have been found.
+
+
+2 Synchronous ZMEM modules have been found.
+
+
+0 Synchronous/Asynchronous ZMEM modules have been found.
+
+    5.6.Detection of sub-system candidates
+    --------------------------------------
+
+
+
+*** No relevant data in Ordered by normed size
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by number of FPGA
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by PATH
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by number of IOs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by ratio reg/lut
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by ratio lut/reg
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by number of LUTs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by number of REGs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by number of DSPs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by number of BRAMs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by number of RAMLUTs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by number of LUT6s
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Ordered by number of MUXCYs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Block of less than 6 FPGAs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Block of less than 10 FPGAs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+
+*** No relevant data in Block of less than 18 FPGAs
+Sub-systems detection with following auto clustering parameters:
+
+FPGA SIZE          =     REG=2443200    LUT=1221600 RAMLUT= 344800   LUT6=1221600  MUXCY=1221600 BRAM=1290  DSP_MULT=2160   QIWC= 524288
+FILLING CONSTRAINT =     REG=     22    LUT=     50 RAMLUT=     40   LUT6=     20  MUXCY=     30 BRAM=  50  DSP_MULT=  50   QIWC=     40
+ADJUSTED FPGA SIZE =     REG= 537504    LUT= 610800 RAMLUT= 137920   LUT6= 244320  MUXCY= 366480 BRAM= 645  DSP_MULT=1080   QIWC= 209715
+
+DESIGN SIZE        =     REG=    595    LUT=    275 RAMLUT=     72   LUT6=     29  MUXCY=      2 BRAM=   0  DSP_MULT=   0   QIWC=      0
+
+
+
+
+    5.7.Clock report
+    ----------------
+
+   #-------- Summary
+
+     - 486 synchronous items
+     - 0 synchronous firmware items
+     - 27 primary clocks
+     - 0 derived clock
+     - 0 multi-driven clock
+     - 0 stuck clock 
+     - 0 undriven clock
+     - Total : 27 clocks
+
+
+   #-------- PRIMARY clocks
+
+
+      - top._I_vcs_cdx_s_rw_topu_stb_clk1 generated in module top (fanout 182)
+      - top._I_vcs_cdx_s_rw_topu_stb_clk0 generated in module top (fanout 178)
+      - top.u_dut.u_fifo.u0_clkg.clkout generated in module clkg (fanout 56)
+      - top.u_stb.zforce_proba_wr_0_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_wr_1_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_wr_2_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_wr_3_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_wr_4_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_wr_5_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_wr_6_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_wr_7_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_wr_8_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_wr_9_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync (fanout 3)
+      - top.u_stb.zforce_proba_rd_0_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_rd_1_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_rd_2_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_rd_3_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_rd_4_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_rd_5_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_rd_6_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_rd_7_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_rd_8_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync_LOGICOPT (fanout 3)
+      - top.u_stb.zforce_proba_rd_9_.zebu_force_ins.zebu_reqsig_clock_driverclock generated in module zebu_force_sync (fanout 3)
+      - top.zsva_zcg_compositeClock_3024096155570765266 generated in module top (fanout 2)
+      - top.u_stb.zsva_clock generated in module stb (fanout 2)
+      - top.zforce_rstn.zebu_reqsig_clock_driverclock generated in module zebu_force_inject_undriven_sync (fanout 2)
+      - top.u_dut.u_fifo.u_fifo_usage_spy.zsva_clock generated in module fifo_usage_spy (fanout 1)
+
+
+
+    5.8.U0_M0 constraint generation
+    -------------------------------
+
+Defcore legalization
+
+
+ 6.Power network definition.
+ ===========================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 7.User and netlist wire resolution directives.
+ ==============================================
+
+
+    7.1.Wire resolution user commands.
+    ----------------------------------
+
+No user wire resolution command specified.
+
+    7.2.Wire resolution definitions from zebu macros.
+    -------------------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 8.Modular compile directives.
+ =============================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 9.User and netlist tristate directives.
+ =======================================
+
+
+    9.1.Tristate global parameters.
+    -------------------------------
+
+Default tristate resolution on tristate buses is PULLUP.
+Default conflict resolution on tristate buses is WAND.
+
+    9.2.Tristate user commands.
+    ---------------------------
+
+No user tristate command specified.
+
+    9.3.Top-Ports tristate manipulations.
+    -------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    9.4.Top-Ports tristate manipulations.
+    -------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 10.User probes.
+ ===============
+
+
+    10.1.Rtl name resolution in probes.
+    -----------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    10.2.User dynamic probes.
+    -------------------------
+
+64 dynamic probes were inserted in the design.
+
+
+    10.3.User callbacks.
+    --------------------
+
+No dynamic probe was defined by user.
+0 callback marks were inserted in the design.
+
+
+    10.4.User sram_trace probes.
+    ----------------------------
+
+No sram_trace probe was defined by user.
+
+    10.5.User read/write port probes.
+    ---------------------------------
+
+No read_port was defined by user.
+No write_port was defined by user.
+
+
+ 11.Fast Waveform Capture.
+ =========================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 12.Monitor.
+ ===========
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 13.Pre-Split Data Localization.
+ ===============================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 14.User forces (assign/undriven).
+ =================================
+
+0 'force undriven' command(s) were specified by user.
+0 'force assign' command(s) were specified by user.
+
+0 wire(s) were manipulated.
+
+
+
+ 15.User dynamic forces.
+ =======================
+
+
+    15.1.User dynamic forces (pre-netlist-load checks).
+    ---------------------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    15.2.User dynamic forces (insertion).
+    -------------------------------------
+
+No dynamic forces were define by user.
+
+
+ 16.User forces and injection.
+ =============================
+
+
+    16.1.User forces and injections (pre-netlist-load checks).
+    ----------------------------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    16.2.User forces and injections (insertion).
+    --------------------------------------------
+
+No injection were define by user.
+
+0 injection(s) were performed.
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.rstn} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_wr} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+Processing for command zforce -mode dynamic -rtlname { {top.u_stb.proba_rd} }  -type global -object_not_found fatal
+
+
+21 force(s) were applied.
+
+Force undriven 'top.rstn' wire.
+Force wire 'top.u_stb.proba_wr[0]' with asynchronous release.
+Force wire 'top.u_stb.proba_wr[1]' with asynchronous release.
+Force wire 'top.u_stb.proba_wr[2]' with asynchronous release.
+Force wire 'top.u_stb.proba_wr[3]' with asynchronous release.
+Force wire 'top.u_stb.proba_wr[4]' with asynchronous release.
+Force wire 'top.u_stb.proba_wr[5]' with asynchronous release.
+Force wire 'top.u_stb.proba_wr[6]' with asynchronous release.
+Force wire 'top.u_stb.proba_wr[7]' with asynchronous release.
+Force wire 'top.u_stb.proba_wr[8]' with asynchronous release.
+Force wire 'top.u_stb.proba_wr[9]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[0]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[1]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[2]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[3]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[4]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[5]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[6]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[7]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[8]' with asynchronous release.
+Force wire 'top.u_stb.proba_rd[9]' with asynchronous release.
+
+0 both force(s) / injection(s) were performed.
+
+
+
+ 17.Memory non-determinism resolution.
+ =====================================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 18.Logic Optimization.
+ ======================
+
+
+    18.1.Auto-fixing of undriven wires after logic optimization.
+    ------------------------------------------------------------
+
+No undriven nets to fix.
+
+    18.2.Sanity check of zCeiMessageOut.
+    ------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 19.Post-buffer simplification undriven fixing.
+ ==============================================
+
+
+    19.1.Post-buffer simplification undriven fixing.
+    ------------------------------------------------
+
+No undriven nets to fix.
+
+
+ 20.Partitioning.
+ ================
+
+
+    20.1.Partitioner constraints
+    ----------------------------
+
+
+          +--------+-------------------+---------------------+
+          |FPGA ID |place              |resource             |
+          +--------+-------------------+---------------------+
+          |        |PLACE_Ux_Mx_IF     |ZCEI_CLOCKCONTROL    |
+          |        |PLACE_Ux_Mx_IF     |ZCEI_CLOCKPORT       |
+          |        |PLACE_Ux_Mx_IF     |ZCEI_MESSAGE_INPUT   |
+          |        |PLACE_Ux_Mx_IF     |ZCEI_MESSAGE_OUTPUT  |
+          |U0_M0_F0|PLACE_U0           |ZEBU_BB_DELAY        |
+          |U0_M0_F1|PLACE_U0           |ZEBU_BB_DELAY        |
+          |U0_M0_F2|PLACE_U0           |ZEBU_BB_DELAY        |
+          |U0_M0_F3|PLACE_U0           |ZEBU_BB_DELAY        |
+          |U0_M0_F4|PLACE_U0           |ZEBU_BB_DELAY        |
+          |U0_M0_F5|PLACE_U0           |ZEBU_BB_DELAY        |
+          |U0_M0_F6|PLACE_U0           |ZEBU_BB_DELAY        |
+          |U0_M0_F7|PLACE_U0           |ZEBU_BB_DELAY        |
+          |U0_M0_F8|PLACE_U0           |ZEBU_BB_DELAY        |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|ZEBU_BB_GDELAY       |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|ZEBU_BB_GDELAY       |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|ZEBU_BB_GDELAY       |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|ZEBU_BB_GDELAY       |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|ZEBU_BB_GDELAY       |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|ZEBU_BB_GDELAY       |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|ZEBU_BB_GDELAY       |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|ZEBU_BB_GDELAY       |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|ZEBU_BB_GDELAY       |
+          |U0_M0_F0|PLACE_U0           |ZEBU_BB_GTIME        |
+          |U0_M0_F1|PLACE_U0           |ZEBU_BB_GTIME        |
+          |U0_M0_F2|PLACE_U0           |ZEBU_BB_GTIME        |
+          |U0_M0_F3|PLACE_U0           |ZEBU_BB_GTIME        |
+          |U0_M0_F4|PLACE_U0           |ZEBU_BB_GTIME        |
+          |U0_M0_F5|PLACE_U0           |ZEBU_BB_GTIME        |
+          |U0_M0_F6|PLACE_U0           |ZEBU_BB_GTIME        |
+          |U0_M0_F7|PLACE_U0           |ZEBU_BB_GTIME        |
+          |U0_M0_F8|PLACE_U0           |ZEBU_BB_GTIME        |
+          |        |PLACE_U0_Mx_IF     |RTL_CLOCKCONTROL     |
+          |        |PLACE_Ux_Mx_IF     |HDLCOSIM_BB          |
+          |        |PLACE_U0_M0_IF     |SW_CTRL_BB           |
+          |        |PLACE_U0_M0_IF     |TRIGGER_BB_OUTPUT    |
+          |        |PLACE_U0_M0_IF     |CLK_MAN_BB           |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|SAMPLE_MAN           |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|SAMPLE_MAN           |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|SAMPLE_MAN           |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|SAMPLE_MAN           |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|SAMPLE_MAN           |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|SAMPLE_MAN           |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|SAMPLE_MAN           |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|SAMPLE_MAN           |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|SAMPLE_MAN           |
+          |        |PLACE_U0_M0_IF     |ZCEI_TRIGGER_BB      |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|FWC_HS_IP            |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|FWC_HS_IP            |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|FWC_HS_IP            |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|FWC_HS_IP            |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|FWC_HS_IP            |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|FWC_HS_IP            |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|FWC_HS_IP            |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|FWC_HS_IP            |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|FWC_HS_IP            |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|FWC_QIWC_IP          |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|FWC_QIWC_IP          |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|FWC_QIWC_IP          |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|FWC_QIWC_IP          |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|FWC_QIWC_IP          |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|FWC_QIWC_IP          |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|FWC_QIWC_IP          |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|FWC_QIWC_IP          |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|FWC_QIWC_IP          |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|WRITE_PORT           |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|WRITE_PORT           |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|WRITE_PORT           |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|WRITE_PORT           |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|WRITE_PORT           |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|WRITE_PORT           |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|WRITE_PORT           |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|WRITE_PORT           |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|WRITE_PORT           |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|READ_PORT            |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|READ_PORT            |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|READ_PORT            |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|READ_PORT            |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|READ_PORT            |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|READ_PORT            |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|READ_PORT            |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|READ_PORT            |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|READ_PORT            |
+          |        |PLACE_U0_M0_IF     |SRAM_TRACE           |
+          |        |PLACE_U0_Mx_IF     |SMART_ZICE           |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|MONITOR              |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|MONITOR              |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|MONITOR              |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|MONITOR              |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|MONITOR              |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|MONITOR              |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|MONITOR              |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|MONITOR              |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|MONITOR              |
+          |        |PLACE_Ux_Mx_IF     |ZPRD                 |
+          |        |PLACE_U0_Mx_IF     |ZEBU_BB_TS_TOLERANCE |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|ZEBU_RTL_CLOCK_MASTER|
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|ZEBU_RTL_CLOCK_MASTER|
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|ZEBU_RTL_CLOCK_MASTER|
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|ZEBU_RTL_CLOCK_MASTER|
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|ZEBU_RTL_CLOCK_MASTER|
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|ZEBU_RTL_CLOCK_MASTER|
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|ZEBU_RTL_CLOCK_MASTER|
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|ZEBU_RTL_CLOCK_MASTER|
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|ZEBU_RTL_CLOCK_MASTER|
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|TS_RUNMAN            |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|TS_RUNMAN            |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|TS_RUNMAN            |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|TS_RUNMAN            |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|TS_RUNMAN            |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|TS_RUNMAN            |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|TS_RUNMAN            |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|TS_RUNMAN            |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|TS_RUNMAN            |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|CALLBACK_MGR_XTOR    |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|CALLBACK_MGR_XTOR    |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|CALLBACK_MGR_XTOR    |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|CALLBACK_MGR_XTOR    |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|CALLBACK_MGR_XTOR    |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|CALLBACK_MGR_XTOR    |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|CALLBACK_MGR_XTOR    |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|CALLBACK_MGR_XTOR    |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|CALLBACK_MGR_XTOR    |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|RTL_CLOCK_BB_OWNER   |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|RTL_CLOCK_BB_OWNER   |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|RTL_CLOCK_BB_OWNER   |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|RTL_CLOCK_BB_OWNER   |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|RTL_CLOCK_BB_OWNER   |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|RTL_CLOCK_BB_OWNER   |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|RTL_CLOCK_BB_OWNER   |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|RTL_CLOCK_BB_OWNER   |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|RTL_CLOCK_BB_OWNER   |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|ZEBU_DUMMY_DRIVER    |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|ZEBU_DUMMY_DRIVER    |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|ZEBU_DUMMY_DRIVER    |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|ZEBU_DUMMY_DRIVER    |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|ZEBU_DUMMY_DRIVER    |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|ZEBU_DUMMY_DRIVER    |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|ZEBU_DUMMY_DRIVER    |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|ZEBU_DUMMY_DRIVER    |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|ZEBU_DUMMY_DRIVER    |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|C_COSIM              |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|C_COSIM              |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|C_COSIM              |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|C_COSIM              |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|C_COSIM              |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|C_COSIM              |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|C_COSIM              |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|C_COSIM              |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|C_COSIM              |
+          |        |PLACE_Ux_Mx_IF     |ZEBU_NO_TOL_DELAY_BB |
+          |U0_M0_F0|PLACE_NO_CONSTRAINT|STOP_CLOCK           |
+          |U0_M0_F1|PLACE_NO_CONSTRAINT|STOP_CLOCK           |
+          |U0_M0_F2|PLACE_NO_CONSTRAINT|STOP_CLOCK           |
+          |U0_M0_F3|PLACE_NO_CONSTRAINT|STOP_CLOCK           |
+          |U0_M0_F4|PLACE_NO_CONSTRAINT|STOP_CLOCK           |
+          |U0_M0_F5|PLACE_NO_CONSTRAINT|STOP_CLOCK           |
+          |U0_M0_F6|PLACE_NO_CONSTRAINT|STOP_CLOCK           |
+          |U0_M0_F7|PLACE_NO_CONSTRAINT|STOP_CLOCK           |
+          |U0_M0_F8|PLACE_NO_CONSTRAINT|STOP_CLOCK           |
+          +--------+-------------------+---------------------+
+
+
+
+    20.2.Partitioner basic resource estimations
+    -------------------------------------------
+
+Resources for Part_0:
+  REG=        72  LUT=      1239  RAMLUT=       136  BRAM=1210  DSP_MULT=   3
+
+
+ 21.Netlist split.
+ =================
+
+BEGIN_INTERNAL DEFMAPPING LIST
+DEFMAP top Part_0
+END_INTERNAL DEFMAPPING LIST
+
+    21.1.Initial core definition (defcore commands)
+    -----------------------------------------------
+
+
+0 core definition(s)
+
+
+
+
+ 22.Asynchronous paths optimization processing
+ =============================================
+
+
+    22.1.Inter-zcore laces optimization
+    -----------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 23.Post-split modular compile handling.
+ =======================================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 24.Post-split wire resolution handling.
+ =======================================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 25.Post-split tristate handling.
+ ================================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 26.Clock handling.
+ ==================
+
+
+    26.1.Clock nets defined by user
+    -------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    26.2.Not clock nets defined by user
+    -----------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    26.3.Primary clocks from 'zceiClockPort' in .DVE file
+    -----------------------------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 27.Post-split statistics.
+ =========================
+
+
+    27.1.Core interconnections before netlist modification
+    ------------------------------------------------------
+
++---------------+---------------+---------------+
+| Interco       |        Part_0 |      Zebu RTB | 
++---------------+---------------+---------------+
+| Part_0        |             0 |             0 | 
+| Zebu RTB      |             0 |             0 | 
++---------------+---------------+---------------+
+| Total interco |             0 |             0 | 
++---------------+---------------+---------------+
+
+    27.2.Core driver to reader cuts before netlist modification
+    -----------------------------------------------------------
+
++---------------+---------------+---------------+---------------+
+| From\To       |        Part_0 |      Zebu RTB | Total drivers | 
++---------------+---------------+---------------+---------------+
+| Part_0        |             0 |             0 |             0 | 
+| Zebu RTB      |             0 |             0 |             0 | 
++---------------+---------------+---------------+---------------+
+| Total readers |             0 |             0 |             0 | 
++---------------+---------------+---------------+---------------+
+
+    27.3.Core point to point cuts (p2p) before netlist modification
+    ---------------------------------------------------------------
+
++-----------+-----------+-----------+
+| Cut       |    Part_0 |  Zebu RTB | 
++-----------+-----------+-----------+
+| Part_0    |         0 |         0 | 
+| Zebu RTB  |         0 |         0 | 
++-----------+-----------+-----------+
+| Total cut |         0 |         0 | 
++-----------+-----------+-----------+
+
+Resulting SOSED (Sum Of Square External Degrees): 0
+
+    27.4.Debug instances relocation
+    -------------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+    27.5.Core interconnections after netlist modification
+    -----------------------------------------------------
+
++---------------+---------------+---------------+
+| Interco       |        Part_0 |      Zebu RTB | 
++---------------+---------------+---------------+
+| Part_0        |             0 |             0 | 
+| Zebu RTB      |             0 |             0 | 
++---------------+---------------+---------------+
+| Total interco |             0 |             0 | 
++---------------+---------------+---------------+
+
+    27.6.Core driver to reader cuts after netlist modification
+    ----------------------------------------------------------
+
++---------------+---------------+---------------+---------------+
+| From\To       |        Part_0 |      Zebu RTB | Total drivers | 
++---------------+---------------+---------------+---------------+
+| Part_0        |             0 |             0 |             0 | 
+| Zebu RTB      |             0 |             0 |             0 | 
++---------------+---------------+---------------+---------------+
+| Total readers |             0 |             0 |             0 | 
++---------------+---------------+---------------+---------------+
+
+    27.7.Core point to point cuts (p2p) after netlist modification
+    --------------------------------------------------------------
+
++-----------+-----------+-----------+
+| Cut       |    Part_0 |  Zebu RTB | 
++-----------+-----------+-----------+
+| Part_0    |         0 |         0 | 
+| Zebu RTB  |         0 |         0 | 
++-----------+-----------+-----------+
+| Total cut |         0 |         0 | 
++-----------+-----------+-----------+
+
+Resulting SOSED (Sum Of Square External Degrees): 0
+
+    27.8.Stats on generated netlists
+    --------------------------------
+
+
+    27.8.1.Stats on core 0: Part_0
+
+
+Rank of Part_0: 870s
+
+Primitive count from the zcore module Part_0
+          +----------------------------------------------------------------+------+---------+---------+
+          |Primitive                                                       |Number|Equiv LUT|Equiv REG|
+          +----------------------------------------------------------------+------+---------+---------+
+          |fd                                                              |   309|         |      309|
+          |fdc                                                             |    38|         |       38|
+          |fdce                                                            |    19|         |       19|
+          |fde                                                             |   132|         |      132|
+          |fdp                                                             |     7|         |        7|
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Flip-Flops                                              |   505|         |      505|
+          +----------------------------------------------------------------+------+---------+---------+
+          |gnd                                                             |     8|         |         |
+          |lut2                                                            |    60|       60|         |
+          |lut3                                                            |    56|       56|         |
+          |lut4                                                            |     8|        8|         |
+          |lut5                                                            |    13|       13|         |
+          |lut6                                                            |    29|       29|         |
+          |vcc                                                             |     5|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary General                                                 |   179|      166|         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |ld_1                                                            |     1|         |        1|
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Latches                                                 |     1|         |        1|
+          +----------------------------------------------------------------+------+---------+---------+
+          |and2                                                            |    33|       33|         |
+          |inv                                                             |    48|         |         |
+          |xor2                                                            |     4|        4|         |
+          |xorcy                                                           |     2|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Logic Primitives                                        |    87|       37|         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |ram256x1s                                                       |    18|       72|         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Memory Elements                                         |    18|       72|         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |muxcy_l                                                         |     2|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary Multiplexers                                            |     2|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |carry4                                                          |    40|         |         |
+          |zebu_bb_wb_reg                                                  |    43|         |       43|
+          |zebu_bb_ZDPI_MOD_fifo_usage_spy_ZDPI_fifo_usage_spy_notify_call0|     1|         |         |
+          |zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call0       |     1|         |         |
+          |zebu_bb_ZDPI_MOD_stb_ZDPI_grp0_dummy_import_for_pli_call1       |     1|         |         |
+          |zebu_bb_zmem_addr                                               |    16|         |         |
+          |zebu_bb_zmem_clk                                                |     2|         |         |
+          |zebu_bb_zmem_di                                                 |     9|         |         |
+          |zebu_bb_zmem_do                                                 |     9|         |         |
+          |zebu_bb_zmem_we                                                 |     1|         |         |
+          |zebu_clockGen                                                   |     1|         |         |
+          |zebu_reqsig_clock_driverclock                                   |    21|         |         |
+          |zebu_reqsig_clock_zcompositeclock                               |     2|         |         |
+          |ZSVA_MOD_PLI_1                                                  |     2|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary                                                         |   149|         |       43|
+          +----------------------------------------------------------------+------+---------+---------+
+          |zfwc_hs_1                                                       |    36|         |         |
+          |zview                                                           |   115|         |         |
+          |ZXLSYS                                                          |     4|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+          |Summary ZEBU Special Cells                                      |   155|         |         |
+          +----------------------------------------------------------------+------+---------+---------+
+
+
+
+
+ 28.Object IDs statistics.
+ =========================
+
+unique Object IDs: 11009, no collisions: 88%, average collisions: 0.120174, max collisions: 4
+ total Collisions: 1323, with no collisions: 9692
+24 netlists, 104 libraries, 10881 modules.
+
+
+ 29.Ice connection processing.
+ =============================
+
+
+    29.1.ICE commands report.
+    -------------------------
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 30.Combinational loops manipulations.
+ =====================================
+
+The report contains both RTL and gate level hierarchical paths.
+
+Found 0 strongly connected component(s), going through asynchronous ports (PRE/CLR), going through clock ports (C/G).
+
+Strongly connected components will be reported as gates fanout graphs.
+
+
+
+
+ 31.Inter-partition combinational loops checks.
+ ==============================================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 32.Sparse Memory Conversion.
+ ============================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 33.Netlist memory usage.
+ ========================
+
+
+    33.1.Netlist memory information after the 'merged' step of the flow.
+    --------------------------------------------------------------------
+
+################################################################################
+# MEMORY REPORT v1.0                                                           #
+# Wed Apr 19 01:04:52 2023
+                                                    #
+################################################################################
+
+
+TOTAL MEMORY: 4.2353 MB
+    -netlist data base               : 4.2353 MB
+
+STATISTICS FOR OBJECTS IN THE DATABASE #########################################
+netlist object type      number of occurrences    used memory         average memory per object     size of the object  average attribute per object  alias count         
+netlists:                1                        72 bytes            72                            72                  0                             0                   
+libraries:               9                        52.552  KB          5839.11                       80                  0                             0                   
+hierarchical modules:    88                       56.728  KB          644.636                       392                 1.09091                       0                   
+leaf modules:            1310                     1.2831 MB           979.469                       360                 2                             0                   
+hierarchical instances:  115                      22.328  KB          194.157                       136                 0.469565                      0                   
+leaf instances:          1095                     130.64  KB          119.306                       104                 0.228311                      0                   
+hierarchical ports:      1577                     83.352  KB          52.8548                       48                  0                             0                   
+leaf ports:              48954                    1.95867 MB          40.0105                       40                  0.000326837                   0                   
+port vectors:            3077                     534.76  KB          173.793                       80                  0                             0                   
+wires:                   1749                     113.088  KB         64.6587                       64                  0.0205832                     0                   
+
+Detailed statistics for hierarchical modules:
+Module count :                                    88                  
+Memory in modules :                               56728               
+Xilinx module number :                            0                   
+
+ -- Module summary table:
+Module object type  total               average             median              max                 
+ports               957                 10.875              21                  90                  
+port-vectors        78                  0.886364            3                   8                   
+instances           1210                13.75               173                 576                 
+wires               1749                19.875              188                 752                 
+
+ -- Module instantiation statistics:
+total               average             median              max                 
+115                 1.30682             4                   26                  
+
+
+Detailed statistics for leaf modules:
+Module count :                                    1310                
+Memory in modules :                               1283104             
+Xilinx module number :                            1310                
+
+ -- Module summary table:
+Module object type  total               average             median              max                 
+ports               44371               33.871              429                 4019                
+port-vectors        2769                2.11374             55                  288                 
+instances           0                   0                   0                   0                   
+wires               0                   0                   0                   0                   
+
+ -- Module instantiation statistics:
+total               average             median              max                 
+1095                0.835878            258                 333                 
+
+
+Detailled statistics for hier ports:
+port count :                            1577                
+Memory in ports :                       83.352  KB          
+Module port number :                    957                 
+Instance port number :                  620                 
+Vector port number :                    1116                
+
+Detailled statistics for leaf ports:
+port count :                            48954               
+Memory in ports :                       1.95867 MB          
+Module port number :                    44371               
+Instance port number :                  4583                
+Vector port number :                    34959               
+
+Detailed statistics for hierarchical instances:
+Instance count :                        115                      
+Memory in instances :                   22.328  KB               
+Xilinx instance number :                0                        
+Average port number :                   5.3913                   
+Average port-vector number :            0.452174                 
+
+Detailed statistics for leaf instances:
+Instance count :                        1095                     
+Memory in instances :                   130.64  KB               
+Xilinx instance number :                1095                     
+Average port number :                   4.18539                  
+Average port-vector number :            0.162557                 
+
+Detailed statistics for wires:
+Wire count :                            1749                
+Memory in wires :                       113.088  KB         
+Average port number :                   3.17439             
+
+Detailled statistics for attributes:
+Memory in attributes :                  4.382  KB
+Attribute count :                       4382
+
+Uniquification ratios for the netlist 'zTopBuild_netlist : 
+Top module 'top' : 
+1066 occurences of leaf instances in the hierarchy out of 1048 leaf instances in the folded model.
+Resulting ratio: 1.02
+1591 occurences of wires in the hierarchy out of 1591 wires in the folded model.
+The ratio resulting from the hierarchical instances and modules: 
+The number of hierarchical instances excluding fs_macros: 115
+The number of hierarchical modules excluding fs_macros: 52
+Resulting ratio: 2.21
+
+
+ 34.Detailed execution time and memory usage.
+ ============================================
+
+ 
+	read *** ./zTopBuild_report_log_large_sections.dir/_SEC_34_Detailed_e.log ***
+
+
+
+ 35.SCC Reduction.
+ =================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
+
+
+ 36.Memory optimization.
+ =======================
+
+
+
+                 *** EMPTY SECTION *** 
+
+
